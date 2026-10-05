@@ -1,0 +1,46 @@
+name: TikTok Online Runner
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tiktok-online-runner
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run TikTok queue
+        env:
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+          MAX_NEW_POSTS_PER_RUN: "1"
+        run: python automation/tiktok_runner.py
+
+      - name: Persist runner state
+        if: always()
+        run: |
+          if git diff --quiet -- automation/state.json; then
+            echo "No state changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/state.json
+          git commit -m "Update TikTok automation state"
+          git push
