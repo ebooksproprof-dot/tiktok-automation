@@ -1,0 +1,64 @@
+import { exchangeCode, htmlPage, parseCookies, tokenStore, TOKEN_KEY } from "./_shared.mjs";
+
+const clearState = "tiktok_oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0";
+
+export async function handler(event) {
+  try {
+    const q = event.queryStringParameters || {};
+    if (q.error) {
+      return {
+        statusCode: 400,
+        headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Set-Cookie": clearState },
+        body: htmlPage("Autorização não concluída", q.error_description || q.error, false),
+      };
+    }
+
+    const code = (q.code || "").trim();
+    const returnedState = (q.state || "").trim();
+    const cookies = parseCookies(event.headers?.cookie || event.headers?.Cookie || "");
+    const expectedState = cookies.tiktok_oauth_state || "";
+
+    if (!code) throw new Error("TikTok não retornou o código de autorização.");
+    if (!returnedState || !expectedState || returnedState !== expectedState) {
+      throw new Error("Falha na validação de segurança (state). Inicie o login novamente.");
+    }
+
+    const token = await exchangeCode(code);
+    const now = Date.now();
+    const bundle = {
+      access_token: token.access_token,
+      refresh_token: token.refresh_token,
+      open_id: token.open_id,
+      scope: token.scope,
+      token_type: token.token_type,
+      expires_in: Number(token.expires_in || 0),
+      refresh_expires_in: Number(token.refresh_expires_in || 0),
+      expires_at: now + Number(token.expires_in || 0) * 1000,
+      refresh_expires_at: now + Number(token.refresh_expires_in || 0) * 1000,
+      updated_at: new Date(now).toISOString(),
+    };
+
+    const store = tokenStore();
+    await store.setJSON(TOKEN_KEY, bundle);
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Set-Cookie": clearState,
+      },
+      body: htmlPage("TikTok conectado", "A autorização foi concluída e os tokens foram armazenados no servidor. Nenhuma credencial foi exposta no navegador."),
+    };
+  } catch (error) {
+    return {
+      statusCode: 400,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Set-Cookie": clearState,
+      },
+      body: htmlPage("Não foi possível conectar", String(error.message || error), false),
+    };
+  }
+}
