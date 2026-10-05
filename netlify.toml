@@ -1,0 +1,30 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/tiktok/login"
+  to = "/.netlify/functions/tiktok-login"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tiktok/callback"
+  to = "/.netlify/functions/tiktok-callback"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tiktok/token"
+  to = "/.netlify/functions/tiktok-token"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tiktok/health"
+  to = "/.netlify/functions/tiktok-health"
+  status = 200
+  force = true
