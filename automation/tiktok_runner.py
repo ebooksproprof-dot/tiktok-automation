@@ -82,6 +82,41 @@ def api_post(url, token, body):
     return data
 
 
+def fetch_token_from_broker():
+    token_url = os.getenv("TIKTOK_TOKEN_URL", "").strip()
+    shared_secret = os.getenv("TIKTOK_RUNNER_SHARED_SECRET", "").strip()
+
+    if not token_url:
+        return os.getenv("TIKTOK_ACCESS_TOKEN", "").strip()
+
+    if not shared_secret:
+        raise RuntimeError(
+            "TIKTOK_TOKEN_URL está configurado, mas TIKTOK_RUNNER_SHARED_SECRET está ausente."
+        )
+
+    req = urllib.request.Request(
+        token_url,
+        method="GET",
+        headers={
+            "Authorization": f"Bearer {shared_secret}",
+            "Accept": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        body_text = e.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Token broker HTTP {e.code}: {body_text}") from e
+    except urllib.error.URLError as e:
+        raise RuntimeError(f"Falha ao obter token do broker: {e}") from e
+
+    token = str(data.get("access_token", "")).strip()
+    if not token:
+        raise RuntimeError(f"Token broker não retornou access_token: {data}")
+    return token
+
+
 def needs_token(queue, state):
     for entry in state.get("posts", {}).values():
         if entry.get("status") not in TERMINAL_STATUSES:
@@ -187,7 +222,7 @@ def main():
     state = load_json(STATE_PATH, {"posts": {}})
     state.setdefault("posts", {})
 
-    token = os.getenv("TIKTOK_ACCESS_TOKEN", "").strip()
+    token = fetch_token_from_broker()
     if not token:
         if needs_token(queue, state):
             print(
