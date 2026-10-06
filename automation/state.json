@@ -1,3 +1,13 @@
 {
-  "posts": {}
+  "posts": {
+    "sandbox-test-001": {
+      "publish_id": "v_pub_url~v2-1.7693363115437885460",
+      "status": "PROCESSING_DOWNLOAD",
+      "submitted_at": "2026-10-06T01:42:50Z",
+      "last_checked_at": "2026-10-06T01:42:50Z",
+      "video_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/uvpapzpbxjH-aulauvJ-WV%5B%5B/ljhwZthlaukjlkulzlp/3min.mp4",
+      "title": "Teste privado de integração",
+      "privacy_level": "SELF_ONLY"
+    }
+  }
 }
