@@ -14,6 +14,7 @@ export async function handler() {
     auth.searchParams.set("scope", scopes);
     auth.searchParams.set("redirect_uri", redirectUri);
     auth.searchParams.set("state", state);
+    auth.searchParams.set("disable_auto_auth", "1");
 
     return {
       statusCode: 302,
