@@ -1,19 +1,32 @@
 import { env, refreshBundle, secureEqual, tokenStore, TOKEN_KEY } from "./_shared.mjs";
 
-export async function handler(event) {
+export default async function handler(req) {
   try {
     const expected = env("RUNNER_SHARED_SECRET");
-    const auth = event.headers?.authorization || event.headers?.Authorization || "";
+    const auth = req.headers.get("authorization") || "";
     const supplied = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
 
     if (!secureEqual(supplied, expected)) {
-      return { statusCode: 401, headers: { "Cache-Control": "no-store" }, body: JSON.stringify({ error: "unauthorized" }) };
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401,
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store",
+        },
+      });
     }
 
     const store = tokenStore();
     let bundle = await store.get(TOKEN_KEY, { type: "json", consistency: "strong" });
+
     if (!bundle?.access_token) {
-      return { statusCode: 404, headers: { "Cache-Control": "no-store" }, body: JSON.stringify({ error: "tiktok_not_connected" }) };
+      return new Response(JSON.stringify({ error: "tiktok_not_connected" }), {
+        status: 404,
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store",
+        },
+      });
     }
 
     const refreshMarginMs = 15 * 60 * 1000;
@@ -22,21 +35,28 @@ export async function handler(event) {
       await store.setJSON(TOKEN_KEY, bundle);
     }
 
-    return {
-      statusCode: 200,
-      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
-      body: JSON.stringify({
-        access_token: bundle.access_token,
-        expires_at: bundle.expires_at,
-        open_id: bundle.open_id,
-        scope: bundle.scope,
-      }),
-    };
+    return new Response(JSON.stringify({
+      access_token: bundle.access_token,
+      expires_at: bundle.expires_at,
+      open_id: bundle.open_id,
+      scope: bundle.scope,
+    }), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+      },
+    });
   } catch (error) {
-    return {
-      statusCode: 500,
-      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
-      body: JSON.stringify({ error: "token_broker_error", message: String(error.message || error) }),
-    };
+    return new Response(JSON.stringify({
+      error: "token_broker_error",
+      message: String(error.message || error),
+    }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+      },
+    });
   }
 }
