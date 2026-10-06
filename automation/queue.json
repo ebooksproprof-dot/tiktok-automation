@@ -1,3 +1,16 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "sandbox-test-001",
+      "video_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/uvpapzpbxjH-aulauvJ-WV%5B%5B/ljhwZthlaukjlkulzlp/3min.mp4",
+      "title": "Teste privado de integração",
+      "scheduled_at": "2026-10-05T00:00:00Z",
+      "privacy_level": "SELF_ONLY",
+      "disable_duet": true,
+      "disable_comment": true,
+      "disable_stitch": true,
+      "approved": true,
+      "consented_at": "2026-10-06T01:40:00Z"
+    }
+  ]
 }
