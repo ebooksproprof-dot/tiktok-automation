@@ -28,3 +28,21 @@
   to = "/.netlify/functions/tiktok-health"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/tiktok/creator"
+  to = "/.netlify/functions/tiktok-creator"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tiktok/publish"
+  to = "/.netlify/functions/tiktok-publish"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tiktok/status"
+  to = "/.netlify/functions/tiktok-status"
+  status = 200
+  force = true

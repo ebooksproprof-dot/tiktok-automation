@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Demonstração de Publicação TikTok</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap demo-wrap">
+    <section class="hero">
+      <div class="topline">
+        <span class="badge">Sandbox • Demonstração</span>
+        <span id="connectionPill" class="status-pill neutral">Verificando conexão…</span>
+      </div>
+      <h1 class="demo-title">Publicar no TikTok</h1>
+      <p class="lead">Este painel demonstra o fluxo completo: conta autorizada, revisão do conteúdo, consentimento explícito e publicação pela API oficial.</p>
+
+      <div id="connectPanel" class="panel hidden">
+        <h2>Conecte sua conta</h2>
+        <p>Use a tela oficial do TikTok para autorizar apenas as permissões necessárias.</p>
+        <a class="button primary" href="/tiktok/login">Conectar com TikTok</a>
+      </div>
+
+      <div id="publishPanel" class="panel hidden">
+        <div class="account-card">
+          <div>
+            <span class="eyebrow">Conta conectada</span>
+            <strong id="creatorName">Conta TikTok</strong>
+          </div>
+          <span class="check">✓ Autorizada</span>
+        </div>
+
+        <form id="publishForm">
+          <label for="videoUrl">URL HTTPS do vídeo</label>
+          <input id="videoUrl" name="videoUrl" type="url" required
+            value="https://sf16-va.tiktokcdn.com/obj/eden-va2/uvpapzpbxjH-aulauvJ-WV%5B%5B/ljhwZthlaukjlkulzlp/3min.mp4"
+            aria-describedby="videoHelp" />
+          <p id="videoHelp" class="help">No Sandbox, este campo já contém o vídeo oficial usado no teste de integração.</p>
+
+          <label for="title">Legenda</label>
+          <input id="title" name="title" type="text" maxlength="150" value="Teste privado de integração" required />
+
+          <label for="privacy">Privacidade</label>
+          <select id="privacy" name="privacy" required></select>
+          <p class="help">Enquanto o app não for auditado, use <strong>Only me / SELF_ONLY</strong>.</p>
+
+          <div class="switch-grid">
+            <label class="switch-row"><input id="comments" type="checkbox" /> Permitir comentários</label>
+            <label class="switch-row"><input id="duet" type="checkbox" /> Permitir Duet</label>
+            <label class="switch-row"><input id="stitch" type="checkbox" /> Permitir Stitch</label>
+          </div>
+
+          <label class="consent-box">
+            <input id="consent" type="checkbox" required />
+            <span>Confirmo que escolhi este conteúdo e quero publicá-lo na minha própria conta TikTok conectada.</span>
+          </label>
+
+          <button id="publishBtn" class="button primary full" type="submit" disabled>Publicar no TikTok</button>
+        </form>
+      </div>
+
+      <div id="resultPanel" class="panel hidden">
+        <h2>Status da publicação</h2>
+        <div class="progress-list">
+          <div class="progress-item done"><span>1</span><div><strong>Conta autorizada</strong><p>Login Kit concluído.</p></div></div>
+          <div id="stepSubmit" class="progress-item"><span>2</span><div><strong>Solicitação enviada</strong><p id="submitText">Aguardando envio.</p></div></div>
+          <div id="stepPublish" class="progress-item"><span>3</span><div><strong>Processamento TikTok</strong><p id="publishText">Aguardando processamento.</p></div></div>
+        </div>
+        <p id="errorText" class="error-text hidden"></p>
+      </div>
+    </section>
+
+    <footer>
+      <a href="terms.html">Termos de Serviço</a>
+      <a href="privacy.html">Política de Privacidade</a>
+      <p>Nenhuma credencial do TikTok é exibida no navegador.</p>
+    </footer>
+  </main>
+
+<script>
+(() => {
+  if (location.hostname.endsWith("github.io")) {
+    location.replace("https://curious-fairy-8784a5.netlify.app/demo.html");
+    return;
+  }
+
+  const $ = (id) => document.getElementById(id);
+  const connectPanel = $("connectPanel");
+  const publishPanel = $("publishPanel");
+  const resultPanel = $("resultPanel");
+  const pill = $("connectionPill");
+  const consent = $("consent");
+  const publishBtn = $("publishBtn");
+  let publishId = null;
+
+  function show(el, yes = true) { el.classList.toggle("hidden", !yes); }
+  function setPill(text, kind) {
+    pill.textContent = text;
+    pill.className = "status-pill " + kind;
+  }
+
+  function privacyLabel(value) {
+    const labels = {
+      SELF_ONLY: "Only me (SELF_ONLY)",
+      PUBLIC_TO_EVERYONE: "Everyone",
+      MUTUAL_FOLLOW_FRIENDS: "Friends",
+      FOLLOWER_OF_CREATOR: "Followers"
+    };
+    return labels[value] || value;
+  }
+
+  async function loadCreator() {
+    try {
+      const res = await fetch("/tiktok/creator", { credentials: "same-origin", cache: "no-store" });
+      if (res.status === 401) {
+        setPill("Não conectado", "neutral");
+        show(connectPanel, true);
+        show(publishPanel, false);
+        return;
+      }
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Não foi possível consultar a conta.");
+      setPill("Conectado", "ok");
+      $("creatorName").textContent = data.creator_nickname || data.creator_username || "Conta TikTok";
+      const select = $("privacy");
+      select.innerHTML = "";
+      (data.privacy_level_options || ["SELF_ONLY"]).forEach((value) => {
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = privacyLabel(value);
+        if (value === "SELF_ONLY") opt.selected = true;
+        select.appendChild(opt);
+      });
+      $("comments").disabled = !!data.comment_disabled;
+      $("duet").disabled = !!data.duet_disabled;
+      $("stitch").disabled = !!data.stitch_disabled;
+      show(connectPanel, false);
+      show(publishPanel, true);
+    } catch (err) {
+      setPill("Erro de conexão", "bad");
+      show(connectPanel, true);
+      $("errorText").textContent = err.message;
+    }
+  }
+
+  consent.addEventListener("change", () => {
+    publishBtn.disabled = !consent.checked;
+  });
+
+  $("publishForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!consent.checked) return;
+
+    publishBtn.disabled = true;
+    publishBtn.textContent = "Enviando…";
+    show(resultPanel, true);
+    $("errorText").classList.add("hidden");
+
+    const payload = {
+      video_url: $("videoUrl").value.trim(),
+      title: $("title").value.trim(),
+      privacy_level: $("privacy").value,
+      disable_comment: !$("comments").checked,
+      disable_duet: !$("duet").checked,
+      disable_stitch: !$("stitch").checked,
+      consent: true
+    };
+
+    try {
+      const res = await fetch("/tiktok/publish", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Falha ao enviar publicação.");
+
+      publishId = data.publish_id;
+      $("stepSubmit").classList.add("done");
+      $("submitText").textContent = "Solicitação aceita pelo TikTok.";
+      $("publishText").textContent = "Processando…";
+      await pollStatus();
+    } catch (err) {
+      $("errorText").textContent = err.message;
+      $("errorText").classList.remove("hidden");
+      publishBtn.disabled = false;
+      publishBtn.textContent = "Publicar no TikTok";
+    }
+  });
+
+  async function pollStatus() {
+    for (let i = 0; i < 30; i++) {
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+      const res = await fetch("/tiktok/status?publish_id=" + encodeURIComponent(publishId), {
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        $("errorText").textContent = data.error || "Falha ao consultar o status.";
+        $("errorText").classList.remove("hidden");
+        return;
+      }
+
+      $("publishText").textContent = data.status || "Processando…";
+      if (data.status === "PUBLISH_COMPLETE") {
+        $("stepPublish").classList.add("done");
+        $("publishText").textContent = "PUBLISH_COMPLETE — publicação concluída.";
+        publishBtn.textContent = "Publicado ✓";
+        return;
+      }
+      if (data.status === "FAILED") {
+        $("stepPublish").classList.add("failed");
+        $("publishText").textContent = "FAILED";
+        $("errorText").textContent = data.fail_reason || "O TikTok não concluiu a publicação.";
+        $("errorText").classList.remove("hidden");
+        publishBtn.disabled = false;
+        publishBtn.textContent = "Tentar novamente";
+        return;
+      }
+    }
+    $("publishText").textContent = "Ainda processando. O status pode ser consultado novamente em instantes.";
+    publishBtn.disabled = false;
+    publishBtn.textContent = "Publicar no TikTok";
+  }
+
+  loadCreator();
+})();
+</script>
+</body>
+</html>

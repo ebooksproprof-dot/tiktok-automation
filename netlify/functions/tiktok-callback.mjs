@@ -1,4 +1,12 @@
-import { exchangeCode, htmlPage, parseCookies, tokenStore, TOKEN_KEY } from "./_shared.mjs";
+import {
+  createDemoSession,
+  demoSessionCookie,
+  exchangeCode,
+  htmlPage,
+  parseCookies,
+  tokenStore,
+  TOKEN_KEY,
+} from "./_shared.mjs";
 
 const clearState = "tiktok_oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0";
 
@@ -46,20 +54,17 @@ export default async function handler(req) {
       updated_at: new Date(now).toISOString(),
     };
 
-    const store = tokenStore();
-    await store.setJSON(TOKEN_KEY, bundle);
+    await tokenStore().setJSON(TOKEN_KEY, bundle);
+    const sessionId = await createDemoSession();
 
-    return new Response(
-      htmlPage("TikTok conectado", "A autorização foi concluída e os tokens foram armazenados no servidor. Nenhuma credencial foi exposta no navegador."),
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "text/html; charset=utf-8",
-          "Cache-Control": "no-store",
-          "Set-Cookie": clearState,
-        },
-      },
-    );
+    const headers = new Headers({
+      Location: "/demo.html?connected=1",
+      "Cache-Control": "no-store",
+    });
+    headers.append("Set-Cookie", clearState);
+    headers.append("Set-Cookie", demoSessionCookie(sessionId));
+
+    return new Response("", { status: 302, headers });
   } catch (error) {
     return new Response(
       htmlPage("Não foi possível conectar", String(error.message || error), false),

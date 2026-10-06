@@ -3,38 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Serviço web para organizar e publicar conteúdo de vídeo em contas conectadas e autorizadas pelo próprio usuário." />
+  <meta name="description" content="Serviço web para conectar uma conta TikTok autorizada e publicar vídeos com confirmação explícita do usuário." />
   <title>Serviço de Publicação de Conteúdo</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="badge">Publicação autorizada de conteúdo</span>
-      <h1>Serviço de Publicação de Conteúdo</h1>
-      <p class="lead">Uma ferramenta web para usuários autorizados organizarem e publicarem seus próprios vídeos em contas conectadas, mantendo controle sobre permissões e conteúdo.</p>
+      <span class="badge">Integração oficial TikTok</span>
+      <h1>Publique conteúdo com autorização do usuário</h1>
+      <p class="lead">Conecte sua própria conta TikTok, revise o vídeo e as opções de privacidade e confirme a publicação pela integração oficial.</p>
+      <div class="cta-row">
+        <a class="button primary" href="https://curious-fairy-8784a5.netlify.app/tiktok/login">Conectar com TikTok</a>
+        <a class="button secondary" href="https://curious-fairy-8784a5.netlify.app/demo.html">Abrir painel de demonstração</a>
+      </div>
       <div class="cards">
-        <article><h2>Como funciona</h2><p>O usuário conecta uma conta compatível por autorização, seleciona ou prepara o conteúdo e solicita a publicação pela integração disponível.</p></article>
-        <article><h2>Controle do usuário</h2><p>O serviço atua somente com autorização do titular da conta. O usuário pode revogar permissões no provedor conectado a qualquer momento.</p></article>
-        <article><h2>Privacidade</h2><p>Dados e credenciais são tratados apenas na medida necessária para autenticação, publicação, segurança e suporte do serviço.</p></article>
+        <article><h2>1. Conecte</h2><p>O TikTok exibe a tela oficial de autorização e o usuário escolhe se deseja conceder as permissões solicitadas.</p></article>
+        <article><h2>2. Revise</h2><p>Antes de publicar, o usuário confere o vídeo, a legenda, a privacidade e confirma explicitamente a ação.</p></article>
+        <article><h2>3. Publique</h2><p>A solicitação é enviada pela Content Posting API e o status é acompanhado até a conclusão.</p></article>
       </div>
     </section>
 
     <section class="details">
       <h2>Fluxo de uso</h2>
       <ol>
-        <li>O usuário acessa o serviço e inicia a conexão da própria conta.</li>
-        <li>O provedor solicita autorização para os escopos necessários.</li>
-        <li>O usuário escolhe o conteúdo que deseja publicar.</li>
-        <li>O serviço envia a solicitação de publicação pela API autorizada.</li>
-        <li>O resultado da operação é apresentado ou registrado para acompanhamento.</li>
+        <li>O usuário inicia a conexão da própria conta TikTok.</li>
+        <li>O TikTok solicita autorização para as permissões necessárias.</li>
+        <li>O usuário escolhe o conteúdo e revisa as opções de publicação.</li>
+        <li>Uma confirmação explícita é exigida antes do envio.</li>
+        <li>O serviço envia a solicitação e mostra o status da publicação.</li>
       </ol>
     </section>
 
     <footer>
       <a href="terms.html">Termos de Serviço</a>
       <a href="privacy.html">Política de Privacidade</a>
-      <p>Última atualização: 5 de outubro de 2026.</p>
+      <p>Última atualização: 6 de outubro de 2026.</p>
     </footer>
   </main>
 </body>
