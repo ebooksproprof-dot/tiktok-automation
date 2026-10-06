@@ -10,7 +10,7 @@ export function env(name) {
 }
 
 export function tokenStore() {
-  return getStore({ name: "tiktok-auth", consistency: "strong" });
+  return getStore("tiktok-auth");
 }
 
 export function parseCookies(raw = "") {
