@@ -1,0 +1,81 @@
+name: Render casasemesforco TikToks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/render-casasemesforco.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Download licensed source clips
+        run: |
+          mkdir -p tmp public/rendered
+          curl -L --fail --retry 3 -o tmp/piso.mp4 "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/pia.mp4 "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/espelho.mp4 "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+
+      - name: Render piso video
+        run: |
+          ffmpeg -y -i tmp/piso.mp4 -filter_complex "
+            [0:v]split=2[bg][fg];
+            [bg]scale=1080:1920,boxblur=28:6,eq=brightness=-0.30[bg2];
+            [fg]scale=630:1120[fg2];
+            [bg2][fg2]overlay=225:560,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='PISO OPACO':fontcolor=white:fontsize=94:borderw=5:bordercolor=black@0.75:x=(w-text_w)/2:y=70,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='DEPOIS DA FAXINA?':fontcolor=white:fontsize=78:borderw=5:bordercolor=black@0.75:x=(w-text_w)/2:y=300,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='@casasemesforço':fontcolor=white:fontsize=45:borderw=4:bordercolor=black@0.75:x=(w-text_w)/2:y=1760
+          " -an -r 24 -c:v libx264 -preset medium -crf 20 -pix_fmt yuv420p -movflags +faststart public/rendered/01_piso_opaco.mp4
+
+      - name: Render pia video
+        run: |
+          ffmpeg -y -i tmp/pia.mp4 -filter_complex "
+            [0:v]split=2[bg][fg];
+            [bg]scale=1080:1920,boxblur=28:6,eq=brightness=-0.30[bg2];
+            [fg]scale=630:1120[fg2];
+            [bg2][fg2]overlay=225:530,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='A PIA CONTINUA':fontcolor=white:fontsize=82:borderw=5:bordercolor=black@0.75:x=(w-text_w)/2:y=120,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='COM CARA DE SUJA?':fontcolor=white:fontsize=76:borderw=5:bordercolor=black@0.75:x=(w-text_w)/2:y=320,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='@casasemesforço':fontcolor=white:fontsize=45:borderw=4:bordercolor=black@0.75:x=(w-text_w)/2:y=1780
+          " -an -r 24 -c:v libx264 -preset medium -crf 20 -pix_fmt yuv420p -movflags +faststart public/rendered/02_pia_limpa.mp4
+
+      - name: Render espelho video
+        run: |
+          ffmpeg -y -i tmp/espelho.mp4 -filter_complex "
+            [0:v]split=2[bg][fg];
+            [bg]scale=1080:1920,boxblur=28:6,eq=brightness=-0.30[bg2];
+            [fg]scale=620:1102[fg2];
+            [bg2][fg2]overlay=230:650,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='ESPELHO':fontcolor=white:fontsize=100:borderw=5:bordercolor=black@0.75:x=85:y=70,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='MANCHADO?':fontcolor=white:fontsize=88:borderw=5:bordercolor=black@0.75:x=85:y=250,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='FAZ NESSA ORDEM':fontcolor=white:fontsize=68:borderw=5:bordercolor=black@0.75:x=85:y=470,
+            drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='@casasemesforço':fontcolor=white:fontsize=45:borderw=4:bordercolor=black@0.75:x=(w-text_w)/2:y=1760
+          " -an -r 24 -c:v libx264 -preset medium -crf 20 -pix_fmt yuv420p -movflags +faststart public/rendered/03_espelho_limpo.mp4
+
+      - name: Verify outputs
+        run: |
+          ls -lh public/rendered
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 public/rendered/01_piso_opaco.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 public/rendered/02_pia_limpa.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 public/rendered/03_espelho_limpo.mp4
+
+      - name: Commit rendered MP4s
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rendered/*.mp4
+          git commit -m "Render casasemesforco TikTok videos" || exit 0
+          git push
