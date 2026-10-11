@@ -119,4 +119,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/rendered/premium/*.mp4
           git commit -m "Render premium CasaSemEsforco batch" || exit 0
+          git pull --rebase origin main
           git push
