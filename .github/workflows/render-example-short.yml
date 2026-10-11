@@ -1,0 +1,79 @@
+name: Render CasaSemEsforco Formula Example
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/render-example-short.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Download licensed vertical source
+        run: |
+          mkdir -p tmp public/rendered
+          curl -L --fail --retry 3 -o tmp/espelho.mp4 "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+
+      - name: Render retention-first example
+        run: |
+          FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          ffmpeg -y -i tmp/espelho.mp4 -filter_complex "
+          [0:v]trim=start=0:end=1.20,setpts=PTS-STARTPTS,scale=1080:1920[s0];
+          [0:v]trim=start=1.20:end=2.80,setpts=PTS-STARTPTS,scale=1200:2134,crop=1080:1920:60:107[s1];
+          [0:v]trim=start=2.80:end=4.60,setpts=PTS-STARTPTS,scale=1260:2240,crop=1080:1920:90:150[s2];
+          [0:v]trim=start=4.60:end=6.40,setpts=PTS-STARTPTS,scale=1160:2062,crop=1080:1920:25:90[s3];
+          [0:v]trim=start=6.40:end=8.20,setpts=PTS-STARTPTS,scale=1240:2204,crop=1080:1920:120:140[s4];
+          [0:v]trim=start=8.20:end=9.80,setpts=PTS-STARTPTS,scale=1080:1920[s5];
+          [s0][s1][s2][s3][s4][s5]concat=n=6:v=1:a=0,
+          eq=contrast=1.05:saturation=1.08,
+          drawbox=x=0:y=0:w=1080:h=132:color=black@0.28:t=fill,
+          drawbox=x=0:y=1580:w=1080:h=340:color=black@0.24:t=fill,
+          drawtext=fontfile=${FONT}:text='SEU ESPELHO':fontcolor=white:fontsize=92:borderw=6:bordercolor=black@0.70:x=(w-text_w)/2:y=175:enable='between(t,0,1.20)',
+          drawtext=fontfile=${FONT}:text='FICA MANCHADO?':fontcolor=yellow:fontsize=86:borderw=6:bordercolor=black@0.75:x=(w-text_w)/2:y=290:enable='between(t,0,1.20)',
+          drawtext=fontfile=${FONT}:text='O ERRO PODE SER':fontcolor=white:fontsize=66:borderw=5:bordercolor=black@0.72:x=(w-text_w)/2:y=190:enable='between(t,1.20,2.80)',
+          drawtext=fontfile=${FONT}:text='MOLHAR DEMAIS':fontcolor=yellow:fontsize=88:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=285:enable='between(t,1.20,2.80)',
+          drawtext=fontfile=${FONT}:text='1  PANO SECO':fontcolor=white:fontsize=82:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=210:enable='between(t,2.80,4.60)',
+          drawtext=fontfile=${FONT}:text='PRIMEIRO':fontcolor=yellow:fontsize=88:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=315:enable='between(t,2.80,4.60)',
+          drawtext=fontfile=${FONT}:text='2  POUCA':fontcolor=white:fontsize=84:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=220:enable='between(t,4.60,6.40)',
+          drawtext=fontfile=${FONT}:text='SOLUÇÃO':fontcolor=yellow:fontsize=96:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=325:enable='between(t,4.60,6.40)',
+          drawtext=fontfile=${FONT}:text='3  FINALIZA COM':fontcolor=white:fontsize=72:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=205:enable='between(t,6.40,8.20)',
+          drawtext=fontfile=${FONT}:text='UMA FACE SECA':fontcolor=yellow:fontsize=82:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=310:enable='between(t,6.40,8.20)',
+          drawtext=fontfile=${FONT}:text='SALVA PRA TESTAR':fontcolor=white:fontsize=78:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=240:enable='between(t,8.20,9.80)',
+          drawtext=fontfile=${FONT}:text='NA PRÓXIMA LIMPEZA':fontcolor=yellow:fontsize=66:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=340:enable='between(t,8.20,9.80)',
+          drawtext=fontfile=${FONT}:text='@casasemesforço':fontcolor=white:fontsize=42:borderw=4:bordercolor=black@0.70:x=70:y=1660,
+          drawbox=x=70:y=1740:w=760:h=8:color=white@0.55:t=fill
+          [v]
+          " -map "[v]" -an -r 30 -c:v libx264 -preset medium -crf 19 -pix_fmt yuv420p -movflags +faststart -t 9.8 public/rendered/example_formula_dicas_amigas.mp4
+
+      - name: Render proof frames
+        run: |
+          mkdir -p tmp/proof
+          ffmpeg -y -ss 0.30 -i public/rendered/example_formula_dicas_amigas.mp4 -frames:v 1 -q:v 2 tmp/proof/hook.jpg
+          ffmpeg -y -ss 5.10 -i public/rendered/example_formula_dicas_amigas.mp4 -frames:v 1 -q:v 2 tmp/proof/mid.jpg
+          ffmpeg -y -ss 9.10 -i public/rendered/example_formula_dicas_amigas.mp4 -frames:v 1 -q:v 2 tmp/proof/end.jpg
+          ffmpeg -y -i tmp/proof/hook.jpg -i tmp/proof/mid.jpg -i tmp/proof/end.jpg -filter_complex "[0:v]scale=360:640[a];[1:v]scale=360:640[b];[2:v]scale=360:640[c];[a][b][c]hstack=inputs=3" -frames:v 1 public/rendered/example_formula_contact.jpg
+
+      - name: Verify output
+        run: |
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt -of default=noprint_wrappers=1 public/rendered/example_formula_dicas_amigas.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 public/rendered/example_formula_dicas_amigas.mp4
+
+      - name: Commit example
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rendered/example_formula_dicas_amigas.mp4 public/rendered/example_formula_contact.jpg
+          git commit -m "Render short-form formula example" || exit 0
+          git push
