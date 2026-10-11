@@ -1,0 +1,122 @@
+name: Render CasaSemEsforco Premium Fast
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/render-premium-fast.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify ffmpeg and fonts
+        run: |
+          ffmpeg -version | head -1
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+
+      - name: Download licensed footage and voiceovers
+        run: |
+          mkdir -p tmp public/rendered/premium2
+          curl -L --fail --retry 3 -o tmp/piso.mp4 "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/pia.mp4 "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/espelho.mp4 "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/piso.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/9653fe34-9459-443c-98b0-e3c30a53ba4b/CasaSemEsforco___Piso_opaco.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOWUyOGJhMjM1ZDE4YWJkMCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTg4ODQxOX0.-k8pKj01DCeAHqG_nRdQL1zHX7HIZFYWlVwvr2DsDmY"
+          curl -L --fail --retry 3 -o tmp/pia.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/a6e1d990-29d9-4633-97f2-f3d2b61ecfd5/CasaSemEsforco___Pia_com_marcas.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYWI0ZmM0NzljNzNhMjhhMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTg4NTE3N30.oXvFJZQ-N7t-aixJVDLsaopnN3MsC26Vz2VUc8-uAbY"
+          curl -L --fail --retry 3 -o tmp/espelho.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/27f7a3a7-97ec-4bac-b56a-9683b7d2b7f6/CasaSemEsforco___Espelho_manchado.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYzA3YTNlZDM5YjUxMGRkYSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTg4NjU0N30.ZCfjPU_ZMNsHplj4ecnr8xDf6L1JGzwz2w4zA0mXEuk"
+
+      - name: Render premium floor video
+        run: |
+          FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          ffmpeg -y -stream_loop -1 -i tmp/piso.mp4 -i tmp/piso.mp3 -filter_complex "
+          [0:v]trim=0:3.1,setpts=PTS-STARTPTS,scale=1080:1920[v0];
+          [0:v]trim=3.1:6.2,setpts=PTS-STARTPTS,scale=1220:2169,crop=1080:1920:70:110[v1];
+          [0:v]trim=6.2:9.3,setpts=PTS-STARTPTS,scale=1160:2062,crop=1080:1920:40:70[v2];
+          [0:v]trim=9.3:12.4,setpts=PTS-STARTPTS,scale=1260:2240,crop=1080:1920:90:150[v3];
+          [0:v]trim=12.4:15.75,setpts=PTS-STARTPTS,scale=1080:1920[v4];
+          [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0,
+          eq=contrast=1.06:saturation=1.08,
+          drawbox=x=0:y=0:w=1080:h=125:color=black@0.28:t=fill,
+          drawbox=x=0:y=1560:w=1080:h=360:color=black@0.26:t=fill,
+          drawtext=fontfile=${FONT}:text='PISO OPACO':fontcolor=white:fontsize=96:borderw=6:bordercolor=black@0.75:x=(w-text_w)/2:y=185:enable='between(t,0,1.55)',
+          drawtext=fontfile=${FONT}:text='MESMO DEPOIS DA FAXINA?':fontcolor=yellow:fontsize=60:borderw=5:bordercolor=black@0.78:x=(w-text_w)/2:y=305:enable='between(t,0,1.55)',
+          drawtext=fontfile=${FONT}:text='PODE SER EXCESSO':fontcolor=white:fontsize=72:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=215:enable='between(t,1.55,5.0)',
+          drawtext=fontfile=${FONT}:text='DE PRODUTO':fontcolor=yellow:fontsize=92:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=315:enable='between(t,1.55,5.0)',
+          drawtext=fontfile=${FONT}:text='USE MENOS':fontcolor=yellow:fontsize=98:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=220:enable='between(t,5.0,8.0)',
+          drawtext=fontfile=${FONT}:text='PANO BEM TORCIDO':fontcolor=white:fontsize=68:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=335:enable='between(t,8.0,11.7)',
+          drawtext=fontfile=${FONT}:text='FINALIZA COM':fontcolor=white:fontsize=70:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=210:enable='between(t,11.7,14.15)',
+          drawtext=fontfile=${FONT}:text='UMA PARTE LIMPA':fontcolor=yellow:fontsize=82:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=315:enable='between(t,11.7,14.15)',
+          drawtext=fontfile=${FONT}:text='SALVA PRA TESTAR':fontcolor=white:fontsize=74:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=250:enable='between(t,14.15,15.75)',
+          drawtext=fontfile=${FONT}:text='@casasemesforço':fontcolor=white:fontsize=42:borderw=4:bordercolor=black@0.75:x=65:y=1660
+          [v]
+          " -map "[v]" -map 1:a -af "loudnorm=I=-16:TP=-1.5:LRA=11" -r 30 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 160k -pix_fmt yuv420p -movflags +faststart -shortest public/rendered/premium2/01_piso_opaco_premium.mp4
+
+      - name: Render premium sink video
+        run: |
+          FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          ffmpeg -y -stream_loop -1 -i tmp/pia.mp4 -i tmp/pia.mp3 -filter_complex "
+          [0:v]trim=0:2.7,setpts=PTS-STARTPTS,scale=1080:1920[v0];
+          [0:v]trim=2.7:5.4,setpts=PTS-STARTPTS,scale=1210:2151,crop=1080:1920:70:100[v1];
+          [0:v]trim=5.4:8.1,setpts=PTS-STARTPTS,scale=1150:2044,crop=1080:1920:35:55[v2];
+          [0:v]trim=8.1:10.8,setpts=PTS-STARTPTS,scale=1260:2240,crop=1080:1920:110:155[v3];
+          [0:v]trim=10.8:13.6,setpts=PTS-STARTPTS,scale=1080:1920[v4];
+          [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0,
+          eq=contrast=1.06:saturation=1.07,
+          drawbox=x=0:y=0:w=1080:h=125:color=black@0.28:t=fill,
+          drawbox=x=0:y=1560:w=1080:h=360:color=black@0.26:t=fill,
+          drawtext=fontfile=${FONT}:text='PIA LIMPA':fontcolor=white:fontsize=96:borderw=6:bordercolor=black@0.78:x=(w-text_w)/2:y=185:enable='between(t,0,1.45)',
+          drawtext=fontfile=${FONT}:text='MAS AINDA PARECE SUJA?':fontcolor=yellow:fontsize=60:borderw=5:bordercolor=black@0.80:x=(w-text_w)/2:y=305:enable='between(t,0,1.45)',
+          drawtext=fontfile=${FONT}:text='MARCAS DE PRODUTO':fontcolor=white:fontsize=70:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=215:enable='between(t,1.45,5.15)',
+          drawtext=fontfile=${FONT}:text='E ÁGUA':fontcolor=yellow:fontsize=94:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=315:enable='between(t,1.45,5.15)',
+          drawtext=fontfile=${FONT}:text='MENOS PRODUTO':fontcolor=yellow:fontsize=88:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=230:enable='between(t,5.15,7.75)',
+          drawtext=fontfile=${FONT}:text='ENXÁGUE BEM':fontcolor=white:fontsize=88:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=230:enable='between(t,7.75,10.15)',
+          drawtext=fontfile=${FONT}:text='FINALIZA SECO':fontcolor=yellow:fontsize=90:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=230:enable='between(t,10.15,12.15)',
+          drawtext=fontfile=${FONT}:text='O BRILHO VEM NO FINAL':fontcolor=white:fontsize=60:borderw=5:bordercolor=black@0.82:x=(w-text_w)/2:y=285:enable='between(t,12.15,13.6)',
+          drawtext=fontfile=${FONT}:text='@casasemesforço':fontcolor=white:fontsize=42:borderw=4:bordercolor=black@0.75:x=65:y=1660
+          [v]
+          " -map "[v]" -map 1:a -af "loudnorm=I=-16:TP=-1.5:LRA=11" -r 30 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 160k -pix_fmt yuv420p -movflags +faststart -shortest public/rendered/premium2/02_pia_limpa_premium.mp4
+
+      - name: Render premium mirror video
+        run: |
+          FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          ffmpeg -y -stream_loop -1 -i tmp/espelho.mp4 -i tmp/espelho.mp3 -filter_complex "
+          [0:v]trim=0:2.5,setpts=PTS-STARTPTS,scale=1080:1920[v0];
+          [0:v]trim=2.5:5.0,setpts=PTS-STARTPTS,scale=1210:2151,crop=1080:1920:60:95[v1];
+          [0:v]trim=5.0:7.5,setpts=PTS-STARTPTS,scale=1260:2240,crop=1080:1920:95:145[v2];
+          [0:v]trim=7.5:10.0,setpts=PTS-STARTPTS,scale=1160:2062,crop=1080:1920:35:70[v3];
+          [0:v]trim=10.0:12.55,setpts=PTS-STARTPTS,scale=1080:1920[v4];
+          [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0,
+          eq=contrast=1.06:saturation=1.08,
+          drawbox=x=0:y=0:w=1080:h=125:color=black@0.28:t=fill,
+          drawbox=x=0:y=1560:w=1080:h=360:color=black@0.26:t=fill,
+          drawtext=fontfile=${FONT}:text='ESPELHO MANCHADO':fontcolor=white:fontsize=82:borderw=6:bordercolor=black@0.80:x=(w-text_w)/2:y=195:enable='between(t,0,1.65)',
+          drawtext=fontfile=${FONT}:text='DEPOIS DE LIMPAR?':fontcolor=yellow:fontsize=66:borderw=5:bordercolor=black@0.80:x=(w-text_w)/2:y=305:enable='between(t,0,1.65)',
+          drawtext=fontfile=${FONT}:text='1  PANO SECO':fontcolor=white:fontsize=86:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=235:enable='between(t,1.65,5.0)',
+          drawtext=fontfile=${FONT}:text='2  POUCA SOLUÇÃO':fontcolor=yellow:fontsize=80:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=235:enable='between(t,5.0,8.45)',
+          drawtext=fontfile=${FONT}:text='3  FINALIZA SECO':fontcolor=white:fontsize=80:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=235:enable='between(t,8.45,11.0)',
+          drawtext=fontfile=${FONT}:text='SALVA O PASSO A PASSO':fontcolor=yellow:fontsize=66:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=275:enable='between(t,11.0,12.55)',
+          drawtext=fontfile=${FONT}:text='@casasemesforço':fontcolor=white:fontsize=42:borderw=4:bordercolor=black@0.75:x=65:y=1660
+          [v]
+          " -map "[v]" -map 1:a -af "loudnorm=I=-16:TP=-1.5:LRA=11" -r 30 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 160k -pix_fmt yuv420p -movflags +faststart -shortest public/rendered/premium2/03_espelho_premium.mp4
+
+      - name: Verify
+        run: |
+          for f in public/rendered/premium2/*.mp4; do
+            echo "--- $f"
+            ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt -of default=noprint_wrappers=1 "$f"
+            ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 "$f"
+          done
+
+      - name: Commit rendered videos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rendered/premium2/*.mp4
+          git commit -m "Render premium CasaSemEsforco batch fast" || exit 0
+          git push
