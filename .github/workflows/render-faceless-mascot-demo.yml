@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p tmp public/rendered/demo
           curl -L --fail --retry 3 -o tmp/mirror.mp4 "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4"
-          curl -L --fail --retry 3 -o tmp/voice.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/57ef2720-5cbe-43e6-a8d2-a28ba074112c/CasaSemEsforco_Mascote_Pia_Faceless.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMjYyZTNiNTBjNmMzN2I2YiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MjEwMzI0OH0.tTtSiEo1rutZUIqZWqueTrSIZKR54hXO9L8hb5qL5Io"
+          curl -L --fail --retry 3 -o tmp/voice.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/f41b68b6-220b-4fb8-8dc6-f219a5375456/CasaSemEsforco_Mascote_Pia_Faceless.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMjYyZTNiNTBjNmMzN2I2YiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MjEwMzI0OH0.tTtSiEo1rutZUIqZWqueTrSIZKR54hXO9L8hb5qL5Io"
 
       - name: Draw CasaSemEsforco mascot
         run: |
