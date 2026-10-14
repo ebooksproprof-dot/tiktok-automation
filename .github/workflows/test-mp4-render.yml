@@ -1,0 +1,26 @@
+name: Test MP4 cloud render
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test-mp4-render.yml'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check FFmpeg
+        run: ffmpeg -version | head -n 1
+      - name: Render vertical MP4 technical test
+        run: |
+          mkdir -p output
+          ffmpeg -hide_banner -loglevel error -f lavfi -i "color=c=0x142c30:s=540x960:r=25:d=5" -f lavfi -i "sine=frequency=440:sample_rate=44100:duration=5" -vf "drawtext=text='CasaSemEsforco - TESTE TECNICO':fontcolor=white:fontsize=25:x=(w-text_w)/2:y=(h-text_h)/2" -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest -movflags +faststart -y output/render-test.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 output/render-test.mp4
+      - name: Upload test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: casasemesforco-render-test
+          path: output/render-test.mp4
+          retention-days: 3
