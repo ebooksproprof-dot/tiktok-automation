@@ -18,13 +18,13 @@ jobs:
           command -v ffmpeg
           command -v ffprobe
           ffmpeg -version | head -n 1
-          ffmpeg -hide_banner -encoders | grep libx264
+          ffmpeg -hide_banner -encoders | grep -E 'libx264|mpeg4' || true
       - name: Render vertical MP4 technical test
         shell: bash
         run: |
           set -euxo pipefail
           mkdir -p output
-          ffmpeg -hide_banner -loglevel info -f lavfi -i "color=c=0x142c30:s=540x960:r=25:d=5" -f lavfi -i "sine=frequency=440:sample_rate=44100:duration=5" -vf "drawtext=text='CasaSemEsforco - TESTE TECNICO':fontcolor=white:fontsize=25:x=(w-text_w)/2:y=(h-text_h)/2" -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest -movflags +faststart -y output/render-test.mp4
+          ffmpeg -hide_banner -loglevel info -f lavfi -i "color=c=0x142c30:s=540x960:r=25:d=5" -f lavfi -i "sine=frequency=440:sample_rate=44100:duration=5" -vf "drawtext=text='CasaSemEsforco - TESTE TECNICO':fontcolor=white:fontsize=25:x=(w-text_w)/2:y=(h-text_h)/2" -c:v mpeg4 -q:v 5 -pix_fmt yuv420p -c:a aac -shortest -movflags +faststart -y output/render-test.mp4
           ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 output/render-test.mp4
           test -s output/render-test.mp4
       - name: Upload test artifact
