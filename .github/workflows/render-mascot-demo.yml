@@ -1,0 +1,118 @@
+name: Render Mascot TikTok Demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/render-mascot-demo.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core python3-pil
+
+      - name: Download footage and narration
+        run: |
+          mkdir -p tmp public/rendered/demo
+          curl -L --fail --retry 3 -o tmp/mirror.mp4 "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+          curl -L --fail --retry 3 -o tmp/voice.mp3 "https://dnznrvs05pmza.cloudfront.net/text_to_speech/57ef2720-5cbe-43e6-a8d2-a28ba074112c/CasaSemEsforco_Mascote_Espelho_Demo.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmVhOGI0NmJjMjVmZTUzMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MjA5Nzg5OX0.s5DO-JDEde69laUH7uXOh6JYeuYEe0POmy7TKYOa-k0"
+
+      - name: Draw CasaSemEsforco mascot
+        run: |
+          cat > tmp/mascot.py <<'PY'
+          from PIL import Image, ImageDraw
+
+          def make(path, mouth_open=False):
+              s=360
+              im=Image.new("RGBA",(s,s),(0,0,0,0))
+              d=ImageDraw.Draw(im)
+              # shadow
+              d.ellipse((72,292,300,340), fill=(0,0,0,45))
+              # body: rounded yellow sponge
+              d.rounded_rectangle((55,45,305,295), radius=54, fill=(255,218,77,255), outline=(255,255,255,235), width=7)
+              # sponge pores
+              for x,y,r in [(102,92,15),(250,104,11),(92,218,12),(267,232,14),(178,68,8),(202,252,9)]:
+                  d.ellipse((x-r,y-r,x+r,y+r), fill=(237,190,50,130))
+              # arms
+              d.line((58,170,20,205), fill=(255,218,77,255), width=22)
+              d.line((302,170,340,205), fill=(255,218,77,255), width=22)
+              # eyes
+              d.ellipse((105,115,150,165), fill=(255,255,255,255))
+              d.ellipse((210,115,255,165), fill=(255,255,255,255))
+              d.ellipse((122,133,140,153), fill=(45,45,50,255))
+              d.ellipse((227,133,245,153), fill=(45,45,50,255))
+              d.ellipse((128,137,134,143), fill=(255,255,255,255))
+              d.ellipse((233,137,239,143), fill=(255,255,255,255))
+              # cheeks
+              d.ellipse((82,175,117,197), fill=(255,131,151,125))
+              d.ellipse((243,175,278,197), fill=(255,131,151,125))
+              # mouth
+              if mouth_open:
+                  d.ellipse((137,178,223,252), fill=(65,40,45,255), outline=(255,255,255,170), width=4)
+                  d.arc((151,198,210,245), 10, 170, fill=(255,125,145,255), width=8)
+              else:
+                  d.arc((135,178,225,232), 10, 170, fill=(65,40,45,255), width=7)
+              # little sparkle
+              d.line((287,56,287,88), fill=(255,255,255,230), width=6)
+              d.line((271,72,303,72), fill=(255,255,255,230), width=6)
+              im.save(path)
+
+          make("tmp/mascot_closed.png", False)
+          make("tmp/mascot_open.png", True)
+          PY
+          python3 tmp/mascot.py
+
+      - name: Render vertical demo
+        run: |
+          FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          ffmpeg -y -stream_loop -1 -i tmp/mirror.mp4 -i tmp/voice.mp3 -loop 1 -i tmp/mascot_closed.png -loop 1 -i tmp/mascot_open.png -filter_complex "
+          [0:v]trim=0:2.4,setpts=PTS-STARTPTS,scale=1080:1920[v0];
+          [0:v]trim=2.4:4.8,setpts=PTS-STARTPTS,scale=1210:2151,crop=1080:1920:65:95[v1];
+          [0:v]trim=4.8:7.2,setpts=PTS-STARTPTS,scale=1260:2240,crop=1080:1920:90:145[v2];
+          [0:v]trim=7.2:9.6,setpts=PTS-STARTPTS,scale=1160:2062,crop=1080:1920:38:68[v3];
+          [0:v]trim=9.6:12.0,setpts=PTS-STARTPTS,scale=1080:1920[v4];
+          [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0,
+          eq=contrast=1.06:saturation=1.08,
+          drawbox=x=0:y=0:w=1080:h=140:color=black@0.24:t=fill,
+          drawbox=x=0:y=1540:w=1080:h=380:color=black@0.20:t=fill,
+          drawtext=fontfile=${FONT}:text='ESPELHO':fontcolor=white:fontsize=102:borderw=6:bordercolor=black@0.72:x=(w-text_w)/2:y=180:enable='between(t,0,1.6)',
+          drawtext=fontfile=${FONT}:text='MANCHADO?':fontcolor=yellow:fontsize=100:borderw=6:bordercolor=black@0.72:x=(w-text_w)/2:y=300:enable='between(t,0,1.6)',
+          drawtext=fontfile=${FONT}:text='1  PANO SECO':fontcolor=white:fontsize=86:borderw=5:bordercolor=black@0.75:x=(w-text_w)/2:y=225:enable='between(t,2.0,4.3)',
+          drawtext=fontfile=${FONT}:text='2  POUCA SOLUÇÃO':fontcolor=yellow:fontsize=78:borderw=5:bordercolor=black@0.78:x=(w-text_w)/2:y=225:enable='between(t,4.3,6.8)',
+          drawtext=fontfile=${FONT}:text='3  FINALIZA SECO':fontcolor=white:fontsize=76:borderw=5:bordercolor=black@0.78:x=(w-text_w)/2:y=225:enable='between(t,6.8,9.3)',
+          drawtext=fontfile=${FONT}:text='OLHA O ACABAMENTO':fontcolor=yellow:fontsize=66:borderw=5:bordercolor=black@0.80:x=(w-text_w)/2:y=270:enable='between(t,9.3,10.2)',
+          drawtext=fontfile=${FONT}:text='SALVA PRA TESTAR':fontcolor=white:fontsize=76:borderw=6:bordercolor=black@0.82:x=(w-text_w)/2:y=250:enable='between(t,10.2,12.0)',
+          drawtext=fontfile=${FONT}:text='@casasemesforço':fontcolor=white:fontsize=40:borderw=3:bordercolor=black@0.70:x=62:y=1662
+          [base];
+          [2:v]scale=310:310[mc];
+          [3:v]scale=310:310[mo];
+          [base][mc]overlay=x=55:y='1190+10*sin(8*t)':enable='(between(t,0,2.15)+between(t,9.65,12))*lt(mod(t,0.44),0.22)'[o1];
+          [o1][mo]overlay=x=55:y='1190+10*sin(8*t)':enable='(between(t,0,2.15)+between(t,9.65,12))*gte(mod(t,0.44),0.22)'[v]
+          " -map "[v]" -map 1:a -af "loudnorm=I=-16:TP=-1.5:LRA=11" -r 30 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 160k -pix_fmt yuv420p -movflags +faststart -shortest public/rendered/demo/casasemesforco_mascote_espelho_demo.mp4
+
+      - name: Create contact sheet
+        run: |
+          ffmpeg -y -i public/rendered/demo/casasemesforco_mascote_espelho_demo.mp4 -vf "fps=1/3,scale=270:480,tile=4x1" -frames:v 1 public/rendered/demo/casasemesforco_mascote_espelho_contact.jpg
+
+      - name: Verify
+        run: |
+          ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 public/rendered/demo/casasemesforco_mascote_espelho_demo.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,pix_fmt -of default=noprint_wrappers=1 public/rendered/demo/casasemesforco_mascote_espelho_demo.mp4
+
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rendered/demo
+          git commit -m "Render CasaSemEsforco mascot demo" || exit 0
+          git pull --rebase origin main
+          git push
