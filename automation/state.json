@@ -11,13 +11,21 @@
     },
     "casasem-2026-10-15-2": {
       "provider": "metricool",
-      "status": "SUBMISSION_UNKNOWN",
+      "status": "METRICOOL_SCHEDULED",
       "sha256": "cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f",
       "video_url": "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/1ff2e01/public/rendered/daily/casasem-2026-10-15-2-v2.mp4",
-      "scheduled_at": "2026-10-15T21:52:49.539Z",
+      "scheduled_at": {
+        "dateTime": "2026-10-15T18:52:00",
+        "timezone": "America/Sao_Paulo"
+      },
       "publicly_verified": false,
       "editorial_review": "Reviewed frames, script, source licenses and automated audio/format validation; approved for the authorized single Metricool test.",
-      "recovery": "Reconcile with Metricool before retrying. This test does not prove autonomous GitHub publishing."
+      "recovery": "Reconcile with Metricool before retrying. This test does not prove autonomous GitHub publishing.",
+      "metricool_post_id": 397237451,
+      "metricool_uuid": "1522154177497940541",
+      "auto_publish": true,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=1522154177497940541",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-2143804197051249464.mp4"
     }
   }
 }
