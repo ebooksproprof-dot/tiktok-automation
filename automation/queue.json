@@ -11,6 +11,30 @@
       "disable_stitch": true,
       "approved": true,
       "consented_at": "2026-10-06T01:40:00Z"
+    },
+    {
+      "id": "casasem-2026-10-15-1",
+      "video_url": "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/main/public/rendered/daily/casasem-2026-10-15-1.mp4",
+      "title": "A etapa de secagem pode ajudar a reduzir marcas. #CasaSemEsforco #DicasDeLimpeza",
+      "scheduled_at": "2026-10-15T13:00:00Z",
+      "privacy_level": "PUBLIC_TO_EVERYONE",
+      "disable_duet": false,
+      "disable_comment": false,
+      "disable_stitch": false,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-15-2",
+      "video_url": "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/main/public/rendered/daily/casasem-2026-10-15-2.mp4",
+      "title": "Espelho manchado? Use pouca solucao e finalize seco. #CasaSemEsforco #DicasDeLimpeza",
+      "scheduled_at": "2026-10-15T21:00:00Z",
+      "privacy_level": "PUBLIC_TO_EVERYONE",
+      "disable_duet": false,
+      "disable_comment": false,
+      "disable_stitch": false,
+      "approved": false,
+      "consented_at": null
     }
   ]
 }
