@@ -1,6 +1,11 @@
 name: CasaSemEsforco Daily Video Creation
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "automation/render_daily.py"
+      - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
   schedule:
     - cron: "30 11 * * *"
