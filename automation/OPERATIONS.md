@@ -60,3 +60,9 @@ A tarefa ChatGPT existente CasaSemEsforço Diário deve ser usada para monitoram
 - Teste único autorizado pelo usuário foi submetido pelo conector Metricool, não pelo GitHub. Post 397237451 / uuid 1522154177497940541, autoPublish=true, conta @.casasemesforo, horário aceito 15/10/2026 18:52 America/Sao_Paulo. A criação do agendamento foi confirmada por leitura posterior. Consultar state.json para confirmação pública atual; PENDING não significa publicado.
 - O parâmetro mediaFiles do conector trata caminhos locais, não URLs. A tentativa inicial com URL foi rejeitada antes da criação. Confirmou-se fila vazia e foi feita uma única criação com a URL no campo media de info. Não repetir criação após resposta incerta.
 - Não houve contratação, upgrade ou compra de créditos. Não se comprovou capacidade gratuita permanente de 60–62 posts/mês. Consulta do plano no painel parou na tela de login; não foram coletadas credenciais.
+
+### Resultado final do teste de publicação
+
+Metricool retornou PUBLISHED para o post 397237451, com autoPublish=true, TikTok video ID 7697016021223230726 e URL https://www.tiktok.com/@.casasemesforo/video/7697016021223230726. Estado e fila reconciliados. A consulta web direta do TikTok não abriu neste ambiente; a confirmação foi obtida do status do provedor TikTok no Metricool. Não atribuir ao teste prova de agendamento autônomo pelo GitHub, pois o agendamento foi feito pelo conector desta sessão.
+
+Conclusão: AUTOMAÇÃO PARCIAL. A criação em nuvem e uma publicação real foram comprovadas. A recorrência completa de dois posts/dia, a capacidade gratuita mensal e renovação editorial permanente continuam sem comprovação. Não foi contratado nenhum serviço pago.
