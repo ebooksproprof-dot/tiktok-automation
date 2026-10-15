@@ -1,0 +1,18 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "8cddc7de18138e554ff99e508be89c994db482b156112c36bfecc5c2b5cc385e",
+  "duration": 16.8,
+  "size": 4895007,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -16.6,
+  "concept": "panos-por-area",
+  "source_urls": [
+    "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
+    "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4"
+  ],
+  "source_license": "https://www.pexels.com/license/",
+  "voice": "pt_BR-faber-medium",
+  "render_version": 2
+}
