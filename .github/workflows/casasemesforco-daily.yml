@@ -1,0 +1,39 @@
+name: CasaSemEsforco Daily Video Creation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 11 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: casasemesforco-daily-render
+  cancel-in-progress: false
+
+jobs:
+  create-videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tools
+        run: |
+          ffmpeg -version | head -1
+          ffprobe -version | head -1
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+      - name: Render two new MP4 and prepare unapproved queue
+        run: python3 automation/render_daily.py
+      - name: Commit videos and queue only after render validation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rendered/daily/*.mp4 automation/queue.json
+          if git diff --cached --quiet; then
+            echo "No new videos"
+            exit 0
+          fi
+          git commit -m "Generate daily CasaSemEsforco MP4 and pending review queue"
+          git pull --rebase origin main
+          git push origin HEAD:main
