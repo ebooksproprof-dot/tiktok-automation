@@ -50,3 +50,13 @@ Agendamentos GitHub podem atrasar. Repositórios públicos sem atividade por 60 
 Cobrem identidade, consentimento, duração permitida, origem URL, separação técnico/editorial, teste privado versus post público, reenvio incerto e falha de persistência.
 
 A tarefa ChatGPT existente CasaSemEsforço Diário deve ser usada para monitoramento/revisão e não como uma segunda fonte independente de geração/publicação. Não criar outra automação.
+
+## Evidências executadas nesta sessão
+
+- Alterações-base: commit 4dd8be44757ff67a318df206ee89c5c8b2dade43; revisão visual 46cd4a985bb18f98c4d9428528282d277eb52aef. Filas/workflows verificam o estado atual de main após adquirir a concorrência.
+- Dois renders completos na nuvem: run 38812556550; dez testes passaram. Arquivos finais: casasem-2026-10-15-1-v2.mp4 (17,3s; 4.955.574 bytes) e casasem-2026-10-15-2-v2.mp4 (18,2s; 5.366.677 bytes). Ambos 1080x1920, H.264/AAC, áudio médio -16,4/-16,5 dB.
+- Download HTTPS dos dois arquivos respondeu 200. SHA-256: 3457d840c9528b884fe72acde40958a6453e298dfca5793577d4090f59144054 e cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f.
+- Diagnóstico real do runner: run 38812708271 retornou saída 2 e PUBLIC_VERIFIED_TOTAL=0, BLOCKED=2. Comportamento esperado para fila sem os controles oficiais exigidos.
+- Teste único autorizado pelo usuário foi submetido pelo conector Metricool, não pelo GitHub. Post 397237451 / uuid 1522154177497940541, autoPublish=true, conta @.casasemesforo, horário aceito 15/10/2026 18:52 America/Sao_Paulo. A criação do agendamento foi confirmada por leitura posterior. Consultar state.json para confirmação pública atual; PENDING não significa publicado.
+- O parâmetro mediaFiles do conector trata caminhos locais, não URLs. A tentativa inicial com URL foi rejeitada antes da criação. Confirmou-se fila vazia e foi feita uma única criação com a URL no campo media de info. Não repetir criação após resposta incerta.
+- Não houve contratação, upgrade ou compra de créditos. Não se comprovou capacidade gratuita permanente de 60–62 posts/mês. Consulta do plano no painel parou na tela de login; não foram coletadas credenciais.
