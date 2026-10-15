@@ -1,6 +1,11 @@
 name: TikTok Online Runner
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "automation/tiktok_runner.py"
+      - ".github/workflows/tiktok-online-runner.yml"
   workflow_dispatch:
   schedule:
     - cron: "7,37 13-23 * * *" # BRT 10:07–20:37; scheduling can be delayed by GitHub
