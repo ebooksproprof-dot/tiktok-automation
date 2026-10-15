@@ -17,6 +17,7 @@ OUT = ROOT / 'public/rendered/daily'
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
+COMPOSITION_REVISION = 3
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
 MAX_MEDIA_BYTES = 200_000_000
@@ -27,7 +28,7 @@ SOURCE = {
 }
 # Finite catalog, deliberately no random recycling. Stock scenes are illustrative.
 IDEAS = [
- ('panos-por-area', ['pia','piso'], ['Um pano para tudo?', 'Separe os panos por área.', 'Cozinha de um lado.', 'Banheiro do outro.', 'Assim, você evita levar', 'sujeira de um lugar', 'para outro. Depois do uso,', 'lave e deixe secar.', 'Use cores diferentes.', 'Fica fácil de identificar.', 'Salve para lembrar.']),
+ ('panos-por-area', ['pia','piso'], ['Um pano para tudo?', 'Separe os panos por área.', 'Banheiro de um lado.', 'Outros ambientes do outro.', 'Assim, você evita levar', 'sujeira de um lugar', 'para outro. Depois do uso,', 'lave e deixe secar.', 'Use cores diferentes.', 'Fica fácil de identificar.', 'Salve para lembrar.']),
  ('ordem-da-faxina', ['espelho','pia','piso'], ['Limpou o chão primeiro?', 'Experimente mudar a ordem.', 'Comece pelas partes altas.', 'Depois, limpe as bancadas.', 'Deixe o piso por último.', 'Assim, a sujeira que cai', 'não estraga o trabalho', 'que você já terminou.', 'Siga de cima para baixo.', 'E termine uma área por vez.', 'Salve esta sequência.']),
  ('pano-lado-limpo', ['pia','espelho'], ['Seu pano já está sujo?', 'Não espalhe a sujeira.', 'Dobre para usar', 'uma parte limpa.', 'Troque o lado conforme limpa.', 'Quando todos estiverem sujos,', 'pegue outro pano limpo.', 'É um cuidado simples.', 'Na próxima superfície,', 'comece com o pano limpo.', 'Salve para a faxina.']),
  ('rotulo-primeiro', ['pia','piso'], ['Mais produto não é melhor.', 'Antes de limpar,', 'confira o rótulo.', 'Respeite a diluição indicada.', 'E confirme se o produto', 'serve para aquela superfície.', 'Cada acabamento pede cuidado.', 'Evite improvisar misturas.', 'Na dúvida, consulte', 'a orientação do fabricante.', 'Salve este lembrete.']),
@@ -109,17 +110,22 @@ def render(idea, voice, post_id):
     folder.mkdir(exist_ok=True)
     duration, timings = narration(voice, lines, folder)
     clips = [get_clip(k) for k in keys]
-    segments, remaining, i = [], duration, 0
-    while remaining > .01:
-        length = min(2.8, remaining)
-        source = clips[i % len(clips)]
+    segments = []
+    # Each shot follows the spoken instruction. Never show the floor as a high surface.
+    shot_keys = {
+        'panos-por-area': ['pia','pia','pia','piso','pia','piso','pia','pia','pia','pia','pia'],
+        'ordem-da-faxina': ['piso','espelho','espelho','pia','piso','espelho','pia','piso','espelho','piso','piso'],
+    }.get(concept)
+    for i,(start,end,line) in enumerate(timings):
+        length = (timings[i+1][0] if i+1 < len(timings) else duration) - start
+        source = get_clip(shot_keys[i]) if shot_keys else clips[min(i * len(clips) // len(timings), len(clips)-1)]
         segment = folder/f'shot-{i}.mp4'
         # Moving footage only; no still zoom, no fabricated before/after.
         run(['ffmpeg','-v','error','-y','-stream_loop','-1','-ss',str((i//len(clips))*2),
              '-i',str(source),'-t',str(length),'-an','-vf',
              'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30',
              '-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',str(segment)])
-        segments.append(segment); remaining -= length; i += 1
+        segments.append(segment)
     (folder/'concat.txt').write_text(''.join(f"file '{p.name}'\n" for p in segments))
     filters = []
     font = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -135,7 +141,7 @@ def render(idea, voice, post_id):
          '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
     quality=validate(output)
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
-                   source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION)
+                   source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     atomic_json(output.with_suffix('.json'),quality)
     return output,quality
 
@@ -151,11 +157,15 @@ def main():
     for slot,hour in enumerate([10,18],1):
         post_id=f'casasem-{today}-{slot}'
         old=next((p for p in queue['posts'] if p['id']==post_id),None)
-        if post_id in state.get('posts',{}) or (old and (old.get('approved') or old.get('render_version')==VERSION)):
+        if post_id in state.get('posts',{}) or (old and (old.get('approved') or old.get('composition_revision')==COMPOSITION_REVISION)):
             continue
         media_total=sum(p.stat().st_size for p in (ROOT/'public/rendered').rglob('*.mp4'))
         if media_total+20_000_000>MAX_MEDIA_BYTES:
             raise RuntimeError('STORAGE_BUDGET: stop before adding media beyond 200 MB; no paid storage')
+        if old and old.get('concept'):
+            repair = next((idea for idea in IDEAS if idea[0] == old['concept']), None)
+            if repair and repair not in available:
+                available.insert(0, repair)
         if not available:
             raise RuntimeError('CATALOG_EXHAUSTED: reviewed original scripts needed; refusing repeated videos')
         voice=voice or load_voice()
@@ -173,7 +183,7 @@ def main():
         entry=dict(id=post_id,video_url=f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}',
                    title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
                    scheduled_at=scheduled.astimezone(dt.timezone.utc).isoformat(),
-                   approved=False,consented_at=None,quality=quality,concept=idea[0],render_version=VERSION,
+                   approved=False,consented_at=None,quality=quality,concept=idea[0],render_version=VERSION,composition_revision=COMPOSITION_REVISION,
                    publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE')
         if old: queue['posts'][queue['posts'].index(old)]=entry
         else: queue['posts'].append(entry)
