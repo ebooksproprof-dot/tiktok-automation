@@ -52,7 +52,7 @@
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f",
         "duration": 18.2,
         "size": 5366677,
@@ -73,7 +73,11 @@
       "concept": "ordem-da-faxina",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
+      "publishing_status": "PUBLISHED_VIA_METRICOOL_TEST",
+      "public_url": "https://www.tiktok.com/@.casasemesforo/video/7697016021223230726",
+      "publication_provider": "metricool",
+      "metricool_post_id": 397237451,
+      "direct_post_consent_note": "approved/consented_at refer to the separate own-app Direct Post route and were not fabricated for this Metricool test."
     }
   ]
 }
