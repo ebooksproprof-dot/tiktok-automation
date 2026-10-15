@@ -1,98 +1,186 @@
 #!/usr/bin/env python3
-"""Create two new CasaSemEsforço shorts in GitHub Actions; no fake posting consent."""
+"""Render a bounded, non-repeating editorial catalog. Never fabricate publishing consent."""
 import datetime as dt
+import hashlib
 import json
 import os
 import pathlib
-import random
 import subprocess
+import time
 import urllib.request
+import wave
+from zoneinfo import ZoneInfo
+from media_quality import validate
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = ROOT / "public" / "rendered" / "daily"
-QUEUE = ROOT / "automation" / "queue.json"
-ASSETS = ROOT / "tmp" / "daily"
-ASSETS.mkdir(parents=True, exist_ok=True)
-OUT.mkdir(parents=True, exist_ok=True)
-
+OUT = ROOT / 'public/rendered/daily'
+QUEUE = ROOT / 'automation/queue.json'
+ASSETS = ROOT / 'tmp/daily'
+VERSION = 2
+VOICE = 'pt_BR-faber-medium'
+VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
+MAX_MEDIA_BYTES = 200_000_000
 SOURCE = {
-  "piso": "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4",
-  "pia": "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
-  "espelho": "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4",
+ 'piso': 'https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4',
+ 'pia': 'https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4',
+ 'espelho': 'https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4',
 }
+# Finite catalog, deliberately no random recycling. Stock scenes are illustrative.
 IDEAS = [
- ("piso", "PISO SEM BRILHO?", "MENOS PRODUTO", "PANO BEM TORCIDO", "SALVE A DICA", "Piso opaco? Teste menos produto e um pano bem torcido."),
- ("pia", "PIA COM MARCAS?", "ENXAGUE BEM", "FINALIZE SECO", "SIGA PARA MAIS", "Pia com marcas? Enxague bem e finalize com pano seco."),
- ("espelho", "ESPELHO MANCHADO?", "POUCA SOLUCAO", "PANO SECO", "SALVE ESTA DICA", "Espelho manchado? Use pouca solucao e finalize seco."),
- ("piso", "ERRO NA FAXINA", "EXCESSO DE SABAO", "ENXAGUE O PISO", "SIGA PARA MAIS", "Excesso de produto pode deixar residuos no piso."),
- ("pia", "BRILHO NA PIA", "RETIRE RESIDUOS", "SEQUE COM PANO", "SALVE PARA TESTAR", "A etapa de secagem pode ajudar a reduzir marcas."),
- ("espelho", "VIDRO COM MARCAS?", "USE POUCO", "SEQUE AO FINAL", "SALVE ESTE PASSO", "Use produtos apropriados e evite excesso no vidro."),
+ ('panos-por-area', ['pia','piso'], ['Um pano para tudo?', 'Separe os panos por área.', 'Cozinha de um lado.', 'Banheiro do outro.', 'Assim, você evita levar', 'sujeira de um lugar', 'para outro. Depois do uso,', 'lave e deixe secar.', 'Use cores diferentes.', 'Fica fácil de identificar.', 'Salve para lembrar.']),
+ ('ordem-da-faxina', ['espelho','pia','piso'], ['Limpou o chão primeiro?', 'Experimente mudar a ordem.', 'Comece pelas partes altas.', 'Depois, limpe as bancadas.', 'Deixe o piso por último.', 'Assim, a sujeira que cai', 'não estraga o trabalho', 'que você já terminou.', 'Siga de cima para baixo.', 'E termine uma área por vez.', 'Salve esta sequência.']),
+ ('pano-lado-limpo', ['pia','espelho'], ['Seu pano já está sujo?', 'Não espalhe a sujeira.', 'Dobre para usar', 'uma parte limpa.', 'Troque o lado conforme limpa.', 'Quando todos estiverem sujos,', 'pegue outro pano limpo.', 'É um cuidado simples.', 'Na próxima superfície,', 'comece com o pano limpo.', 'Salve para a faxina.']),
+ ('rotulo-primeiro', ['pia','piso'], ['Mais produto não é melhor.', 'Antes de limpar,', 'confira o rótulo.', 'Respeite a diluição indicada.', 'E confirme se o produto', 'serve para aquela superfície.', 'Cada acabamento pede cuidado.', 'Evite improvisar misturas.', 'Na dúvida, consulte', 'a orientação do fabricante.', 'Salve este lembrete.']),
+ ('sem-misturas', ['pia','espelho'], ['Misturar não limpa melhor.', 'Use cada produto', 'conforme o rótulo.', 'Não improvise misturas', 'com produtos de limpeza.', 'Mantenha a área ventilada.', 'Guarde na embalagem original,', 'longe de crianças e animais.', 'Nunca use garrafas de bebida', 'para guardar esses produtos.', 'Compartilhe este cuidado.']),
+ ('planejar-por-area', ['pia','piso'], ['Faxina sem saber por onde?', 'Escolha uma área pequena.', 'Separe o que vai usar.', 'Retire os objetos soltos.', 'Limpe uma superfície', 'antes de passar à próxima.', 'No final, guarde os materiais.', 'Uma tarefa de cada vez.', 'Não precisa começar', 'pela casa inteira de uma vez.', 'Salve para organizar.']),
 ]
-def run(args):
-    subprocess.run(args, check=True)
+
+
+def run(args, **kwargs):
+    return subprocess.run(args, check=True, timeout=240, **kwargs)
+
+
+def atomic_json(path, data):
+    temp = path.with_suffix('.tmp')
+    temp.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf8')
+    temp.replace(path)
+
+
 def get_clip(key):
-    target = ASSETS / (key + ".mp4")
+    target = ASSETS / (key+'.mp4')
     if target.exists() and target.stat().st_size > 100000:
         return target
-    req = urllib.request.Request(SOURCE[key], headers={"User-Agent":"Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=120) as r, target.open("wb") as f:
-        while True:
-            chunk = r.read(1024 * 1024)
-            if not chunk: break
-            f.write(chunk)
-    return target
+    for attempt in range(3):
+        temp = target.with_suffix('.part')
+        try:
+            req = urllib.request.Request(SOURCE[key], headers={'User-Agent': 'CasaSemEsforco/2.0'})
+            with urllib.request.urlopen(req, timeout=45) as response, temp.open('wb') as out:
+                total = 0
+                while chunk := response.read(1024*1024):
+                    total += len(chunk)
+                    if total > 250_000_000:
+                        raise ValueError('Source exceeds download budget')
+                    out.write(chunk)
+            run(['ffprobe','-v','error',str(temp)], capture_output=True)
+            temp.replace(target)
+            return target
+        except Exception:
+            temp.unlink(missing_ok=True)
+            if attempt == 2:
+                raise RuntimeError('Licensed footage download failed: '+key) from None
+            time.sleep(2**attempt)
 
-def escape(s):
-    return s.replace("\\", "\\\\").replace(":", r"\:").replace("'", r"\'").replace(",", r"\,").replace("%", r"\%")
+
+def load_voice():
+    from piper import PiperVoice
+    model = ASSETS / (VOICE+'.onnx')
+    if not model.exists():
+        run(['python3','-m','piper.download_voices','--data-dir',str(ASSETS),VOICE])
+    if hashlib.sha256(model.read_bytes()).hexdigest() != VOICE_SHA:
+        raise ValueError('Voice model checksum mismatch')
+    return PiperVoice.load(str(model))
+
+
+def narration(voice, lines, folder):
+    from piper import SynthesisConfig
+    parts, timings, position = [], [], 0.0
+    for i, line in enumerate(lines):
+        path = folder / f'line-{i}.wav'
+        with wave.open(str(path),'wb') as out:
+            voice.synthesize_wav(line, out, syn_config=SynthesisConfig(length_scale=1.2))
+        with wave.open(str(path),'rb') as inp:
+            rate = inp.getframerate()
+            pcm = inp.readframes(inp.getnframes())
+            duration = inp.getnframes()/rate
+        timings.append((position,position+duration,line))
+        parts.append(pcm + bytes(int(rate*.08)*2))
+        position += duration + .08
+    if not 15 <= position <= 27.7:
+        raise ValueError(f'Narration length out of range: {position:.2f}')
+    with wave.open(str(folder/'voice.wav'),'wb') as out:
+        out.setnchannels(1); out.setsampwidth(2); out.setframerate(rate)
+        out.writeframes(b''.join(parts))
+    return position, timings
+
+
+def render(idea, voice, post_id):
+    concept, keys, lines = idea
+    folder = ASSETS / post_id
+    folder.mkdir(exist_ok=True)
+    duration, timings = narration(voice, lines, folder)
+    clips = [get_clip(k) for k in keys]
+    segments, remaining, i = [], duration, 0
+    while remaining > .01:
+        length = min(2.8, remaining)
+        source = clips[i % len(clips)]
+        segment = folder/f'shot-{i}.mp4'
+        # Moving footage only; no still zoom, no fabricated before/after.
+        run(['ffmpeg','-v','error','-y','-stream_loop','-1','-ss',str((i//len(clips))*2),
+             '-i',str(source),'-t',str(length),'-an','-vf',
+             'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30',
+             '-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',str(segment)])
+        segments.append(segment); remaining -= length; i += 1
+    (folder/'concat.txt').write_text(''.join(f"file '{p.name}'\n" for p in segments))
+    filters = []
+    font = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    for i,(start,end,line) in enumerate(timings):
+        txt = folder/f'caption-{i}.txt'; txt.write_text(line, encoding='utf8')
+        filters.append(f"drawtext=fontfile={font}:textfile={txt}:fontsize=58:fontcolor=white:box=1:boxcolor=black@0.70:boxborderw=18:x=(w-text_w)/2:y=1320:enable='between(t,{start:.3f},{end:.3f})'")
+    label=folder/'label.txt';label.write_text('CENAS ILUSTRATIVAS',encoding='utf8')
+    filters.append(f'drawtext=fontfile={font}:textfile={label}:fontsize=24:fontcolor=white:borderw=2:x=70:y=200')
+    output = OUT / (post_id+'-v2.mp4')
+    run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(folder/'concat.txt'),
+         '-i',str(folder/'voice.wav'),'-vf',','.join(filters),'-af','loudnorm=I=-16:TP=-1.5:LRA=11',
+         '-t',str(duration),'-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',
+         '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
+    quality=validate(output)
+    quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
+                   source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION)
+    atomic_json(output.with_suffix('.json'),quality)
+    return output,quality
+
 
 def main():
-    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=-3))).date()
-    seed = (today - dt.date(2026, 10, 15)).days
-    rng = random.Random(seed)
-    candidates = list(range(len(IDEAS)))
-    rng.shuffle(candidates)
-    selected = candidates[:2]
-    queue = json.loads(QUEUE.read_text(encoding="utf8"))
-    existing = {p["id"] for p in queue["posts"]}
-    rendered = []
-    font = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-    for slot, idx in enumerate(selected):
-        key, hook, step1, step2, cta, title = IDEAS[idx]
-        post_id = f"casasem-{today.isoformat()}-{slot + 1}"
-        if post_id in existing:
-            print(f"Already queued: {post_id}")
+    ASSETS.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
+    today=dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
+    queue=json.loads(QUEUE.read_text(encoding='utf8'))
+    state=json.loads((ROOT/'automation/state.json').read_text(encoding='utf8'))
+    used={p.get('concept') for p in queue['posts']}
+    available=[idea for idea in IDEAS if idea[0] not in used]
+    count=0; voice=None
+    for slot,hour in enumerate([10,18],1):
+        post_id=f'casasem-{today}-{slot}'
+        old=next((p for p in queue['posts'] if p['id']==post_id),None)
+        if post_id in state.get('posts',{}) or (old and (old.get('approved') or old.get('render_version')==VERSION)):
             continue
-        source = get_clip(key)
-        output = OUT / (post_id + ".mp4")
-        # Cinematic vertical cut from real footage, not static slides.
-        filters = ["scale=720:1280:force_original_aspect_ratio=increase",
-                   "crop=720:1280", "fps=24", "eq=contrast=1.06:saturation=1.08"]
-        for t, text, size in [(0,hook,52),(4.5,step1,52),(10,step2,52),(15.5,cta,48)]:
-            end = min(t + 4.0, 19)
-            filters.append(f"drawtext=fontfile={font}:text='{escape(text)}':fontsize={size}:fontcolor=white:borderw=5:bordercolor=black@0.85:x=(w-text_w)/2:y=210:enable='between(t,{t},{end})'")
-        filters.append(f"drawtext=fontfile={font}:text='CASA SEM ESFORCO':fontsize=28:fontcolor=white:borderw=3:bordercolor=black:x=(w-text_w)/2:y=1120")
-        run(["ffmpeg","-y","-stream_loop","-1","-i",str(source),"-f","lavfi","-i","anullsrc=channel_layout=stereo:sample_rate=44100",
-             "-t","20","-vf",",".join(filters),"-c:v","libx264","-preset","veryfast","-crf","24","-pix_fmt","yuv420p",
-             "-r","24","-c:a","aac","-b:a","64k","-shortest","-movflags","+faststart",str(output)])
-        probe = subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration,size",
-                                          "-of","json",str(output)],text=True)
-        meta = json.loads(probe)["format"]
-        if float(meta["duration"]) < 18 or int(meta["size"]) < 100000:
-            raise RuntimeError(f"Failed render validation {output}: {meta}")
-        # No fabrication of TikTok user approval or post-specific consent.
-        hour = 10 if slot == 0 else 18
-        scheduled = dt.datetime.combine(today, dt.time(hour), dt.timezone(dt.timedelta(hours=-3))).astimezone(dt.timezone.utc)
-        queue["posts"].append({"id":post_id,
-            "video_url":f"https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/main/public/rendered/daily/{output.name}",
-            "title":title + " #CasaSemEsforco #DicasDeLimpeza",
-            "scheduled_at":scheduled.isoformat().replace("+00:00","Z"),
-            "privacy_level":"PUBLIC_TO_EVERYONE",
-            "disable_duet":False,"disable_comment":False,"disable_stitch":False,
-            "approved":False,"consented_at":None})
-        rendered.append(output)
-        print(f"RENDERED {output} {meta}")
-    if rendered:
-        QUEUE.write_text(json.dumps(queue,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
-    print(f"NEW_VIDEO_COUNT={len(rendered)}")
-if __name__ == "__main__":
+        media_total=sum(p.stat().st_size for p in (ROOT/'public/rendered').rglob('*.mp4'))
+        if media_total+20_000_000>MAX_MEDIA_BYTES:
+            raise RuntimeError('STORAGE_BUDGET: stop before adding media beyond 200 MB; no paid storage')
+        if not available:
+            raise RuntimeError('CATALOG_EXHAUSTED: reviewed original scripts needed; refusing repeated videos')
+        voice=voice or load_voice()
+        # Try another licensed composition if an asset/quality check fails.
+        failures=[]
+        for idea in list(available):
+            try:
+                output,quality=render(idea,voice,post_id)
+                available.remove(idea)
+                break
+            except Exception as exc:
+                failures.append(type(exc).__name__+': '+str(exc))
+                if len(failures)>=2: raise RuntimeError('Render failed after two compositions: '+'; '.join(failures)) from None
+        scheduled=dt.datetime.combine(today,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
+        entry=dict(id=post_id,video_url=f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}',
+                   title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
+                   scheduled_at=scheduled.astimezone(dt.timezone.utc).isoformat(),
+                   approved=False,consented_at=None,quality=quality,concept=idea[0],render_version=VERSION,
+                   publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE')
+        if old: queue['posts'][queue['posts'].index(old)]=entry
+        else: queue['posts'].append(entry)
+        atomic_json(QUEUE,queue); count+=1
+        print(f'RENDERED {post_id}: {quality["duration"]:.2f}s; technical pass; NOT PUBLISHED',flush=True)
+    print(f'NEW_VIDEO_COUNT={count}; PUBLICATION_CONFIRMED=false',flush=True)
+
+
+if __name__=='__main__':
     main()

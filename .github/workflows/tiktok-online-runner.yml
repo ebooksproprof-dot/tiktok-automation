@@ -3,13 +3,13 @@ name: TikTok Online Runner
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "7,37 13-23 * * *" # BRT 10:07–20:37; scheduling can be delayed by GitHub
 
 permissions:
   contents: write
 
 concurrency:
-  group: tiktok-online-runner
+  group: casasemesforco-state
   cancel-in-progress: false
 
 jobs:
@@ -26,12 +26,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install media validator
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+
       - name: Run TikTok queue
         env:
           TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
           TIKTOK_TOKEN_URL: ${{ secrets.TIKTOK_TOKEN_URL }}
           TIKTOK_RUNNER_SHARED_SECRET: ${{ secrets.TIKTOK_RUNNER_SHARED_SECRET }}
           MAX_NEW_POSTS_PER_RUN: "1"
+          TIKTOK_VERIFIED_VIDEO_PREFIX: ${{ vars.TIKTOK_VERIFIED_VIDEO_PREFIX }}
         run: python automation/tiktok_runner.py
 
       - name: Persist runner state
@@ -45,4 +49,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/state.json
           git commit -m "Update TikTok automation state"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main

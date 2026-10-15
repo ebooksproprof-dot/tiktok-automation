@@ -5,44 +5,63 @@ on:
     branches: [main]
     paths:
       - "automation/render_daily.py"
+      - "automation/media_quality.py"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
   schedule:
-    - cron: "30 11 * * *"
+    - cron: "30 11 * * *" # 08:30 America/Sao_Paulo; slots 10:00 and 18:00
 
 permissions:
   contents: write
 
 concurrency:
-  group: casasemesforco-daily-render
+  group: casasemesforco-state
   cancel-in-progress: false
 
 jobs:
   create-videos:
+    # Standard public runner only. Never use larger/paid runners.
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Install video tools
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install free video and speech tools
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core
-      - name: Verify tools
-        run: |
-          ffmpeg -version | head -1
-          ffprobe -version | head -1
-          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
-      - name: Render two new MP4 and prepare unapproved queue
-        run: python3 automation/render_daily.py
-      - name: Commit videos and queue only after render validation
+          python -m pip install 'piper-tts==1.3.0'
+      - name: Test publishing safeguards
+        run: python -m unittest discover -s automation/tests -v
+      - name: Render narrated MP4 with technical validation
+        run: python automation/render_daily.py
+      - name: Persist validated outputs even if a later composition fails
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/rendered/daily/*.mp4 automation/queue.json
+          python - <<'PYCODE'
+          import json, pathlib, subprocess
+          paths = ['automation/queue.json']
+          for entry in json.loads(pathlib.Path('automation/queue.json').read_text())['posts']:
+              if entry.get('render_version') != 2 or not entry.get('quality', {}).get('technical_pass'):
+                  continue
+              media = pathlib.Path('public/rendered/daily') / (entry['id'] + '-v2.mp4')
+              if media.exists() and media.with_suffix('.json').exists():
+                  paths.extend([str(media), str(media.with_suffix('.json'))])
+          subprocess.run(['git', 'add', '--', *paths], check=True)
+          PYCODE
           if git diff --cached --quiet; then
-            echo "No new videos"
             exit 0
           fi
-          git commit -m "Generate daily CasaSemEsforco MP4 and pending review queue"
+          git commit -m "Save validated daily videos pending editorial and publishing checks"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Evidence summary
+        if: always()
+        run: |
+          echo '## Creation only — publication is a separate result' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Check queue quality metadata and TikTok runner evidence. No publication is implied by a successful render.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No paid services. Catalog and media storage are bounded; exhaustion fails visibly.' >> "$GITHUB_STEP_SUMMARY"
