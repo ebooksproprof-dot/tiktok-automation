@@ -1,9 +1,9 @@
 {
   "technical_pass": true,
   "editorial_approved": false,
-  "sha256": "fce7ee0560d86314653c067a172ea3e0753f9a3e941535ab724df8f1f46caac4",
-  "duration": 18.167,
-  "size": 5511282,
+  "sha256": "cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f",
+  "duration": 18.2,
+  "size": 5366677,
   "width": 1080,
   "height": 1920,
   "audio_mean_db": -16.5,
@@ -15,5 +15,6 @@
   ],
   "source_license": "https://www.pexels.com/license/",
   "voice": "pt_BR-faber-medium",
-  "render_version": 2
+  "render_version": 2,
+  "composition_revision": 3
 }

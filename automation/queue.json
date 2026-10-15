@@ -15,19 +15,19 @@
     {
       "id": "casasem-2026-10-15-1",
       "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/casasem-2026-10-15-1-v2.mp4",
-      "title": "Um pano para tudo? Separe os panos por área. Cozinha de um lado. Banheiro do outro. Assim, você evita levar sujeira de um lugar para outro. Depois do uso, lave e deixe secar. Use cores diferentes. Fica fácil de identificar. Salve para lembrar. #CasaSemEsforco #OrganizacaoDaCasa",
+      "title": "Um pano para tudo? Separe os panos por área. Banheiro de um lado. Outros ambientes do outro. Assim, você evita levar sujeira de um lugar para outro. Depois do uso, lave e deixe secar. Use cores diferentes. Fica fácil de identificar. Salve para lembrar. #CasaSemEsforco #OrganizacaoDaCasa",
       "scheduled_at": "2026-10-15T13:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
         "editorial_approved": false,
-        "sha256": "8cddc7de18138e554ff99e508be89c994db482b156112c36bfecc5c2b5cc385e",
-        "duration": 16.8,
-        "size": 4895007,
+        "sha256": "3457d840c9528b884fe72acde40958a6453e298dfca5793577d4090f59144054",
+        "duration": 17.3,
+        "size": 4955574,
         "width": 1080,
         "height": 1920,
-        "audio_mean_db": -16.6,
+        "audio_mean_db": -16.4,
         "concept": "panos-por-area",
         "source_urls": [
           "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
@@ -35,10 +35,12 @@
         ],
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
-        "render_version": 2
+        "render_version": 2,
+        "composition_revision": 3
       },
       "concept": "panos-por-area",
       "render_version": 2,
+      "composition_revision": 3,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
     },
     {
@@ -51,9 +53,9 @@
       "quality": {
         "technical_pass": true,
         "editorial_approved": false,
-        "sha256": "fce7ee0560d86314653c067a172ea3e0753f9a3e941535ab724df8f1f46caac4",
-        "duration": 18.167,
-        "size": 5511282,
+        "sha256": "cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f",
+        "duration": 18.2,
+        "size": 5366677,
         "width": 1080,
         "height": 1920,
         "audio_mean_db": -16.5,
@@ -65,10 +67,12 @@
         ],
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
-        "render_version": 2
+        "render_version": 2,
+        "composition_revision": 3
       },
       "concept": "ordem-da-faxina",
       "render_version": 2,
+      "composition_revision": 3,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
     }
   ]
