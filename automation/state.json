@@ -8,6 +8,16 @@
       "video_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/uvpapzpbxjH-aulauvJ-WV%5B%5B/ljhwZthlaukjlkulzlp/3min.mp4",
       "title": "Teste privado de integração",
       "privacy_level": "SELF_ONLY"
+    },
+    "casasem-2026-10-15-2": {
+      "provider": "metricool",
+      "status": "SUBMISSION_UNKNOWN",
+      "sha256": "cbb87850eccfdca9f6a3efd20a9831bdcd7e29b476cc3a893b6dce2ea668fc8f",
+      "video_url": "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/1ff2e01/public/rendered/daily/casasem-2026-10-15-2-v2.mp4",
+      "scheduled_at": "2026-10-15T21:52:49.539Z",
+      "publicly_verified": false,
+      "editorial_review": "Reviewed frames, script, source licenses and automated audio/format validation; approved for the authorized single Metricool test.",
+      "recovery": "Reconcile with Metricool before retrying. This test does not prove autonomous GitHub publishing."
     }
   }
 }
