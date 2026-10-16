@@ -1,0 +1,19 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "d28a972cff0f4a1eca7a8204440bf72ac75dbdef38babc841f77086f29ae08ea",
+  "duration": 16.633333,
+  "size": 6081141,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -16.6,
+  "concept": "pano-lado-limpo",
+  "source_urls": [
+    "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
+    "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+  ],
+  "source_license": "https://www.pexels.com/license/",
+  "voice": "pt_BR-faber-medium",
+  "render_version": 2,
+  "composition_revision": 3
+}
