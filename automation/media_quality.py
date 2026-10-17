@@ -9,7 +9,7 @@ import subprocess
 def validate(path):
     path = pathlib.Path(path)
     meta = json.loads(subprocess.check_output(
-        ['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(path)], text=True))
+        ['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(path)], text=True, timeout=30))
     video = next((s for s in meta['streams'] if s['codec_type'] == 'video'), {})
     audio = next((s for s in meta['streams'] if s['codec_type'] == 'audio'), {})
     duration = float(meta['format']['duration'])

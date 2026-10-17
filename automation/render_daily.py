@@ -171,14 +171,18 @@ def main():
         voice=voice or load_voice()
         # Try another licensed composition if an asset/quality check fails.
         failures=[]
+        rendered = False
         for idea in list(available):
             try:
                 output,quality=render(idea,voice,post_id)
                 available.remove(idea)
+                rendered = True
                 break
             except Exception as exc:
                 failures.append(type(exc).__name__+': '+str(exc))
                 if len(failures)>=2: raise RuntimeError('Render failed after two compositions: '+'; '.join(failures)) from None
+        if not rendered:
+            raise RuntimeError("Render failed; no validated output: " + "; ".join(failures))
         scheduled=dt.datetime.combine(today,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
         entry=dict(id=post_id,video_url=f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}',
                    title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',

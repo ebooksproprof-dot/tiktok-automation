@@ -8,7 +8,7 @@ import tempfile
 from urllib.parse import urlparse
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -20,7 +20,7 @@ CREATOR_INFO_URL = API_BASE + "/v2/post/publish/creator_info/query/"
 DIRECT_POST_URL = API_BASE + "/v2/post/publish/video/init/"
 STATUS_URL = API_BASE + "/v2/post/publish/status/fetch/"
 
-TERMINAL_STATUSES = {"PUBLISH_COMPLETE", "FAILED", "SUBMISSION_UNKNOWN"}
+TERMINAL_STATUSES = {"PUBLISH_COMPLETE", "FAILED", "SUBMISSION_UNKNOWN", "PUBLIC_EVIDENCE_MISSING"}
 EXPECTED_USERNAME = ".casasemesforo"
 MAX_NEW_POSTS_PER_RUN = int(os.getenv("MAX_NEW_POSTS_PER_RUN", "1"))
 
@@ -126,15 +126,28 @@ def fetch_token_from_broker():
     return token
 
 
+def is_tiktok(entry):
+    return entry.get("provider", entry.get("publication_provider", "tiktok")) == "tiktok"
+
+
+def needs_poll(entry):
+    if not is_tiktok(entry) or not entry.get("publish_id"):
+        return False
+    status = entry.get("status")
+    return (status not in TERMINAL_STATUSES or
+            (status == "PUBLISH_COMPLETE" and entry.get("privacy_level") == "PUBLIC_TO_EVERYONE"
+             and not entry.get("publicly_verified")))
+
+
 def needs_token(queue, state):
     for entry in state.get("posts", {}).values():
-        if entry.get("status") not in TERMINAL_STATUSES:
+        if needs_poll(entry):
             return True
 
     now = utc_now()
     for post in queue.get("posts", []):
         post_id = str(post.get("id", "")).strip()
-        if not post_id or post_id in state.get("posts", {}):
+        if not is_tiktok(post) or not post_id or post_id in state.get("posts", {}):
             continue
         if post.get("approved") is not True or not post.get("consented_at"):
             continue
@@ -147,7 +160,7 @@ def needs_token(queue, state):
 def poll_existing(token, state):
     changed = False
     for post_id, entry in list(state.get("posts", {}).items()):
-        if entry.get("status") in TERMINAL_STATUSES:
+        if not needs_poll(entry):
             continue
         publish_id = entry.get("publish_id")
         if not publish_id:
@@ -157,6 +170,7 @@ def poll_existing(token, state):
         status = data.get("status") or entry.get("status") or "UNKNOWN"
         entry["status"] = status
         entry["last_checked_at"] = iso_now()
+        entry["reconciliation_checks"] = entry.get("reconciliation_checks", 0) + 1
         if data.get("fail_reason"):
             entry["fail_reason"] = data["fail_reason"]
         ids = data.get("publicaly_available_post_id") or data.get("publicly_available_post_id") or []
@@ -166,6 +180,9 @@ def poll_existing(token, state):
             entry["publicly_available_post_id"] = ids
             entry["public_urls"] = [f"https://www.tiktok.com/@{EXPECTED_USERNAME}/video/{i}" for i in ids if str(i).isdigit()]
         entry["publicly_verified"] = bool(status == "PUBLISH_COMPLETE" and entry.get("public_urls") and entry.get("privacy_level") == "PUBLIC_TO_EVERYONE")
+        if status == "PUBLISH_COMPLETE" and entry.get("privacy_level") == "PUBLIC_TO_EVERYONE" and not entry["publicly_verified"] and entry["reconciliation_checks"] >= 48:
+            entry["status"] = "PUBLIC_EVIDENCE_MISSING"
+            entry["recovery"] = "Check TikTok visibility manually; do not resubmit"
         save_json(STATE_PATH, state)
         changed = True
         print(f"[status] {post_id}: {status}")
@@ -178,6 +195,8 @@ def get_creator_info(token):
 
 
 def validate_post(post, creator_info):
+    if not is_tiktok(post):
+        raise ValueError("Post assigned to another publishing provider")
     if creator_info.get("creator_username") != EXPECTED_USERNAME:
         raise ValueError("Creator identity mismatch: refusing to publish")
     quality = post.get("quality") or {}
@@ -280,7 +299,7 @@ def checkpoint(state):
 
 def summary(state, blocked, submitted):
     public = sum(bool(p.get("publicly_verified")) for p in state["posts"].values())
-    unknown = sum(p.get("status") == "SUBMISSION_UNKNOWN" for p in state["posts"].values())
+    unknown = sum(p.get("status") in ("SUBMISSION_UNKNOWN", "PUBLIC_EVIDENCE_MISSING") for p in state["posts"].values())
     text = f"PUBLIC_VERIFIED_TOTAL={public}; SUBMITTED_THIS_RUN={submitted}; BLOCKED={blocked}; UNKNOWN={unknown}"
     print(text)
     if os.getenv("GITHUB_STEP_SUMMARY"):
@@ -292,16 +311,16 @@ def main():
     queue = load_json(QUEUE_PATH, {"posts": []})
     state = load_json(STATE_PATH, {"posts": {}})
     state.setdefault("posts", {})
-    due = [p for p in queue.get("posts", []) if p.get("id") not in state["posts"]
+    due = [p for p in queue.get("posts", []) if is_tiktok(p) and p.get("id") not in state["posts"]
            and parse_time(p.get("scheduled_at")) and parse_time(p["scheduled_at"]) <= utc_now()]
     candidates = [p for p in due if p.get("approved") is True and p.get("consented_at")]
     blocked = len(due) - len(candidates)
     if blocked:
         print(f"::warning::{blocked} due videos lack approval; no public publication confirmed")
-    pending = any(p.get("publish_id") and p.get("status") not in TERMINAL_STATUSES for p in state["posts"].values())
+    pending = any(needs_poll(p) for p in state["posts"].values())
     if not candidates and not pending:
         summary(state, blocked, 0)
-        return 2 if blocked or any(p.get("status") == "SUBMISSION_UNKNOWN" for p in state["posts"].values()) else 0
+        return 2 if blocked or any(p.get("status") in ("SUBMISSION_UNKNOWN", "PUBLIC_EVIDENCE_MISSING") for p in state["posts"].values()) else 0
     submitted = 0
     try:
         token = fetch_token_from_broker()
@@ -312,11 +331,13 @@ def main():
             creator = get_creator_info(token)
             for post in sorted(candidates, key=lambda p: p["scheduled_at"])[:MAX_NEW_POSTS_PER_RUN]:
                 validate_post(post, creator)
+                if parse_time(post["scheduled_at"]) < utc_now() - timedelta(hours=2):
+                    raise ValueError("Expired TikTok slot; explicitly reschedule before publication")
                 fingerprint = post["quality"].get("sha256")
                 if not fingerprint or any(p.get("sha256") == fingerprint for p in state["posts"].values()):
                     raise ValueError("Missing fingerprint or duplicate media")
                 # No automatic retry of ambiguous non-idempotent submission.
-                entry = dict(status="SUBMISSION_UNKNOWN", submitted_at=iso_now(), sha256=fingerprint,
+                entry = dict(provider="tiktok", status="SUBMISSION_UNKNOWN", submitted_at=iso_now(), sha256=fingerprint,
                              privacy_level=post["privacy_level"], video_url=post["video_url"],
                              publicly_verified=False, recovery="Reconcile on TikTok before any resubmission")
                 state["posts"][post["id"]] = entry

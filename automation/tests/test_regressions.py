@@ -1,0 +1,76 @@
+import copy
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import tiktok_runner as t
+import render_daily as render
+import readiness
+
+
+class RegressionTests(unittest.TestCase):
+    def test_other_provider_is_never_polled(self):
+        state = {'posts': {'buffer': {'provider': 'buffer', 'status': 'SCHEDULED', 'publish_id': 'foreign'}}}
+        with patch.object(t, 'api_post') as api:
+            self.assertFalse(t.needs_token({'posts': []}, state))
+            self.assertFalse(t.poll_existing('dummy', state))
+            api.assert_not_called()
+
+    def test_other_provider_candidate_never_calls_tiktok(self):
+        post = dict(id='buffer', publication_provider='buffer', approved=True,
+                    consented_at=t.iso_now(), scheduled_at=t.iso_now())
+        with patch.object(t, 'load_json', side_effect=[{'posts': [post]}, {'posts': {}}]), patch.object(t, 'fetch_token_from_broker') as token:
+            self.assertEqual(t.main(), 0)
+            token.assert_not_called()
+        with self.assertRaises(ValueError):
+            t.validate_post(post, {})
+
+    def test_public_completion_without_ids_is_reconciled(self):
+        state = {'posts': {'test': dict(provider='tiktok', publish_id='p',
+                    status='PUBLISH_COMPLETE', privacy_level='PUBLIC_TO_EVERYONE')}}
+        self.assertTrue(t.needs_poll(state['posts']['test']))
+        with tempfile.TemporaryDirectory() as directory, patch.object(t, 'STATE_PATH', Path(directory)/'state.json'), patch.object(t, 'api_post', return_value={'data': {'status': 'PUBLISH_COMPLETE', 'publicaly_available_post_id': ['123']}}):
+            t.poll_existing('dummy', state)
+        self.assertTrue(state['posts']['test']['publicly_verified'])
+        self.assertFalse(t.needs_poll(state['posts']['test']))
+
+    def test_single_remaining_render_failure_cannot_create_queue_entry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/'automation').mkdir()
+            queue = root/'automation/queue.json'
+            queue.write_text('{"posts": []}')
+            (root/'automation/state.json').write_text('{"posts": {}}')
+            with patch.object(render, 'ROOT', root), patch.object(render, 'QUEUE', queue), patch.object(render, 'ASSETS', root/'tmp'), patch.object(render, 'OUT', root/'public/rendered'), patch.object(render, 'IDEAS', [('only', [], [])]), patch.object(render, 'load_voice', return_value=object()), patch.object(render, 'render', side_effect=ValueError('invalid audio')):
+                with self.assertRaisesRegex(RuntimeError, 'no validated output'):
+                    render.main()
+            self.assertEqual(json.loads(queue.read_text()), {'posts': []})
+
+    def test_second_slot_failure_does_not_reuse_first_video(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/'automation').mkdir()
+            queue = root/'automation/queue.json'
+            queue.write_text('{"posts": []}')
+            (root/'automation/state.json').write_text('{"posts": {}}')
+            quality = dict(duration=20, technical_pass=True, editorial_approved=False)
+            with patch.object(render, 'ROOT', root), patch.object(render, 'QUEUE', queue), patch.object(render, 'ASSETS', root/'tmp'), patch.object(render, 'OUT', root/'public/rendered'), patch.object(render, 'IDEAS', [('first', [], ['First']), ('second', [], ['Second'])]), patch.object(render, 'load_voice', return_value=object()), patch.object(render, 'render', side_effect=[(Path('first.mp4'), quality), ValueError('invalid audio')]):
+                with self.assertRaisesRegex(RuntimeError, 'no validated output'):
+                    render.main()
+            posts = json.loads(queue.read_text())['posts']
+            self.assertEqual(len(posts), 1)
+            self.assertEqual(posts[0]['concept'], 'first')
+
+    def test_inventory_is_secret_safe_and_flags_exhaustion(self):
+        result = readiness.inspect({'posts': [{'id':'old','concept':'one'}]}, {'posts':{}}, ['one'], 100,
+                                   {'BUFFER_API_KEY':'SENSITIVE_TEST_VALUE'})
+        serialized = json.dumps(result)
+        self.assertNotIn('SENSITIVE_TEST_VALUE', serialized)
+        self.assertEqual(result['status'], 'BLOCKED')
+        self.assertEqual(result['unused_concepts'], 0)
+        self.assertTrue(any(x.startswith('CATALOG_EXHAUSTED') for x in result['blockers']))
