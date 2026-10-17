@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: casasemesforco-state
@@ -94,3 +95,9 @@ jobs:
           git commit -m "Update TikTok automation state"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Keep one actionable failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/notify_failure.py

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "automation/render_daily.py"
+      - "automation/content_catalog.py"
       - "automation/release_media.py"
       - "automation/media_quality.py"
       - ".github/workflows/casasemesforco-daily.yml"
@@ -12,8 +13,12 @@ on:
   schedule:
     - cron: "30 11 * * *" # 08:30 America/Sao_Paulo; slots 10:00 and 18:00
 
+env:
+  ORT_DISABLE_TELEMETRY: "1"
+
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: casasemesforco-state
@@ -79,3 +84,9 @@ jobs:
           echo '## Creation only — publication is a separate result' >> "$GITHUB_STEP_SUMMARY"
           echo 'Check queue quality metadata and TikTok runner evidence. No publication is implied by a successful render.' >> "$GITHUB_STEP_SUMMARY"
           echo 'No paid services. Catalog and media storage are bounded; exhaustion fails visibly.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep one actionable failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/notify_failure.py

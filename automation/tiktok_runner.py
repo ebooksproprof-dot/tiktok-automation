@@ -339,6 +339,7 @@ def main():
                 # No automatic retry of ambiguous non-idempotent submission.
                 entry = dict(provider="tiktok", status="SUBMISSION_UNKNOWN", submitted_at=iso_now(), sha256=fingerprint,
                              privacy_level=post["privacy_level"], video_url=post["video_url"],
+                             concept=post.get("concept"), script_sha256=post.get("script_sha256"),
                              publicly_verified=False, recovery="Reconcile on TikTok before any resubmission")
                 state["posts"][post["id"]] = entry
                 checkpoint(state)

@@ -11,6 +11,7 @@ import urllib.request
 import wave
 from zoneinfo import ZoneInfo
 from media_quality import validate
+from content_catalog import TOPICS, script, category, fingerprint, rotate
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'release' else 'public/rendered/daily')
@@ -35,6 +36,8 @@ IDEAS = [
  ('sem-misturas', ['pia','espelho'], ['Misturar não limpa melhor.', 'Use cada produto', 'conforme o rótulo.', 'Não improvise misturas', 'com produtos de limpeza.', 'Mantenha a área ventilada.', 'Guarde na embalagem original,', 'longe de crianças e animais.', 'Nunca use garrafas de bebida', 'para guardar esses produtos.', 'Compartilhe este cuidado.']),
  ('planejar-por-area', ['pia','piso'], ['Faxina sem saber por onde?', 'Escolha uma área pequena.', 'Separe o que vai usar.', 'Retire os objetos soltos.', 'Limpe uma superfície', 'antes de passar à próxima.', 'No final, guarde os materiais.', 'Uma tarefa de cada vez.', 'Não precisa começar', 'pela casa inteira de uma vez.', 'Salve para organizar.']),
 ]
+
+IDEAS.extend(script(topic) for topic in TOPICS)
 
 
 def run(args, **kwargs):
@@ -73,9 +76,11 @@ def get_clip(key):
 
 
 def load_voice():
+    # Disable optional external telemetry before ONNX initializes, including child downloads.
+    os.environ["ORT_DISABLE_TELEMETRY"] = "1"
     from piper import PiperVoice
     model = ASSETS / (VOICE+'.onnx')
-    if not model.exists():
+    if not model.exists() or not model.with_suffix(".onnx.json").exists():
         run(['python3','-m','piper.download_voices','--data-dir',str(ASSETS),VOICE])
     if hashlib.sha256(model.read_bytes()).hexdigest() != VOICE_SHA:
         raise ValueError('Voice model checksum mismatch')
@@ -151,8 +156,7 @@ def main():
     today=dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
     queue=json.loads(QUEUE.read_text(encoding='utf8'))
     state=json.loads((ROOT/'automation/state.json').read_text(encoding='utf8'))
-    used={p.get('concept') for p in queue['posts']}
-    available=[idea for idea in IDEAS if idea[0] not in used]
+    available=rotate(IDEAS, queue, state)
     count=0; voice=None
     for slot,hour in enumerate([10,18],1):
         post_id=f'casasem-{today}-{slot}'
@@ -192,7 +196,8 @@ def main():
         entry=dict(id=post_id,video_url=video_url,
                    title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
                    scheduled_at=scheduled.astimezone(dt.timezone.utc).isoformat(),
-                   approved=False,consented_at=None,quality=quality,concept=idea[0],render_version=VERSION,composition_revision=COMPOSITION_REVISION,
+                   approved=False,consented_at=None,quality=quality,concept=idea[0],
+                   category=category(idea[0]),script_lines=idea[2],script_sha256=fingerprint(idea[2]),render_version=VERSION,composition_revision=COMPOSITION_REVISION,
                    publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE',
                    media_storage='release' if release_storage else 'git')
         if old: queue['posts'][queue['posts'].index(old)]=entry

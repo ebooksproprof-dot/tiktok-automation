@@ -152,6 +152,7 @@ def submit(client, post, state, channel_id):
     verify_hosted(post)
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),
                  sha256=post["quality"]["sha256"], video_url=post["video_url"],
+                 concept=post.get("concept"), script_sha256=post.get("script_sha256"),
                  scheduled_at=post["scheduled_at"], publicly_verified=False,
                  recovery="Reconcile Buffer planner by timestamp, media and caption before retrying")
     state["posts"][post["id"]] = entry
