@@ -15,13 +15,13 @@
     {
       "id": "casasem-2026-10-15-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-15-1-3457d840c9528b88.mp4",
-      "title": "Um pano para tudo? Separe os panos por área. Banheiro de um lado. Outros ambientes do outro. Assim, você evita levar sujeira de um lugar para outro. Depois do uso, lave e deixe secar. Use cores diferentes. Fica fácil de identificar. Salve para lembrar. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-15T13:00:00+00:00",
+      "title": "Um pano para tudo? Separe os panos por área e troque quando estiverem sujos. Use cores diferentes para identificar. Salve para a próxima faxina. Cenas ilustrativas; narração sintética. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-17T22:08:40.430Z",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "3457d840c9528b884fe72acde40958a6453e298dfca5793577d4090f59144054",
         "duration": 17.3,
         "size": 4955574,
@@ -36,13 +36,27 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 3
+        "composition_revision": 3,
+        "editorial_review": {
+          "reviewed_at": "2026-10-17T22:01:40.430Z",
+          "checks": [
+            "six-frame visual review",
+            "caption and script review",
+            "1080x1920 MP4, AAC, duration and non-silent audio validated",
+            "exact SHA-256 matches Release",
+            "no submitted ID or hash in persistent provider history"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "panos-por-area",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "APPROVED_FOR_BUFFER_E2E_TEST",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-15T13:00:00+00:00",
+      "publication_provider": "buffer",
+      "schedule_recovery": "EXPLICIT_UNSUBMITTED_RELEASE_TEST_RESCHEDULE"
     },
     {
       "id": "casasem-2026-10-15-2",
@@ -159,7 +173,7 @@
         "size": 6738093,
         "width": 1080,
         "height": 1920,
-        "audio_mean_db": -16.0,
+        "audio_mean_db": -16,
         "concept": "sem-misturas",
         "source_urls": [
           "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
@@ -187,11 +201,11 @@
         "technical_pass": true,
         "editorial_approved": false,
         "sha256": "205952de338fa9df20353ab375206ee4950fc4bb6e2ad9d05bfbc4e0fae0d7e5",
-        "duration": 19.0,
+        "duration": 19,
         "size": 5715480,
         "width": 1080,
         "height": 1920,
-        "audio_mean_db": -17.0,
+        "audio_mean_db": -17,
         "concept": "planejar-por-area",
         "source_urls": [
           "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",

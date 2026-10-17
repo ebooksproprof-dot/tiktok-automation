@@ -6,6 +6,7 @@ on:
     paths:
       - "automation/tiktok_runner.py"
       - "automation/buffer_runner.py"
+      - "automation/queue.json"
       - "automation/readiness.py"
       - "automation/tests/**"
       - ".github/workflows/tiktok-online-runner.yml"
