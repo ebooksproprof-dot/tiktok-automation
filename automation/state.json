@@ -38,24 +38,31 @@
     },
     "casasem-2026-10-17-2": {
       "provider": "metricool",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "sha256": "205952de338fa9df20353ab375206ee4950fc4bb6e2ad9d05bfbc4e0fae0d7e5",
       "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/casasem-2026-10-17-2-v2.mp4",
       "submitted_at": "2026-10-17T21:24:50.295858+00:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Metricool planner before retrying; authorized single test, not autonomous GitHub publication",
       "editorial_review": "Reviewed script and sampled frames; 19s vertical moving illustrative footage, legible captions; technical audio/decode/hash validation passed. Synthetic narration, no product performance claim.",
       "metricool_post_id": 398772153,
       "metricool_uuid": "-1002535536127750824",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "auto_publish": true,
       "scheduled_at": {
         "dateTime": "2026-10-17T18:29:00",
         "timezone": "America/Sao_Paulo"
       },
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=-1002535536127750824",
-      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-4064626700123393071.mp4"
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-4064626700123393071.mp4",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7697752006160649493"
+      ],
+      "publicly_available_post_id": [
+        "7697752006160649493"
+      ],
+      "last_checked_at": "2026-10-17T21:31:09.314Z",
+      "verification_source": "Metricool TikTok provider PUBLISHED with publicUrl; connector test, not autonomous GitHub scheduling."
     }
   }
 }
-
