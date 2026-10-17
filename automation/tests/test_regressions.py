@@ -74,3 +74,7 @@ class RegressionTests(unittest.TestCase):
         self.assertEqual(result['status'], 'BLOCKED')
         self.assertEqual(result['unused_concepts'], 0)
         self.assertTrue(any(x.startswith('CATALOG_EXHAUSTED') for x in result['blockers']))
+
+    def test_archived_topics_are_not_reported_as_available(self):
+        result = readiness.inspect({'posts': []}, {'posts': {'archived': {'concept': 'one'}}}, ['one'], 0, {})
+        self.assertEqual(result['unused_concepts'], 0)

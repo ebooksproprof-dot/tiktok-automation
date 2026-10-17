@@ -100,6 +100,23 @@ class BufferSafetyTests(unittest.TestCase):
                 client.call("query { account { id } }", {})
         network.assert_not_called()
 
+    def test_overdue_remote_post_alerts_without_resubmission(self):
+        due = (b.common.utc_now() - timedelta(hours=3)).isoformat()
+        for status in ('scheduled', 'sending'):
+            entry = {'buffer_post_id': 'remote', 'scheduled_at': due}
+            b.record_remote(entry, {'id': 'remote', 'channelId': 'channel',
+                'status': status, 'schedulingType': 'automatic', 'dueAt': due}, 'channel')
+            self.assertEqual(entry['status'], 'PUBLICATION_OVERDUE')
+            self.assertFalse(entry['publicly_verified'])
+
+    def test_foreign_queue_does_not_block_buffer(self):
+        foreign = dict(self.post, publication_provider='metricool')
+        client = Mock()
+        client.call.return_value = {'channel': self.channel}
+        with patch.object(b, 'Client', return_value=client), patch.dict(b.os.environ, {'BUFFER_CHANNEL_ID': 'channel'}), patch.object(b.common, 'load_json', side_effect=[self.state, {'posts': [foreign]}]), patch.object(b.common, 'save_json'), patch.object(b.common, 'summary'):
+            self.assertEqual(b.main(), 0)
+        self.assertEqual(client.call.call_count, 1)
+
 
 if __name__ == "__main__":
     unittest.main()

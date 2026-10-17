@@ -141,8 +141,14 @@ def record_remote(entry, remote, channel_id):
         entry["status"] = "FAILED"
     elif status in ("scheduled", "sending"):
         entry["status"] = status.upper()
-        if status == "scheduled" and common.parse_time(remote.get("dueAt")) != common.parse_time(entry["scheduled_at"]):
+        scheduled = common.parse_time(entry.get("scheduled_at"))
+        if scheduled is None:
+            entry["status"] = "BLOCKED_SCHEDULE_MISSING"
+        elif status == "scheduled" and common.parse_time(remote.get("dueAt")) != scheduled:
             entry["status"] = "BLOCKED_SCHEDULE_MISMATCH"
+        elif scheduled < common.utc_now() - timedelta(hours=2):
+            # Continue read-only reconciliation; never resubmit an overdue remote post.
+            entry["status"] = "PUBLICATION_OVERDUE"
     else:
         entry["status"] = "AWAITING_PUBLIC_EVIDENCE"
 
@@ -210,6 +216,8 @@ def main(check_only=False):
         queue = common.load_json(common.QUEUE_PATH, {"posts": []})
         candidates = []
         for post in queue["posts"]:
+            if post.get("publication_provider") != "buffer":
+                continue
             if post.get("id") in state["posts"] or not post.get("id", "").startswith("casasem-"):
                 continue
             when = common.parse_time(post.get("scheduled_at"))

@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def inspect(queue, state, concepts, media_bytes, environ):
     used = {p.get('concept') for p in queue.get('posts', [])}
+    used.update(p.get('concept') for p in state.get('posts', {}).values())
     remaining = len(set(concepts) - used)
     blockers = []
     provider = environ.get('PUBLISHING_PROVIDER', '').strip()
