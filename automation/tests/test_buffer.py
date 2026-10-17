@@ -127,6 +127,15 @@ class BufferSafetyTests(unittest.TestCase):
         checkpoint.assert_not_called()
         self.assertEqual(self.state['posts'], {})
 
+    def test_missing_public_link_preserves_safe_diagnostic(self):
+        entry = {'buffer_post_id': 'remote'}
+        b.record_remote(entry, {'id': 'remote', 'channelId': 'channel', 'status': 'sent',
+            'schedulingType': 'automatic', 'sentAt': b.common.iso_now(), 'externalLink': None}, 'channel')
+        self.assertEqual(entry['evidence_pending_reason'], 'PUBLIC_LINK_MISSING')
+        self.assertTrue(entry['buffer_sent_at_present'])
+        self.assertIsNone(entry['buffer_external_link'])
+        self.assertFalse(entry['publicly_verified'])
+
 
 if __name__ == "__main__":
     unittest.main()

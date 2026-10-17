@@ -134,6 +134,10 @@ def record_remote(entry, remote, channel_id):
         return
     status = remote.get("status")
     url = remote.get("externalLink") or ""
+    # Retain only public TikTok permalink shapes, never arbitrary URLs or query tokens.
+    public_link = re.match(r"https://(?:www\.)?tiktok\.com/@[A-Za-z0-9_.]+/video/\d+(?=$|[?#])", url)
+    entry['buffer_external_link'] = public_link.group(0) if public_link else None
+    entry['buffer_sent_at_present'] = bool(remote.get('sentAt'))
     pattern = r"https://www\.tiktok\.com/@" + re.escape(common.EXPECTED_USERNAME) + r"/video/(\d+)(?:\?.*)?"
     match = re.fullmatch(pattern, url)
     if status == "sent" and remote.get("sentAt") and match:
@@ -154,6 +158,9 @@ def record_remote(entry, remote, channel_id):
             entry["status"] = "PUBLICATION_OVERDUE"
     else:
         entry["status"] = "AWAITING_PUBLIC_EVIDENCE"
+        entry['evidence_pending_reason'] = ('PUBLIC_LINK_MISSING' if not url else
+            'PUBLIC_LINK_FORMAT_OR_ACCOUNT_MISMATCH' if not match else
+            'SENT_TIMESTAMP_MISSING' if not remote.get('sentAt') else 'STATUS_NOT_SENT')
 
 
 def submit(client, post, state, channel_id):
