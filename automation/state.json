@@ -76,8 +76,11 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad3f06e0b0d72757af6ea34",
-      "last_checked_at": "2026-10-17T22:10:36Z",
-      "buffer_status": "sent"
+      "last_checked_at": "2026-10-17T22:11:42Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7697762174428597511",
+      "buffer_sent_at_present": true,
+      "evidence_pending_reason": "PUBLIC_LINK_FORMAT_OR_ACCOUNT_MISMATCH"
     }
   },
   "buffer_api_usage": [
@@ -91,6 +94,8 @@
     "2026-10-17T22:09:42Z",
     "2026-10-17T22:09:42Z",
     "2026-10-17T22:10:35Z",
-    "2026-10-17T22:10:36Z"
+    "2026-10-17T22:10:36Z",
+    "2026-10-17T22:11:41Z",
+    "2026-10-17T22:11:42Z"
   ]
 }
