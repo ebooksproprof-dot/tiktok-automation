@@ -93,3 +93,16 @@ O workflow agora tem seis execuções por dia: 09:07 e 17:07 para agendar; 10:17
 5. Executar um teste real pelo Actions e verificar a URL retornada antes de declarar operação autônoma. A chave/conexão e essa validação real continuam pendentes; os 20 testes locais passaram, mas usam respostas simuladas para Buffer.
 
 O catálogo finito, revisão editorial, expansão das filmagens e armazenamento sustentável continuam pendentes. Conectar Buffer não resolve esses limites de produção. Não habilitar publicação de vídeos sem revisão de qualidade para mascarar essa pendência. A tarefa ChatGPT existente deve respeitar `publication_provider` e estado compartilhado, sem publicar a mesma mídia por Metricool em paralelo.
+
+
+## Estado verificado em 17/10/2026 — atualização posterior às instruções iniciais
+
+Buffer Free conectado ao canal autorizado `.casasemesforo` (ID `6ad14dc2778b240e2f1f7c2f`). O titular salvou `BUFFER_API_KEY` diretamente no GitHub. O Runner autenticou e validou canal e modo automático em 17/10 às 22:01 UTC; nenhuma credencial foi lida ou registrada. Workflows usam Buffer/canal como padrão, permitindo sobrescrever com as variáveis existentes.
+
+O teste real de envio pelo GitHub aceitou um único vídeo revisado do Release, `casasem-2026-10-15-1`, e confirmou por leitura posterior o ID Buffer `6ad3f06e0b0d72757af6ea34`, agendado para 22:08:40 UTC (19:08:40 Fortaleza). Não reenviar: o estado persistente já contém a intenção e o ID remoto. Consultar `automation/state.json` para o resultado mais recente; agendamento aceito não equivale a publicação.
+
+O Runner também é disparado por alterações na fila feitas pelo usuário/conector. Commits feitos pelo próprio GITHUB_TOKEN seguem as regras de supressão de eventos do GitHub; o cron continua responsável pelo fluxo diário. Reconciliação preserva IDs/hashes globais. A geração de novos vídeos desloca slots vencidos para um horário livre futuro e registra o horário original. Histórico Metricool com data/fuso estruturados é normalizado. As 45 verificações locais passaram e houve revisão independente.
+
+A documentação técnica Buffer e o painel da conta indicam 250 chamadas/24h e 3.000/30dias no Free; a página comercial consultada ainda mostrava 100/24h. O limite local de 60/24h fica abaixo de ambos. Nenhum upgrade foi ativado. Persistem oito temas novos, revisão editorial individual e necessidade de renovação de filmagens/assuntos. Não declarar produção permanente ou60 vídeos/mês comprovados.
+
+Resultado posterior: Buffer retornou sent, data de envio e link da conta exata https://www.tiktok.com/@.casasemesforo/video/7697762174428597511 . Corrigida normalização do host com/sem www. Consultar o relatório e state para evidências. A ferramenta pública não conseguiu abrir a página; a confirmação é fornecida pelo Buffer autenticado.
