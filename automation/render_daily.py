@@ -154,9 +154,20 @@ def render(idea, voice, post_id):
 def future_slot(planned, queue, state, post_id, now=None):
     """Move only a new/unsubmitted render to an unoccupied Brazilian slot."""
     now = now or dt.datetime.now(dt.timezone.utc)
-    occupied = {dt.datetime.fromisoformat(p['scheduled_at'].replace('Z', '+00:00'))
-                for p in list(queue.get('posts', [])) + list(state.get('posts', {}).values())
-                if p.get('scheduled_at') and p.get('id') != post_id}
+    occupied = set()
+    for p in list(queue.get('posts', [])) + list(state.get('posts', {}).values()):
+        value = p.get('scheduled_at')
+        if not value or p.get('id') == post_id:
+            continue
+        if isinstance(value, dict):  # Persisted Metricool provider evidence.
+            stamp = dt.datetime.fromisoformat(value['dateTime'].replace('Z', '+00:00'))
+            if stamp.tzinfo is None:
+                stamp = stamp.replace(tzinfo=ZoneInfo(value['timezone']))
+        else:
+            stamp = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
+        if stamp.tzinfo is None:
+            raise ValueError('Persisted schedule must include a timezone')
+        occupied.add(stamp)
     candidate = planned
     for _ in range(62):
         if candidate >= now + dt.timedelta(minutes=10) and candidate not in occupied:

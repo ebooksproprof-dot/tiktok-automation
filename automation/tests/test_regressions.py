@@ -90,3 +90,8 @@ class RegressionTests(unittest.TestCase):
     def test_future_slot_preserves_free_plan(self):
         planned = render.dt.datetime(2026, 10, 17, 10, tzinfo=render.ZoneInfo('America/Sao_Paulo'))
         self.assertEqual(render.future_slot(planned, {'posts': []}, {'posts': {}}, 'new', planned.replace(hour=8)), planned)
+
+    def test_future_slot_understands_metricool_history_timezone(self):
+        planned = render.dt.datetime(2026, 10, 17, 10, tzinfo=render.ZoneInfo('America/Sao_Paulo'))
+        state = {'posts': {'metricool': {'scheduled_at': {'dateTime': '2026-10-17T10:00:00', 'timezone': 'America/Sao_Paulo'}}}}
+        self.assertEqual(render.future_slot(planned, {'posts': []}, state, 'new', planned.replace(hour=8)), planned.replace(hour=18))
