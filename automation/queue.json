@@ -140,6 +140,68 @@
       "render_version": 2,
       "composition_revision": 3,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
+    },
+    {
+      "id": "casasem-2026-10-17-1",
+      "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/casasem-2026-10-17-1-v2.mp4",
+      "title": "Misturar não limpa melhor. Use cada produto conforme o rótulo. Não improvise misturas com produtos de limpeza. Mantenha a área ventilada. Guarde na embalagem original, longe de crianças e animais. Nunca use garrafas de bebida para guardar esses produtos. Compartilhe este cuidado. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-17T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "68e3482c6fa3994f762b498dbbf2fe97e6cadbf0f191a9cd7c04b66caa18bec2",
+        "duration": 17.912,
+        "size": 6738093,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.0,
+        "concept": "sem-misturas",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
+          "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 3
+      },
+      "concept": "sem-misturas",
+      "render_version": 2,
+      "composition_revision": 3,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
+    },
+    {
+      "id": "casasem-2026-10-17-2",
+      "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/casasem-2026-10-17-2-v2.mp4",
+      "title": "Faxina sem saber por onde? Escolha uma área pequena. Separe o que vai usar. Retire os objetos soltos. Limpe uma superfície antes de passar à próxima. No final, guarde os materiais. Uma tarefa de cada vez. Não precisa começar pela casa inteira de uma vez. Salve para organizar. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-17T21:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "205952de338fa9df20353ab375206ee4950fc4bb6e2ad9d05bfbc4e0fae0d7e5",
+        "duration": 19.0,
+        "size": 5715480,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -17.0,
+        "concept": "planejar-por-area",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
+          "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 3
+      },
+      "concept": "planejar-por-area",
+      "render_version": 2,
+      "composition_revision": 3,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
     }
   ]
 }
