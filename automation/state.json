@@ -74,12 +74,14 @@
       "script_sha256": null,
       "scheduled_at": "2026-10-17T22:08:40.430Z",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "buffer_post_id": "6ad3f06e0b0d72757af6ea34"
     }
   },
   "buffer_api_usage": [
     "2026-10-17T22:01:04Z",
     "2026-10-17T22:02:18Z",
-    "2026-10-17T22:02:18Z"
+    "2026-10-17T22:02:18Z",
+    "2026-10-17T22:02:21Z"
   ]
 }
