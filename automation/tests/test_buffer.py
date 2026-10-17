@@ -117,6 +117,16 @@ class BufferSafetyTests(unittest.TestCase):
             self.assertEqual(b.main(), 0)
         self.assertEqual(client.call.call_count, 1)
 
+    def test_insufficient_budget_leaves_no_submission_intent(self):
+        self.state['buffer_api_usage'] = [b.common.iso_now()] * 59
+        with patch.dict(b.os.environ, {'BUFFER_API_KEY': 'test-not-a-real-key'}):
+            client = b.Client(self.state)
+        with patch.object(b, 'verify_hosted'), patch.object(b.common, 'checkpoint') as checkpoint:
+            with self.assertRaises(RuntimeError):
+                b.submit(client, self.post, self.state, 'channel')
+        checkpoint.assert_not_called()
+        self.assertEqual(self.state['posts'], {})
+
 
 if __name__ == "__main__":
     unittest.main()

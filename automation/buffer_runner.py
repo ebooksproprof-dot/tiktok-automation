@@ -2,7 +2,7 @@
 """Optional Buffer Free route; uses the existing queue, state and cloud workflow.
 
 Official schema: https://developers.buffer.com/reference.html (2026-10-15).
-Disabled until PUBLISHING_PROVIDER=buffer and credentials/channel are configured.
+Workflows default to Buffer; credentials and strict channel validation are required.
 """
 import json
 import os
@@ -39,15 +39,18 @@ class Client:
         self.state = state
         self.calls = 0
 
-    def call(self, query, variables):
+    def check_budget(self, required=1):
         now = common.utc_now()
         usage = self.state.setdefault("buffer_api_usage", [])
         usage[:] = [x for x in usage if common.parse_time(x) > now - timedelta(days=30)]
         daily = sum(common.parse_time(x) > now - timedelta(days=1) for x in usage)
-        if self.calls >= 8 or daily >= 60 or len(usage) >= 1800:
+        if self.calls + required > 8 or daily + required > 60 or len(usage) + required > 1800:
             raise RuntimeError("Buffer conservative request budget reached; wait for next window")
+
+    def call(self, query, variables):
+        self.check_budget()
         self.calls += 1
-        usage.append(common.iso_now())
+        self.state['buffer_api_usage'].append(common.iso_now())
         common.save_json(common.STATE_PATH, self.state)
         request = urllib.request.Request("https://api.buffer.com", method="POST",
             data=json.dumps({"query": query, "variables": variables}).encode(),
@@ -156,6 +159,7 @@ def record_remote(entry, remote, channel_id):
 def submit(client, post, state, channel_id):
     payload = prepare(post, state, channel_id)
     verify_hosted(post)
+    client.check_budget(required=2)  # Reserve create + read-back before durable intent.
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),
                  sha256=post["quality"]["sha256"], video_url=post["video_url"],
                  concept=post.get("concept"), script_sha256=post.get("script_sha256"),

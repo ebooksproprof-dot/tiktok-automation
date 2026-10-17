@@ -151,6 +151,23 @@ def render(idea, voice, post_id):
     return output,quality
 
 
+def future_slot(planned, queue, state, post_id, now=None):
+    """Move only a new/unsubmitted render to an unoccupied Brazilian slot."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    occupied = {dt.datetime.fromisoformat(p['scheduled_at'].replace('Z', '+00:00'))
+                for p in list(queue.get('posts', [])) + list(state.get('posts', {}).values())
+                if p.get('scheduled_at') and p.get('id') != post_id}
+    candidate = planned
+    for _ in range(62):
+        if candidate >= now + dt.timedelta(minutes=10) and candidate not in occupied:
+            return candidate
+        if candidate.hour == 10:
+            candidate = candidate.replace(hour=18)
+        else:
+            candidate = (candidate + dt.timedelta(days=1)).replace(hour=10)
+    raise RuntimeError('SCHEDULE_BACKLOG: no free slot within 31 days')
+
+
 def main():
     ASSETS.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
     today=dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
@@ -189,6 +206,8 @@ def main():
         if not rendered:
             raise RuntimeError("Render failed; no validated output: " + "; ".join(failures))
         scheduled=dt.datetime.combine(today,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
+        original_scheduled = scheduled
+        scheduled = future_slot(scheduled, queue, state, post_id)
         video_url = f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}'
         if release_storage:
             from release_media import publish
@@ -200,6 +219,9 @@ def main():
                    category=category(idea[0]),script_lines=idea[2],script_sha256=fingerprint(idea[2]),render_version=VERSION,composition_revision=COMPOSITION_REVISION,
                    publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE',
                    media_storage='release' if release_storage else 'git')
+        if scheduled != original_scheduled:
+            entry.update(original_scheduled_at=original_scheduled.isoformat(),
+                         schedule_recovery='MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION')
         if old: queue['posts'][queue['posts'].index(old)]=entry
         else: queue['posts'].append(entry)
         atomic_json(QUEUE,queue); count+=1

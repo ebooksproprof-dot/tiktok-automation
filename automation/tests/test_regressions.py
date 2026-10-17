@@ -78,3 +78,15 @@ class RegressionTests(unittest.TestCase):
     def test_archived_topics_are_not_reported_as_available(self):
         result = readiness.inspect({'posts': []}, {'posts': {'archived': {'concept': 'one'}}}, ['one'], 0, {})
         self.assertEqual(result['unused_concepts'], 0)
+
+    def test_late_render_moves_to_free_future_slot(self):
+        planned = render.dt.datetime(2026, 10, 17, 10, tzinfo=render.ZoneInfo('America/Sao_Paulo'))
+        now = planned.replace(hour=19)
+        occupied = planned + render.dt.timedelta(days=1)
+        queue = {'posts': [{'id': 'other', 'scheduled_at': occupied.isoformat()}]}
+        result = render.future_slot(planned, queue, {'posts': {}}, 'new', now)
+        self.assertEqual(result, occupied.replace(hour=18))
+
+    def test_future_slot_preserves_free_plan(self):
+        planned = render.dt.datetime(2026, 10, 17, 10, tzinfo=render.ZoneInfo('America/Sao_Paulo'))
+        self.assertEqual(render.future_slot(planned, {'posts': []}, {'posts': {}}, 'new', planned.replace(hour=8)), planned)
