@@ -54,9 +54,9 @@ jobs:
       - name: Report actionable blockers without exposing credentials
         env:
           MEDIA_STORAGE: release
-          PUBLISHING_PROVIDER: ${{ vars.PUBLISHING_PROVIDER }}
+          PUBLISHING_PROVIDER: ${{ vars.PUBLISHING_PROVIDER || 'buffer' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
         run: python automation/readiness.py
 
       - name: Run existing publication queue
@@ -66,9 +66,9 @@ jobs:
           TIKTOK_RUNNER_SHARED_SECRET: ${{ secrets.TIKTOK_RUNNER_SHARED_SECRET }}
           MAX_NEW_POSTS_PER_RUN: "1"
           TIKTOK_VERIFIED_VIDEO_PREFIX: ${{ vars.TIKTOK_VERIFIED_VIDEO_PREFIX }}
-          PUBLISHING_PROVIDER: ${{ vars.PUBLISHING_PROVIDER }}
+          PUBLISHING_PROVIDER: ${{ vars.PUBLISHING_PROVIDER || 'buffer' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
           BUFFER_CHECK_ONLY: ${{ inputs.buffer_check_only }}
         run: |
           if [ "$BUFFER_CHECK_ONLY" = "true" ]; then
