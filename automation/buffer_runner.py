@@ -138,10 +138,12 @@ def record_remote(entry, remote, channel_id):
     public_link = re.match(r"https://(?:www\.)?tiktok\.com/@[A-Za-z0-9_.]+/video/\d+(?=$|[?#])", url)
     entry['buffer_external_link'] = public_link.group(0) if public_link else None
     entry['buffer_sent_at_present'] = bool(remote.get('sentAt'))
-    pattern = r"https://www\.tiktok\.com/@" + re.escape(common.EXPECTED_USERNAME) + r"/video/(\d+)(?:\?.*)?"
+    pattern = r"https://(?:www\.)?tiktok\.com/@" + re.escape(common.EXPECTED_USERNAME) + r"/video/(\d+)(?:\?.*)?"
     match = re.fullmatch(pattern, url)
     if status == "sent" and remote.get("sentAt") and match:
-        entry.update(status="PUBLISH_COMPLETE", publicly_verified=True, public_urls=[url],
+        canonical_url = 'https://www.tiktok.com/@' + common.EXPECTED_USERNAME + '/video/' + match[1]
+        entry.pop('evidence_pending_reason', None)
+        entry.update(status="PUBLISH_COMPLETE", publicly_verified=True, public_urls=[canonical_url],
                      publicly_available_post_id=[match[1]],
                      verification_source="Buffer API sent + automatic + exact-account externalLink")
     elif status == "error":

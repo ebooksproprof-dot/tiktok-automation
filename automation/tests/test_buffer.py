@@ -136,6 +136,14 @@ class BufferSafetyTests(unittest.TestCase):
         self.assertIsNone(entry['buffer_external_link'])
         self.assertFalse(entry['publicly_verified'])
 
+    def test_confirmed_evidence_clears_old_reason_and_query(self):
+        entry = {'buffer_post_id': 'remote', 'evidence_pending_reason': 'PUBLIC_LINK_MISSING'}
+        url = 'https://www.tiktok.com/@.casasemesforo/video/123'
+        b.record_remote(entry, {'id': 'remote', 'channelId': 'channel', 'status': 'sent',
+            'schedulingType': 'automatic', 'sentAt': b.common.iso_now(), 'externalLink': url.replace('www.', '') + '?tracking=example'}, 'channel')
+        self.assertEqual(entry['public_urls'], [url])
+        self.assertNotIn('evidence_pending_reason', entry)
+
 
 if __name__ == "__main__":
     unittest.main()
