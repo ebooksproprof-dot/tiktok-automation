@@ -29,7 +29,7 @@ def inspect(queue, state, concepts, media_bytes, environ):
             reasons.append('POST_ROUTE_NOT_ASSIGNED')
         if reasons:
             blockers.append(str(p.get('id')) + ': ' + ', '.join(reasons))
-    if media_bytes + 40_000_000 > 200_000_000:
+    if environ.get('MEDIA_STORAGE') != 'release' and media_bytes + 40_000_000 > 200_000_000:
         blockers.append('MEDIA_BUDGET_LOW: next pair may exceed existing source-repository storage cap')
     return dict(checked_at=datetime.now(timezone.utc).isoformat(),
                 status='BLOCKED' if blockers else 'LOCAL_CHECKS_ONLY',

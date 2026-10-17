@@ -52,6 +52,7 @@ jobs:
 
       - name: Report actionable blockers without exposing credentials
         env:
+          MEDIA_STORAGE: release
           PUBLISHING_PROVIDER: ${{ vars.PUBLISHING_PROVIDER }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID }}

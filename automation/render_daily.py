@@ -13,7 +13,7 @@ from zoneinfo import ZoneInfo
 from media_quality import validate
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = ROOT / 'public/rendered/daily'
+OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'release' else 'public/rendered/daily')
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
@@ -160,7 +160,8 @@ def main():
         if post_id in state.get('posts',{}) or (old and (old.get('approved') or old.get('composition_revision')==COMPOSITION_REVISION)):
             continue
         media_total=sum(p.stat().st_size for p in (ROOT/'public/rendered').rglob('*.mp4'))
-        if media_total+20_000_000>MAX_MEDIA_BYTES:
+        release_storage = os.getenv('MEDIA_STORAGE') == 'release'
+        if not release_storage and media_total+20_000_000>MAX_MEDIA_BYTES:
             raise RuntimeError('STORAGE_BUDGET: stop before adding media beyond 200 MB; no paid storage')
         if old and old.get('concept'):
             repair = next((idea for idea in IDEAS if idea[0] == old['concept']), None)
@@ -184,11 +185,16 @@ def main():
         if not rendered:
             raise RuntimeError("Render failed; no validated output: " + "; ".join(failures))
         scheduled=dt.datetime.combine(today,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
-        entry=dict(id=post_id,video_url=f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}',
+        video_url = f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}'
+        if release_storage:
+            from release_media import publish
+            video_url = publish(output, post_id, quality)
+        entry=dict(id=post_id,video_url=video_url,
                    title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
                    scheduled_at=scheduled.astimezone(dt.timezone.utc).isoformat(),
                    approved=False,consented_at=None,quality=quality,concept=idea[0],render_version=VERSION,composition_revision=COMPOSITION_REVISION,
-                   publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE')
+                   publishing_status='AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE',
+                   media_storage='release' if release_storage else 'git')
         if old: queue['posts'][queue['posts'].index(old)]=entry
         else: queue['posts'].append(entry)
         atomic_json(QUEUE,queue); count+=1

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "automation/render_daily.py"
+      - "automation/release_media.py"
       - "automation/media_quality.py"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
@@ -39,7 +40,14 @@ jobs:
         env:
           GITHUB_STEP_SUMMARY: "" # Keep mock evidence out of operational summaries.
         run: python -m unittest discover -s automation/tests -v
+      - name: Migrate unpublished binaries outside source history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/release_media.py
       - name: Render narrated MP4 with technical validation
+        env:
+          MEDIA_STORAGE: release
+          GH_TOKEN: ${{ github.token }}
         run: python automation/render_daily.py
       - name: Persist validated outputs even if a later composition fails
         if: always()
@@ -53,6 +61,8 @@ jobs:
               if entry.get('render_version') != 2 or not entry.get('quality', {}).get('technical_pass'):
                   continue
               media = pathlib.Path('public/rendered/daily') / (entry['id'] + '-v2.mp4')
+              if entry.get('media_storage') == 'release':
+                  continue # New binaries live in Releases, never source history.
               if media.exists() and media.with_suffix('.json').exists():
                   paths.extend([str(media), str(media.with_suffix('.json'))])
           subprocess.run(['git', 'add', '--', *paths], check=True)

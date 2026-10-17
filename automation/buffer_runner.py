@@ -97,7 +97,8 @@ def prepare(post, state, channel_id):
         raise ValueError("Caption exceeds TikTok limits or is empty")
     url = post.get("video_url", "")
     prefixes = ("https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/",
-                "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/")
+                "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/",
+                "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-")
     if not url.startswith(prefixes) or not url.endswith(".mp4"):
         raise ValueError("Media must use the existing HTTPS repository hosting")
     return {"channelId": channel_id, "text": text, "schedulingType": "automatic",
