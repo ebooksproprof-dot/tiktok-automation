@@ -87,6 +87,18 @@
         "7697762174428597511"
       ],
       "verification_source": "Buffer API sent + automatic + exact-account externalLink"
+    },
+    "casasem-2026-10-16-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-18T11:38:27Z",
+      "sha256": "d28a972cff0f4a1eca7a8204440bf72ac75dbdef38babc841f77086f29ae08ea",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-1-d28a972cff0f4a1e.mp4",
+      "concept": "pano-lado-limpo",
+      "script_sha256": null,
+      "scheduled_at": "2026-10-18T13:00:00+00:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -105,6 +117,8 @@
     "2026-10-17T22:11:42Z",
     "2026-10-17T22:13:19Z",
     "2026-10-17T22:13:19Z",
-    "2026-10-17T22:35:36Z"
+    "2026-10-17T22:35:36Z",
+    "2026-10-18T11:38:25Z",
+    "2026-10-18T11:38:26Z"
   ]
 }
