@@ -115,7 +115,8 @@
       "script_sha256": null,
       "scheduled_at": "2026-10-18T21:00:00+00:00",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "buffer_post_id": "6ad4afbb938409f1d0caefcc"
     }
   },
   "buffer_api_usage": [
@@ -138,6 +139,7 @@
     "2026-10-18T11:38:25Z",
     "2026-10-18T11:38:26Z",
     "2026-10-18T11:38:29Z",
-    "2026-10-18T11:38:31Z"
+    "2026-10-18T11:38:31Z",
+    "2026-10-18T11:38:35Z"
   ]
 }
