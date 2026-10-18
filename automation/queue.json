@@ -248,6 +248,106 @@
       "render_version": 2,
       "composition_revision": 3,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE"
+    },
+    {
+      "id": "casasem-2026-10-18-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-18-1-75791c5e86536e7c.mp4",
+      "title": "Você pisa onde acabou de limpar? Antes de começar, planeje o caminho. Limpe a partir do fundo do ambiente. Avance na direção da saída. Deixe uma passagem livre. Evite atravessar a parte que ainda está molhada. Espere o piso secar antes de circular. Salve para sua próxima faxina. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-19T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "75791c5e86536e7c1097484ac05ceb30fff523164b72ffe824aa8250409d8a4a",
+        "duration": 18.536,
+        "size": 4126787,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.6,
+        "concept": "piso-rota-saida",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 3
+      },
+      "concept": "piso-rota-saida",
+      "category": "rotina",
+      "script_lines": [
+        "Você pisa onde acabou de limpar?",
+        "Antes de começar, planeje o",
+        "caminho.",
+        "Limpe a partir do fundo do",
+        "ambiente.",
+        "Avance na direção da saída.",
+        "Deixe uma passagem livre.",
+        "Evite atravessar a parte que",
+        "ainda está molhada.",
+        "Espere o piso secar antes de",
+        "circular.",
+        "Salve para sua próxima",
+        "faxina."
+      ],
+      "script_sha256": "ca82373b7e937146e5e08b6f4a65bacb8fc3f3db4ec5580d852ec5481aef0d9c",
+      "render_version": 2,
+      "composition_revision": 3,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-18T10:00:00-03:00",
+      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
+    },
+    {
+      "id": "casasem-2026-10-18-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-18-2-81414cfcb916ae2c.mp4",
+      "title": "Terminou de limpar a torneira? Depois da limpeza indicada pelo fabricante, confira se ficou água na superfície. Use um pano limpo e macio para secar. Passe também ao redor da base. Não use o mesmo pano sujo da etapa anterior. Termine uma peça antes de começar outra. Inclua este passo na rotina. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-19T21:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "81414cfcb916ae2c659c2f61a5efc4d0ffb89dd59428d2e7bad7199d813b2266",
+        "duration": 20.22,
+        "size": 6247010,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.2,
+        "concept": "torneira-final-seco",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 3
+      },
+      "concept": "torneira-final-seco",
+      "category": "conservacao",
+      "script_lines": [
+        "Terminou de limpar a torneira?",
+        "Depois da limpeza indicada",
+        "pelo fabricante, confira se",
+        "ficou água na superfície.",
+        "Use um pano limpo e macio",
+        "para secar.",
+        "Passe também ao redor da",
+        "base.",
+        "Não use o mesmo pano sujo da",
+        "etapa anterior.",
+        "Termine uma peça antes de",
+        "começar outra.",
+        "Inclua este passo na rotina."
+      ],
+      "script_sha256": "40db1188f3dca3f5b88e787d7f4023a06458065285268cb65d3f1c126933574b",
+      "render_version": 2,
+      "composition_revision": 3,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-18T18:00:00-03:00",
+      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
     }
   ]
 }
