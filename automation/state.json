@@ -104,6 +104,18 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-10-16-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-18T11:38:34Z",
+      "sha256": "7f8ad195308930c5ee5f06292bb6cb4bee5df772169781ee5b0d3b9743682a33",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-2-7f8ad195308930c5.mp4",
+      "concept": "rotulo-primeiro",
+      "script_sha256": null,
+      "scheduled_at": "2026-10-18T21:00:00+00:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
