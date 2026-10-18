@@ -98,12 +98,12 @@
       "id": "casasem-2026-10-16-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-1-d28a972cff0f4a1e.mp4",
       "title": "Seu pano já está sujo? Não espalhe a sujeira. Dobre para usar uma parte limpa. Troque o lado conforme limpa. Quando todos estiverem sujos, pegue outro pano limpo. É um cuidado simples. Na próxima superfície, comece com o pano limpo. Salve para a faxina. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-16T13:00:00+00:00",
+      "scheduled_at": "2026-10-18T13:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "d28a972cff0f4a1eca7a8204440bf72ac75dbdef38babc841f77086f29ae08ea",
         "duration": 16.633333,
         "size": 6081141,
@@ -118,24 +118,38 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 3
+        "composition_revision": 3,
+        "editorial_review": {
+          "reviewed_at": "2026-10-18T11:37:24Z",
+          "checks": [
+            "six-frame visual review",
+            "caption and script review",
+            "1080x1920 MP4, H.264/AAC, duration and continuous non-silent audio validated",
+            "exact SHA-256 matches Release",
+            "no submitted ID or hash in persistent provider history or Metricool planner"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "pano-lado-limpo",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "EDITORIALLY_APPROVED_FOR_BUFFER_SCHEDULE",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-16T13:00:00+00:00",
+      "publication_provider": "buffer",
+      "schedule_recovery": "REVIEWED_UNSUBMITTED_VIDEO_RESCHEDULED_TO_FREE_SLOT"
     },
     {
       "id": "casasem-2026-10-16-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-2-7f8ad195308930c5.mp4",
       "title": "Mais produto não é melhor. Antes de limpar, confira o rótulo. Respeite a diluição indicada. E confirme se o produto serve para aquela superfície. Cada acabamento pede cuidado. Evite improvisar misturas. Na dúvida, consulte a orientação do fabricante. Salve este lembrete. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-16T21:00:00+00:00",
+      "scheduled_at": "2026-10-18T21:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "7f8ad195308930c5ee5f06292bb6cb4bee5df772169781ee5b0d3b9743682a33",
         "duration": 18.333333,
         "size": 5445348,
@@ -150,13 +164,27 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 3
+        "composition_revision": 3,
+        "editorial_review": {
+          "reviewed_at": "2026-10-18T11:37:24Z",
+          "checks": [
+            "six-frame visual review",
+            "caption and script review",
+            "1080x1920 MP4, H.264/AAC, duration and continuous non-silent audio validated",
+            "exact SHA-256 matches Release",
+            "no submitted ID or hash in persistent provider history or Metricool planner"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "rotulo-primeiro",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "EDITORIALLY_APPROVED_FOR_BUFFER_SCHEDULE",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-16T21:00:00+00:00",
+      "publication_provider": "buffer",
+      "schedule_recovery": "REVIEWED_UNSUBMITTED_VIDEO_RESCHEDULED_TO_FREE_SLOT"
     },
     {
       "id": "casasem-2026-10-17-1",
