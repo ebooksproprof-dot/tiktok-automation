@@ -163,7 +163,8 @@
       "script_sha256": "436ec3d9afa8a02f78d9489dbd4820f8cd3d14b22a153677b1838af908171550",
       "scheduled_at": "2026-10-19T21:00:00+00:00",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "buffer_post_id": "6ad603dd7a42a610a50f95c5"
     }
   },
   "buffer_api_usage": [
@@ -206,6 +207,7 @@
     "2026-10-19T11:45:31Z",
     "2026-10-19T11:49:45Z",
     "2026-10-19T11:49:45Z",
-    "2026-10-19T11:49:45Z"
+    "2026-10-19T11:49:45Z",
+    "2026-10-19T11:49:49Z"
   ]
 }
