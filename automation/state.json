@@ -162,20 +162,27 @@
     },
     "casasem-2026-10-19-2": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-10-19T11:49:47Z",
       "sha256": "32fbc3da6f7f1aa96ea8ec2543a9f1fca3cee62d1900807fdb7c5f3eabbe7e52",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-2-32fbc3da6f7f1aa9.mp4",
       "concept": "retirar-tapetes",
       "script_sha256": "436ec3d9afa8a02f78d9489dbd4820f8cd3d14b22a153677b1838af908171550",
       "scheduled_at": "2026-10-19T21:00:00+00:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad603dd7a42a610a50f95c5",
-      "last_checked_at": "2026-10-19T20:35:08Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-10-19T21:41:12Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7698486612128206081",
+      "buffer_sent_at_present": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698486612128206081"
+      ],
+      "publicly_available_post_id": [
+        "7698486612128206081"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink"
     }
   },
   "buffer_api_usage": [
@@ -228,6 +235,8 @@
     "2026-10-19T14:46:34Z",
     "2026-10-19T14:46:34Z",
     "2026-10-19T20:35:08Z",
-    "2026-10-19T20:35:08Z"
+    "2026-10-19T20:35:08Z",
+    "2026-10-19T21:41:12Z",
+    "2026-10-19T21:41:12Z"
   ]
 }
