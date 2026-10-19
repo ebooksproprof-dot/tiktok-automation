@@ -138,20 +138,27 @@
     },
     "casasem-2026-10-19-1": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-10-19T11:45:28Z",
       "sha256": "ad3f1eedf78ef3653f6298221257b50ee39c4e9234e892f97616ebf1420e70d9",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-1-ad3f1eedf78ef365.mp4",
       "concept": "espelho-pano-sem-fiapos",
       "script_sha256": "be564c11417a89ee37d50a8ffb1f013630afc93e7d028d20799cd968907b7d2f",
       "scheduled_at": "2026-10-19T13:00:00+00:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad602da0d5fe571c7006ce9",
-      "last_checked_at": "2026-10-19T12:44:10Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-10-19T13:55:02Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7698363136474156289",
+      "buffer_sent_at_present": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698363136474156289"
+      ],
+      "publicly_available_post_id": [
+        "7698363136474156289"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink"
     },
     "casasem-2026-10-19-2": {
       "provider": "buffer",
@@ -165,7 +172,7 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad603dd7a42a610a50f95c5",
-      "last_checked_at": "2026-10-19T12:44:10Z",
+      "last_checked_at": "2026-10-19T13:55:02Z",
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
@@ -215,6 +222,8 @@
     "2026-10-19T11:49:49Z",
     "2026-10-19T11:49:51Z",
     "2026-10-19T12:44:09Z",
-    "2026-10-19T12:44:10Z"
+    "2026-10-19T12:44:10Z",
+    "2026-10-19T13:55:01Z",
+    "2026-10-19T13:55:01Z"
   ]
 }
