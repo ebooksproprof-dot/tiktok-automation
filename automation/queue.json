@@ -423,7 +423,7 @@
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "32fbc3da6f7f1aa96ea8ec2543a9f1fca3cee62d1900807fdb7c5f3eabbe7e52",
         "duration": 19.847,
         "size": 6676577,
@@ -437,7 +437,18 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 4
+        "composition_revision": 4,
+        "editorial_review": {
+          "reviewed_at": "2026-10-19T11:48:40Z",
+          "checks": [
+            "six-frame visual review",
+            "caption and script review after mismatch repair",
+            "1080x1920 MP4, H.264/AAC, duration and continuous non-silent audio validated",
+            "exact SHA-256 matches Release",
+            "new rug footage matches the revised narration"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "retirar-tapetes",
       "category": "conservacao",
@@ -460,8 +471,11 @@
       "script_sha256": "436ec3d9afa8a02f78d9489dbd4820f8cd3d14b22a153677b1838af908171550",
       "render_version": 2,
       "composition_revision": 4,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "EDITORIALLY_APPROVED_FOR_BUFFER_SCHEDULE",
+      "media_storage": "release",
+      "original_scheduled_at": "2026-10-19T18:00:00-03:00",
+      "publication_provider": "buffer",
+      "schedule_recovery": "RENDER_REPAIRED_AND_REVIEWED_BEFORE_SUBMISSION"
     }
   ]
 }
