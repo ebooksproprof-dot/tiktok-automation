@@ -148,7 +148,7 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad602da0d5fe571c7006ce9",
-      "last_checked_at": "2026-10-19T11:49:45Z",
+      "last_checked_at": "2026-10-19T12:44:10Z",
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
@@ -165,7 +165,7 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad603dd7a42a610a50f95c5",
-      "last_checked_at": "2026-10-19T11:49:51Z",
+      "last_checked_at": "2026-10-19T12:44:10Z",
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
@@ -213,6 +213,8 @@
     "2026-10-19T11:49:45Z",
     "2026-10-19T11:49:45Z",
     "2026-10-19T11:49:49Z",
-    "2026-10-19T11:49:51Z"
+    "2026-10-19T11:49:51Z",
+    "2026-10-19T12:44:09Z",
+    "2026-10-19T12:44:10Z"
   ]
 }
