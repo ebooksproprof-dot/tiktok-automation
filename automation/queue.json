@@ -253,7 +253,7 @@
       "id": "casasem-2026-10-18-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-18-1-75791c5e86536e7c.mp4",
       "title": "Você pisa onde acabou de limpar? Antes de começar, planeje o caminho. Limpe a partir do fundo do ambiente. Avance na direção da saída. Deixe uma passagem livre. Evite atravessar a parte que ainda está molhada. Espere o piso secar antes de circular. Salve para sua próxima faxina. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-19T13:00:00+00:00",
+      "scheduled_at": null,
       "approved": false,
       "consented_at": null,
       "quality": {
@@ -294,16 +294,17 @@
       "script_sha256": "ca82373b7e937146e5e08b6f4a65bacb8fc3f3db4ec5580d852ec5481aef0d9c",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "publishing_status": "EDITORIALLY_REJECTED_REPETITIVE_FOOTAGE",
       "media_storage": "release",
       "original_scheduled_at": "2026-10-18T10:00:00-03:00",
-      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "editorial_rejection": "Repeated the same floor footage used in earlier posts; held to preserve visual originality."
     },
     {
       "id": "casasem-2026-10-18-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-18-2-81414cfcb916ae2c.mp4",
       "title": "Terminou de limpar a torneira? Depois da limpeza indicada pelo fabricante, confira se ficou água na superfície. Use um pano limpo e macio para secar. Passe também ao redor da base. Não use o mesmo pano sujo da etapa anterior. Termine uma peça antes de começar outra. Inclua este passo na rotina. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-19T21:00:00+00:00",
+      "scheduled_at": null,
       "approved": false,
       "consented_at": null,
       "quality": {
@@ -344,21 +345,22 @@
       "script_sha256": "40db1188f3dca3f5b88e787d7f4023a06458065285268cb65d3f1c126933574b",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "publishing_status": "EDITORIALLY_REJECTED_REPETITIVE_FOOTAGE",
       "media_storage": "release",
       "original_scheduled_at": "2026-10-18T18:00:00-03:00",
-      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "editorial_rejection": "Repeated the same sink footage used in earlier posts; held to preserve visual originality."
     },
     {
       "id": "casasem-2026-10-19-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-1-ad3f1eedf78ef365.mp4",
       "title": "Seu pano deixa fiapos no espelho? Confira o pano antes de começar. Prefira um pano limpo, macio e que não solte fiapos. Use o produto indicado para o espelho. Não improvise com materiais ásperos. Observe o resultado com outra iluminação. Se houver resíduos, use uma parte limpa do pano. Salve para lembrar do pano. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-20T13:00:00+00:00",
+      "scheduled_at": "2026-10-19T13:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "ad3f1eedf78ef3653f6298221257b50ee39c4e9234e892f97616ebf1420e70d9",
         "duration": 21.763,
         "size": 6723364,
@@ -372,7 +374,18 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 3
+        "composition_revision": 3,
+        "editorial_review": {
+          "reviewed_at": "2026-10-19T11:42:30Z",
+          "checks": [
+            "six-frame visual review",
+            "caption and script review",
+            "1080x1920 MP4, H.264/AAC, duration and continuous non-silent audio validated",
+            "exact SHA-256 matches Release",
+            "new footage distinct from prior published compositions"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "espelho-pano-sem-fiapos",
       "category": "limpeza",
@@ -395,16 +408,17 @@
       "script_sha256": "be564c11417a89ee37d50a8ffb1f013630afc93e7d028d20799cd968907b7d2f",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "publishing_status": "EDITORIALLY_APPROVED_FOR_BUFFER_SCHEDULE",
       "media_storage": "release",
       "original_scheduled_at": "2026-10-19T10:00:00-03:00",
-      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
+      "schedule_recovery": "REVIEWED_UNSUBMITTED_VIDEO_MOVED_TO_FREE_SLOT",
+      "publication_provider": "buffer"
     },
     {
       "id": "casasem-2026-10-19-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-2-b60f1e4fd5366fd6.mp4",
       "title": "Tem tapete no caminho da faxina? Retire os tapetes antes de limpar o piso. Coloque cada um em um local seco, fora da passagem. Limpe a área que estava coberta. Espere o piso secar completamente. Só então devolva os tapetes ao lugar. Assim você consegue cuidar de toda a área. Lembre desse passo na próxima limpeza. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-20T21:00:00+00:00",
+      "scheduled_at": null,
       "approved": false,
       "consented_at": null,
       "quality": {
@@ -447,10 +461,11 @@
       "script_sha256": "70ec15195b29ec1bd03566f01d882ecde3c8ee3292e26086cb04097c2301d929",
       "render_version": 2,
       "composition_revision": 3,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "publishing_status": "EDITORIALLY_REJECTED_VISUAL_SCRIPT_MISMATCH",
       "media_storage": "release",
       "original_scheduled_at": "2026-10-19T18:00:00-03:00",
-      "schedule_recovery": "MISSED_OR_OCCUPIED_SLOT_MOVED_BEFORE_SUBMISSION"
+      "schedule_recovery": "RENDER_REPAIR_REQUIRED_BEFORE_SUBMISSION",
+      "editorial_rejection": "The footage shows vacuuming a rug while the narration instructs removing rugs before floor cleaning."
     }
   ]
 }

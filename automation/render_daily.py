@@ -18,7 +18,7 @@ OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'relea
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
-COMPOSITION_REVISION = 3
+COMPOSITION_REVISION = 4
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
 MAX_MEDIA_BYTES = 200_000_000
@@ -197,7 +197,11 @@ def main():
     for slot,hour in enumerate([10,18],1):
         post_id=f'casasem-{today}-{slot}'
         old=next((p for p in queue['posts'] if p['id']==post_id),None)
-        if post_id in state.get('posts',{}) or (old and (old.get('approved') or old.get('composition_revision')==COMPOSITION_REVISION)):
+        if post_id in state.get('posts',{}) or (old and (
+            old.get('approved')
+            or old.get('quality', {}).get('editorial_approved')
+            or old.get('composition_revision') == COMPOSITION_REVISION
+        )):
             continue
         media_total=sum(p.stat().st_size for p in (ROOT/'public/rendered').rglob('*.mp4'))
         release_storage = os.getenv('MEDIA_STORAGE') == 'release'
