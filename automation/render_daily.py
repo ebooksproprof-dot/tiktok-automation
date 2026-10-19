@@ -26,6 +26,14 @@ SOURCE = {
  'piso': 'https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4',
  'pia': 'https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4',
  'espelho': 'https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4',
+ 'espelho2': 'https://videos.pexels.com/video-files/9462886/9462886-uhd_2160_3840_24fps.mp4',
+ 'tapete': 'https://videos.pexels.com/video-files/9473229/9473229-uhd_2160_3840_24fps.mp4',
+ 'bancada': 'https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4',
+ 'bancada-limpa': 'https://videos.pexels.com/video-files/10568533/10568533-uhd_2160_4096_25fps.mp4',
+ 'piso2': 'https://videos.pexels.com/video-files/7551204/7551204-uhd_2160_3840_25fps.mp4',
+ 'pia2': 'https://videos.pexels.com/video-files/9472852/9472852-uhd_2160_3840_24fps.mp4',
+ 'geladeira': 'https://videos.pexels.com/video-files/9462939/9462939-uhd_2160_3840_24fps.mp4',
+ 'roupas': 'https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4',
 }
 # Finite catalog, deliberately no random recycling. Stock scenes are illustrative.
 IDEAS = [
