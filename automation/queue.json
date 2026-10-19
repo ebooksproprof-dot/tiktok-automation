@@ -416,20 +416,20 @@
     },
     {
       "id": "casasem-2026-10-19-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-2-b60f1e4fd5366fd6.mp4",
-      "title": "Tem tapete no caminho da faxina? Retire os tapetes antes de limpar o piso. Coloque cada um em um local seco, fora da passagem. Limpe a área que estava coberta. Espere o piso secar completamente. Só então devolva os tapetes ao lugar. Assim você consegue cuidar de toda a área. Lembre desse passo na próxima limpeza. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": null,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-2-32fbc3da6f7f1aa9.mp4",
+      "title": "Vai aspirar o tapete? Primeiro confira a etiqueta e a orientação do fabricante. Confirme se o material permite aspirador. Retire objetos pequenos do caminho. Use o acessório indicado. Passe sem puxar franjas ou partes soltas. Interrompa se notar qualquer dano. Guarde este cuidado para o tapete. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-19T21:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
         "editorial_approved": false,
-        "sha256": "b60f1e4fd5366fd6e9eab06ab497749fcc34cef677c8d3ee31d9f95fb3192826",
-        "duration": 21.703,
-        "size": 7236640,
+        "sha256": "32fbc3da6f7f1aa96ea8ec2543a9f1fca3cee62d1900807fdb7c5f3eabbe7e52",
+        "duration": 19.847,
+        "size": 6676577,
         "width": 1080,
         "height": 1920,
-        "audio_mean_db": -17.0,
+        "audio_mean_db": -16.7,
         "concept": "retirar-tapetes",
         "source_urls": [
           "https://videos.pexels.com/video-files/9473229/9473229-uhd_2160_3840_24fps.mp4"
@@ -437,35 +437,31 @@
         "source_license": "https://www.pexels.com/license/",
         "voice": "pt_BR-faber-medium",
         "render_version": 2,
-        "composition_revision": 3
+        "composition_revision": 4
       },
       "concept": "retirar-tapetes",
-      "category": "preparacao",
+      "category": "conservacao",
       "script_lines": [
-        "Tem tapete no caminho da faxina?",
-        "Retire os tapetes antes de",
-        "limpar o piso.",
-        "Coloque cada um em um local",
-        "seco, fora da passagem.",
-        "Limpe a área que estava",
-        "coberta.",
-        "Espere o piso secar",
-        "completamente.",
-        "Só então devolva os tapetes",
-        "ao lugar.",
-        "Assim você consegue cuidar de",
-        "toda a área.",
-        "Lembre desse passo na próxima",
-        "limpeza."
+        "Vai aspirar o tapete?",
+        "Primeiro confira a etiqueta e",
+        "a orientação do fabricante.",
+        "Confirme se o material",
+        "permite aspirador.",
+        "Retire objetos pequenos do",
+        "caminho.",
+        "Use o acessório indicado.",
+        "Passe sem puxar franjas ou",
+        "partes soltas.",
+        "Interrompa se notar qualquer",
+        "dano.",
+        "Guarde este cuidado para o",
+        "tapete."
       ],
-      "script_sha256": "70ec15195b29ec1bd03566f01d882ecde3c8ee3292e26086cb04097c2301d929",
+      "script_sha256": "436ec3d9afa8a02f78d9489dbd4820f8cd3d14b22a153677b1838af908171550",
       "render_version": 2,
-      "composition_revision": 3,
-      "publishing_status": "EDITORIALLY_REJECTED_VISUAL_SCRIPT_MISMATCH",
-      "media_storage": "release",
-      "original_scheduled_at": "2026-10-19T18:00:00-03:00",
-      "schedule_recovery": "RENDER_REPAIR_REQUIRED_BEFORE_SUBMISSION",
-      "editorial_rejection": "The footage shows vacuuming a rug while the narration instructs removing rugs before floor cleaning."
+      "composition_revision": 4,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
