@@ -138,7 +138,7 @@
     },
     "casasem-2026-10-19-1": {
       "provider": "buffer",
-      "status": "SUBMISSION_UNKNOWN",
+      "status": "SCHEDULED",
       "submitted_at": "2026-10-19T11:45:28Z",
       "sha256": "ad3f1eedf78ef3653f6298221257b50ee39c4e9234e892f97616ebf1420e70d9",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-1-ad3f1eedf78ef365.mp4",
@@ -147,7 +147,11 @@
       "scheduled_at": "2026-10-19T13:00:00+00:00",
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
-      "buffer_post_id": "6ad602da0d5fe571c7006ce9"
+      "buffer_post_id": "6ad602da0d5fe571c7006ce9",
+      "last_checked_at": "2026-10-19T11:45:32Z",
+      "buffer_status": "scheduled",
+      "buffer_external_link": null,
+      "buffer_sent_at_present": false
     }
   },
   "buffer_api_usage": [
@@ -186,6 +190,7 @@
     "2026-10-18T22:36:42Z",
     "2026-10-19T11:45:25Z",
     "2026-10-19T11:45:25Z",
-    "2026-10-19T11:45:29Z"
+    "2026-10-19T11:45:29Z",
+    "2026-10-19T11:45:31Z"
   ]
 }
