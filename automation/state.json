@@ -135,6 +135,18 @@
         "7698115577021336850"
       ],
       "verification_source": "Buffer API sent + automatic + exact-account externalLink"
+    },
+    "casasem-2026-10-19-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-19T11:45:28Z",
+      "sha256": "ad3f1eedf78ef3653f6298221257b50ee39c4e9234e892f97616ebf1420e70d9",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-1-ad3f1eedf78ef365.mp4",
+      "concept": "espelho-pano-sem-fiapos",
+      "script_sha256": "be564c11417a89ee37d50a8ffb1f013630afc93e7d028d20799cd968907b7d2f",
+      "scheduled_at": "2026-10-19T13:00:00+00:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -170,6 +182,8 @@
     "2026-10-18T20:29:23Z",
     "2026-10-18T21:37:42Z",
     "2026-10-18T21:37:42Z",
-    "2026-10-18T22:36:42Z"
+    "2026-10-18T22:36:42Z",
+    "2026-10-19T11:45:25Z",
+    "2026-10-19T11:45:25Z"
   ]
 }
