@@ -98,24 +98,219 @@
     },
     {
       "concept": "pia-acesso-facil",
-      "status": "pending",
+      "status": "rendered_for_review",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
-      "published": false
+      "published": false,
+      "report": [
+        {
+          "concept": "pia-acesso-facil",
+          "file": "preview-v3-1-v2.mp4",
+          "quality": {
+            "technical_pass": true,
+            "editorial_approved": false,
+            "sha256": "623293505e144b55fbc01f3ecd3a0875605e25b0a446fa7a0976ccee043cead8",
+            "duration": 17.233333,
+            "size": 8306414,
+            "width": 1080,
+            "height": 1920,
+            "audio_mean_db": -17.1,
+            "visual_policy_version": 1,
+            "visual_distinct": true,
+            "visual_sources": [
+              {
+                "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+                "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+                "dhash": [
+                  "3c3a96135a4ec64c",
+                  "383a36134a6e6e1c",
+                  "393e1e030226261c",
+                  "383a36130a466260",
+                  "383a36124a4e7260"
+                ]
+              }
+            ],
+            "scene_reuse_policy": "sequential_no_loop",
+            "source_durations": [
+              51.433333
+            ],
+            "concept": "pia-acesso-facil",
+            "source_urls": [
+              "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4"
+            ],
+            "source_license": "https://pixabay.com/service/license-summary/",
+            "voice": "pt_BR-faber-medium",
+            "render_version": 2,
+            "composition_revision": 6,
+            "required_public_credits": [
+              "Video — mrbobdobolina; https://pixabay.com/videos/id-51807/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+            ],
+            "source_licenses": [
+              "https://pixabay.com/service/license-summary/"
+            ]
+          },
+          "elapsed_seconds": 36.81,
+          "script": [
+            "A pia precisa estar fácil de usar.",
+            "Deixe o sabonete ao alcance.",
+            "Tire embalagens vazias da",
+            "bancada.",
+            "Separe um lugar para cada",
+            "item da rotina.",
+            "Guarde o que você não usa",
+            "todos os dias.",
+            "Assim, sobra espaço para usar",
+            "a pia sem afastar objetos.",
+            "Salve para organizar seu",
+            "banheiro."
+          ],
+          "published": false
+        }
+      ]
     },
     {
       "concept": "louca-por-etapas",
-      "status": "pending",
+      "status": "rendered_for_review",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
-      "published": false
+      "published": false,
+      "report": [
+        {
+          "concept": "louca-por-etapas",
+          "file": "preview-v3-2-v2.mp4",
+          "quality": {
+            "technical_pass": true,
+            "editorial_approved": false,
+            "sha256": "91fd52ff9a37cff3c5d49f75641cb21f56f34e28531ceaf81f91e597acdb8657",
+            "duration": 17.836,
+            "size": 3578274,
+            "width": 1080,
+            "height": 1920,
+            "audio_mean_db": -16.3,
+            "visual_policy_version": 1,
+            "visual_distinct": true,
+            "visual_sources": [
+              {
+                "source_id": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+                "sha256": "25ce4a4534f109cc15fc9284071d8c189e0bb69736c80e439be8d10301780b4a",
+                "dhash": [
+                  "1c84ec9999399ece",
+                  "0c8ccc9899399ece",
+                  "cc0c9c98b9399e8e",
+                  "1c0cccd8b9399ece",
+                  "9c8cccf8b1399ece"
+                ]
+              }
+            ],
+            "scene_reuse_policy": "sequential_no_loop",
+            "source_durations": [
+              59.966667
+            ],
+            "concept": "louca-por-etapas",
+            "source_urls": [
+              "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4"
+            ],
+            "source_license": "https://pixabay.com/service/license-summary/",
+            "voice": "pt_BR-faber-medium",
+            "render_version": 2,
+            "composition_revision": 6,
+            "required_public_credits": [
+              "Video — Engin_Akyurt; https://pixabay.com/videos/id-38116/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+            ],
+            "source_licenses": [
+              "https://pixabay.com/service/license-summary/"
+            ]
+          },
+          "elapsed_seconds": 24.91,
+          "script": [
+            "A louça acumulou de novo?",
+            "Antes de começar, separe",
+            "copos, pratos e talheres.",
+            "Retire os restos de comida",
+            "para o lixo.",
+            "Lave um grupo de cada vez.",
+            "Deixe espaço no escorredor e",
+            "guarde as peças secas.",
+            "Uma sequência simples ajuda a",
+            "organizar a tarefa.",
+            "Salve para a próxima louça."
+          ],
+          "published": false
+        }
+      ]
     },
     {
       "concept": "cantinho-de-leitura",
-      "status": "pending",
+      "status": "rendered_for_review",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
-      "published": false
+      "published": false,
+      "report": [
+        {
+          "concept": "cantinho-de-leitura",
+          "file": "preview-v3-3-v2.mp4",
+          "quality": {
+            "technical_pass": true,
+            "editorial_approved": false,
+            "sha256": "ab0e667b70e2cc7a3c42f0393cbe813cecab1acbb26d8686612e9850774bdd22",
+            "duration": 16.6,
+            "size": 6383411,
+            "width": 1080,
+            "height": 1920,
+            "audio_mean_db": -16.4,
+            "visual_policy_version": 1,
+            "visual_distinct": true,
+            "visual_sources": [
+              {
+                "source_id": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4",
+                "sha256": "9f2a8fab962a2bb573a479eefbbe1d1999be3cab472fdadad2043b2903da71aa",
+                "dhash": [
+                  "15b5e13b9c9ccdd1",
+                  "11b5f1310ccccdc9",
+                  "95b1b93b0c8ccdc9",
+                  "7579f1320c8ccdcd",
+                  "63697b5a0c8dcdc9"
+                ]
+              }
+            ],
+            "scene_reuse_policy": "sequential_no_loop",
+            "source_durations": [
+              20.778333
+            ],
+            "concept": "cantinho-de-leitura",
+            "source_urls": [
+              "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4"
+            ],
+            "source_license": "https://pixabay.com/service/license-summary/",
+            "voice": "pt_BR-faber-medium",
+            "render_version": 2,
+            "composition_revision": 6,
+            "required_public_credits": [
+              "Video — Sang_Soi; https://pixabay.com/videos/id-139802/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+            ],
+            "source_licenses": [
+              "https://pixabay.com/service/license-summary/"
+            ]
+          },
+          "elapsed_seconds": 31.11,
+          "script": [
+            "Seu canto de leitura virou depósito?",
+            "Deixe na mesa apenas a",
+            "leitura atual e o que você",
+            "vai usar.",
+            "Guarde os outros livros na",
+            "estante.",
+            "Reserve um lugar para o",
+            "marcador.",
+            "Ao terminar, devolva cada",
+            "item ao seu espaço.",
+            "Comece por uma mesa pequena.",
+            "Salve para organizar seu",
+            "cantinho."
+          ],
+          "published": false
+        }
+      ]
     }
   ]
 }
