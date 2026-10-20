@@ -3,6 +3,27 @@
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
 ## CasaSemEsforço 3.1 — fornecedores adicionais
+- Nova prova LOCAL: pontos-de-toque, 17,267s,1080x1920,4.084.208 bytes, áudio -16,3dB,
+  SHA bf9fa47e90a0d57bf2fc9faf6804568cc82b4308c169356ff4a0d2d13aec2bf8.
+  Três fontes restantes do catálogo existente medidas: bancada6,68s,pia10,01s,
+  geladeira10,01s. Cenas/contexto e contact sheet inspecionados; hashes perceptuais
+  distintos do histórico e dos três previews anteriores. Não adquiridas por nova API.
+- Corrigido planejador: preserva montagem anterior quando cabe; com durações desiguais
+  distribui pelo tempo disponível, sem loop/sobreposição. Novo roteiro contextual.
+  111 testes locais passam. Uma prova explícita solicitada no workflow de produção,
+  registrada em review_requests.json e artifacts7dias, sem aprovação/publicação.
+- Reavaliação breve: OpenCut README continua anunciando API/headless como futuros;
+  EffectCraft última release v0.11.1, mesma PoC CPU já testada; VoiceStudio README
+  documenta CPU com instalação de cerca de5GB, mas direitos dos pesos separados.
+  Não demonstrado benefício para substituir Piper nem integrado novo motor.
+- Commit de créditos/fallback: 23278094a3e308922a6fe41c3e37bbb4b09749d0.
+  Actions 39464338721: 109 testes aprovados na nuvem; APIs sem credenciais opcionais;
+  Wikimedia respondeu, zero cenas elegíveis. Alerta real atualizado em issues/2.
+- Segunda auditoria independente: 109 testes, sem novo bloqueador nos créditos/gates.
+- Correção adicional de concorrência motivada por evidência: criação 39464338701
+  cancelada antes de começar, enquanto aquisição ocupava grupo comum. Coletor agora
+  usa casasemesforco-media-acquisition: somente inbox/cache próprios, com rebase antes
+  de push. Renderer/Runner mantêm serialização do estado de publicação.
 - Primeiro commit 3.1 salvo: 874b68b9d7cd53ec56863878e8e05430a693afb7.
 - Evidência real Actions https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39463815894 :
   102 testes aprovados, PIXABAY_API_KEY_PRESENT=False, PEXELS_API_KEY_PRESENT=False.

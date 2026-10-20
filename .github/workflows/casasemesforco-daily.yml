@@ -13,6 +13,8 @@ on:
       - "automation/visual_library.py"
       - "automation/narration.py"
       - "automation/scene_plan.py"
+      - "automation/review_requested.py"
+      - "automation/review_requests.json"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
   schedule:
@@ -59,6 +61,8 @@ jobs:
           MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
         run: python automation/render_daily.py
+      - name: Render explicitly requested quality proof (at most one)
+        run: python automation/review_requested.py
       - name: Persist validated outputs even if a later composition fails
         if: always()
         run: |
@@ -66,7 +70,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python - <<'PYCODE'
           import json, pathlib, subprocess
-          paths = ['automation/queue.json']
+          paths = ['automation/queue.json', 'automation/review_requests.json']
           for entry in json.loads(pathlib.Path('automation/queue.json').read_text())['posts']:
               if entry.get('render_version') != 2 or not entry.get('quality', {}).get('technical_pass'):
                   continue
@@ -83,6 +87,14 @@ jobs:
           git commit -m "Save validated daily videos pending editorial and publishing checks"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Retain requested proof for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: requested-quality-proof
+          path: tmp/review-v3/
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Evidence summary
         if: always()
         run: |

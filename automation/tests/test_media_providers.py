@@ -27,6 +27,14 @@ def pixabay():
 
 
 class ProviderTests(unittest.TestCase):
+    def test_acquisition_cannot_evict_pending_production(self):
+        root = Path(__file__).resolve().parents[2]/'.github/workflows'
+        acquisition = (root/'acquire-media.yml').read_text()
+        production = (root/'casasemesforco-daily.yml').read_text()
+        self.assertIn('group: casasemesforco-media-acquisition', acquisition)
+        self.assertIn('group: casasemesforco-state', production)
+        self.assertNotIn('group: casasemesforco-state', acquisition)
+
     def test_pixabay_context_and_credits(self):
         provider = p.PixabayProvider('mock-key', {})
         with patch.object(provider, 'json', return_value={'hits': [pixabay()]}):

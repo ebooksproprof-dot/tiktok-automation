@@ -12,6 +12,8 @@ from catalog_extension import TOPICS as EXTRA_TOPICS
 
 # id, category, coherent illustrative footage, hook, factual steps, contextual CTA
 TOPICS = [
+ ('pontos-de-toque','rotina',['bancada-limpa','pia2','geladeira'], 'Esqueceu os pontos de toque?',
+  'Confira a bancada, a borda da pia e o puxador da geladeira. Use um pano limpo, adequado a cada superfície. Separe os materiais de cada ambiente. Respeite o rótulo dos produtos e a orientação do fabricante.', 'Salve esta lista para a próxima limpeza.'),
  ('piso-rota-saida','rotina',['piso'], 'Você pisa onde acabou de limpar?',
   'Antes de começar, planeje o caminho. Limpe a partir do fundo do ambiente. Avance na direção da saída. Deixe uma passagem livre. Evite atravessar a parte que ainda está molhada. Espere o piso secar antes de circular.', 'Salve para sua próxima faxina.'),
  ('torneira-final-seco','conservacao',['pia'], 'Terminou de limpar a torneira?',

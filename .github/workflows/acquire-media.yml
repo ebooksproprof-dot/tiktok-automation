@@ -14,7 +14,9 @@ permissions:
   contents: write
   issues: write
 concurrency:
-  group: casasemesforco-state
+  # Inbox/cache are separate files from publication state. Serialize acquisitions
+  # without evicting a pending production job from GitHub's one-slot pending queue.
+  group: casasemesforco-media-acquisition
   cancel-in-progress: false
 jobs:
   acquire:
