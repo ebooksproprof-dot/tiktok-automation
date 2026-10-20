@@ -183,6 +183,34 @@
         "7698486612128206081"
       ],
       "verification_source": "Buffer API sent + automatic + exact-account externalLink"
+    },
+    "casasem-2026-10-20-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-20T01:34:18Z",
+      "sha256": "8764601bee4d91010539ae91d1f21d2bd2e17bb915f485f62e45488d3d45751a",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-1-8764601bee4d9101.mp4",
+      "concept": "bancada-tirar-objetos",
+      "script_sha256": "389f467c205ddf3e34b428ec14a5fd63a835dd66351e6f9cecee75fa2e04449f",
+      "source_urls": [
+        "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4",
+          "sha256": "3361067878e52ca025e48335b3ac2c7a6b5c52f8a5fd5f42f9652a83e0cc272b",
+          "dhash": [
+            "61b5bdbdbc343e7e",
+            "2929793b0c643b17",
+            "3a2e6e2f0d43672d",
+            "c7830b1b9b09180d",
+            "2bbbbbb338393efb"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-20T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -241,6 +269,8 @@
     "2026-10-19T22:39:52Z",
     "2026-10-20T01:21:51Z",
     "2026-10-20T01:24:26Z",
-    "2026-10-20T01:31:39Z"
+    "2026-10-20T01:31:39Z",
+    "2026-10-20T01:34:15Z",
+    "2026-10-20T01:34:16Z"
   ]
 }
