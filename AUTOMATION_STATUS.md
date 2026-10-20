@@ -1,3 +1,17 @@
+# CasaSemEsforço 3.5 — correção Buffer em validação
+
+- Base real c342bbd; runner39473684713 confirmou142 testes e bloqueio LOCAL antes da rede.
+- Limite60/24h vinha de Client.check_budget, não de HTTP429 do Buffer. Histórico preservado.
+- Política agora90/15min,90/24h e1800/30dias,8/run: abaixo do menor limite oficial
+  divulgado (buffer.com/api:100/d; developers.buffer.com/guides/api-limits.html:250/d,
+  ambos100/15min e3000/30dias). Headers reais podem somente restringir novas chamadas.
+- Sem trabalho elegível: zero chamadas. SCHEDULED reutilizado até dueAt; reconciliação
+  em lote no máximo a cada30min; não consulta canal em reconciliação sem novos envios.
+- Diagnóstico reserva4 chamadas para publicação. Tests-only push não dispara mais API.
+- Retry-After/429,401/403 e backoff exponencial persistentes; sem retry cego de mutation.
+- Gate adicional máximo2 reservas por data Fortaleza/slot; UNKNOWN continua bloqueando reenvio.
+- Teste de envio real e auditoria final ainda pendentes neste checkpoint. Nenhum novo aceite alegado.
+
 ## Bloqueio final confirmado e recuperação
 - Runner39473319061 encontrou o teto conservador de60 chamadas Buffer/24h.
   Nenhum vídeo novo enviado; fila de21/10 preservada. Não aumentar/resetar orçamento.

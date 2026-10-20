@@ -94,7 +94,7 @@ class BufferSafetyTests(unittest.TestCase):
         self.assertFalse(entry["publicly_verified"])
 
     def test_free_request_budget_prevents_network_call(self):
-        self.state["buffer_api_usage"] = [b.common.iso_now()] * 60
+        self.state["buffer_api_usage"] = [b.common.iso_now()] * 90
         with patch.dict(b.os.environ, {"BUFFER_API_KEY": "test-not-a-real-key"}):
             client = b.Client(self.state)
         with patch.object(b.urllib.request, "urlopen") as network:
@@ -117,10 +117,10 @@ class BufferSafetyTests(unittest.TestCase):
         client.call.return_value = {'channel': self.channel}
         with patch.object(b, 'Client', return_value=client), patch.dict(b.os.environ, {'BUFFER_CHANNEL_ID': 'channel'}), patch.object(b.common, 'load_json', side_effect=[self.state, {'posts': [foreign]}]), patch.object(b.common, 'save_json'), patch.object(b.common, 'summary'):
             self.assertEqual(b.main(), 0)
-        self.assertEqual(client.call.call_count, 1)
+        self.assertEqual(client.call.call_count, 0)
 
     def test_insufficient_budget_leaves_no_submission_intent(self):
-        self.state['buffer_api_usage'] = [b.common.iso_now()] * 59
+        self.state['buffer_api_usage'] = [b.common.iso_now()] * 89
         with patch.dict(b.os.environ, {'BUFFER_API_KEY': 'test-not-a-real-key'}):
             client = b.Client(self.state)
         with patch.object(b, 'verify_hosted'), patch.object(b.common, 'checkpoint') as checkpoint:
@@ -147,7 +147,7 @@ class BufferSafetyTests(unittest.TestCase):
         self.assertNotIn('evidence_pending_reason', entry)
 
     def test_full_run_reserves_budget_before_any_network(self):
-        self.state['buffer_api_usage'] = [b.common.iso_now()] * 57
+        self.state['buffer_api_usage'] = [b.common.iso_now()] * 87
         with patch.dict(b.os.environ, {'BUFFER_API_KEY': 'test-not-real', 'BUFFER_CHANNEL_ID': 'channel'}), \
              patch.object(b.common, 'load_json', side_effect=[self.state, {'posts': [self.post]}]), \
              patch.object(b.common, 'save_json'), patch.object(b.common, 'summary'), \
@@ -155,7 +155,7 @@ class BufferSafetyTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'budget'):
                 b.main()
         network.assert_not_called()
-        self.assertEqual(len(self.state['buffer_api_usage']), 57)
+        self.assertEqual(len(self.state['buffer_api_usage']), 87)
 
 
 if __name__ == "__main__":

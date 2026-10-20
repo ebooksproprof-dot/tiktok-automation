@@ -13,8 +13,10 @@ import urllib.error
 import urllib.request
 from datetime import timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import tiktok_runner as common
+import buffer_quota
 from media_quality import validate
 from visual_library import require_evidence
 
@@ -41,17 +43,12 @@ class Client:
         self.calls = 0
 
     def check_budget(self, required=1):
-        now = common.utc_now()
-        usage = self.state.setdefault("buffer_api_usage", [])
-        usage[:] = [x for x in usage if common.parse_time(x) > now - timedelta(days=30)]
-        daily = sum(common.parse_time(x) > now - timedelta(days=1) for x in usage)
-        if self.calls + required > 8 or daily + required > 60 or len(usage) + required > 1800:
-            raise RuntimeError("Buffer conservative request budget reached; wait for next window")
+        buffer_quota.check(self.state, common.utc_now(), required, self.calls)
 
     def call(self, query, variables):
         self.check_budget()
         self.calls += 1
-        self.state['buffer_api_usage'].append(common.iso_now())
+        buffer_quota.record_attempt(self.state, common.utc_now())
         common.save_json(common.STATE_PATH, self.state)
         request = urllib.request.Request("https://api.buffer.com", method="POST",
             data=json.dumps({"query": query, "variables": variables}).encode(),
@@ -59,13 +56,23 @@ class Client:
         # Never retry a mutation here: a timeout can mean the post was created.
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
+                buffer_quota.record_headers(self.state, response.headers, common.utc_now())
+                common.save_json(common.STATE_PATH, self.state)
                 result = json.load(response)
         except urllib.error.HTTPError as exc:
+            buffer_quota.record_error(self.state, exc.code, exc.headers, common.utc_now())
+            common.save_json(common.STATE_PATH, self.state)
             raise RuntimeError(f"Buffer HTTP {exc.code}; body omitted; no automatic resubmission") from None
         except (urllib.error.URLError, TimeoutError, ValueError):
+            buffer_quota.record_error(self.state, 503, {}, common.utc_now())
+            common.save_json(common.STATE_PATH, self.state)
             raise RuntimeError("Buffer response unavailable; reconcile before any resubmission") from None
-        if result.get("errors") or not result.get("data"):
+        if not isinstance(result, dict) or result.get("errors") or not isinstance(result.get("data"), dict):
+            buffer_quota.record_error(self.state, 503, {}, common.utc_now())
+            common.save_json(common.STATE_PATH, self.state)
             raise RuntimeError("Buffer GraphQL request failed; response body omitted")
+        buffer_quota.record_success(self.state)
+        common.save_json(common.STATE_PATH, self.state)
         return result["data"]
 
 
@@ -98,6 +105,23 @@ def prepare(post, state, channel_id):
     now = common.utc_now()
     if not when or not now + timedelta(minutes=5) <= when <= now + timedelta(hours=26):
         raise ValueError("Schedule must be 5 minutes to 26 hours in the future")
+    day = when.astimezone(ZoneInfo('America/Fortaleza')).date()
+    reserved = set()
+    for key, previous in state['posts'].items():
+        prior = previous.get('scheduled_at')
+        if isinstance(prior, dict):
+            raw = prior.get('dateTime')
+            prior = common.parse_time(raw) if raw else None
+            if prior and raw and not re.search(r'(Z|[+-]\d\d:\d\d)$', raw):
+                prior = prior.replace(tzinfo=ZoneInfo(previous['scheduled_at'].get('timezone', 'America/Fortaleza')))
+        else:
+            prior = common.parse_time(prior)
+        if prior and prior.astimezone(ZoneInfo('America/Fortaleza')).date() == day:
+            reserved.add(key)
+            if prior == when:
+                raise ValueError('Publication slot already reserved')
+    if len(reserved) >= 2:
+        raise ValueError('Daily maximum of two publication reservations reached')
     text = post.get("title", "").strip()
     if not text or len(text) > 2200 or len(re.findall(r"(?<!\w)#\w+", text)) > 5:
         raise ValueError("Caption exceeds TikTok limits or is empty")
@@ -195,14 +219,33 @@ def submit(client, post, state, channel_id):
     common.checkpoint(state)
 
 
+
+def pending_reconciliation(state):
+    """Reuse confirmed scheduling until due; throttle unresolved readbacks across runs."""
+    now = common.utc_now()
+    pending = []
+    for entry in state['posts'].values():
+        if (entry.get('provider') != 'buffer' or not entry.get('buffer_post_id')
+                or entry.get('publicly_verified') or entry.get('status') == 'FAILED'):
+            continue
+        due = common.parse_time(entry.get('scheduled_at'))
+        checked = common.parse_time(entry.get('last_reconcile_attempt_at') or entry.get('last_checked_at'))
+        if entry.get('status') == 'SCHEDULED' and due and now < due:
+            continue
+        if checked and now < checked + timedelta(minutes=30):
+            continue
+        pending.append(entry)
+    return pending
+
+
 def main(check_only=False):
     state = common.load_json(common.STATE_PATH, {"posts": {}})
     state.setdefault("posts", {})
     submitted = blocked = 0
     try:
-        client = Client(state)
         channel_id = os.getenv("BUFFER_CHANNEL_ID", "").strip()
         if not channel_id:
+            client = Client(state)
             # Bootstrap without requesting or printing account emails or secrets.
             result = client.call("query { account { organizations { id } } }", {})
             orgs = result["account"]["organizations"]
@@ -217,8 +260,7 @@ def main(check_only=False):
             print("Set GitHub variable BUFFER_CHANNEL_ID=" + matches[0]["id"])
             return 2  # Discovery never enables publishing.
         queue = common.load_json(common.QUEUE_PATH, {"posts": []}) if not check_only else {"posts": []}
-        pending = [p for p in state["posts"].values() if p.get("provider") == "buffer"
-                   and p.get("buffer_post_id") and not p.get("publicly_verified") and p.get("status") != "FAILED"]
+        pending = pending_reconciliation(state)
         eligible = 0
         for post in queue['posts']:
             try:
@@ -226,21 +268,28 @@ def main(check_only=False):
                 eligible += 1
             except (ValueError, KeyError):
                 continue
-        required = 1 if check_only else 1 + bool(pending) + (1 + 2 * min(eligible, 2) if eligible else 0)
-        # Reserve channel/reconciliation/queue/create/read-back before spending calls.
-        # This does not raise any daily, monthly or per-run budget.
+        if not check_only and not pending and not eligible:
+            print("Buffer: no due reconciliation or eligible submission; 0 API calls")
+            blocked = sum(p.get('provider') == 'buffer' and p.get('status') == 'SUBMISSION_UNKNOWN'
+                          and not p.get('buffer_post_id') for p in state['posts'].values())
+            return 2 if blocked else 0
+        client = Client(state)
+        required = 5 if check_only else bool(pending) + (2 + 2 * min(eligible, 2) if eligible else 0)
+        # Publishing reserves the full cycle; read-only reconciliation needs no channel query.
         client.check_budget(required=required)
-        channel = client.call(CHANNEL_QUERY, {"input": {"id": channel_id}})["channel"]
-        check_channel(channel, channel_id)
-        print("Buffer channel verified: @" + common.EXPECTED_USERNAME)
+        if check_only or eligible:
+            channel = client.call(CHANNEL_QUERY, {"input": {"id": channel_id}})["channel"]
+            check_channel(channel, channel_id)
+            print("Buffer channel verified: @" + common.EXPECTED_USERNAME)
         if check_only:
             print("Read-only check complete; no publication attempted")
             return 0
-        pending = [p for p in state["posts"].values() if p.get("provider") == "buffer"
-                   and p.get("buffer_post_id") and not p.get("publicly_verified") and p.get("status") != "FAILED"]
         if len(pending) > 10:
             raise RuntimeError("Too many unresolved Buffer posts; reconcile before continuing")
         if pending:
+            for entry in pending:
+                entry['last_reconcile_attempt_at'] = common.iso_now()
+            common.save_json(common.STATE_PATH, state)
             selections = [f'p{i}: post(input: {{id: {json.dumps(p["buffer_post_id"])}}}) {{ {POST_FIELDS} }}'
                           for i, p in enumerate(pending)]
             response = client.call("query { " + " ".join(selections) + " }", {})
