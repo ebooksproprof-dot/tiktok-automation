@@ -1,9 +1,7 @@
 name: Stage reviewed book proof for second daily slot
-on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/stage-v3-proof.yml']
-  workflow_dispatch:
+# Historical 3.0 proof only. Production staging belongs to the official daily
+# workflow; keep this one-off workflow inert so it cannot create a second path.
+on: workflow_dispatch
 permissions:
   contents: write
   actions: read
@@ -12,6 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   stage:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
