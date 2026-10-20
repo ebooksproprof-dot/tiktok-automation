@@ -14,6 +14,7 @@ on:
       - "automation/narration.py"
       - "automation/scene_plan.py"
       - "automation/review_requested.py"
+      - "automation/stage_requested_proofs.py"
       - "automation/review_requests.json"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
@@ -26,6 +27,7 @@ env:
 permissions:
   contents: write
   issues: write
+  actions: read
 
 concurrency:
   group: casasemesforco-state
@@ -63,9 +65,37 @@ jobs:
           MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
         run: python automation/render_daily.py
-      - name: Render explicitly requested quality proof (at most one)
+      - name: Render explicitly requested quality proofs (at most three)
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.tests.outcome == 'success' }}
         run: python automation/review_requested.py
+      - name: Find explicitly approved cloud proof batch
+        id: staging
+        if: ${{ !cancelled() && steps.tests.outcome == 'success' }}
+        run: |
+          python - <<'PYCODE'
+          import json, os
+          data = json.load(open('automation/review_requests.json'))
+          runs = {str(r['proof_run_id']) for r in data['requests']
+                  if r.get('approval') and not r.get('staged_post_id')}
+          if len(runs) > 1:
+              raise ValueError('Stage one reviewed proof run at a time')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('run_id=' + next(iter(runs), '') + '\n')
+          PYCODE
+      - name: Recover exact approved proof artifact
+        id: recovered
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.tests.outcome == 'success' && steps.staging.outcome == 'success' && steps.staging.outputs.run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: requested-quality-proof
+          run-id: ${{ steps.staging.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: tmp/review-v3/
+      - name: Stage at most two hash-approved proofs into free daily slots
+        if: ${{ !cancelled() && steps.recovered.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/stage_requested_proofs.py
       - name: Persist validated outputs even if a later composition fails
         if: always()
         run: |

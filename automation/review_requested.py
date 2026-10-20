@@ -1,5 +1,6 @@
 """Bounded, explicit cloud quality proofs using the existing production workflow."""
 import json
+import os
 from pathlib import Path
 import preview_batch
 import render_daily
@@ -28,7 +29,8 @@ def main():
         for request in selected:
             matches = [r for r in report if r['concept'] == request['concept']]
             if matches:
-                request.update(status='rendered_for_review', report=matches, published=False)
+                request.update(status='rendered_for_review', report=matches, published=False,
+                               proof_run_id=os.environ.get('GITHUB_RUN_ID'))
         render_daily.atomic_json(PATH, data)
     print('QUALITY_PROOFS_RENDERED_NOT_PUBLISHED=' + str(len(selected)))
 

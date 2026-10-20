@@ -166,7 +166,14 @@
           ],
           "published": false
         }
-      ]
+      ],
+      "proof_run_id": 39472349389,
+      "approval": {
+        "sha256": "623293505e144b55fbc01f3ecd3a0875605e25b0a446fa7a0976ccee043cead8",
+        "approved_at": "2026-10-20T18:13:00Z",
+        "route": "buffer",
+        "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
+      }
     },
     {
       "concept": "louca-por-etapas",
@@ -237,7 +244,14 @@
           ],
           "published": false
         }
-      ]
+      ],
+      "proof_run_id": 39472349389,
+      "approval": {
+        "sha256": "91fd52ff9a37cff3c5d49f75641cb21f56f34e28531ceaf81f91e597acdb8657",
+        "approved_at": "2026-10-20T18:13:00Z",
+        "route": "buffer",
+        "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
+      }
     },
     {
       "concept": "cantinho-de-leitura",
@@ -310,7 +324,14 @@
           ],
           "published": false
         }
-      ]
+      ],
+      "proof_run_id": 39472349389,
+      "approval": {
+        "sha256": "ab0e667b70e2cc7a3c42f0393cbe813cecab1acbb26d8686612e9850774bdd22",
+        "approved_at": "2026-10-20T18:13:00Z",
+        "route": "buffer",
+        "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
+      }
     }
   ]
 }

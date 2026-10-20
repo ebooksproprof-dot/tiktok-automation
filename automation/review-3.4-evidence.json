@@ -1,0 +1,134 @@
+[
+  {
+    "name": "01_pia",
+    "technical_pass": true,
+    "editorial_approved": false,
+    "sha256": "c3ec42eeac0259bbf75d8986e0df3e67bb752785f9b0e61642db3869ce381750",
+    "duration": 17.266667,
+    "size": 8346533,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -17.1,
+    "visual_policy_version": 1,
+    "visual_distinct": true,
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+        "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+        "dhash": [
+          "3c3a96135a4ec64c",
+          "383a36134a6e6e1c",
+          "393e1e030226261c",
+          "383a36130a466260",
+          "383a36124a4e7260"
+        ]
+      }
+    ],
+    "scene_reuse_policy": "sequential_no_loop",
+    "source_durations": [
+      51.433333
+    ],
+    "concept": "pia-acesso-facil",
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4"
+    ],
+    "source_license": "https://pixabay.com/service/license-summary/",
+    "voice": "pt_BR-faber-medium",
+    "render_version": 2,
+    "composition_revision": 6,
+    "required_public_credits": [
+      "Video — mrbobdobolina; https://pixabay.com/videos/id-51807/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+    ],
+    "source_licenses": [
+      "https://pixabay.com/service/license-summary/"
+    ]
+  },
+  {
+    "name": "02_louca",
+    "technical_pass": true,
+    "editorial_approved": false,
+    "sha256": "297f73f36e697be312fd67560acd48f7fa42892131b5e7f471c67e9b1d87d144",
+    "duration": 17.871,
+    "size": 3616955,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -16.5,
+    "visual_policy_version": 1,
+    "visual_distinct": true,
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+        "sha256": "25ce4a4534f109cc15fc9284071d8c189e0bb69736c80e439be8d10301780b4a",
+        "dhash": [
+          "1c84ec9999399ece",
+          "0c8ccc9899399ece",
+          "cc0c9c98b9399e8e",
+          "1c0cccd8b9399ece",
+          "9c8cccf8b1399ece"
+        ]
+      }
+    ],
+    "scene_reuse_policy": "sequential_no_loop",
+    "source_durations": [
+      59.966667
+    ],
+    "concept": "louca-por-etapas",
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4"
+    ],
+    "source_license": "https://pixabay.com/service/license-summary/",
+    "voice": "pt_BR-faber-medium",
+    "render_version": 2,
+    "composition_revision": 6,
+    "required_public_credits": [
+      "Video — Engin_Akyurt; https://pixabay.com/videos/id-38116/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+    ],
+    "source_licenses": [
+      "https://pixabay.com/service/license-summary/"
+    ]
+  },
+  {
+    "name": "03_leitura",
+    "technical_pass": true,
+    "editorial_approved": false,
+    "sha256": "360c037938c794295090691989ff1606ba8f9acf45613fc09341355e8500bad5",
+    "duration": 16.166667,
+    "size": 6170169,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -16.6,
+    "visual_policy_version": 1,
+    "visual_distinct": true,
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4",
+        "sha256": "9f2a8fab962a2bb573a479eefbbe1d1999be3cab472fdadad2043b2903da71aa",
+        "dhash": [
+          "15b5e13b9c9ccdd1",
+          "11b5f1310ccccdc9",
+          "95b1b93b0c8ccdc9",
+          "7579f1320c8ccdcd",
+          "63697b5a0c8dcdc9"
+        ]
+      }
+    ],
+    "scene_reuse_policy": "sequential_no_loop",
+    "source_durations": [
+      20.778333
+    ],
+    "concept": "cantinho-de-leitura",
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4"
+    ],
+    "source_license": "https://pixabay.com/service/license-summary/",
+    "voice": "pt_BR-faber-medium",
+    "render_version": 2,
+    "composition_revision": 6,
+    "required_public_credits": [
+      "Video — Sang_Soi; https://pixabay.com/videos/id-139802/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+    ],
+    "source_licenses": [
+      "https://pixabay.com/service/license-summary/"
+    ]
+  }
+]
