@@ -25,6 +25,11 @@ Próximo bloqueio real: obter uma alimentação contínua de filmagens autorizad
 
 ## Versão 3.1
 
+Atualização3.2: duração mínima por fonte agora5s (máximo300s), permitindo combinar
+clipes curtos contextualizados. O vídeo final permanece15–28s e o planejador recusa
+material insuficiente, sem repetir trechos. Erros HTTP são sanitizados em códigos e
+o resumo da última execução fica em `media_inbox.json:last_run`.
+
 Artifacts: até dois originais de no máximo8MiB cada, retenção3dias. Arquivos maiores
 ficam no runner durante a validação e geram contact sheet dos primeiros10segundos,
 metadados e créditos para revisão. URL/SHA permitem recuperar o original depois.
@@ -81,7 +86,7 @@ artifacts por três dias, não são armazenamento permanente. URLs/origem/SHA/dH
 permanecem no inbox; recuperação futura exige baixar novamente e conferir SHA.
 
 Filtros: autoria, origem HTTPS permitida, palavras do assunto no endereço original,
-vertical >=1080x1920, duração real entre 28 e 300 segundos, SHA e fingerprints contra
+vertical >=1080x1920, duração real entre 5 e 300 segundos, SHA e fingerprints contra
 fila, estado, histórico legado e inbox. A correspondência lexical NÃO equivale a
 inspeção semântica. Todo resultado permanece `pending_visual_review`, sem aprovação.
 Promoção ao catálogo revisado continua necessária; não há promessa de autonomia

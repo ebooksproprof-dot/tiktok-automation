@@ -5,7 +5,7 @@ import re
 import time
 from urllib.parse import urlencode, urlsplit
 
-from media_acquisition import AcquisitionError, request, safe_url
+from media_acquisition import AcquisitionError, request, safe_url, MIN_SCENE_SECONDS, MAX_SCENE_SECONDS
 from media_rights import COMMONS_LICENSES
 
 
@@ -68,7 +68,7 @@ class PixabayProvider(CachedProvider):
         result = []
         for hit in data.get('hits', [])[:15]:
             try:
-                if not contextual(hit['tags'], words) or not 28 <= float(hit['duration']) <= 300:
+                if not contextual(hit['tags'], words) or not MIN_SCENE_SECONDS <= float(hit['duration']) <= MAX_SCENE_SECONDS:
                     continue
                 page = hit['pageURL']
                 if not safe_url(page, 'pixabay.com') or not hit['user'].strip():

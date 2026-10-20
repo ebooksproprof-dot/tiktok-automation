@@ -46,8 +46,25 @@ class AcquisitionTests(unittest.TestCase):
         self.assertEqual(self.select(v), [])
 
     def test_short_scene_rejected(self):
-        v = video(); v['duration'] = 12
+        v = video(); v['duration'] = 3
         self.assertEqual(self.select(v), [])
+
+    def test_short_usable_clip_can_be_combined_without_approval(self):
+        v = video(); v['duration'] = 10
+        result = self.select(v)
+        self.assertEqual(len(result), 1)
+        self.assertFalse(result[0]['editorial_approved'])
+
+    def test_http_errors_do_not_expose_url_or_credentials(self):
+        for status, code in [(401, 'PROVIDER_AUTH_REJECTED'), (403, 'PROVIDER_AUTH_REJECTED'),
+                             (429, 'PROVIDER_RATE_LIMITED'), (503, 'PROVIDER_SERVER_ERROR')]:
+            error = m.urllib.error.HTTPError('https://example.invalid/?key=test-secret', status,
+                                           'secret error body', {}, None)
+            with patch.object(m.urllib.request, 'build_opener') as opener:
+                opener.return_value.open.side_effect = error
+                with self.assertRaises(m.AcquisitionError) as caught:
+                    m.request('https://example.invalid/')
+            self.assertEqual(str(caught.exception), code)
 
     def test_horizontal_rejected(self):
         v = video(); v['video_files'][0].update(width=1920, height=1080)

@@ -9,12 +9,16 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 from visual_library import fingerprint, check_sources, history
 
 ROOT = Path(__file__).resolve().parent
 MAX_BYTES = 250 * 1024 * 1024
+# Source clips may be combined; the completed MP4 still requires 15–28 seconds.
+MIN_SCENE_SECONDS = 5.0
+MAX_SCENE_SECONDS = 300.0
 TOPICS = [
     ('gavetas', 'organizing drawers', ['drawer']),
     ('cozinha', 'cleaning kitchen counter', ['kitchen', 'cleaning']),
@@ -45,6 +49,11 @@ def request(url, key=None):
     try:
         return urllib.request.build_opener(NoRedirect()).open(
             urllib.request.Request(url, headers=headers), timeout=45)
+    except urllib.error.HTTPError as error:
+        code = ('PROVIDER_AUTH_REJECTED' if error.code in (401, 403) else
+                'PROVIDER_RATE_LIMITED' if error.code == 429 else
+                'PROVIDER_SERVER_ERROR' if error.code >= 500 else 'PROVIDER_REQUEST_FAILED')
+        raise AcquisitionError(code) from None
     except Exception:
         raise AcquisitionError('PROVIDER_REQUEST_FAILED') from None
 
@@ -87,7 +96,8 @@ def candidates(videos, category, query, required_words):
             words = set(re.findall(r'[a-z]+', urllib.parse.urlsplit(page).path.lower()))
             if not safe_url(page, 'www.pexels.com') or not page.startswith('https://www.pexels.com/video/'):
                 continue
-            if not set(required_words).issubset(words) or float(video['duration']) < 28:
+            if (not set(required_words).issubset(words) or
+                not MIN_SCENE_SECONDS <= float(video['duration']) <= MAX_SCENE_SECONDS):
                 continue
             author = video['user']['name']
             if not isinstance(author, str) or not author.strip():
@@ -159,7 +169,7 @@ def download_and_measure(record, folder, previous):
         stream = next(s for s in probe['streams'] if s['codec_type'] == 'video')
         w, h = int(stream['width']), int(stream['height'])
         duration = float(probe['format']['duration'])
-        if w < 1080 or h < 1920 or not .5 <= w/h <= .6 or not 28 <= duration <= 300:
+        if w < 1080 or h < 1920 or not .5 <= w/h <= .6 or not MIN_SCENE_SECONDS <= duration <= MAX_SCENE_SECONDS:
             raise AcquisitionError('MEDIA_TECHNICAL_REJECTED')
         evidence = fingerprint(temporary, record['url'])
         check_sources([evidence], previous)
@@ -253,6 +263,7 @@ def run():
     # At most four queries/provider and four downloads total per run.
     offset = int(time.time() // 86400) % len(TOPICS)
     errors = []
+    diagnostics = []
     try:
         disabled = set()
         for category, query, words in TOPICS[offset:] + TOPICS[:offset]:
@@ -262,11 +273,15 @@ def run():
                 try:
                     records = (candidates(provider.search(query), category, query, words)
                                if name == 'pexels' else provider.search(category, query, words))
-                except (AcquisitionError, KeyError, TypeError, ValueError, AttributeError):
+                except (AcquisitionError, KeyError, TypeError, ValueError, AttributeError) as error:
                     print('PROVIDER_UNAVAILABLE=' + name)
+                    diagnostics.append(dict(provider=name, status=str(error) if isinstance(error, AcquisitionError)
+                                            else 'PROVIDER_RESPONSE_INVALID'))
                     disabled.add(name)  # no retry storm, especially after 429/maxlag
                     continue
                 print('PROVIDER_SEARCH_OK=' + name + '; CANDIDATES=' + str(len(records)))
+                diagnostics.append(dict(provider=name, category=category, status='search_ok',
+                                        eligible_candidates=len(records)))
                 provider_attempts = 0
                 for record in records:
                     identity = name + ':' + record['provider_id']
@@ -293,6 +308,8 @@ def run():
             if attempts >= 4 or acquired >= 2:
                 break
     finally:
+        inbox['last_run'] = dict(at=now, acquired=acquired, rejected=len(errors),
+                                diagnostics=diagnostics, editorial_approved=0)
         save_json(cache_path, cache)
         save_json(inbox_path, inbox)
         (folder/'CREDITS.txt').write_text(credits(inbox['items']))

@@ -27,6 +27,12 @@ def pixabay():
 
 
 class ProviderTests(unittest.TestCase):
+    def test_pixabay_short_contextual_clip_is_reviewable(self):
+        hit = pixabay(); hit['duration'] = 8
+        provider = p.PixabayProvider('mock-key', {})
+        with patch.object(provider, 'json', return_value={'hits': [hit]}):
+            self.assertEqual(len(provider.search('cozinha', 'kitchen', ['kitchen'])), 1)
+
     def test_small_review_asset_preserves_exact_bytes(self):
         with tempfile.TemporaryDirectory() as tmp:
             source = Path(tmp)/'pixabay-42.mp4'; source.write_bytes(b'measured')

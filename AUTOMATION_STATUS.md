@@ -2,6 +2,28 @@
 
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
+## CasaSemEsforço 3.2 — preparação para ativação Pixabay
+- Base recuperada:7cf019c3b3fcb3fcd4a839154e802351fa5527a5; criação39465899920
+  concluída com sucesso. Aquisição39465899928 continuava bloqueada, sem cenas elegíveis.
+- PIXABAY_API_KEY NÃO foi configurada nesta etapa. O conector não oferece escrita de
+  secrets; página GitHub exigiu login e autenticação segura foi recusada. Credencial
+  fornecida pelo usuário não foi repetida, salva em arquivos, commits ou logs.
+  Ação necessária: usuário adicionar PIXABAY_API_KEY diretamente nos secrets GitHub.
+  Recomendada rotação posterior por ter sido compartilhada em conversa.
+- Melhoria independente: fontes contextuais de5–300s agora podem ser combinadas.
+  Antigo mínimo28s por fonte descartava filmagens aproveitáveis. MP4 final continua
+  exigindo15–28s e tempo de cenas suficiente, sem loops nem aprovação automática.
+- Falhas HTTP distinguem autenticação recusada, limite e erro de servidor por códigos
+  fixos; last_run persiste diagnóstico por fornecedor sem URL autenticada/corpo de erro.
+-116 testes locais aprovados, repetidos pelo auditor independente sem bloqueador novo.
+  Zero novas filmagens adquiridas e zero novos vídeos produzidos nesta etapa3.2.
+  Prova3.1 e seus artifacts permanecem registrados abaixo; não contar como nova aquisição.
+- R$0 em compras. Dois vídeos diários/60 mensais ainda não comprovados; depende de
+  secret, aquisição real, cenas suficientes e revisão editorial. Não ativado cron
+  de coleta em massa nem substituídos os motores audiovisuais já testados.
+- Próximo passo: após salvar o secret, executar CasaSemEsforco official media acquisition;
+  conferir autenticação, arquivos medidos/inbox e créditos antes de promover ao catálogo.
+
 ## CasaSemEsforço 3.1 — fornecedores adicionais
 - Auditoria independente final:113 testes repetidos, sem novo bloqueador. Artifact
   da nuvem baixado; SHA7a0898ca... conferido e contact sheet inspecionada. Contact sheets
