@@ -102,6 +102,9 @@ def render(idea, voice, post_id):
     clips = [get_clip(k) for k in keys]
     previous = visual_library.history(json.loads(QUEUE.read_text()),
         json.loads((ROOT/'automation/state.json').read_text()), post_id)
+    legacy = ROOT/'automation/visual_history.json'
+    if legacy.exists():
+        previous.append(json.loads(legacy.read_text()))
     visual_quality = visual_library.check_sources(
         [visual_library.fingerprint(path, SOURCE[key]) for key, path in zip(keys, clips)], previous)
     segments = []

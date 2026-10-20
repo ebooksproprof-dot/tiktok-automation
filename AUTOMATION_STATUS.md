@@ -17,6 +17,7 @@ Integrar gate no renderizador/publicador, testar regressões, produzir três exe
 ## Marco 2
 - Commit visual: 0bcc392517fd78abd338cfe38032c74f3a30ebb4.
 - Narração isolada em interface speak(text, wav), Piper CPU, frases completas e legendas por trecho temporal medido. Voz/modelo com hash fixado; runtime ONNX fixado.
-- Três provas locais em andamento: bancada, piso e gaveta, fontes independentes. Não publicadas e não enfileiradas pelo script preview_batch.
+- Três provas locais concluídas: bancada 19,913s/3,38MB; piso 20,04s/8,36MB; gaveta 18,7s/4,69MB. Fontes independentes, SHA e fingerprints distintos, áudio -16,1 a -16,3dB. Não publicadas e não enfileiradas pelo script preview_batch. Renderizações locais levaram 24,15/46,97/28,59s após carregar voz; não equivale a benchmark GitHub.
 - Releases agora limitados a seis coleções mensais de até 64 arquivos/20MB. Não há exclusão automática de histórico; ao atingir teto, exige política de arquivo/revisão.
 - OpenCut atual anuncia headless como futuro; não substitui FFmpeg. Craft oficial storytold; EffectCraft em PoC isolada. VoiceStudio é candidato experimental, não instalado como dependência obrigatória.
+- Novo workflow review-v3 gera três MP4s na nuvem sem secrets de publicação, com artefatos temporários de sete dias. Relatório de medições deve ser preservado no Git; previews não são o histórico de publicação.
