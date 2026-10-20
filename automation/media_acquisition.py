@@ -146,7 +146,7 @@ def prepare_review_artifact(record, source, destination):
         shutil.copyfile(source, destination/source.name)
     else:
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(source), '-t', '10',
-                        '-vf', 'fps=0.6,scale=180:320,tile=3x2', '-frames:v', '1',
+                        '-vf', 'fps=0.6,scale=180:320:force_original_aspect_ratio=increase,crop=180:320,tile=3x2', '-frames:v', '1',
                         str(destination/(source.stem + '-first-10s.jpg'))], check=True, timeout=90)
     save_json(destination/(source.stem + '.json'), record)
 

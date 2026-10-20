@@ -13,14 +13,25 @@ def main():
     if not pending:
         print('PENDING_QUALITY_PROOFS=0')
         return
-    request = pending[0]  # maximum one extra proof per run
-    if request['concept'] not in {i[0] for i in render_daily.IDEAS}:
-        raise ValueError('Unknown review concept')
-    preview_batch.main([request['concept']])
-    report = json.loads((render_daily.ROOT/'tmp/review-v3/report.json').read_text())
-    request.update(status='rendered_for_review', report=report, published=False)
-    render_daily.atomic_json(PATH, data)
-    print('QUALITY_PROOF_RENDERED_NOT_PUBLISHED=' + request['concept'])
+    selected = pending[:3]  # explicit requested batch, never public publishing
+    concepts = [request['concept'] for request in selected]
+    if len(set(concepts)) != len(concepts) or any(c not in {i[0] for i in render_daily.IDEAS} for c in concepts):
+        raise ValueError('Unknown or duplicate review concept')
+    report_path = render_daily.ROOT/'tmp/review-v3/report.json'
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    render_daily.atomic_json(report_path, [])
+    try:
+        preview_batch.main(concepts)
+    finally:
+        # Preserve completed proofs even when a later render fails.
+        report = json.loads(report_path.read_text())
+        for request in selected:
+            matches = [r for r in report if r['concept'] == request['concept']]
+            if matches:
+                request.update(status='rendered_for_review', report=matches, published=False)
+        render_daily.atomic_json(PATH, data)
+    print('QUALITY_PROOFS_RENDERED_NOT_PUBLISHED=' + str(len(selected)))
+
 
 
 if __name__ == '__main__':

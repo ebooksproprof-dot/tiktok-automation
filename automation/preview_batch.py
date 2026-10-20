@@ -23,6 +23,7 @@ def main(concepts=None):
         results.append(dict(concept=concept, file=path.name, quality=quality,
                             elapsed_seconds=round(time.monotonic()-started, 2),
                             script=idea[2], published=False))
+        r.atomic_json(r.OUT/'report.json', results)
         r.run(['ffmpeg', '-v', 'error', '-y', '-i', str(path), '-vf',
                'fps=1/3,scale=270:480,tile=3x2', '-frames:v', '1', str(path.with_suffix('.jpg'))])
     r.atomic_json(r.OUT/'report.json', results)

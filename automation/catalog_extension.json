@@ -9,15 +9,149 @@
       "hook": "Você demora para encontrar um livro?",
       "steps": "Escolha uma prateleira para começar. Agrupe os livros por assunto. Dentro de cada grupo, use a ordem que faz sentido para você. Deixe os títulos visíveis. Reserve um espaço fácil de alcançar para as leituras atuais. Ao terminar, devolva cada livro ao mesmo grupo.",
       "cta": "Salve para organizar sua estante.",
-      "media": [{
-        "id": "livros-estante",
-        "url": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
-        "source_page": "https://www.pexels.com/video/a-young-woman-arranging-books-in-a-library-11957362/",
-        "license_url": "https://www.pexels.com/license/",
-        "author": "Liudmyla Honcharova",
-        "context": "Pessoa organiza livros em prateleiras; cena ilustrativa em biblioteca, sem alegar que seja uma casa ou demonstração de produto.",
-        "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2"
-      }]
+      "media": [
+        {
+          "id": "livros-estante",
+          "url": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+          "source_page": "https://www.pexels.com/video/a-young-woman-arranging-books-in-a-library-11957362/",
+          "license_url": "https://www.pexels.com/license/",
+          "author": "Liudmyla Honcharova",
+          "context": "Pessoa organiza livros em prateleiras; cena ilustrativa em biblioteca, sem alegar que seja uma casa ou demonstração de produto.",
+          "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2"
+        }
+      ]
+    },
+    {
+      "id": "pia-acesso-facil",
+      "category": "rotina",
+      "reviewed": true,
+      "reviewed_at": "2026-10-20T18:10:00Z",
+      "hook": "A pia precisa estar fácil de usar.",
+      "steps": "Deixe o sabonete ao alcance. Tire embalagens vazias da bancada. Separe um lugar para cada item da rotina. Guarde o que você não usa todos os dias. Assim, sobra espaço para usar a pia sem afastar objetos.",
+      "cta": "Salve para organizar seu banheiro.",
+      "media": [
+        {
+          "provider": "pixabay",
+          "provider_id": "51807",
+          "url": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-51807/",
+          "author": "mrbobdobolina",
+          "license": "Pixabay Content License",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "attribution": "Video: mrbobdobolina / Pixabay — https://pixabay.com/videos/id-51807/",
+          "category": "banheiro",
+          "query": "organizing bathroom storage",
+          "selection_reason": "Provider tags: hand washing, washing, hand, hygiene, soap, bathroom",
+          "requires_crop_review": true,
+          "semantic_verified": false,
+          "editorial_approved": false,
+          "status": "pending_visual_review",
+          "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+          "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+          "dhash": [
+            "3c3a96135a4ec64c",
+            "383a36134a6e6e1c",
+            "393e1e030226261c",
+            "383a36130a466260",
+            "383a36124a4e7260"
+          ],
+          "width": 4096,
+          "height": 2160,
+          "duration": 51.433333,
+          "bytes": 159563502,
+          "acquired_at": 1792519516,
+          "id": "pixabay-51807",
+          "context": "Mãos sendo lavadas na pia; cena ilustrativa da rotina, sem alegar demonstração da organização."
+        }
+      ]
+    },
+    {
+      "id": "louca-por-etapas",
+      "category": "limpeza",
+      "reviewed": true,
+      "reviewed_at": "2026-10-20T18:10:00Z",
+      "hook": "A louça acumulou de novo?",
+      "steps": "Antes de começar, separe copos, pratos e talheres. Retire os restos de comida para o lixo. Lave um grupo de cada vez. Deixe espaço no escorredor e guarde as peças secas. Uma sequência simples ajuda a organizar a tarefa.",
+      "cta": "Salve para a próxima louça.",
+      "media": [
+        {
+          "provider": "pixabay",
+          "provider_id": "38116",
+          "url": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-38116/",
+          "author": "Engin_Akyurt",
+          "license": "Pixabay Content License",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "attribution": "Video: Engin_Akyurt / Pixabay — https://pixabay.com/videos/id-38116/",
+          "category": "cozinha",
+          "query": "cleaning kitchen counter",
+          "selection_reason": "Provider tags: dish, wash, that, kitchen, cleaning, food, house, soap, sink, bubbles, washing, coronavirus, disinfection, bacteria, detergent, faucet, human, fork, knife, spoon, glass, plate, dirt",
+          "requires_crop_review": true,
+          "semantic_verified": false,
+          "editorial_approved": false,
+          "status": "pending_visual_review",
+          "source_id": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+          "sha256": "25ce4a4534f109cc15fc9284071d8c189e0bb69736c80e439be8d10301780b4a",
+          "dhash": [
+            "1c84ec9999399ece",
+            "0c8ccc9899399ece",
+            "cc0c9c98b9399e8e",
+            "1c0cccd8b9399ece",
+            "9c8cccf8b1399ece"
+          ],
+          "width": 3840,
+          "height": 2160,
+          "duration": 59.966667,
+          "bytes": 103487257,
+          "acquired_at": 1792519572,
+          "id": "pixabay-38116",
+          "context": "Pessoa lava louça com esponja; recorte central conserva mãos e utensílios, sem promessa de produto."
+        }
+      ]
+    },
+    {
+      "id": "cantinho-de-leitura",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-20T18:10:00Z",
+      "hook": "Seu canto de leitura virou depósito?",
+      "steps": "Deixe na mesa apenas a leitura atual e o que você vai usar. Guarde os outros livros na estante. Reserve um lugar para o marcador. Ao terminar, devolva cada item ao seu espaço. Comece por uma mesa pequena.",
+      "cta": "Salve para organizar seu cantinho.",
+      "media": [
+        {
+          "provider": "pixabay",
+          "provider_id": "139802",
+          "url": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-139802/",
+          "author": "Sang_Soi",
+          "license": "Pixabay Content License",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-139802/",
+          "category": "livros",
+          "query": "arranging books shelves",
+          "selection_reason": "Provider tags: man, student, library, books, shelves, study, read",
+          "requires_crop_review": true,
+          "semantic_verified": false,
+          "editorial_approved": false,
+          "status": "pending_visual_review",
+          "source_id": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4",
+          "sha256": "9f2a8fab962a2bb573a479eefbbe1d1999be3cab472fdadad2043b2903da71aa",
+          "dhash": [
+            "15b5e13b9c9ccdd1",
+            "11b5f1310ccccdc9",
+            "95b1b93b0c8ccdc9",
+            "7579f1320c8ccdcd",
+            "63697b5a0c8dcdc9"
+          ],
+          "width": 3840,
+          "height": 2160,
+          "duration": 20.778333,
+          "bytes": 66252826,
+          "acquired_at": 1792519700,
+          "id": "pixabay-139802",
+          "context": "Pessoa lê à mesa diante de uma estante; ilustra um espaço de leitura, sem alegar demonstração das etapas."
+        }
+      ]
     }
   ]
 }

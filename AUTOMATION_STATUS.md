@@ -1,3 +1,22 @@
+# CasaSemEsforço 3.4 — checkpoint de aquisição real, 20/10/2026
+
+- Base recuperada: 79b957d, posterior a fe684f2. Secret não foi lido/configurado.
+- Reexecução 39467916880 attempt 2: PIXABAY_API_KEY_PRESENT=True;
+  quatro consultas reais respondidas e cache novo, zero fontes verticais elegíveis.
+- Correção: fontes Pixabay 4K podem fornecer crop 1080x1920 sem ampliação;
+  revisão de enquadramento continua obrigatória. Não baixa horizontal HD para ampliar.
+- Execuções 39471657588 e 39471667432: quatro filmagens reais baixadas na nuvem,
+  com SHA/dHash/duração/autoria/licença em media_inbox.json. Não são quatro vídeos finais.
+- 119 testes locais e auditoria independente aprovados. Corrigida distinção cache/API,
+  diagnóstico de falhas de download e espera de uma hora para falhas transitórias.
+  Corrigida contact sheet horizontal para mostrar crop central sem deformação.
+- Três novas composições Pixabay solicitadas na produção para prova, sem publicação.
+  Somente relatórios rendered_for_review comprovam término; pending não comprova render.
+- Confirmação anterior de 10h pelo Buffer preservada. 18h de 20/10 ainda futura
+  nesta retomada (15h Fortaleza); não reenviada nem declarada publicada.
+- Estado geral PARCIAL: 60 vídeos/mês e renovação/autorização editorial contínua não comprovados.
+- R$0 em serviços contratados. Nenhum login/reconfiguração de credencial realizado.
+
 # CasaSemEsforço 3.0 — checkpoint 2026-10-20 UTC
 
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
