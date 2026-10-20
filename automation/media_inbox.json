@@ -1,4 +1,36 @@
 {
   "items": [],
-  "rejected_until": {}
+  "rejected_until": {},
+  "last_run": {
+    "at": 1792518145,
+    "acquired": 0,
+    "rejected": 0,
+    "diagnostics": [
+      {
+        "provider": "wikimedia",
+        "category": "livros",
+        "status": "search_ok",
+        "eligible_candidates": 0
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0
+      },
+      {
+        "provider": "wikimedia",
+        "category": "gavetas",
+        "status": "search_ok",
+        "eligible_candidates": 0
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0
+      }
+    ],
+    "editorial_approved": 0
+  }
 }
