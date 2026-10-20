@@ -52,6 +52,8 @@ Preservar posts já enviados; não repetir o teste público anterior. Ler o Marc
 Adicionar e validar um fornecimento autorizado de filmagens inéditas contextuais, com capacidade demonstrada para 60 vídeos/mês; depois aprovar e publicar UM novo vídeo pelo Buffer e confirmar o permalink. Não desabilitar gates para atingir frequência. Produção e aprovação editorial contínuas ainda impedem classificar como OPERACIONAL.
 
 ### Retomada
+Prova nova armazenada: execução 39353972929 concluída com sucesso; Release casasem-2026-10-20-1-8764601bee4d9101.mp4 verificada. Cloud MP4 baixado e hash conferido, contact sheet inspecionada. Aprovado especificamente para Buffer em 20/10/2026 às 10h Fortaleza; não implica aprovação automática de próximos vídeos. Não afirmar publicação antes de state.publicly_verified e permalink. Readiness agora informa limite superior visual, não apenas número de roteiros.
+
 Checkpoint adicional: auditor independente repetiu 58 testes após as correções sem novo bloqueador técnico. Workflow 39353810347 concluído com sucesso. Estoque atual: oito roteiros elegíveis usando apenas seis fontes inéditas; não equivale a oito vídeos visualmente exclusivos. Stage-v3-proof transfere somente o primeiro preview da execução 39353432805, exige SHA exato e read-back de Release, cria slot de 20/10 às 10h Fortaleza sem aprovação. Não reexecutar após ocupar slot.
 
 1. Ler este arquivo, queue.json, state.json e visual_history.json diretamente do main atual.

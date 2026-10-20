@@ -499,12 +499,12 @@
         "bancada."
       ],
       "script_sha256": "389f467c205ddf3e34b428ec14a5fd63a835dd66351e6f9cecee75fa2e04449f",
-      "title": "Você limpa só ao redor dos objetos? Antes de limpar a bancada, retire os itens soltos. Coloque tudo em um apoio seguro. Limpe a área que estava escondida. Seque conforme a orientação da superfície. Confira a base dos objetos antes de devolvê-los. Retorne apenas o que pertence àquele espaço. Salve para organizar a bancada. #CasaSemEsforco #OrganizacaoDaCasa",
+      "title": "Antes de limpar a bancada, retire os objetos e confira a orientação da superfície. Salve para a próxima faxina. #CasaSemEsforco #OrganizacaoDaCasa",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-1-8764601bee4d9101.mp4",
       "media_storage": "release",
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "8764601bee4d91010539ae91d1f21d2bd2e17bb915f485f62e45488d3d45751a",
         "duration": 19.971,
         "size": 3385401,
@@ -538,10 +538,17 @@
       "render_version": 2,
       "composition_revision": 5,
       "scheduled_at": "2026-10-20T10:00:00-03:00",
-      "approved": false,
-      "consented_at": null,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "proof_run_id": 39353432805
+      "approved": true,
+      "consented_at": "2026-10-20T01:33:31.061Z",
+      "publishing_status": "APPROVED_FOR_BUFFER_SCHEDULE",
+      "proof_run_id": 39353432805,
+      "publication_provider": "buffer",
+      "editorial_review": {
+        "reviewed_at": "2026-10-20T01:33:31.061Z",
+        "reviewed_sha256": "8764601bee4d91010539ae91d1f21d2bd2e17bb915f485f62e45488d3d45751a",
+        "evidence_run": 39353432805,
+        "notes": "Cloud MP4 checksum and contact sheet inspected; contextual illustrative stock, legible captions, complete non-silent narration, no product performance claims. Not a subjective human voice listening test."
+      }
     }
   ]
 }
