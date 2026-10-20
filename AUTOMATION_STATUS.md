@@ -3,6 +3,16 @@
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
 ## Continuação — aquisição oficial de cenas (20/10/2026)
+- Commit inicial salvo: 277d9f342948758230b9e374ac9890dc4178b248.
+- Prova real: https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39462236910
+  87 testes aprovados no GitHub; aquisição BLOQUEADA: PEXELS_API_KEY_PRESENT=False.
+  Nenhuma mídia nova adquirida. Inserir chave diretamente nos secrets do GitHub.
+- Auditoria independente identificou repetição de candidatos rejeitados, falta de
+  recuperação após expiração e resumo de testes não isolado. Corrigidos: quarentena
+  de rejeições por sete dias, recuperação --recover ID com SHA obrigatório e isolamento
+  de GITHUB_STEP_SUMMARY. Regressão final local: 88 testes aprovados.
+  Busca limitada à primeira página/15 resultados por tema, sem promessa de renovação
+  infinita. Paginação e novos temas devem seguir a validação real da API.
 - Base recuperada: fffb773518ffc5683c31e0c98a13ee14be41b43b. 77 testes anteriores preservados.
 - Estado persistido confirma casasem-2026-10-20-1 como PUBLISH_COMPLETE, verificado pelo
   Buffer, permalink https://tiktok.com/@.casasemesforo/video/7698734823640239378 .

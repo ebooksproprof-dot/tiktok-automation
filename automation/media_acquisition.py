@@ -1,8 +1,10 @@
 """Bounded official-API discovery. Inbox is NOT an editorial approval or publish queue."""
 import json
+import hashlib
 import os
 import re
 import subprocess
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -149,6 +151,37 @@ def save_json(path, data):
     temporary.replace(path)
 
 
+def recover(provider_id):
+    """Re-download an inbox asset for review, requiring its original byte digest."""
+    inbox = read_json(ROOT/'media_inbox.json', {'items': []})
+    matches = [r for r in inbox['items'] if r['provider'] == 'pexels'
+               and r['provider_id'] == provider_id]
+    if len(matches) != 1:
+        raise AcquisitionError('INBOX_ID_NOT_UNIQUE')
+    record = matches[0]
+    if not safe_url(record['url'], 'videos.pexels.com'):
+        raise AcquisitionError('MEDIA_ORIGIN_REJECTED')
+    folder = ROOT.parent/'tmp'/'media-inbox'
+    folder.mkdir(parents=True, exist_ok=True)
+    destination = folder/('pexels-' + str(int(provider_id)) + '.mp4')
+    temporary = destination.with_suffix('.part')
+    digest, total = hashlib.sha256(), 0
+    try:
+        with request(record['url']) as response, temporary.open('wb') as output:
+            while chunk := response.read(1024 * 1024):
+                total += len(chunk)
+                if total > MAX_BYTES:
+                    raise AcquisitionError('MEDIA_TOO_LARGE')
+                digest.update(chunk)
+                output.write(chunk)
+        if digest.hexdigest() != record['sha256']:
+            raise AcquisitionError('RECOVERY_SHA_MISMATCH')
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    print('RECOVERED_FOR_REVIEW; EDITORIAL_APPROVED=0')
+
+
 def run():
     cache_path, inbox_path = ROOT/'media_search_cache.json', ROOT/'media_inbox.json'
     cache = read_json(cache_path, {})
@@ -200,7 +233,12 @@ def run():
 
 if __name__ == '__main__':
     try:
-        run()
+        if len(sys.argv) == 3 and sys.argv[1] == '--recover':
+            recover(sys.argv[2])
+        elif len(sys.argv) == 1:
+            run()
+        else:
+            raise AcquisitionError('INVALID_ARGUMENTS')
     except Exception as error:
         # Do not serialize exception text from HTTP/ffprobe/provider payloads.
         print('ACQUISITION_BLOCKED=' + (str(error) if isinstance(error, AcquisitionError)

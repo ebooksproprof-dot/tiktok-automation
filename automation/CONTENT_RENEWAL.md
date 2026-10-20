@@ -49,3 +49,7 @@ https://www.pexels.com/license/ . Limite padrão documentado: 200 requisições/
 Pixabay avaliado, não ativado: https://pixabay.com/api/docs/ restringe consultas
 automatizadas em massa e downloads sistemáticos; não presumir autorização para
 fallback autônomo. Outros fornecedores precisam autorização/licença próprias.
+
+Recuperação tardia: `python automation/media_acquisition.py --recover ID` baixa
+novamente a fonte do inbox e exige o SHA original antes de disponibilizar o arquivo.
+Não modifica aprovação nem histórico. Rejeições ficam em quarentena por sete dias.

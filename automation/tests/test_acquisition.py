@@ -1,5 +1,9 @@
 import sys
 import unittest
+import tempfile
+import hashlib
+import io
+import json
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -13,6 +17,21 @@ def video():
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_recovery_requires_original_sha(self):
+        for expected, succeeds in [(hashlib.sha256(b'original').hexdigest(), True), ('0'*64, False)]:
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)/'automation'; root.mkdir()
+                record = dict(provider='pexels', provider_id='123', sha256=expected,
+                              url='https://videos.pexels.com/video-files/123/a.mp4')
+                (root/'media_inbox.json').write_text(json.dumps({'items': [record]}))
+                with patch.object(m, 'ROOT', root), patch.object(m, 'request', return_value=io.BytesIO(b'original')):
+                    if succeeds:
+                        m.recover('123')
+                    else:
+                        with self.assertRaisesRegex(m.AcquisitionError, 'RECOVERY_SHA_MISMATCH'):
+                            m.recover('123')
+                self.assertEqual((Path(tmp)/'tmp/media-inbox/pexels-123.mp4').exists(), succeeds)
+
     def select(self, v):
         return m.candidates([v], 'cozinha', 'cleaning kitchen', ['cleaning', 'kitchen'])
 
