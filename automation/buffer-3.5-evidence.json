@@ -132,5 +132,16 @@
     "buffer_external_link": null,
     "buffer_sent_at_present": false
   },
-  "evidence_scope": "Buffer read-back SCHEDULED; no new TikTok publication confirmed"
+  "evidence_scope": "Buffer read-back SCHEDULED; no new TikTok publication confirmed",
+  "no_op_proof": {
+    "run_id": 39475534489,
+    "job_id": 118810379463,
+    "tests": 175,
+    "buffer_api_calls": 0,
+    "state_changed": false,
+    "usage_count": 112,
+    "last_api_attempt": "2026-10-20T18:29:44.688618Z",
+    "submitted_this_run": 0,
+    "baseline_redundant_calls_avoided": 2
+  }
 }

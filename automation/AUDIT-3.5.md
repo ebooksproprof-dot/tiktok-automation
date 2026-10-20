@@ -59,3 +59,11 @@ conteúdo novo continua sujeito a aprovação editorial específica, sem aprova�
 60 vídeos/mês não comprovados. UNKNOWN sem ID nunca é reenviado automaticamente, mesmo
 quando cota volta; exige reconciliação humana/provedor. GitHub concurrency pode substituir
 jobs pendentes, cron recupera. Falta comprovar comportamento multi-dia após esta correção.
+
+## Segunda regressão e execução idempotente
+
+175 testes repetidos localmente e pelo auditor independente. Workflow39475534489
+confirmou175 testes cloud e no-op real:0 chamadas,0 envios, estado sem mudanças.
+Histórico permaneceu112 registros30d, último18:29:44UTC. Economia demonstrada
+nesse cenário:2 chamadas redundantes evitadas contra o fluxo antigo. Sem novos
+permalinks, sem extrapolar prova de agendamento para publicação concluída.

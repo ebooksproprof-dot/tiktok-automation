@@ -1,3 +1,19 @@
+## Checkpoint final 3.5 — recuperação e idempotência comprovadas
+
+- Commit de correção58c2a09 e checkpointdabc37ce já enviados ao GitHub.
+- Envio real39475156076:1 novo vídeo aceito/agendado,4 chamadas, nenhum erro429/401/403.
+- Reexecução39475534489 concluída:175 testes cloud,0 chamadas Buffer,0 envios,
+  nenhuma alteração em state.json. Uso permaneceu112 registros30d; último18:29:44Z.
+- Economia concreta dessa reexecução:2 consultas evitadas versus fluxo antigo
+  (canal+pendentes futuros); não confundir com medição mensal de economia.
+- Segunda auditoria independente repetiu175 testes sem bloqueador novo.
+- Nenhuma publicação nova confirmada:21/10 às10h continua futura;20/10 às18h também
+  ainda futura na verificação18:32UTC. Não reenviar nenhum desses IDs.
+- Próximo passo automático: cron17:07 Fortaleza tenta segundo MP4 para21/10 às18h;
+  cron18:17/19:17 verifica o post antigo de20/10. Estado continua PARCIAL.
+- Custos adicionais contratados:R$0; sem promessa de produção editorial ilimitada
+  nem de dois vídeos todos os dias sem aprovação. Relatórios/evidência preservados no Git.
+
 ## 3.5 — envio real confirmado, publicação ainda futura
 
 - Correção58c2a09 enviada; workflow39475156076/job118809092308 concluído com sucesso.
