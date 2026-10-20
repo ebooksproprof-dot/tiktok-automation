@@ -3,6 +3,7 @@ import json
 import hashlib
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -126,6 +127,18 @@ def media_name(record):
     if suffix not in ('.mp4', '.webm', '.ogv', '.ogg'):
         raise AcquisitionError('MEDIA_EXTENSION_REJECTED')
     return record['provider'] + '-' + str(int(record['provider_id'])) + suffix
+
+
+def prepare_review_artifact(record, source, destination):
+    """Bound artifact storage; original bytes remain recoverable by URL + SHA."""
+    destination.mkdir(parents=True, exist_ok=True)
+    if source.stat().st_size <= 8 * 1024 * 1024:
+        shutil.copyfile(source, destination/source.name)
+    else:
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(source), '-t', '10',
+                        '-vf', 'fps=0.6,scale=180:320,tile=3x2', '-frames:v', '1',
+                        str(destination/(source.stem + '-first-10s.jpg'))], check=True, timeout=90)
+    save_json(destination/(source.stem + '.json'), record)
 
 
 def download_and_measure(record, folder, previous):
@@ -273,6 +286,8 @@ def run():
                     previous.append({'visual_sources': [measured]})
                     known.add(identity)
                     acquired += 1
+                    prepare_review_artifact(measured, folder/media_name(measured),
+                                            folder.parent/'media-review')
                 if attempts >= 4 or acquired >= 2:
                     break
             if attempts >= 4 or acquired >= 2:
@@ -281,6 +296,9 @@ def run():
         save_json(cache_path, cache)
         save_json(inbox_path, inbox)
         (folder/'CREDITS.txt').write_text(credits(inbox['items']))
+        review_folder = folder.parent/'media-review'
+        review_folder.mkdir(parents=True, exist_ok=True)
+        (review_folder/'CREDITS.txt').write_text(credits(inbox['items']))
     print(f'ACQUIRED={acquired}; REJECTED={len(errors)}; EDITORIAL_APPROVED=0')
     if not acquired:
         raise AcquisitionError('NO_NEW_REVIEWABLE_MEDIA')

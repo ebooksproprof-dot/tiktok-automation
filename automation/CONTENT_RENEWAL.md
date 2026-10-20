@@ -25,6 +25,12 @@ Próximo bloqueio real: obter uma alimentação contínua de filmagens autorizad
 
 ## Versão 3.1
 
+Artifacts: até dois originais de no máximo8MiB cada, retenção3dias. Arquivos maiores
+ficam no runner durante a validação e geram contact sheet dos primeiros10segundos,
+metadados e créditos para revisão. URL/SHA permitem recuperar o original depois.
+A triagem parcial não substitui revisar os trechos usados na publicação. O inbox
+e cache têm grupo de concorrência próprio, sem cancelar produção/publicação pendente.
+
 Fontes configuráveis: `MEDIA_PROVIDER_ORDER=pixabay,wikimedia,pexels`.
 Pixabay usa `PIXABAY_API_KEY`; Pexels usa `PEXELS_API_KEY`; Wikimedia Commons não
 requer chave para esta consulta pública. O workflow informa apenas presença booleana.

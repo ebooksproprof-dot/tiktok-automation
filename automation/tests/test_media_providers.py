@@ -27,6 +27,25 @@ def pixabay():
 
 
 class ProviderTests(unittest.TestCase):
+    def test_small_review_asset_preserves_exact_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp)/'pixabay-42.mp4'; source.write_bytes(b'measured')
+            out = Path(tmp)/'review'
+            a.prepare_review_artifact({'sha256': hashlib.sha256(b'measured').hexdigest()}, source, out)
+            self.assertEqual((out/source.name).read_bytes(), b'measured')
+
+    def test_large_review_asset_does_not_upload_large_original(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp)/'pixabay-42.mp4'; source.touch()
+            with patch.object(Path, 'stat') as stat, patch.object(a.subprocess, 'run') as render:
+                stat.return_value.st_size = 9 * 1024 * 1024
+                # Pre-create destination outside patched stat, so mkdir semantics stay native.
+                out = Path(tmp)/'review'
+                with patch.object(Path, 'mkdir'), patch.object(a, 'save_json'):
+                    a.prepare_review_artifact({}, source, out)
+                self.assertEqual(render.call_count, 1)
+            self.assertFalse((out/source.name).exists())
+
     def test_acquisition_cannot_evict_pending_production(self):
         root = Path(__file__).resolve().parents[2]/'.github/workflows'
         acquisition = (root/'acquire-media.yml').read_text()
@@ -142,6 +161,7 @@ class ProviderTests(unittest.TestCase):
                 {'MEDIA_PROVIDER_ORDER': 'pixabay,wikimedia', 'PIXABAY_API_KEY': 'mock'}), \
                 patch.object(p.PixabayProvider, 'search', return_value=[first]*10), \
                 patch.object(p.WikimediaProvider, 'search', return_value=[second]), \
+                patch.object(a, 'prepare_review_artifact'), \
                 patch.object(a, 'download_and_measure', side_effect=measure):
                 a.run()
             saved = json.loads((root/'media_inbox.json').read_text())

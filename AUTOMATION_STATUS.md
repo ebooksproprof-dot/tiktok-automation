@@ -3,6 +3,22 @@
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
 ## CasaSemEsforço 3.1 — fornecedores adicionais
+- Auditoria independente final:113 testes repetidos, sem novo bloqueador. Artifact
+  da nuvem baixado; SHA7a0898ca... conferido e contact sheet inspecionada. Contact sheets
+  parciais de aquisição servem só para triagem; revisar os trechos antes de promover.
+- Prova NA NUVEM concluída: https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39465289889
+  111 testes; novo vídeo pontos-de-toque17,048s,1080x1920,4.039.980 bytes,-16,1dB;
+  SHA7a0898ca9ffdc4d7bb0fc81ef961607f4fe077561c5fe5f3715d35e197fc57dc.
+  Artifact12285340507 requested-quality-proof, expira27/10. Relatório persistido em
+  review_requests.json, status rendered_for_review, published=false. Não sobrescrever
+  esse arquivo com cópia antiga pending. Um vídeo novo, não três e não publicado.
+- Regressão final local:113 testes. Corrigida condição da prova para executar também
+  após falha de criação, desde que instalação/testes tenham passado; falha original
+  continua visível. Originais de mídia acima de8MiB não vão para artifacts: recebem
+  contact sheet dos primeiros10s + metadados/créditos e recuperação por URL/SHA.
+  Máximo dois originais pequenos (~16MiB) por execução, retenção3dias; prova final7dias.
+- Auditoria por componente em automation/AUDIT-3.1.md. Nenhuma ferramenta experimental
+  substituiu FFmpeg/Piper. Publicação confirmada permanece a das10h;18h ainda futura.
 - Nova prova LOCAL: pontos-de-toque, 17,267s,1080x1920,4.084.208 bytes, áudio -16,3dB,
   SHA bf9fa47e90a0d57bf2fc9faf6804568cc82b4308c169356ff4a0d2d13aec2bf8.
   Três fontes restantes do catálogo existente medidas: bancada6,68s,pia10,01s,

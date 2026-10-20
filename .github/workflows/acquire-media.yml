@@ -65,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pending-media-review
-          path: tmp/media-inbox/
+          path: tmp/media-review/
           retention-days: 3
           if-no-files-found: ignore
       - name: Keep one actionable acquisition failure issue
