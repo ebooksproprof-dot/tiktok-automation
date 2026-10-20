@@ -5,6 +5,9 @@ facts and appropriate visual sources remains editorial work. No paid text API.
 """
 import hashlib
 import textwrap
+import re
+import unicodedata
+from catalog_extension import TOPICS as EXTRA_TOPICS
 
 # id, category, coherent illustrative footage, hook, factual steps, contextual CTA
 TOPICS = [
@@ -39,6 +42,11 @@ TOPICS = [
 ]
 
 
+if {t[0] for t in TOPICS}.intersection(t[0] for t in EXTRA_TOPICS):
+    raise ValueError('Extension duplicates built-in topic')
+TOPICS.extend(EXTRA_TOPICS)
+
+
 def script(topic):
     key, category, sources, hook, steps, cta = topic
     lines = [hook]
@@ -59,12 +67,24 @@ def fingerprint(lines):
     return hashlib.sha256(normalized.encode()).hexdigest()
 
 
+def near_duplicate(left, right):
+    def shingles(lines):
+        text = unicodedata.normalize('NFKD', ' '.join(lines).lower())
+        words = re.findall(r'[a-z0-9]+', ''.join(c for c in text if not unicodedata.combining(c)))
+        return {tuple(words[i:i+3]) for i in range(len(words)-2)}
+    a, b = shingles(left), shingles(right)
+    return bool(a and b) and len(a & b)/len(a | b) >= .65
+
+
 def rotate(ideas, queue, state):
     used = {p.get('concept') for p in queue.get('posts', [])}
     used.update(p.get('concept') for p in state.get('posts', {}).values())
     seen_scripts = {p.get('script_sha256') for p in queue.get('posts', [])}
     seen_scripts.update(p.get('script_sha256') for p in state.get('posts', {}).values())
     remaining = [i for i in ideas if i[0] not in used and fingerprint(i[2]) not in seen_scripts]
+    historical = list(queue.get('posts', [])) + list(state.get('posts', {}).values())
+    remaining = [i for i in remaining if not any(near_duplicate(i[2], p['script_lines'])
+                 for p in historical if p.get('script_lines'))]
     last = category(next((p.get('concept') for p in reversed(queue.get('posts', [])) if p.get('concept')), ''))
     ordered = []
     while remaining:

@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 from media_quality import validate
 from content_catalog import TOPICS, script, category, fingerprint, rotate
 import visual_library
+from catalog_extension import SOURCES as EXTRA_SOURCES, PROVENANCE
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'release' else 'public/rendered/daily')
@@ -36,6 +37,9 @@ SOURCE = {
  'geladeira': 'https://videos.pexels.com/video-files/9462939/9462939-uhd_2160_3840_24fps.mp4',
  'roupas': 'https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4',
 }
+if set(SOURCE).intersection(EXTRA_SOURCES):
+    raise ValueError('Extension overwrites built-in source')
+SOURCE.update(EXTRA_SOURCES)
 # Finite catalog, deliberately no random recycling. Stock scenes are illustrative.
 IDEAS = [
  ('panos-por-area', ['pia','piso'], ['Um pano para tudo?', 'Separe os panos por área.', 'Banheiro de um lado.', 'Outros ambientes do outro.', 'Assim, você evita levar', 'sujeira de um lugar', 'para outro. Depois do uso,', 'lave e deixe secar.', 'Use cores diferentes.', 'Fica fácil de identificar.', 'Salve para lembrar.']),
@@ -62,6 +66,7 @@ def atomic_json(path, data):
 def get_clip(key):
     target = ASSETS / (key+'.mp4')
     if target.exists() and target.stat().st_size > 100000:
+        verify_source(key, target)
         return target
     for attempt in range(3):
         temp = target.with_suffix('.part')
@@ -75,6 +80,7 @@ def get_clip(key):
                         raise ValueError('Source exceeds download budget')
                     out.write(chunk)
             run(['ffprobe','-v','error',str(temp)], capture_output=True)
+            verify_source(key, temp)
             temp.replace(target)
             return target
         except Exception:
@@ -82,6 +88,14 @@ def get_clip(key):
             if attempt == 2:
                 raise RuntimeError('Licensed footage download failed: '+key) from None
             time.sleep(2**attempt)
+
+
+def verify_source(key, path):
+    if key in PROVENANCE:
+        with path.open('rb') as stream:
+            digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+        if digest != PROVENANCE[key]['sha256']:
+            raise ValueError('Reviewed source bytes changed')
 
 
 def load_voice():

@@ -40,6 +40,7 @@ def inspect(queue, state, concepts, media_bytes, environ):
 
 def main():
     from render_daily import IDEAS, SOURCE
+    from content_catalog import rotate
     import visual_library as visual
     queue = json.loads((ROOT/'automation/queue.json').read_text())
     state = json.loads((ROOT/'automation/state.json').read_text())
@@ -51,7 +52,7 @@ def main():
         previous.append(json.loads(legacy.read_text()))
     used = {p.get('concept') for p in queue.get('posts', [])}
     used.update(p.get('concept') for p in state.get('posts', {}).values())
-    eligible = [i for i in IDEAS if i[0] not in used and
+    eligible = [i for i in rotate(IDEAS, queue, state) if i[0] not in used and
                 visual.preflight([SOURCE[k] for k in i[1]], previous)]
     source_count = len({SOURCE[k] for i in eligible for k in i[1]})
     result.update(visually_eligible_scripts=len(eligible), unused_visual_sources=source_count,

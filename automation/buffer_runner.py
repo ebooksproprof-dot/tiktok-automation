@@ -175,6 +175,7 @@ def submit(client, post, state, channel_id):
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),
                  sha256=post["quality"]["sha256"], video_url=post["video_url"],
                  concept=post.get("concept"), script_sha256=post.get("script_sha256"),
+                 script_lines=post.get('script_lines', []),
                  source_urls=post['quality'].get('source_urls', []),
                  visual_sources=post['quality'].get('visual_sources', []),
                  scheduled_at=post["scheduled_at"], publicly_verified=False,

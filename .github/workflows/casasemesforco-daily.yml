@@ -6,6 +6,8 @@ on:
     paths:
       - "automation/render_daily.py"
       - "automation/content_catalog.py"
+      - "automation/catalog_extension.py"
+      - "automation/catalog_extension.json"
       - "automation/release_media.py"
       - "automation/media_quality.py"
       - "automation/visual_library.py"

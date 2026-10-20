@@ -5,6 +5,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import content_catalog as c
 
 class CatalogTests(unittest.TestCase):
+    def test_new_hook_does_not_make_old_body_original(self):
+        body = ['Separe os objetos por uso. Deixe os mais usados ao alcance. Organize uma gaveta por vez. Guarde apenas o que pertence ao local. Termine antes de abrir outra.']
+        old, new = ['Uma gaveta baguncada?']+body, ['Quer organizar melhor?']+body
+        self.assertTrue(c.near_duplicate(old, new))
+        self.assertEqual(c.rotate([('new', ['clip'], new)], {'posts': []},
+                         {'posts': {'archived': {'script_lines': old}}}), [])
+
+    def test_different_instructions_are_not_near_duplicates(self):
+        self.assertFalse(c.near_duplicate(['Dobre as roupas e organize a gaveta.'],
+                                         ['Confira o fabricante antes de molhar o piso.']))
+
     def test_unique_topics_and_scripts(self):
         ideas = [c.script(t) for t in c.TOPICS]
         self.assertEqual(len(ideas),len({i[0] for i in ideas}))
