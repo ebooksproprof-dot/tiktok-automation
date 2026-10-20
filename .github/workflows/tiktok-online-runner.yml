@@ -1,6 +1,12 @@
 name: TikTok Online Runner
 
 on:
+  # A shared concurrency group can replace pending push runs. Always reconcile
+  # once trusted main-branch creation finishes; keep durable-state serialization.
+  workflow_run:
+    workflows: [CasaSemEsforco Daily Video Creation]
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:

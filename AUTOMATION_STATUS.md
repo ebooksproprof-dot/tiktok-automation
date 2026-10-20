@@ -52,6 +52,8 @@ Preservar posts já enviados; não repetir o teste público anterior. Ler o Marc
 Adicionar e validar um fornecimento autorizado de filmagens inéditas contextuais, com capacidade demonstrada para 60 vídeos/mês; depois aprovar e publicar UM novo vídeo pelo Buffer e confirmar o permalink. Não desabilitar gates para atingir frequência. Produção e aprovação editorial contínuas ainda impedem classificar como OPERACIONAL.
 
 ### Retomada
+Confiabilidade: runner39355508502 foi cancelado enquanto aguardava o grupo compartilhado, sem executar jobs. Adicionado workflow_run após conclusão da criação em main para reconciliar novamente sem retirar a serialização do estado. Checkout continua main, não código/artifact de PR. Agendamentos permanecem como recuperação. Verificar próximo runner antes de afirmar aceitação do segundo vídeo.
+
 Segundo slot: Release do vídeo de livros confirmado, commit891f2c5b. Aprovação editorial específica registrada no SHA f385676... e rota Buffer, para20/10/2026 às18h Fortaleza. Primeiro slot permanece10h. A aprovação não significa que Buffer já aceitou; confirmar estado subsequente. Nenhum dos dois é nova publicação pública confirmada nesta sessão.
 
 Regressão final desta etapa:77testes passam também na revisão independente. Gate visual agora rejeita duplicação de uma fonte dentro do próprio vídeo, mesmo com IDs diferentes. MP4 de livros baixado do artifact da nuvem e comparado ao SHA f385676..., contact sheet conferida. Staging do segundo slot:39355345920. Aguardar resultado e aprovação específica; nenhuma prova pública adicional até o horário agendado.
