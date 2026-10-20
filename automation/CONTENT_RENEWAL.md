@@ -23,6 +23,41 @@ Limites: 120 itens por lote; download existente de até 250 MB por fonte; vídeo
 Próximo bloqueio real: obter uma alimentação contínua de filmagens autorizadas e resolver a revisão dos resultados. Não inserir conteúdo genérico/repetido apenas para alcançar a meta diária. Nenhum serviço pago foi ativado.
 # Aquisição oficial — continuação 20/10/2026
 
+## Versão 3.1
+
+Fontes configuráveis: `MEDIA_PROVIDER_ORDER=pixabay,wikimedia,pexels`.
+Pixabay usa `PIXABAY_API_KEY`; Pexels usa `PEXELS_API_KEY`; Wikimedia Commons não
+requer chave para esta consulta pública. O workflow informa apenas presença booleana.
+API indisponível é ignorada até a próxima execução, sem tempestade de retentativas.
+Cada fornecedor tem no máximo quatro buscas, com cache de 24h. O limite global
+continua quatro downloads e dois candidatos por execução. Fluxo manual/push,
+sem coleta diária habilitada até validar condições e qualidade em uso real.
+
+Pixabay: API oficial de vídeos, safesearch, tags contextuais, autor, licença e dimensões.
+A documentação restringe consultas automatizadas em massa e downloads sistemáticos;
+este coletor limitado responde a execução solicitada, não rastreia o catálogo inteiro.
+Não afirmar autorização irrestrita para cron permanente sem avaliar esse uso.
+
+Commons: API action=query/imageinfo com extmetadata individual. Aceita CC0 1.0 e
+CC BY 3.0/4.0; rejeita autor ausente, restrições declaradas, licença desconhecida,
+NC, ND e ShareAlike (este último exige tratamento específico ainda não implementado).
+A seleção exige vídeo, resolução vertical adequada e contexto no título/descrição.
+Não transforma imagens estáticas em preenchimento genérico.
+
+`CREDITS.txt` acompanha artifacts de revisão com autor, título quando disponível,
+página original, licença/link e indicação de adaptações. Na promoção editorial,
+esses créditos devem constar no vídeo ou descrição pública; arquivos do inbox não
+são consumidos automaticamente pelo renderer. Portanto créditos apenas armazenados
+não são apresentados como cumprimento de atribuição numa publicação inexistente.
+Recuperação: `--recover wikimedia:ID` / `--recover pixabay:ID`; IDs sem prefixo
+continuam sendo Pexels. SHA obrigatório e extensão original preservada.
+
+Referências: https://pixabay.com/api/docs/ , https://pixabay.com/service/license-summary/ ,
+https://www.mediawiki.org/wiki/API:Imageinfo e
+https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia .
+
+As seções abaixo descrevem a primeira versão Pexels; a configuração acima prevalece.
+
 `media_acquisition.py` implementa um fornecedor Pexels isolado (`search`) e uma
 etapa comum de seleção/download/validação. Usa apenas a API oficial, nunca scraping.
 Configurar `PEXELS_API_KEY` diretamente nos secrets do GitHub, nunca em conversa.

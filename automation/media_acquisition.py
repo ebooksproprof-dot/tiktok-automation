@@ -38,7 +38,7 @@ def safe_url(url, host):
 
 
 def request(url, key=None):
-    headers = {'User-Agent': 'CasaSemEsforco-media-review/1.0'}
+    headers = {'User-Agent': 'CasaSemEsforco/3.1 (https://github.com/ebooksproprof-dot/tiktok-automation)'}
     if key:
         headers['Authorization'] = key
     try:
@@ -112,10 +112,26 @@ def candidates(videos, category, query, required_words):
     return result
 
 
+MEDIA_HOSTS = {'pexels': 'videos.pexels.com', 'pixabay': 'cdn.pixabay.com',
+               'wikimedia': 'upload.wikimedia.org'}
+
+
+def media_allowed(record):
+    host = MEDIA_HOSTS.get(record.get('provider'))
+    return bool(host and safe_url(record['url'], host))
+
+
+def media_name(record):
+    suffix = Path(urllib.parse.urlsplit(record['url']).path).suffix.lower()
+    if suffix not in ('.mp4', '.webm', '.ogv', '.ogg'):
+        raise AcquisitionError('MEDIA_EXTENSION_REJECTED')
+    return record['provider'] + '-' + str(int(record['provider_id'])) + suffix
+
+
 def download_and_measure(record, folder, previous):
-    if not safe_url(record['url'], 'videos.pexels.com'):
+    if not media_allowed(record):
         raise AcquisitionError('MEDIA_ORIGIN_REJECTED')
-    destination = folder / ('pexels-' + str(int(record['provider_id'])) + '.mp4')
+    destination = folder / media_name(record)
     temporary = destination.with_suffix('.part')
     try:
         with request(record['url']) as response, temporary.open('wb') as output:
@@ -154,16 +170,17 @@ def save_json(path, data):
 def recover(provider_id):
     """Re-download an inbox asset for review, requiring its original byte digest."""
     inbox = read_json(ROOT/'media_inbox.json', {'items': []})
-    matches = [r for r in inbox['items'] if r['provider'] == 'pexels'
+    provider, provider_id = provider_id.split(':', 1) if ':' in provider_id else ('pexels', provider_id)
+    matches = [r for r in inbox['items'] if r['provider'] == provider
                and r['provider_id'] == provider_id]
     if len(matches) != 1:
         raise AcquisitionError('INBOX_ID_NOT_UNIQUE')
     record = matches[0]
-    if not safe_url(record['url'], 'videos.pexels.com'):
+    if not media_allowed(record):
         raise AcquisitionError('MEDIA_ORIGIN_REJECTED')
     folder = ROOT.parent/'tmp'/'media-inbox'
     folder.mkdir(parents=True, exist_ok=True)
-    destination = folder/('pexels-' + str(int(provider_id)) + '.mp4')
+    destination = folder/media_name(record)
     temporary = destination.with_suffix('.part')
     digest, total = hashlib.sha256(), 0
     try:
@@ -183,6 +200,7 @@ def recover(provider_id):
 
 
 def run():
+    from media_providers import PixabayProvider, WikimediaProvider, credits
     cache_path, inbox_path = ROOT/'media_search_cache.json', ROOT/'media_inbox.json'
     cache = read_json(cache_path, {})
     inbox = read_json(inbox_path, {'items': []})
@@ -193,39 +211,70 @@ def run():
     # Hard storage/review backlog limit; never evict deduplication history.
     if len(inbox['items']) >= 120:
         raise AcquisitionError('INBOX_REVIEW_CAPACITY_REACHED')
-    provider = PexelsProvider(os.environ.get('PEXELS_API_KEY'), cache)
+    providers = {}
+    for name in os.environ.get('MEDIA_PROVIDER_ORDER', 'pixabay,wikimedia,pexels').split(','):
+        name = name.strip()
+        if name in providers:
+            continue
+        if name == 'wikimedia':
+            providers[name] = WikimediaProvider(cache)
+        elif name in ('pexels', 'pixabay'):
+            key = os.environ.get(name.upper() + '_API_KEY')
+            print(name.upper() + '_API_KEY_PRESENT=' + str(bool(key)))
+            if key:
+                providers[name] = (PexelsProvider if name == 'pexels' else PixabayProvider)(key, cache)
+        else:
+            raise AcquisitionError('UNKNOWN_PROVIDER')
+    if not providers:
+        raise AcquisitionError('NO_AUTHORIZED_PROVIDER')
     previous = history(read_json(ROOT/'queue.json', {}), read_json(ROOT/'state.json', {}))
     previous += [read_json(ROOT/'visual_history.json', {}), {'visual_sources': inbox['items']}]
     folder = ROOT.parent/'tmp'/'media-inbox'
     folder.mkdir(parents=True, exist_ok=True)
     acquired, attempts = 0, 0
-    known = {x['provider_id'] for x in inbox['items'] if x['provider'] == 'pexels'}
-    # Rotate categories daily, at most four queries and four downloads per run.
+    known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
+    # At most four queries/provider and four downloads total per run.
     offset = int(time.time() // 86400) % len(TOPICS)
     errors = []
     try:
+        disabled = set()
         for category, query, words in TOPICS[offset:] + TOPICS[:offset]:
-            for record in candidates(provider.search(query), category, query, words):
-                if record['provider_id'] in known or record['provider_id'] in rejected:
+            for name, provider in providers.items():
+                if name in disabled:
                     continue
-                if attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
-                    break
-                attempts += 1
                 try:
-                    measured = download_and_measure(record, folder, previous)
-                except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError):
-                    errors.append('CANDIDATE_REJECTED')
-                    rejected[record['provider_id']] = now + 7 * 86400
+                    records = (candidates(provider.search(query), category, query, words)
+                               if name == 'pexels' else provider.search(category, query, words))
+                except AcquisitionError:
+                    print('PROVIDER_UNAVAILABLE=' + name)
+                    disabled.add(name)  # no retry storm, especially after 429/maxlag
                     continue
-                inbox['items'].append(measured)
-                previous.append({'visual_sources': [measured]})
-                known.add(record['provider_id'])
-                acquired += 1
+                print('PROVIDER_SEARCH_OK=' + name + '; CANDIDATES=' + str(len(records)))
+                for record in records:
+                    identity = name + ':' + record['provider_id']
+                    if identity in known or identity in rejected:
+                        continue
+                    if attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
+                        break
+                    attempts += 1
+                    try:
+                        measured = download_and_measure(record, folder, previous)
+                    except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError):
+                        errors.append('CANDIDATE_REJECTED')
+                        rejected[identity] = now + 7 * 86400
+                        continue
+                    inbox['items'].append(measured)
+                    previous.append({'visual_sources': [measured]})
+                    known.add(identity)
+                    acquired += 1
+                if attempts >= 4 or acquired >= 2:
+                    break
             if attempts >= 4 or acquired >= 2:
                 break
     finally:
         save_json(cache_path, cache)
         save_json(inbox_path, inbox)
+        (folder/'CREDITS.txt').write_text(credits(inbox['items']))
     print(f'ACQUIRED={acquired}; REJECTED={len(errors)}; EDITORIAL_APPROVED=0')
     if not acquired:
         raise AcquisitionError('NO_NEW_REVIEWABLE_MEDIA')

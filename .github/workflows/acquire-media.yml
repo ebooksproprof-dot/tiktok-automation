@@ -4,7 +4,9 @@ on:
   push:
     paths:
       - 'automation/media_acquisition.py'
+      - 'automation/media_providers.py'
       - 'automation/tests/test_acquisition.py'
+      - 'automation/tests/test_media_providers.py'
       - '.github/workflows/acquire-media.yml'
 # No daily cron until API authorization and real acquisition are verified.
 permissions:
@@ -27,16 +29,19 @@ jobs:
         env:
           GITHUB_STEP_SUMMARY: ''
         run: python -m unittest discover -s automation/tests -v
-      - name: Verify official API credential presence without exposing value
+      - name: Report optional API credential presence without exposing values
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
-          python -c "import os; present=bool(os.environ.get('PEXELS_API_KEY')); print('PEXELS_API_KEY_PRESENT=' + str(present)); raise SystemExit(0 if present else 1)"
+          python -c "import os; [print(k + '_PRESENT=' + str(bool(os.environ.get(k)))) for k in ('PEXELS_API_KEY', 'PIXABAY_API_KEY')]"
       - name: Install media validator
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Acquire at most two new review candidates
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          MEDIA_PROVIDER_ORDER: ${{ vars.MEDIA_PROVIDER_ORDER || 'pixabay,wikimedia,pexels' }}
         run: python automation/media_acquisition.py
       - name: Preserve provenance, API cache and deduplication history
         if: always()

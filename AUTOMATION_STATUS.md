@@ -2,6 +2,22 @@
 
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
+## CasaSemEsforço 3.1 — fornecedores adicionais
+- Base remota: 709c5782bb65b93a65ec7c1ab2eef3c5d04bc68e. Estado de 20/10:
+  10h PUBLISH_COMPLETE confirmado pelo Buffer; 18h ainda SCHEDULED às 14h locais.
+- Pixabay e Wikimedia adicionados como adaptadores oficiais; Pexels preservado.
+  Ordem configurável por MEDIA_PROVIDER_ORDER: pixabay,wikimedia,pexels.
+  Ausência de chave opcional não bloqueia Wikimedia; erro de um provedor tenta o próximo.
+- Wikimedia: apenas vídeos verticais, CC0 1.0/CC BY 3.0 ou 4.0, autor identificado,
+  licença individual e ausência de restrições declaradas. Créditos por arquivo em
+  CREDITS.txt; resultados permanecem pendentes, sem promoção automática/publicação.
+- 102 testes locais aprovados (88 anteriores + 14 novos). APIs externas e presença
+  de PIXABAY_API_KEY ainda aguardam evidência do novo workflow. Nenhum novo MP4 produzido.
+- Limites: até quatro consultas por fornecedor, quatro downloads totais e dois
+  candidatos aceitos por execução; cache 24h, sem cron de coleta em massa.
+- Próxima ação: conferir workflow de aquisição, corrigir auditoria e registrar
+  respostas reais das APIs antes de classificar os novos fornecedores como operacionais.
+
 ## Continuação — aquisição oficial de cenas (20/10/2026)
 - Commit inicial salvo: 277d9f342948758230b9e374ac9890dc4178b248.
 - Prova real: https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39462236910
