@@ -5,6 +5,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import visual_library as v
 
 class VisualTests(unittest.TestCase):
+    def test_same_footage_twice_within_one_video_blocks(self):
+        record = dict(source_id='clip', sha256='a'*64, dhash=['0'*16]*5)
+        with self.assertRaises(ValueError):
+            v.check_sources([record, dict(record, source_id='renamed')], [])
+
     def test_flags_without_fingerprints_block(self):
         with self.assertRaises(ValueError):
             v.require_evidence({'quality': dict(visual_policy_version=1, visual_distinct=True)})

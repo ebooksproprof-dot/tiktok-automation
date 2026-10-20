@@ -572,12 +572,12 @@
         "estante."
       ],
       "script_sha256": "9c60c74bb565cd56ec9e51941c12ea9fbbded98640782af51e66cf190934764c",
-      "title": "Você demora para encontrar um livro? Escolha uma prateleira para começar. Agrupe os livros por assunto. Dentro de cada grupo, use a ordem que faz sentido para você. Deixe os títulos visíveis. Reserve um espaço fácil de alcançar para as leituras atuais. Ao terminar, devolva cada livro ao mesmo grupo. Salve para organizar sua estante. #CasaSemEsforco #OrganizacaoDaCasa",
+      "title": "Organize os livros por assunto e deixe os títulos visíveis. Uma prateleira por vez. Salve para sua próxima organização. #CasaSemEsforco #OrganizacaoDaCasa",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4",
       "media_storage": "release",
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
         "duration": 20.933333,
         "size": 5829023,
@@ -615,10 +615,17 @@
       "render_version": 2,
       "composition_revision": 6,
       "scheduled_at": "2026-10-20T18:00:00-03:00",
-      "approved": false,
-      "consented_at": null,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "proof_run_id": 39355200660
+      "approved": true,
+      "consented_at": "2026-10-20T01:48:52.318Z",
+      "publishing_status": "APPROVED_FOR_BUFFER_SCHEDULE",
+      "proof_run_id": 39355200660,
+      "publication_provider": "buffer",
+      "editorial_review": {
+        "reviewed_at": "2026-10-20T01:48:52.318Z",
+        "reviewed_sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
+        "evidence_run": 39355200660,
+        "notes": "Cloud MP4 SHA confirmed, contact sheet inspected; sequential footage without loops, contextual library illustration, readable captions and complete non-silent narration. No fabricated product results or subjective voice-quality certification."
+      }
     }
   ]
 }

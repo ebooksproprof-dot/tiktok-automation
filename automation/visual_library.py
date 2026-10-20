@@ -49,8 +49,9 @@ def history(queue, state, exclude_id=None):
 def check_sources(records, previous):
     if not records:
         raise ValueError('VISUAL_ASSETS_MISSING')
+    checked = []
     for record in records:
-        for old in previous:
+        for old in list(previous) + [{'visual_sources': checked}]:
             if record['source_id'] in old.get('source_urls', []):
                 raise ValueError('VISUAL_SOURCE_REUSED: ' + record['source_id'])
             for existing in old.get('visual_sources', []):
@@ -58,6 +59,7 @@ def check_sources(records, previous):
                     raise ValueError('VISUAL_DUPLICATE_SOURCE')
                 if similar(record, existing):
                     raise ValueError('VISUAL_NEAR_DUPLICATE')
+        checked.append(record)
     return dict(visual_policy_version=POLICY_VERSION, visual_distinct=True, visual_sources=records)
 
 
