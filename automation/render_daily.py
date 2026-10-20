@@ -14,6 +14,7 @@ from media_quality import validate
 from content_catalog import TOPICS, script, category, fingerprint, rotate, novel_scripts, validate_ids
 import visual_library
 from catalog_extension import SOURCES as EXTRA_SOURCES, PROVENANCE
+from media_rights import caption_with_credits
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'release' else 'public/rendered/daily')
@@ -154,6 +155,12 @@ def render(idea, voice, post_id):
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
+    reviewed_sources = [PROVENANCE[k] for k in keys if k in PROVENANCE]
+    _, required_credits = caption_with_credits('', reviewed_sources)
+    quality.update(required_public_credits=required_credits,
+                   source_licenses=sorted({PROVENANCE[k]['license_url'] if k in PROVENANCE
+                       else 'https://www.pexels.com/license/' for k in keys}))
+    quality['source_license'] = quality['source_licenses'][0] if len(quality['source_licenses']) == 1 else 'multiple; see source_licenses'
     atomic_json(output.with_suffix('.json'),quality)
     return output,quality
 
@@ -244,8 +251,10 @@ def main():
         if release_storage:
             from release_media import publish
             video_url = publish(output, post_id, quality)
+        title, _ = caption_with_credits(' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
+                                       [PROVENANCE[k] for k in idea[1] if k in PROVENANCE])
         entry=dict(id=post_id,video_url=video_url,
-                   title=' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa',
+                   title=title,
                    scheduled_at=scheduled.astimezone(dt.timezone.utc).isoformat(),
                    approved=False,consented_at=None,quality=quality,concept=idea[0],
                    category=category(idea[0]),script_lines=idea[2],script_sha256=fingerprint(idea[2]),render_version=VERSION,composition_revision=COMPOSITION_REVISION,

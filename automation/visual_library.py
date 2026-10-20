@@ -71,6 +71,9 @@ def preflight(source_ids, previous):
 
 def require_evidence(post, previous=None):
     quality = post.get('quality') or {}
+    for credit in quality.get('required_public_credits', []):
+        if not credit or credit not in post.get('title', ''):
+            raise ValueError('REQUIRED_PUBLIC_CREDIT_MISSING')
     if quality.get('visual_policy_version') != POLICY_VERSION or quality.get('visual_distinct') is not True:
         raise ValueError('VISUAL_REVIEW_REQUIRED: repeated or unmeasured scenes cannot be published')
     records = quality.get('visual_sources')

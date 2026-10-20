@@ -3,6 +3,26 @@
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
 ## CasaSemEsforço 3.1 — fornecedores adicionais
+- Primeiro commit 3.1 salvo: 874b68b9d7cd53ec56863878e8e05430a693afb7.
+- Evidência real Actions https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39463815894 :
+  102 testes aprovados, PIXABAY_API_KEY_PRESENT=False, PEXELS_API_KEY_PRESENT=False.
+  Wikimedia respondeu quatro buscas; zero candidatos elegíveis. Falha explícita
+  NO_NEW_REVIEWABLE_MEDIA; histórico/cache persistidos mesmo após falha.
+- Segunda busca local por palavras essenciais também respondeu, sem cenas elegíveis:
+  resultados horizontais/baixa resolução, contexto inadequado ou licenças fora da
+  lista aceita. Não baixar/produzir vídeos com esses resultados apenas para cumprir meta.
+- Auditoria corrigida: orçamento distribuído entre provedores, créditos recuperados
+  junto da mídia após expiração. Catálogo revisado aceita Pixabay/Commons, renderer
+  preserva licença correta por fonte e inclui créditos na descrição. Gate de envio
+  bloqueia remoção desses créditos. 109 testes locais passam.
+- Novo coletor usa alerta de falhas existente, sem mensagens com tokens. Sem cron
+  ativado para aquisição; dependeria de validar acesso/licença/qualidade e uso continuado.
+- Situação: Pixabay implementado/testado com mocks, bloqueado por chave; Wikimedia
+  comunicação real funcional, fornecimento de cenas adequadas não comprovado; Pexels
+  preservado/opcional, chave ausente. Zero novos vídeos/publicações nesta etapa.
+- Próximo bloqueio: adicionar PIXABAY_API_KEY nos secrets e testar aquisição real;
+  depois revisar/promover cenas inéditas com roteiro contextual. Produção de 60/mês
+  continua não comprovada. Nenhum gasto, compra ou serviço pago ativado.
 - Base remota: 709c5782bb65b93a65ec7c1ab2eef3c5d04bc68e. Estado de 20/10:
   10h PUBLISH_COMPLETE confirmado pelo Buffer; 18h ainda SCHEDULED às 14h locais.
 - Pixabay e Wikimedia adicionados como adaptadores oficiais; Pexels preservado.

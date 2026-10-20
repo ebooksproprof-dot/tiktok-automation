@@ -196,6 +196,10 @@ def recover(provider_id):
         temporary.replace(destination)
     finally:
         temporary.unlink(missing_ok=True)
+    from media_providers import credits
+    # Recover attribution together with the exact media bytes after artifact expiry.
+    if record.get('attribution') and record.get('license_url'):
+        destination.with_suffix('.credits.txt').write_text(credits([record]))
     print('RECOVERED_FOR_REVIEW; EDITORIAL_APPROVED=0')
 
 
@@ -245,18 +249,20 @@ def run():
                 try:
                     records = (candidates(provider.search(query), category, query, words)
                                if name == 'pexels' else provider.search(category, query, words))
-                except AcquisitionError:
+                except (AcquisitionError, KeyError, TypeError, ValueError, AttributeError):
                     print('PROVIDER_UNAVAILABLE=' + name)
                     disabled.add(name)  # no retry storm, especially after 429/maxlag
                     continue
                 print('PROVIDER_SEARCH_OK=' + name + '; CANDIDATES=' + str(len(records)))
+                provider_attempts = 0
                 for record in records:
                     identity = name + ':' + record['provider_id']
                     if identity in known or identity in rejected:
                         continue
-                    if attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
+                    if provider_attempts >= 1 or attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
                         break
                     attempts += 1
+                    provider_attempts += 1
                     try:
                         measured = download_and_measure(record, folder, previous)
                     except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError):

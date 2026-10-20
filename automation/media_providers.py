@@ -6,6 +6,7 @@ import time
 from urllib.parse import urlencode, urlsplit
 
 from media_acquisition import AcquisitionError, request, safe_url
+from media_rights import COMMONS_LICENSES
 
 
 def plain(value):
@@ -91,13 +92,6 @@ class PixabayProvider(CachedProvider):
 
 
 # Explicit allowlist; ShareAlike/NC/ND/custom/unknown terms need a separate workflow.
-COMMONS_LICENSES = {
-    'https://creativecommons.org/publicdomain/zero/1.0/': 'CC0 1.0',
-    'https://creativecommons.org/licenses/by/4.0/': 'CC BY 4.0',
-    'https://creativecommons.org/licenses/by/3.0/': 'CC BY 3.0',
-}
-
-
 def commons_record(page, category, query, words):
     try:
         info = page['imageinfo'][0]
@@ -140,10 +134,10 @@ class WikimediaProvider(CachedProvider):
 
     def search(self, category, query, words):
         params = dict(action='query', format='json', generator='search',
-            gsrsearch=query + ' filetype:video', gsrnamespace=6, gsrlimit=5,
+            gsrsearch=' '.join(words) + ' filetype:video', gsrnamespace=6, gsrlimit=5,
             prop='imageinfo', iiprop='url|size|mime|extmetadata',
             iiextmetadatalanguage='en', maxlag=5)
-        data = self.json(query, 'https://commons.wikimedia.org/w/api.php?' + urlencode(params))
+        data = self.json('keywords:' + ','.join(words), 'https://commons.wikimedia.org/w/api.php?' + urlencode(params))
         records = [commons_record(p, category, query, words)
                    for p in data.get('query', {}).get('pages', {}).values()]
         return [record for record in records if record]

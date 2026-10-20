@@ -49,6 +49,10 @@ página original, licença/link e indicação de adaptações. Na promoção edi
 esses créditos devem constar no vídeo ou descrição pública; arquivos do inbox não
 são consumidos automaticamente pelo renderer. Portanto créditos apenas armazenados
 não são apresentados como cumprimento de atribuição numa publicação inexistente.
+O catálogo revisado agora aceita as três origens. Quando uma fonte é promovida com
+revisão explícita, renderer acrescenta créditos à descrição pública e o gate de
+envio recusa descrição sem esses créditos. O limite de 2200 caracteres é verificado
+sem truncar atribuições. A revisão de contexto continua necessária.
 Recuperação: `--recover wikimedia:ID` / `--recover pixabay:ID`; IDs sem prefixo
 continuam sendo Pexels. SHA obrigatório e extensão original preservada.
 

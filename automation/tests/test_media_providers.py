@@ -119,3 +119,22 @@ class ProviderTests(unittest.TestCase):
             with patch.object(a, 'ROOT', root), patch.object(a, 'request', return_value=io.BytesIO(b'video')):
                 a.recover('wikimedia:42')
             self.assertTrue((root.parent/'tmp/media-inbox/wikimedia-42.webm').exists())
+            self.assertIn('Author', (root.parent/'tmp/media-inbox/wikimedia-42.credits.txt').read_text())
+
+    def test_rejected_first_provider_does_not_starve_fallback(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)/'automation'; root.mkdir()
+            first = dict(provider='pixabay', provider_id='1')
+            second = p.commons_record(commons(), 'cozinha', 'kitchen', ['kitchen'])
+            measured = dict(second, sha256='a'*64, dhash=['0'*16]*5)
+            def measure(record, folder, previous):
+                if record['provider'] == 'pixabay': raise a.AcquisitionError('MEDIA_TECHNICAL_REJECTED')
+                return measured
+            with patch.object(a, 'ROOT', root), patch.dict(a.os.environ,
+                {'MEDIA_PROVIDER_ORDER': 'pixabay,wikimedia', 'PIXABAY_API_KEY': 'mock'}), \
+                patch.object(p.PixabayProvider, 'search', return_value=[first]*10), \
+                patch.object(p.WikimediaProvider, 'search', return_value=[second]), \
+                patch.object(a, 'download_and_measure', side_effect=measure):
+                a.run()
+            saved = json.loads((root/'media_inbox.json').read_text())
+            self.assertEqual(saved['items'][0]['provider'], 'wikimedia')

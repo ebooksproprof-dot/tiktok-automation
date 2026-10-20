@@ -3,6 +3,7 @@ import json
 import re
 from pathlib import Path
 from urllib.parse import urlparse
+from media_rights import valid_source
 
 PATH = Path(__file__).with_name('catalog_extension.json')
 CATEGORIES = {'limpeza', 'organizacao', 'preparacao', 'conservacao', 'rotina'}
@@ -37,11 +38,7 @@ def load(path=PATH):
             asset_id = asset.get('id')
             url = urlparse(asset.get('url', ''))
             page = urlparse(asset.get('source_page', ''))
-            if (not slug(asset_id) or url.scheme != 'https' or url.netloc != 'videos.pexels.com'
-                or not url.path.endswith('.mp4') or url.query or url.fragment
-                or page.scheme != 'https' or page.netloc != 'www.pexels.com'
-                or not page.path.startswith('/video/')
-                or asset.get('license_url') != 'https://www.pexels.com/license/'
+            if (not slug(asset_id) or not valid_source(asset)
                 or not asset.get('author') or len(asset.get('context', '')) < 20
                 or not re.fullmatch(r'[a-f0-9]{64}', asset.get('sha256', ''))):
                 raise ValueError('Invalid source, license, context or fingerprint')

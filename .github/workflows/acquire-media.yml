@@ -5,12 +5,14 @@ on:
     paths:
       - 'automation/media_acquisition.py'
       - 'automation/media_providers.py'
+      - 'automation/media_rights.py'
       - 'automation/tests/test_acquisition.py'
       - 'automation/tests/test_media_providers.py'
       - '.github/workflows/acquire-media.yml'
 # No daily cron until API authorization and real acquisition are verified.
 permissions:
   contents: write
+  issues: write
 concurrency:
   group: casasemesforco-state
   cancel-in-progress: false
@@ -64,3 +66,8 @@ jobs:
           path: tmp/media-inbox/
           retention-days: 3
           if-no-files-found: ignore
+      - name: Keep one actionable acquisition failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/notify_failure.py
