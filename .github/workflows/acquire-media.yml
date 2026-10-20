@@ -1,0 +1,61 @@
+name: CasaSemEsforco official media acquisition
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'automation/media_acquisition.py'
+      - 'automation/tests/test_acquisition.py'
+      - '.github/workflows/acquire-media.yml'
+# No daily cron until API authorization and real acquisition are verified.
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-state
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Verify official API credential presence without exposing value
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          python -c "import os; present=bool(os.environ.get('PEXELS_API_KEY')); print('PEXELS_API_KEY_PRESENT=' + str(present)); raise SystemExit(0 if present else 1)"
+      - name: Install media validator
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Acquire at most two new review candidates
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python automation/media_acquisition.py
+      - name: Preserve provenance, API cache and deduplication history
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for path in automation/media_inbox.json automation/media_search_cache.json; do
+            if test -f "$path"; then git add "$path"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist official media acquisition evidence'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Retain pending review footage (not publication assets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pending-media-review
+          path: tmp/media-inbox/
+          retention-days: 3
+          if-no-files-found: ignore

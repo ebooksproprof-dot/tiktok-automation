@@ -2,6 +2,25 @@
 
 Estado: PARCIAL. Publicação Buffer funcional; produção editorial contínua não comprovada.
 
+## Continuação — aquisição oficial de cenas (20/10/2026)
+- Base recuperada: fffb773518ffc5683c31e0c98a13ee14be41b43b. 77 testes anteriores preservados.
+- Estado persistido confirma casasem-2026-10-20-1 como PUBLISH_COMPLETE, verificado pelo
+  Buffer, permalink https://tiktok.com/@.casasemesforo/video/7698734823640239378 .
+  Página pública não inspecionada independentemente nesta retomada. Slot das 18h
+  continua SCHEDULED, não reenviado nem declarado publicado.
+- Novo coletor oficial Pexels, filtros contextuais/verticais, cache 24h, autoria/licença,
+  SHA/dHash, backlog limitado e inbox separado da publicação. 87 testes locais passam.
+  Nenhum vídeo novo gerado por esta alteração; aquisição real ainda depende de verificar
+  PEXELS_API_KEY no workflow. Não há aprovação automática de cenas por palavras-chave.
+- Workflow manual/push de aquisição não interfere com renderer/runner; serialização
+  compartilhada, metadados persistidos mesmo após falha, artifacts de revisão por 3 dias.
+  Não há novo cron até validar credencial e operação real. Custo adicional contratado: R$0.
+- OpenCut/Craft/VoiceStudio não reintegrados: preservar avaliações e PoCs abaixo.
+  FFmpeg/Piper e os workflows históricos intencionalmente inertes foram preservados.
+- Próximo passo: confirmar execução do coletor; se faltar chave, inseri-la diretamente
+  no GitHub e executar o workflow. Revisar cenas adquiridas antes de promover ao catálogo.
+  A renovação editorial automática e capacidade de 60 vídeos/mês seguem não comprovadas.
+
 ## Base confirmada antes das alterações
 - HEAD dcdf1161c12e867b5ef5dbabd6893bf36afe7fcd.
 - Runner 39336473612: autenticação Buffer correta, 47 testes, sete publicações verificadas pelo provedor (cinco Buffer, duas Metricool). Não inspecionadas independentemente na página pública nesta retomada.

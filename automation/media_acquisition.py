@@ -1,0 +1,208 @@
+"""Bounded official-API discovery. Inbox is NOT an editorial approval or publish queue."""
+import json
+import os
+import re
+import subprocess
+import time
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+from visual_library import fingerprint, check_sources, history
+
+ROOT = Path(__file__).resolve().parent
+MAX_BYTES = 250 * 1024 * 1024
+TOPICS = [
+    ('gavetas', 'organizing drawers', ['drawer']),
+    ('cozinha', 'cleaning kitchen counter', ['kitchen', 'cleaning']),
+    ('livros', 'arranging books shelves', ['books']),
+    ('banheiro', 'organizing bathroom storage', ['bathroom']),
+]
+
+
+class AcquisitionError(Exception):
+    """Only fixed, credential-free error codes cross the network boundary."""
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise AcquisitionError('REDIRECT_REJECTED')
+
+
+def safe_url(url, host):
+    p = urllib.parse.urlsplit(url)
+    return (p.scheme == 'https' and p.netloc == host and not p.query
+            and not p.fragment and not p.username)
+
+
+def request(url, key=None):
+    headers = {'User-Agent': 'CasaSemEsforco-media-review/1.0'}
+    if key:
+        headers['Authorization'] = key
+    try:
+        return urllib.request.build_opener(NoRedirect()).open(
+            urllib.request.Request(url, headers=headers), timeout=45)
+    except Exception:
+        raise AcquisitionError('PROVIDER_REQUEST_FAILED') from None
+
+
+class PexelsProvider:
+    name = 'pexels'
+
+    def __init__(self, key, cache, now=None):
+        if not key:
+            raise AcquisitionError('PEXELS_API_KEY_MISSING')
+        self.key, self.cache = key, cache
+        self.now = time.time() if now is None else now
+
+    def search(self, query):
+        cached = self.cache.get(query)
+        if cached and 0 <= self.now - cached['at'] < 86400:
+            return cached['videos']
+        url = 'https://api.pexels.com/v1/videos/search?' + urllib.parse.urlencode(
+            dict(query=query, orientation='portrait', per_page=15, page=1))
+        with request(url, self.key) as response:
+            raw = response.read(2_000_001)
+        if len(raw) > 2_000_000:
+            raise AcquisitionError('API_RESPONSE_TOO_LARGE')
+        try:
+            videos = json.loads(raw)['videos']
+            # Persist only fields used by the selector; never request headers/key.
+            videos = [{k: v.get(k) for k in ('id', 'url', 'user', 'duration', 'video_files')}
+                      for v in videos[:15]]
+        except (ValueError, KeyError, TypeError):
+            raise AcquisitionError('API_RESPONSE_INVALID') from None
+        self.cache[query] = dict(at=self.now, videos=videos)
+        return videos
+
+
+def candidates(videos, category, query, required_words):
+    result = []
+    for video in videos:
+        try:
+            page = video['url']
+            words = set(re.findall(r'[a-z]+', urllib.parse.urlsplit(page).path.lower()))
+            if not safe_url(page, 'www.pexels.com') or not page.startswith('https://www.pexels.com/video/'):
+                continue
+            if not set(required_words).issubset(words) or float(video['duration']) < 28:
+                continue
+            author = video['user']['name']
+            if not isinstance(author, str) or not author.strip():
+                continue
+            files = [f for f in video['video_files']
+                     if f['file_type'] == 'video/mp4' and f['width'] >= 1080
+                     and f['height'] >= 1920 and .5 <= f['width']/f['height'] <= .6
+                     and safe_url(f['link'], 'videos.pexels.com')
+                     and f['link'].endswith('.mp4')]
+            if not files:
+                continue
+            selected = min(files, key=lambda f: f['width'] * f['height'])
+            result.append(dict(provider='pexels', provider_id=str(int(video['id'])),
+                url=selected['link'], source_page=page, author=author,
+                license_url='https://www.pexels.com/license/',
+                attribution=f'Video: {author} / Pexels — {page}',
+                category=category, query=query,
+                selection_reason='Source-page keywords: ' + ', '.join(required_words),
+                semantic_verified=False, editorial_approved=False,
+                status='pending_visual_review'))
+        except (KeyError, TypeError, ValueError, ZeroDivisionError):
+            continue
+    return result
+
+
+def download_and_measure(record, folder, previous):
+    if not safe_url(record['url'], 'videos.pexels.com'):
+        raise AcquisitionError('MEDIA_ORIGIN_REJECTED')
+    destination = folder / ('pexels-' + str(int(record['provider_id'])) + '.mp4')
+    temporary = destination.with_suffix('.part')
+    try:
+        with request(record['url']) as response, temporary.open('wb') as output:
+            total = 0
+            while chunk := response.read(1024 * 1024):
+                total += len(chunk)
+                if total > MAX_BYTES:
+                    raise AcquisitionError('MEDIA_TOO_LARGE')
+                output.write(chunk)
+        probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error',
+            '-show_streams', '-show_format', '-of', 'json', str(temporary)], timeout=30))
+        stream = next(s for s in probe['streams'] if s['codec_type'] == 'video')
+        w, h = int(stream['width']), int(stream['height'])
+        duration = float(probe['format']['duration'])
+        if w < 1080 or h < 1920 or not .5 <= w/h <= .6 or not 28 <= duration <= 300:
+            raise AcquisitionError('MEDIA_TECHNICAL_REJECTED')
+        evidence = fingerprint(temporary, record['url'])
+        check_sources([evidence], previous)
+        temporary.replace(destination)
+        return dict(record, **evidence, width=w, height=h, duration=duration,
+                    bytes=total, acquired_at=int(time.time()))
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def read_json(path, default):
+    return json.loads(path.read_text()) if path.exists() else default
+
+
+def save_json(path, data):
+    temporary = path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    temporary.replace(path)
+
+
+def run():
+    cache_path, inbox_path = ROOT/'media_search_cache.json', ROOT/'media_inbox.json'
+    cache = read_json(cache_path, {})
+    inbox = read_json(inbox_path, {'items': []})
+    now = int(time.time())
+    rejected = {key: until for key, until in inbox.get('rejected_until', {}).items()
+                if until > now}
+    inbox['rejected_until'] = rejected
+    # Hard storage/review backlog limit; never evict deduplication history.
+    if len(inbox['items']) >= 120:
+        raise AcquisitionError('INBOX_REVIEW_CAPACITY_REACHED')
+    provider = PexelsProvider(os.environ.get('PEXELS_API_KEY'), cache)
+    previous = history(read_json(ROOT/'queue.json', {}), read_json(ROOT/'state.json', {}))
+    previous += [read_json(ROOT/'visual_history.json', {}), {'visual_sources': inbox['items']}]
+    folder = ROOT.parent/'tmp'/'media-inbox'
+    folder.mkdir(parents=True, exist_ok=True)
+    acquired, attempts = 0, 0
+    known = {x['provider_id'] for x in inbox['items'] if x['provider'] == 'pexels'}
+    # Rotate categories daily, at most four queries and four downloads per run.
+    offset = int(time.time() // 86400) % len(TOPICS)
+    errors = []
+    try:
+        for category, query, words in TOPICS[offset:] + TOPICS[:offset]:
+            for record in candidates(provider.search(query), category, query, words):
+                if record['provider_id'] in known or record['provider_id'] in rejected:
+                    continue
+                if attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
+                    break
+                attempts += 1
+                try:
+                    measured = download_and_measure(record, folder, previous)
+                except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError):
+                    errors.append('CANDIDATE_REJECTED')
+                    rejected[record['provider_id']] = now + 7 * 86400
+                    continue
+                inbox['items'].append(measured)
+                previous.append({'visual_sources': [measured]})
+                known.add(record['provider_id'])
+                acquired += 1
+            if attempts >= 4 or acquired >= 2:
+                break
+    finally:
+        save_json(cache_path, cache)
+        save_json(inbox_path, inbox)
+    print(f'ACQUIRED={acquired}; REJECTED={len(errors)}; EDITORIAL_APPROVED=0')
+    if not acquired:
+        raise AcquisitionError('NO_NEW_REVIEWABLE_MEDIA')
+
+
+if __name__ == '__main__':
+    try:
+        run()
+    except Exception as error:
+        # Do not serialize exception text from HTTP/ffprobe/provider payloads.
+        print('ACQUISITION_BLOCKED=' + (str(error) if isinstance(error, AcquisitionError)
+                                      else 'LOCAL_VALIDATION_FAILED'))
+        raise SystemExit(1)
