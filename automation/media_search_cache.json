@@ -211,5 +211,1982 @@
         }
       }
     }
+  },
+  "wikimedia:keywords:books": {
+    "at": 1792516498.9575324,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "128624565": {
+            "pageid": 128624565,
+            "ns": 6,
+            "title": "File:Clarita se mete en el video y me da lengüetazos.webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 29656038,
+                "width": 3840,
+                "height": 2160,
+                "duration": 29.198,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Clarita_se_mete_en_el_video_y_me_da_leng%C3%BCetazos.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Clarita_se_mete_en_el_video_y_me_da_leng%C3%BCetazos.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128624565",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-02-11 18:19:43",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Clarita se mete en el video y me da lengüetazos",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Self-published work|Dogs of Mexico|Videos by User:Luisalvaz",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Estaba grabando un video y Clarita (perrita de 9 años) me da lengüetazos. Antes, cuando aplaudí para generar el video de empalme, salen volando pelos blancos (también de Clarita).",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-02-10",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Luisalvaz\" title=\"User:Luisalvaz\">Luis Alvaz</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "98546303": {
+            "pageid": 98546303,
+            "ns": 6,
+            "title": "File:How to import books to Wikidata using a spreadsheet and OpenRefine.webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 381845193,
+                "width": 1920,
+                "height": 1080,
+                "duration": 1924.861,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/How_to_import_books_to_Wikidata_using_a_spreadsheet_and_OpenRefine.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:How_to_import_books_to_Wikidata_using_a_spreadsheet_and_OpenRefine.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98546303",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-01-05 09:58:28",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "How to import books to Wikidata using a spreadsheet and OpenRefine",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Books|Media from YouTube|WikiCite|Ursula Oberst|Screencast videos of free software|Uploaded with video2commons|License reviewed by YouTubeReviewBot|Wikidata item creation|OpenRefine tutorial videos in English",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "This screencast is produced thanks to the WikiCite e-scholarship programme 2020. It is produced with Kaltura Capture (recording) and Shotcut (editing). The screencast's quality is not perfect but I hope that it is nevertheless useful for many future contributors to WikiCite. For more information on the project and extra documention on the ingestion of bibliographic data into Wikidata see: <a class=\"external free\" href=\"https://www.wikidata.org/wiki/User:Walkuraxx/e-scholarship\">https://www.wikidata.org/wiki/User:Walkuraxx/e-scholarship</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-01-03",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=7HKVuj54mUY\"><bdi lang=\"\">How to import books to Wikidata using a spreadsheet  and OpenRefine</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=7HKVuj54mUY\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCKIpVVMDimtWVnkWxTWl1Rg\">Ursula Oberst</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "Own work",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "138039980": {
+            "pageid": 138039980,
+            "ns": 6,
+            "title": "File:Moving archive cabinets in IHLIA depot.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 3022977,
+                "width": 1920,
+                "height": 1080,
+                "duration": 8.666,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Moving_archive_cabinets_in_IHLIA_depot.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Moving_archive_cabinets_in_IHLIA_depot.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138039980",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-09-24 11:18:01",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Moving archive cabinets in IHLIA depot",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Compact shelving|Self-published work|September 2023 in Amsterdam|Videos from Amsterdam|Videos of 2023 from the Netherlands|Videos by Ciell|IHLIA depot Amsterdam",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "In archive storage galleries, archives and museums make use of inventive rolling cabinets. It saves space and also protect vulnerable objects.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-09-22",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ciell\" title=\"User:Ciell\">Ciell</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "149573592": {
+            "pageid": 149573592,
+            "ns": 6,
+            "title": "File:Students being tutored by a teacher in a dilapidated classroom.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 55214103,
+                "width": 1080,
+                "height": 1920,
+                "duration": 84.342,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Students_being_tutored_by_a_teacher_in_a_dilapidated_classroom.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Students_being_tutored_by_a_teacher_in_a_dilapidated_classroom.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=149573592",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2024-06-21 00:49:45",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Students being tutored by a teacher in a dilapidated classroom",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Self-published work|Africa Wiki Challenge 2024",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "students being tutored by a teacher in a dilapidated classroom",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2024-03-04",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Christian_Yakubu&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Christian Yakubu (page does not exist)\">Christian Yakubu</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "130666421": {
+            "pageid": 130666421,
+            "ns": 6,
+            "title": "File:Test Wiki Training NG.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 70836011,
+                "width": 1920,
+                "height": 1006,
+                "duration": 1001.924,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Test_Wiki_Training_NG.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Test_Wiki_Training_NG.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130666421",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-04-12 19:59:04",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Test Wiki Training NG",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Nigeria|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Test Wiki Training NG",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-12",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Kaizenify\" title=\"User:Kaizenify\">Kaizenify</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "wikimedia:keywords:bathroom": {
+    "at": 1792516498.9575324,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "65338047": {
+            "pageid": 65338047,
+            "ns": 6,
+            "title": "File:Cleaning the Restroom (TESDA).webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 7027246,
+                "width": 854,
+                "height": 478,
+                "duration": 85.661,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Cleaning_the_Restroom_%28TESDA%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cleaning_the_Restroom_(TESDA).webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=65338047",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2018-01-07 00:22:36",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Cleaning the Restroom (TESDA)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|PD-PhilippinesGov|Videos of 2013|Uploaded with video2commons",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Cleaning the Restroom",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2013-11-07",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=kZKo9JqkNOQ\"><bdi lang=\"\">Cleaning the Restroom</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=kZKo9JqkNOQ\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCVtZbiBhR4remMQ6N2NjZ4g\">TESDA Online Program</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "68122322": {
+            "pageid": 68122322,
+            "ns": 6,
+            "title": "File:Soehnle bathroom scales - inner view in action.webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 42392642,
+                "width": 1920,
+                "height": 1080,
+                "duration": 14.653,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Soehnle_bathroom_scales_-_inner_view_in_action.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Soehnle_bathroom_scales_-_inner_view_in_action.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=68122322",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2018-04-07 20:22:57",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Soehnle bathroom scales - inner view in action",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos of 2018 from Germany|WebM videos|Self-published work|Files by User:Raymond from de.wikipedia/Objects|Information field template with formatting|Documentary videos|Video display resolution 1920 x 1080|Fotosession im Lokal K (Haushalt)|Soehnle bathroom scales|Files by User:Raymond from de.wikipedia/Videos|Fotosession im Lokal K (2018)|Hauskamera Lokal K - Canon EOS 5D Mark IV (2018)|Disassembled electronic scales",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Soehnle bathroom scales - inner view in action. By pressing down the scale a slotted wheel begins rotating and with the help of a photoelectric sensor the weight can be calculated",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2018-03-22",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<bdi><a rel=\"mw:WikiLink/Interwiki\" href=\"https://www.wikidata.org/wiki/Q108103612\" title=\"d:Q108103612\" class=\"extiw\"><span title=\"Wikipedian and OpenStreetMap mapper from Cologne, Open Data activist\">Raimond Spekking</span></a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Attribution": {
+                    "value": "© Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "48006394": {
+            "pageid": 48006394,
+            "ns": 6,
+            "title": "File:Trump Discovers Women Go to the Bathroom - Bernie Sanders.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 11593428,
+                "width": 1280,
+                "height": 720,
+                "duration": 88.912,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Trump_Discovers_Women_Go_to_the_Bathroom_-_Bernie_Sanders.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Trump_Discovers_Women_Go_to_the_Bathroom_-_Bernie_Sanders.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=48006394",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2016-04-05 23:49:21",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Trump Discovers Women Go to the Bathroom - Bernie Sanders",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|Files from external sources with reviewed licenses|Uploaded with video2commons|Videos by Bernie Sanders|Bernie Sanders in December 2015|Bernie Sanders presidential campaign videos, 2016",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Bernie Sanders uses humor to make a serious point about Donald Trump's absurd reaction to women using the bathroom.\n<hr>\n<p>★ Join the political revolution at www.berniesanders.com\n</p><p>★ Connect with Bernie:\nFacebook → <a rel=\"nofollow\" class=\"external free\" href=\"https://www.facebook.com/berniesanders/\">https://www.facebook.com/berniesanders/</a>\nTwitter → <a rel=\"nofollow\" class=\"external free\" href=\"https://twitter.com/berniesanders\">https://twitter.com/berniesanders</a>\nInstagram → <a rel=\"nofollow\" class=\"external free\" href=\"https://www.instagram.com/berniesanders/\">https://www.instagram.com/berniesanders/</a>\nTumblr → <a rel=\"nofollow\" class=\"external free\" data-mw-original-href=\"http://berniesanders.tumblr.com/\" href=\"https://berniesanders.tumblr.com/\">http://berniesanders.tumblr.com/</a>\nSnapchat → bernie.sanders\n</p><p>★ About Bernie:\nBernie Sanders is a Democratic candidate for President of the United States. He is serving his second term in the U.S. Senate after winning re-election in 2012 with 71 percent of the vote. Sanders previously served as mayor of Vermont’s largest city for eight years before defeating an incumbent Republican to be the sole congressperson for the state in the U.S. House of Representatives. He lives in Burlington, Vermont with his wife Jane and has four children and seven grandchildren.\n</p><p>Bernard “Bernie” Sanders was born in Brooklyn, New York, to immigrant parents and grew up in a small, rent-controlled apartment. His father came to the United States from Poland at the age of 17 without much money or a formal education. While attending the University of Chicago, a 20-year-old Sanders led students in a multi-week sit-in to oppose segregation in off-campus housing owned by the university as a Congress of Racial Equality (CORE) officer. In August of 1963, Sanders took an overnight bus as an organizer for the Student Nonviolent Coordinating Committee to hear Martin Luther King Jr.’s historic “I Have a Dream” speech firsthand at the March on Washington for Jobs and Freedom.\n</p><p>After graduation, Bernie moved to Vermont where he worked as a carpenter and documentary filmmaker. In 1981, he was elected as mayor of Burlington as an Independent by a mere 10 votes, shocking the city’s political establishment by defeating a six-term, local machine mayor. In 1983, Bernie was re-elected by a 21 point margin with a record amount of voter turnout. Under his administration, the city made major strides in affordable housing, progressive taxation, environmental protection, child care, women’s rights, youth programs and the arts. In 1990, Sanders was elected to the House of Representatives as the first Independent in 40 years and joined the Democratic caucus. He was re-elected for eight terms, during which he voted against the deregulation of Wall Street, the Patriot Act, and the invasion of Iraq.\n</p><p>In 2006, Sanders defeated the richest man in Vermont to win a seat in the U.S. Senate as an Independent. Known as a “practical and successful legislator,” Sanders served as chairman of the Committee on Veterans’ Affairs where he authored and passed the most significant veteran health care reform bill in recent history. While in the Senate, Sanders has fought tirelessly for working class Americans against the influence of big money in politics. In 2010, he gave an eight-and-a-half hour filibuster-like speech on the Senate floor in opposition to extending Bush-era tax breaks for the wealthy. In 2015, the Democratic leadership tapped Bernie to serve as the caucus’ ranking member of the Senate Budget Committee.\n</p><p>Known for his consistency on the issues, Senator Sanders has supported the working class, women, communities of color, and the LGBT community throughout his career. He is an advocate for the environment, unions, and immigrants. He voted against Keystone XL, opposes the Trans-Pacific Partnership deal, wants to expand the Voting Rights Act, and pass the Equal Rights Amendment.\n</p>\nTo learn more about Bernie on the issues, click here: <a rel=\"nofollow\" class=\"external free\" href=\"https://berniesanders.com/issues/\">https://berniesanders.com/issues/</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2015-12-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=lzG9oSNIyGE\"><bdi lang=\"\">Trump Discovers Women Go to the Bathroom | Bernie Sanders</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=lzG9oSNIyGE\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCH1dpzjCEiGAt8CXkryhkZg\">Bernie 2016</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "Bernie 2016",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "180531993": {
+            "pageid": 180531993,
+            "ns": 6,
+            "title": "File:USVI Sequence 01 4 - Bathroom medicine cabinet with glass shelves holding various toiletries and bottles reflecting the photographers silhouette.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 1479389,
+                "width": 640,
+                "height": 360,
+                "duration": 19.44,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/USVI_Sequence_01_4_-_Bathroom_medicine_cabinet_with_glass_shelves_holding_various_toiletries_and_bottles_reflecting_the_photographers_silhouette.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:USVI_Sequence_01_4_-_Bathroom_medicine_cabinet_with_glass_shelves_holding_various_toiletries_and_bottles_reflecting_the_photographers_silhouette.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=180531993",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2025-12-23 00:43:52",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "USVI Sequence 01 4 - Bathroom medicine cabinet with glass shelves holding various toiletries and bottles reflecting the photographers silhouette",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Bathrooms|PD US Government|Bedrooms|Little Saint James, U.S. Virgin Islands|Uploaded with pattypan|CC-PD-Mark",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Produced by the U.S. Virgin Islands government and provided to the House Oversight Committee Democrats as part of their investigation into Jeffrey Epstein",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2020",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.dropbox.com/scl/fo/e7n5g4wz0cjngv9u9qys2/AHNOf8vcSNtejTpIcQGaICs?rlkey=c8fds6c4a8t6zwoiglx4c7kt3&amp;e=2&amp;st=16dpmuw0&amp;dl=0\">https://www.dropbox.com/scl/fo/e7n5g4wz0cjngv9u9qys2/AHNOf8vcSNtejTpIcQGaICs?rlkey=c8fds6c4a8t6zwoiglx4c7kt3&amp;e=2&amp;st=16dpmuw0&amp;dl=0</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/Category:Government_of_the_United_States_Virgin_Islands\" title=\"Category:Government of the United States Virgin Islands\">Category:Government of the United States Virgin Islands</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "195580704": {
+            "pageid": 195580704,
+            "ns": 6,
+            "title": "File:‘Where is the bathroom’ in Nigerian Sign Language.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 980940,
+                "width": 1080,
+                "height": 1920,
+                "duration": 3.6470000000000002,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/%E2%80%98Where_is_the_bathroom%E2%80%99_in_Nigerian_Sign_Language.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E2%80%98Where_is_the_bathroom%E2%80%99_in_Nigerian_Sign_Language.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=195580704",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-07-12 16:41:34",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "‘Where is the bathroom’ in Nigerian Sign Language",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Self-published work|Nigerian Sign Language",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Student of Madonna School for Children with Special Needs, Okpanam signing ‘where is the bathroom’ in Nigerian Sign Language. VoiceOver by <a href=\"//commons.wikimedia.org/wiki/User:Sayvhior\" title=\"User:Sayvhior\">Sayvhior</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2026-07-12",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Olivia_Ozoudeh\" title=\"User:Olivia Ozoudeh\">Olivia Ozoudeh</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "wikimedia:keywords:drawer": {
+    "at": 1792516498.9575324,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "68402292": {
+            "pageid": 68402292,
+            "ns": 6,
+            "title": "File:John Bauer – Illustrator of Folklore and Fairy Tales.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 36511183,
+                "width": 1920,
+                "height": 1080,
+                "duration": 47.069,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/John_Bauer_%E2%80%93_Illustrator_of_Folklore_and_Fairy_Tales.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:John_Bauer_%E2%80%93_Illustrator_of_Folklore_and_Fairy_Tales.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=68402292",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2018-04-18 14:43:35",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "John Bauer – Illustrator of Folklore and Fairy Tales",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|Files from external sources with reviewed licenses|Videos from YouTube|Videos from Sweden|Videos of 2018|Videos with music|Uploaded with video2commons|Fantasy videos|Videos by Swedish Museum|Works by John Bauer",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "John Albert Bauer was a Swedish painter and illustrator. His work is concerned with landscape and mythology, but he also composed portraits. He is best known for his illustrations of early editions of Among Gnomes and Trolls, an anthology of Swedish folklore and fairy tales. More about John Bauer here: <a class=\"external free\" href=\"https://en.wikipedia.org/wiki/John_Bauer_(illustrator)\">https://en.wikipedia.org/wiki/John_Bauer_(illustrator)</a>\n<p>Credits: Wikimedia Commons\n<a class=\"external free\" href=\"https://commons.wikimedia.org/wiki/Category:John_Bauer\">https://commons.wikimedia.org/wiki/Category:John_Bauer</a>\n</p>\nMusic: <a class=\"external free\" href=\"https://commons.wikimedia.org/wiki/File:Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg\">https://commons.wikimedia.org/wiki/File:Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2018-04-18",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=cwiUM-niTpw\"><bdi lang=\"\">John Bauer – Illustrator of Folklore and Fairy Tales</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=cwiUM-niTpw\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCz3e-Qdoj1XkKrhSCv7x8ow\">The Swedish Museum</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "The Swedish Museum",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "161648302": {
+            "pageid": 161648302,
+            "ns": 6,
+            "title": "File:Sketch penalty save 1980.webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 2987151,
+                "width": 1921,
+                "height": 804,
+                "duration": 11.833,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Sketch_penalty_save_1980.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sketch_penalty_save_1980.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161648302",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2025-03-10 16:23:27",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Sketch penalty save 1980",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|License review needed (video)|Uploaded with video2commons|Miniminter in 2025|Sidemen Charity Match|Sketch (streamer)",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Sketch saving a penalty from Miniminter at Wembley Stadium",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "8 March 2025",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=RoqrRKsgJOY&amp;t=1256\"><bdi lang=\"\">Sidemen Charity Match 2025 - IRL Highlights &amp; Vlog Ft. MrBeast, IShowSpeed, Kai Cenat, KSI etc</bdi></a> (Time: 1256) – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=RoqrRKsgJOY\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "JamPak",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "22471232": {
+            "pageid": 22471232,
+            "ns": 6,
+            "title": "File:The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s011.ogv",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 1152997,
+                "width": 360,
+                "height": 576,
+                "duration": 56.2,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/The-Mice-Drawer-System-%28MDS%29-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s011.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s011.ogv",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22471232",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2012-10-30 22:21:38",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s011",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from PLOS ONE|Bone (material)|Uploaded with Open Access Media Importer|Ogv videos|Uploaded with Open Access Media Importer and needing category review|Video display resolution 360 x 576|Videos from open-access scholarly articles|Activities on the International Space Station|Time factors|Weightlessness simulation|Equipment design",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mouse behavior during flight experiment daily observation. Mouse behavior inside MDS cage during flight daily observation.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2012",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "Video S1 from <cite style=\"font-style:normal\">Cancedda R, Liu Y, Ruggiu A, Tavella S, Biticchi R, Santucci D, Schwartz S, Ciparelli P, Falcetti G, Tenconi C, Cotronei V, Pignataro S (2012). \"<a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3362598\">The Mice Drawer System (MDS) Experiment and the Space Endurance Record-Breaking Mice</a>\". <i>PLOS ONE</i>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">DOI</a></span>:<a rel=\"nofollow\" class=\"external text\" href=\"https://doi.org/10.1371/journal.pone.0032243\">10.1371/journal.pone.0032243</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed\" class=\"extiw\" title=\"en:PubMed\"><span lang=\"en\" dir=\"ltr\">PMID</span></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pubmed/22666312\">22666312</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed_Central\" class=\"extiw\" title=\"en:PubMed Central\"><span lang=\"en\" dir=\"ltr\">PMC</span></a></span>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3362598\">3362598</a>.</cite>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Cancedda R, Liu Y, Ruggiu A, Tavella S, Biticchi R, Santucci D, Schwartz S, Ciparelli P, Falcetti G, Tenconi C, Cotronei V, Pignataro S",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "<i>This file was published in a <b><a href=\"https://en.wikipedia.org/wiki/Public_Library_of_Science\" class=\"extiw\" title=\"en:Public Library of Science\">Public Library of Science</a></b> journal. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.plos.org\">Their website</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.plos.org/terms-of-use\">states</a> that the content of all PLOS journals is published under the Creative Commons Attribution 4.0 license (or its previous version depending on the publication date), unless indicated otherwise.</i><br>",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 2.5",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 2.5",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/2.5",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-2.5",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "application/ogg"
+              }
+            ]
+          },
+          "22471233": {
+            "pageid": 22471233,
+            "ns": 6,
+            "title": "File:The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s012.ogv",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 4527351,
+                "width": 320,
+                "height": 240,
+                "duration": 16,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/The-Mice-Drawer-System-%28MDS%29-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s012.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s012.ogv",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22471233",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2012-10-30 22:22:03",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The-Mice-Drawer-System-(MDS)-Experiment-and-the-Space-Endurance-Record-Breaking-Mice-pone.0032243.s012",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from PLOS ONE|Bone (material)|Uploaded with Open Access Media Importer|Ogv videos|Uploaded with Open Access Media Importer and needing category review|Video display resolution 320 x 240|Videos from open-access scholarly articles|Activities on the International Space Station|Time factors|Weightlessness simulation|Equipment design",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mouse behavior upon landing. Mouse Wt2 behavior immediately after extraction from MDS payload upon landing.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2012",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "Video S2 from <cite style=\"font-style:normal\">Cancedda R, Liu Y, Ruggiu A, Tavella S, Biticchi R, Santucci D, Schwartz S, Ciparelli P, Falcetti G, Tenconi C, Cotronei V, Pignataro S (2012). \"<a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3362598\">The Mice Drawer System (MDS) Experiment and the Space Endurance Record-Breaking Mice</a>\". <i>PLOS ONE</i>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">DOI</a></span>:<a rel=\"nofollow\" class=\"external text\" href=\"https://doi.org/10.1371/journal.pone.0032243\">10.1371/journal.pone.0032243</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed\" class=\"extiw\" title=\"en:PubMed\"><span lang=\"en\" dir=\"ltr\">PMID</span></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pubmed/22666312\">22666312</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed_Central\" class=\"extiw\" title=\"en:PubMed Central\"><span lang=\"en\" dir=\"ltr\">PMC</span></a></span>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3362598\">3362598</a>.</cite>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Cancedda R, Liu Y, Ruggiu A, Tavella S, Biticchi R, Santucci D, Schwartz S, Ciparelli P, Falcetti G, Tenconi C, Cotronei V, Pignataro S",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "<i>This file was published in a <b><a href=\"https://en.wikipedia.org/wiki/Public_Library_of_Science\" class=\"extiw\" title=\"en:Public Library of Science\">Public Library of Science</a></b> journal. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.plos.org\">Their website</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.plos.org/terms-of-use\">states</a> that the content of all PLOS journals is published under the Creative Commons Attribution 4.0 license (or its previous version depending on the publication date), unless indicated otherwise.</i><br>",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 2.5",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 2.5",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/2.5",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-2.5",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "application/ogg"
+              }
+            ]
+          },
+          "128705301": {
+            "pageid": 128705301,
+            "ns": 6,
+            "title": "File:Triple decker triplex animation.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 4116473,
+                "width": 1920,
+                "height": 1080,
+                "duration": 13.713000000000001,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Triple_decker_triplex_animation.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Triple_decker_triplex_animation.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128705301",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-02-18 06:53:18",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Triple decker triplex animation",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "CC-Zero|SketchUp|V-Ray|Self-published work|Videos edited with IMovie",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Triple decker triplex animation",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-02-14",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Wikideas1\" title=\"User:Wikideas1\">Wikideas1</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "wikimedia:keywords:kitchen,cleaning": {
+    "at": 1792516498.9575324,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "58313862": {
+            "pageid": 58313862,
+            "ns": 6,
+            "title": "File:Medullary sponge kidney.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 42312925,
+                "width": 1920,
+                "height": 1080,
+                "duration": 369.572,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Medullary_sponge_kidney.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Medullary_sponge_kidney.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58313862",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2017-04-25 18:21:53",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Medullary sponge kidney",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Medullary sponge kidney|Videos from Osmosis",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "What is medullary sponge kidney? Medullary sponge kidney's where small cysts form in the medulla of the kidney.\n<p>Sources:\nGambaro G., Danza F.M., Fabris A. (2013). Medullary Sponge Kidney. Curr Opin Nephrol Hypertens, 22(4);421-6. <bdi><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">doi</a></span>:<a href=\"//doi.org/10.1097/MNH.0b013e3283622b86\" class=\"extiw\" title=\"doi:10.1097/MNH.0b013e3283622b86\">10.1097/MNH.0b013e3283622b86</a></bdi>\nMezzabot F., Cristofaro R., Ceol M., Del Prete D., Priante G., Familiari A., Fabris A., D’Angelo A., Gambaro G., Anglani F. (2015). Spontaneous Calcification Process in Primary Renal Cells from a Medullary Sponge Kidney Patient Harboring a GDNF mutation. J. Cell Mol. Med., 19(4); 889-902. <bdi><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">doi</a></span>:<a href=\"//doi.org/10.1111/jcmm.12514\" class=\"extiw\" title=\"doi:10.1111/jcmm.12514\">10.1111/jcmm.12514</a></bdi>\nEvan A.P., Worchester E.M., Williams Jr. J.C., Sommer A.J., Lingeman J.E., Phillips C.L., Coe F.L. (2015). Biopsy Proven Medullary Sponge Kidney: Clinical Findings, Histopathology, and Role of Osteogenesis in Stone and Plaque Formation. The Anatomical Record, 298; 865-877. <bdi><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">doi</a></span>:<a href=\"//doi.org/10.1002/ar.23105\" class=\"extiw\" title=\"doi:10.1002/ar.23105\">10.1002/ar.23105</a></bdi>\nKumar V., Abbas A.K., Fausto N., Aster J.C. (2010). Robbins and Cotran Pathologic Basis of Disease (8th edition). Philadelphia:Saunders.\nRadiopedia.org\nRoss M.H., Pawlina W. (2011). Histology: A Text and Atlas (6th edition). Philadelphia: Lippincott Williams &amp; Wilkins.\nTortora G.J., Derrickson B. (2014). Principles of Anatomy &amp; Physiology. (14th edition). Hoboken:Wiley\nMedscape.com\n<a rel=\"nofollow\" class=\"external free\" href=\"https://www.niddk.nih.gov/health-information/kidney-disease/children/medullary-sponge-kidney\">https://www.niddk.nih.gov/health-information/kidney-disease/children/medullary-sponge-kidney</a>\nPfau A., Knauf F. (2016). Update on Nephrolithiasis: Core Curriculum. Am J Kidney Dis, 68(6); 973-985.(<a rel=\"nofollow\" class=\"external free\" href=\"http://www.ajkd.org/article/S0272-6386(16)30254-2/fulltext#sec4)\">http://www.ajkd.org/article/S0272-6386(16)30254-2/fulltext#sec4)</a>\nKass-Iliyya A., Young J.G. (2016). Medullary Sponge Kidney: A Treatment Conundrum. Journal of Clinical Urology, 1-8. (<a rel=\"nofollow\" class=\"external free\" href=\"https://www.researchgate.net/profile/Antoine_Kass-Iliyya2/publication/296196718_Medullary_sponge_kidney_A_treatment_conundrum/links/56d3621f08aeb52500d186e6.pdf\">https://www.researchgate.net/profile/Antoine_Kass-Iliyya2/publication/296196718_Medullary_sponge_kidney_A_treatment_conundrum/links/56d3621f08aeb52500d186e6.pdf</a>)\t\n<a rel=\"nofollow\" class=\"external free\" href=\"http://kidneystones.uchicago.edu/the-diagnostic-dilemma-of-medullary-sponge-kidney/\">http://kidneystones.uchicago.edu/the-diagnostic-dilemma-of-medullary-sponge-kidney/</a> \n</p>\n<a rel=\"nofollow\" class=\"external free\" href=\"http://www.kidneystoners.org/information/what_is_medullary_sponge_kidney/\">http://www.kidneystoners.org/information/what_is_medullary_sponge_kidney/</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2017-04-24",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "open.osmosis.org; license at end of video",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Osmosis",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "82225933": {
+            "pageid": 82225933,
+            "ns": 6,
+            "title": "File:Menger sponge parameter animation with music 4K UHD 60FPS.webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 243372585,
+                "width": 3840,
+                "height": 2160,
+                "duration": 76.533,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Menger_sponge_parameter_animation_with_music_4K_UHD_60FPS.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Menger_sponge_parameter_animation_with_music_4K_UHD_60FPS.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82225933",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-09-16 11:06:07",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Menger sponge parameter animation with music 4K UHD 60FPS",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Public domain images of fonts|Menger sponges|Self-published work|Video display resolution 3840 x 2160|Videos of fractals created with Mandelbulber|Fractals by PantheraLeo1359531",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Ein Video des Mengerschwamms mit Parameteränderung.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-04-18",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:PantheraLeo1359531\" title=\"User:PantheraLeo1359531\">PantheraLeo1359531</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "75153954": {
+            "pageid": 75153954,
+            "ns": 6,
+            "title": "File:Nils Johan Kitchen Scale.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 9909484,
+                "width": 1920,
+                "height": 1080,
+                "duration": 26.246000000000002,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Nils_Johan_Kitchen_Scale.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nils_Johan_Kitchen_Scale.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=75153954",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2018-12-18 04:41:26",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "<div class=\"fn\">\nNils Johan Kitchen Weighing Scale</div>",
+                    "source": "commons-desc-page"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|Artworks without Wikidata item|Uploaded with video2commons|Media from Work With Sounds|Files with coordinates missing SDC location of creation|License reviewed by YouTubeReviewBot|Unsorted media from Work With Sounds",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "59.266287",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "18.132547",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Artist": {
+                    "value": "<div class=\"fn value\">\nErik Pålsson;</div>",
+                    "source": "commons-desc-page"
+                  },
+                  "ImageDescription": {
+                    "value": "This is a kitchen scale made by the Swedish company Nils Johan in the 1970s. Nils Johan was a prominent manufacturer of kitchenware in Sweden and many products that remain popular to this day were manufactured by them and their famous designers, such as the tin opener Röda Clara or the many different kinds of cutlery they manufactured. I daresay that Nils Johan products has been in as many Swedish homes as IKEA furniture.\n<p>This is a weighing scale that is supposed to be mounted on the wall, and fold up when not used. When used the large orange platter can be removed for easy use and cleaning.\n</p>\nPhoto and recording by Erik Pålsson.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "1970s<div style=\"display: none;\">date QS:P571,+1970-00-00T00:00:00Z/8</div>",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.soundsofchanges.eu/sound/nils-johan-kitchen-weighing-scale\">http://www.soundsofchanges.eu/sound/nils-johan-kitchen-weighing-scale</a><br><bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=qA_fsvoaOnw\"><bdi lang=\"\">Nils Johan Kitchen Scale</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=qA_fsvoaOnw\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "CC-BY 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "Sounds of Changes",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "136903124": {
+            "pageid": 136903124,
+            "ns": 6,
+            "title": "File:Noise cancelling audio microphone DIY hack-03.ogg",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 42986808,
+                "width": 720,
+                "height": 1280,
+                "duration": 106.8,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Noise_cancelling_audio_microphone_DIY_hack-03.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Noise_cancelling_audio_microphone_DIY_hack-03.ogg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136903124",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-09-03 15:53:29",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Noise cancelling audio microphone DIY hack-03",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Microphones in 2023",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Video explaining noise cancelling audio microphone DIY hack",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-09-03",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "Twitter thread <a rel=\"nofollow\" class=\"external free\" href=\"https://twitter.com/AndreyAzimov/status/1698354683377533125\">https://twitter.com/AndreyAzimov/status/1698354683377533125</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Andrey Azimov",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "application/ogg"
+              }
+            ]
+          },
+          "132482106": {
+            "pageid": 132482106,
+            "ns": 6,
+            "title": "File:Wie wirken Adhäsions- und Kohäsionskräfte bei Schwämmen?.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 67488840,
+                "width": 1920,
+                "height": 1080,
+                "duration": 68.021,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Wie_wirken_Adh%C3%A4sions-_und_Koh%C3%A4sionskr%C3%A4fte_bei_Schw%C3%A4mmen%3F.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wie_wirken_Adh%C3%A4sions-_und_Koh%C3%A4sionskr%C3%A4fte_bei_Schw%C3%A4mmen%3F.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132482106",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-30 14:03:01",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wie wirken Adhäsions- und Kohäsionskräfte bei Schwämmen?",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Cleaning sponges|Videos of 2023 from Germany|Videos by Terra X|Videos by Terra X without subtitle file|User:PantheraLeo1359531/WLB|Videos by Terra X in German",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Sponges and rags are made of fibres. In the fibres are many small capillaries - narrow tubes. The liquid rises upwards in them. Whether it succeeds depends mainly on two forces that act on the liquid.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-05-29",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.zdf.de/dokumentation/terra-x/wie-wirken-adhaesions-und-kohaesionskraefte-bei-einem-schwamm-creative-commons-clip-100.html\">https://www.zdf.de/dokumentation/terra-x/wie-wirken-adhaesions-und-kohaesionskraefte-bei-einem-schwamm-creative-commons-clip-100.html</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<p>ZDF/3sat/nano/Autorenkombinat/Josephine Blume, Holger Barthel, Ingo Schwarz /Christian Hess/Maximilian Heß\n</p>\n<a rel=\"nofollow\" class=\"external free\" href=\"https://de.khanacademy.org/science/biology/water-acids-and-bases/cohesion-and-adhesion/a/cohesion-and-adhesion-in-water\">https://de.khanacademy.org/science/biology/water-acids-and-bases/cohesion-and-adhesion/a/cohesion-and-adhesion-in-water</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
   }
 }
