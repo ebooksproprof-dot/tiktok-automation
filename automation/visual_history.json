@@ -1,0 +1,59 @@
+{
+  "visual_sources": [
+    {
+      "source_id": "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4",
+      "sha256": "4ec7f9969e5d7babf47f240b7b6b7ec3f07db5ffeb49ccbb415a3cb68080aa25",
+      "dhash": [
+        "73f7e974f4e6c4ff",
+        "73f7e178ece6cc77",
+        "73f7e974f4eccdff",
+        "73f7e178fccccdff",
+        "73f7f178f9edc97f"
+      ]
+    },
+    {
+      "source_id": "https://videos.pexels.com/video-files/9472849/9472849-uhd_2160_3840_24fps.mp4",
+      "sha256": "beae393bf9d8c2a9a784aa85183c42c0041fa80855bdd8a622cff4d4689a318a",
+      "dhash": [
+        "01d371181a038017",
+        "0203c38ee6fc9841",
+        "010090604643010f",
+        "0101103836f7e13f",
+        "0302906806b7e33f"
+      ]
+    },
+    {
+      "source_id": "https://videos.pexels.com/video-files/9462884/9462884-uhd_2160_3840_24fps.mp4",
+      "sha256": "17d438b66f3d7675f829509a6c0b73be147c0967f9fc47ba44c1a90250bd3531",
+      "dhash": [
+        "8048185859383121",
+        "80481818d9703121",
+        "80c8181819303121",
+        "80481818d9703121",
+        "80c8981819703121"
+      ]
+    },
+    {
+      "source_id": "https://videos.pexels.com/video-files/9462886/9462886-uhd_2160_3840_24fps.mp4",
+      "sha256": "53b1b2e5337cbd503895fcd32993ced86b2977e5649cb8455306124853ec045d",
+      "dhash": [
+        "e7a724280e0ac833",
+        "e7a5a42a2c0c4833",
+        "e3a7c4c88808e033",
+        "e3a7a4e4c888e033",
+        "e3a7e4cc8c8ce033"
+      ]
+    },
+    {
+      "source_id": "https://videos.pexels.com/video-files/9473229/9473229-uhd_2160_3840_24fps.mp4",
+      "sha256": "619b48b52437b487bd63a952b97e4052d072de7318c1b73405349d0dc38015c7",
+      "dhash": [
+        "1393afbf7c3b2100",
+        "1393af3b6f2c0100",
+        "1393bf3fe38d0100",
+        "1799e38b273f0100",
+        "1393af2f78310100"
+      ]
+    }
+  ]
+}

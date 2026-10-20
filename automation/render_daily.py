@@ -196,6 +196,12 @@ def main():
             repair = next((idea for idea in IDEAS if idea[0] == old['concept']), None)
             if repair and repair not in available:
                 available.insert(0, repair)
+        previous = visual_library.history(queue, state, exclude_id=post_id)
+        legacy = ROOT/'automation/visual_history.json'
+        if legacy.exists():
+            previous.append(json.loads(legacy.read_text()))
+        available = [idea for idea in available if visual_library.preflight(
+            [SOURCE[k] for k in idea[1]], previous)]
         if not available:
             raise RuntimeError('CATALOG_EXHAUSTED: reviewed original scripts needed; refusing repeated videos')
         voice=voice or load_voice()

@@ -16,7 +16,8 @@ class BufferSafetyTests(unittest.TestCase):
                      "scheduled_at": (b.common.utc_now() + timedelta(hours=1)).isoformat(),
                      "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/test.mp4",
                      "quality": {"technical_pass": True, "editorial_approved": True, "sha256": "a" * 64,
-                                 "visual_policy_version": 1, "visual_distinct": True}}
+                                 "visual_policy_version": 1, "visual_distinct": True,
+                                 "visual_sources": [dict(source_id='test', sha256='b'*64, dhash=['0'*16]*5)]}}
         self.channel = {"id": "channel", "name": ".casasemesforo", "service": "tiktok",
                         "isDisconnected": False, "isLocked": False, "isQueuePaused": False,
                         "metadata": {"defaultToReminders": False}}

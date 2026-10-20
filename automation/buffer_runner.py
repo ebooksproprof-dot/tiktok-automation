@@ -85,7 +85,8 @@ def prepare(post, state, channel_id):
         raise ValueError("Post not assigned to Buffer")
     if quality.get("technical_pass") is not True or quality.get("editorial_approved") is not True:
         raise ValueError("Technical and editorial review required")
-    require_evidence(post)
+    from visual_library import history
+    require_evidence(post, history({}, state))
     sha = quality.get("sha256", "")
     if not re.fullmatch(r"[0-9a-f]{64}", sha):
         raise ValueError("Missing media fingerprint")

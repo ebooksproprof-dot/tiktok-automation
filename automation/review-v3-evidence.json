@@ -1,0 +1,169 @@
+[
+  {
+    "concept": "bancada-tirar-objetos",
+    "file": "preview-v3-1-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "acdcd798e3aed7d05db0a7ecdcae7416b01582f5059ef81239119791db69a86a",
+      "duration": 19.913,
+      "size": 3378148,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -16.2,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4",
+          "sha256": "3361067878e52ca025e48335b3ac2c7a6b5c52f8a5fd5f42f9652a83e0cc272b",
+          "dhash": [
+            "61b5bdbdbc343e7e",
+            "2929793b0c643b17",
+            "3a2e6e2f0d43672d",
+            "c7830b1b9b09180d",
+            "2bbbbbb338393efb"
+          ]
+        }
+      ],
+      "concept": "bancada-tirar-objetos",
+      "source_urls": [
+        "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4"
+      ],
+      "source_license": "https://www.pexels.com/license/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 5
+    },
+    "elapsed_seconds": 24.15,
+    "script": [
+      "Você limpa só ao redor dos objetos?",
+      "Antes de limpar a bancada,",
+      "retire os itens soltos.",
+      "Coloque tudo em um apoio",
+      "seguro.",
+      "Limpe a área que estava",
+      "escondida.",
+      "Seque conforme a orientação",
+      "da superfície.",
+      "Confira a base dos objetos",
+      "antes de devolvê-los.",
+      "Retorne apenas o que pertence",
+      "àquele espaço.",
+      "Salve para organizar a",
+      "bancada."
+    ],
+    "published": false
+  },
+  {
+    "concept": "piso-pouca-agua",
+    "file": "preview-v3-2-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "0a4937cf9916a29ba982f417171150486588d38f07876c81f9bc314772d30c6b",
+      "duration": 20.04,
+      "size": 8358927,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -16.3,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/7551204/7551204-uhd_2160_3840_25fps.mp4",
+          "sha256": "1562b6f4360d23b90b766a3adf3124932b8d059ed104757d4bdeb1e998bf9ca0",
+          "dhash": [
+            "d8eaf3524bf8d866",
+            "a86ae3464bf8c867",
+            "a86c774f4ff9e827",
+            "e874756d4dfde82a",
+            "e034f52d6f6df420"
+          ]
+        }
+      ],
+      "concept": "piso-pouca-agua",
+      "source_urls": [
+        "https://videos.pexels.com/video-files/7551204/7551204-uhd_2160_3840_25fps.mp4"
+      ],
+      "source_license": "https://www.pexels.com/license/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 5
+    },
+    "elapsed_seconds": 46.97,
+    "script": [
+      "Seu piso pode receber tanta água?",
+      "Confira a orientação do",
+      "fabricante antes de molhar.",
+      "Cada material pede um cuidado",
+      "diferente.",
+      "Se a orientação for usar pano",
+      "úmido, torça bem antes de",
+      "passar.",
+      "Não deixe poças.",
+      "Observe cantos e juntas.",
+      "Não use a aparência do piso",
+      "como única referência.",
+      "Guarde esta pergunta para a",
+      "faxina."
+    ],
+    "published": false
+  },
+  {
+    "concept": "gaveta-uma-categoria",
+    "file": "preview-v3-3-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "2d33110306846d941408a860a813ec3e73d2367d91e85571ba200688004a7de0",
+      "duration": 18.7,
+      "size": 4690322,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -16.1,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4",
+          "sha256": "02131593e2868eb394c2cee31be5b0d4dbe2788694afa1c952edc2ec7bf8394b",
+          "dhash": [
+            "bdce6c7dbd591921",
+            "feef6f3d9d5a3a01",
+            "fcffee6c3c9e7906",
+            "fcff6f6dbeda3c02",
+            "fafcee6e3f9f7818"
+          ]
+        }
+      ],
+      "concept": "gaveta-uma-categoria",
+      "source_urls": [
+        "https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4"
+      ],
+      "source_license": "https://www.pexels.com/license/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 5
+    },
+    "elapsed_seconds": 28.59,
+    "script": [
+      "Sua gaveta mistura tudo?",
+      "Retire apenas uma categoria",
+      "por vez.",
+      "Separe o que realmente",
+      "pertence à gaveta.",
+      "Dobre de um jeito que permita",
+      "ver as peças.",
+      "Devolva primeiro o que usa",
+      "com frequência.",
+      "Não aperte além do espaço",
+      "disponível.",
+      "Termine uma gaveta antes de",
+      "abrir outra.",
+      "Salve para organizar sem",
+      "bagunçar tudo."
+    ],
+    "published": false
+  }
+]

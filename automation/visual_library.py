@@ -1,6 +1,7 @@
 """Conservative visual novelty gate. No paid API, no semantic-originality claims."""
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -66,7 +67,18 @@ def preflight(source_ids, previous):
     return not set(source_ids).intersection(used)
 
 
-def require_evidence(post):
+def require_evidence(post, previous=None):
     quality = post.get('quality') or {}
     if quality.get('visual_policy_version') != POLICY_VERSION or quality.get('visual_distinct') is not True:
         raise ValueError('VISUAL_REVIEW_REQUIRED: repeated or unmeasured scenes cannot be published')
+    records = quality.get('visual_sources')
+    if not isinstance(records, list) or not records:
+        raise ValueError('VISUAL_FINGERPRINTS_REQUIRED')
+    for record in records:
+        if (not isinstance(record, dict) or not record.get('source_id')
+            or not re.fullmatch(r'[0-9a-f]{64}', record.get('sha256', ''))
+            or len(record.get('dhash', [])) != 5
+            or any(not re.fullmatch(r'[0-9a-f]{16}', x) for x in record['dhash'])):
+            raise ValueError('VISUAL_FINGERPRINTS_INVALID')
+    if previous is not None:
+        check_sources(records, previous)

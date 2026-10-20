@@ -333,6 +333,8 @@ def main():
             creator = get_creator_info(token)
             for post in sorted(candidates, key=lambda p: p["scheduled_at"])[:MAX_NEW_POSTS_PER_RUN]:
                 validate_post(post, creator)
+                from visual_library import require_evidence, history
+                require_evidence(post, history({}, state))
                 if parse_time(post["scheduled_at"]) < utc_now() - timedelta(hours=2):
                     raise ValueError("Expired TikTok slot; explicitly reschedule before publication")
                 fingerprint = post["quality"].get("sha256")
@@ -342,6 +344,8 @@ def main():
                 entry = dict(provider="tiktok", status="SUBMISSION_UNKNOWN", submitted_at=iso_now(), sha256=fingerprint,
                              privacy_level=post["privacy_level"], video_url=post["video_url"],
                              concept=post.get("concept"), script_sha256=post.get("script_sha256"),
+                             source_urls=post['quality'].get('source_urls', []),
+                             visual_sources=post['quality'].get('visual_sources', []),
                              publicly_verified=False, recovery="Reconcile on TikTok before any resubmission")
                 state["posts"][post["id"]] = entry
                 checkpoint(state)
