@@ -1,14 +1,12 @@
 name: CasaSemEsforco reviewed content quality proof
-on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/review-v3.yml'
+# Historical 3.0 proof only. Production generation belongs exclusively to
+# casasemesforco-daily.yml; keep this workflow inert to prevent parallel renders.
+on: workflow_dispatch
 permissions:
   contents: read
 jobs:
   review:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
