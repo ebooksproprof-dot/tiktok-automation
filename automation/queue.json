@@ -476,6 +476,72 @@
       "original_scheduled_at": "2026-10-19T18:00:00-03:00",
       "publication_provider": "buffer",
       "schedule_recovery": "RENDER_REPAIRED_AND_REVIEWED_BEFORE_SUBMISSION"
+    },
+    {
+      "id": "casasem-2026-10-20-1",
+      "concept": "bancada-tirar-objetos",
+      "category": "preparacao",
+      "script_lines": [
+        "Você limpa só ao redor dos objetos?",
+        "Antes de limpar a bancada,",
+        "retire os itens soltos.",
+        "Coloque tudo em um apoio",
+        "seguro.",
+        "Limpe a área que estava",
+        "escondida.",
+        "Seque conforme a orientação",
+        "da superfície.",
+        "Confira a base dos objetos",
+        "antes de devolvê-los.",
+        "Retorne apenas o que pertence",
+        "àquele espaço.",
+        "Salve para organizar a",
+        "bancada."
+      ],
+      "script_sha256": "389f467c205ddf3e34b428ec14a5fd63a835dd66351e6f9cecee75fa2e04449f",
+      "title": "Você limpa só ao redor dos objetos? Antes de limpar a bancada, retire os itens soltos. Coloque tudo em um apoio seguro. Limpe a área que estava escondida. Seque conforme a orientação da superfície. Confira a base dos objetos antes de devolvê-los. Retorne apenas o que pertence àquele espaço. Salve para organizar a bancada. #CasaSemEsforco #OrganizacaoDaCasa",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-1-8764601bee4d9101.mp4",
+      "media_storage": "release",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "8764601bee4d91010539ae91d1f21d2bd2e17bb915f485f62e45488d3d45751a",
+        "duration": 19.971,
+        "size": 3385401,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.4,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4",
+            "sha256": "3361067878e52ca025e48335b3ac2c7a6b5c52f8a5fd5f42f9652a83e0cc272b",
+            "dhash": [
+              "61b5bdbdbc343e7e",
+              "2929793b0c643b17",
+              "3a2e6e2f0d43672d",
+              "c7830b1b9b09180d",
+              "2bbbbbb338393efb"
+            ]
+          }
+        ],
+        "concept": "bancada-tirar-objetos",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/10568461/10568461-uhd_2160_4096_25fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 5
+      },
+      "render_version": 2,
+      "composition_revision": 5,
+      "scheduled_at": "2026-10-20T10:00:00-03:00",
+      "approved": false,
+      "consented_at": null,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "proof_run_id": 39353432805
     }
   ]
 }
