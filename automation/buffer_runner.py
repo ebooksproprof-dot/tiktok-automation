@@ -262,15 +262,24 @@ def main(check_only=False):
         queue = common.load_json(common.QUEUE_PATH, {"posts": []}) if not check_only else {"posts": []}
         pending = pending_reconciliation(state)
         eligible = 0
+        invalid = 0
         for post in queue['posts']:
             try:
                 prepare(post, state, channel_id)
                 eligible += 1
-            except (ValueError, KeyError):
+            except (ValueError, KeyError) as exc:
+                if post.get('publication_provider') == 'buffer' and post.get('id') not in state['posts']:
+                    try:
+                        due = common.parse_time(post.get('scheduled_at'))
+                    except (ValueError, TypeError, AttributeError):
+                        due = None
+                    if due is None or due <= common.utc_now() + timedelta(hours=26):
+                        invalid += 1
+                        print(f"::warning::{post.get('id', 'missing-id')}: {exc}")
                 continue
         if not check_only and not pending and not eligible:
             print("Buffer: no due reconciliation or eligible submission; 0 API calls")
-            blocked = sum(p.get('provider') == 'buffer' and p.get('status') == 'SUBMISSION_UNKNOWN'
+            blocked = invalid + sum(p.get('provider') == 'buffer' and p.get('status') == 'SUBMISSION_UNKNOWN'
                           and not p.get('buffer_post_id') for p in state['posts'].values())
             return 2 if blocked else 0
         client = Client(state)

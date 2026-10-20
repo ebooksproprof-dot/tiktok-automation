@@ -1,3 +1,20 @@
+## 3.5 — envio real confirmado, publicação ainda futura
+
+- Correção58c2a09 enviada; workflow39475156076/job118809092308 concluído com sucesso.
+-174 testes cloud;175 na regressão local após corrigir alerta de fila inválida/expirada.
+-4 chamadas reais: canal, capacidade, create, readback. Novo post casasem-2026-10-21-1
+  SCHEDULED para21/10 às10h Fortaleza; Buffer ID6ad7b316adf3e386a760ccfb. NÃO publicado ainda.
+- Headers reais confirmaram100/15min,250/24h,3000/30dias; saldo final96/190/2888.
+  Política90/90/1800 preservada abaixo disso; histórico não resetado.
+- Segundo MP4 casasem-2026-10-21-2 está aprovado/Release/fila, aguardando janela26h;
+  cron20/10 às17:07 Fortaleza deve tentar agendar21/10 às18h, sujeito a sucesso do provedor.
+- Terceiro MP4 cantinho-de-leitura aprovado por SHA em review_requests, aguardando staging
+  para próximo dia livre. Nenhum terceiro slot diário criado.
+- Post20/10 às18h permanece SCHEDULED ID6ad6c8e0e9c669def5e52725; ainda futuro na verificação.
+- Evidência em automation/buffer-3.5-evidence.json; auditoria em automation/AUDIT-3.5.md.
+- Estado PARCIAL: envio recuperado; uma nova aceitação/agendamento, zero novas publicações
+  confirmadas nesta missão. Produção sustentada/aprovação editorial diária ainda não comprovadas.
+
 # CasaSemEsforço 3.5 — correção Buffer em validação
 
 - Base real c342bbd; runner39473684713 confirmou142 testes e bloqueio LOCAL antes da rede.

@@ -1,0 +1,136 @@
+{
+  "mission": "3.5",
+  "base": "c342bbd",
+  "implementation_commit": "58c2a09edda4f36c6f82781ab32f1e5af18bb713",
+  "cloud_run": 39475156076,
+  "job_id": 118809092308,
+  "tests_cloud": 174,
+  "buffer_requests": 4,
+  "accepted_new": 1,
+  "scheduled_new": 1,
+  "published_new": 0,
+  "rate_limits": {
+    "900": {
+      "policy": "100-in-15min",
+      "window_seconds": 900,
+      "quota": 100,
+      "remaining": 96,
+      "reset_at": "2026-10-20T18:44:38.844655Z",
+      "observed_at": "2026-10-20T18:29:44.844655Z"
+    },
+    "86400": {
+      "policy": "250-in-1day",
+      "window_seconds": 86400,
+      "quota": 250,
+      "remaining": 190,
+      "reset_at": "2026-10-20T22:39:53.844655Z",
+      "observed_at": "2026-10-20T18:29:44.844655Z"
+    },
+    "2592000": {
+      "policy": "3000-in-30days",
+      "window_seconds": 2592000,
+      "quota": 3000,
+      "remaining": 2888,
+      "reset_at": "2026-11-16T22:01:05.844655Z",
+      "observed_at": "2026-10-20T18:29:44.844655Z"
+    }
+  },
+  "post": {
+    "provider": "buffer",
+    "status": "SCHEDULED",
+    "submitted_at": "2026-10-20T18:29:39Z",
+    "sha256": "623293505e144b55fbc01f3ecd3a0875605e25b0a446fa7a0976ccee043cead8",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-21-1-623293505e144b55.mp4",
+    "concept": "pia-acesso-facil",
+    "script_sha256": "e5e009eb2399a640a0b9b8b407d36068c232603eb4a78e2e09a589313a4c3055",
+    "script_lines": [
+      "A pia precisa estar fácil de usar.",
+      "Deixe o sabonete ao alcance.",
+      "Tire embalagens vazias da",
+      "bancada.",
+      "Separe um lugar para cada",
+      "item da rotina.",
+      "Guarde o que você não usa",
+      "todos os dias.",
+      "Assim, sobra espaço para usar",
+      "a pia sem afastar objetos.",
+      "Salve para organizar seu",
+      "banheiro."
+    ],
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4"
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+        "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+        "dhash": [
+          "3c3a96135a4ec64c",
+          "383a36134a6e6e1c",
+          "393e1e030226261c",
+          "383a36130a466260",
+          "383a36124a4e7260"
+        ]
+      }
+    ],
+    "scheduled_at": "2026-10-21T10:00:00-03:00",
+    "publicly_verified": false,
+    "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+    "buffer_post_id": "6ad7b316adf3e386a760ccfb",
+    "last_checked_at": "2026-10-20T18:29:44Z",
+    "buffer_status": "scheduled",
+    "buffer_external_link": null,
+    "buffer_sent_at_present": false
+  },
+  "previous_evening": {
+    "provider": "buffer",
+    "status": "SCHEDULED",
+    "submitted_at": "2026-10-20T01:50:22Z",
+    "sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4",
+    "concept": "livros-por-assunto",
+    "script_sha256": "9c60c74bb565cd56ec9e51941c12ea9fbbded98640782af51e66cf190934764c",
+    "script_lines": [
+      "Você demora para encontrar um livro?",
+      "Escolha uma prateleira para",
+      "começar.",
+      "Agrupe os livros por assunto.",
+      "Dentro de cada grupo, use a",
+      "ordem que faz sentido para",
+      "você.",
+      "Deixe os títulos visíveis.",
+      "Reserve um espaço fácil de",
+      "alcançar para as leituras",
+      "atuais.",
+      "Ao terminar, devolva cada",
+      "livro ao mesmo grupo.",
+      "Salve para organizar sua",
+      "estante."
+    ],
+    "source_urls": [
+      "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4"
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+        "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2",
+        "dhash": [
+          "c208e0e1b591a5a0",
+          "c208a0e1b59185a0",
+          "c208606155150500",
+          "c2185071d58185a0",
+          "623c793275e7e5c0"
+        ]
+      }
+    ],
+    "scheduled_at": "2026-10-20T18:00:00-03:00",
+    "publicly_verified": false,
+    "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+    "buffer_post_id": "6ad6c8e0e9c669def5e52725",
+    "last_checked_at": "2026-10-20T18:15:39Z",
+    "buffer_status": "scheduled",
+    "buffer_external_link": null,
+    "buffer_sent_at_present": false
+  },
+  "evidence_scope": "Buffer read-back SCHEDULED; no new TikTok publication confirmed"
+}

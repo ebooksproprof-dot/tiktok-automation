@@ -48,6 +48,15 @@ class BufferRecoveryTests(unittest.TestCase):
         self.state['posts']['existing'] = self.entry()
         self.main_no_network(0)
 
+    def test_expired_unsent_queue_alerts_without_network(self):
+        self.post['scheduled_at'] = (NOW-dt.timedelta(hours=1)).isoformat()
+        with patch.dict(b.os.environ, {'BUFFER_API_KEY': '', 'BUFFER_CHANNEL_ID': 'channel'}), \
+                patch.object(b.common, 'load_json', side_effect=[self.state, {'posts': [self.post]}]), \
+                patch.object(b.common, 'save_json'), patch.object(b.common, 'summary'), \
+                patch.object(b.urllib.request, 'urlopen') as network:
+            self.assertEqual(b.main(), 2)
+        network.assert_not_called()
+
     def test_unknown_without_remote_id_is_blocked_without_network(self):
         self.state['posts']['unknown'] = self.entry(status='SUBMISSION_UNKNOWN', buffer_post_id=None)
         self.assertEqual(b.pending_reconciliation(self.state), [])
