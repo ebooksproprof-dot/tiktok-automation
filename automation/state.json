@@ -210,7 +210,8 @@
       ],
       "scheduled_at": "2026-10-20T10:00:00-03:00",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "buffer_post_id": "6ad6c51cb81183413da8c66a"
     }
   },
   "buffer_api_usage": [
@@ -271,6 +272,7 @@
     "2026-10-20T01:24:26Z",
     "2026-10-20T01:31:39Z",
     "2026-10-20T01:34:15Z",
-    "2026-10-20T01:34:16Z"
+    "2026-10-20T01:34:16Z",
+    "2026-10-20T01:34:20Z"
   ]
 }
