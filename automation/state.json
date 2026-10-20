@@ -320,6 +320,47 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-10-21-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-20T20:34:56Z",
+      "sha256": "91fd52ff9a37cff3c5d49f75641cb21f56f34e28531ceaf81f91e597acdb8657",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-21-2-91fd52ff9a37cff3.mp4",
+      "concept": "louca-por-etapas",
+      "script_sha256": "1ac5d05e38c5041ece80bc623001b11f3567877c0d1682241a6f7d24e89e9d7d",
+      "script_lines": [
+        "A louça acumulou de novo?",
+        "Antes de começar, separe",
+        "copos, pratos e talheres.",
+        "Retire os restos de comida",
+        "para o lixo.",
+        "Lave um grupo de cada vez.",
+        "Deixe espaço no escorredor e",
+        "guarde as peças secas.",
+        "Uma sequência simples ajuda a",
+        "organizar a tarefa.",
+        "Salve para a próxima louça."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+          "sha256": "25ce4a4534f109cc15fc9284071d8c189e0bb69736c80e439be8d10301780b4a",
+          "dhash": [
+            "1c84ec9999399ece",
+            "0c8ccc9899399ece",
+            "cc0c9c98b9399e8e",
+            "1c0cccd8b9399ece",
+            "9c8cccf8b1399ece"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-21T18:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -434,7 +475,9 @@
     "2026-10-20T18:29:38.051720Z",
     "2026-10-20T18:29:38.272035Z",
     "2026-10-20T18:29:42.136614Z",
-    "2026-10-20T18:29:44.688618Z"
+    "2026-10-20T18:29:44.688618Z",
+    "2026-10-20T20:34:54.942543Z",
+    "2026-10-20T20:34:55.302110Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -442,25 +485,25 @@
         "policy": "100-in-15min",
         "window_seconds": 900,
         "quota": 100,
-        "remaining": 96,
-        "reset_at": "2026-10-20T18:44:38.844655Z",
-        "observed_at": "2026-10-20T18:29:44.844655Z"
+        "remaining": 98,
+        "reset_at": "2026-10-20T20:49:55.483792Z",
+        "observed_at": "2026-10-20T20:34:55.483792Z"
       },
       "86400": {
         "policy": "250-in-1day",
         "window_seconds": 86400,
         "quota": 250,
-        "remaining": 190,
-        "reset_at": "2026-10-20T22:39:53.844655Z",
-        "observed_at": "2026-10-20T18:29:44.844655Z"
+        "remaining": 188,
+        "reset_at": "2026-10-20T22:39:53.483792Z",
+        "observed_at": "2026-10-20T20:34:55.483792Z"
       },
       "2592000": {
         "policy": "3000-in-30days",
         "window_seconds": 2592000,
         "quota": 3000,
-        "remaining": 2888,
-        "reset_at": "2026-11-16T22:01:05.844655Z",
-        "observed_at": "2026-10-20T18:29:44.844655Z"
+        "remaining": 2886,
+        "reset_at": "2026-11-16T22:01:05.483792Z",
+        "observed_at": "2026-10-20T20:34:55.483792Z"
       }
     },
     "consecutive_errors": 0
