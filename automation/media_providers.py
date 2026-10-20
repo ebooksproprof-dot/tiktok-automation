@@ -22,16 +22,24 @@ def vertical(width, height):
     return width >= 1080 and height >= 1920 and .5 <= width / height <= .6
 
 
+def crop_capable(width, height):
+    # Final 9:16 crop must contain at least 1080x1920 native pixels.
+    # Landscape sources require explicit visual framing review, never approval here.
+    return width >= 1080 and height >= 1920 and .5 <= width / height <= 2.0
+
+
 class CachedProvider:
     def __init__(self, cache, now=None):
         self.cache = cache
         self.now = time.time() if now is None else now
         self.requests = 0
+        self.last_response_source = None
 
     def json(self, cache_key, url):
         key = self.name + ':' + cache_key
         cached = self.cache.get(key)
         if cached and 0 <= self.now - cached['at'] < 86400:
+            self.last_response_source = 'cache'
             return cached['data']
         if self.requests >= 4:
             raise AcquisitionError('PROVIDER_REQUEST_BUDGET_REACHED')
@@ -47,6 +55,7 @@ class CachedProvider:
         except (ValueError, TypeError):
             raise AcquisitionError('API_RESPONSE_INVALID') from None
         # No request URL or key is persisted; only successful response data.
+        self.last_response_source = 'live_api'
         self.cache[key] = dict(at=self.now, data=data)
         return data
 
@@ -74,7 +83,7 @@ class PixabayProvider(CachedProvider):
                 if not safe_url(page, 'pixabay.com') or not hit['user'].strip():
                     continue
                 files = [f for f in hit['videos'].values()
-                         if vertical(f['width'], f['height'])
+                         if crop_capable(f['width'], f['height'])
                          and safe_url(f['url'], 'cdn.pixabay.com')
                          and f['url'].endswith('.mp4') and 0 < f.get('size', 0) <= 250*1024*1024]
                 if not files:
@@ -85,6 +94,7 @@ class PixabayProvider(CachedProvider):
                     license='Pixabay Content License', license_url='https://pixabay.com/service/license-summary/',
                     attribution=f"Video: {plain(hit['user'])} / Pixabay — {page}",
                     category=category, query=query, selection_reason='Provider tags: ' + plain(hit['tags']),
+                    requires_crop_review=not vertical(file['width'], file['height']),
                     semantic_verified=False, editorial_approved=False, status='pending_visual_review'))
             except (KeyError, TypeError, ValueError, AttributeError, ZeroDivisionError):
                 continue
