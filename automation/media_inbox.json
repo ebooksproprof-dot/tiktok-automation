@@ -1,58 +1,94 @@
 {
-  "items": [],
+  "items": [
+    {
+      "provider": "pixabay",
+      "provider_id": "111280",
+      "url": "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-111280/",
+      "author": "AttilaPergel",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: AttilaPergel / Pixabay — https://pixabay.com/videos/id-111280/",
+      "category": "livros",
+      "query": "arranging books shelves",
+      "selection_reason": "Provider tags: antique book, book opening, book scrolling, books, candlelight, compass, gold ring in hand",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4",
+      "sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
+      "dhash": [
+        "41611dd6c1800000",
+        "61a1e5c6a3800000",
+        "05030b3607060606",
+        "c117070606020606",
+        "0111050606060606"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 11.561667,
+      "bytes": 17673387,
+      "acquired_at": 1792519533
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "51807",
+      "url": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-51807/",
+      "author": "mrbobdobolina",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: mrbobdobolina / Pixabay — https://pixabay.com/videos/id-51807/",
+      "category": "banheiro",
+      "query": "organizing bathroom storage",
+      "selection_reason": "Provider tags: hand washing, washing, hand, hygiene, soap, bathroom",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+      "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+      "dhash": [
+        "3c3a96135a4ec64c",
+        "383a36134a6e6e1c",
+        "393e1e030226261c",
+        "383a36130a466260",
+        "383a36124a4e7260"
+      ],
+      "width": 4096,
+      "height": 2160,
+      "duration": 51.433333,
+      "bytes": 159563502,
+      "acquired_at": 1792519542
+    }
+  ],
   "rejected_until": {},
   "last_run": {
-    "at": 1792519412,
-    "acquired": 0,
+    "at": 1792519529,
+    "acquired": 2,
     "rejected": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "livros",
         "status": "search_ok",
-        "eligible_candidates": 0
+        "eligible_candidates": 5,
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "livros",
         "status": "search_ok",
-        "eligible_candidates": 0
+        "eligible_candidates": 0,
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "banheiro",
         "status": "search_ok",
-        "eligible_candidates": 0
-      },
-      {
-        "provider": "wikimedia",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 0
-      },
-      {
-        "provider": "pixabay",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0
-      },
-      {
-        "provider": "wikimedia",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0
+        "eligible_candidates": 4,
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0
