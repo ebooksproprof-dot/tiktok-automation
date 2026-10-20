@@ -169,7 +169,8 @@ def download_and_measure(record, folder, previous):
         stream = next(s for s in probe['streams'] if s['codec_type'] == 'video')
         w, h = int(stream['width']), int(stream['height'])
         duration = float(probe['format']['duration'])
-        if w < 1080 or h < 1920 or not .5 <= w/h <= .6 or not MIN_SCENE_SECONDS <= duration <= MAX_SCENE_SECONDS:
+        max_ratio = 2.0 if record.get('provider') == 'pixabay' else .6
+        if w < 1080 or h < 1920 or not .5 <= w/h <= max_ratio or not MIN_SCENE_SECONDS <= duration <= MAX_SCENE_SECONDS:
             raise AcquisitionError('MEDIA_TECHNICAL_REJECTED')
         evidence = fingerprint(temporary, record['url'])
         check_sources([evidence], previous)
@@ -281,7 +282,8 @@ def run():
                     continue
                 print('PROVIDER_SEARCH_OK=' + name + '; CANDIDATES=' + str(len(records)))
                 diagnostics.append(dict(provider=name, category=category, status='search_ok',
-                                        eligible_candidates=len(records)))
+                                        eligible_candidates=len(records),
+                                        response_source=getattr(provider, 'last_response_source', 'not_recorded')))
                 provider_attempts = 0
                 for record in records:
                     identity = name + ':' + record['provider_id']
@@ -293,9 +295,12 @@ def run():
                     provider_attempts += 1
                     try:
                         measured = download_and_measure(record, folder, previous)
-                    except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError):
-                        errors.append('CANDIDATE_REJECTED')
-                        rejected[identity] = now + 7 * 86400
+                    except (AcquisitionError, ValueError, subprocess.SubprocessError, StopIteration, KeyError) as error:
+                        code = str(error) if isinstance(error, AcquisitionError) else 'CANDIDATE_VALIDATION_REJECTED'
+                        errors.append(code)
+                        diagnostics.append(dict(provider=name, provider_id=record['provider_id'], status=code))
+                        transient = code in ('PROVIDER_RATE_LIMITED', 'PROVIDER_SERVER_ERROR', 'PROVIDER_REQUEST_FAILED')
+                        rejected[identity] = now + (3600 if transient else 7 * 86400)
                         continue
                     inbox['items'].append(measured)
                     previous.append({'visual_sources': [measured]})
