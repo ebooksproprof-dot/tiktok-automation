@@ -273,6 +273,48 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-10-21-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-20T18:29:39Z",
+      "sha256": "623293505e144b55fbc01f3ecd3a0875605e25b0a446fa7a0976ccee043cead8",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-21-1-623293505e144b55.mp4",
+      "concept": "pia-acesso-facil",
+      "script_sha256": "e5e009eb2399a640a0b9b8b407d36068c232603eb4a78e2e09a589313a4c3055",
+      "script_lines": [
+        "A pia precisa estar fácil de usar.",
+        "Deixe o sabonete ao alcance.",
+        "Tire embalagens vazias da",
+        "bancada.",
+        "Separe um lugar para cada",
+        "item da rotina.",
+        "Guarde o que você não usa",
+        "todos os dias.",
+        "Assim, sobra espaço para usar",
+        "a pia sem afastar objetos.",
+        "Salve para organizar seu",
+        "banheiro."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/10/08/51807-466305685_large.mp4",
+          "sha256": "66aa8de89a227e042a199ae74ed36a4d7d2fe9f965183cc5d43273feeb7ad7c0",
+          "dhash": [
+            "3c3a96135a4ec64c",
+            "383a36134a6e6e1c",
+            "393e1e030226261c",
+            "383a36130a466260",
+            "383a36124a4e7260"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-21T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -383,6 +425,37 @@
     "2026-10-20T18:14:16Z",
     "2026-10-20T18:15:39Z",
     "2026-10-20T18:15:39Z",
-    "2026-10-20T18:17:10Z"
-  ]
+    "2026-10-20T18:17:10Z",
+    "2026-10-20T18:29:38.051720Z",
+    "2026-10-20T18:29:38.272035Z"
+  ],
+  "buffer_quota": {
+    "windows": {
+      "900": {
+        "policy": "100-in-15min",
+        "window_seconds": 900,
+        "quota": 100,
+        "remaining": 98,
+        "reset_at": "2026-10-20T18:44:38.465835Z",
+        "observed_at": "2026-10-20T18:29:38.465835Z"
+      },
+      "86400": {
+        "policy": "250-in-1day",
+        "window_seconds": 86400,
+        "quota": 250,
+        "remaining": 192,
+        "reset_at": "2026-10-20T22:39:53.465835Z",
+        "observed_at": "2026-10-20T18:29:38.465835Z"
+      },
+      "2592000": {
+        "policy": "3000-in-30days",
+        "window_seconds": 2592000,
+        "quota": 3000,
+        "remaining": 2890,
+        "reset_at": "2026-11-16T22:01:05.465835Z",
+        "observed_at": "2026-10-20T18:29:38.465835Z"
+      }
+    },
+    "consecutive_errors": 0
+  }
 }
