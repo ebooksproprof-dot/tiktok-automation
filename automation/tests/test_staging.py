@@ -8,6 +8,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import stage_reviewed_preview as s
 
 class StagingSafetyTests(unittest.TestCase):
+    def test_invalid_slot_refuses(self):
+        with self.assertRaisesRegex(ValueError, 'destination slot'):
+            s.main(Path('/unused'), post_id='../escape')
+
+    def test_invalid_expected_hash_refuses(self):
+        with self.assertRaisesRegex(ValueError, 'reviewed fingerprint'):
+            s.main(Path('/unused'), expected_sha='invalid')
+
     def test_existing_submission_refuses_before_upload(self):
         with patch.object(Path, 'read_text', side_effect=[json.dumps({'posts': []}),
                 json.dumps({'posts': {s.POST_ID: {'status': 'SUBMISSION_UNKNOWN'}}})]), \

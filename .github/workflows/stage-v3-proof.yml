@@ -1,4 +1,4 @@
-name: Stage one immutable 3.0 proof
+name: Stage reviewed book proof for second daily slot
 on:
   push:
     branches: [main]
@@ -24,14 +24,14 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - uses: actions/download-artifact@v4
         with:
-          name: casasemesforco-v3-review
-          run-id: 39353432805
+          name: casasemesforco-content-pack-review
+          run-id: 39355200660
           github-token: ${{ github.token }}
           path: tmp/cloud-proof
       - name: Validate bytes, upload and independently read back Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python automation/stage_reviewed_preview.py tmp/cloud-proof
+        run: python automation/stage_reviewed_preview.py tmp/cloud-proof --post-id casasem-2026-10-20-2 --sha256 f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273 --proof-run-id 39355200660
       - name: Preserve unapproved queue record
         run: |
           git config user.name 'github-actions[bot]'
