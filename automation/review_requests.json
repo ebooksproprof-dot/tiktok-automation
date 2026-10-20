@@ -98,7 +98,7 @@
     },
     {
       "concept": "pia-acesso-facil",
-      "status": "rendered_for_review",
+      "status": "staged_for_buffer",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
       "published": false,
@@ -173,11 +173,15 @@
         "approved_at": "2026-10-20T18:13:00Z",
         "route": "buffer",
         "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
-      }
+      },
+      "staging_post_id": "casasem-2026-10-21-1",
+      "staging_status": "RELEASE_VERIFIED_QUEUE_PERSISTED",
+      "staging_sha256": "623293505e144b55fbc01f3ecd3a0875605e25b0a446fa7a0976ccee043cead8",
+      "staged_post_id": "casasem-2026-10-21-1"
     },
     {
       "concept": "louca-por-etapas",
-      "status": "rendered_for_review",
+      "status": "staged_for_buffer",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
       "published": false,
@@ -251,7 +255,11 @@
         "approved_at": "2026-10-20T18:13:00Z",
         "route": "buffer",
         "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
-      }
+      },
+      "staging_post_id": "casasem-2026-10-21-2",
+      "staging_status": "RELEASE_VERIFIED_QUEUE_PERSISTED",
+      "staging_sha256": "91fd52ff9a37cff3c5d49f75641cb21f56f34e28531ceaf81f91e597acdb8657",
+      "staged_post_id": "casasem-2026-10-21-2"
     },
     {
       "concept": "cantinho-de-leitura",
