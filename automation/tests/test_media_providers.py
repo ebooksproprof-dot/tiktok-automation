@@ -72,7 +72,7 @@ class ProviderTests(unittest.TestCase):
         for field in ['context', 'geometry']:
             hit = pixabay()
             if field == 'context': hit['tags'] = 'garden'
-            else: hit['videos']['large']['width'] = 1920
+            else: hit['videos']['large'].update(width=1920, height=1080)
             provider = p.PixabayProvider('mock-key', {})
             with patch.object(provider, 'json', return_value={'hits': [hit]}):
                 self.assertEqual(provider.search('cozinha', 'kitchen', ['kitchen']), [])
@@ -172,3 +172,24 @@ class ProviderTests(unittest.TestCase):
                 a.run()
             saved = json.loads((root/'media_inbox.json').read_text())
             self.assertEqual(saved['items'][0]['provider'], 'wikimedia')
+
+class CropAndEvidenceTests(unittest.TestCase):
+    def test_4k_landscape_requires_crop_review(self):
+        hit = pixabay(); hit['videos']['large'].update(width=3840, height=2160)
+        provider = p.PixabayProvider('mock', {})
+        with patch.object(provider, 'json', return_value={'hits': [hit]}):
+            result = provider.search('cozinha', 'kitchen', ['kitchen'])[0]
+        self.assertTrue(result['requires_crop_review'])
+        self.assertFalse(result['editorial_approved'])
+
+    def test_cache_is_not_live_authentication_evidence(self):
+        provider = p.PixabayProvider('mock', {}, now=100)
+        with patch.object(p, 'request', return_value=io.BytesIO(b'{"hits": []}')):
+            provider.search('cozinha', 'kitchen', ['kitchen'])
+            self.assertEqual(provider.last_response_source, 'live_api')
+            provider.search('cozinha', 'kitchen', ['kitchen'])
+            self.assertEqual(provider.last_response_source, 'cache')
+
+    def test_hd_landscape_cannot_be_upscaled_to_pass(self):
+        self.assertFalse(p.crop_capable(1920, 1080))
+        self.assertTrue(p.crop_capable(3840, 2160))
