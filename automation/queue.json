@@ -549,6 +549,76 @@
         "evidence_run": 39353432805,
         "notes": "Cloud MP4 checksum and contact sheet inspected; contextual illustrative stock, legible captions, complete non-silent narration, no product performance claims. Not a subjective human voice listening test."
       }
+    },
+    {
+      "id": "casasem-2026-10-20-2",
+      "concept": "livros-por-assunto",
+      "category": "organizacao",
+      "script_lines": [
+        "Você demora para encontrar um livro?",
+        "Escolha uma prateleira para",
+        "começar.",
+        "Agrupe os livros por assunto.",
+        "Dentro de cada grupo, use a",
+        "ordem que faz sentido para",
+        "você.",
+        "Deixe os títulos visíveis.",
+        "Reserve um espaço fácil de",
+        "alcançar para as leituras",
+        "atuais.",
+        "Ao terminar, devolva cada",
+        "livro ao mesmo grupo.",
+        "Salve para organizar sua",
+        "estante."
+      ],
+      "script_sha256": "9c60c74bb565cd56ec9e51941c12ea9fbbded98640782af51e66cf190934764c",
+      "title": "Você demora para encontrar um livro? Escolha uma prateleira para começar. Agrupe os livros por assunto. Dentro de cada grupo, use a ordem que faz sentido para você. Deixe os títulos visíveis. Reserve um espaço fácil de alcançar para as leituras atuais. Ao terminar, devolva cada livro ao mesmo grupo. Salve para organizar sua estante. #CasaSemEsforco #OrganizacaoDaCasa",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4",
+      "media_storage": "release",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
+        "duration": 20.933333,
+        "size": 5829023,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.3,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+            "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2",
+            "dhash": [
+              "c208e0e1b591a5a0",
+              "c208a0e1b59185a0",
+              "c208606155150500",
+              "c2185071d58185a0",
+              "623c793275e7e5c0"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          54.206667
+        ],
+        "concept": "livros-por-assunto",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 6
+      },
+      "render_version": 2,
+      "composition_revision": 6,
+      "scheduled_at": "2026-10-20T18:00:00-03:00",
+      "approved": false,
+      "consented_at": null,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "proof_run_id": 39355200660
     }
   ]
 }
