@@ -1,15 +1,18 @@
 name: CasaSemEsforco official media acquisition
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 10 * * *" # 07:30 Fortaleza; bounded acquisition and draft renewal
   push:
     paths:
       - 'automation/media_acquisition.py'
       - 'automation/media_providers.py'
       - 'automation/media_rights.py'
+      - 'automation/editorial_drafts.py'
       - 'automation/tests/test_acquisition.py'
       - 'automation/tests/test_media_providers.py'
       - '.github/workflows/acquire-media.yml'
-# No daily cron until API authorization and real acquisition are verified.
+# Live API and four downloaded sources verified on 2026-10-20. No automatic approval.
 permissions:
   contents: write
   issues: write
@@ -52,7 +55,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for path in automation/media_inbox.json automation/media_search_cache.json; do
+          for path in automation/media_inbox.json automation/media_search_cache.json automation/editorial_drafts.json; do
             if test -f "$path"; then git add "$path"; fi
           done
           if ! git diff --cached --quiet; then

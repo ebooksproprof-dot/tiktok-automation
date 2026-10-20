@@ -322,6 +322,8 @@ def run():
         review_folder.mkdir(parents=True, exist_ok=True)
         (review_folder/'CREDITS.txt').write_text(credits(inbox['items']))
     print(f'ACQUIRED={acquired}; REJECTED={len(errors)}; EDITORIAL_APPROVED=0')
+    from editorial_drafts import main as draft_from_media
+    draft_from_media(ROOT)
     if not acquired:
         raise AcquisitionError('NO_NEW_REVIEWABLE_MEDIA')
 
