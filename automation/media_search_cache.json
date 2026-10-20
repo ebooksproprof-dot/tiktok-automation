@@ -1,0 +1,215 @@
+{
+  "wikimedia:arranging books shelves": {
+    "at": 1792516336.704449,
+    "data": {
+      "batchcomplete": ""
+    }
+  },
+  "wikimedia:organizing bathroom storage": {
+    "at": 1792516336.704449,
+    "data": {
+      "batchcomplete": ""
+    }
+  },
+  "wikimedia:organizing drawers": {
+    "at": 1792516336.704449,
+    "data": {
+      "batchcomplete": ""
+    }
+  },
+  "wikimedia:cleaning kitchen counter": {
+    "at": 1792516336.704449,
+    "data": {
+      "batchcomplete": "",
+      "query": {
+        "pages": {
+          "84061622": {
+            "pageid": 84061622,
+            "ns": 6,
+            "title": "File:Always wash your hands before, during, and after preparing food.webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 453902,
+                "width": 1280,
+                "height": 720,
+                "duration": 9.69,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Always_wash_your_hands_before%2C_during%2C_and_after_preparing_food.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Always_wash_your_hands_before,_during,_and_after_preparing_food.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=84061622",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-11-17 12:06:59",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Always wash your hands before, during, and after preparing food",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|Food safety|PD US HHS CDC|CDC videos in English|Videos uploaded by Fæ",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "A boy and a girl are at the kitchen counter watching their father slice a carrot. The man is dressed like a superhero. Suddenly, on the left side of the kitchen, a woman appears, also dressed like a superhero. She is standing at a sink. She begins to wash her hands.\n<p>Comments on this video are allowed in accordance with our comment policy:\n<a rel=\"nofollow\" class=\"external free\" href=\"https://www.cdc.gov/SocialMedia/Tools/CommentPolicy.html\">https://www.cdc.gov/SocialMedia/Tools/CommentPolicy.html</a>\n</p><p>This video can also be viewed at\n</p>\n<a rel=\"nofollow\" class=\"external free\" href=\"https://wwwdev.cdc.gov/foodsafety/videos/video_washingHands_lowRez.mp4\">https://wwwdev.cdc.gov/foodsafety/videos/video_washingHands_lowRez.mp4</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-08-20",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<p><bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=P6KAXK7GHk8\"><bdi lang=\"\">https://www.youtube.com/watch?v=P6KAXK7GHk8</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=P6KAXK7GHk8\">archive.org</a></bdi>\n</p>\n<br>Playlist: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.youtube.com/playlist?list=PLvrp9iOILTQaN_9vLV5bk251H1FhVTU-d\">https://www.youtube.com/playlist?list=PLvrp9iOILTQaN_9vLV5bk251H1FhVTU-d</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Centers for Disease Control and Prevention",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "This video is from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/user/CDCStreamingHealth\">CDCStreamingHealth</a>, the Youtube channel for CDC, itself part of the U.S. Department of Health &amp; Human Services.",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "142096872": {
+            "pageid": 142096872,
+            "ns": 6,
+            "title": "File:Detroit- Today and Tomorrow - Fire and Police Departments, and Kowalski Sausage (1957).webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 527372650,
+                "width": 1920,
+                "height": 1080,
+                "duration": 1751.0610000000001,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Detroit-_Today_and_Tomorrow_-_Fire_and_Police_Departments%2C_and_Kowalski_Sausage_%281957%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Detroit-_Today_and_Tomorrow_-_Fire_and_Police_Departments,_and_Kowalski_Sausage_(1957).webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=142096872",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-12-12 22:50:52",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Detroit- Today and Tomorrow - Fire and Police Departments, and Kowalski Sausage (1957)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|PD US not renewed|Detroit in the 1950s|1957 works in the United States|Uploaded with video2commons",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Color 16mm film containing an installment of the Detroit Tomorrow Committee's series \"Detroit: Today and Tomorrow,\" focusing on the Detroit Fire Department's Fire Prevention Division, the Detroit Police Department's Telephone Bureau and emergency services, and Kowalski Sausage.\n<p>The film begins with a man pulling a public fire alarm box on a residential street and the engines of Ladder Company No. 23, and Engine Company No. 60 responding from their fire station at 12895 Houston Whittier Street. Several brief fire safety tips follow, concerning smoking in bed, children playing with matches, and obeying workplace rules.\n</p><p>The film then turns toward the workings of the Fire Prevention Division. Fire inspectors are shown training in the classroom, and the role of the Fire marshall is discussed. Fire inspectors are shown making their rounds and responding to a variety of mock situations. In an apartment building basement, a fire inspector encounters a pile of cardboard beneath a fusebox that's been shorted using a penny in place of a fuse. An inspector also follows up on a neighbor's complaint and visits the kitchen of a woman using an open can of gasoline for cleaning. Finally the inspector stops a man who is burning a garbage in a can in an alley.\n</p><p>The film's next segment focuses on the police. It begins with another scenario, this one concerning a woman who fainted during a walk. One of her friends runs to a telephone booth and calls the police. The call is followed to the Police Department Telephone Bureau, where it is relayed to a local precinct station. There a dispatcher sends a Detroit Police ambulance and a patrol car. The narration emphasizes the emergency training for the police and medics.\n</p><p>The police segment concludes with footage from a Police Field Day at Briggs Stadium. Officers parade around the field accompanied by the police marching band. Police are shown on foot, on motorcycles, horseback, and even in a converted World War II M8 armored car.\n</p><p>The final portion of the film deals with Kowalski Sausage, and the workings of its factory on Holbrook Avenue in Hamtramck. It begins with footage of a deli counter, and shots of the exteriors of some of the company's retail outlet stores. The action then moves to the factory where the process begins with the butchers.  The meat is shown being refrigerated and cured before going to the grinder and chopper. Here meats are mixed and spices are added.\n</p><p>The stuffing department's operations are then covered. The film shows their stuffing machine, and sausage link tying machine.  The film also discusses the differences between the preparation of skinless and natural casing Vienna sausages. The meats then go to the smoke house where they were sprayed and smoked. The is also a brief segment concerning the production of meat loaves in the company's special revolving oven.\n</p>\nThe packaging department then becomes the focus. Their banding machine, boxing stations, and bacon slicing and packaging operations are covered. The meats are then placed in coolers, and finally loaded onto trucks for delivery.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "1957",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=Jg1r1c2Qun8\"><bdi lang=\"\">Detroit: Today and Tomorrow - Fire and Police Departments, and Kowalski Sausage (1957)</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=Jg1r1c2Qun8\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "Robert C. Dienethal",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
