@@ -76,15 +76,25 @@ def near_duplicate(left, right):
     return bool(a and b) and len(a & b)/len(a | b) >= .65
 
 
+def novel_scripts(ideas, queue, state, exclude_id=None):
+    historical = [p for p in queue.get('posts', []) if exclude_id is None or p.get('id') != exclude_id]
+    historical += [p for key, p in state.get('posts', {}).items() if key != exclude_id]
+    return [i for i in ideas if not any(near_duplicate(i[2], p['script_lines'])
+            for p in historical if p.get('script_lines'))]
+
+
+def validate_ids(ideas):
+    if len(ideas) != len({i[0] for i in ideas}):
+        raise ValueError('Duplicate concept ID in complete catalog')
+
+
 def rotate(ideas, queue, state):
     used = {p.get('concept') for p in queue.get('posts', [])}
     used.update(p.get('concept') for p in state.get('posts', {}).values())
     seen_scripts = {p.get('script_sha256') for p in queue.get('posts', [])}
     seen_scripts.update(p.get('script_sha256') for p in state.get('posts', {}).values())
     remaining = [i for i in ideas if i[0] not in used and fingerprint(i[2]) not in seen_scripts]
-    historical = list(queue.get('posts', [])) + list(state.get('posts', {}).values())
-    remaining = [i for i in remaining if not any(near_duplicate(i[2], p['script_lines'])
-                 for p in historical if p.get('script_lines'))]
+    remaining = novel_scripts(remaining, queue, state)
     last = category(next((p.get('concept') for p in reversed(queue.get('posts', [])) if p.get('concept')), ''))
     ordered = []
     while remaining:

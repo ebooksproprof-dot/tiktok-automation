@@ -11,7 +11,7 @@ import urllib.request
 import wave
 from zoneinfo import ZoneInfo
 from media_quality import validate
-from content_catalog import TOPICS, script, category, fingerprint, rotate
+from content_catalog import TOPICS, script, category, fingerprint, rotate, novel_scripts, validate_ids
 import visual_library
 from catalog_extension import SOURCES as EXTRA_SOURCES, PROVENANCE
 
@@ -51,6 +51,7 @@ IDEAS = [
 ]
 
 IDEAS.extend(script(topic) for topic in TOPICS)
+validate_ids(IDEAS)
 
 
 def run(args, **kwargs):
@@ -211,6 +212,7 @@ def main():
             if repair and repair not in available:
                 available.insert(0, repair)
         previous = visual_library.history(queue, state, exclude_id=post_id)
+        available = novel_scripts(available, queue, state, exclude_id=post_id)
         legacy = ROOT/'automation/visual_history.json'
         if legacy.exists():
             previous.append(json.loads(legacy.read_text()))

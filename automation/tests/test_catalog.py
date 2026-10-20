@@ -5,6 +5,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import content_catalog as c
 
 class CatalogTests(unittest.TestCase):
+    def test_complete_catalog_rejects_legacy_id_collision(self):
+        with self.assertRaises(ValueError):
+            c.validate_ids([('panos-por-area', [], []), ('panos-por-area', [], [])])
+
+    def test_newly_saved_slot_blocks_similar_next_slot(self):
+        idea = ('second', ['different-source'], ['Organize uma gaveta por vez. Separe os objetos pelo uso.'])
+        queue = {'posts': []}
+        self.assertEqual(c.novel_scripts([idea], queue, {}, 'second'), [idea])
+        queue['posts'].append({'id': 'first', 'script_lines': idea[2]})
+        self.assertEqual(c.novel_scripts([idea], queue, {}, 'second'), [])
+
     def test_new_hook_does_not_make_old_body_original(self):
         body = ['Separe os objetos por uso. Deixe os mais usados ao alcance. Organize uma gaveta por vez. Guarde apenas o que pertence ao local. Termine antes de abrir outra.']
         old, new = ['Uma gaveta baguncada?']+body, ['Quer organizar melhor?']+body
