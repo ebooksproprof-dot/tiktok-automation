@@ -52,6 +52,8 @@ Preservar posts já enviados; não repetir o teste público anterior. Ler o Marc
 Adicionar e validar um fornecimento autorizado de filmagens inéditas contextuais, com capacidade demonstrada para 60 vídeos/mês; depois aprovar e publicar UM novo vídeo pelo Buffer e confirmar o permalink. Não desabilitar gates para atingir frequência. Produção e aprovação editorial contínuas ainda impedem classificar como OPERACIONAL.
 
 ### Retomada
+Resultado do segundo envio: Buffer confirmou SCHEDULED para casasem-2026-10-20-2 às18h Fortaleza, buffer_post_id6ad6c8e0e9c669def5e52725. Primeiro vídeo às10h mantémse agendado. Ambos publicly_verified=false: não anunciar publicação antes dos horários/confirmarpermalink. Runner de envio39355592204; fonte/roteiro novos e Release comprovados. Auditor independente não encontrou risco novo no workflow_run, mas ressalta que concorrência GitHub não garante preservar cada evento pendente; cron permanece recuperação. Rerun de criação39355508592 testa o encadeamento sem publicar novamente.
+
 Confiabilidade: runner39355508502 foi cancelado enquanto aguardava o grupo compartilhado, sem executar jobs. Adicionado workflow_run após conclusão da criação em main para reconciliar novamente sem retirar a serialização do estado. Checkout continua main, não código/artifact de PR. Agendamentos permanecem como recuperação. Verificar próximo runner antes de afirmar aceitação do segundo vídeo.
 
 Segundo slot: Release do vídeo de livros confirmado, commit891f2c5b. Aprovação editorial específica registrada no SHA f385676... e rota Buffer, para20/10/2026 às18h Fortaleza. Primeiro slot permanece10h. A aprovação não significa que Buffer já aceitou; confirmar estado subsequente. Nenhum dos dois é nova publicação pública confirmada nesta sessão.
