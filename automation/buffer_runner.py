@@ -216,6 +216,20 @@ def main(check_only=False):
                 raise RuntimeError("Connect exactly the expected TikTok account to Buffer first")
             print("Set GitHub variable BUFFER_CHANNEL_ID=" + matches[0]["id"])
             return 2  # Discovery never enables publishing.
+        queue = common.load_json(common.QUEUE_PATH, {"posts": []}) if not check_only else {"posts": []}
+        pending = [p for p in state["posts"].values() if p.get("provider") == "buffer"
+                   and p.get("buffer_post_id") and not p.get("publicly_verified") and p.get("status") != "FAILED"]
+        eligible = 0
+        for post in queue['posts']:
+            try:
+                prepare(post, state, channel_id)
+                eligible += 1
+            except (ValueError, KeyError):
+                continue
+        required = 1 if check_only else 1 + bool(pending) + (1 + 2 * min(eligible, 2) if eligible else 0)
+        # Reserve channel/reconciliation/queue/create/read-back before spending calls.
+        # This does not raise any daily, monthly or per-run budget.
+        client.check_budget(required=required)
         channel = client.call(CHANNEL_QUERY, {"input": {"id": channel_id}})["channel"]
         check_channel(channel, channel_id)
         print("Buffer channel verified: @" + common.EXPECTED_USERNAME)
@@ -232,7 +246,6 @@ def main(check_only=False):
             response = client.call("query { " + " ".join(selections) + " }", {})
             for i, entry in enumerate(pending):
                 record_remote(entry, response[f"p{i}"], channel_id)
-        queue = common.load_json(common.QUEUE_PATH, {"posts": []})
         candidates = []
         for post in queue["posts"]:
             if post.get("publication_provider") != "buffer":

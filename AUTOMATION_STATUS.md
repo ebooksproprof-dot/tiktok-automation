@@ -1,3 +1,28 @@
+## Bloqueio final confirmado e recuperação
+- Runner39473319061 encontrou o teto conservador de60 chamadas Buffer/24h.
+  Nenhum vídeo novo enviado; fila de21/10 preservada. Não aumentar/resetar orçamento.
+- Pré-checagem agora reserva chamadas suficientes para todo o ciclo antes de consultar
+  o canal. Evita gastar saldo que não permite concluir envio/read-back.
+-142 testes locais passam após essa correção. Retentativa pelos workflows agendados;
+  aceite Buffer de21/10 ainda NÃO confirmado. O post20/10 às18h já estava agendado.
+- Três MP4s cloud decodificados integralmente: zero intervalos pretos>=0,3s e zero
+  silêncios>=0,8s abaixo de-45dB. Não equivale a avaliação humana da naturalidade.
+
+## Resultado 3.4 — checkpoint de provas e staging
+- Pixabay autenticado;8 filmagens adquiridas na nuvem.2 rascunhos automáticos persistidos.
+-3 vídeos distintos renderizados na nuvem39472349389; artifact12288495146 baixado,
+  hashes e contact sheets conferidos. Cenas ilustrativas; não afirmar alta retenção.
+-141 testes finais locais e auditoria independente. Correção adicional do workflow
+  mantém staging elegível mesmo se criação diária falhar, sem mascarar a falha original.
+- Staging39473106379 concluído: dois MP4s salvos em Releases e fila aprovada para
+ 21/10 às10h/18h Fortaleza. Aceite Buffer/publicação devem ser lidos em state.json.
+- Terceira prova aprovada permanece no review_requests para próximo staging limitado;
+  nenhum terceiro slot diário criado. Hoje20/10 às18h ainda futuro nesta verificação.
+- Aquisição agendada07h30 e criação08h30; drafts persistentes sem aprovação automática.
+- Metricool API confirma .casasemesforo, sem agendamentos20–23/10; não criar rota paralela.
+- Auditoria20 componentes em automation/AUDIT-3.4.md; sistema PARCIAL,60/mês não comprovado.
+- Zero serviços pagos contratados; nenhum login nem reconfiguração do secret.
+
 # CasaSemEsforço 3.4 — checkpoint de aquisição real, 20/10/2026
 
 - Base recuperada: 79b957d, posterior a fe684f2. Secret não foi lido/configurado.
