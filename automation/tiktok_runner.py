@@ -200,6 +200,8 @@ def validate_post(post, creator_info):
     if creator_info.get("creator_username") != EXPECTED_USERNAME:
         raise ValueError("Creator identity mismatch: refusing to publish")
     quality = post.get("quality") or {}
+    from visual_library import require_evidence
+    require_evidence(post)
     if not quality.get("technical_pass") or not quality.get("editorial_approved"):
         raise ValueError("Technical validation and editorial review are required")
     duration = float(quality.get("duration", 0))

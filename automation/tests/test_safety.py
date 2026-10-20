@@ -17,7 +17,8 @@ class SafetyTests(unittest.TestCase):
         self.post = dict(id='test', video_url='https://example.com/videos/test.mp4',
                          scheduled_at=r.iso_now(), privacy_level='PUBLIC_TO_EVERYONE',
                          approved=True, consented_at='2026-10-15T12:00:00Z', official_posting_consent=True,
-                         quality=dict(technical_pass=True,editorial_approved=True,duration=20,sha256='a'*64))
+                         quality=dict(technical_pass=True,editorial_approved=True,duration=20,sha256='a'*64,
+                                      visual_policy_version=1,visual_distinct=True))
         self.env = patch.dict(os.environ, {'TIKTOK_VERIFIED_VIDEO_PREFIX':'https://example.com/videos/'})
         self.env.start();self.addCleanup(self.env.stop)
 

@@ -12,13 +12,14 @@ import wave
 from zoneinfo import ZoneInfo
 from media_quality import validate
 from content_catalog import TOPICS, script, category, fingerprint, rotate
+import visual_library
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'release' else 'public/rendered/daily')
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
-COMPOSITION_REVISION = 4
+COMPOSITION_REVISION = 5
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
 MAX_MEDIA_BYTES = 200_000_000
@@ -123,6 +124,10 @@ def render(idea, voice, post_id):
     folder.mkdir(exist_ok=True)
     duration, timings = narration(voice, lines, folder)
     clips = [get_clip(k) for k in keys]
+    previous = visual_library.history(json.loads(QUEUE.read_text()),
+        json.loads((ROOT/'automation/state.json').read_text()), post_id)
+    visual_quality = visual_library.check_sources(
+        [visual_library.fingerprint(path, SOURCE[key]) for key, path in zip(keys, clips)], previous)
     segments = []
     # Each shot follows the spoken instruction. Never show the floor as a high surface.
     shot_keys = {
@@ -153,6 +158,7 @@ def render(idea, voice, post_id):
          '-t',str(duration),'-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',
          '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
     quality=validate(output)
+    quality.update(visual_quality)
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     atomic_json(output.with_suffix('.json'),quality)
@@ -193,6 +199,9 @@ def main():
     queue=json.loads(QUEUE.read_text(encoding='utf8'))
     state=json.loads((ROOT/'automation/state.json').read_text(encoding='utf8'))
     available=rotate(IDEAS, queue, state)
+    previous = visual_library.history(queue, state)
+    available = [idea for idea in available if visual_library.preflight(
+        [SOURCE[k] for k in idea[1]], previous)]
     count=0; voice=None
     for slot,hour in enumerate([10,18],1):
         post_id=f'casasem-{today}-{slot}'

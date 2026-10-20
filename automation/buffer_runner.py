@@ -16,6 +16,7 @@ from pathlib import Path
 
 import tiktok_runner as common
 from media_quality import validate
+from visual_library import require_evidence
 
 POST_FIELDS = "id channelId status schedulingType dueAt sentAt externalLink"
 CHANNEL_QUERY = """query($input: ChannelInput!) {
@@ -84,6 +85,7 @@ def prepare(post, state, channel_id):
         raise ValueError("Post not assigned to Buffer")
     if quality.get("technical_pass") is not True or quality.get("editorial_approved") is not True:
         raise ValueError("Technical and editorial review required")
+    require_evidence(post)
     sha = quality.get("sha256", "")
     if not re.fullmatch(r"[0-9a-f]{64}", sha):
         raise ValueError("Missing media fingerprint")
@@ -172,6 +174,8 @@ def submit(client, post, state, channel_id):
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),
                  sha256=post["quality"]["sha256"], video_url=post["video_url"],
                  concept=post.get("concept"), script_sha256=post.get("script_sha256"),
+                 source_urls=post['quality'].get('source_urls', []),
+                 visual_sources=post['quality'].get('visual_sources', []),
                  scheduled_at=post["scheduled_at"], publicly_verified=False,
                  recovery="Reconcile Buffer planner by timestamp, media and caption before retrying")
     state["posts"][post["id"]] = entry
