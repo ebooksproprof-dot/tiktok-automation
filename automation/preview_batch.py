@@ -8,13 +8,13 @@ import visual_library as visual
 CONCEPTS = ['bancada-tirar-objetos', 'piso-pouca-agua', 'gaveta-uma-categoria']
 
 
-def main():
+def main(concepts=None):
     r.ASSETS.mkdir(parents=True, exist_ok=True)
     r.OUT = r.ROOT/'tmp/review-v3'
     r.OUT.mkdir(parents=True, exist_ok=True)
     engine = r.load_voice()
     results, previous = [], []
-    for index, concept in enumerate(CONCEPTS, 1):
+    for index, concept in enumerate(concepts or CONCEPTS, 1):
         idea = next(i for i in r.IDEAS if i[0] == concept)
         started = time.monotonic()
         path, quality = r.render(idea, engine, 'preview-v3-' + str(index))
@@ -30,4 +30,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--concept', action='append', choices=[i[0] for i in r.IDEAS])
+    main(parser.parse_args().concept)

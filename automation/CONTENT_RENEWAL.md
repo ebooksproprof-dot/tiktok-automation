@@ -1,6 +1,6 @@
 # Renovação de conteúdo — contrato versão 1
 
-O gerador continua deliberadamente limitado pelo conteúdo revisado. Não há API de IA ilimitada nem coleta automática de mídia ativada. O arquivo `catalog_extension.json` permite acrescentar lotes sem modificar Python. Seu estado inicial vazio é intencional: exemplos fictícios dos testes nunca entram na produção.
+O gerador continua deliberadamente limitado pelo conteúdo revisado. Não há API de IA ilimitada nem coleta automática de mídia ativada. O arquivo `catalog_extension.json` permite acrescentar lotes sem modificar Python. O primeiro lote contém um tema real sobre organização de livros, com fonte conferida. Exemplos fictícios dos testes nunca entram na produção.
 
 Cada item de `items` exige:
 - `id`: slug exclusivo, sem sobrescrever conceitos existentes.

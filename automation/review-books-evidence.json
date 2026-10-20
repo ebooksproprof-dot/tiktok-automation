@@ -1,0 +1,37 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "3827b2aaad95f9d349bd44f655b42c36715fd9ca7993631c66a534d56f8cdf40",
+  "duration": 20.389,
+  "size": 5710085,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -16.5,
+  "visual_policy_version": 1,
+  "visual_distinct": true,
+  "visual_sources": [
+    {
+      "source_id": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+      "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2",
+      "dhash": [
+        "c208e0e1b591a5a0",
+        "c208a0e1b59185a0",
+        "c208606155150500",
+        "c2185071d58185a0",
+        "623c793275e7e5c0"
+      ]
+    }
+  ],
+  "scene_reuse_policy": "sequential_no_loop",
+  "source_durations": [
+    54.206667
+  ],
+  "concept": "livros-por-assunto",
+  "source_urls": [
+    "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4"
+  ],
+  "source_license": "https://www.pexels.com/license/",
+  "voice": "pt_BR-faber-medium",
+  "render_version": 2,
+  "composition_revision": 6
+}

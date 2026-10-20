@@ -20,7 +20,7 @@ OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'relea
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
-COMPOSITION_REVISION = 5
+COMPOSITION_REVISION = 6
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
 MAX_MEDIA_BYTES = 200_000_000
@@ -123,14 +123,15 @@ def render(idea, voice, post_id):
     visual_quality = visual_library.check_sources(
         [visual_library.fingerprint(path, SOURCE[key]) for key, path in zip(keys, clips)], previous)
     segments = []
-    # Each shot follows the spoken instruction. Never show the floor as a high surface.
-    shot_keys = None
-    for i,(start,end,line) in enumerate(timings):
-        length = (timings[i+1][0] if i+1 < len(timings) else duration) - start
-        source = get_clip(shot_keys[i]) if shot_keys else clips[min(i * len(clips) // len(timings), len(clips)-1)]
+    from scene_plan import plan
+    source_durations = [float(subprocess.check_output(['ffprobe', '-v', 'error',
+        '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(p)], text=True, timeout=30)) for p in clips]
+    shots = plan(timings, duration, source_durations)
+    for i, (source_index, offset, length) in enumerate(shots):
+        source = clips[source_index]
         segment = folder/f'shot-{i}.mp4'
         # Moving footage only; no still zoom, no fabricated before/after.
-        run(['ffmpeg','-v','error','-y','-stream_loop','-1','-ss',str((i//len(clips))*2),
+        run(['ffmpeg','-v','error','-y','-ss',str(offset),
              '-i',str(source),'-t',str(length),'-an','-vf',
              'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30',
              '-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',str(segment)])
@@ -150,6 +151,7 @@ def render(idea, voice, post_id):
          '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
     quality=validate(output)
     quality.update(visual_quality)
+    quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     atomic_json(output.with_suffix('.json'),quality)

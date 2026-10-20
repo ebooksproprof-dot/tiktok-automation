@@ -7,6 +7,7 @@ import hashlib
 import textwrap
 import re
 import unicodedata
+from collections import Counter
 from catalog_extension import TOPICS as EXTRA_TOPICS
 
 # id, category, coherent illustrative footage, hook, factual steps, contextual CTA
@@ -98,6 +99,8 @@ def rotate(ideas, queue, state):
     last = category(next((p.get('concept') for p in reversed(queue.get('posts', [])) if p.get('concept')), ''))
     ordered = []
     while remaining:
-        item = next((i for i in remaining if category(i[0]) != last), remaining[0])
+        counts = Counter(category(i[0]) for i in remaining)
+        candidates = [i for i in remaining if category(i[0]) != last] or remaining
+        item = max(candidates, key=lambda i: counts[category(i[0])])
         remaining.remove(item); ordered.append(item); last = category(item[0])
     return ordered

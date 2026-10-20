@@ -1,4 +1,23 @@
 {
   "version": 1,
-  "items": []
+  "items": [
+    {
+      "id": "livros-por-assunto",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-20T01:45:00Z",
+      "hook": "Você demora para encontrar um livro?",
+      "steps": "Escolha uma prateleira para começar. Agrupe os livros por assunto. Dentro de cada grupo, use a ordem que faz sentido para você. Deixe os títulos visíveis. Reserve um espaço fácil de alcançar para as leituras atuais. Ao terminar, devolva cada livro ao mesmo grupo.",
+      "cta": "Salve para organizar sua estante.",
+      "media": [{
+        "id": "livros-estante",
+        "url": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+        "source_page": "https://www.pexels.com/video/a-young-woman-arranging-books-in-a-library-11957362/",
+        "license_url": "https://www.pexels.com/license/",
+        "author": "Liudmyla Honcharova",
+        "context": "Pessoa organiza livros em prateleiras; cena ilustrativa em biblioteca, sem alegar que seja uma casa ou demonstração de produto.",
+        "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2"
+      }]
+    }
+  ]
 }

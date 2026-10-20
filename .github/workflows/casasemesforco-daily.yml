@@ -12,6 +12,7 @@ on:
       - "automation/media_quality.py"
       - "automation/visual_library.py"
       - "automation/narration.py"
+      - "automation/scene_plan.py"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
   schedule:

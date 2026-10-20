@@ -1,4 +1,4 @@
-name: CasaSemEsforco three-scene quality proof
+name: CasaSemEsforco reviewed content quality proof
 on:
   workflow_dispatch:
   push:
@@ -26,12 +26,12 @@ jobs:
           python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0'
       - name: Regression tests
         run: python -m unittest discover -s automation/tests -v
-      - name: Three distinct narrated videos and visual comparisons
-        run: python automation/preview_batch.py
+      - name: New reviewed book-organizing video without repeated footage
+        run: python automation/preview_batch.py --concept livros-por-assunto
       - name: Retain review videos and measured evidence for seven days
         uses: actions/upload-artifact@v4
         with:
-          name: casasemesforco-v3-review
+          name: casasemesforco-content-pack-review
           path: tmp/review-v3/
           retention-days: 7
           if-no-files-found: error
