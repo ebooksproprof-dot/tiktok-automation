@@ -212,10 +212,55 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad6c51cb81183413da8c66a",
-      "last_checked_at": "2026-10-20T01:49:00Z",
+      "last_checked_at": "2026-10-20T01:50:20Z",
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-10-20-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-20T01:50:22Z",
+      "sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4",
+      "concept": "livros-por-assunto",
+      "script_sha256": "9c60c74bb565cd56ec9e51941c12ea9fbbded98640782af51e66cf190934764c",
+      "script_lines": [
+        "Você demora para encontrar um livro?",
+        "Escolha uma prateleira para",
+        "começar.",
+        "Agrupe os livros por assunto.",
+        "Dentro de cada grupo, use a",
+        "ordem que faz sentido para",
+        "você.",
+        "Deixe os títulos visíveis.",
+        "Reserve um espaço fácil de",
+        "alcançar para as leituras",
+        "atuais.",
+        "Ao terminar, devolva cada",
+        "livro ao mesmo grupo.",
+        "Salve para organizar sua",
+        "estante."
+      ],
+      "source_urls": [
+        "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/11957362/11957362-hd_1080_1920_30fps.mp4",
+          "sha256": "540161b14dbda3a71679a825057e2dff5989b391d3f1d5cf966f3a1d8aeda9f2",
+          "dhash": [
+            "c208e0e1b591a5a0",
+            "c208a0e1b59185a0",
+            "c208606155150500",
+            "c2185071d58185a0",
+            "623c793275e7e5c0"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-20T18:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -286,6 +331,9 @@
     "2026-10-20T01:46:49Z",
     "2026-10-20T01:46:50Z",
     "2026-10-20T01:48:59Z",
-    "2026-10-20T01:48:59Z"
+    "2026-10-20T01:48:59Z",
+    "2026-10-20T01:50:20Z",
+    "2026-10-20T01:50:20Z",
+    "2026-10-20T01:50:20Z"
   ]
 }
