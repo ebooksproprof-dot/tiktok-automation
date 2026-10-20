@@ -13,3 +13,10 @@ Biblioteca visual integrada ao renderizador e aos dois publicadores: SHA por arq
 
 ## Continuidade
 Integrar gate no renderizador/publicador, testar regressões, produzir três exemplos com cenas distintas, modularizar narração e avaliar ferramentas oficiais. Preservar posts já enviados; não repetir o teste público anterior. Não há credenciais neste documento.
+
+## Marco 2
+- Commit visual: 0bcc392517fd78abd338cfe38032c74f3a30ebb4.
+- Narração isolada em interface speak(text, wav), Piper CPU, frases completas e legendas por trecho temporal medido. Voz/modelo com hash fixado; runtime ONNX fixado.
+- Três provas locais em andamento: bancada, piso e gaveta, fontes independentes. Não publicadas e não enfileiradas pelo script preview_batch.
+- Releases agora limitados a seis coleções mensais de até 64 arquivos/20MB. Não há exclusão automática de histórico; ao atingir teto, exige política de arquivo/revisão.
+- OpenCut atual anuncia headless como futuro; não substitui FFmpeg. Craft oficial storytold; EffectCraft em PoC isolada. VoiceStudio é candidato experimental, não instalado como dependência obrigatória.

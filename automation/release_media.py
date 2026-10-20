@@ -57,6 +57,11 @@ def publish(path, post_id, quality):
     name = post_id + '-' + digest[:16] + '.mp4'
     release = request(API + '/releases/tags/' + tag, token)
     if release is None:
+        existing = request(API + '/releases?per_page=100', token)
+        if not isinstance(existing, list) or len(existing) >= 100:
+            raise RuntimeError('Unable to verify total release storage budget')
+        if sum(str(r.get('tag_name', '')).startswith('media-') for r in existing) >= 6:
+            raise RuntimeError('Six-month media storage budget reached; archive policy review required')
         release = request(API + '/releases', token, 'POST', {
             'tag_name': tag, 'target_commitish': os.environ.get('GITHUB_SHA', 'main'),
             'name': 'Generated videos ' + tag[6:], 'draft': False, 'prerelease': False,

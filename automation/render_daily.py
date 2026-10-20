@@ -85,37 +85,13 @@ def get_clip(key):
 
 
 def load_voice():
-    # Disable optional external telemetry before ONNX initializes, including child downloads.
-    os.environ["ORT_DISABLE_TELEMETRY"] = "1"
-    from piper import PiperVoice
-    model = ASSETS / (VOICE+'.onnx')
-    if not model.exists() or not model.with_suffix(".onnx.json").exists():
-        run(['python3','-m','piper.download_voices','--data-dir',str(ASSETS),VOICE])
-    if hashlib.sha256(model.read_bytes()).hexdigest() != VOICE_SHA:
-        raise ValueError('Voice model checksum mismatch')
-    return PiperVoice.load(str(model))
+    from narration import load_engine
+    return load_engine(ASSETS)
 
 
 def narration(voice, lines, folder):
-    from piper import SynthesisConfig
-    parts, timings, position = [], [], 0.0
-    for i, line in enumerate(lines):
-        path = folder / f'line-{i}.wav'
-        with wave.open(str(path),'wb') as out:
-            voice.synthesize_wav(line, out, syn_config=SynthesisConfig(length_scale=1.2))
-        with wave.open(str(path),'rb') as inp:
-            rate = inp.getframerate()
-            pcm = inp.readframes(inp.getnframes())
-            duration = inp.getnframes()/rate
-        timings.append((position,position+duration,line))
-        parts.append(pcm + bytes(int(rate*.08)*2))
-        position += duration + .08
-    if not 15 <= position <= 27.7:
-        raise ValueError(f'Narration length out of range: {position:.2f}')
-    with wave.open(str(folder/'voice.wav'),'wb') as out:
-        out.setnchannels(1); out.setsampwidth(2); out.setframerate(rate)
-        out.writeframes(b''.join(parts))
-    return position, timings
+    from narration import synthesize
+    return synthesize(voice, lines, folder)
 
 
 def render(idea, voice, post_id):
@@ -130,10 +106,7 @@ def render(idea, voice, post_id):
         [visual_library.fingerprint(path, SOURCE[key]) for key, path in zip(keys, clips)], previous)
     segments = []
     # Each shot follows the spoken instruction. Never show the floor as a high surface.
-    shot_keys = {
-        'panos-por-area': ['pia','pia','pia','piso','pia','piso','pia','pia','pia','pia','pia'],
-        'ordem-da-faxina': ['piso','espelho','espelho','pia','piso','espelho','pia','piso','espelho','piso','piso'],
-    }.get(concept)
+    shot_keys = None
     for i,(start,end,line) in enumerate(timings):
         length = (timings[i+1][0] if i+1 < len(timings) else duration) - start
         source = get_clip(shot_keys[i]) if shot_keys else clips[min(i * len(clips) // len(timings), len(clips)-1)]

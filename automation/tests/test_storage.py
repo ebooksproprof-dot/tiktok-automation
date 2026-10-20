@@ -48,3 +48,9 @@ class ReleaseStorageTests(unittest.TestCase):
         with patch.object(r,'request',side_effect=[{'id':1},[],RuntimeError('unknown')]) as api:
             with self.assertRaises(RuntimeError):self.call_publish()
             self.assertEqual(api.call_count,3)
+
+    def test_total_storage_budget_blocks_new_month(self):
+        with patch.object(r, 'request', side_effect=[None, [{'tag_name': 'media-'+str(i)} for i in range(6)]]) as api:
+            with self.assertRaisesRegex(RuntimeError, 'Six-month'):
+                self.call_publish()
+            self.assertEqual(api.call_count, 2)
