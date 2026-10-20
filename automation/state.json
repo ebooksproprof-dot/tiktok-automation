@@ -226,7 +226,7 @@
     },
     "casasem-2026-10-20-2": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-10-20T01:50:22Z",
       "sha256": "f38567677f9914670a55450601c4c1cec6a6981bd429787e18e595152cf8b273",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4",
@@ -266,13 +266,21 @@
         }
       ],
       "scheduled_at": "2026-10-20T18:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad6c8e0e9c669def5e52725",
-      "last_checked_at": "2026-10-20T18:15:39Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-10-20T21:41:29Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7698857915008077063",
+      "buffer_sent_at_present": true,
+      "last_reconcile_attempt_at": "2026-10-20T21:41:29Z",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698857915008077063"
+      ],
+      "publicly_available_post_id": [
+        "7698857915008077063"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink"
     },
     "casasem-2026-10-21-1": {
       "provider": "buffer",
@@ -484,7 +492,8 @@
     "2026-10-20T20:34:54.942543Z",
     "2026-10-20T20:34:55.302110Z",
     "2026-10-20T20:34:58.663576Z",
-    "2026-10-20T20:35:00.845561Z"
+    "2026-10-20T20:35:00.845561Z",
+    "2026-10-20T21:41:29.640954Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -492,25 +501,25 @@
         "policy": "100-in-15min",
         "window_seconds": 900,
         "quota": 100,
-        "remaining": 96,
-        "reset_at": "2026-10-20T20:49:55.998665Z",
-        "observed_at": "2026-10-20T20:35:00.998665Z"
+        "remaining": 99,
+        "reset_at": "2026-10-20T21:56:29.906964Z",
+        "observed_at": "2026-10-20T21:41:29.906964Z"
       },
       "86400": {
         "policy": "250-in-1day",
         "window_seconds": 86400,
         "quota": 250,
-        "remaining": 186,
-        "reset_at": "2026-10-20T22:39:53.998665Z",
-        "observed_at": "2026-10-20T20:35:00.998665Z"
+        "remaining": 185,
+        "reset_at": "2026-10-20T22:39:53.906964Z",
+        "observed_at": "2026-10-20T21:41:29.906964Z"
       },
       "2592000": {
         "policy": "3000-in-30days",
         "window_seconds": 2592000,
         "quota": 3000,
-        "remaining": 2884,
-        "reset_at": "2026-11-16T22:01:04.998665Z",
-        "observed_at": "2026-10-20T20:35:00.998665Z"
+        "remaining": 2883,
+        "reset_at": "2026-11-16T22:01:05.906964Z",
+        "observed_at": "2026-10-20T21:41:29.906964Z"
       }
     },
     "consecutive_errors": 0
