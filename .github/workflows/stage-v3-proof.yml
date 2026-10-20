@@ -1,0 +1,42 @@
+name: Stage one immutable 3.0 proof
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-v3-proof.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: casasemesforco-state
+  cancel-in-progress: false
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          name: casasemesforco-v3-review
+          run-id: 39353432805
+          github-token: ${{ github.token }}
+          path: tmp/cloud-proof
+      - name: Validate bytes, upload and independently read back Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/stage_reviewed_preview.py tmp/cloud-proof
+      - name: Preserve unapproved queue record
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add automation/queue.json
+          git commit -m 'Stage verified 3.0 cloud proof without publication approval'
+          git pull --rebase origin main
+          git push origin HEAD:main

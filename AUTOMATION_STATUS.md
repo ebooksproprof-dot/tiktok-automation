@@ -52,6 +52,8 @@ Preservar posts já enviados; não repetir o teste público anterior. Ler o Marc
 Adicionar e validar um fornecimento autorizado de filmagens inéditas contextuais, com capacidade demonstrada para 60 vídeos/mês; depois aprovar e publicar UM novo vídeo pelo Buffer e confirmar o permalink. Não desabilitar gates para atingir frequência. Produção e aprovação editorial contínuas ainda impedem classificar como OPERACIONAL.
 
 ### Retomada
+Checkpoint adicional: auditor independente repetiu 58 testes após as correções sem novo bloqueador técnico. Workflow 39353810347 concluído com sucesso. Estoque atual: oito roteiros elegíveis usando apenas seis fontes inéditas; não equivale a oito vídeos visualmente exclusivos. Stage-v3-proof transfere somente o primeiro preview da execução 39353432805, exige SHA exato e read-back de Release, cria slot de 20/10 às 10h Fortaleza sem aprovação. Não reexecutar após ocupar slot.
+
 1. Ler este arquivo, queue.json, state.json e visual_history.json diretamente do main atual.
 2. Executar python -m unittest discover -s automation/tests -q.
 3. Não reintroduzir fontes já usadas, não reenviar IDs existentes e não sobrepor fila/estado com cópias locais antigas.
