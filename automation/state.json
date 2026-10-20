@@ -269,7 +269,7 @@
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6ad6c8e0e9c669def5e52725",
-      "last_checked_at": "2026-10-20T17:39:48Z",
+      "last_checked_at": "2026-10-20T17:42:41Z",
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
@@ -372,6 +372,8 @@
     "2026-10-20T17:23:10Z",
     "2026-10-20T17:23:10Z",
     "2026-10-20T17:39:48Z",
-    "2026-10-20T17:39:48Z"
+    "2026-10-20T17:39:48Z",
+    "2026-10-20T17:42:40Z",
+    "2026-10-20T17:42:41Z"
   ]
 }
