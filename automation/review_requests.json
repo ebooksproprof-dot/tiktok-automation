@@ -263,7 +263,7 @@
     },
     {
       "concept": "cantinho-de-leitura",
-      "status": "rendered_for_review",
+      "status": "staged_for_buffer",
       "requested_at": "2026-10-20",
       "purpose": "3.4 real Pixabay distinct-footage proof",
       "published": false,
@@ -339,7 +339,11 @@
         "approved_at": "2026-10-20T18:13:00Z",
         "route": "buffer",
         "review": "Cloud artifact SHA, crop and captions checked; illustrative footage only."
-      }
+      },
+      "staging_post_id": "casasem-2026-10-22-1",
+      "staging_status": "RELEASE_VERIFIED_QUEUE_PERSISTED",
+      "staging_sha256": "ab0e667b70e2cc7a3c42f0393cbe813cecab1acbb26d8686612e9850774bdd22",
+      "staged_post_id": "casasem-2026-10-22-1"
     }
   ]
 }
