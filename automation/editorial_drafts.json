@@ -98,6 +98,104 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-pia-local-do-sabonete",
+      "topic": "pia-local-do-sabonete",
+      "family": "pia",
+      "hook": "O sabonete está sempre fora do lugar?",
+      "steps": "Escolha um apoio estável e fácil de alcançar. Confira se ele atrapalha a torneira ou o uso da cuba. Deixe os itens da rotina próximos e retire os objetos sem função naquele espaço. Ao terminar, devolva cada item ao seu lugar.",
+      "cta": "Organize a pia pensando no uso de todos os dias.",
+      "body_sha256": "352d643c2429edbd63618b89be6a164e9234f614cb18cf23201998d4945a4687",
+      "script_sha256": "a376642d27c8e428a7c7264c66fa8bb4c4e13255effa69d865a1c1cb9fbd5393",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "34818",
+        "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34818/",
+        "author": "BreakDownPictures",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: BreakDownPictures / Pixabay — https://pixabay.com/videos/id-34818/",
+        "category": "banheiro",
+        "query": "organizing bathroom storage",
+        "selection_reason": "Provider tags: washing, hands, coronavirus, soap, hygiene, corona, wash, protection, covid-19, faucet, water, clean, bathroom, cleaning, hand, prevention",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+        "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+        "dhash": [
+          "31311b1e361e9ce1",
+          "35311c1733178fc1",
+          "31311c17371782c2",
+          "3531091f370789e1",
+          "35311d1f331786c5"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 24.681667,
+        "bytes": 62702306,
+        "acquired_at": 1792519595
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
+    },
+    {
+      "id": "draft-estante-local-de-devolucao",
+      "topic": "estante-local-de-devolucao",
+      "family": "estante",
+      "hook": "Você nunca lembra onde devolver o livro?",
+      "steps": "Escolha uma regra simples para a estante: assunto ou autor, por exemplo. Mantenha a mesma regra em cada grupo. Reserve um lugar acessível para as leituras atuais. Depois de usar, devolva o título ao grupo correspondente.",
+      "cta": "Escolha uma regra que faça sentido para você.",
+      "body_sha256": "21d181004b32c690fa7c3e660669e9848e85a4787a1b3f5b3b520472918181b0",
+      "script_sha256": "58f69feb133efef1bb49083ac20c4c2a63a5b0bf447d21befe446707e51af06c",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "139804",
+        "url": "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-139804/",
+        "author": "Sang_Soi",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-139804/",
+        "category": "livros",
+        "query": "arranging books shelves",
+        "selection_reason": "Provider tags: man, student, library, books, shelves, study, read",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4",
+        "sha256": "ae937311130aa0885b189fba44c54c4de50c40e443c59f48e832e92688c1039b",
+        "dhash": [
+          "009fb78d0a1a5b1b",
+          "021fa4ad0b185b1b",
+          "021fa4ad0b185b09",
+          "023f242f0b185bc9",
+          "023f242f0b185b29"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 16.405,
+        "bytes": 53000141,
+        "acquired_at": 1792519825
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {

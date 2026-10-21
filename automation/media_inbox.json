@@ -247,14 +247,94 @@
       "duration": 44.606667,
       "bytes": 123733442,
       "acquired_at": 1792519910
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "215471",
+      "url": "https://cdn.pixabay.com/video/2024/06/06/215471_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-215471/",
+      "author": "Vacampbe",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Vacampbe / Pixabay — https://pixabay.com/videos/id-215471/",
+      "category": "livros",
+      "query": "arranging books shelves",
+      "selection_reason": "Provider tags: students, classroom, education, school, learning, children, books",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2024/06/06/215471_large.mp4",
+      "sha256": "b67d149771db30e81025ba23e2ac94cc37dc159b05587948abf8bb542bc5b41a",
+      "dhash": [
+        "73e9c9cdd95919b2",
+        "73e9cdcdd95919b2",
+        "73e9cdcdc95919ba",
+        "73e14dcdc9d919ba",
+        "73b1cdcdcdd999ba"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 9.0,
+      "bytes": 7968614,
+      "acquired_at": 1792580641
     }
   ],
-  "rejected_until": {},
+  "rejected_until": {
+    "pixabay:38116": 1793185430
+  },
   "last_run": {
-    "at": 1792519895,
-    "acquired": 2,
-    "rejected": 0,
+    "at": 1792580630,
+    "acquired": 1,
+    "rejected": 1,
     "diagnostics": [
+      {
+        "provider": "pixabay",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 4,
+        "response_source": "cache"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "category": "gavetas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "gavetas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 2,
+        "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "provider_id": "38116",
+        "status": "CANDIDATE_VALIDATION_REJECTED"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
       {
         "provider": "pixabay",
         "category": "livros",
@@ -267,13 +347,6 @@
         "category": "livros",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 4,
         "response_source": "cache"
       }
     ],
