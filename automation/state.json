@@ -374,6 +374,49 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-10-22-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-21T12:01:28Z",
+      "sha256": "ab0e667b70e2cc7a3c42f0393cbe813cecab1acbb26d8686612e9850774bdd22",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-1-ab0e667b70e2cc7a.mp4",
+      "concept": "cantinho-de-leitura",
+      "script_sha256": "932eb8ddf9e65cd1e727978473478d58416b8965ad1e0b180d56f745fefecdde",
+      "script_lines": [
+        "Seu canto de leitura virou depósito?",
+        "Deixe na mesa apenas a",
+        "leitura atual e o que você",
+        "vai usar.",
+        "Guarde os outros livros na",
+        "estante.",
+        "Reserve um lugar para o",
+        "marcador.",
+        "Ao terminar, devolva cada",
+        "item ao seu espaço.",
+        "Comece por uma mesa pequena.",
+        "Salve para organizar seu",
+        "cantinho."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_large.mp4",
+          "sha256": "9f2a8fab962a2bb573a479eefbbe1d1999be3cab472fdadad2043b2903da71aa",
+          "dhash": [
+            "15b5e13b9c9ccdd1",
+            "11b5f1310ccccdc9",
+            "95b1b93b0c8ccdc9",
+            "7579f1320c8ccdcd",
+            "63697b5a0c8dcdc9"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-22T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -493,7 +536,9 @@
     "2026-10-20T20:34:55.302110Z",
     "2026-10-20T20:34:58.663576Z",
     "2026-10-20T20:35:00.845561Z",
-    "2026-10-20T21:41:29.640954Z"
+    "2026-10-20T21:41:29.640954Z",
+    "2026-10-21T12:01:26.076909Z",
+    "2026-10-21T12:01:26.284765Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -501,25 +546,25 @@
         "policy": "100-in-15min",
         "window_seconds": 900,
         "quota": 100,
-        "remaining": 99,
-        "reset_at": "2026-10-20T21:56:29.906964Z",
-        "observed_at": "2026-10-20T21:41:29.906964Z"
+        "remaining": 98,
+        "reset_at": "2026-10-21T12:16:26.589354Z",
+        "observed_at": "2026-10-21T12:01:26.589354Z"
       },
       "86400": {
         "policy": "250-in-1day",
         "window_seconds": 86400,
         "quota": 250,
-        "remaining": 185,
-        "reset_at": "2026-10-20T22:39:53.906964Z",
-        "observed_at": "2026-10-20T21:41:29.906964Z"
+        "remaining": 248,
+        "reset_at": "2026-10-22T12:01:26.589354Z",
+        "observed_at": "2026-10-21T12:01:26.589354Z"
       },
       "2592000": {
         "policy": "3000-in-30days",
         "window_seconds": 2592000,
         "quota": 3000,
-        "remaining": 2883,
-        "reset_at": "2026-11-16T22:01:05.906964Z",
-        "observed_at": "2026-10-20T21:41:29.906964Z"
+        "remaining": 2881,
+        "reset_at": "2026-11-16T22:01:05.589354Z",
+        "observed_at": "2026-10-21T12:01:26.589354Z"
       }
     },
     "consecutive_errors": 0
