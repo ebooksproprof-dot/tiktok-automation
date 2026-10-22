@@ -1,0 +1,478 @@
+{
+  "classification": "PARCIAL",
+  "release_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/tag/validation-v41-2026-10-22",
+  "proof_run": {
+    "status": "completed",
+    "result": "success",
+    "url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39833496700"
+  },
+  "source_commit": "043fc6f8f3352519d284b055e9f5dff15cdf48b2",
+  "daily": {
+    "run_id": 39833108506,
+    "result": "success",
+    "tests": 215,
+    "new_video_count": 0
+  },
+  "publisher": {
+    "run_id": 39833230524,
+    "result": "success",
+    "new_submissions": 0,
+    "buffer_api_calls": 0
+  },
+  "tests_local_independent": 219,
+  "avatar_generated": false,
+  "published_proofs": 0,
+  "additional_cost_brl": 0,
+  "assets": [
+    {
+      "name": "report-a871cc7d35dee32d.json",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/report-a871cc7d35dee32d.json",
+      "size": 15042,
+      "digest": "sha256:a871cc7d35dee32da846817b2c72817f7bca4e11ace2feddf575ede2def58e48"
+    },
+    {
+      "name": "validation-v41-C1-sabonete-com-lugar-v2-01f3cfeb1cd33d4d.jpg",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C1-sabonete-com-lugar-v2-01f3cfeb1cd33d4d.jpg",
+      "size": 50145,
+      "digest": "sha256:01f3cfeb1cd33d4d26bcb245753f0e15092f94c9534a8dea4f613b743ea6bbdd"
+    },
+    {
+      "name": "validation-v41-C1-sabonete-com-lugar-v2-e2f73a6237c5dedc.mp4",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C1-sabonete-com-lugar-v2-e2f73a6237c5dedc.mp4",
+      "size": 4271386,
+      "digest": "sha256:e2f73a6237c5dedc7b587e65754a532e2b6950b49d149d7ec3a7df0869119ac4"
+    },
+    {
+      "name": "validation-v41-C2-livros-devolver-por-grupo-v2-90bf67fc76075bd4.mp4",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C2-livros-devolver-por-grupo-v2-90bf67fc76075bd4.mp4",
+      "size": 3370996,
+      "digest": "sha256:90bf67fc76075bd4d3b42ae8715355e61bd35d571e7e350fb5ce5c27725cd88b"
+    },
+    {
+      "name": "validation-v41-C2-livros-devolver-por-grupo-v2-b0d145bc4ac2096a.jpg",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C2-livros-devolver-por-grupo-v2-b0d145bc4ac2096a.jpg",
+      "size": 97607,
+      "digest": "sha256:b0d145bc4ac2096a88bbdd90db535f00b1b613e03d7084f43c6bfb9077940a42"
+    },
+    {
+      "name": "validation-v41-C3-secador-guardar-depois-v2-42199e3035dc1b0a.jpg",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C3-secador-guardar-depois-v2-42199e3035dc1b0a.jpg",
+      "size": 60007,
+      "digest": "sha256:42199e3035dc1b0ac0c78e0adb4fea9940d603f4e3ce45df145bab8e3c6e1413"
+    },
+    {
+      "name": "validation-v41-C3-secador-guardar-depois-v2-ba6632efac13a27e.mp4",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/validation-v41-2026-10-22/validation-v41-C3-secador-guardar-depois-v2-ba6632efac13a27e.mp4",
+      "size": 11393032,
+      "digest": "sha256:ba6632efac13a27e72af60d467f5a4f7f52f4d48aaa1d38e560025923ad59b87"
+    }
+  ],
+  "report": [
+    {
+      "id": "C1",
+      "file": "validation-v41-C1-sabonete-com-lugar-v2.mp4",
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "34818",
+        "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34818/",
+        "author": "BreakDownPictures",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: BreakDownPictures / Pixabay — https://pixabay.com/videos/id-34818/",
+        "category": "banheiro",
+        "query": "organizing bathroom storage",
+        "selection_reason": "Provider tags: washing, hands, coronavirus, soap, hygiene, corona, wash, protection, covid-19, faucet, water, clean, bathroom, cleaning, hand, prevention",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+        "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+        "dhash": [
+          "31311b1e361e9ce1",
+          "35311c1733178fc1",
+          "31311c17371782c2",
+          "3531091f370789e1",
+          "35311d1f331786c5"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 24.681667,
+        "bytes": 62702306,
+        "acquired_at": 1792519595,
+        "id": "pixabay-34818",
+        "context": "Close-up of hands washing with a bar of soap; central crop preserves tap and soap. Does not show a soap holder or organization steps."
+      },
+      "source_context": "Close-up of hands washing with a bar of soap; central crop preserves tap and soap. Does not show a soap holder or organization steps.",
+      "script": [
+        "Seu sabonete fica escorregando na pia?",
+        "Escolha um apoio estável e fácil de alcançar.",
+        "Deixe livre a área que você usa para lavar as mãos.",
+        "Ao terminar, devolva o sabonete ao apoio.",
+        "Confira se precisa limpar e secar esse espaço.",
+        "Salve para ajustar sua rotina."
+      ],
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "e2f73a6237c5dedc7b587e65754a532e2b6950b49d149d7ec3a7df0869119ac4",
+        "duration": 17.273,
+        "size": 4271386,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.5,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+            "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+            "dhash": [
+              "31311b1e361e9ce1",
+              "35311c1733178fc1",
+              "31311c17371782c2",
+              "3531091f370789e1",
+              "35311d1f331786c5"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          24.681667
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          -60,
+          60,
+          -60,
+          60,
+          -60,
+          60
+        ],
+        "rendered_shots": 6,
+        "concept": "sabonete-com-lugar",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "approved": false,
+        "proof_only": true,
+        "format": "C",
+        "avatar_present": false,
+        "publication_allowed": false
+      },
+      "technical_checks": {
+        "full_decode": true,
+        "black_intervals_ge_0_3s": 0,
+        "silence_intervals_ge_0_8s": 0,
+        "thresholds": {
+          "black_pixel": 0.1,
+          "black_picture": 0.98,
+          "silence_db": -45
+        }
+      },
+      "render_seconds": 47.075,
+      "peak_process_rss_kib": 320424,
+      "peak_child_rss_kib": 592924,
+      "resources_note": "Linux max RSS; maxima per process, not aggregate or incremental per video",
+      "comparison": {
+        "same_script_and_source_as_v4": true,
+        "voice_changed_to_female": true,
+        "naturalness_improvement_measured": false,
+        "audience_retention_measured": false
+      },
+      "limitations": [
+        "Illustrative footage, not proof of specific product performance.",
+        "No avatar. No listening-based pronunciation or lip-sync assessment.",
+        "CPU proof in GitHub Actions; not sustained daily operation."
+      ],
+      "cost_added": 0,
+      "published": false,
+      "approved": false
+    },
+    {
+      "id": "C2",
+      "file": "validation-v41-C2-livros-devolver-por-grupo-v2.mp4",
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "140587",
+        "url": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-140587/",
+        "author": "jadeallencook",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: jadeallencook / Pixabay — https://pixabay.com/videos/id-140587/",
+        "category": "livros",
+        "query": "arranging books shelves",
+        "selection_reason": "Provider tags: books, book store, library, reading, knowledge, education, learning, berkley",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+        "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+        "dhash": [
+          "57a525a7e364ed87",
+          "57a525a7e364ed87",
+          "57a5a5a7e364ec87",
+          "57a527b7e764ed87",
+          "57ad27b7e664ed87"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 30.63,
+        "bytes": 85285010,
+        "acquired_at": 1792519899,
+        "id": "pixabay-140587",
+        "context": "People reading beside bookshop shelves. Illustrates books and reading, not a home organization demonstration."
+      },
+      "source_context": "People reading beside bookshop shelves. Illustrates books and reading, not a home organization demonstration.",
+      "script": [
+        "Encontrou o livro, mas não sabe onde devolver?",
+        "Organize sua estante em grupos que façam sentido para você.",
+        "Pode ser por assunto ou por autor.",
+        "Mantenha as lombadas visíveis e a mesma regra em cada grupo.",
+        "Depois da leitura, devolva ao lugar escolhido.",
+        "Salve esta ideia."
+      ],
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "90bf67fc76075bd4d3b42ae8715355e61bd35d571e7e350fb5ce5c27725cd88b",
+        "duration": 17.647,
+        "size": 3370996,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+            "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+            "dhash": [
+              "57a525a7e364ed87",
+              "57a525a7e364ed87",
+              "57a5a5a7e364ec87",
+              "57a527b7e764ed87",
+              "57ad27b7e664ed87"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          30.63
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          -60,
+          60,
+          -60,
+          60,
+          -60,
+          60,
+          -60,
+          60
+        ],
+        "rendered_shots": 8,
+        "concept": "livros-devolver-por-grupo",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "approved": false,
+        "proof_only": true,
+        "format": "C",
+        "avatar_present": false,
+        "publication_allowed": false
+      },
+      "technical_checks": {
+        "full_decode": true,
+        "black_intervals_ge_0_3s": 0,
+        "silence_intervals_ge_0_8s": 0,
+        "thresholds": {
+          "black_pixel": 0.1,
+          "black_picture": 0.98,
+          "silence_db": -45
+        }
+      },
+      "render_seconds": 47.396,
+      "peak_process_rss_kib": 355268,
+      "peak_child_rss_kib": 592924,
+      "resources_note": "Linux max RSS; maxima per process, not aggregate or incremental per video",
+      "comparison": {
+        "same_script_and_source_as_v4": true,
+        "voice_changed_to_female": true,
+        "naturalness_improvement_measured": false,
+        "audience_retention_measured": false
+      },
+      "limitations": [
+        "Illustrative footage, not proof of specific product performance.",
+        "No avatar. No listening-based pronunciation or lip-sync assessment.",
+        "CPU proof in GitHub Actions; not sustained daily operation."
+      ],
+      "cost_added": 0,
+      "published": false,
+      "approved": false
+    },
+    {
+      "id": "C3",
+      "file": "validation-v41-C3-secador-guardar-depois-v2.mp4",
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "37325",
+        "url": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-37325/",
+        "author": "Engin_Akyurt",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Engin_Akyurt / Pixabay — https://pixabay.com/videos/id-37325/",
+        "category": "banheiro",
+        "query": "organizing bathroom storage",
+        "selection_reason": "Provider tags: woman, hair, drying, bathroom, bathe, cleaning, dry, machine, face, portrait, human, house, maintenance, paint, wind, movement, girl, beauty, beautiful, attractive, fashion, youth, people, make-up, women",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+        "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+        "dhash": [
+          "303878787878fcfc",
+          "e0e0c0c0c060c0c0",
+          "e0e0e0c0806060e0",
+          "30387878787cfcf8",
+          "38383c3c7c7cf8f9"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 22.441667,
+        "bytes": 69928745,
+        "acquired_at": 1792519833,
+        "id": "pixabay-37325",
+        "context": "Person drying hair; central crop shows hair and parts of dryer. Illustrates use only, not storage or unplugging steps."
+      },
+      "source_context": "Person drying hair; central crop shows hair and parts of dryer. Illustrates use only, not storage or unplugging steps.",
+      "script": [
+        "Terminou de usar o secador?",
+        "Desligue da tomada e espere esfriar antes de guardar.",
+        "Escolha um lugar seco, longe da água.",
+        "Deixe os acessórios juntos, sem apertar o cabo ao redor do aparelho.",
+        "Confira também as orientações do fabricante.",
+        "Salve para organizar seus acessórios."
+      ],
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "ba6632efac13a27e72af60d467f5a4f7f52f4d48aaa1d38e560025923ad59b87",
+        "duration": 18.069,
+        "size": 11393032,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+            "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+            "dhash": [
+              "303878787878fcfc",
+              "e0e0c0c0c060c0c0",
+              "e0e0e0c0806060e0",
+              "30387878787cfcf8",
+              "38383c3c7c7cf8f9"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          22.441667
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          -60,
+          60,
+          -60,
+          60,
+          -60,
+          60,
+          -60
+        ],
+        "rendered_shots": 7,
+        "concept": "secador-guardar-depois",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Engin_Akyurt; https://pixabay.com/videos/id-37325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "approved": false,
+        "proof_only": true,
+        "format": "C",
+        "avatar_present": false,
+        "publication_allowed": false
+      },
+      "technical_checks": {
+        "full_decode": true,
+        "black_intervals_ge_0_3s": 0,
+        "silence_intervals_ge_0_8s": 0,
+        "thresholds": {
+          "black_pixel": 0.1,
+          "black_picture": 0.98,
+          "silence_db": -45
+        }
+      },
+      "render_seconds": 62.301,
+      "peak_process_rss_kib": 370508,
+      "peak_child_rss_kib": 592924,
+      "resources_note": "Linux max RSS; maxima per process, not aggregate or incremental per video",
+      "comparison": {
+        "same_script_and_source_as_v4": true,
+        "voice_changed_to_female": true,
+        "naturalness_improvement_measured": false,
+        "audience_retention_measured": false
+      },
+      "limitations": [
+        "Illustrative footage, not proof of specific product performance.",
+        "No avatar. No listening-based pronunciation or lip-sync assessment.",
+        "CPU proof in GitHub Actions; not sustained daily operation."
+      ],
+      "cost_added": 0,
+      "published": false,
+      "approved": false
+    }
+  ],
+  "downloaded_report_and_contact_sheets_sha256_verified": true
+}

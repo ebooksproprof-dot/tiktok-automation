@@ -4,7 +4,7 @@ Estado: **PARCIAL**. Continuação de b0ebf68, sem reiniciar 4.0.
 
 - Checkpoint voz/avatares/aprovação:79ddc58; provas cloud:22a83f3; integração feminina:b2a2d5196e93950967bed0b7e0dd0c5a0a38cb10.
 - Voz feminina Kokoro pf_dora pt-BR CPU selecionada explicitamente nas novas renderizações diárias. Piper preservado; metadados registram o motor real; MP4s antigos não são regenerados.
--215 testes locais aprovados;3 provasC locais1080×1920 passaram QA. Workflow39832771366 reproduz provas na nuvem; não implica publicação.
+-219 testes locais independentes aprovados;215 cloud no diário39833108506 (NEW_VIDEO_COUNT=0). Três provasC reproduzidas e salvas na Release validation-v41-2026-10-22 pelo run39833496700 SUCESSO; nenhum envioTikTok. Primeiro run39832771366 renderizou3 mas falhou no salvamento403; correção043fc6f e reexecução concluídas.
 - Avatar: somente retrato original fixo; nenhum MP4 animado/lip-sync. SadTalker possui pendência de autorização comercial de assetsBFM; demais candidatos não validados para este orçamento/infraestrutura. Nenhuma licença adicional aceita.
 - Revisão em lote até14itens implementada com hashes, consentimento individual e dry-run; nenhum lote real aplicado.
 - Sem melhora perceptiva de voz certificada; cenas de prova ilustrativas reutilizadas para comparação. C3 tem produto parcialmente fora do enquadramento; não aprovado editorialmente.

@@ -63,6 +63,14 @@ Foi revisada a alteração para criar a Release apontando a `main`, conservando 
 
 Quatro novos testes mock de `save_validation_v41.py` aprovados verificam: alvo `main` e SHA de origem/ausência de aprovação; nomes por hash e leitura independente após upload; rejeição de digest divergente sem manifesto de sucesso; reutilização sem reupload de assets existentes. A suíte completa passou novamente com **219 testes**. Os testes não fazem rede nem comprovam permissões reais do token GitHub. Não houve alteração de workflow ou uploader pelo auditor neste adendo.
 
+### Verificação independente final da persistência
+
+Consulta independente ao conector/API GitHub confirmou o job `120015622513` do run [39833496700](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/39833496700) como `completed/success`, incluindo instalação, regressão, três renders, persistência e artifact. A [Release 421076283](https://github.com/ebooksproprof-dot/tiktok-automation/releases/tag/validation-v41-2026-10-22) está publicada como prerelease, alvo `main`, com SHA de origem `043fc6f8f3352519d284b055e9f5dff15cdf48b2` no corpo e aviso de ausência de aprovação TikTok.
+
+A API retornou sete assets `uploaded`: três MP4s, três JPGs e um JSON. Todos têm tamanho positivo e digest SHA-256 compatível com o prefixo no nome. MP4s: C1 4.271.386 bytes (`e2f73a6237c5dedc`), C2 3.370.996 bytes (`90bf67fc76075bd4`), C3 11.393.032 bytes (`ba6632efac13a27e`). Relatório: 15.042 bytes, SHA-256 `a871cc7d35dee32da846817b2c72817f7bca4e11ace2feddf575ede2def58e48`. Nesta verificação o auditor conferiu metadados da API e conclusão dos passos; não baixou nem ouviu novamente os MP4s. A coordenação realiza a conferência adicional dos bytes do relatório/contact sheets.
+
+O bloqueio de persistência observado no run anterior foi superado neste run; isso não prova a causa específica do 403 anterior. A prova de renderização CPU e persistência na nuvem está agora comprovada. Continuam não comprovados avatar/lip-sync, melhoria perceptual da voz, aprovação editorial e produção sustentada de dois vídeos inéditos por dia.
+
 Catálogo editorial continua finito; não há comprovação de renovação ilimitada de cenas pertinentes. O fluxo em lote reduz intervenção, mas preserva julgamento humano sobre enquadramento, correspondência visual/roteiro, pronúncia e consentimento. O cron não garante início exatamente às 10h/18h. R$0 descreve custo adicional observado/nenhum serviço pago introduzido; não certifica quotas futuras ilimitadas.
 
 ## Fontes e retomada

@@ -53,3 +53,11 @@ Persistem limites: catálogo finito; necessidade de cenas realmente pertinentes;
 Custo adicional contratado/observado nesta missão: R$0. Sem GPU paga, assinatura ou reset de cotas. Nenhuma garantia de políticas futuras ou capacidade ilimitada.
 
 Próximo passo exato: recuperar os assets da Release4.1 e o relatório cloud, revisar voz e enquadramento antes de aprovar qualquer conteúdo; ampliar cenas específicas licenciadas; para avatar esclarecer permissões BFM ou encontrar substituto permissivo antes do smokeCPU2s. Não repetir a geração do retrato nem os benchmarks já persistidos.
+
+## Verificação final na nuvem
+
+Run39833496700 concluiu com sucesso:3MP4s,3JPGs e relatório persistidos em https://github.com/ebooksproprof-dot/tiktok-automation/releases/tag/validation-v41-2026-10-22 . Assets possuem SHA-256 e readback de digest. O primeiro run39832771366 concluiu3renders, mas falhou na criaçãoReleaseHTTP403. A correção043fc6f alterou o alvo de criação para main e adicionou MP4/JPG ao artifact de recuperação; o segundo run salvou com sucesso. A causa exata do403 não foi certificada.
+
+Diário39833108506:215testes cloud, sucesso, NEW_VIDEO_COUNT=0 (preservação dos existentes). Runner39833230524:sucesso,0 novos envios e0 chamadasBuffer reais. Regressão local independente final:219testes. Não confundir mensagens dos testes simulados nos logs com publicações reais.
+
+Evidência estruturada: validation-4.1-cloud-evidence.json. Nenhum vídeo de teste aprovado/agendado/publicado. Nenhum avatar animado produzido.
