@@ -60,6 +60,7 @@ def checks(path):
 
 
 def main():
+    r.DYNAMIC_STYLE = False  # Freeze the classic baseline for repeatable comparisons.
     out = r.ROOT/'tmp/validation-v4'
     assets = out/'assets'
     out.mkdir(parents=True, exist_ok=True); assets.mkdir(exist_ok=True)

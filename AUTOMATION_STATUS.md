@@ -13,7 +13,9 @@ Estado: PARCIAL. Não confundir publicação de fila previamente aprovada com re
 - Quatro drafts finitos; última rodada sem novo draft. Renovação contínua e 60 vídeos/mês não comprovados.
 - Referência externa exclusiva @vault_shopp: vídeos reais não acessíveis na pesquisa; não há análise empírica de cortes, audiência ou retenção.
 - FFmpeg/Piper permanecem integrados. EffectCraft é PoC histórica isolada; demais ferramentas não comprovadas no pipeline diário. VoiceStudio suporta CPU: limitação atual é avaliação/licença dos pesos, não exigência de GPU.
-- Três novos previews 4.0 em produção isolada, sem tocar fila/estado e sem publicar no TikTok. Resultados finais devem ser lidos no relatório/Release 4.0, não inferidos deste checkpoint.
+- Três previews4.0+três baselines concluídos na nuvem39829264202, salvos na Release validation-v4-2026-10-22. Todos1080x1920, sem preto/silêncio longos, nenhum publicado no TikTok. Evidência completa em automation/validation-4.0-evidence.json.
+- Estilo casasem-v4 integrado às novas renderizações diárias (gancho visual, recorte alternado com margem segura, marcador final); três renders do helper real validados sem alterar fila/estado. Preservados MP4s existentes.192 testes locais finais repetidos pelo auditor.
+- Relatório completo em automation/AUDIT-4.0.md; próximo passo: revisão editorial dos conteúdos pendentes e ampliação de filmagens pertinentes. Não repetir setup nem declarar2/dia sustentados.
 - Nenhum serviço pago contratado. Preservar cotas e histórico existentes.
 
 ## Checkpoint final 3.5 — recuperação e idempotência comprovadas

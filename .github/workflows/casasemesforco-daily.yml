@@ -13,6 +13,7 @@ on:
       - "automation/visual_library.py"
       - "automation/narration.py"
       - "automation/scene_plan.py"
+      - "automation/composition_style.py"
       - "automation/review_requested.py"
       - "automation/stage_requested_proofs.py"
       - "automation/review_requests.json"

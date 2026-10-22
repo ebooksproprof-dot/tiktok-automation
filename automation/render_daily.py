@@ -22,6 +22,7 @@ QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
 COMPOSITION_REVISION = 6
+DYNAMIC_STYLE = True
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
 MAX_MEDIA_BYTES = 200_000_000
@@ -128,13 +129,22 @@ def render(idea, voice, post_id):
     source_durations = [float(subprocess.check_output(['ffprobe', '-v', 'error',
         '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(p)], text=True, timeout=30)) for p in clips]
     shots = plan(timings, duration, source_durations)
+    from composition_style import BASE_CROP, shot_filter, overlay
+    source_shapes = []
+    for path in clips:
+        meta = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0',
+            '-show_entries', 'stream=width,height', '-of', 'json', str(path)], text=True, timeout=30))
+        source_shapes.append((meta['streams'][0]['width'], meta['streams'][0]['height']))
+    crop_shifts = []
     for i, (source_index, offset, length) in enumerate(shots):
         source = clips[source_index]
         segment = folder/f'shot-{i}.mp4'
         # Moving footage only; no still zoom, no fabricated before/after.
+        frame_filter, shift = shot_filter(*source_shapes[source_index], i) if DYNAMIC_STYLE else (BASE_CROP, 0)
+        crop_shifts.append(shift)
         run(['ffmpeg','-v','error','-y','-ss',str(offset),
              '-i',str(source),'-t',str(length),'-an','-vf',
-             'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30',
+             frame_filter,
              '-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',str(segment)])
         segments.append(segment)
     (folder/'concat.txt').write_text(''.join(f"file '{p.name}'\n" for p in segments))
@@ -145,6 +155,8 @@ def render(idea, voice, post_id):
         filters.append(f"drawtext=fontfile={font}:textfile={txt}:fontsize=58:fontcolor=white:box=1:boxcolor=black@0.70:boxborderw=18:x=(w-text_w)/2:y=1320:enable='between(t,{start:.3f},{end:.3f})'")
     label=folder/'label.txt';label.write_text('CENAS ILUSTRATIVAS',encoding='utf8')
     filters.append(f'drawtext=fontfile={font}:textfile={label}:fontsize=24:fontcolor=white:borderw=2:x=70:y=200')
+    if DYNAMIC_STYLE:
+        filters.extend(overlay(folder, lines[0], duration))
     output = OUT / (post_id+'-v2.mp4')
     run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(folder/'concat.txt'),
          '-i',str(folder/'voice.wav'),'-vf',','.join(filters),'-af','loudnorm=I=-16:TP=-1.5:LRA=11',
@@ -153,6 +165,8 @@ def render(idea, voice, post_id):
     quality=validate(output)
     quality.update(visual_quality)
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
+    quality.update(graphics_style='casasem-v4' if DYNAMIC_STYLE else 'classic-v6',
+                   crop_shifts_pixels=crop_shifts, rendered_shots=len(shots))
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     reviewed_sources = [PROVENANCE[k] for k in keys if k in PROVENANCE]

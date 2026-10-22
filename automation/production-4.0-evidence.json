@@ -1,0 +1,218 @@
+[
+  {
+    "concept": "sabonete-com-lugar",
+    "file": "production-v4-sabonete-com-lugar-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "fc306e2f568eb946f3c0d0a64f3d3e16d5091e19ba37a77054be49cc2f0d4c68",
+      "duration": 16.166667,
+      "size": 3869461,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -16.3,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+          "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+          "dhash": [
+            "31311b1e361e9ce1",
+            "35311c1733178fc1",
+            "31311c17371782c2",
+            "3531091f370789e1",
+            "35311d1f331786c5"
+          ]
+        }
+      ],
+      "scene_reuse_policy": "sequential_no_loop",
+      "source_durations": [
+        24.681667
+      ],
+      "graphics_style": "casasem-v4",
+      "crop_shifts_pixels": [
+        -60,
+        60,
+        -60,
+        60,
+        -60,
+        60
+      ],
+      "rendered_shots": 6,
+      "concept": "sabonete-com-lugar",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4"
+      ],
+      "source_license": "https://pixabay.com/service/license-summary/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 6,
+      "required_public_credits": [
+        "Video — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+      ],
+      "source_licenses": [
+        "https://pixabay.com/service/license-summary/"
+      ]
+    },
+    "technical_checks": {
+      "full_decode": true,
+      "black_intervals_ge_0_3s": 0,
+      "silence_intervals_ge_0_8s": 0,
+      "thresholds": {
+        "black_pixel": 0.1,
+        "black_picture": 0.98,
+        "silence_db": -45
+      }
+    },
+    "elapsed": 24.36,
+    "published": false
+  },
+  {
+    "concept": "livros-devolver-por-grupo",
+    "file": "production-v4-livros-devolver-por-grupo-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "3a3599919db4440cf165c9c2535c6575cd7dcdd8ef08699b163ceb01422e5064",
+      "duration": 15.771,
+      "size": 2827954,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -15.9,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+          "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+          "dhash": [
+            "57a525a7e364ed87",
+            "57a525a7e364ed87",
+            "57a5a5a7e364ec87",
+            "57a527b7e764ed87",
+            "57ad27b7e664ed87"
+          ]
+        }
+      ],
+      "scene_reuse_policy": "sequential_no_loop",
+      "source_durations": [
+        30.63
+      ],
+      "graphics_style": "casasem-v4",
+      "crop_shifts_pixels": [
+        -60,
+        60,
+        -60,
+        60,
+        -60,
+        60,
+        -60,
+        60
+      ],
+      "rendered_shots": 8,
+      "concept": "livros-devolver-por-grupo",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4"
+      ],
+      "source_license": "https://pixabay.com/service/license-summary/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 6,
+      "required_public_credits": [
+        "Video — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+      ],
+      "source_licenses": [
+        "https://pixabay.com/service/license-summary/"
+      ]
+    },
+    "technical_checks": {
+      "full_decode": true,
+      "black_intervals_ge_0_3s": 0,
+      "silence_intervals_ge_0_8s": 0,
+      "thresholds": {
+        "black_pixel": 0.1,
+        "black_picture": 0.98,
+        "silence_db": -45
+      }
+    },
+    "elapsed": 24.96,
+    "published": false
+  },
+  {
+    "concept": "secador-guardar-depois",
+    "file": "production-v4-secador-guardar-depois-v2.mp4",
+    "quality": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "765ede546496dcaa70e74ca2a0b3dc5c9eba9ac730da32b63d877c953ec831c5",
+      "duration": 16.212,
+      "size": 10106892,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -16.7,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0,
+      "visual_policy_version": 1,
+      "visual_distinct": true,
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+          "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+          "dhash": [
+            "303878787878fcfc",
+            "e0e0c0c0c060c0c0",
+            "e0e0e0c0806060e0",
+            "30387878787cfcf8",
+            "38383c3c7c7cf8f9"
+          ]
+        }
+      ],
+      "scene_reuse_policy": "sequential_no_loop",
+      "source_durations": [
+        22.441667
+      ],
+      "graphics_style": "casasem-v4",
+      "crop_shifts_pixels": [
+        -60,
+        60,
+        -60,
+        60,
+        -60,
+        60,
+        -60
+      ],
+      "rendered_shots": 7,
+      "concept": "secador-guardar-depois",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4"
+      ],
+      "source_license": "https://pixabay.com/service/license-summary/",
+      "voice": "pt_BR-faber-medium",
+      "render_version": 2,
+      "composition_revision": 6,
+      "required_public_credits": [
+        "Video — Engin_Akyurt; https://pixabay.com/videos/id-37325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+      ],
+      "source_licenses": [
+        "https://pixabay.com/service/license-summary/"
+      ]
+    },
+    "technical_checks": {
+      "full_decode": true,
+      "black_intervals_ge_0_3s": 0,
+      "silence_intervals_ge_0_8s": 0,
+      "thresholds": {
+        "black_pixel": 0.1,
+        "black_picture": 0.98,
+        "silence_db": -45
+      }
+    },
+    "elapsed": 38.89,
+    "published": false
+  }
+]
