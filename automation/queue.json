@@ -851,6 +851,102 @@
       "publication_provider": "buffer",
       "publishing_status": "APPROVED_FOR_BUFFER_NOT_SUBMITTED",
       "proof_request_concept": "cantinho-de-leitura"
+    },
+    {
+      "id": "casasem-2026-10-22-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-2-0d0e40c27bd891aa.mp4",
+      "title": "Esqueceu os pontos de toque? Confira a bancada, a borda da pia e o puxador da geladeira. Use um pano limpo, adequado a cada superfície. Separe os materiais de cada ambiente. Respeite o rótulo dos produtos e a orientação do fabricante. Salve esta lista para a próxima limpeza. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-22T21:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "0d0e40c27bd891aad8e7a8ef3ad9d8bd46901f51b0a05bce42a85759488b9b0a",
+        "duration": 17.071,
+        "size": 4039101,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -16.3,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://videos.pexels.com/video-files/10568533/10568533-uhd_2160_4096_25fps.mp4",
+            "sha256": "864eb6ec43d5e7542538057849ba26a1dc564f68cc2bce0e121ceb4f5013eba5",
+            "dhash": [
+              "23333313101f1f33",
+              "030f8f8f0f0f0f0f",
+              "43470f9f9f1e0f07",
+              "23a3074f8f0e0703",
+              "99f9090107070301"
+            ]
+          },
+          {
+            "source_id": "https://videos.pexels.com/video-files/9472852/9472852-uhd_2160_3840_24fps.mp4",
+            "sha256": "07393e92d6060892230aacc20d47c24d69eafb2dec59695ff1df6ca315810db5",
+            "dhash": [
+              "0f0e1e1f07033f7c",
+              "1b1e1c580e077f7c",
+              "160f0e4e0f077f7c",
+              "0d1d1e1c1d0b3f7d",
+              "1d1f2e1c07033f7f"
+            ]
+          },
+          {
+            "source_id": "https://videos.pexels.com/video-files/9462939/9462939-uhd_2160_3840_24fps.mp4",
+            "sha256": "efcb287a67d77bdb55373d2c2bb2197740f9785595ff0a633abc387e39e3daf9",
+            "dhash": [
+              "252f2e6c7961636d",
+              "213b2e7961633b39",
+              "63577461637b7b7d",
+              "63516f7461637f3d",
+              "66536f7c61617f3d"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          6.68,
+          10.01,
+          10.01
+        ],
+        "concept": "pontos-de-toque",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/10568533/10568533-uhd_2160_4096_25fps.mp4",
+          "https://videos.pexels.com/video-files/9472852/9472852-uhd_2160_3840_24fps.mp4",
+          "https://videos.pexels.com/video-files/9462939/9462939-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "pt_BR-faber-medium",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [],
+        "source_licenses": [
+          "https://www.pexels.com/license/"
+        ]
+      },
+      "concept": "pontos-de-toque",
+      "category": "rotina",
+      "script_lines": [
+        "Esqueceu os pontos de toque?",
+        "Confira a bancada, a borda da",
+        "pia e o puxador da geladeira.",
+        "Use um pano limpo, adequado a",
+        "cada superfície.",
+        "Separe os materiais de cada",
+        "ambiente.",
+        "Respeite o rótulo dos",
+        "produtos e a orientação do",
+        "fabricante.",
+        "Salve esta lista para a",
+        "próxima limpeza."
+      ],
+      "script_sha256": "bbfc5d389076f8cdba63035665ac446350b197a9fd33368e53018bd76d6a694b",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
