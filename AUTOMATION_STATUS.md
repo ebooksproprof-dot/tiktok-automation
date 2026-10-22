@@ -1,3 +1,19 @@
+# CasaSemEsforço 4.1 — checkpoint 22/10/2026
+
+Estado: **PARCIAL**. Continuação de b0ebf68, sem reiniciar 4.0.
+
+- Checkpoint voz/avatares/aprovação:79ddc58; provas cloud:22a83f3; integração feminina:b2a2d5196e93950967bed0b7e0dd0c5a0a38cb10.
+- Voz feminina Kokoro pf_dora pt-BR CPU selecionada explicitamente nas novas renderizações diárias. Piper preservado; metadados registram o motor real; MP4s antigos não são regenerados.
+-215 testes locais aprovados;3 provasC locais1080×1920 passaram QA. Workflow39832771366 reproduz provas na nuvem; não implica publicação.
+- Avatar: somente retrato original fixo; nenhum MP4 animado/lip-sync. SadTalker possui pendência de autorização comercial de assetsBFM; demais candidatos não validados para este orçamento/infraestrutura. Nenhuma licença adicional aceita.
+- Revisão em lote até14itens implementada com hashes, consentimento individual e dry-run; nenhum lote real aplicado.
+- Sem melhora perceptiva de voz certificada; cenas de prova ilustrativas reutilizadas para comparação. C3 tem produto parcialmente fora do enquadramento; não aprovado editorialmente.
+- Nenhuma publicação das provas. Último envio confirmado pelo estadoBuffer continua22/10 às10h;slot18h pendente de aprovação.
+- Meta2/dia autônoma não comprovada: catálogo finito, aprovação e cenas pertinentes continuam necessárias. Custo adicional observadoR$0.
+- Consulte automation/DELIVERY-4.1.md, VOICE-4.1.md, AVATAR-4.1.md e BATCH_APPROVAL.md. Reaproveite evidências; não refaça setup/retrato/benchmarks sem necessidade.
+
+---
+
 - Verificação final4.0: commit de integração a3a236e; workflow diário39830366236 SUCESSO com192 testes cloud. Nenhum MP4 existente foi substituído (NEW_VIDEO_COUNT=0).
 
 # CasaSemEsforço 4.0 — checkpoint 22/10/2026

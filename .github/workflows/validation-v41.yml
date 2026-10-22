@@ -44,6 +44,8 @@ jobs:
         with:
           name: validation-v41-evidence
           path: |
+            tmp/validation-v41/*.mp4
+            tmp/validation-v41/*.jpg
             tmp/validation-v41/report.json
             tmp/validation-v41/release-links.json
           if-no-files-found: ignore

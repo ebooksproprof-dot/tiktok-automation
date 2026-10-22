@@ -30,11 +30,11 @@ def main():
     release = request(API+'/releases/tags/'+tag, token)
     if release is None:
         release = request(API+'/releases', token, 'POST', dict(
-            tag_name=tag, target_commitish=os.environ['GITHUB_SHA'],
+            tag_name=tag, target_commitish='main',
             name='CasaSemEsforco 4.1 — validation only', make_latest='false',
             draft=False, prerelease=True,
             body=str(len(report))+' female narration Format C proofs (no avatar). '
-                 'Not approved for TikTok publication. See report for measured limits.'))
+                 'Not approved for TikTok publication. See report for measured limits. Source commit: '+os.environ['GITHUB_SHA']))
     endpoint = API+'/releases/'+str(release['id'])+'/assets?per_page=100'
     assets = request(endpoint, token)
     if not isinstance(assets, list) or len(assets) >= 100:

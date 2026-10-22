@@ -1,6 +1,7 @@
 """Three bounded Format C female-voice proofs; no approval or publication writes."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import resource
 import subprocess
@@ -57,7 +58,7 @@ def main():
                 'naturalness_improvement_measured':False,'audience_retention_measured':False},
             limitations=['Illustrative footage, not proof of specific product performance.',
                 'No avatar. No listening-based pronunciation or lip-sync assessment.',
-                'Local CPU proof, not sustained daily GitHub Actions evidence.'],
+                'CPU proof in '+('GitHub Actions' if os.getenv('GITHUB_ACTIONS') == 'true' else 'local environment')+'; not sustained daily operation.'],
             cost_added=0, published=False, approved=False)
         r.atomic_json(path.with_suffix('.json'), record)
         reports.append(record)
