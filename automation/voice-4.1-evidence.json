@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-22",
+  "scope": "Local CPU benchmark; not a sustained GitHub Actions run",
+  "perceptual_review": "Not listened; no naturalness or pronunciation claim",
+  "voices": {
+    "piper": {
+      "engine": "piper-1.3.0-pt_BR-faber-medium",
+      "init_seconds": 1.6222625430000335,
+      "synthesis_seconds": 1.1937767819999863,
+      "duration": 17.268027210884355,
+      "peak_rss_kib": 235872,
+      "script": [
+        "A bancada está cheia de objetos?",
+        "Antes de limpar, retire o que não precisa ficar ali.",
+        "Use um pano limpo e um produto adequado à superfície.",
+        "Respeite as instruções do fabricante.",
+        "Deixe os itens da rotina juntos, em um lugar fácil de alcançar.",
+        "Salve esta dica para a próxima limpeza."
+      ],
+      "timings": [
+        [
+          0.0,
+          2.020136054421769,
+          "A bancada está cheia de\nobjetos?"
+        ],
+        [
+          2.100136054421769,
+          4.921360544217688,
+          "Antes de limpar, retire o que\nnão precisa ficar ali."
+        ],
+        [
+          5.001360544217688,
+          7.573640327926043,
+          "Use um pano limpo e um\nproduto adequado à"
+        ],
+        [
+          7.573640327926043,
+          8.263764172335602,
+          "superfície."
+        ],
+        [
+          8.343764172335602,
+          10.596099773242631,
+          "Respeite as instruções do\nfabricante."
+        ],
+        [
+          10.676099773242631,
+          14.169579401653134,
+          "Deixe os itens da rotina\njuntos, em um lugar fácil de"
+        ],
+        [
+          14.169579401653134,
+          14.76281179138322,
+          "alcançar."
+        ],
+        [
+          14.842811791383221,
+          17.188027210884357,
+          "Salve esta dica para a\npróxima limpeza."
+        ]
+      ],
+      "cost_added": 0,
+      "audio_qa": {
+        "decode_exit_code": 0,
+        "silences_at_least_0_8s_at_minus45db": 0,
+        "mean_volume_db": -15.9,
+        "max_volume_db": -0.0
+      }
+    },
+    "kokoro": {
+      "engine": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "init_seconds": 1.2760755500003143,
+      "synthesis_seconds": 27.263814454000112,
+      "duration": 18.373958333333334,
+      "peak_rss_kib": 342528,
+      "script": [
+        "A bancada está cheia de objetos?",
+        "Antes de limpar, retire o que não precisa ficar ali.",
+        "Use um pano limpo e um produto adequado à superfície.",
+        "Respeite as instruções do fabricante.",
+        "Deixe os itens da rotina juntos, em um lugar fácil de alcançar.",
+        "Salve esta dica para a próxima limpeza."
+      ],
+      "timings": [
+        [
+          0.0,
+          2.2053333333333334,
+          "A bancada está cheia de\nobjetos?"
+        ],
+        [
+          2.2853333333333334,
+          5.440666666666667,
+          "Antes de limpar, retire o que\nnão precisa ficar ali."
+        ],
+        [
+          5.520666666666667,
+          8.159910256410257,
+          "Use um pano limpo e um\nproduto adequado à"
+        ],
+        [
+          8.159910256410257,
+          8.868,
+          "superfície."
+        ],
+        [
+          8.948,
+          11.399333333333335,
+          "Respeite as instruções do\nfabricante."
+        ],
+        [
+          11.479333333333333,
+          14.977867607526882,
+          "Deixe os itens da rotina\njuntos, em um lugar fácil de"
+        ],
+        [
+          14.977867607526882,
+          15.571958333333333,
+          "alcançar."
+        ],
+        [
+          15.651958333333333,
+          18.293958333333332,
+          "Salve esta dica para a\npróxima limpeza."
+        ]
+      ],
+      "cost_added": 0,
+      "cpu_threads": 2,
+      "audio_qa": {
+        "decode_exit_code": 0,
+        "silences_at_least_0_8s_at_minus45db": 0,
+        "mean_volume_db": -25.3,
+        "max_volume_db": -7.3
+      }
+    }
+  }
+}

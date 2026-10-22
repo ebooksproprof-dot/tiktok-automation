@@ -1,0 +1,29 @@
+{
+  "python_version": "3.12.14",
+  "cpu_count_reported": 9,
+  "torch_installed": false,
+  "opencv_installed": false,
+  "nvidia_smi_present": false,
+  "validated_avatar_engines": [],
+  "avatar_inference_executed": false,
+  "avatar_video_produced": false,
+  "commercial_lip_sync_ready": false,
+  "fallback_format": "C",
+  "blockers": {
+    "sadtalker": [
+      "THIRD_PARTY_BFM_ASSET_COMMERCIAL_PERMISSION_UNRESOLVED",
+      "CPU_PATH_EXISTS_BUT_NO_VALIDATED_RUNTIME_OR_WEIGHTS",
+      "LIP_SYNC_QUALITY_AND_CPU_RENDER_BUDGET_UNMEASURED"
+    ],
+    "musetalk": [
+      "DOCUMENTED_SETUP_USES_CUDA_NOT_AVAILABLE_IN_STANDARD_CPU_RUNNER"
+    ],
+    "wav2lip": [
+      "OFFICIAL_RELEASE_RESTRICTED_TO_NONCOMMERCIAL_USE"
+    ],
+    "liveportrait": [
+      "DEFAULT_INSIGHTFACE_WEIGHTS_NONCOMMERCIAL",
+      "DRIVING_MOTION_DOES_NOT_PROVE_AUDIO_DRIVEN_LIP_SYNC"
+    ]
+  }
+}
