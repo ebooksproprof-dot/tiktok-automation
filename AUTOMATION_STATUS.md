@@ -1,3 +1,5 @@
+- Verificação final4.0: commit de integração a3a236e; workflow diário39830366236 SUCESSO com192 testes cloud. Nenhum MP4 existente foi substituído (NEW_VIDEO_COUNT=0).
+
 # CasaSemEsforço 4.0 — checkpoint 22/10/2026
 
 Estado: PARCIAL. Não confundir publicação de fila previamente aprovada com renovação editorial autônoma.

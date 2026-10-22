@@ -135,3 +135,11 @@ Todos1080x1920, decodificação completa, zero intervalos pretos≥0,3s e silên
 Relatório/contact sheets cloud foram baixados, SHA comparado ao digest da Release e
 18quadros inspecionados. Três variantes e três baselines persistidos. Nenhum enviado
 para TikTok. Provas com cenas ilustrativas, sem alegação de equivalência visual ao Vault.
+
+## Verificação cloud da integração final
+
+Commit a3a236e80475d1713521822b35c8d0332ca3ea87: workflow diário39830366236
+concluído com sucesso,192 testes na nuvem. NEW_VIDEO_COUNT=0, pois os MP4s já existentes
+foram preservados; essa execução não é alegada como geração de novos vídeos nem publicação.
+A reprodução adicional dos previews39830366403 foi iniciada pelo push; os três MP4s
+e links já entregáveis pertencem ao lote concluído39829264202 e não dependem dessa repetição.
