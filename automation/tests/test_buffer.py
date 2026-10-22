@@ -12,6 +12,7 @@ class BufferSafetyTests(unittest.TestCase):
     def setUp(self):
         self.state = {"posts": {}}
         self.post = {"id": "casasem-test", "publication_provider": "buffer",
+                     "approved": True, "consented_at": "2026-01-01T00:00:00Z",
                      "title": "Uma dica segura #CasaSemEsforco",
                      "scheduled_at": (b.common.utc_now() + timedelta(hours=1)).isoformat(),
                      "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/test.mp4",
@@ -32,6 +33,22 @@ class BufferSafetyTests(unittest.TestCase):
         self.state["posts"]["old"] = {"provider": "metricool", "sha256": "a" * 64}
         with self.assertRaises(ValueError):
             b.prepare(self.post, self.state, "channel")
+
+    def test_consent_is_required_before_any_submission(self):
+        for fields in ({'approved': False}, {'consented_at': None},
+                       {'consented_at': 'invalid'}, {'consented_at': '2026-01-01'},
+                       {'consented_at': (b.common.utc_now() + timedelta(days=1)).isoformat()}):
+            client = Mock()
+            with self.subTest(fields=fields), self.assertRaisesRegex(ValueError, 'consent'):
+                b.submit(client, dict(self.post, **fields), self.state, 'channel')
+            client.call.assert_not_called()
+
+    def test_legacy_visuals_are_rechecked_at_buffer_gate(self):
+        import json
+        archive = json.loads(Path(b.__file__).with_name('visual_history.json').read_text())
+        with patch.object(b, 'require_evidence') as gate:
+            b.prepare(self.post, self.state, 'channel')
+        self.assertIn(archive, gate.call_args.args[1])
 
     def test_technical_pass_is_not_editorial_approval(self):
         self.post["quality"]["editorial_approved"] = False

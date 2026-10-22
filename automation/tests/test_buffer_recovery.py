@@ -20,6 +20,7 @@ class BufferRecoveryTests(unittest.TestCase):
         self.addCleanup(self.clock.stop)
         self.state = {'posts': {}}
         self.post = dict(id='casasem-2026-10-21-1', publication_provider='buffer',
+                         approved=True, consented_at='2026-10-20T12:00:00Z',
                          title='Uma dica segura.', scheduled_at=(NOW + dt.timedelta(hours=1)).isoformat(),
                          video_url='https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/proof.mp4',
                          quality=dict(technical_pass=True, editorial_approved=True, sha256='a'*64,

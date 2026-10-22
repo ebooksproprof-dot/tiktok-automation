@@ -15,6 +15,7 @@ on:
       - "automation/buffer_quota.py"
       - "automation/queue.json"
       - "automation/readiness.py"
+      - "automation/daily_coverage.py"
       - ".github/workflows/tiktok-online-runner.yml"
   workflow_dispatch:
     inputs:
@@ -102,6 +103,10 @@ jobs:
           git commit -m "Update TikTok automation state"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Check daily delivery after reconciliation and persistence
+        if: ${{ !cancelled() && inputs.buffer_check_only != true }}
+        run: python automation/daily_coverage.py
 
       - name: Keep one actionable failure issue
         if: failure()

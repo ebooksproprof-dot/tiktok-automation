@@ -90,10 +90,21 @@ def prepare(post, state, channel_id):
     quality = post.get("quality") or {}
     if post.get("publication_provider") != "buffer":
         raise ValueError("Post not assigned to Buffer")
+    consent = post.get('consented_at')
+    try:
+        consent_time = common.parse_time(consent) if isinstance(consent, str) and re.search(r'(Z|[+-]\d\d:\d\d)$', consent) else None
+    except (ValueError, TypeError):
+        consent_time = None
+    if post.get('approved') is not True or not consent_time or consent_time > common.utc_now():
+        raise ValueError('Explicit post approval and valid consent timestamp required')
     if quality.get("technical_pass") is not True or quality.get("editorial_approved") is not True:
         raise ValueError("Technical and editorial review required")
     from visual_library import history
-    require_evidence(post, history({}, state))
+    previous_visuals = history({}, state)
+    legacy = Path(__file__).with_name('visual_history.json')
+    if legacy.exists():
+        previous_visuals.append(json.loads(legacy.read_text()))
+    require_evidence(post, previous_visuals)
     sha = quality.get("sha256", "")
     if not re.fullmatch(r"[0-9a-f]{64}", sha):
         raise ValueError("Missing media fingerprint")
