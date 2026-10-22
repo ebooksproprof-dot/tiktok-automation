@@ -1,0 +1,50 @@
+name: CasaSemEsforco 4.1 female validation only
+on:
+  push:
+    branches: [main]
+    paths:
+      - automation/validation_v41.py
+      - automation/save_validation_v41.py
+      - .github/workflows/validation-v41.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-validation-v41
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ORT_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install established free renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
+          python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0' 'kokoro-onnx==0.6.1'
+      - name: Regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Render three nonpublishing comparisons
+        run: python automation/validation_v41.py
+      - name: Save completed proofs persistently
+        if: ${{ !cancelled() && hashFiles('tmp/validation-v41/report.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/save_validation_v41.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-v41-evidence
+          path: |
+            tmp/validation-v41/report.json
+            tmp/validation-v41/release-links.json
+          if-no-files-found: ignore
+          retention-days: 7
