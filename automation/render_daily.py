@@ -103,7 +103,7 @@ def verify_source(key, path):
 
 def load_voice():
     from narration import load_engine
-    return load_engine(ASSETS)
+    return load_engine(ASSETS, os.getenv('NARRATION_ENGINE', 'piper'))
 
 
 def narration(voice, lines, folder):
@@ -168,7 +168,7 @@ def render(idea, voice, post_id):
     quality.update(graphics_style='casasem-v4' if DYNAMIC_STYLE else 'classic-v6',
                    crop_shifts_pixels=crop_shifts, rendered_shots=len(shots))
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
-                   source_license='https://www.pexels.com/license/',voice=VOICE,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
+                   source_license='https://www.pexels.com/license/',voice=voice.name,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     reviewed_sources = [PROVENANCE[k] for k in keys if k in PROVENANCE]
     _, required_credits = caption_with_credits('', reviewed_sources)
     quality.update(required_public_credits=required_credits,

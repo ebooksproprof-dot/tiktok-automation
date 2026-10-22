@@ -33,9 +33,12 @@ class PiperEngine:
 
 
 def load_engine(cache, engine='piper'):
-    if engine != 'piper':
-        raise ValueError('Unsupported narration engine; experimental providers are not production defaults')
-    return PiperEngine(cache)
+    if engine == 'piper':
+        return PiperEngine(cache)
+    if engine == 'kokoro-female':
+        from female_narration import KokoroFemaleEngine
+        return KokoroFemaleEngine(cache)
+    raise ValueError('Unsupported narration engine; no silent or paid fallback')
 
 
 def sentences(lines):

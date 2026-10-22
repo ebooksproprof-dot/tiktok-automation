@@ -1,6 +1,6 @@
 # Voz feminina CPU — checkpoint 4.1
 
-Motor opcional implementado: **Kokoro-82M v1.0 int8, pf_dora, pt-br**, com kokoro-onnx 0.6.1 e ONNX Runtime CPU (2 threads). Não substitui implicitamente Piper; não chama API de síntese nem fallback pago. Assets fixados por tamanho e SHA-256; cache corrompido ou download incompleto bloqueiam a síntese.
+Motor implementado: **Kokoro-82M v1.0 int8, pf_dora, pt-br**, com kokoro-onnx 0.6.1 e ONNX Runtime CPU (2 threads). Não substitui implicitamente Piper; não chama API de síntese nem fallback pago. Assets fixados por tamanho e SHA-256; cache corrompido ou download incompleto bloqueiam a síntese.
 
 Fontes oficiais verificadas em 22/10/2026:
 
@@ -44,3 +44,9 @@ python automation/compare_voices.py --engine kokoro --cache tmp/kokoro-assets --
 ## VoiceStudio
 
 O candidato recuperado é VoiceStudio/Supertonic3. Documentação oficial: https://github.com/debpalash/VoiceStudio/blob/main/docs/engines/supertonic3.md . Declara ONNX CPU (~99M parâmetros, ~400MB), vozes femininas F3/F4/F5 e **diálogo obrigatório de aceite da licença OpenRAIL-M** dos pesos. Não foi aceito nem sintetizado: o bloqueio é autorização de licença, não CPU. O nome VoiceStudio isoladamente não identifica todas as implementações homônimas; esta conclusão vale para esse projeto. Kokoro oferece uma alternativa testada sem esse gate.
+
+## Integração diária 4.1
+
+O passo de criação diária seleciona explicitamente `NARRATION_ENGINE=kokoro-female`. A interface conserva Piper como padrão para chamadas antigas e rollback explícito. Não há fallback silencioso. MP4s existentes não são regenerados; o metadado `quality.voice` registra o motor realmente utilizado. A aprovação editorial continua obrigatória, inclusive para avaliar pronúncia e adequação de cada nova voz.
+
+O fonemizador utiliza eSpeak NG (GPL); uso comercial é permitido sujeito às obrigações aplicáveis de redistribuição. Pesos e dependências não são incorporados a este repositório.
