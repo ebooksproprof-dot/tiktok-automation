@@ -199,8 +199,8 @@
     }
   ],
   "last_run": {
-    "created": 2,
-    "status": "drafted",
+    "created": 0,
+    "status": "exhausted_or_no_eligible_media",
     "automatic_approval": false,
     "template_capacity": 6
   }
