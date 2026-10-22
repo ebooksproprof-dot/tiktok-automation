@@ -6,6 +6,14 @@ import re
 import subprocess
 
 
+def temporal_findings(log):
+    """FFmpeg reports completed black intervals and silence starts, including EOF."""
+    black = [float(x) for x in re.findall(r'black_duration:([\d.]+)', log)]
+    silence = [float(x) for x in re.findall(r'silence_start: ([\d.]+)', log)]
+    return dict(black_intervals_over_300ms=sum(x >= .3 for x in black),
+                silence_intervals_over_800ms=len(silence))
+
+
 def validate(path):
     path = pathlib.Path(path)
     meta = json.loads(subprocess.check_output(
@@ -24,7 +32,9 @@ def validate(path):
         errors.append('Duration outside 15–28 seconds')
     if not 100_000 <= path.stat().st_size <= 20_000_000:
         errors.append('File outside 100 KB–20 MB')
-    check = subprocess.run(['ffmpeg', '-hide_banner', '-i', str(path), '-af', 'volumedetect',
+    check = subprocess.run(['ffmpeg', '-hide_banner', '-xerror', '-i', str(path),
+                            '-vf', 'blackdetect=d=0.3:pix_th=0.10:pic_th=0.98',
+                            '-af', 'volumedetect,silencedetect=noise=-45dB:d=0.8',
                             '-f', 'null', '-'], capture_output=True, text=True, timeout=90)
     if check.returncode:
         errors.append('Decode failed')
@@ -32,12 +42,17 @@ def validate(path):
     mean = float(match.group(1)) if match else float('-inf')
     if mean < -40:
         errors.append('Audio is absent or effectively silent')
+    temporal = temporal_findings(check.stderr)
+    if temporal['black_intervals_over_300ms']:
+        errors.append('Black interval of at least 300 ms')
+    if temporal['silence_intervals_over_800ms']:
+        errors.append('Silence interval of at least 800 ms')
     if errors:
         raise ValueError('; '.join(errors))
     return dict(technical_pass=True, editorial_approved=False,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                 duration=duration, size=path.stat().st_size,
-                width=1080, height=1920, audio_mean_db=mean)
+                width=1080, height=1920, audio_mean_db=mean, **temporal)
 
 
 if __name__ == '__main__':
