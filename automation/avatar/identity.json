@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "id": "casasem-presenter-v1",
+  "fictional_adult": true,
+  "image": "presenter-v1.jpg",
+  "sha256": "532d7a35ead5c618b8fcc57257493331d9703976fe4af1060611b763da39ab0e",
+  "origin": "Original image generated with built-in imagegen on 2026-10-22; not a real-person likeness reference",
+  "status": "STILL_IDENTITY_ONLY_NOT_ANIMATED",
+  "wardrobe": "solid sage-green blouse",
+  "setting": "bright home kitchen",
+  "constraints": [
+    "Use exact identity asset; do not regenerate a different woman per clip",
+    "Label synthesized presenter and generated demonstrations appropriately",
+    "No real-world product performance claims inferred from synthetic footage"
+  ],
+  "prompt": "Original fictional adult woman around30, natural medium-brown shoulder-length hair, brown eyes, realistic skin, sage-green blouse, front-facing calm closed-mouth expression, bright kitchen, soft daylight, no logos or text",
+  "generation_recurrence": "Asset generated once in Work; daily GitHub generation does not depend on imagegen"
+}
