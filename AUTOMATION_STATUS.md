@@ -1,3 +1,21 @@
+# CasaSemEsforço 4.0 — checkpoint 22/10/2026
+
+Estado: PARCIAL. Não confundir publicação de fila previamente aprovada com renovação editorial autônoma.
+
+- Base recuperada: 8a3720c5c6e87e99a8cce3d4b3a69cd8316b23ac.
+- Correção operacional salva: 9bd56894b750e4ea83a92c056af85cf78df1821e; Runner 39828669675 concluído com sucesso.
+- Buffer agora exige approved=true e consented_at válido antes de novos envios; revalida também visual_history.json.
+- daily_coverage.py, após reconciliação/persistência, identifica lacunas nos slots 10h/18h e falha a partir de uma hora antes do slot; não altera consentimentos nem reenvia posts.
+- QA contínuo salvo: 7a6d8fbadcab043fef2c013930096ab2d83dca72. Decode com -xerror, preto >=300ms e silêncio <=-45dB por >=800ms bloqueiam MP4.
+- Auditor independente repetiu 187 testes; três MP4s legados passaram no novo gate e streams sintéticos reais confirmaram detecção.
+- Estado recuperado: Buffer confirma dois posts/dia em 18–21/10 e um em 22/10 às10h. Último link: https://www.tiktok.com/@.casasemesforo/video/7699477167792753927 . Evidência do provedor, não inspeção independente da página pública.
+- 22/10 às18h: pontos-de-toque está renderizado, sem aprovação editorial/consentimento/rota; NÃO agendado. Nenhuma aprovação fabricada.
+- Quatro drafts finitos; última rodada sem novo draft. Renovação contínua e 60 vídeos/mês não comprovados.
+- Referência externa exclusiva @vault_shopp: vídeos reais não acessíveis na pesquisa; não há análise empírica de cortes, audiência ou retenção.
+- FFmpeg/Piper permanecem integrados. EffectCraft é PoC histórica isolada; demais ferramentas não comprovadas no pipeline diário. VoiceStudio suporta CPU: limitação atual é avaliação/licença dos pesos, não exigência de GPU.
+- Três novos previews 4.0 em produção isolada, sem tocar fila/estado e sem publicar no TikTok. Resultados finais devem ser lidos no relatório/Release 4.0, não inferidos deste checkpoint.
+- Nenhum serviço pago contratado. Preservar cotas e histórico existentes.
+
 ## Checkpoint final 3.5 — recuperação e idempotência comprovadas
 
 - Commit de correção58c2a09 e checkpointdabc37ce já enviados ao GitHub.

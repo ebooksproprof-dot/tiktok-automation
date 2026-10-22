@@ -1,0 +1,50 @@
+name: CasaSemEsforco 4 validation only
+on:
+  push:
+    branches: [main]
+    paths:
+      - automation/validation_v4.py
+      - automation/save_validation_v4.py
+      - .github/workflows/validation-v4.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-validation-v4
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ORT_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install established free renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0'
+      - name: Regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Render three nonpublishing comparisons
+        run: python automation/validation_v4.py
+      - name: Save completed proofs persistently
+        if: ${{ !cancelled() && hashFiles('tmp/validation-v4/report.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/save_validation_v4.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-v4-evidence
+          path: |
+            tmp/validation-v4/report.json
+            tmp/validation-v4/release-links.json
+          if-no-files-found: ignore
+          retention-days: 7
