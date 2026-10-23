@@ -100,6 +100,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python automation/stage_requested_proofs.py
+      - name: Refresh read-only approval preview
+        if: always()
+        continue-on-error: true # Preview failure must never prevent durable media/state.
+        run: python automation/refresh_review44.py
       - name: Persist validated outputs even if a later composition fails
         if: always()
         run: |
@@ -108,6 +112,7 @@ jobs:
           python - <<'PYCODE'
           import json, pathlib, subprocess
           paths = ['automation/queue.json', 'automation/review_requests.json']
+          paths.extend(p for p in ('public/review44.html', 'public/review44.json') if pathlib.Path(p).exists())
           for entry in json.loads(pathlib.Path('automation/queue.json').read_text())['posts']:
               if entry.get('render_version') != 2 or not entry.get('quality', {}).get('technical_pass'):
                   continue

@@ -90,16 +90,24 @@ jobs:
             exit 2
           fi
 
+      - name: Refresh read-only approval preview
+        if: always()
+        continue-on-error: true # Preserve state even if preview generation fails.
+        run: python automation/refresh_review44.py
+
       - name: Persist runner state
         if: always()
         run: |
-          if git diff --quiet -- automation/state.json; then
-            echo "No state changes."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/state.json
+          for path in public/review44.html public/review44.json; do
+            if test -f "$path"; then git add "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No state or preview changes."
+            exit 0
+          fi
           git commit -m "Update TikTok automation state"
           git pull --rebase origin main
           git push origin HEAD:main
