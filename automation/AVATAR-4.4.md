@@ -31,3 +31,7 @@ de avatar comprovado por esta alteração de código.
 
 Fonte examinada:
 https://github.com/antgroup/echomimic/blob/c32b3a557003f84ead1483a2d2386035685d984d/src/models/mutual_self_attention.py
+
+## Execução real concluída
+
+Run40015884986 / job120627699722. O patch superou o erroCUDA: áudio, latentes, face mask e atenção foram preparados emCPU; loopdiffusion iniciou0/4. Subprocesso excedeu180segundos (total214,131s; picoRSSfilho14.108.036KiB), semMP4. Relatório avatar-4.4-result.json, artifact12528422677 SHA7003817c43aa28aab6f7ae16bbdd39064d71d322f97335c2f46e3b62819c7612. Não foi demonstrada impossibilidadeCPU geral; orçamento e qualidade comercial não validados. Não integrar na produção.

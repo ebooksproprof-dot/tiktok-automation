@@ -202,5 +202,33 @@
     "visual_gate": true,
     "visual_review_scope": "Six sampled frames at 0,3,6,9,12,15s; no full perceptual audio/lip-sync review",
     "publication_authorized": false
+  },
+  {
+    "id": "casasem-2026-10-24-1",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4",
+    "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
+    "hash_matches_queue": true,
+    "technical": {
+      "technical_pass": true,
+      "editorial_approved": false,
+      "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
+      "duration": 18.6,
+      "size": 5980733,
+      "width": 1080,
+      "height": 1920,
+      "audio_mean_db": -15.3,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0,
+      "av_start_delta_seconds": 0.0,
+      "av_end_delta_seconds": 0.015,
+      "lip_sync_verified": false
+    },
+    "approved": false,
+    "consented_at": null,
+    "publication_authorized": false,
+    "visual_gate": true,
+    "perceptual_audio_review": "not_listened",
+    "editorial_review": "Cuba e lavagem de mãos visíveis nos seis quadros; roteiro não alega eficácia específica. Gancho e legendas legíveis. Imagem menor sobre fundo desfocado, iluminação discreta; reutiliza fonte da prova4.3, ainda não publicada.",
+    "visual_review_scope": "Six sampled frames; no listening review"
   }
 ]
