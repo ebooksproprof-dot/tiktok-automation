@@ -196,6 +196,29 @@
           "provider": "pixabay"
         }
       ]
+    },
+    {
+      "id": "livros-escolha-consciente",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-23T20:07:31.909347+00:00",
+      "hook": "Vai levar outro livro para casa?",
+      "steps": "Antes de trazer outro livro para casa, confira o que você já tem. Leia a sinopse e algumas páginas para ver se o tema interessa. Pense onde vai guardar o exemplar. Se estiver em dúvida, anote título e autor para decidir depois.",
+      "cta": "Salve para sua próxima leitura.",
+      "media": [
+        {
+          "provider": "pixabay",
+          "provider_id": "140587",
+          "url": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-140587/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "jadeallencook",
+          "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+          "id": "pixabay-140587-full",
+          "frame_mode": "preserve_full",
+          "context": "Duas pessoas sentadas entre estantes de uma livraria leem e folheiam livros. Quadro integral preserva livros e prateleiras. Não mostra organização doméstica, ordenação de coleção ou resultados de produto."
+        }
+      ]
     }
   ]
 }
