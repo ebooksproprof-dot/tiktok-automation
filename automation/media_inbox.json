@@ -309,73 +309,125 @@
       "duration": 27.605,
       "bytes": 66260719,
       "acquired_at": 1792667086
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "165820",
+      "url": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-165820/",
+      "author": "NickyPe",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: NickyPe / Pixabay — https://pixabay.com/videos/id-165820/",
+      "category": "roupas",
+      "query": "folding clothes laundry",
+      "selection_reason": "Provider tags: laundry, clothes line, dry, wind, material, to wash, household, nature",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+      "sha256": "a95396827ee3c8fb2adcd8c79a965b6312e58811fe75ab344002a456f64b7ec3",
+      "dhash": [
+        "2d89981847128304",
+        "2d8998186f138304",
+        "2d8998186f13830c",
+        "2d8998186f13830c",
+        "2d8998186f13830c"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 20.8,
+      "bytes": 66146705,
+      "acquired_at": 1792786268
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "26386",
+      "url": "https://cdn.pixabay.com/video/2019/08/30/26386-357512473_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-26386/",
+      "author": "Hans",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Hans / Pixabay — https://pixabay.com/videos/id-26386/",
+      "category": "sapatos",
+      "query": "organizing shoes rack",
+      "selection_reason": "Provider tags: walk, running, move, shoes, step, quick step, gehbewgung",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/08/30/26386-357512473_large.mp4",
+      "sha256": "60aa1ffacde9f3d41f69da2dab2055500435ae3e24b8d72a620caace9dfc9c1f",
+      "dhash": [
+        "61f1707030303070",
+        "3b381938383b3939",
+        "18383838383831b8",
+        "323232327050181a",
+        "3830303030303134"
+      ],
+      "width": 4096,
+      "height": 2160,
+      "duration": 12.436667,
+      "bytes": 33870057,
+      "acquired_at": 1792786277
     }
   ],
   "rejected_until": {
     "pixabay:38116": 1793185430
   },
   "last_run": {
-    "at": 1792784960,
-    "acquired": 0,
+    "at": 1792786261,
+    "acquired": 2,
     "rejected": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "roupas",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 10,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "roupas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "livros",
+        "category": "utensilios",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "livros",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "banheiro",
+        "category": "sapatos",
         "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 2,
         "response_source": "live_api"
       }
     ],
-    "editorial_approved": 0
+    "editorial_approved": 0,
+    "query_plan": [
+      "folding clothes laundry",
+      "kitchen utensils drawer",
+      "organizing shoes rack",
+      "cleaning table cloth"
+    ],
+    "query_bank_size": 24,
+    "query_budget_per_provider": 4,
+    "unreviewed_media_count": 12,
+    "approved_reserve_days": null,
+    "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
 }

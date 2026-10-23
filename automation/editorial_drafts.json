@@ -294,15 +294,64 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-roupas-uma-categoria",
+      "topic": "roupas-uma-categoria",
+      "family": "roupas",
+      "hook": "A pilha de roupas parece não acabar?",
+      "steps": "Separe uma categoria para começar, como camisetas. Dobre as peças de um jeito que caibam no espaço disponível. Guarde essa pequena pilha antes de pegar a próxima. Deixe separadas as roupas que precisam de outro cuidado.",
+      "cta": "Experimente começar por uma categoria.",
+      "body_sha256": "f25be4beaa8f942523a6d4cc76b6cf9009a50b080cad60aba3eee11b5bc149d0",
+      "script_sha256": "7e066d1f44e0a9487da67c5ae543e7ca3952a9fd50762f67a6a8b03e1534208a",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "165820",
+        "url": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-165820/",
+        "author": "NickyPe",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: NickyPe / Pixabay — https://pixabay.com/videos/id-165820/",
+        "category": "roupas",
+        "query": "folding clothes laundry",
+        "selection_reason": "Provider tags: laundry, clothes line, dry, wind, material, to wash, household, nature",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+        "sha256": "a95396827ee3c8fb2adcd8c79a965b6312e58811fe75ab344002a456f64b7ec3",
+        "dhash": [
+          "2d89981847128304",
+          "2d8998186f138304",
+          "2d8998186f13830c",
+          "2d8998186f13830c",
+          "2d8998186f13830c"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 20.8,
+        "bytes": 66146705,
+        "acquired_at": 1792786268
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 2,
+    "created": 1,
     "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 18,
-    "pending_review": 6,
+    "unused_templates": 17,
+    "pending_review": 7,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
