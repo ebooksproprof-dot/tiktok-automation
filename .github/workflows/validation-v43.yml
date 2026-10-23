@@ -1,0 +1,69 @@
+name: CasaSemEsforco 4.3 framing proofs only
+on:
+  push:
+    branches: [main]
+    paths:
+      - automation/validation_v43.py
+      - automation/save_validation_v43.py
+      - .github/workflows/validation-v43.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-validation-v43
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ORT_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare established CPU dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng libseccomp2
+          python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0' 'kokoro-onnx==0.6.1'
+      - name: Regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Download only verified models and licensed footage before offline inference
+        run: |
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'automation')
+          import render_daily as r
+          from female_narration import acquire
+          from validation_v43 import BATCH
+          out=r.ROOT/'tmp/validation-v43'
+          r.ASSETS=out/'assets';r.ASSETS.mkdir(parents=True,exist_ok=True)
+          acquire(out/'voice-assets')
+          items={x['provider_id']:x for x in json.loads((r.ROOT/'automation/media_inbox.json').read_text())['items']}
+          for _,source_id,_,_ in BATCH:
+              item=items[source_id]
+              r.SOURCE[source_id],r.PROVENANCE[source_id]=item['url'],item
+              r.verify_source(source_id,r.get_clip(source_id))
+          PY
+      - name: Render with kernel-enforced network denial
+        run: python automation/offline_exec.py python automation/validation_v43.py
+      - name: Save completed proofs persistently
+        if: ${{ !cancelled() && hashFiles('tmp/validation-v43/report.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/save_validation_v43.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-v43-evidence
+          path: |
+            tmp/validation-v43/*.mp4
+            tmp/validation-v43/*.jpg
+            tmp/validation-v43/report.json
+            tmp/validation-v43/release-links.json
+          if-no-files-found: ignore
+          retention-days: 7

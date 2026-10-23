@@ -1,0 +1,24 @@
+{
+  "status": "local_narration_render_blocked_by_automatic_review",
+  "reason": "Unrelated Microsoft telemetry endpoint rejected on two ONNX attempts, including explicit disable_telemetry_events before model session. No telemetry permission granted.",
+  "completed": [
+    "SHA-verified licensed source downloads",
+    "Original 38115 and 51807 six-frame visual inspection",
+    "FFmpeg full-frame framing JPEG inspected",
+    "Three framing unit tests passed"
+  ],
+  "source_review": {
+    "37325": "Source previously inspected; full-frame JPEG at 5 sec inspected now, dryer visible at left edge.",
+    "51807": "Visually relevant faucet, but audit found previous publication; rejected for new proof C.",
+    "38115": "Handwashing in visible basin; chosen only for basin sizing/installation-selection script, no cleaning efficacy claim."
+  },
+  "rendered_mp4s": [],
+  "listening_performed": false,
+  "published": false,
+  "approved": false,
+  "history_check": {
+    "37325": "PASS",
+    "38115": "PASS",
+    "history_preserved": true
+  }
+}
