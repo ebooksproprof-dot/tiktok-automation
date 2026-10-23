@@ -17,3 +17,24 @@ class TemporalQualityTests(unittest.TestCase):
 
     def test_normal_decode_has_no_temporal_findings(self):
         self.assertEqual(sum(temporal_findings('mean_volume: -16.3 dB').values()), 0)
+
+
+class AVTimingTests(unittest.TestCase):
+    def test_aac_padding_tolerance(self):
+        from media_quality import av_timing
+        r = av_timing(dict(start_time='0',duration='20'),dict(start_time='0',duration='20.03'))
+        self.assertEqual(r['av_end_delta_seconds'], .03)
+        self.assertFalse(r['lip_sync_verified'])
+    def test_audio_offset_rejected(self):
+        from media_quality import av_timing
+        with self.assertRaises(ValueError):
+            av_timing(dict(start_time='0',duration='20'),dict(start_time='.3',duration='20'))
+    def test_truncated_audio_rejected(self):
+        from media_quality import av_timing
+        with self.assertRaises(ValueError):
+            av_timing(dict(start_time='0',duration='20'),dict(start_time='0',duration='18'))
+    def test_missing_and_nonfinite_timing_rejected(self):
+        from media_quality import av_timing
+        for audio in ({}, dict(start_time='nan',duration='20'),dict(start_time='0',duration='inf')):
+            with self.assertRaises(ValueError):
+                av_timing(dict(start_time='0',duration='20'),audio)

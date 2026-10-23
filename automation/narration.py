@@ -15,6 +15,8 @@ class PiperEngine:
 
     def __init__(self, cache):
         os.environ['ORT_DISABLE_TELEMETRY'] = '1'
+        import onnxruntime as rt
+        rt.disable_telemetry_events()
         from piper import PiperVoice
         cache = Path(cache)
         cache.mkdir(parents=True, exist_ok=True)

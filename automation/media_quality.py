@@ -1,6 +1,7 @@
 """Technical validation. Passing does not imply editorial approval."""
 import hashlib
 import json
+import math
 import pathlib
 import re
 import subprocess
@@ -14,6 +15,22 @@ def temporal_findings(log):
                 silence_intervals_over_800ms=len(silence))
 
 
+def av_timing(video, audio):
+    """Stream alignment only; this is not a perceptual lip-sync score."""
+    try:
+        vs, aus = float(video['start_time']), float(audio['start_time'])
+        vd, ad = float(video['duration']), float(audio['duration'])
+    except (KeyError, TypeError, ValueError):
+        raise ValueError('Audio/video timestamps missing or invalid') from None
+    if not all(math.isfinite(x) for x in (vs, aus, vd, ad)) or min(vd, ad) <= 0:
+        raise ValueError('Audio/video timestamps must be finite with positive duration')
+    start_delta, end_delta = abs(vs-aus), abs(vs+vd-aus-ad)
+    if start_delta > .08 or end_delta > .15:
+        raise ValueError('Audio/video stream timing mismatch')
+    return dict(av_start_delta_seconds=round(start_delta,6),
+                av_end_delta_seconds=round(end_delta,6), lip_sync_verified=False)
+
+
 def validate(path):
     path = pathlib.Path(path)
     meta = json.loads(subprocess.check_output(
@@ -21,6 +38,7 @@ def validate(path):
     video = next((s for s in meta['streams'] if s['codec_type'] == 'video'), {})
     audio = next((s for s in meta['streams'] if s['codec_type'] == 'audio'), {})
     duration = float(meta['format']['duration'])
+    timing = av_timing(video, audio)
     errors = []
     if video.get('codec_name') != 'h264' or video.get('pix_fmt') != 'yuv420p':
         errors.append('Expected H.264 yuv420p')
@@ -52,7 +70,7 @@ def validate(path):
     return dict(technical_pass=True, editorial_approved=False,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                 duration=duration, size=path.stat().st_size,
-                width=1080, height=1920, audio_mean_db=mean, **temporal)
+                width=1080, height=1920, audio_mean_db=mean, **temporal, **timing)
 
 
 if __name__ == '__main__':

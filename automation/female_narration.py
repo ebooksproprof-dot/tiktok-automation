@@ -57,6 +57,7 @@ class KokoroFemaleEngine:
         if importlib.metadata.version('kokoro-onnx') != '0.6.1':
             raise ValueError('Install pinned kokoro-onnx==0.6.1')
         import onnxruntime as rt
+        rt.disable_telemetry_events()
         from kokoro_onnx import Kokoro
         cache = acquire(cache)
         options = rt.SessionOptions()

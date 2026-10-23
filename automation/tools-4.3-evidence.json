@@ -1,0 +1,123 @@
+{
+  "checked_at": "2026-10-23T19:33:22.529953+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "cpu_count": 9,
+  "effectcraft_version": "0.11.1",
+  "effectcraft_binary_sha256": "fe78d8df0221d06d5519e02f3c382c1dfcd3241217a0e46644b4598a215b8d61",
+  "fixture_sha256": "50635e68890a7c41f1e4f4f10c9b8370c60c61346047a361db760100861c9209",
+  "ffmpeg_version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "workload": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_seconds": 1,
+    "frames": 30,
+    "audio": false,
+    "scene": "Static 760x16 mint rectangle, centered at (540,1080), dark green background"
+  },
+  "limitations": [
+    "Local microbenchmark, not GitHub Actions or full video throughput.",
+    "Different H264 encoders and default quality/bitrate; no codec-quality equivalence claimed.",
+    "Sequential process wall time includes startup; no warm-up exclusion.",
+    "No footage, narration, text layout or complex effects tested.",
+    "Outputs are temporary QA assets; script and measurements are durable."
+  ],
+  "results": {
+    "effectcraft": {
+      "seconds": [
+        0.9142854369999895,
+        0.9199452809999684,
+        0.8208786380000106
+      ],
+      "median_seconds": 0.9142854369999895,
+      "bytes": 7600,
+      "sha256": "97e11b802d508cb04efbcb6267837c722035925287d4035654061d69c8f34e3c",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1920,
+            "r_frame_rate": "30/1",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "decode_errors": "",
+      "technical_pass": true,
+      "command": [
+        "/workspace/scratch/c142e37adcc9/casasem-4.3/tmp/tools-4.3/effectcraft-0.11.1-linux-x86_64/bin/effectcraft-cli",
+        "render",
+        "--project",
+        "/workspace/scratch/c142e37adcc9/casasem-4.3/tmp/tools-4.3/equivalent.ecproj",
+        "--comp",
+        "CasaSemEsforco Original",
+        "--audio",
+        "off",
+        "--out",
+        "/workspace/scratch/c142e37adcc9/casasem-4.3/tmp/tools-4.3/effectcraft.mp4"
+      ]
+    },
+    "ffmpeg": {
+      "seconds": [
+        0.266258243999971,
+        0.2532015879999676,
+        0.2397398159999966
+      ],
+      "median_seconds": 0.2532015879999676,
+      "bytes": 4428,
+      "sha256": "05849818f13d3be230d7fc009121532ceee7a352aecbc6d6e463f449ef1db1f6",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1920,
+            "r_frame_rate": "30/1",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "decode_errors": "",
+      "technical_pass": true,
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "color=c=0x0c2926:s=1080x1920:r=30:d=1",
+        "-vf",
+        "drawbox=x=160:y=1072:w=760:h=16:color=0x8ce6b0:t=fill",
+        "-frames:v",
+        "30",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-threads",
+        "2",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "23",
+        "-pix_fmt",
+        "yuv420p",
+        "/workspace/scratch/c142e37adcc9/casasem-4.3/tmp/tools-4.3/ffmpeg.mp4"
+      ]
+    }
+  },
+  "ssim_log": [
+    "[Parsed_ssim_0 @ 0x556b1cc04340] SSIM Y:0.997735 (26.450230) U:0.999815 (37.320886) V:0.999995 (53.027720) All:0.998459 (28.120850)"
+  ],
+  "decision": "Keep FFmpeg/Piper production; primitive benchmark does not establish production benefit from replacing the renderer."
+}

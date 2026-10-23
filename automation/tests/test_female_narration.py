@@ -42,3 +42,16 @@ class FemaleNarrationTests(unittest.TestCase):
         for text in ('', ' '*5, 'x'*601, None):
             with self.assertRaises(ValueError): engine.speak(text,'unused.wav')
         engine.voice.create.assert_not_called()
+
+    def test_disables_telemetry_before_creating_session(self):
+        import types
+        rt=Mock()
+        def session(*args,**kwargs):
+            rt.disable_telemetry_events.assert_called_once_with()
+            self.assertEqual(kwargs['providers'], ['CPUExecutionProvider'])
+            return 'cpu-session'
+        rt.InferenceSession.side_effect=session
+        kokoro=types.SimpleNamespace(Kokoro=Mock())
+        with patch.dict(sys.modules,{'onnxruntime':rt,'kokoro_onnx':kokoro}), patch('importlib.metadata.version',return_value='0.6.1'), patch.object(f,'acquire',return_value=Path('/cache')):
+            f.KokoroFemaleEngine('/cache')
+        rt.InferenceSession.assert_called_once()
