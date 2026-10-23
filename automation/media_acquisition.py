@@ -24,7 +24,39 @@ TOPICS = [
     ('cozinha', 'washing dishes sponge', ['sponge']),
     ('livros', 'arranging books shelves', ['books']),
     ('banheiro', 'organizing bathroom storage', ['bathroom']),
+    ('roupas', 'folding clothes laundry', ['clothes']),
+    ('utensilios', 'kitchen utensils drawer', ['kitchen', 'utensils']),
+    ('sapatos', 'organizing shoes rack', ['shoes']),
+    ('mesa', 'cleaning table cloth', ['table', 'cleaning']),
+    ('toalhas', 'folding towels bathroom', ['towels']),
+    ('potes', 'food storage containers kitchen', ['containers']),
+    ('vassoura', 'sweeping floor broom', ['broom']),
+    ('escrivaninha', 'organizing desk stationery', ['desk']),
+    ('cabides', 'clothes hangers wardrobe', ['hangers']),
+    ('louca', 'washing dishes kitchen sink', ['dishes']),
+    ('estante', 'books shelf organizing', ['books', 'shelf']),
+    ('panos', 'microfiber cloth cleaning', ['cloth', 'cleaning']),
+    ('cama', 'making bed bedroom', ['bed']),
+    ('cestos', 'laundry basket clothes', ['basket', 'laundry']),
+    ('talheres', 'cutlery kitchen drawer', ['cutlery']),
+    ('plantas', 'indoor plant pot tray', ['plant', 'pot']),
+    ('pia', 'kitchen sink faucet', ['kitchen', 'faucet']),
+    ('lixeira', 'kitchen trash bin', ['trash']),
+    ('prateleira', 'organizing storage shelf', ['storage', 'shelf']),
+    ('janelas', 'window cleaning cloth', ['window', 'cleaning']),
 ]
+QUERIES_PER_PROVIDER = 4
+
+
+def daily_topics(now):
+    """Four stable queries per UTC day; retries do not expand API exploration.
+
+    Rotate across the whole finite bank instead of merely reordering the same
+    four searches. No pagination crawl, cache eviction or counter reset.
+    """
+    offset = (int(now // 86400) * QUERIES_PER_PROVIDER) % len(TOPICS)
+    return [TOPICS[(offset + i) % len(TOPICS)]
+            for i in range(min(QUERIES_PER_PROVIDER, len(TOPICS)))]
 
 
 class AcquisitionError(Exception):
@@ -66,11 +98,17 @@ class PexelsProvider:
             raise AcquisitionError('PEXELS_API_KEY_MISSING')
         self.key, self.cache = key, cache
         self.now = time.time() if now is None else now
+        self.requests = 0
+        self.last_response_source = None
 
     def search(self, query):
         cached = self.cache.get(query)
         if cached and 0 <= self.now - cached['at'] < 86400:
+            self.last_response_source = 'cache'
             return cached['videos']
+        if self.requests >= QUERIES_PER_PROVIDER:
+            raise AcquisitionError('PROVIDER_REQUEST_BUDGET_REACHED')
+        self.requests += 1
         url = 'https://api.pexels.com/v1/videos/search?' + urllib.parse.urlencode(
             dict(query=query, orientation='portrait', per_page=15, page=1))
         with request(url, self.key) as response:
@@ -85,6 +123,7 @@ class PexelsProvider:
         except (ValueError, KeyError, TypeError):
             raise AcquisitionError('API_RESPONSE_INVALID') from None
         self.cache[query] = dict(at=self.now, videos=videos)
+        self.last_response_source = 'live_api'
         return videos
 
 
@@ -262,12 +301,12 @@ def run():
     acquired, attempts = 0, 0
     known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
     # At most four queries/provider and four downloads total per run.
-    offset = int(time.time() // 86400) % len(TOPICS)
+    selected_topics = daily_topics(now)
     errors = []
     diagnostics = []
     try:
         disabled = set()
-        for category, query, words in TOPICS[offset:] + TOPICS[:offset]:
+        for category, query, words in selected_topics:
             for name, provider in providers.items():
                 if name in disabled:
                     continue
@@ -314,7 +353,14 @@ def run():
                 break
     finally:
         inbox['last_run'] = dict(at=now, acquired=acquired, rejected=len(errors),
-                                diagnostics=diagnostics, editorial_approved=0)
+                                diagnostics=diagnostics, editorial_approved=0,
+                                query_plan=[query for _, query, _ in selected_topics],
+                                query_bank_size=len(TOPICS),
+                                query_budget_per_provider=QUERIES_PER_PROVIDER,
+                                unreviewed_media_count=sum(
+                                    r.get('status') == 'pending_visual_review' for r in inbox['items']),
+                                approved_reserve_days=None,
+                                reserve_note='Pending media is not an approved video reserve; manual semantic review required.')
         save_json(cache_path, cache)
         save_json(inbox_path, inbox)
         (folder/'CREDITS.txt').write_text(credits(inbox['items']))

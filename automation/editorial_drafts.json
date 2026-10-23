@@ -196,12 +196,114 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-livros-conferir-volumes",
+      "topic": "livros-conferir-volumes",
+      "family": "estante",
+      "hook": "Os volumes da coleção ficaram espalhados?",
+      "steps": "Escolha uma coleção e reúna os volumes que você já tem. Confira a ordem nas capas ou lombadas. Reserve um espaço em que todos caibam com estabilidade, sem forçar a prateleira. Anote os títulos ausentes antes de procurar novos exemplares.",
+      "cta": "Comece por uma coleção da estante.",
+      "body_sha256": "78eee624f92dd7c13d16ebad42395908778f00daf76bdd40ef6ebc6a90260070",
+      "script_sha256": "04e9fde277e0f6d9fc9821b285d8362327f9034bbcc366e8d9b8689be0dbaab5",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "140587",
+        "url": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-140587/",
+        "author": "jadeallencook",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: jadeallencook / Pixabay — https://pixabay.com/videos/id-140587/",
+        "category": "livros",
+        "query": "arranging books shelves",
+        "selection_reason": "Provider tags: books, book store, library, reading, knowledge, education, learning, berkley",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+        "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+        "dhash": [
+          "57a525a7e364ed87",
+          "57a525a7e364ed87",
+          "57a5a5a7e364ec87",
+          "57a527b7e764ed87",
+          "57ad27b7e664ed87"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 30.63,
+        "bytes": 85285010,
+        "acquired_at": 1792519899
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
+    },
+    {
+      "id": "draft-torneira-area-livre",
+      "topic": "torneira-area-livre",
+      "family": "pia",
+      "hook": "Os objetos atrapalham o acesso à torneira?",
+      "steps": "Observe o espaço que você usa para abrir a torneira e apoiar as mãos. Retire objetos sem função daquela área. Escolha um lugar estável para os itens da rotina e confira se nenhum deles impede o uso da cuba.",
+      "cta": "Organize pensando no acesso à pia.",
+      "body_sha256": "16dcc0c559705a785e45ef56ba8d4faf3703151f84701976f302453518074527",
+      "script_sha256": "0c58435f2021c03cc5fed8eeb20a550394c9417f3eed1367c13850882f0a051b",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "38115",
+        "url": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38115/",
+        "author": "Engin_Akyurt",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Engin_Akyurt / Pixabay — https://pixabay.com/videos/id-38115/",
+        "category": "cozinha",
+        "query": "cleaning kitchen counter",
+        "selection_reason": "Provider tags: wash, that, soap, cleaning, human, fingers, hygiene, coronavirus, kitchen, house, epidemic, infection, disease, protection, pathogen, health, flu, quarantine, danger, virus, faucet",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+        "sha256": "980c201273ef7a4eaea0437d2812f971430b7d7a04bc89ff45a2d87e8848abf1",
+        "dhash": [
+          "981c7dfcb67373dc",
+          "984cc746363b6fc4",
+          "b8dc1c8e663373ac",
+          "b81c4d46263763e4",
+          "380c66e6363f7ab4"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 27.605,
+        "bytes": 66260719,
+        "acquired_at": 1792667086
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 2,
+    "status": "drafted",
     "automatic_approval": false,
-    "template_capacity": 6
+    "template_capacity": 24,
+    "unused_templates": 18,
+    "pending_review": 6,
+    "approved_reserve_days": null,
+    "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
 }

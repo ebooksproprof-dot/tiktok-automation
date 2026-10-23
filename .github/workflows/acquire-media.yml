@@ -11,6 +11,7 @@ on:
       - 'automation/editorial_drafts.py'
       - 'automation/tests/test_acquisition.py'
       - 'automation/tests/test_media_providers.py'
+      - 'automation/tests/test_renewal44.py'
       - '.github/workflows/acquire-media.yml'
 # Live API and four downloaded sources verified on 2026-10-20. No automatic approval.
 permissions:
