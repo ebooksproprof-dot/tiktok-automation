@@ -315,29 +315,15 @@
     "pixabay:38116": 1793185430
   },
   "last_run": {
-    "at": 1792667081,
-    "acquired": 1,
+    "at": 1792784960,
+    "acquired": 0,
     "rejected": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
         "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 2,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
@@ -351,7 +337,7 @@
         "provider": "pixabay",
         "category": "livros",
         "status": "search_ok",
-        "eligible_candidates": 4,
+        "eligible_candidates": 5,
         "response_source": "live_api"
       },
       {
@@ -371,6 +357,20 @@
       {
         "provider": "wikimedia",
         "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "gavetas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "gavetas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
