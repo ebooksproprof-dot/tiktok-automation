@@ -947,6 +947,93 @@
       "composition_revision": 6,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
       "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-23-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-1-ebdb069e3f6b2808.mp4",
+      "title": "Sua gaveta mistura tudo? Retire apenas uma categoria por vez. Separe o que realmente pertence à gaveta. Dobre de um jeito que permita ver as peças. Devolva primeiro o que usa com frequência. Não aperte além do espaço disponível. Termine uma gaveta antes de abrir outra. Salve para organizar sem bagunçar tudo. #CasaSemEsforco #OrganizacaoDaCasa",
+      "scheduled_at": "2026-10-23T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "ebdb069e3f6b2808b6c0e997e5b111780d1a99f10b173a17faf3b5fae20e2789",
+        "duration": 21.266667,
+        "size": 5290817,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.5,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4",
+            "sha256": "02131593e2868eb394c2cee31be5b0d4dbe2788694afa1c952edc2ec7bf8394b",
+            "dhash": [
+              "bdce6c7dbd591921",
+              "feef6f3d9d5a3a01",
+              "fcffee6c3c9e7906",
+              "fcff6f6dbeda3c02",
+              "fafcee6e3f9f7818"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          22.916667
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 8,
+        "concept": "gaveta-uma-categoria",
+        "source_urls": [
+          "https://videos.pexels.com/video-files/6792549/6792549-uhd_2160_3840_24fps.mp4"
+        ],
+        "source_license": "https://www.pexels.com/license/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [],
+        "source_licenses": [
+          "https://www.pexels.com/license/"
+        ]
+      },
+      "concept": "gaveta-uma-categoria",
+      "category": "organizacao",
+      "script_lines": [
+        "Sua gaveta mistura tudo?",
+        "Retire apenas uma categoria",
+        "por vez.",
+        "Separe o que realmente",
+        "pertence à gaveta.",
+        "Dobre de um jeito que permita",
+        "ver as peças.",
+        "Devolva primeiro o que usa",
+        "com frequência.",
+        "Não aperte além do espaço",
+        "disponível.",
+        "Termine uma gaveta antes de",
+        "abrir outra.",
+        "Salve para organizar sem",
+        "bagunçar tudo."
+      ],
+      "script_sha256": "6a2c77d533eb4950791886f11b56842f4fdce39e4671cd97c56652e7e57ca066",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
