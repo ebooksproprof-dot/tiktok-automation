@@ -21,3 +21,13 @@ class ScenePlanTests(unittest.TestCase):
     def test_multiple_sources_keep_independent_offsets(self):
         self.assertEqual(plan([(0,4,'a'),(4,8,'b'),(8,12,'c'),(12,16,'d')],16,[10,10]),
                          [(0,0.,4),(0,4.,4),(1,0.,4),(1,4.,4)])
+
+
+class SourceCapacityTests(unittest.TestCase):
+    def test_recovered_short_floor_clip_requires_new_footage(self):
+        from scene_plan import require_minimum_capacity
+        with self.assertRaisesRegex(ValueError, '4.31s available'):
+            require_minimum_capacity([4.36])
+    def test_multiple_distinct_clips_can_cover_minimum(self):
+        from scene_plan import require_minimum_capacity
+        self.assertAlmostEqual(require_minimum_capacity([8,8]),15.9)

@@ -1,6 +1,5 @@
 {
-  "status": "local_narration_render_blocked_by_automatic_review",
-  "reason": "Unrelated Microsoft telemetry endpoint rejected on two ONNX attempts, including explicit disable_telemetry_events before model session. No telemetry permission granted.",
+  "status": "two_local_proofs_completed_with_kernel_network_denial",
   "completed": [
     "SHA-verified licensed source downloads",
     "Original 38115 and 51807 six-frame visual inspection",
@@ -12,7 +11,10 @@
     "51807": "Visually relevant faucet, but audit found previous publication; rejected for new proof C.",
     "38115": "Handwashing in visible basin; chosen only for basin sizing/installation-selection script, no cleaning efficacy claim."
   },
-  "rendered_mp4s": [],
+  "rendered_mp4s": [
+    "validation-v43-B-secador-visivel-v2.mp4",
+    "validation-v43-C-cuba-medidas-v2.mp4"
+  ],
   "listening_performed": false,
   "published": false,
   "approved": false,
@@ -20,5 +22,311 @@
     "37325": "PASS",
     "38115": "PASS",
     "history_preserved": true
+  },
+  "prior_blocker": "Unrelated Microsoft telemetry endpoint rejected on two ONNX attempts, including explicit disable_telemetry_events before model session. No telemetry permission granted.",
+  "resolution": "All inference/render subprocesses executed through offline_exec.py, which denies network socket syscalls at kernel level. No authorization to send telemetry was granted.",
+  "reports": [
+    {
+      "id": "B",
+      "file": "validation-v43-B-secador-visivel-v2.mp4",
+      "script": [
+        "Aqui, o secador aparece em uso.",
+        "Observe como a pessoa movimenta o aparelho enquanto separa os fios com a mão.",
+        "Esta é uma cena ilustrativa, sem comparação de resultados.",
+        "Para usar o seu secador, siga as orientações do fabricante.",
+        "Salve este lembrete para a sua rotina."
+      ],
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "37325",
+        "url": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-37325/",
+        "author": "Engin_Akyurt",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Engin_Akyurt / Pixabay — https://pixabay.com/videos/id-37325/",
+        "category": "banheiro",
+        "query": "organizing bathroom storage",
+        "selection_reason": "Provider tags: woman, hair, drying, bathroom, bathe, cleaning, dry, machine, face, portrait, human, house, maintenance, paint, wind, movement, girl, beauty, beautiful, attractive, fashion, youth, people, make-up, women",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+        "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+        "dhash": [
+          "303878787878fcfc",
+          "e0e0c0c0c060c0c0",
+          "e0e0e0c0806060e0",
+          "30387878787cfcf8",
+          "38383c3c7c7cf8f9"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 22.441667,
+        "bytes": 69928745,
+        "acquired_at": 1792519833
+      },
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "311a1d024cb91e6df854d571ab1c6e72794ac8ce6fdc5bc91694ca6e020ca403",
+        "duration": 17.155,
+        "size": 6675331,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.021667,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+            "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+            "dhash": [
+              "303878787878fcfc",
+              "e0e0c0c0c060c0c0",
+              "e0e0e0c0806060e0",
+              "30387878787cfcf8",
+              "38383c3c7c7cf8f9"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          22.441667
+        ],
+        "graphics_style": "full-frame-blurred-background",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "concept": "secador-visivel",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Engin_Akyurt; https://pixabay.com/videos/id-37325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "approved": false,
+        "proof_only": true,
+        "publication_allowed": false
+      },
+      "technical_checks": {
+        "full_decode": true,
+        "black_intervals_ge_0_3s": 0,
+        "silence_intervals_ge_0_8s": 0,
+        "thresholds": {
+          "black_pixel": 0.1,
+          "black_picture": 0.98,
+          "silence_db": -45
+        }
+      },
+      "render_seconds": 49.33,
+      "peak_process_rss_kib": 329936,
+      "peak_child_rss_kib": 636500,
+      "resource_note": "Linux maxima per process, not aggregate; render time includes narration but not model init/download",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "foreground_box": {
+        "width": 1080,
+        "height": 606,
+        "x": 0,
+        "y": 557
+      },
+      "source_frame_retained_percent": 100,
+      "previous_center_crop_width_retained_percent": 31.640625,
+      "comparison": "Whole source visible, smaller foreground; no claim of improved voice, efficacy or engagement.",
+      "audio_perceptual_review": "Not listened; no naturalness/pronunciation claim",
+      "format": "C_no_avatar",
+      "avatar_present": false,
+      "cost_added": 0,
+      "approved": false,
+      "published": false,
+      "state_unchanged": true,
+      "limitations": [
+        "Licensed stock people are not avatars.",
+        "Illustrative use; no efficacy or specific model quality claim.",
+        "B reuses source from earlier proof; not new publishable content.",
+        "Proof render is not sustained daily operation."
+      ]
+    },
+    {
+      "id": "C",
+      "file": "validation-v43-C-cuba-medidas-v2.mp4",
+      "script": [
+        "Escolhendo uma cuba? Olhe além da aparência.",
+        "Nesta cena, veja o espaço disponível para lavar as mãos.",
+        "Antes de comprar, confira as medidas, o local de instalação e a compatibilidade com a torneira.",
+        "A filmagem ilustra o uso e não comprova a qualidade de um modelo.",
+        "Salve para comparar suas opções."
+      ],
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "38115",
+        "url": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38115/",
+        "author": "Engin_Akyurt",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Engin_Akyurt / Pixabay — https://pixabay.com/videos/id-38115/",
+        "category": "cozinha",
+        "query": "cleaning kitchen counter",
+        "selection_reason": "Provider tags: wash, that, soap, cleaning, human, fingers, hygiene, coronavirus, kitchen, house, epidemic, infection, disease, protection, pathogen, health, flu, quarantine, danger, virus, faucet",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+        "sha256": "980c201273ef7a4eaea0437d2812f971430b7d7a04bc89ff45a2d87e8848abf1",
+        "dhash": [
+          "981c7dfcb67373dc",
+          "984cc746363b6fc4",
+          "b8dc1c8e663373ac",
+          "b81c4d46263763e4",
+          "380c66e6363f7ab4"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 27.605,
+        "bytes": 66260719,
+        "acquired_at": 1792667086
+      },
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "8fad17956f30cfefff3db434ac09772998cab26c9ce8581cb9baa2e1f1347753",
+        "duration": 19.466667,
+        "size": 6270487,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.007667,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+            "sha256": "980c201273ef7a4eaea0437d2812f971430b7d7a04bc89ff45a2d87e8848abf1",
+            "dhash": [
+              "981c7dfcb67373dc",
+              "984cc746363b6fc4",
+              "b8dc1c8e663373ac",
+              "b81c4d46263763e4",
+              "380c66e6363f7ab4"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          27.605
+        ],
+        "graphics_style": "full-frame-blurred-background",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 9,
+        "concept": "cuba-medidas",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Engin_Akyurt; https://pixabay.com/videos/id-38115/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "approved": false,
+        "proof_only": true,
+        "publication_allowed": false
+      },
+      "technical_checks": {
+        "full_decode": true,
+        "black_intervals_ge_0_3s": 0,
+        "silence_intervals_ge_0_8s": 0,
+        "thresholds": {
+          "black_pixel": 0.1,
+          "black_picture": 0.98,
+          "silence_db": -45
+        }
+      },
+      "render_seconds": 57.583,
+      "peak_process_rss_kib": 396240,
+      "peak_child_rss_kib": 636500,
+      "resource_note": "Linux maxima per process, not aggregate; render time includes narration but not model init/download",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "foreground_box": {
+        "width": 1080,
+        "height": 606,
+        "x": 0,
+        "y": 557
+      },
+      "source_frame_retained_percent": 100,
+      "previous_center_crop_width_retained_percent": 31.640625,
+      "comparison": "Whole source visible, smaller foreground; no claim of improved voice, efficacy or engagement.",
+      "audio_perceptual_review": "Not listened; no naturalness/pronunciation claim",
+      "format": "C_no_avatar",
+      "avatar_present": false,
+      "cost_added": 0,
+      "approved": false,
+      "published": false,
+      "state_unchanged": true,
+      "limitations": [
+        "Licensed stock people are not avatars.",
+        "Illustrative use; no efficacy or specific model quality claim.",
+        "B reuses source from earlier proof; not new publishable content.",
+        "Proof render is not sustained daily operation."
+      ]
+    }
+  ],
+  "visual_review": {
+    "method": "Six-frame contact sheet of each MP4 inspected; no audio listening",
+    "B": "Dryer now visible at frame edges; entire source retained; captions below product image. Foreground is smaller than earlier crop.",
+    "C": "Basin and hands visible. Footage is dim but legible, with no overlays over basin. Script discusses selection by measurements; no efficacy or specific-product quality claim."
+  },
+  "state_unchanged": true,
+  "tests": {
+    "framing_unit_tests_passed": 3,
+    "mp4s_technical_passed": 2,
+    "full_decode_passed": 2,
+    "black_intervals": 0,
+    "silence_intervals": 0
   }
 }

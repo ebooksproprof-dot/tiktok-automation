@@ -115,7 +115,6 @@ def render(idea, voice, post_id):
     concept, keys, lines = idea
     folder = ASSETS / post_id
     folder.mkdir(exist_ok=True)
-    duration, timings = narration(voice, lines, folder)
     clips = [get_clip(k) for k in keys]
     previous = visual_library.history(json.loads(QUEUE.read_text()),
         json.loads((ROOT/'automation/state.json').read_text()), post_id)
@@ -128,6 +127,9 @@ def render(idea, voice, post_id):
     from scene_plan import plan
     source_durations = [float(subprocess.check_output(['ffprobe', '-v', 'error',
         '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(p)], text=True, timeout=30)) for p in clips]
+    from scene_plan import require_minimum_capacity
+    require_minimum_capacity(source_durations)
+    duration, timings = narration(voice, lines, folder)
     shots = plan(timings, duration, source_durations)
     from composition_style import BASE_CROP, shot_filter, overlay
     source_shapes = []
@@ -136,14 +138,25 @@ def render(idea, voice, post_id):
             '-show_entries', 'stream=width,height', '-of', 'json', str(path)], text=True, timeout=30))
         source_shapes.append((meta['streams'][0]['width'], meta['streams'][0]['height']))
     crop_shifts = []
+    frame_modes = []
     for i, (source_index, offset, length) in enumerate(shots):
         source = clips[source_index]
         segment = folder/f'shot-{i}.mp4'
         # Moving footage only; no still zoom, no fabricated before/after.
-        frame_filter, shift = shot_filter(*source_shapes[source_index], i) if DYNAMIC_STYLE else (BASE_CROP, 0)
+        mode = PROVENANCE.get(keys[source_index], {}).get('frame_mode', 'legacy')
+        if mode == 'preserve_full':
+            from framing import product_frame_filter
+            frame_filter, shift = product_frame_filter(*source_shapes[source_index]), 0
+            filter_arg = '-filter_complex'
+        elif mode == 'legacy':
+            frame_filter, shift = shot_filter(*source_shapes[source_index], i) if DYNAMIC_STYLE else (BASE_CROP, 0)
+            filter_arg = '-vf'
+        else:
+            raise ValueError('Unknown reviewed framing policy')
+        frame_modes.append(mode)
         crop_shifts.append(shift)
         run(['ffmpeg','-v','error','-y','-ss',str(offset),
-             '-i',str(source),'-t',str(length),'-an','-vf',
+             '-i',str(source),'-t',str(length),'-an',filter_arg,
              frame_filter,
              '-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',str(segment)])
         segments.append(segment)
@@ -166,7 +179,9 @@ def render(idea, voice, post_id):
     quality.update(visual_quality)
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
     quality.update(graphics_style='casasem-v4' if DYNAMIC_STYLE else 'classic-v6',
-                   crop_shifts_pixels=crop_shifts, rendered_shots=len(shots))
+                   crop_shifts_pixels=crop_shifts, rendered_shots=len(shots), frame_modes=frame_modes)
+    if 'preserve_full' in frame_modes:
+        quality['graphics_style'] = 'casasem-v43-preserve-full'
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=voice.name,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
     reviewed_sources = [PROVENANCE[k] for k in keys if k in PROVENANCE]

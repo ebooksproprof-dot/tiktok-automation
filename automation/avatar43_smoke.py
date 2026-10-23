@@ -21,6 +21,36 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'avatar43-output'
 
 
+def validate_mp4(path):
+    """Decode both complete streams and validate the requested proof geometry/time."""
+    import av
+    with av.open(str(path)) as container:
+        videos, audios = list(container.streams.video), list(container.streams.audio)
+        if len(videos) != 1 or len(audios) != 1:
+            raise ValueError('Proof must contain exactly one video and one audio stream')
+        video, audio = videos[0], audios[0]
+        if (video.width, video.height) != (256, 256):
+            raise ValueError('Unexpected proof resolution')
+        durations = {}
+        for stream in (video, audio):
+            if stream.duration is None or stream.time_base is None:
+                raise ValueError('Missing stream duration')
+            duration = float(stream.duration * stream.time_base)
+            if abs(duration - 3.0) > 0.3:
+                raise ValueError(f'{stream.type} duration outside 3s ±0.3s: {duration}')
+            durations[stream.type] = duration
+        counts = {'video': 0, 'audio': 0}
+        for packet in container.demux(video, audio):
+            for frame in packet.decode():
+                counts[packet.stream.type] += 1
+                if packet.stream.type == 'video' and (frame.width, frame.height) != (256, 256):
+                    raise ValueError('Decoded frame resolution changed')
+        if not counts['video'] or not counts['audio']:
+            raise ValueError('Empty or undecodable stream')
+        return dict(resolution=[256, 256], stream_durations=durations,
+                    decoded_frames=counts, full_decode_passed=True)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     started = time.monotonic()
@@ -50,8 +80,21 @@ def main():
     try:
         import torch
         import yaml
+        import imageio_ffmpeg
         from huggingface_hub import HfApi, snapshot_download
         torch.set_num_threads(2)
+        # Wheel includes FFmpeg; avoid apt repository downloads entirely.
+        bin_dir = OUT / 'bin'
+        bin_dir.mkdir(exist_ok=True)
+        ffmpeg = Path(imageio_ffmpeg.get_ffmpeg_exe()).resolve()
+        link = bin_dir / 'ffmpeg'
+        if link.is_symlink() or link.exists():
+            link.unlink()
+        link.symlink_to(ffmpeg)
+        os.environ['PATH'] = str(bin_dir) + os.pathsep + os.environ.get('PATH', '')
+        os.environ['IMAGEIO_FFMPEG_EXE'] = str(ffmpeg)
+        os.environ['FFMPEG_PATH'] = str(bin_dir)
+        report['ffmpeg_source'] = 'imageio-ffmpeg wheel'
         report['torch_version'] = torch.__version__
         report['cuda_available'] = torch.cuda.is_available()
         stage('fetch_pinned_source')
@@ -138,7 +181,8 @@ def main():
             raise RuntimeError('Inference returned without an audio/video artifact')
         target = OUT / 'avatar43-diagnostic.mp4'
         shutil.copy2(videos[-1], target)
-        run(['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(target)])
+        stage('validate_decoded_output')
+        report['technical_validation'] = validate_mp4(target)
         report['avatar_video_produced'] = True
         report['inference_executed'] = True
         report['video_sha256'] = hashlib.sha256(target.read_bytes()).hexdigest()

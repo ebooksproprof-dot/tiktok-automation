@@ -41,3 +41,12 @@ def plan(timings, duration, source_durations):
             offsets[source] += length
             remaining -= length
     return shots
+
+
+def require_minimum_capacity(durations, minimum=15.0):
+    if not durations or any(not math.isfinite(d) or d <= .05 for d in durations):
+        raise ValueError('INVALID_SCENE_DURATION')
+    capacity = sum(d-.05 for d in durations)
+    if capacity < minimum:
+        raise ValueError(f'SOURCE_TOO_SHORT_WITHOUT_REPEATING: {capacity:.2f}s available; at least {minimum:.2f}s required before narration')
+    return capacity

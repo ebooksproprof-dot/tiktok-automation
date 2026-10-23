@@ -26,8 +26,6 @@ jobs:
         timeout-minutes: 4
         run: |
           set -eu
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg
           python -m pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu
           python -m pip install numpy==1.26.4 diffusers==0.24.0 huggingface-hub==0.25.2 transformers==4.38.2 accelerate==0.27.2 omegaconf==2.3.0 einops==0.4.1 moviepy==1.0.3 facenet-pytorch==2.5.0 opencv-python-headless==4.10.0.84 av==12.3.0 imageio-ffmpeg soundfile scipy tqdm ffmpeg-python librosa tiktoken numba
       - name: Attempt three second CPU inference

@@ -37,12 +37,22 @@ garante que a RAM de inferência bastará; OOM/timeout são resultados possívei
 O artifact coleta somente JSON, logs e MP4, mesmo em falha. Fonte e pesos não
 são enviados ao artifact. Falha na instalação deixa relatório inicial explícito.
 O nome de uma etapa ou execução do processo não comprova inferência concluída:
-`avatar_video_produced` só muda após existir MP4 com áudio e ffprobe bem-sucedido.
+`avatar_video_produced` só muda após validação PyAV: exatamente um stream de
+vídeo e um de áudio, ambos com duração 3 s ±0,3 s, dimensões 256×256 e decodificação
+integral de ambos com quadros não vazios. Não depende de ffprobe.
 O MP4, se existir, ainda exige revisão de boca, identidade e qualidade.
 
 Validação local: compilação Python e parsing YAML aprovados. Resultado cloud
 deve ser registrado pelo executor após o push; esta nota não afirma que o
 avatar foi gerado. Nenhum teste da produção foi substituído por este experimento.
+
+## Segunda tentativa após falha de infraestrutura
+
+A execução 40012677208 esgotou o limite de instalação durante apt/FFmpeg,
+antes do pip. A segunda tentativa remove completamente apt: usa FFmpeg do wheel
+imageio-ffmpeg, exposto por symlink local no PATH. Mantém o limite total de dez
+minutos e instalação pip de quatro minutos. Essa alteração resolve o caminho
+de dependência observado; ainda não comprova inferência ou qualidade de avatar.
 
 Fontes oficiais:
 - https://github.com/antgroup/echomimic/blob/main/LICENSE

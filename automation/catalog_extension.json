@@ -152,6 +152,50 @@
           "context": "Pessoa lê à mesa diante de uma estante; ilustra um espaço de leitura, sem alegar demonstração das etapas."
         }
       ]
+    },
+    {
+      "id": "secador-visivel",
+      "category": "rotina",
+      "reviewed": true,
+      "reviewed_at": "2026-10-23T19:41:52.944800+00:00",
+      "hook": "Aqui, o secador aparece em uso.",
+      "steps": "Observe como a pessoa movimenta o aparelho enquanto separa os fios com a mão. Esta é uma cena ilustrativa, sem comparação de resultados. Para usar o seu secador, siga as orientações do fabricante.",
+      "cta": "Salve este lembrete para a sua rotina.",
+      "media": [
+        {
+          "id": "pixabay-37325-full",
+          "url": "https://cdn.pixabay.com/video/2020/04/27/37325-413555862_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-37325/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "Engin_Akyurt",
+          "sha256": "e950fee50c424d561eb60822664631d069884830253cc781d32a8a90408d291f",
+          "context": "Pessoa adulta usa um secador e movimenta o cabelo. Quadro integral mantém aparelho lateral visível. Não mostra armazenamento, comparação de resultado ou avatar.",
+          "frame_mode": "preserve_full",
+          "provider": "pixabay"
+        }
+      ]
+    },
+    {
+      "id": "cuba-medidas",
+      "category": "preparacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-23T19:41:52.944816+00:00",
+      "hook": "Sua próxima cuba cabe na pia?",
+      "steps": "Nesta cena, veja o espaço disponível para lavar as mãos. Antes de comprar, confira as medidas, o local de instalação e a compatibilidade com a torneira. A filmagem ilustra o uso e não comprova a qualidade de um modelo.",
+      "cta": "Salve para comparar suas opções.",
+      "media": [
+        {
+          "id": "pixabay-38115-full",
+          "url": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-38115/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "Engin_Akyurt",
+          "sha256": "980c201273ef7a4eaea0437d2812f971430b7d7a04bc89ff45a2d87e8848abf1",
+          "context": "Mãos sob torneira sobre cuba de pia, em cena escura. Ilustra espaço e uso da cuba; não demonstra limpeza de bancada nem eficácia de produto.",
+          "frame_mode": "preserve_full",
+          "provider": "pixabay"
+        }
+      ]
     }
   ]
 }
