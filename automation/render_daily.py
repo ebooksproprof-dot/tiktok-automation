@@ -222,6 +222,14 @@ def future_slot(planned, queue, state, post_id, now=None):
     raise RuntimeError('SCHEDULE_BACKLOG: no free slot within 31 days')
 
 
+def planned_reserve_slots(today, horizon):
+    """Bound future production without changing existing posts or consent."""
+    if type(horizon) is not int or not 1 <= horizon <= 7:
+        raise ValueError('EDITORIAL_RESERVE_DAYS must be between 1 and 7')
+    return [(today + dt.timedelta(days=offset), slot, hour)
+            for offset in range(horizon) for slot, hour in enumerate((10, 18), 1)]
+
+
 def main():
     ASSETS.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
     today=dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
@@ -232,8 +240,12 @@ def main():
     available = [idea for idea in available if visual_library.preflight(
         [SOURCE[k] for k in idea[1]], previous)]
     count=0; voice=None
-    for slot,hour in enumerate([10,18],1):
-        post_id=f'casasem-{today}-{slot}'
+    horizon = int(os.getenv('EDITORIAL_RESERVE_DAYS', '1'))
+    plans = planned_reserve_slots(today, horizon)
+    for production_day, slot, hour in plans:
+        if count >= 2:
+            break  # Per-run CPU/API/storage budget unchanged.
+        post_id=f'casasem-{production_day}-{slot}'
         old=next((p for p in queue['posts'] if p['id']==post_id),None)
         if post_id in state.get('posts',{}) or (old and (
             old.get('approved')
@@ -273,7 +285,7 @@ def main():
                 if len(failures)>=2: raise RuntimeError('Render failed after two compositions: '+'; '.join(failures)) from None
         if not rendered:
             raise RuntimeError("Render failed; no validated output: " + "; ".join(failures))
-        scheduled=dt.datetime.combine(today,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
+        scheduled=dt.datetime.combine(production_day,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
         original_scheduled = scheduled
         scheduled = future_slot(scheduled, queue, state, post_id)
         video_url = f'https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/{output.name}'

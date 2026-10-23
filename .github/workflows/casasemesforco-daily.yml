@@ -64,6 +64,7 @@ jobs:
         run: python automation/release_media.py
       - name: Render narrated MP4 with technical validation
         env:
+          EDITORIAL_RESERVE_DAYS: "3" # At most two renders/run; never approves future slots.
           NARRATION_ENGINE: kokoro-female
           MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
