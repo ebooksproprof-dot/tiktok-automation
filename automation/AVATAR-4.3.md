@@ -78,3 +78,7 @@ Fontes oficiais:
 - https://huggingface.co/lambdalabs/sd-image-variations-diffusers/blob/main/README.md
 - https://github.com/openai/whisper/blob/main/LICENSE
 - https://github.com/timesler/facenet-pytorch/blob/master/LICENSE.md
+
+## Resultado da última tentativa limitada
+
+Run40014366737, job120622513799, artifact12528276303: dependências instaladas, pesos baixados, carregamentoCPU corrigido. Entrypoint falhou em pipeline_echo_mimic.py380 → ReferenceAttentionControl → mutual_self_attention.py83 .to(device): `AssertionError: Torch not compiled with CUDA enabled`. Tempo73,726s, picoRSSfilho14.104.688KiB; semMP4. Não ocorreu timeout nem OOM comprovado. Código interno ainda exige portCPU; desempenho e naturalidade permanecem não validados. Relatório permanente avatar-4.3-attempt3.json. Não integrar este experimento na produção nem tratar essa falha como impossibilidade universal de todos os motoresCPU. Nenhuma licença adicional aceita, GPU paga ou nova publicação.

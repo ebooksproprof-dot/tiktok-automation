@@ -1,3 +1,17 @@
+# CasaSemEsforço 4.3 — checkpoint 23/10/2026
+
+Estado **PARCIAL**. Evidências completas em automation/CHECKPOINT-4.3.md e automation/AUDIT-4.3.md.
+
+- Dois MP4s novos persistidos em Release validation-v43-2026-10-23: correção C3/secador e cuba/medidas. Baselines 4.1 preservados.
+- Kokoro/FFmpeg preservados; quadro integral integrado por fonte, alinhamento AV validado, catálogo +2 e capacidade de cenas verificada antes da voz. EffectCraft comparado, não integrado.
+- 230 testes locais e 230 cloud aprovados. Diário40013644972 gerou slot23/10 18h, ainda sem aprovação/consentimento/rota. Nenhum vídeo de teste publicado.
+- Última publicação registrada:22/10 10h;12 históricas verificadas. Cobertura2/dia não comprovada. Aprovação em lote continua obrigatória.
+- AvatarEchoMimic CPU ainda semMP4: segunda tentativa falhou carregando tensorCUDA; correção map_location salva em d662b26 e última tentativa40014366737 falhou porCUDA interno em ReferenceAttentionControl. NenhumMP4; portCPU profundo e qualidade continuam pendentes.
+- Aquisição40014366564 não encontrou novas cenas elegíveis. Não zerar histórico/cotas nem aprovar automaticamente para contornar essa limitação.
+- Custo adicional contratado R$0. Sem avaliação auditiva conclusiva de superioridade da voz.
+
+---
+
 # CasaSemEsforço 4.1 — checkpoint 22/10/2026
 
 Estado: **PARCIAL**. Continuação de b0ebf68, sem reiniciar 4.0.
