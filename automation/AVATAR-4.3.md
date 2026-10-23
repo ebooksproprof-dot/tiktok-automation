@@ -54,6 +54,23 @@ imageio-ffmpeg, exposto por symlink local no PATH. Mantém o limite total de dez
 minutos e instalação pip de quatro minutos. Essa alteração resolve o caminho
 de dependência observado; ainda não comprova inferência ou qualidade de avatar.
 
+## Resultado medido da segunda tentativa e correção final
+
+A segunda tentativa baixou 12.333.255.753 bytes de pesos planejados e iniciou
+o entrypoint. Falhou ao carregar `face_locator.pth`: torch.load tentou restaurar
+armazenamento CUDA no PyTorch CPU. Não houve MP4, e execução completa de inferência
+permanece não comprovada. Tempo total do experimento: 71,271 s; pico RSS do processo
+filho: 14.108.044 KiB (cerca de 14,45 GB decimais), próximo da RAM do runner.
+Esse pico não é consumo de uma renderização concluída.
+
+A tentativa final usa transformação AST com inventário exato dos três torch.load
+do entrypoint pinado. Reference UNet e denoising UNet já têm map_location CPU;
+FaceLocator recebe o argumento ausente. Qualquer mudança no inventário impede o
+patch. O log cloud agora recebe estágio, classe de erro, tempo e código de saída
+sem despejar URLs ou saída arbitrária. Os limites permanecem iguais. OOM, novas
+dependências CUDA ou timeout ainda podem impedir o resultado; não há promessa
+de avatar antes do MP4 e da revisão visual.
+
 Fontes oficiais:
 - https://github.com/antgroup/echomimic/blob/main/LICENSE
 - https://huggingface.co/BadToBest/EchoMimic/blob/main/LICENSE

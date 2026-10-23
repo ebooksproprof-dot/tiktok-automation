@@ -4,6 +4,7 @@ Outputs are technical proofs only, not commercial-quality or approved content.
 No credentials, gated models, paid APIs, queue writes, or publication.
 """
 import hashlib
+import ast
 import fnmatch
 import json
 import os
@@ -19,6 +20,26 @@ CODE_REV = 'c32b3a557003f84ead1483a2d2386035685d984d'
 WEIGHTS_REV = '987c98d1d00a5fd062c5f087719af663fa90bc53'
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'avatar43-output'
+
+
+def patch_checkpoint_loading_cpu(source):
+    """Patch only the three inspected torch.load calls in the pinned entrypoint."""
+    tree = ast.parse(source)
+    calls = [n for n in ast.walk(tree) if isinstance(n, ast.Call)
+             and isinstance(n.func, ast.Attribute) and n.func.attr == 'load'
+             and isinstance(n.func.value, ast.Name) and n.func.value.id == 'torch']
+    expected = {'config.reference_unet_path', 'config.denoising_unet_path',
+                'config.face_locator_path'}
+    if len(calls) != 3 or {ast.unparse(n.args[0]) for n in calls} != expected:
+        raise ValueError('Pinned entrypoint checkpoint call inventory changed')
+    for call in calls:
+        locations = [k for k in call.keywords if k.arg == 'map_location']
+        if locations:
+            if len(locations) != 1 or not isinstance(locations[0].value, ast.Constant) or locations[0].value.value != 'cpu':
+                raise ValueError('Unexpected checkpoint map_location')
+        else:
+            call.keywords.append(ast.keyword(arg='map_location', value=ast.Constant('cpu')))
+    return ast.unparse(ast.fix_missing_locations(tree)) + '\n'
 
 
 def validate_mp4(path):
@@ -139,9 +160,10 @@ def main():
         source = entry.read_text()
         report['original_entry_sha256'] = hashlib.sha256(source.encode()).hexdigest()
         source = source.replace('"cuda"', '"cpu"').replace("'cuda'", "'cpu'")
+        source = patch_checkpoint_loading_cpu(source)
         entry.write_text(source)
         report['modified_entry_sha256'] = hashlib.sha256(source.encode()).hexdigest()
-        report['port_scope'] = 'entrypoint literal cuda→cpu, fp32 config; deeper CPU compatibility unproven'
+        report['port_scope'] = 'entrypoint cuda→cpu; exact three torch.load calls map_location=cpu; fp32 config; deeper CPU compatibility unproven'
         shutil.copy2(ROOT / 'automation/avatar/presenter-v1.jpg', code / 'presenter.jpg')
         baseline = code / 'baseline-kokoro.mp4'
         baseline_url = ('https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/'
@@ -193,6 +215,18 @@ def main():
         report['error_type'] = type(exc).__name__
         report['error'] = str(exc)
         save()
+        # Emit only controlled metadata, not arbitrary subprocess output or URLs.
+        failure = dict(stage=report['stage'], error_type=type(exc).__name__,
+                       elapsed_seconds=report['elapsed_seconds'],
+                       avatar_video_produced=False)
+        if isinstance(exc, subprocess.CalledProcessError):
+            failure['error'] = 'Experiment subprocess failed; inspect execution.log artifact'
+            failure['returncode'] = exc.returncode
+        elif isinstance(exc, subprocess.TimeoutExpired):
+            failure['error'] = 'Experiment subprocess exceeded time budget'
+        else:
+            failure['error'] = 'Experiment failed; inspect report.json artifact'
+        print(json.dumps(failure), flush=True)
         return 1
     finally:
         save()
