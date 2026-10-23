@@ -1230,6 +1230,109 @@
       "composition_revision": 6,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
       "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-24-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
+      "title": "Vai levar outro livro para casa? Antes de trazer outro livro para casa, confira o que você já tem. Leia a sinopse e algumas páginas para ver se o tema interessa. Pense onde vai guardar o exemplar. Se estiver em dúvida, anote título e autor para decidir depois. Salve para sua próxima leitura. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-10-24T21:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "1ae57a0d43945dc05f505e09bfcdd8e5da10380765b57770db1b3156698001d3",
+        "duration": 19.533333,
+        "size": 1873105,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.032333,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
+            "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
+            "dhash": [
+              "57a525a7e364ed87",
+              "57a525a7e364ed87",
+              "57a5a5a7e364ec87",
+              "57a527b7e764ed87",
+              "57ad27b7e664ed87"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          30.63
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 9,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "livros-escolha-consciente",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ]
+      },
+      "concept": "livros-escolha-consciente",
+      "category": "organizacao",
+      "script_lines": [
+        "Vai levar outro livro para casa?",
+        "Antes de trazer outro livro",
+        "para casa, confira o que você",
+        "já tem.",
+        "Leia a sinopse e algumas",
+        "páginas para ver se o tema",
+        "interessa.",
+        "Pense onde vai guardar o",
+        "exemplar.",
+        "Se estiver em dúvida, anote",
+        "título e autor para decidir",
+        "depois.",
+        "Salve para sua próxima",
+        "leitura."
+      ],
+      "script_sha256": "e0ed55fdab32caeb876519b38ff104477757d8b455cd6342674d0467e5849630",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
