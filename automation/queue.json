@@ -1127,6 +1127,109 @@
       "composition_revision": 6,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
       "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-24-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4",
+      "title": "Sua próxima cuba cabe na pia? Nesta cena, veja o espaço disponível para lavar as mãos. Antes de comprar, confira as medidas, o local de instalação e a compatibilidade com a torneira. A filmagem ilustra o uso e não comprova a qualidade de um modelo. Salve para comparar suas opções. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Engin_Akyurt; https://pixabay.com/videos/id-38115/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-10-24T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
+        "duration": 18.6,
+        "size": 5980733,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.015,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4",
+            "sha256": "980c201273ef7a4eaea0437d2812f971430b7d7a04bc89ff45a2d87e8848abf1",
+            "dhash": [
+              "981c7dfcb67373dc",
+              "984cc746363b6fc4",
+              "b8dc1c8e663373ac",
+              "b81c4d46263763e4",
+              "380c66e6363f7ab4"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          27.605
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 9,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "cuba-medidas",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/05/04/38115-415315962_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Engin_Akyurt; https://pixabay.com/videos/id-38115/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ]
+      },
+      "concept": "cuba-medidas",
+      "category": "preparacao",
+      "script_lines": [
+        "Sua próxima cuba cabe na pia?",
+        "Nesta cena, veja o espaço",
+        "disponível para lavar as",
+        "mãos.",
+        "Antes de comprar, confira as",
+        "medidas, o local de",
+        "instalação e a",
+        "compatibilidade com a",
+        "torneira.",
+        "A filmagem ilustra o uso e",
+        "não comprova a qualidade de",
+        "um modelo.",
+        "Salve para comparar suas",
+        "opções."
+      ],
+      "script_sha256": "746877dbbee892ea1bff5db54ee23a8d3fa3da98e33db1e15b713625e045081d",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
