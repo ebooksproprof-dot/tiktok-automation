@@ -42,6 +42,31 @@ def patch_checkpoint_loading_cpu(source):
     return ast.unparse(ast.fix_missing_locations(tree)) + '\n'
 
 
+def patch_reference_attention_device(source):
+    """Resolve internal allocations from UNet parameters, preserving explicit devices."""
+    tree = ast.parse(source)
+    classes = [n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == 'ReferenceAttentionControl']
+    if len(classes) != 1:
+        raise ValueError('ReferenceAttentionControl class inventory changed')
+    methods = {n.name: n for n in classes[0].body if isinstance(n, ast.FunctionDef)}
+    expected = {'register_reference_hooks': {'device': 'torch.device(\'cuda\')', 'dtype': 'torch.float16'},
+                'update': {'dtype': 'torch.float16'}}
+    for name, params in expected.items():
+        method = methods.get(name)
+        if method is None:
+            raise ValueError('Reference attention method missing')
+        defaults = dict(zip([a.arg for a in method.args.args][-len(method.args.defaults):], method.args.defaults))
+        guards = []
+        for param, original in params.items():
+            if param not in defaults or ast.unparse(defaults[param]) != original:
+                raise ValueError('Reference attention default changed: ' + name + '.' + param)
+            index = method.args.defaults.index(defaults[param])
+            method.args.defaults[index] = ast.Constant(None)
+            guards.extend(ast.parse(f'if {param} is None:\n    {param} = next(self.unet.parameters()).{param}').body)
+        method.body[0:0] = guards
+    return ast.unparse(ast.fix_missing_locations(tree)) + '\n'
+
+
 def validate_mp4(path):
     """Decode both complete streams and validate the requested proof geometry/time."""
     import av
@@ -163,7 +188,13 @@ def main():
         source = patch_checkpoint_loading_cpu(source)
         entry.write_text(source)
         report['modified_entry_sha256'] = hashlib.sha256(source.encode()).hexdigest()
-        report['port_scope'] = 'entrypoint cuda→cpu; exact three torch.load calls map_location=cpu; fp32 config; deeper CPU compatibility unproven'
+        attention = code / 'src/models/mutual_self_attention.py'
+        original_attention = attention.read_text()
+        report['original_attention_sha256'] = hashlib.sha256(original_attention.encode()).hexdigest()
+        patched_attention = patch_reference_attention_device(original_attention)
+        attention.write_text(patched_attention)
+        report['modified_attention_sha256'] = hashlib.sha256(patched_attention.encode()).hexdigest()
+        report['port_scope'] = 'entrypoint CPU; checkpoint CPU loading; internal reference attention device/dtype from UNet; fp32; remaining graph unproven'
         shutil.copy2(ROOT / 'automation/avatar/presenter-v1.jpg', code / 'presenter.jpg')
         baseline = code / 'baseline-kokoro.mp4'
         baseline_url = ('https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/'
