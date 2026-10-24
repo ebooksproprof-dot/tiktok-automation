@@ -343,15 +343,113 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-vassoura-liberar-percurso",
+      "topic": "vassoura-liberar-percurso",
+      "family": "piso",
+      "hook": "Você para de varrer para tirar objetos do caminho?",
+      "steps": "Antes de começar, recolha os objetos soltos do piso. Escolha uma área pequena e mantenha uma passagem livre. Use o utensílio indicado para o acabamento e recolha os resíduos ao terminar. Guarde a vassoura em um lugar onde não atrapalhe a circulação.",
+      "cta": "Prepare o espaço antes de varrer.",
+      "body_sha256": "eb15695ee90fd51e0d4943c2fbc07ca53b564f5863e8162f6f385293d0c39386",
+      "script_sha256": "377915fb23a60fcffd39aaef0ed6dcd960e0fd0b0808b5e80d35597ee960b79f",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "118275",
+        "url": "https://cdn.pixabay.com/video/2022/05/27/118275-714645581_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-118275/",
+        "author": "adege",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: adege / Pixabay — https://pixabay.com/videos/id-118275/",
+        "category": "vassoura",
+        "query": "sweeping floor broom",
+        "selection_reason": "Provider tags: broom, rain, rainy day, blossoms",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/05/27/118275-714645581_large.mp4",
+        "sha256": "6be3ab4fb065ba94aca226eeba586ae6d78f2278ce9ab6e68a01f2ef081f6f31",
+        "dhash": [
+          "4c3e5f1f1e1e3f2d",
+          "5c3c5f1f1e9e3b2d",
+          "5c3c5f1f1f9e1b2d",
+          "4c3c5f1f1f9e1b2d",
+          "5c3c1f1f1e9e1b2d"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 29.908333,
+        "bytes": 62435203,
+        "acquired_at": 1792839463
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
+    },
+    {
+      "id": "draft-mesa-papel-destino",
+      "topic": "mesa-papel-destino",
+      "family": "escrivaninha",
+      "hook": "Sua mesa virou uma pilha de papéis?",
+      "steps": "Separe uma pequena pilha para revisar. Confira o que precisa guardar e o que tem uma tarefa pendente. Defina um lugar para cada grupo. Antes de descartar documentos, verifique se você ainda precisa deles e proteja informações pessoais.",
+      "cta": "Escolha uma pilha pequena para começar.",
+      "body_sha256": "8a2f5fa919f5ea3b7d9390742f336f2f93c75d001108cbbc1e57fd5eff626326",
+      "script_sha256": "9d92960f74abf37ed5d4bb68e4a1108188ca734744f938b33edae5e073678052",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "133319",
+        "url": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-133319/",
+        "author": "KIMDAEJEUNG",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: KIMDAEJEUNG / Pixabay — https://pixabay.com/videos/id-133319/",
+        "category": "escrivaninha",
+        "query": "organizing desk stationery",
+        "selection_reason": "Provider tags: coffee, coffee mug, office, desk",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+        "sha256": "29851ab6e02b49e82e04f2500c495f4eb8c34299d672a70f0c5ff5495b8357f3",
+        "dhash": [
+          "471319393b3e353b",
+          "4010183a396c343b",
+          "4010181a382c341b",
+          "4010181a382c341b",
+          "4010181a382c341b"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 21.588333,
+        "bytes": 30490886,
+        "acquired_at": 1792839470
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 1,
+    "created": 2,
     "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 17,
-    "pending_review": 7,
+    "unused_templates": 15,
+    "pending_review": 9,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
