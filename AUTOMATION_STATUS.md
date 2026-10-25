@@ -1,3 +1,15 @@
+# CasaSemEsforço 4.6 — 25/10/2026
+
+Estado PARCIAL. Consulte automation/CHECKPOINT-4.6.md e AUDIT-4.6.md.
+
+- Um novo MP4 real persistido, caneca/mesa,19,4s,Kokoro; segundo bloqueado por fonte curta.
+- Oito MP4s pendentes validados; sete Kokoro e um Piper. Seis propostos para26–28/10 às10h/18h, aguardando consentimento, não agendados.
+- Revisão simples em public/review44.html; zero aprovações/envios nesta etapa;12 publicações históricas.
+-270 testes locais aprovados e auditoria independente. Aquisição real anterior:8 consultas cache,0 downloads novos. Diagnóstico ampliado, limites preservados.
+- Avatar semMP4; custo adicionalR$0; operação diária sustentada não comprovada.
+
+---
+
 # CasaSemEsforço 4.3 — checkpoint 23/10/2026
 
 Estado **PARCIAL**. Evidências completas em automation/CHECKPOINT-4.3.md e automation/AUDIT-4.3.md.

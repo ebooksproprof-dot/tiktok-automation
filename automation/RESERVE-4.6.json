@@ -1,12 +1,12 @@
 {
   "version": "4.6",
-  "checked_at": "2026-10-25T18:43:59.368447+00:00",
+  "checked_at": "2026-10-25T18:47:25.987377+00:00",
   "head": "faf113364b296b7af82f28b94db79c653326d625",
-  "scope": "Read-only validation of seven unpublished distinct-source pending MP4s; no consent or scheduling changes",
+  "scope": "Read-only validation of eight unpublished distinct-source pending MP4s; seven Kokoro and one Piper; no consent or scheduling changes",
   "download_limit_bytes": 20000000,
   "max_parallel": 3,
-  "checked": 7,
-  "passed": 7,
+  "checked": 8,
+  "passed": 8,
   "failed": 0,
   "items": [
     {
@@ -208,6 +208,36 @@
         "silence_intervals_over_800ms": 0,
         "av_start_delta_seconds": 0.0,
         "av_end_delta_seconds": 0.008667,
+        "lip_sync_verified": false
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "casasem-2026-10-26-1",
+      "concept": "mesa-caneca-afastada",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
+      "expected_sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
+      "previous_scheduled_at": "2026-10-26T13:00:00+00:00",
+      "approved": false,
+      "publication_performed": false,
+      "visual_history_gate": "PASS",
+      "local_file": "/workspace/scratch/c142e37adcc9/repo/tmp/reserve-4.6/casasem-2026-10-26-1.mp4",
+      "contact_sheet": "/workspace/scratch/c142e37adcc9/repo/tmp/reserve-4.6/casasem-2026-10-26-1.jpg",
+      "reused_existing_file": false,
+      "sha256_verified": true,
+      "measured": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
+        "duration": 19.4,
+        "size": 2005886,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.009,
         "lip_sync_verified": false
       },
       "status": "PASS"
