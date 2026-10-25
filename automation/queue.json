@@ -1527,6 +1527,110 @@
       "composition_revision": 6,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
       "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-26-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
+      "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-10-26T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
+        "duration": 19.4,
+        "size": 2005886,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.009,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+            "sha256": "29851ab6e02b49e82e04f2500c495f4eb8c34299d672a70f0c5ff5495b8357f3",
+            "dhash": [
+              "471319393b3e353b",
+              "4010183a396c343b",
+              "4010181a382c341b",
+              "4010181a382c341b",
+              "4010181a382c341b"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          21.588333
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 9,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "mesa-caneca-afastada",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ]
+      },
+      "concept": "mesa-caneca-afastada",
+      "category": "organizacao",
+      "script_lines": [
+        "Bebida tão perto do celular?",
+        "Na cena, a bebida é servida",
+        "perto do celular e do",
+        "teclado.",
+        "Reserve um lugar estável para",
+        "a caneca, afastado dos",
+        "aparelhos.",
+        "Confira o espaço antes de",
+        "servir.",
+        "Ao terminar, leve a caneca",
+        "para a cozinha.",
+        "Deixe livre a área de",
+        "trabalho.",
+        "Salve para organizar sua",
+        "mesa."
+      ],
+      "script_sha256": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }

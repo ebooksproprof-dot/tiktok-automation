@@ -1,16 +1,16 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-25T14:38:48.802703+00:00",
+  "generated_at": "2026-10-25T18:46:17.711731+00:00",
   "expires_at": "2026-10-25T17:55:00-03:00",
-  "queue_snapshot_sha256": "6507c9325c148223c70f14cc4033ac164c0728270031a4260dc47f53d5608ef5",
+  "queue_snapshot_sha256": "ba24bb4dccf299d1eda79b6074835e1e122d810ec8d8c9b0c9b7f94ef42e5e5a",
   "state_snapshot_sha256": "71a2a6fdd98fc5a72c1b241ccf0dc1669172c8b56cca0854452680ca5b8bc73a",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 10,
-  "selectable_count": 7,
+  "pending_count": 11,
+  "selectable_count": 8,
   "items": [
     {
       "id": "casasem-2026-10-17-1",
@@ -137,7 +137,7 @@
         "próxima limpeza."
       ],
       "original_scheduled_at": "2026-10-22T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-26T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-26T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -175,7 +175,7 @@
         "bagunçar tudo."
       ],
       "original_scheduled_at": "2026-10-23T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-26T18:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-27T10:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -208,7 +208,7 @@
         "sua rotina."
       ],
       "original_scheduled_at": "2026-10-23T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-27T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-27T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -245,7 +245,7 @@
         "opções."
       ],
       "original_scheduled_at": "2026-10-24T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-27T18:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-28T10:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -282,7 +282,7 @@
         "leitura."
       ],
       "original_scheduled_at": "2026-10-24T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-28T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-28T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -311,7 +311,7 @@
         "próxima lavagem."
       ],
       "original_scheduled_at": "2026-10-25T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-28T18:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-29T10:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -352,8 +352,42 @@
       "audit_notes": null,
       "approved": false,
       "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-26-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
+      "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
+      "script_hash": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
+      "post_snapshot_sha256": "d173815f898205b3eee7ca2421b3a302aa7797668e70d870f637bce903de7b26",
+      "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Bebida tão perto do celular?",
+        "Na cena, a bebida é servida",
+        "perto do celular e do",
+        "teclado.",
+        "Reserve um lugar estável para",
+        "a caneca, afastado dos",
+        "aparelhos.",
+        "Confira o espaço antes de",
+        "servir.",
+        "Ao terminar, leve a caneca",
+        "para a cozinha.",
+        "Deixe livre a área de",
+        "trabalho.",
+        "Salve para organizar sua",
+        "mesa."
+      ],
+      "original_scheduled_at": "2026-10-26T13:00:00+00:00",
+      "proposed_scheduled_at": "2026-10-26T10:00:00-03:00",
+      "schedule_changed": false,
+      "selectable": true,
+      "blockers": [],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "b50cf6cf8d9789a47549c7ff575aa024a1a02cf5e68c03e2251c2d09213a5471"
+  "manifest_sha256": "d3fb4c7bf031c1c41201967a6ab236bcfff4ea7466c31378a11ffb5a1698899a"
 }
