@@ -29,6 +29,8 @@ class FallbackTests(unittest.TestCase):
     def test_four_download_budget_survives_validation_failures(self):
         count,result=self.exercise('CANDIDATE_VALIDATION_REJECTED')
         self.assertEqual(count,4);self.assertEqual(result['items'],[])
+        self.assertEqual(result['last_run']['download_attempts'],4)
+        self.assertGreater(result['last_run']['skipped_cooldown'],0)
     def test_provider_failures_stop_fallback_without_resetting_rejections(self):
         for code in ('PROVIDER_RATE_LIMITED','PROVIDER_SERVER_ERROR','PROVIDER_REQUEST_FAILED','PROVIDER_AUTH_REJECTED'):
             count,result=self.exercise(code)

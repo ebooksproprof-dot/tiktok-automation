@@ -299,6 +299,7 @@ def run():
     folder = ROOT.parent/'tmp'/'media-inbox'
     folder.mkdir(parents=True, exist_ok=True)
     acquired, attempts = 0, 0
+    skipped_known, skipped_cooldown = 0, 0
     known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
     # At most four queries/provider and four downloads total per run.
     selected_topics = daily_topics(now)
@@ -326,7 +327,11 @@ def run():
                 provider_attempts = 0
                 for record in records:
                     identity = name + ':' + record['provider_id']
-                    if identity in known or identity in rejected:
+                    if identity in known:
+                        skipped_known += 1
+                        continue
+                    if identity in rejected:
+                        skipped_cooldown += 1
                         continue
                     if provider_attempts >= 2 or attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
                         break
@@ -356,6 +361,8 @@ def run():
                 break
     finally:
         inbox['last_run'] = dict(at=now, acquired=acquired, rejected=len(errors),
+                                download_attempts=attempts, skipped_known=skipped_known,
+                                skipped_cooldown=skipped_cooldown,
                                 diagnostics=diagnostics, editorial_approved=0,
                                 query_plan=[query for _, query, _ in selected_topics],
                                 query_bank_size=len(TOPICS),
