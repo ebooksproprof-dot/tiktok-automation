@@ -328,7 +328,7 @@ def run():
                     identity = name + ':' + record['provider_id']
                     if identity in known or identity in rejected:
                         continue
-                    if provider_attempts >= 1 or attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
+                    if provider_attempts >= 2 or attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
                         break
                     attempts += 1
                     provider_attempts += 1
@@ -340,6 +340,9 @@ def run():
                         diagnostics.append(dict(provider=name, provider_id=record['provider_id'], status=code))
                         transient = code in ('PROVIDER_RATE_LIMITED', 'PROVIDER_SERVER_ERROR', 'PROVIDER_REQUEST_FAILED')
                         rejected[identity] = now + (3600 if transient else 7 * 86400)
+                        if transient or code == 'PROVIDER_AUTH_REJECTED':
+                            disabled.add(name)
+                            break  # Never spend fallback budget retrying a blocked provider.
                         continue
                     inbox['items'].append(measured)
                     previous.append({'visual_sources': [measured]})
