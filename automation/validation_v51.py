@@ -27,7 +27,7 @@ def main():
     source=item['media'][0]
     clip=OUT/'source.mp4'
     if not clip.exists():
-        with urllib.request.urlopen(source['url'],timeout=60) as response,clip.open('wb') as target:
+        with urllib.request.urlopen(urllib.request.Request(source['url'], headers={'User-Agent': 'CasaSemEsforco/2.0'}),timeout=60) as response,clip.open('wb') as target:
             size=0
             while chunk:=response.read(1024*1024):
                 size+=len(chunk)

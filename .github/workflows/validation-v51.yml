@@ -2,7 +2,7 @@ name: CasaSemEsforco 5.1 caption comparison only
 on:
   push:
     branches: [main]
-    paths: [automation/validation_v51.py, automation/save_validation_v51.py, .github/workflows/validation-v51.yml]
+    paths: [automation/caption_layout.py, automation/validation_v51.py, automation/save_validation_v51.py, .github/workflows/validation-v51.yml]
   workflow_dispatch:
 permissions:
   contents: write
