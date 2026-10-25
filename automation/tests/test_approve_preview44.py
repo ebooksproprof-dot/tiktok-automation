@@ -62,7 +62,7 @@ class ApprovePreviewTests(unittest.TestCase):
 
     def test_expired_preview_is_not_rescheduled(self):
         with self.assertRaisesRegex(ValueError,'PREVIEW_EXPIRED'):
-            self.invoke(now=NOW+dt.timedelta(days=1))
+            self.invoke(now=dt.datetime.fromisoformat(self.preview['expires_at'])+dt.timedelta(seconds=1))
 
     def test_edited_media_or_slot_even_if_rehashed_is_rejected(self):
         for field,value in [('sha256','f'*64),('proposed_scheduled_at','2026-10-25T18:00:00-03:00')]:

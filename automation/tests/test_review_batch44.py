@@ -48,12 +48,36 @@ class ReviewBatchTests(unittest.TestCase):
         state=dict(posts={'past':{'scheduled_at':{'dateTime':'2026-10-24T10:00:00','timezone':'America/Sao_Paulo'}}})
         m=r.build_preview(dict(posts=posts),state,NOW)
         slots=[x['proposed_scheduled_at'] for x in m['items']]
-        self.assertEqual(slots[1],'2026-10-23T18:00:00-03:00')
+        self.assertEqual(slots[1],'2026-10-25T10:00:00-03:00')
+        self.assertTrue(all(r.stamp(value).date() > NOW.astimezone(r.TZ).date() for value in slots))
         self.assertNotIn('2026-10-24T10:00:00-03:00',slots)
         self.assertEqual(len(set(slots)),3)
         for value in slots:
             stamp=r.stamp(value);self.assertTrue(r.slot_valid(stamp,NOW));self.assertEqual(stamp.utcoffset(),dt.timedelta(hours=-3))
         self.assertTrue(m['items'][0]['schedule_changed'])
+
+    def test_six_kokoro_first_fill_next_three_full_days_without_mutation(self):
+        posts=[post(n) for n in range(1,8)]
+        posts[0]['quality']['voice']='pt_BR-faber-medium'
+        for p in posts[1:]:
+            p['quality']['voice']='kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br'
+        queue,state={'posts':posts},{'posts':{}}
+        before=copy.deepcopy((queue,state))
+        m=r.build_preview(queue,state,NOW)
+        self.assertEqual((queue,state),before)
+        self.assertEqual([p['id'] for p in m['items']],['post-'+str(n) for n in range(2,8)]+['post-1'])
+        expected=[f'2026-10-{day}T{hour}:00:00-03:00' for day in (24,25,26) for hour in (10,18)]
+        self.assertEqual([p['proposed_scheduled_at'] for p in m['items'][:6]],expected)
+        self.assertEqual(m['items'][6]['proposed_scheduled_at'],'2026-10-27T10:00:00-03:00')
+        self.assertEqual(m['items'][6]['voice'],'pt_BR-faber-medium')
+        self.assertFalse(m['approved']);self.assertIsNone(m['consented_at'])
+        self.assertIn('Voz registrada: kokoro-',r.render_html(m))
+
+    def test_excludes_today_by_brasilia_date_even_when_utc_is_tomorrow(self):
+        now=dt.datetime(2026,10,24,1,tzinfo=dt.timezone.utc)  # Oct23 22h BRT
+        self.assertTrue(r.slot_valid(r.stamp('2026-10-24T10:00:00-03:00'),now))
+        morning=dt.datetime(2026,10,23,10,tzinfo=dt.timezone.utc)
+        self.assertFalse(r.slot_valid(r.stamp('2026-10-23T18:00:00-03:00'),morning))
 
     def test_script_and_entire_snapshots_bound(self):
         q=dict(posts=[post()]);s=dict(posts={});m=r.build_preview(q,s,NOW)

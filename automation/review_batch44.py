@@ -44,7 +44,8 @@ def slot_valid(due, now):
     if due is None:
         return False
     local = due.astimezone(TZ)
-    return (now + dt.timedelta(minutes=30) <= due <= now + dt.timedelta(days=7)
+    return (local.date() > now.astimezone(TZ).date()
+            and now + dt.timedelta(minutes=30) <= due <= now + dt.timedelta(days=7)
             and local.hour in (10, 18) and not any((local.minute, local.second, local.microsecond)))
 
 
@@ -58,6 +59,10 @@ def build_preview(queue, state, now=None, archived=None, audit=None):
         raise ValueError('DUPLICATE_QUEUE_IDS')
     submitted = state.get('posts', {})
     pending = [p for p in posts if p['id'] not in submitted and not any(p.get(k) for k in REMOTE_KEYS)]
+    # Stable priority keeps queue order inside each voice group; it never changes
+    # queue data or grants editorial consent. Existing reservations still win.
+    pending.sort(key=lambda p: (not str(p.get('quality', {}).get('voice', '')).lower().startswith('kokoro'),
+                                not slot_valid(due_of(p), now)))
     occupied = set()
     for post in posts + list(submitted.values()):
         due = due_of(post)
@@ -121,6 +126,7 @@ def build_preview(queue, state, now=None, archived=None, audit=None):
         items.append(dict(id=post['id'], video_url=url, sha256=exact['sha256'],
                           script_hash=exact['script_hash'], post_snapshot_sha256=exact['post_snapshot_sha256'],
                           title=post.get('title', ''), script_lines=post.get('script_lines', []),
+                          voice=post.get('quality', {}).get('voice') or 'Não registrada',
                           original_scheduled_at=original,
                           proposed_scheduled_at=proposed.astimezone(TZ).isoformat() if proposed else None,
                           schedule_changed=bool(proposed and due != proposed),
@@ -152,6 +158,7 @@ def render_html(manifest):
         disabled = '' if item['selectable'] else ' disabled'
         cards.append(f'''<article><h2>{esc(item['id'])}</h2>{video}<p>{esc(item['title'])}</p>
 <details><summary>Roteiro e identidade exata</summary><ol>{lines}</ol><p>MP4 SHA-256: <code>{esc(item['sha256'])}</code></p><p>Roteiro SHA-256: <code>{esc(item['script_hash'])}</code></p></details>
+<p>Voz registrada: {esc(item.get('voice', 'Não registrada'))}</p>
 <p>Horário anterior: {esc(item['original_scheduled_at'] or 'nenhum')}</p>
 <p><strong>Proposta, Brasília: {esc(item['proposed_scheduled_at'] or 'bloqueado')}</strong></p>
 {audit_html}{blockers}<label><input type="checkbox" class="pick" value="{index}"{disabled}> Selecionar para solicitar autorização no chat</label></article>''')
@@ -159,6 +166,7 @@ def render_html(manifest):
     return '''<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CasaSemEsforço — revisão do lote</title><style>body{font:17px system-ui;max-width:1050px;margin:auto;padding:24px;background:#f5f6fa;color:#18212b}article{background:white;padding:20px;border-radius:16px;margin:20px 0}video{max-height:480px;max-width:100%;background:#111}code{overflow-wrap:anywhere}textarea{width:100%;min-height:230px}button{padding:12px;margin:10px 0}.blocked{color:#9b2525}label{display:block;padding:12px 0}</style>
 <h1>Revise os vídeos e escolha o lote</h1><p>Assista aos MP4s e confira roteiro, cenas, voz, créditos e horários. Nenhum item está pré-selecionado. Esta página não envia dados, aprova, agenda ou publica.</p>
+<p>Voz Kokoro aparece primeiro. Novas propostas começam a partir de amanhã, às 10h e 18h de Brasília, respeitando reservas existentes.</p>
 <p>Horários abaixo são propostas em Brasília, não agendamentos. A seleção só prepara uma mensagem para você enviar no chat. Se a fila, os arquivos ou os horários mudarem, será necessária uma revisão atualizada.</p>
 <p><a href="review44.json">Manifesto verificável do lote (JSON)</a></p><p id="expiry"></p>
 ''' + ''.join(cards) + '''<label><input id="reviewed" type="checkbox"> Assisti aos vídeos selecionados e revisei a correspondência das cenas com o roteiro, áudio, créditos e alegações.</label>
