@@ -470,9 +470,12 @@
     "pixabay:38116": 1793185430
   },
   "last_run": {
-    "at": 1792953441,
+    "at": 1792953826,
     "acquired": 0,
     "rejected": 0,
+    "download_attempts": 0,
+    "skipped_known": 1,
+    "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
