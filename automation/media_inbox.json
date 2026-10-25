@@ -433,76 +433,114 @@
       "duration": 21.588333,
       "bytes": 30490886,
       "acquired_at": 1792839470
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "41506",
+      "url": "https://cdn.pixabay.com/video/2020/06/08/41506-429661323_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-41506/",
+      "author": "AlexKopeykin",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: AlexKopeykin / Pixabay — https://pixabay.com/videos/id-41506/",
+      "category": "estante",
+      "query": "books shelf organizing",
+      "selection_reason": "Provider tags: shelves, books, library, education, reading, a shelf, to read, literature, closet, the culture, language, development",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/06/08/41506-429661323_large.mp4",
+      "sha256": "cb8f45352314333e580067fa3e336c65ac332c3f5c0ecdc37f514d54ce3d2961",
+      "dhash": [
+        "19596f3b33732749",
+        "19596f3b33732749",
+        "19596d3b33732f49",
+        "19596f3b33732d59",
+        "19596d1b33732749"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 12.64,
+      "bytes": 18340272,
+      "acquired_at": 1792925865
     }
   ],
   "rejected_until": {
     "pixabay:38116": 1793185430
   },
   "last_run": {
-    "at": 1792839453,
-    "acquired": 2,
+    "at": 1792925860,
+    "acquired": 1,
     "rejected": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "toalhas",
+        "category": "cabides",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "toalhas",
+        "category": "cabides",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "potes",
+        "category": "louca",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "potes",
+        "category": "louca",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "vassoura",
+        "category": "estante",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 1,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "vassoura",
+        "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "escrivaninha",
+        "category": "panos",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "panos",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "folding towels bathroom",
-      "food storage containers kitchen",
-      "sweeping floor broom",
-      "organizing desk stationery"
+      "clothes hangers wardrobe",
+      "washing dishes kitchen sink",
+      "books shelf organizing",
+      "microfiber cloth cleaning"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 14,
+    "unreviewed_media_count": 15,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
