@@ -219,6 +219,50 @@
           "context": "Duas pessoas sentadas entre estantes de uma livraria leem e folheiam livros. Quadro integral preserva livros e prateleiras. Não mostra organização doméstica, ordenação de coleção ou resultados de produto."
         }
       ]
+    },
+    {
+      "id": "tecidos-secar-antes-guardar",
+      "category": "conservacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-25T08:34:00-03:00",
+      "hook": "Você guarda o tecido ainda úmido?",
+      "steps": "Depois de lavar, confira a etiqueta da peça. Se a orientação permitir secagem ao ar, estenda sem sobrepor e deixe espaço para o ar circular. Espere secar completamente antes de dobrar e guardar. Em dias úmidos, considere um tempo maior de secagem.",
+      "cta": "Salve este cuidado para a próxima lavagem.",
+      "media": [
+        {
+          "id": "pixabay-165820-full",
+          "url": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-165820/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "NickyPe",
+          "sha256": "a95396827ee3c8fb2adcd8c79a965b6312e58811fe75ab344002a456f64b7ec3",
+          "context": "Tecidos estendidos em varal externo movimentam-se com o vento. A cena ilustra secagem ao ar sem prometer resultado para materiais específicos.",
+          "frame_mode": "preserve_full",
+          "provider": "pixabay"
+        }
+      ]
+    },
+    {
+      "id": "pia-secar-respingos",
+      "category": "rotina",
+      "reviewed": true,
+      "reviewed_at": "2026-10-25T08:34:00-03:00",
+      "hook": "Terminou de usar a pia?",
+      "steps": "Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade.",
+      "cta": "Salve para revisar a pia depois do uso.",
+      "media": [
+        {
+          "id": "pixabay-34818-full",
+          "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-34818/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "BreakDownPictures",
+          "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+          "context": "Pessoa lava as mãos em uma cuba doméstica. A filmagem contextualiza o uso da pia, sem demonstrar produto, limpeza posterior ou eficácia.",
+          "frame_mode": "preserve_full",
+          "provider": "pixabay"
+        }
+      ]
     }
   ]
 }
