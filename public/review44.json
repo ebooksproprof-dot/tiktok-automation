@@ -1,16 +1,16 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-25T11:35:58.173419+00:00",
+  "generated_at": "2026-10-25T11:38:49.927851+00:00",
   "expires_at": "2026-10-25T09:55:00-03:00",
-  "queue_snapshot_sha256": "34031ecde5105ce7d89a11e21ab48e7990b0f03c7cc9a4f9db592e5e379b6313",
+  "queue_snapshot_sha256": "6507c9325c148223c70f14cc4033ac164c0728270031a4260dc47f53d5608ef5",
   "state_snapshot_sha256": "71a2a6fdd98fc5a72c1b241ccf0dc1669172c8b56cca0854452680ca5b8bc73a",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 8,
-  "selectable_count": 5,
+  "pending_count": 10,
+  "selectable_count": 7,
   "items": [
     {
       "id": "casasem-2026-10-17-1",
@@ -137,7 +137,7 @@
         "próxima limpeza."
       ],
       "original_scheduled_at": "2026-10-22T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-25T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-26T10:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -175,7 +175,7 @@
         "bagunçar tudo."
       ],
       "original_scheduled_at": "2026-10-23T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-25T18:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-26T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -208,7 +208,7 @@
         "sua rotina."
       ],
       "original_scheduled_at": "2026-10-23T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-26T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-27T10:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -245,7 +245,7 @@
         "opções."
       ],
       "original_scheduled_at": "2026-10-24T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-26T18:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-27T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -282,8 +282,70 @@
         "leitura."
       ],
       "original_scheduled_at": "2026-10-24T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-10-27T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-10-28T10:00:00-03:00",
       "schedule_changed": true,
+      "selectable": true,
+      "blockers": [],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-25-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4",
+      "sha256": "e5ed7c26239ad88fc5e7f87159a553a6514d28cda67370cb9de2588e7a957296",
+      "script_hash": "748f14eaa522436be1885efa871af649785036cc9596fb41bf30f8d0d6ff2f41",
+      "post_snapshot_sha256": "6bf4cd03dd1523c68af67b222fc5e3c30f2bf02444e8c0300dfd38b18f09631b",
+      "title": "Você guarda o tecido ainda úmido? Depois de lavar, confira a etiqueta. Se ela permitir secagem ao ar, estenda sem sobrepor. Deixe o ar circular. Espere secar completamente antes de dobrar e guardar. Salve este cuidado para a próxima lavagem. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — NickyPe; https://pixabay.com/videos/id-165820/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Você guarda o tecido ainda úmido?",
+        "Depois de lavar, confira a",
+        "etiqueta.",
+        "Se ela permitir secagem ao",
+        "ar, estenda sem sobrepor.",
+        "Deixe o ar circular.",
+        "Espere secar completamente",
+        "antes de dobrar e guardar.",
+        "Salve este cuidado para a",
+        "próxima lavagem."
+      ],
+      "original_scheduled_at": "2026-10-25T13:00:00+00:00",
+      "proposed_scheduled_at": "2026-10-25T10:00:00-03:00",
+      "schedule_changed": false,
+      "selectable": true,
+      "blockers": [],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-25-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
+      "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
+      "script_hash": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
+      "post_snapshot_sha256": "5b8731b0fb6e07552d903726b1110357668bec8d2136965d25ab840e5850dbb8",
+      "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Terminou de usar a pia?",
+        "Confira se ficaram respingos",
+        "ao redor da cuba.",
+        "Se o material permitir, use",
+        "um pano limpo e macio",
+        "conforme a orientação do",
+        "fabricante.",
+        "Deixe a torneira livre e",
+        "coloque o sabonete em um",
+        "apoio estável.",
+        "Não aplique produtos sem",
+        "confirmar a compatibilidade.",
+        "Salve para revisar a pia",
+        "depois do uso."
+      ],
+      "original_scheduled_at": "2026-10-25T21:00:00+00:00",
+      "proposed_scheduled_at": "2026-10-25T18:00:00-03:00",
+      "schedule_changed": false,
       "selectable": true,
       "blockers": [],
       "editorial_review": "PENDING",
@@ -293,5 +355,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "d58898214085eee49cc8c66da633a34050df1ceeee5f89384468691210f6213b"
+  "manifest_sha256": "1d71738afed309eaa97f7e31f75ec31f42034f4e583a893654a004eaa9069395"
 }

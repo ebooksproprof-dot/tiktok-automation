@@ -1333,6 +1333,200 @@
       "composition_revision": 6,
       "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
       "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-25-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4",
+      "title": "Você guarda o tecido ainda úmido? Depois de lavar, confira a etiqueta. Se ela permitir secagem ao ar, estenda sem sobrepor. Deixe o ar circular. Espere secar completamente antes de dobrar e guardar. Salve este cuidado para a próxima lavagem. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — NickyPe; https://pixabay.com/videos/id-165820/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-10-25T13:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "e5ed7c26239ad88fc5e7f87159a553a6514d28cda67370cb9de2588e7a957296",
+        "duration": 16.766667,
+        "size": 4442822,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.003667,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+            "sha256": "a95396827ee3c8fb2adcd8c79a965b6312e58811fe75ab344002a456f64b7ec3",
+            "dhash": [
+              "2d89981847128304",
+              "2d8998186f138304",
+              "2d8998186f13830c",
+              "2d8998186f13830c",
+              "2d8998186f13830c"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          20.8
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "tecidos-secar-antes-guardar",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — NickyPe; https://pixabay.com/videos/id-165820/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ]
+      },
+      "concept": "tecidos-secar-antes-guardar",
+      "category": "conservacao",
+      "script_lines": [
+        "Você guarda o tecido ainda úmido?",
+        "Depois de lavar, confira a",
+        "etiqueta.",
+        "Se ela permitir secagem ao",
+        "ar, estenda sem sobrepor.",
+        "Deixe o ar circular.",
+        "Espere secar completamente",
+        "antes de dobrar e guardar.",
+        "Salve este cuidado para a",
+        "próxima lavagem."
+      ],
+      "script_sha256": "748f14eaa522436be1885efa871af649785036cc9596fb41bf30f8d0d6ff2f41",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
+    },
+    {
+      "id": "casasem-2026-10-25-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
+      "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-10-25T21:00:00+00:00",
+      "approved": false,
+      "consented_at": null,
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
+        "duration": 20.666667,
+        "size": 4570302,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.008667,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+            "sha256": "e047dc9eb94bbe48aab5550af198a6b56e114c0382df64e62c1c178bc8dc757c",
+            "dhash": [
+              "31311b1e361e9ce1",
+              "35311c1733178fc1",
+              "31311c17371782c2",
+              "3531091f370789e1",
+              "35311d1f331786c5"
+            ]
+          }
+        ],
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          24.681667
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 8,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "pia-secar-respingos",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ]
+      },
+      "concept": "pia-secar-respingos",
+      "category": "rotina",
+      "script_lines": [
+        "Terminou de usar a pia?",
+        "Confira se ficaram respingos",
+        "ao redor da cuba.",
+        "Se o material permitir, use",
+        "um pano limpo e macio",
+        "conforme a orientação do",
+        "fabricante.",
+        "Deixe a torneira livre e",
+        "coloque o sabonete em um",
+        "apoio estável.",
+        "Não aplique produtos sem",
+        "confirmar a compatibilidade.",
+        "Salve para revisar a pia",
+        "depois do uso."
+      ],
+      "script_sha256": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
+      "render_version": 2,
+      "composition_revision": 6,
+      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
+      "media_storage": "release"
     }
   ]
 }
