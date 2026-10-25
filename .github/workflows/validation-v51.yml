@@ -1,0 +1,48 @@
+name: CasaSemEsforco 5.1 caption comparison only
+on:
+  push:
+    branches: [main]
+    paths: [automation/validation_v51.py, automation/save_validation_v51.py, .github/workflows/validation-v51.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-validation-v51
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ORT_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare CPU proof dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
+          python -m pip install 'onnxruntime==1.31.0' 'kokoro-onnx==0.6.1' 'Pillow==12.3.0'
+      - name: Regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Render controlled comparisons without publication
+        run: python automation/validation_v51.py
+      - name: Preserve completed proofs
+        if: ${{ !cancelled() && hashFiles('tmp/validation-v51/report.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/save_validation_v51.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-v51-evidence
+          path: |
+            tmp/validation-v51/comparison-*.mp4
+            tmp/validation-v51/*.jpg
+            tmp/validation-v51/report.json
+            tmp/validation-v51/release-links.json
+          retention-days: 7

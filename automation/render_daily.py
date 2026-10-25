@@ -166,6 +166,12 @@ def render(idea, voice, post_id):
     for i,(start,end,line) in enumerate(timings):
         txt = folder/f'caption-{i}.txt'; txt.write_text(line, encoding='utf8')
         filters.append(f"drawtext=fontfile={font}:textfile={txt}:fontsize=58:fontcolor=white:box=1:boxcolor=black@0.70:boxborderw=18:x=(w-text_w)/2:y=1320:enable='between(t,{start:.3f},{end:.3f})'")
+    caption_style = os.getenv('CAPTION_STYLE', 'legacy')
+    if caption_style == 'measured-v51':
+        from caption_layout import filters as measured_captions
+        filters = measured_captions(folder, timings)
+    elif caption_style != 'legacy':
+        raise ValueError('Unsupported caption style')
     label=folder/'label.txt';label.write_text('CENAS ILUSTRATIVAS',encoding='utf8')
     filters.append(f'drawtext=fontfile={font}:textfile={label}:fontsize=24:fontcolor=white:borderw=2:x=70:y=200')
     if DYNAMIC_STYLE:
@@ -177,6 +183,7 @@ def render(idea, voice, post_id):
          '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
     quality=validate(output)
     quality.update(visual_quality)
+    quality.update(caption_style=caption_style)
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
     quality.update(graphics_style='casasem-v4' if DYNAMIC_STYLE else 'classic-v6',
                    crop_shifts_pixels=crop_shifts, rendered_shots=len(shots), frame_modes=frame_modes)
