@@ -9,3 +9,9 @@ Legendas: largura real medida, porcentagens literais, fronteiras temporais semia
 Limites: A/B não compara plano de cortes diário; ambos usam tomada contínua enquadrada integralmente. Timing dentro de frases continua aproximado. RSS é maior processo filho, não soma. Cinco testes específicos são pulados quando Pillow/fontes não existem; workflowdedicado instala ambos. Não houve escuta conclusiva, avatar ou teste de sincronização labial.
 
 Recomendação do revisor: incluir caption_layout.py nos gatilhos de prova (implementado no segundo checkpoint); ativar produção somente após saída real e inspeção. Relatório final deve anexar métricas/links da nova execução sem omitir a primeira falha.
+
+## Evidência real posterior
+
+Run40224179335/job121261945620 concluiu com sucesso. Dois MP4s de17,9s salvos em Release de validação. Seis quadros por variante inspecionados; caneca/celular integrais e texto legível. Maior largura de legenda952→860px. Zero preto/silêncio conforme thresholds do validador, deltaAV7ms. Não é prova de lip-sync. Estilo medido ativado por configuração no workflow diário com Pillow12.3.0 e sem revisionbump; não foram reescritos MP4s pendentes. Evidências exatas: validation-5.1-evidence.json.
+
+Revisão independente final após ativação: 275/275 testes em 0,344s. Auditor recalculou SHA de B e repetiu `media_quality.validate` sobre o arquivo baixado: 17,9s,1080×1920,-15,2dB,zero preto/silêncio,deltaAV7ms. Inspeção independente dos quadros confirmou produto e celular integrais, sem corte de legenda observado. Nenhum bloqueador novo; não houve escuta nem avatar.

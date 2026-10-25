@@ -1,0 +1,226 @@
+{
+  "workflow_run": 40224179335,
+  "job": 121261945620,
+  "cloud_tests": 275,
+  "local_tests": 275,
+  "records": [
+    {
+      "file": "comparison-A.mp4",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "39fb91cf11dc15865f96a10c20f5052e32ed60a7ffa0a2ac2961255b5c3d5d94",
+        "duration": 17.9,
+        "size": 1804980,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.007,
+        "lip_sync_verified": false
+      },
+      "caption_style": "legacy",
+      "render_seconds": 5.051348569999988,
+      "synthesis_seconds_shared": 18.417822251000004,
+      "framing_seconds_shared": 11.48397220999999,
+      "peak_child_rss_kib": 603824,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "voice_sha256": "f5ae1ccf74df46355f6ff5736796cff56484a62df22ff80bb98c2be14e333b4e",
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "133319",
+        "url": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-133319/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "author": "KIMDAEJEUNG",
+        "sha256": "29851ab6e02b49e82e04f2500c495f4eb8c34299d672a70f0c5ff5495b8357f3",
+        "id": "pixabay-133319-full",
+        "frame_mode": "preserve_full",
+        "context": "Caneca sobre mesa recebe bebida perto de um celular e teclado. Cena ilustra proximidade de líquido e aparelhos, não organização já executada nem derramamento. Quadro integral conserva caneca, celular e teclado; sem endosso de marca."
+      },
+      "timings": [
+        [
+          0.0,
+          2.1086666666666667,
+          "Bebida tão perto do celular?"
+        ],
+        [
+          2.1886666666666668,
+          5.091098201174743,
+          "Na cena, a bebida é servida\nperto do celular e do"
+        ],
+        [
+          5.091098201174743,
+          7.934296439060205,
+          "teclado. Reserve um lugar\nestável para a caneca,"
+        ],
+        [
+          7.934296439060205,
+          10.83672797356828,
+          "afastado dos aparelhos.\nConfira o espaço antes de"
+        ],
+        [
+          10.83672797356828,
+          14.153792584434653,
+          "servir. Ao terminar, leve a\ncaneca para a cozinha. Deixe"
+        ],
+        [
+          14.153792584434653,
+          15.634624999999998,
+          "livre a área de trabalho."
+        ],
+        [
+          15.714625,
+          17.813291666666665,
+          "Salve para organizar sua\nmesa."
+        ]
+      ],
+      "proof_only": true,
+      "approved": false,
+      "publication_allowed": false,
+      "avatar_present": false,
+      "state_unchanged": true,
+      "cost_added": 0,
+      "limitations": [
+        "Same stock and audio, caption comparison only; not new editorial inventory.",
+        "Sentence boundaries measured; intra-sentence chunk timing remains approximate.",
+        "Voice not evaluated by listening; no lip-sync or avatar.",
+        "RSS is per-child maximum, not aggregate."
+      ]
+    },
+    {
+      "file": "comparison-B.mp4",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "e08af76d3a48571ab4285e073cd7c434b01482ca7ae44c3aba450a1bba568905",
+        "duration": 17.9,
+        "size": 1866149,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.007,
+        "lip_sync_verified": false
+      },
+      "caption_style": "measured-v51",
+      "render_seconds": 5.046071117000011,
+      "synthesis_seconds_shared": 18.417822251000004,
+      "framing_seconds_shared": 11.48397220999999,
+      "peak_child_rss_kib": 607892,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "voice_sha256": "f5ae1ccf74df46355f6ff5736796cff56484a62df22ff80bb98c2be14e333b4e",
+      "source": {
+        "provider": "pixabay",
+        "provider_id": "133319",
+        "url": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-133319/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "author": "KIMDAEJEUNG",
+        "sha256": "29851ab6e02b49e82e04f2500c495f4eb8c34299d672a70f0c5ff5495b8357f3",
+        "id": "pixabay-133319-full",
+        "frame_mode": "preserve_full",
+        "context": "Caneca sobre mesa recebe bebida perto de um celular e teclado. Cena ilustra proximidade de líquido e aparelhos, não organização já executada nem derramamento. Quadro integral conserva caneca, celular e teclado; sem endosso de marca."
+      },
+      "timings": [
+        [
+          0.0,
+          2.1086666666666667,
+          "Bebida tão perto do celular?"
+        ],
+        [
+          2.1886666666666668,
+          5.091098201174743,
+          "Na cena, a bebida é servida\nperto do celular e do"
+        ],
+        [
+          5.091098201174743,
+          7.934296439060205,
+          "teclado. Reserve um lugar\nestável para a caneca,"
+        ],
+        [
+          7.934296439060205,
+          10.83672797356828,
+          "afastado dos aparelhos.\nConfira o espaço antes de"
+        ],
+        [
+          10.83672797356828,
+          14.153792584434653,
+          "servir. Ao terminar, leve a\ncaneca para a cozinha. Deixe"
+        ],
+        [
+          14.153792584434653,
+          15.634624999999998,
+          "livre a área de trabalho."
+        ],
+        [
+          15.714625,
+          17.813291666666665,
+          "Salve para organizar sua\nmesa."
+        ]
+      ],
+      "proof_only": true,
+      "approved": false,
+      "publication_allowed": false,
+      "avatar_present": false,
+      "state_unchanged": true,
+      "cost_added": 0,
+      "limitations": [
+        "Same stock and audio, caption comparison only; not new editorial inventory.",
+        "Sentence boundaries measured; intra-sentence chunk timing remains approximate.",
+        "Voice not evaluated by listening; no lip-sync or avatar.",
+        "RSS is per-child maximum, not aggregate."
+      ]
+    }
+  ],
+  "caption_width_comparison": [
+    {
+      "text": "Bebida tão perto do celular?",
+      "old_width": 927.59375,
+      "new_width": 651.25,
+      "new_size": 58
+    },
+    {
+      "text": "Na cena, a bebida é servida\nperto do celular e do",
+      "old_width": 907.015625,
+      "new_width": 844.453125,
+      "new_size": 54
+    },
+    {
+      "text": "teclado. Reserve um lugar\nestável para a caneca,",
+      "old_width": 860.203125,
+      "new_width": 860.203125,
+      "new_size": 58
+    },
+    {
+      "text": "afastado dos aparelhos.\nConfira o espaço antes de",
+      "old_width": 846.640625,
+      "new_width": 846.640625,
+      "new_size": 58
+    },
+    {
+      "text": "servir. Ao terminar, leve a\ncaneca para a cozinha. Deixe",
+      "old_width": 951.703125,
+      "new_width": 820.390625,
+      "new_size": 50
+    },
+    {
+      "text": "livre a área de trabalho.",
+      "old_width": 791.671875,
+      "new_width": 791.671875,
+      "new_size": 58
+    },
+    {
+      "text": "Salve para organizar sua\nmesa.",
+      "old_width": 813.65625,
+      "new_width": 813.65625,
+      "new_size": 58
+    }
+  ],
+  "visual_review": "Six frames per variant inspected: whole mug/phone retained, no cut text seen. No listening or retention measurement.",
+  "avatar_produced": false
+}

@@ -1,3 +1,11 @@
+# CasaSemEsforço 5.1 — 25/10/2026
+
+**PARCIAL.** Legendas medidas integradas e ativadas para novas renderizações; dois MP4s comparativos reais salvos no Release `validation-v51-2026-10-25`. 275 testes locais e 275 na prova em nuvem. Auditoria independente e inventário das dez ferramentas em `automation/AUDIT-5.1.md` e `automation/TOOLS-5.1.md`.
+
+Sem avatar animado, publicação de testes ou alteração de consentimentos. FFmpeg/Kokoro/Piper preservados. Custo adicional contratado R$0. Consulte `automation/CHECKPOINT-5.1.md` para métricas, limites, commits e próximo passo.
+
+---
+
 # CasaSemEsforço 4.6 — 25/10/2026
 
 Estado PARCIAL. Consulte automation/CHECKPOINT-4.6.md e AUDIT-4.6.md.
