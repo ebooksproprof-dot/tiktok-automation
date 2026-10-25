@@ -263,6 +263,29 @@
           "provider": "pixabay"
         }
       ]
+    },
+    {
+      "id": "mesa-caneca-afastada",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-25T18:43:24.045364+00:00",
+      "hook": "Bebida tão perto do celular?",
+      "steps": "Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho.",
+      "cta": "Salve para organizar sua mesa.",
+      "media": [
+        {
+          "provider": "pixabay",
+          "provider_id": "133319",
+          "url": "https://cdn.pixabay.com/video/2022/10/03/133319-756469375_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-133319/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "author": "KIMDAEJEUNG",
+          "sha256": "29851ab6e02b49e82e04f2500c495f4eb8c34299d672a70f0c5ff5495b8357f3",
+          "id": "pixabay-133319-full",
+          "frame_mode": "preserve_full",
+          "context": "Caneca sobre mesa recebe bebida perto de um celular e teclado. Cena ilustra proximidade de líquido e aparelhos, não organização já executada nem derramamento. Quadro integral conserva caneca, celular e teclado; sem endosso de marca."
+        }
+      ]
     }
   ]
 }
