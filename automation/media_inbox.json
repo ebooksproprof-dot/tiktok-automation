@@ -275,7 +275,7 @@
       ],
       "width": 3840,
       "height": 2160,
-      "duration": 9.0,
+      "duration": 9,
       "bytes": 7968614,
       "acquired_at": 1792580641
     },
@@ -480,7 +480,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "editorially_rejected",
       "source_id": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
       "sha256": "2e6818fe97a4c15c5e072a9b19a51d1b2380193c795dad9d45cec94bb4631da9",
       "dhash": [
@@ -494,7 +494,10 @@
       "height": 2160,
       "duration": 21.44,
       "bytes": 29501779,
-      "acquired_at": 1793013056
+      "acquired_at": 1793013056,
+      "reviewed_at": "2026-10-26T08:44:00-03:00",
+      "review_source": "authorized assistant visual review",
+      "editorial_rejection": "Shows a person lying and moving in bed, not sorting or storing extra bedding; visual/script mismatch."
     },
     {
       "provider": "pixabay",
@@ -511,7 +514,7 @@
       "requires_crop_review": false,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "technically_rejected",
       "source_id": "https://cdn.pixabay.com/video/2024/09/26/233390_small.mp4",
       "sha256": "0291076a3a265fb3ded8c0aeaf648b7ef261ee302c92da31e30feada0e8c309d",
       "dhash": [
@@ -525,7 +528,10 @@
       "height": 1920,
       "duration": 13.933333,
       "bytes": 3145141,
-      "acquired_at": 1793013060
+      "acquired_at": 1793013060,
+      "reviewed_at": "2026-10-26T08:44:00-03:00",
+      "review_source": "authorized assistant metadata review",
+      "editorial_rejection": "Unique source duration is 13.933333 seconds, below the 15-second minimum; it cannot support a compliant video without looping."
     }
   ],
   "rejected_until": {
