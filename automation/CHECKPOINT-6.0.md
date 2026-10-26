@@ -57,3 +57,10 @@ Sources consulted:
 * https://help.metricool.com/plans-add-ons-and-api-access-explained-xux1u
 
 Mission status: PARTIAL. No new publication. No additional purchase or paid resource enabled. R$0 end-to-end operation is unconfirmed.
+
+## Remote persistence verified
+
+Implementation committed to main: 2cc7728febb3db144dbd3100a9be6cfa03623886. GitHub Actions run 40380548084 (Symphony configuration and intake validation) completed successfully in the cloud. This is regression/configuration validation only, not a real generation or publication test.
+
+https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/40380548084
+
