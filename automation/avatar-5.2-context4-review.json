@@ -1,0 +1,37 @@
+{
+  "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/avatar-v52-2026-10-25/avatar52-accelerated-d3192975cd013f14.mp4",
+  "sha256": "d3192975cd013f145f8ef8ac20acc496be5dbbd34451771ded1a48f118870b7a",
+  "duration_seconds": 5,
+  "resolution": [
+    256,
+    256
+  ],
+  "fps": 8,
+  "frames": 40,
+  "full_decode_passed": true,
+  "audio_mean_db": -18.0,
+  "black_intervals_ge_300ms": 0,
+  "silence_intervals_ge_800ms": 0,
+  "visual_samples_inspected": 20,
+  "facial_motion_observed": true,
+  "lip_motion_observed": "subtle; mouth nearly closed in many samples",
+  "convincing_lip_sync_verified": false,
+  "visual_defects": [
+    "some blur and ghosting",
+    "limited mouth articulation"
+  ],
+  "identity_consistency_across_utterances_tested": false,
+  "quality_approved": false,
+  "production_integrated": false,
+  "published_to_tiktok": false,
+  "independent_review": true,
+  "experiment_elapsed_seconds": 508.051,
+  "diffusion_seconds_approx": 335,
+  "vae_decode_seconds_approx": 72,
+  "peak_child_rss_kib": 14108444,
+  "additional_paid_cost_brl": 0,
+  "capacity_estimate": {
+    "60_experiments_same_settings_minutes_excluding_install": 508.051,
+    "note": "Arithmetic projection from one low-quality proof, not measured sustained throughput or commercial quality."
+  }
+}

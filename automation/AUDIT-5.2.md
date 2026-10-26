@@ -21,3 +21,11 @@ Nove testes de patchesCPU passaram. Regressão independente275testes passou em0,
 DecodificaçãoMP4 exigida antes de avatar_video_produced, mas isso ainda não comprova boca/realismo/sincronização. Revisão visual e áudio continuam pendentes até existir arquivo.
 
 Primeiro commit21df8001d713,run40249889872/job121339279512: em andamento no checkpoint. Resultado real deve ser anexado, sem converter timeout/erro em sucesso.
+
+## Auditoria da primeira saída real
+
+MP4SHA d3192975cd013f145f8ef8ac20acc496be5dbbd34451771ded1a48f118870b7a conferido após download.5s,256×256,40quadros,áudio,decodificação integral,volume−18dB,sem preto>=300ms/silêncio>=800ms. Vintequadros inspecionados: movimento de cabeça/olhos e movimento labialdiscreto, mas bocaquasefechada emváriosquadros e borrões. **Sincronizaçãolabialconvincente não certificada; qualidade comercial não aprovada.** Não existe avaliação de consistênciaentreduasfalas.
+
+Compare remoto127e3dac4413→25ef17058090: apenas seisarquivosisoladosdeavatar/documentação alterados; produção/fila/Buffer/consentimentos intactos. Regressãoindependente275testes,0,309s. Isso não substituiQAaudiovisual.
+
+Configuração da segunda prova revisada: contexto12/overlap3,mesmafala/retrato/seed/CFG/steps/FPS,600sinferência e20minjob. Assets porhash preservamprimeira saída. Run40250835376 emexecução; semresultadoantecipado.
