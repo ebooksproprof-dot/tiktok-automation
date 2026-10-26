@@ -466,7 +466,7 @@
         "requires_crop_review": true,
         "semantic_verified": false,
         "editorial_approved": false,
-        "status": "pending_visual_review",
+        "status": "editorially_rejected",
         "source_id": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
         "sha256": "2e6818fe97a4c15c5e072a9b19a51d1b2380193c795dad9d45cec94bb4631da9",
         "dhash": [
@@ -480,16 +480,20 @@
         "height": 2160,
         "duration": 21.44,
         "bytes": 29501779,
-        "acquired_at": 1793013056
+        "acquired_at": 1793013056,
+        "editorial_rejection": "Footage shows a person lying and moving in bed; it does not show gathering, sorting, identifying, or storing extra bedding, so the visuals do not substantiate the script."
       },
-      "status": "pending_editorial_review",
+      "status": "editorially_rejected",
       "editorial_approved": false,
       "approved": false,
       "published": false,
       "limitations": [
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
-      ]
+      ],
+      "reviewed_at": "2026-10-26T08:44:00-03:00",
+      "review_source": "authorized assistant visual review",
+      "editorial_rejection": "Footage shows a person lying and moving in bed; it does not show gathering, sorting, identifying, or storing extra bedding, so the visuals do not substantiate the script."
     }
   ],
   "last_run": {
