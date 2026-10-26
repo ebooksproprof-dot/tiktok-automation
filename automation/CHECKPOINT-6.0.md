@@ -82,3 +82,11 @@ Verified API documentation facts (not account entitlement):
 * 2026 guide rate table lists Digital Avatar creation limits of 20 QPS, 20 QPM and 2,000 QPD per developer application. These are published ceilings, not verified free entitlements for this account; do not install them as an available balance. Polling should be delayed, bounded and spaced, not every three seconds.
 
 Current next step is a supported WebGL browser for the manual MP4 test, and separately an authorized Business API application/token with confirmed R$0 terms for unattended integration. These are distinct requirements. The manual Studio test alone will not prove automation after Work ends. Production files and publishing route remain unchanged.
+
+## Business API account inspection — continuation 26 October 2026
+
+Studio voiceover editor still shows WebGL unsupported. Opening chrome://gpu to inspect graphics was rejected by the browser URL policy (only HTTP/HTTPS); no alternate mechanism, flags or bypass attempted.
+
+Opened the official Business API portal from the documented registration guide. Legacy numeric guide URL reported doc not found and fell back to general documentation. Navigated via the visible portal logo. Existing TikTok for Business session authenticated; Become a Developer led to https://business-api.tiktok.com/portal/developer/register . The visible Developer registration form requests first/last name, communication email with verification, phone with verification, and business classification (Technology Company, Direct Advertiser, Agency). Clicking Next accepts TikTok For Business Developer Terms. No codes requested, no personal fields submitted, no registration or terms accepted by the agent. User handoff required for verified contact details and registration/terms. Do not assume the earlier developers.tiktok.com app is an API for Business application.
+
+No new MP4, voice selection, API token, permission or publication obtained. Next: user completes Business API registration, then inspect actual available app permissions and Symphony allowlisting/cost before activating generation. Registration itself does not prove API approval or free access.
