@@ -1,0 +1,55 @@
+name: Avatar 5.2 accelerated CPU experiment
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/avatar52-accelerated.yml'
+      - 'automation/avatar52_accelerated.py'
+permissions:
+  contents: write
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Prepare experiment evidence
+        run: |
+          mkdir -p avatar52-output
+          echo '{"stage":"dependency_setup","inference_executed":false,"avatar_video_produced":false}' > avatar52-output/report.json
+      - name: Install isolated CPU dependencies
+        timeout-minutes: 4
+        run: |
+          set -eu
+          python -m pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install numpy==1.26.4 diffusers==0.24.0 huggingface-hub==0.25.2 transformers==4.38.2 accelerate==0.27.2 omegaconf==2.3.0 einops==0.4.1 moviepy==1.0.3 facenet-pytorch==2.5.0 opencv-python-headless==4.10.0.84 av==12.3.0 imageio-ffmpeg soundfile scipy tqdm ffmpeg-python librosa tiktoken numba
+      - name: Attempt five second accelerated CPU inference
+        timeout-minutes: 11
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+          CUDA_VISIBLE_DEVICES: ''
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: python automation/avatar52_accelerated.py
+      - name: Persist avatar evidence to Release
+        if: ${{ !cancelled() && hashFiles('avatar52-output/report.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/save_avatar52.py
+      - name: Preserve evidence even after failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avatar52-cpu-evidence
+          path: |
+            avatar52-output/*.json
+            avatar52-output/*.log
+            avatar52-output/*.mp4
+          if-no-files-found: warn
+          retention-days: 7
