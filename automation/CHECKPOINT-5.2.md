@@ -8,8 +8,8 @@ Hipótese nova: EchoMimic ACC oficial, no mesmo pin c32b3a557003f84ead1483a2d238
 
 Licenças recuperadas: código/hubApache2.0, VAE MIT, baseimagevariationsApache2.0, Whisper/MTCNN MIT, vozKokoro previamentevalidada. Gate verifica LICENSE dohubpin antes da inferência e registraSHA. Sem modelo gated/contrato/pagamento. Reutiliza retratooriginal e primeiros5s doMP4KokoroC3 verificadoporhash; sem sínteseouclonagemnova.
 
-Novos arquivos isolados: avatar52_accelerated.py, save_avatar52.py e workflowavatar52-accelerated.yml. Reutiliza patchesCPU játestados emavatar43_smoke.py sem modificar essearquivo. Nove testesexistentesdoshelpersCPU passaram; compilaçãoPythonpassou. Execução realpendente apósprimeiropush.
+Novos arquivos isolados: avatar52_accelerated.py, save_avatar52.py e workflowavatar52-accelerated.yml. Reutiliza patchesCPU játestados emavatar43_smoke.py sem modificar essearquivo. Nove testesexistentesdoshelpersCPU passaram; compilaçãoPythonpassou. Execução real disparada no commit21df8001d7134445aa5c11908f229ab477c13d21, run40249889872, job121339279512; inferência em andamento.
 
-Reprodução: workflow Avatar5.2, ubuntu24.04/Python3.10/dependênciaspinadas herdadasdoexperimento. python automation/avatar52_accelerated.py. Script salva relatório porfase e logs, inventaria pesos até13GB/RAM/disco antes de inferir. Workflow16min; inferência8min; artifactssempre eReleaseevidências emfalha controlada. Nenhum arquivo é avatarcomprovado sem decodificaçãoMP4 e inspeção posteriorboca/rosto.
+Reprodução: workflow Avatar5.2, ubuntu24.04/Python3.10/dependênciaspinadas herdadasdoexperimento. python automation/avatar52_accelerated.py. Script salva relatório porfase e logs, inventaria pesos até13GB/RAM/disco antes de inferir. Workflow18min; inferência8min; artifactssempre eReleaseevidências emfalha controlada. Nenhum arquivo é avatarcomprovado sem decodificaçãoMP4 e inspeção posteriorboca/rosto.
 
 Próximo passo: acompanharjob, salvarJSON/MP4 imediatamente, revisar movimento e lipsync somente seexistirarquivo. Não repetir tentativa idêntica sefalhar.
