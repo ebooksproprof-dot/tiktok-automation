@@ -64,3 +64,21 @@ Implementation committed to main: 2cc7728febb3db144dbd3100a9be6cfa03623886. GitH
 
 https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/40380548084
 
+
+## Authenticated follow-up — 26 October 2026
+
+User completed sign-in. Fresh UI confirmed TikTok for Business account and Symphony workspace CasaSemEsforço1026. Studio displayed 400 credits. This is an observed Studio balance, not API capacity. The transient cloud transport disconnection recovered without another login.
+
+After one reload the catalog rendered normally. Searching Avatar ID 7616458821397659655 returned one AI-generated avatar. Its details dialog explicitly showed the exact ID. Continue opened Add voiceover, but the editor displayed: **Browser not supported. Please check whether WebGL is enabled in your browser.** Confirmed in visible DOM and screenshot `evidence/symphony-webgl-block-20261026.jpg`. No Keren selection, script submission, generation, download or publication occurred. No browser capability to enable graphical acceleration is exposed. No alternate avatar/voice used.
+
+The earlier documentation blocker is partly resolved: the official linked 2026 integration guide loaded as a guest in the browser, despite the web-search fetch redirecting to login. Read https://bytedance.larkoffice.com/wiki/KcOawZdBwiiI0MkTOU8c6a2Lnac and its linked API reference https://bytedance.sg.larkoffice.com/docx/NWzSdTIkgog178x5jc0cfjFnnXc (reference displays modified December 23, 2025).
+
+Verified API documentation facts (not account entitlement):
+* GET https://business-api.tiktok.com/open_api/v1.3/creative/digital_avatar/get/ requires Access-Token header; retrieve available IDs rather than assuming Studio ID support.
+* The guide links /creative/aigc/voice/get/ for the current voice catalog. Keren's exact API ID has not been retrieved.
+* Documented generation flow: /creative/digital_avatar/video/task/create/ then /creative/digital_avatar/video/task/get/ until SUCCESS, then /creative/digital_avatar/video/list/ to obtain preview_url. No authenticated calls executed.
+* Reference quick-start states allowlist access, contact a TikTok sales representative, and Business API developer app authorization with **Generative AI Tool > Video Generation** permission. Existing TikTok Developer app or Studio login does not prove this permission. No account registration, new permissions, financial agreement or message to a representative submitted.
+* Guide specifies up to 2,000 plain-text script characters; explicitly set the desired voice because omission uses the avatar default. Preview URL is valid for 180 days, so long-term storage requires download.
+* 2026 guide rate table lists Digital Avatar creation limits of 20 QPS, 20 QPM and 2,000 QPD per developer application. These are published ceilings, not verified free entitlements for this account; do not install them as an available balance. Polling should be delayed, bounded and spaced, not every three seconds.
+
+Current next step is a supported WebGL browser for the manual MP4 test, and separately an authorized Business API application/token with confirmed R$0 terms for unattended integration. These are distinct requirements. The manual Studio test alone will not prove automation after Work ends. Production files and publishing route remain unchanged.
