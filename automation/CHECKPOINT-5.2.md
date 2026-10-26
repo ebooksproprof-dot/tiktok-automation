@@ -13,3 +13,11 @@ Novos arquivos isolados: avatar52_accelerated.py, save_avatar52.py e workflowava
 Reprodução: workflow Avatar5.2, ubuntu24.04/Python3.10/dependênciaspinadas herdadasdoexperimento. python automation/avatar52_accelerated.py. Script salva relatório porfase e logs, inventaria pesos até13GB/RAM/disco antes de inferir. Workflow18min; inferência8min; artifactssempre eReleaseevidências emfalha controlada. Nenhum arquivo é avatarcomprovado sem decodificaçãoMP4 e inspeção posteriorboca/rosto.
 
 Próximo passo: acompanharjob, salvarJSON/MP4 imediatamente, revisar movimento e lipsync somente seexistirarquivo. Não repetir tentativa idêntica sefalhar.
+
+## Primeira prova real concluída
+
+Run40249889872 gerou MP4 real de5s/256×256/8fps,40quadros,vozKokoro. Tempo total508,051s; picoRSSfilho14.108.444KiB; CPU4Xeon6973P-C,16.765.378.560bytesRAM,CUDAfalse. Release https://github.com/ebooksproprof-dot/tiktok-automation/releases/tag/avatar-v52-2026-10-25 . MP4 https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/avatar-v52-2026-10-25/avatar52-accelerated-d3192975cd013f14.mp4 .
+
+Auditoriaindependente: hashcorreto,decodificaçãointegral,zero preto/silêncio,volume−18dB. Vintequadros mostram movimento de cabeça/olhos e levesmudançaslabiais, mas bocaquasefechada e borrões. **Não certificada sincronização convincente**. Não classificar qualidadecomercial comoalcançada. Resultado emavatar-5.2-context4-result.json.
+
+Segunda experiência controlada: restaurar contexto12/overlap3 upstream,mesmos40frames/8fps/5s,voz,retrato,seed420,CFG1,seispassos. Hipótese: maiscontextotemporal melhoraarticulação. Janela aumentaRAM; não garantebenefício. Timeoutinferência600s,totaljob20min,semloops. Nãoésegunda fala/consistênciacomprovada; compara umaúnicavariávelprincipal. Pipelineconvencional intacto.

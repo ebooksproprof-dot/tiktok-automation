@@ -50,3 +50,11 @@ D: contasconectadas não permitem a prova solicitada com os recursosobservados;6
 E: ZeroGPU e adaptações adicionais são candidatos, não integraçõescomprovadas.
 
 Nenhum modelo foi declarado avatarfuncional semMP4 e revisão de movimento labial.
+
+## Verificação independente das demonstrações oficiais
+
+EchoMimic Space BadToBest/EchoMimic: público, ungated, revisão909816072e9ac5910197c34e28d8e6f89103722c. API runtime=CONFIG_ERROR; hardwarecurrentnull/requestedzero-a10g. Requirements torch>=2.0.1,<=2.2.2 incompatíveis com versõesZeroGPUatuais a partir2.8. Entrywebgui.py, Gradio4.38.1, decoradorGPUduration300, show_api=False. Não foi feita inferência. https://huggingface.co/spaces/BadToBest/EchoMimic
+
+MuseTalk Space TMElyralab/MuseTalk: público, ungated, revisão59976c128aea3c517339d247016b70f6c15f14d9. API runtime=RUNTIME_ERROR; hardwarecurrentnull/requesteda10g-small, Docker. Erro de modelos ausentes: MuseTalk/SDVAE/Whisper/DWPose/SyncNet/FaceParse/ResNet. CarddoSpace declaraCreativeML-OpenRAIL-M, não a licençaMITdoSDK. Não feita inferência, nem aprovada licença de toda composição. https://huggingface.co/spaces/TMElyralab/MuseTalk
+
+Esses resultados mostram que as demonstrações oficiais consultadas não são endpoints prontos para integração; não demonstram impossibilidade dos modelos em outra instalação. Dados obtidos pelo revisor independente nesta sessão.

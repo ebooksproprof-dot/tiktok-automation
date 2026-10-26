@@ -13,6 +13,10 @@ import urllib.request
 from avatar43_smoke import CODE_REV, WEIGHTS_REV, patch_checkpoint_loading_cpu, patch_reference_attention_device
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'avatar52-output'
+CONTEXT = int(os.getenv('AVATAR_CONTEXT_FRAMES', '4'))
+if CONTEXT not in (4, 12):
+    raise ValueError('Only bounded context4 or upstream-default12 experiments allowed')
+OVERLAP = {4: 1, 12: 3}[CONTEXT]
 
 def validate_mp4(path):
     """Decode both complete streams and validate the requested proof geometry/time."""
@@ -69,8 +73,8 @@ def main():
             subprocess.run(args, cwd=cwd, stdout=log, stderr=subprocess.STDOUT,
                            check=True, timeout=seconds)
 
-    report['hypothesis'] = 'Official accelerated weights and CFG1 avoid doubled guidance batch; context4 reduces per-call activations. Not a promised CPU speedup.'
-    report['settings'] = dict(width=256,height=256,frames=40,fps=8,steps=6,cfg=1.0,context_frames=4,context_overlap=1,inference_timeout_seconds=480,seed=420)
+    report['hypothesis'] = 'Controlled comparison: context4 minimizes activation size; context12 restores upstream temporal window. Same portrait/audio/seed/CFG1/6steps; no quality guarantee.'
+    report['settings'] = dict(width=256,height=256,frames=40,fps=8,steps=6,cfg=1.0,context_frames=CONTEXT,context_overlap=OVERLAP,inference_timeout_seconds=600,seed=420)
     report['cpu_count'] = os.cpu_count()
     report['available_cpu_affinity'] = len(os.sched_getaffinity(0))
     report['cgroup_memory_max'] = Path('/sys/fs/cgroup/memory.max').read_text().strip() if Path('/sys/fs/cgroup/memory.max').exists() else None
@@ -191,7 +195,7 @@ def main():
         # Official accelerated weights/pipeline: six steps, CFG1; smaller temporal windows bound activations.
         run([sys.executable, 'infer_audio2vid_acc.py', '--device', 'cpu', '-W', '256',
              '-H', '256', '-L', '40', '--fps', '8', '--steps', '6', '--cfg', '1.0',
-             '--context_frames', '4', '--context_overlap', '1'], cwd=code, seconds=480)
+             '--context_frames', str(CONTEXT), '--context_overlap', str(OVERLAP)], cwd=code, seconds=600)
         videos = list((code / 'output').rglob('*withaudio.mp4'))
         if not videos:
             raise RuntimeError('Inference returned without an audio/video artifact')
