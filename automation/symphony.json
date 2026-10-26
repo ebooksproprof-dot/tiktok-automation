@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "provider": "tiktok_symphony",
+  "avatar_id": "7616458821397659655",
+  "voice_name": "Keren",
+  "locale": "pt-BR",
+  "api_avatar_id": null,
+  "api_voice_id": null,
+  "width": 1080,
+  "height": 1920,
+  "timezone": "America/Sao_Paulo",
+  "publication_hours": [10, 18],
+  "creative_reference": "@vault_shopp",
+  "additional_budget_brl": 0,
+  "generation_enabled": false,
+  "blocked_reason": "Official API contract, account access, exact avatar/voice mapping and zero-cost entitlement unverified. Studio login required.",
+  "api_capacity": {"balance": null, "renews_at": null, "avatar_consumption": null},
+  "fallback_voice_allowed": false,
+  "fallback_avatar_allowed": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "symphony-767c8183a1b468bb",
+      "script": "Sua bancada some debaixo da bagunça? Antes de comprar outro organizador, separe o que você usa todos os dias. Junte esses itens numa bandeja que caiba no espaço e guarde o restante. Na hora de limpar, fica mais fácil levantar tudo de uma vez. Me conta: qual cantinho da sua casa precisa dessa organização?",
+      "script_sha256": "767c8183a1b468bbc58303dc7797ae1e1298373a603eb364161cf8fb83038836",
+      "requested_identity": {
+        "avatar_id": "7616458821397659655",
+        "voice_name": "Keren",
+        "locale": "pt-BR"
+      },
+      "status": "BLOCKED_API_ACCESS",
+      "approved": false
+    },
+    {
+      "id": "symphony-362c7a83d30b5f3b",
+      "script": "Você abre a gaveta e nunca acha o que procura? Tire os utensílios, separe por função e meça o espaço antes de escolher divisórias. Deixe os mais usados perto da frente, sem apertar tudo. A ideia é conseguir pegar e devolver cada peça com facilidade. Salve para testar na próxima organização.",
+      "script_sha256": "362c7a83d30b5f3b500ab456a44486378a5a096eaf7592f2d1be1de092b471ca",
+      "requested_identity": {
+        "avatar_id": "7616458821397659655",
+        "voice_name": "Keren",
+        "locale": "pt-BR"
+      },
+      "status": "BLOCKED_API_ACCESS",
+      "approved": false
+    }
+  ]
+}

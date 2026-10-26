@@ -1,0 +1,26 @@
+name: Symphony configuration and intake validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/symphony*'
+      - 'automation/tests/test_symphony_intake.py'
+      - '.github/workflows/symphony-readiness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regression tests (simulated unit tests, no generation)
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Report blocked Symphony status (not a generation test)
+        run: python automation/symphony_intake.py status
