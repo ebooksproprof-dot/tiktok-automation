@@ -441,15 +441,64 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-cama-guardar-roupa-extra",
+      "topic": "cama-guardar-roupa-extra",
+      "family": "cama",
+      "hook": "A roupa de cama extra está sem lugar?",
+      "steps": "Reúna as peças que pertencem ao mesmo conjunto. Confira se estão limpas e completamente secas antes de guardar. Escolha um espaço onde caibam sem bloquear portas ou gavetas. Identifique os conjuntos pelo tamanho da cama.",
+      "cta": "Separe um lugar para cada conjunto.",
+      "body_sha256": "42b7d548451f06bd4b00e4d392ad9a88852837a5a30a86446405e13b2299efcb",
+      "script_sha256": "12fd4ac02af45aea7eeb4cdecbfc59d763f0e0bfb3d25e1af33bb3c6486b8310",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "151295",
+        "url": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-151295/",
+        "author": "ghasoub",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: ghasoub / Pixabay — https://pixabay.com/videos/id-151295/",
+        "category": "cama",
+        "query": "making bed bedroom",
+        "selection_reason": "Provider tags: woman, wake up, bed, sleep, pose, morning",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
+        "sha256": "2e6818fe97a4c15c5e072a9b19a51d1b2380193c795dad9d45cec94bb4631da9",
+        "dhash": [
+          "39590d4f8bbbfbdf",
+          "39599ca4cdd1f272",
+          "39585cc46c746466",
+          "4c0c1c3a3a383b3b",
+          "1616060c1c3c266e"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 21.44,
+        "bytes": 29501779,
+        "acquired_at": 1793013056
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 15,
-    "pending_review": 9,
+    "unused_templates": 14,
+    "pending_review": 10,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }

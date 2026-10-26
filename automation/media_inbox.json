@@ -464,86 +464,99 @@
       "duration": 12.64,
       "bytes": 18340272,
       "acquired_at": 1792925865
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "151295",
+      "url": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-151295/",
+      "author": "ghasoub",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: ghasoub / Pixabay — https://pixabay.com/videos/id-151295/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: woman, wake up, bed, sleep, pose, morning",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2023/02/19/151295-800360305_large.mp4",
+      "sha256": "2e6818fe97a4c15c5e072a9b19a51d1b2380193c795dad9d45cec94bb4631da9",
+      "dhash": [
+        "39590d4f8bbbfbdf",
+        "39599ca4cdd1f272",
+        "39585cc46c746466",
+        "4c0c1c3a3a383b3b",
+        "1616060c1c3c266e"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 21.44,
+      "bytes": 29501779,
+      "acquired_at": 1793013056
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "233390",
+      "url": "https://cdn.pixabay.com/video/2024/09/26/233390_small.mp4",
+      "source_page": "https://pixabay.com/videos/id-233390/",
+      "author": "Yasir1120",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Yasir1120 / Pixabay — https://pixabay.com/videos/id-233390/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: woman, female, room, phone, candle, pose, modeling, bed, tired, relax, resting, night",
+      "requires_crop_review": false,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2024/09/26/233390_small.mp4",
+      "sha256": "0291076a3a265fb3ded8c0aeaf648b7ef261ee302c92da31e30feada0e8c309d",
+      "dhash": [
+        "043f67c787838300",
+        "041f67c787838300",
+        "043767c785c38300",
+        "042f67c785838300",
+        "042f67c785838300"
+      ],
+      "width": 1080,
+      "height": 1920,
+      "duration": 13.933333,
+      "bytes": 3145141,
+      "acquired_at": 1793013060
     }
   ],
   "rejected_until": {
     "pixabay:38116": 1793185430
   },
   "last_run": {
-    "at": 1792953826,
-    "acquired": 0,
+    "at": 1793013052,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 1,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cabides",
+        "category": "cama",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cabides",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "eligible_candidates": 10,
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "clothes hangers wardrobe",
-      "washing dishes kitchen sink",
-      "books shelf organizing",
-      "microfiber cloth cleaning"
+      "making bed bedroom",
+      "laundry basket clothes",
+      "cutlery kitchen drawer",
+      "indoor plant pot tray"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 15,
+    "unreviewed_media_count": 17,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
