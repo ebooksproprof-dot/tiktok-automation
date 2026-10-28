@@ -607,24 +607,24 @@
         "window_seconds": 900,
         "quota": 150,
         "remaining": 148,
-        "reset_at": "2026-10-28T17:17:55.513508Z",
-        "observed_at": "2026-10-28T17:02:55.513508Z"
+        "reset_at": "2026-10-28T17:17:55.899094Z",
+        "observed_at": "2026-10-28T17:05:07.899094Z"
       },
       "86400": {
         "policy": "600-in-1day",
         "window_seconds": 86400,
         "quota": 600,
         "remaining": 598,
-        "reset_at": "2026-10-29T17:02:55.513508Z",
-        "observed_at": "2026-10-28T17:02:55.513508Z"
+        "reset_at": "2026-10-29T17:02:55.899094Z",
+        "observed_at": "2026-10-28T17:05:07.899094Z"
       },
       "2592000": {
         "policy": "1000-in-30days",
         "window_seconds": 2592000,
         "quota": 1000,
         "remaining": 874,
-        "reset_at": "2026-11-16T22:01:05.513508Z",
-        "observed_at": "2026-10-28T17:02:55.513508Z"
+        "reset_at": "2026-11-16T22:01:05.899094Z",
+        "observed_at": "2026-10-28T17:05:07.899094Z"
       }
     },
     "consecutive_errors": 0
