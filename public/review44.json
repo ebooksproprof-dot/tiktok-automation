@@ -1,16 +1,16 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-28T11:45:43.433137+00:00",
+  "generated_at": "2026-10-28T11:50:42.836254+00:00",
   "expires_at": "2026-10-29T09:55:00-03:00",
-  "queue_snapshot_sha256": "d328caf8683ffd17642fdc317fc6f8b480a7a7a5c8fed6e2c7e8a7b451d08915",
-  "state_snapshot_sha256": "71a2a6fdd98fc5a72c1b241ccf0dc1669172c8b56cca0854452680ca5b8bc73a",
+  "queue_snapshot_sha256": "82aff7d49b8d60bf95bb0ab1da5f445c7a4312a5743bf96f8841f9edff5591cb",
+  "state_snapshot_sha256": "0e87c5fa13c0e18d96aa3c7a20f6fa0f858e50d028d169f027e2f530d1c44c66",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 12,
-  "selectable_count": 9,
+  "pending_count": 11,
+  "selectable_count": 8,
   "items": [
     {
       "id": "casasem-2026-10-23-1",
@@ -56,7 +56,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
       "sha256": "d38426bebc1ffff25a201456b73a58190ef7c49b5466f5b86150f31af8ae8e85",
       "script_hash": "a2693a59635356ef47545e2dca9147455f7de40facfcbdbd18f4c50f4e50e9d0",
-      "post_snapshot_sha256": "79a1268b2e5dda7223c4b5859a086481df19f624676e07098af95b9db8df99f2",
+      "post_snapshot_sha256": "25c0381c4915397eab851ff7737a3dc91a4754d08734e780564d9f46a23cc66b",
       "title": "Aqui, o secador aparece em uso. Observe como a pessoa movimenta o aparelho enquanto separa os fios com a mão. Esta é uma cena ilustrativa, sem comparação de resultados. Para usar o seu secador, siga as orientações do fabricante. Salve este lembrete para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Engin_Akyurt; https://pixabay.com/videos/id-37325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Aqui, o secador aparece em uso.",
@@ -90,7 +90,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4",
       "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
       "script_hash": "746877dbbee892ea1bff5db54ee23a8d3fa3da98e33db1e15b713625e045081d",
-      "post_snapshot_sha256": "b9268f342b207f13d110a9f2716b930f83def5db5629254d589a244bfd845762",
+      "post_snapshot_sha256": "9f1e91db8d166e0914e5146d8c8cc402e34febda578761d48395f930af2125b4",
       "title": "Sua próxima cuba cabe na pia? Nesta cena, veja o espaço disponível para lavar as mãos. Antes de comprar, confira as medidas, o local de instalação e a compatibilidade com a torneira. A filmagem ilustra o uso e não comprova a qualidade de um modelo. Salve para comparar suas opções. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Engin_Akyurt; https://pixabay.com/videos/id-38115/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Sua próxima cuba cabe na pia?",
@@ -128,7 +128,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
       "sha256": "1ae57a0d43945dc05f505e09bfcdd8e5da10380765b57770db1b3156698001d3",
       "script_hash": "e0ed55fdab32caeb876519b38ff104477757d8b455cd6342674d0467e5849630",
-      "post_snapshot_sha256": "3bd09c684e203dba8b3c87f6919a3dc12ca60f6820ef208c71bee9553a87c697",
+      "post_snapshot_sha256": "eb5172d82c8944bc52bbd8d0a53cf1dabdfcc17f92fd7bc693e3af199d64a2b3",
       "title": "Vai levar outro livro para casa? Antes de trazer outro livro para casa, confira o que você já tem. Leia a sinopse e algumas páginas para ver se o tema interessa. Pense onde vai guardar o exemplar. Se estiver em dúvida, anote título e autor para decidir depois. Salve para sua próxima leitura. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Vai levar outro livro para casa?",
@@ -162,7 +162,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4",
       "sha256": "e5ed7c26239ad88fc5e7f87159a553a6514d28cda67370cb9de2588e7a957296",
       "script_hash": "748f14eaa522436be1885efa871af649785036cc9596fb41bf30f8d0d6ff2f41",
-      "post_snapshot_sha256": "6bf4cd03dd1523c68af67b222fc5e3c30f2bf02444e8c0300dfd38b18f09631b",
+      "post_snapshot_sha256": "e2fc2c6e8e9185701b1d9a524ceb813ce653aeeef28a43810598eff13d46d9c2",
       "title": "Você guarda o tecido ainda úmido? Depois de lavar, confira a etiqueta. Se ela permitir secagem ao ar, estenda sem sobrepor. Deixe o ar circular. Espere secar completamente antes de dobrar e guardar. Salve este cuidado para a próxima lavagem. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — NickyPe; https://pixabay.com/videos/id-165820/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Você guarda o tecido ainda úmido?",
@@ -192,7 +192,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
       "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
       "script_hash": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
-      "post_snapshot_sha256": "5b8731b0fb6e07552d903726b1110357668bec8d2136965d25ab840e5850dbb8",
+      "post_snapshot_sha256": "4fd5e31352f8ae869128ef0d5789205080768e06890a1f412ac689a881f9ffd1",
       "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Terminou de usar a pia?",
@@ -226,7 +226,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
       "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
       "script_hash": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
-      "post_snapshot_sha256": "d173815f898205b3eee7ca2421b3a302aa7797668e70d870f637bce903de7b26",
+      "post_snapshot_sha256": "aded2607e424c3d7a9846486dec205972a9aedf5d2b29caa6c2a3b237f43ad99",
       "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Bebida tão perto do celular?",
@@ -248,38 +248,6 @@
       "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
       "original_scheduled_at": "2026-10-26T13:00:00+00:00",
       "proposed_scheduled_at": "2026-11-01T10:00:00-03:00",
-      "schedule_changed": true,
-      "selectable": true,
-      "blockers": [],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
-    {
-      "id": "casasem-2026-10-28-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-28-1-6e71e9450041deb0.mp4",
-      "sha256": "6e71e9450041deb0f5c7509a5bdb079c8c770940775fd7f2baff5c5e9208dc9e",
-      "script_hash": "63248cdd18b8837721e7478d58fc868d3b1c06baa7e674414577558acadf05dc",
-      "post_snapshot_sha256": "6562514a34577c98ab9b4cb3607260e6808ad85ba888fb2ba659ec6176288d34",
-      "title": "Vai guardar roupas em uma caixa? Use apenas peças limpas e completamente secas. Dobre uma por vez para aproveitar o espaço. Coloque cada peça sem forçar a tampa. Identifique o conteúdo e a data antes de guardar. Evite locais úmidos. Salve para organizar suas roupas. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Nataliya Vaitkevich; https://www.pexels.com/video/a-woman-folding-a-cloth-before-putting-on-a-box-8938252/; https://www.pexels.com/license/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai guardar roupas em uma caixa?",
-        "Use apenas peças limpas e",
-        "completamente secas.",
-        "Dobre uma por vez para",
-        "aproveitar o espaço.",
-        "Coloque cada peça sem forçar",
-        "a tampa.",
-        "Identifique o conteúdo e a",
-        "data antes de guardar.",
-        "Evite locais úmidos.",
-        "Salve para organizar suas",
-        "roupas."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-10-28T13:00:00+00:00",
-      "proposed_scheduled_at": "2026-11-01T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -417,7 +385,7 @@
       ],
       "voice": "pt_BR-faber-medium",
       "original_scheduled_at": "2026-10-22T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-11-02T10:00:00-03:00",
+      "proposed_scheduled_at": "2026-11-01T18:00:00-03:00",
       "schedule_changed": true,
       "selectable": true,
       "blockers": [],
@@ -432,5 +400,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "3f3d862e1fe3a955625563c6842db59d5e9d748b66a51019efff161b933697d9"
+  "manifest_sha256": "90182af1ea88e72c1ce4089f603c7cfa7ae5b81bb48447bc82e1b22a845cca57"
 }
