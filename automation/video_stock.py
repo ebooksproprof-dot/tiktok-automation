@@ -242,10 +242,23 @@ def add_video(state, metadata, now):
 def schedule(state, now, occupied_slots=()):
     """Reserve future 10h/18h local slots; retain past reservations for audit."""
     now = instant(now)
+    # Missed local reservations are safe to move only before any external attempt.
+    # Preserve history instead of losing an otherwise usable video after cron delay.
+    for item in state['items']:
+        if (item['status'] == 'SCHEDULED' and item['attempts'] == 0
+                and not item.get('remote_id')
+                and instant(item['scheduled_at']) <= now + timedelta(minutes=10)):
+            event(item, 'MISSED_SLOT', now, previous_slot=item['scheduled_at'])
+            item.update(status='READY', scheduled_at=None)
     occupied = {stamp(value) for value in occupied_slots if value}
     occupied.update(stamp(i['scheduled_at']) for i in state['items'] if i.get('scheduled_at'))
     day = now.astimezone(BRT).date()
-    ready = [item for item in state['items'] if item['status'] == 'READY']
+    ready = [item for item in state['items'] if item['status'] == 'READY'
+             and item.get('commercial_content') is not True]
+    for item in state['items']:
+        if item['status'] == 'READY' and item.get('commercial_content') is True:
+            item['hold_reason'] = 'COMMERCIAL_DISCLOSURE_UNSUPPORTED'
+
     for offset in range(366):
         date = day + timedelta(days=offset)
         for hour in (10, 18):
@@ -313,8 +326,11 @@ def recover_interrupted(state, now):
 
 
 def stock_report(state, now):
-    available = sum(i['status'] in ('READY', 'SCHEDULED') for i in state['items'])
-    return {'available': available, 'low_stock': available < 7, 'target_min': 14,
+    total = sum(i['status'] in ('READY', 'SCHEDULED') for i in state['items'])
+    held = sum(i['status'] in ('READY', 'SCHEDULED') and i.get('commercial_content') is True
+               for i in state['items'])
+    available = total - held
+    return {'available': available, 'total_inventory': total, 'held_commercial': held, 'low_stock': available < 7, 'target_min': 14,
             'target_max': 28, 'refill_needed': max(0, 14 - available),
             'unknown': sum(i['status'] == 'UNKNOWN' for i in state['items']),
             'missed_slots': [i['id'] for i in state['items'] if i['status'] == 'SCHEDULED'

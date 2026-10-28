@@ -1,0 +1,58 @@
+name: CasaSemEsforco Persistent Video Stock
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/video_stock.py'
+      - 'automation/stock_*.py'
+      - 'automation/tests/test_stock*.py'
+      - 'automation/tests/test_video_stock.py'
+      - '.github/workflows/video-stock.yml'
+  workflow_dispatch:
+    inputs:
+      check_channel_only:
+        description: 'Import and validate stock; check Buffer without creating posts'
+        type: boolean
+        default: false
+  schedule:
+    # Schedule remotely ahead of time; GitHub cron is not an exact-time SLA.
+    - cron: '37 0,6,12,18 * * *'
+    - cron: '37 13,21 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: casasemesforco-state
+  cancel-in-progress: false
+
+jobs:
+  stock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install real audiovisual validator
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Regression and synthetic MP4 integration tests (no publication)
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Import, reserve and reconcile persistent stock
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
+          CHECK_ONLY: ${{ github.event_name == 'push' || inputs.check_channel_only }}
+          PROBE: ${{ github.event_name == 'push' }}
+        run: |
+          args=()
+          if [ "$CHECK_ONLY" = 'true' ]; then args+=(--check-channel); fi
+          if [ "$PROBE" = 'true' ]; then args+=(--probe); fi
+          python automation/stock_runner.py "${args[@]}"

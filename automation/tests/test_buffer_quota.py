@@ -35,7 +35,7 @@ class BufferQuotaTests(unittest.TestCase):
             self.assertTrue(q.check(state,NOW))
 
     def test_monthly_limit_and_required_count(self):
-        state={'buffer_api_usage':[q.stamp(NOW-dt.timedelta(days=2))]*1799}
+        state={'buffer_api_usage':[q.stamp(NOW-dt.timedelta(days=2))]*899}
         self.assertTrue(q.check(state,NOW,required=1))
         with self.assertRaises(q.BudgetExceeded):q.check(state,NOW,required=2)
 

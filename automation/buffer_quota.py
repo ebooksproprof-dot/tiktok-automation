@@ -8,7 +8,7 @@ import datetime as dt
 from email.utils import parsedate_to_datetime
 import re
 
-WINDOWS = {900: 90, 86400: 90, 2592000: 1800}
+WINDOWS = {900: 90, 86400: 90, 2592000: 900}
 RUN_LIMIT = 8
 UTC = dt.timezone.utc
 

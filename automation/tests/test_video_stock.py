@@ -164,6 +164,38 @@ class VideoStockTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             s.add_video(s.empty(), dict(values, commercial_content='false'), NOW)
 
+    def test_missed_unattempted_slot_replanned_preserving_history(self):
+        state, item = self.stock()
+        later = datetime(2026, 10, 29, 14, tzinfo=timezone.utc)
+        s.schedule(state, later)
+        self.assertEqual(item['scheduled_at'], '2026-10-29T21:00:00Z')
+        missed = [e for e in item['history'] if e['action'] == 'MISSED_SLOT']
+        self.assertEqual(missed[0]['previous_slot'], '2026-10-28T13:00:00Z')
+        self.assertEqual(item['attempts'], 0)
+
+    def test_attempted_slots_never_replanned_even_remote_scheduled(self):
+        for status in ('UNKNOWN', 'SCHEDULED'):
+            state, item = self.stock()
+            s.claim(state, item['id'], NOW)
+            s.resolve(state, item['id'], status, NOW, remote_id='remote-test')
+            later = datetime(2026, 10, 29, 14, tzinfo=timezone.utc)
+            before = copy.deepcopy(item)
+            s.schedule(state, later)
+            self.assertEqual(item, before)
+
+    def test_commercial_held_without_consuming_publishable_slots(self):
+        state = s.empty()
+        commercial = s.add_video(state, dict(metadata(), commercial_content=True), NOW)
+        normal = s.add_video(state, dict(metadata(1), commercial_content=False), NOW)
+        s.schedule(state, NOW)
+        self.assertEqual(commercial['status'], 'READY')
+        self.assertIsNone(commercial['scheduled_at'])
+        self.assertEqual(normal['scheduled_at'], '2026-10-28T13:00:00Z')
+        report = s.stock_report(state, NOW)
+        self.assertEqual(report['available'], 1)
+        self.assertEqual(report['total_inventory'], 2)
+        self.assertEqual(report['held_commercial'], 1)
+
     def test_low_stock_and_refill_target(self):
         state = s.empty()
         self.assertEqual(s.stock_report(state, NOW)['refill_needed'], 14)
