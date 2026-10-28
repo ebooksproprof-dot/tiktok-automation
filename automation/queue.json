@@ -1053,7 +1053,7 @@
         "audio_mean_db": -15.2,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.013333,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1146,7 +1146,7 @@
         "audio_mean_db": -15.3,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.015,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1249,7 +1249,7 @@
         "audio_mean_db": -15.3,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.032333,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1352,7 +1352,7 @@
         "audio_mean_db": -15.4,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.003667,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1445,7 +1445,7 @@
         "audio_mean_db": -15.2,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.008667,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1546,7 +1546,7 @@
         "audio_mean_db": -15.2,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.009,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1636,12 +1636,12 @@
       "id": "casasem-2026-10-28-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-28-1-6e71e9450041deb0.mp4",
       "title": "Vai guardar roupas em uma caixa? Use apenas peças limpas e completamente secas. Dobre uma por vez para aproveitar o espaço. Coloque cada peça sem forçar a tampa. Identifique o conteúdo e a data antes de guardar. Evite locais úmidos. Salve para organizar suas roupas. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Nataliya Vaitkevich; https://www.pexels.com/video/a-woman-folding-a-cloth-before-putting-on-a-box-8938252/; https://www.pexels.com/license/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-10-28T13:00:00+00:00",
+      "scheduled_at": "2026-10-28T21:00:00+00:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "6e71e9450041deb0f5c7509a5bdb079c8c770940775fd7f2baff5c5e9208dc9e",
         "duration": 18.666667,
         "size": 2605820,
@@ -1650,7 +1650,7 @@
         "audio_mean_db": -15.5,
         "black_intervals_over_300ms": 0,
         "silence_intervals_over_800ms": 0,
-        "av_start_delta_seconds": 0.0,
+        "av_start_delta_seconds": 0,
         "av_end_delta_seconds": 0.019667,
         "lip_sync_verified": false,
         "visual_policy_version": 1,
@@ -1706,7 +1706,18 @@
         ],
         "source_licenses": [
           "https://www.pexels.com/license/"
-        ]
+        ],
+        "editorial_review": {
+          "reviewed_at": "2026-10-28T11:49:00Z",
+          "checks": [
+            "eight-frame final MP4 visual review",
+            "caption and script coherence review",
+            "1080x1920 H.264/AAC, 18.67s, continuous non-silent audio validated",
+            "exact SHA-256 matches GitHub Release and queue",
+            "Metricool planner checked empty before submission and exact scheduled post read back after submission"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "roupas-caixa-guardar",
       "category": "organizacao",
@@ -1727,8 +1738,16 @@
       "script_sha256": "63248cdd18b8837721e7478d58fc868d3b1c06baa7e674414577558acadf05dc",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "SCHEDULED_VIA_METRICOOL_PENDING",
+      "media_storage": "release",
+      "publication_provider": "metricool",
+      "original_scheduled_at": "2026-10-28T13:00:00+00:00",
+      "metricool_post_id": 408851997,
+      "metricool_uuid": "-2922085991619278842",
+      "metricool_status": "PENDING",
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=-2922085991619278842",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-4358749720613801781.mp4",
+      "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile."
     }
   ]
 }
