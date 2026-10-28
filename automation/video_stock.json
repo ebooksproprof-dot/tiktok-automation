@@ -8,6 +8,40 @@
     "skipped": [],
     "waiting_for_manifest": []
   },
+  "last_run": {
+    "additional_paid_services_enabled": false,
+    "at": "2026-10-28T17:02:45.247957Z",
+    "cloud_probe": {
+      "cloud_readback": true,
+      "publication_attempted": false,
+      "stale_writer_rejected": true
+    },
+    "generation_enabled": false,
+    "import": {
+      "errors": [],
+      "imported": [],
+      "skipped": [],
+      "waiting_for_manifest": []
+    },
+    "publication": {
+      "api_calls": 1,
+      "channel_verified": true,
+      "held": [],
+      "submitted": 0
+    },
+    "stock": {
+      "available": 0,
+      "held_commercial": 0,
+      "low_stock": true,
+      "missed_slots": [],
+      "published": 0,
+      "refill_needed": 14,
+      "target_max": 28,
+      "target_min": 14,
+      "total_inventory": 0,
+      "unknown": 0
+    }
+  },
   "production": {
     "api_balance": null,
     "api_renews_at": null,
