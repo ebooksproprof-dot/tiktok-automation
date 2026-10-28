@@ -286,6 +286,60 @@
           "context": "Caneca sobre mesa recebe bebida perto de um celular e teclado. Cena ilustra proximidade de líquido e aparelhos, não organização já executada nem derramamento. Quadro integral conserva caneca, celular e teclado; sem endosso de marca."
         }
       ]
+    },
+    {
+      "id": "roupas-caixa-guardar",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-28T08:50:00-03:00",
+      "hook": "Vai guardar roupas em uma caixa?",
+      "steps": "Use apenas peças limpas e secas. Dobre uma por vez. Coloque sem forçar a tampa. Identifique o conteúdo antes de guardar.",
+      "cta": "Salve para organizar suas roupas.",
+      "media": [
+        {
+          "id": "pexels-8938252-full",
+          "provider": "pexels",
+          "provider_id": "8938252",
+          "url": "https://videos.pexels.com/video-files/8938252/8938252-hd_1080_1920_30fps.mp4",
+          "source_page": "https://www.pexels.com/video/a-woman-folding-a-cloth-before-putting-on-a-box-8938252/",
+          "license": "Pexels License",
+          "license_url": "https://www.pexels.com/license/",
+          "author": "Nataliya Vaitkevich",
+          "sha256": "df80c5f834760d9cc3db17dd19d2281af1d37e9cb71c0c63edb27ca8734fedd7",
+          "width": 1080,
+          "height": 1920,
+          "duration": 21.353333,
+          "frame_mode": "preserve_full",
+          "context": "Pessoa adulta retira uma peça clara do cabide, dobra, coloca em uma caixa e fecha a tampa. A cena demonstra a sequência descrita, sem prometer conservação ou resultado."
+        }
+      ]
+    },
+    {
+      "id": "armario-potes-por-tipo",
+      "category": "organizacao",
+      "reviewed": true,
+      "reviewed_at": "2026-10-28T08:50:00-03:00",
+      "hook": "Potes espalhados no armário?",
+      "steps": "Agrupe potes semelhantes. Deixe os mais usados ao alcance. Mantenha os rótulos visíveis. Feche bem cada tampa antes de guardar.",
+      "cta": "Salve esta ordem.",
+      "media": [
+        {
+          "id": "pexels-8580892-full",
+          "provider": "pexels",
+          "provider_id": "8580892",
+          "url": "https://videos.pexels.com/video-files/8580892/8580892-hd_1080_1920_30fps.mp4",
+          "source_page": "https://www.pexels.com/video/a-person-holding-glass-jars-8580892/",
+          "license": "Pexels License",
+          "license_url": "https://www.pexels.com/license/",
+          "author": "RDNE Stock project",
+          "sha256": "78571abadfefa2bb9a57a2fdafac989b4991d0e122c8b85906d1aa36aed8f242",
+          "width": 1080,
+          "height": 1920,
+          "duration": 16.633333,
+          "frame_mode": "preserve_full",
+          "context": "Pessoa adulta organiza potes de vidro em um armário de cozinha e fecha a porta. A filmagem mostra a ação real, sem alegar qualidade de produto ou segurança alimentar além da orientação geral do roteiro."
+        }
+      ]
     }
   ]
 }
