@@ -1,5 +1,19 @@
 {
   "events": [],
   "items": [],
+  "last_import": {
+    "at": "2026-10-28T17:02:45.247957Z",
+    "errors": [],
+    "imported": [],
+    "skipped": [],
+    "waiting_for_manifest": []
+  },
+  "production": {
+    "api_balance": null,
+    "api_renews_at": null,
+    "enabled": false,
+    "provider": "tiktok_symphony",
+    "reason": "API entitlement, free terms and Keren mapping unverified"
+  },
   "schema_version": 1
 }
