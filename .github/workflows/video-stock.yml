@@ -39,7 +39,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install real audiovisual validator
-        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
       - name: Regression and synthetic MP4 integration tests (no publication)
         env:
           GITHUB_STEP_SUMMARY: ''
