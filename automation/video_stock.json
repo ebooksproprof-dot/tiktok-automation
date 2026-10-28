@@ -10,12 +10,8 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-10-28T17:04:58.269923Z",
-    "cloud_probe": {
-      "cloud_readback": true,
-      "publication_attempted": false,
-      "stale_writer_rejected": true
-    },
+    "at": "2026-10-28T19:27:56.680270Z",
+    "cloud_probe": null,
     "generation_enabled": false,
     "import": {
       "errors": [],
@@ -24,9 +20,9 @@
       "waiting_for_manifest": []
     },
     "publication": {
-      "api_calls": 1,
-      "channel_verified": true,
+      "api_calls": 0,
       "held": [],
+      "reconciled": 0,
       "submitted": 0
     },
     "stock": {
