@@ -1,16 +1,16 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-29T11:37:03.357597+00:00",
+  "generated_at": "2026-10-29T11:39:07.681257+00:00",
   "expires_at": "2026-10-30T09:55:00-03:00",
-  "queue_snapshot_sha256": "ed89671ab077ab962020388170a624b9b1460249fa5cc29605656b173834aa57",
-  "state_snapshot_sha256": "d91a9fb65ee35d54ce620e83437f9147bca3a70037dc449bc8c68b65f2245ef0",
+  "queue_snapshot_sha256": "e0ca2c46de3f261174cde05157164ae3da9b03bd05633291c8a5e873529faaf4",
+  "state_snapshot_sha256": "ca6994beac165ed6061d7dab023d1b321008ee99fc659e95039678b826ed509e",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 10,
-  "selectable_count": 6,
+  "pending_count": 9,
+  "selectable_count": 5,
   "items": [
     {
       "id": "casasem-2026-10-23-2",
@@ -324,44 +324,8 @@
       },
       "approved": false,
       "consented_at": null
-    },
-    {
-      "id": "casasem-2026-10-22-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-2-0d0e40c27bd891aa.mp4",
-      "sha256": "0d0e40c27bd891aad8e7a8ef3ad9d8bd46901f51b0a05bce42a85759488b9b0a",
-      "script_hash": "bbfc5d389076f8cdba63035665ac446350b197a9fd33368e53018bd76d6a694b",
-      "post_snapshot_sha256": "45e44cb57aa9fa5fbd2bdeddc359f2cbfcc336ef923e4c7a1c043ce673eecd99",
-      "title": "Esqueceu os pontos de toque? Confira a bancada, a borda da pia e o puxador da geladeira. Use um pano limpo, adequado a cada superfície. Separe os materiais de cada ambiente. Respeite o rótulo dos produtos e a orientação do fabricante. Salve esta lista para a próxima limpeza. #CasaSemEsforco #OrganizacaoDaCasa",
-      "script_lines": [
-        "Esqueceu os pontos de toque?",
-        "Confira a bancada, a borda da",
-        "pia e o puxador da geladeira.",
-        "Use um pano limpo, adequado a",
-        "cada superfície.",
-        "Separe os materiais de cada",
-        "ambiente.",
-        "Respeite o rótulo dos",
-        "produtos e a orientação do",
-        "fabricante.",
-        "Salve esta lista para a",
-        "próxima limpeza."
-      ],
-      "voice": "pt_BR-faber-medium",
-      "original_scheduled_at": "2026-10-22T21:00:00+00:00",
-      "proposed_scheduled_at": "2026-11-01T18:00:00-03:00",
-      "schedule_changed": true,
-      "selectable": true,
-      "blockers": [],
-      "editorial_review": "PENDING",
-      "audit_notes": {
-        "editorial_review": "Três cenas pertinentes de bancada, pia e puxador; uso ilustrativo de panos/escova, sem alegação de eficácia específica. Legendas legíveis nos seis quadros.",
-        "visual_review_scope": "Six sampled frames at 0,3,6,9,12,15s; no full perceptual audio/lip-sync review",
-        "perceptual_audio_review": "not_listened"
-      },
-      "approved": false,
-      "consented_at": null
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "8f45a02d3149c0e1fbc1cb082f9e8a62dbf09c501f45709bf1d4f8dcda2f1e48"
+  "manifest_sha256": "e571fa69b5ed9708d8115ad9f4a0e0cb63de92944abc7e10ad9126daa211573c"
 }
