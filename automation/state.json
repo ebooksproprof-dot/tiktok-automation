@@ -449,7 +449,7 @@
     },
     "casasem-2026-10-28-1": {
       "provider": "metricool",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "sha256": "6e71e9450041deb0f5c7509a5bdb079c8c770940775fd7f2baff5c5e9208dc9e",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-28-1-6e71e9450041deb0.mp4",
       "concept": "roupas-caixa-guardar",
@@ -459,17 +459,23 @@
         "dateTime": "2026-10-28T18:00:00",
         "timezone": "America/Sao_Paulo"
       },
-      "publicly_verified": false,
+      "publicly_verified": true,
       "editorial_review": "Final MP4 reviewed: real vertical footage, coherent action sequence, legible synchronized captions, no false promise or dangerous advice; H.264/AAC and continuous narration validated; exact Release hash matched.",
       "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
       "metricool_post_id": 408851997,
       "metricool_uuid": "-2922085991619278842",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "auto_publish": true,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=-2922085991619278842",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-4358749720613801781.mp4",
-      "last_checked_at": "2026-10-28T11:49:00Z",
-      "verification_source": "Metricool MCP creation response and immediate planner readback returned the same id, uuid, time, account brand and hosted media; publication not yet confirmed."
+      "last_checked_at": "2026-10-29T11:27:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl and provider video ID for exact post 408851997 / uuid -2922085991619278842.",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7701826259063409921"
+      ],
+      "publicly_available_post_id": [
+        "7701826259063409921"
+      ]
     }
   },
   "buffer_api_usage": [
