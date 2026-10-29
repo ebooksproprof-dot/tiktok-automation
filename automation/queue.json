@@ -1738,16 +1738,23 @@
       "script_sha256": "63248cdd18b8837721e7478d58fc868d3b1c06baa7e674414577558acadf05dc",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "SCHEDULED_VIA_METRICOOL_PENDING",
+      "publishing_status": "PUBLISHED_VIA_METRICOOL",
       "media_storage": "release",
       "publication_provider": "metricool",
       "original_scheduled_at": "2026-10-28T13:00:00+00:00",
       "metricool_post_id": 408851997,
       "metricool_uuid": "-2922085991619278842",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=-2922085991619278842",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-4358749720613801781.mp4",
-      "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile."
+      "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile.",
+      "public_url": "https://www.tiktok.com/@.casasemesforo/video/7701826259063409921",
+      "publicly_verified": true,
+      "publicly_available_post_id": [
+        "7701826259063409921"
+      ],
+      "last_checked_at": "2026-10-29T11:27:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl for the exact id, uuid, brand and media."
     }
   ]
 }
