@@ -500,6 +500,30 @@
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-14020098363035497475.mp4",
       "last_checked_at": "2026-10-29T11:36:00Z",
       "verification_source": "Metricool exact read-back after creation for brand 7212680; provider PENDING means scheduled, not published."
+    },
+    "casasem-2026-10-22-2": {
+      "provider": "metricool",
+      "status": "SCHEDULED",
+      "sha256": "0d0e40c27bd891aad8e7a8ef3ad9d8bd46901f51b0a05bce42a85759488b9b0a",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-2-0d0e40c27bd891aa.mp4",
+      "concept": "pontos-de-toque",
+      "script_sha256": "0d5ac33cd0be4fd432fffdcffc408126ec953cf2f9c788a1e91159a85bd391d9",
+      "submitted_at": "2026-10-29T11:38:00Z",
+      "scheduled_at": {
+        "dateTime": "2026-10-29T18:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "publicly_verified": false,
+      "editorial_review": "Final MP4 reviewed: three real-footage scenes (countertop, sink edge and refrigerator handle), useful cuts, legible synchronized captions, safe manufacturer-aligned guidance; H.264/AAC and continuous narration validated; exact Release hash matched.",
+      "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
+      "metricool_post_id": 409967050,
+      "metricool_uuid": "7313418118329421114",
+      "metricool_status": "PENDING",
+      "auto_publish": true,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=7313418118329421114",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-12220559716013055346.mp4",
+      "last_checked_at": "2026-10-29T11:39:00Z",
+      "verification_source": "Metricool exact read-back after creation for brand 7212680; provider PENDING means scheduled, not published."
     }
   },
   "buffer_api_usage": [
