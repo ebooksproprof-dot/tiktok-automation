@@ -548,7 +548,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2023/12/05/192138-891702233_large.mp4",
       "sha256": "9c3ea2625c89be3569fc176570dbe874a068891940a385a72d0a16e3691e08bf",
       "dhash": [
@@ -562,7 +562,11 @@
       "height": 2134,
       "duration": 8.75,
       "bytes": 12585160,
-      "acquired_at": 1793272475
+      "acquired_at": 1793272475,
+      "reviewed": true,
+      "reviewed_at": "2026-10-29T08:29:00-03:00",
+      "review_source": "authorized assistant visual-metadata gate",
+      "editorial_rejection": "Rejeitado: o provedor identifica a cena como AI generated, não filmagem real, e a duração única é 8,75 s, abaixo do mínimo de 15 s sem repetição."
     },
     {
       "provider": "pixabay",
@@ -579,7 +583,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2023/12/05/192140-892436357_large.mp4",
       "sha256": "fcb9dd5a3ab6ec7d21b30a877b22d8aa1488bfd1351edff2be7b680cfc600cff",
       "dhash": [
@@ -593,7 +597,11 @@
       "height": 2134,
       "duration": 8.75,
       "bytes": 12316568,
-      "acquired_at": 1793272481
+      "acquired_at": 1793272481,
+      "reviewed": true,
+      "reviewed_at": "2026-10-29T08:29:00-03:00",
+      "review_source": "authorized assistant visual-metadata gate",
+      "editorial_rejection": "Rejeitado: o provedor identifica a cena como AI generated, não filmagem real, e a duração única é 8,75 s, abaixo do mínimo de 15 s sem repetição."
     }
   ],
   "rejected_until": {},
