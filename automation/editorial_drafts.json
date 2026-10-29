@@ -497,12 +497,12 @@
     }
   ],
   "last_run": {
-    "created": 1,
-    "status": "drafted",
+    "created": 0,
+    "status": "exhausted_or_no_eligible_media",
     "automatic_approval": false,
     "template_capacity": 24,
     "unused_templates": 14,
-    "pending_review": 10,
+    "pending_review": 9,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }

@@ -532,63 +532,97 @@
       "reviewed_at": "2026-10-26T08:44:00-03:00",
       "review_source": "authorized assistant metadata review",
       "editorial_rejection": "Unique source duration is 13.933333 seconds, below the 15-second minimum; it cannot support a compliant video without looping."
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "192138",
+      "url": "https://cdn.pixabay.com/video/2023/12/05/192138-891702233_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-192138/",
+      "author": "stefaniejockschat",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: stefaniejockschat / Pixabay — https://pixabay.com/videos/id-192138/",
+      "category": "roupas",
+      "query": "folding clothes laundry",
+      "selection_reason": "Provider tags: ai generated, clothes, clothesline, laundry, country, countryside, field, wash, cabin, barn, dress, rural, farmer, western, house, summer, abandoned, nature, landscape",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2023/12/05/192138-891702233_large.mp4",
+      "sha256": "9c3ea2625c89be3569fc176570dbe874a068891940a385a72d0a16e3691e08bf",
+      "dhash": [
+        "6f7f3fa7e7262625",
+        "6f7f3fa7e7262725",
+        "6f7f3fa7e7262625",
+        "6f7f7f27c7070f06",
+        "4f7f7f27c7061715"
+      ],
+      "width": 3840,
+      "height": 2134,
+      "duration": 8.75,
+      "bytes": 12585160,
+      "acquired_at": 1793272475
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "192140",
+      "url": "https://cdn.pixabay.com/video/2023/12/05/192140-892436357_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-192140/",
+      "author": "stefaniejockschat",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: stefaniejockschat / Pixabay — https://pixabay.com/videos/id-192140/",
+      "category": "roupas",
+      "query": "folding clothes laundry",
+      "selection_reason": "Provider tags: ai generated, clothesline, dress, clothes, laundry, countryside, country, cabin, nature, rural, farm, western, house, home, peaceful, dreamy, summer, barn, lonely, clean, field, abandonded, landscape",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2023/12/05/192140-892436357_large.mp4",
+      "sha256": "fcb9dd5a3ab6ec7d21b30a877b22d8aa1488bfd1351edff2be7b680cfc600cff",
+      "dhash": [
+        "42460616028d7571",
+        "4242065602857571",
+        "4346065602857571",
+        "4342065612847071",
+        "4242065212847471"
+      ],
+      "width": 3840,
+      "height": 2134,
+      "duration": 8.75,
+      "bytes": 12316568,
+      "acquired_at": 1793272481
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1793186056,
-    "acquired": 0,
+    "at": 1793272471,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 4,
+    "download_attempts": 2,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "gavetas",
+        "category": "roupas",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "gavetas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "livros",
-        "status": "search_ok",
-        "eligible_candidates": 4,
+        "eligible_candidates": 10,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing drawers",
-      "washing dishes sponge",
-      "arranging books shelves",
-      "organizing bathroom storage"
+      "folding clothes laundry",
+      "kitchen utensils drawer",
+      "organizing shoes rack",
+      "cleaning table cloth"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 15,
+    "unreviewed_media_count": 17,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
