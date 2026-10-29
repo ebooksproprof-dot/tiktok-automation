@@ -856,12 +856,12 @@
       "id": "casasem-2026-10-22-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-2-0d0e40c27bd891aa.mp4",
       "title": "Esqueceu os pontos de toque? Confira a bancada, a borda da pia e o puxador da geladeira. Use um pano limpo, adequado a cada superfície. Separe os materiais de cada ambiente. Respeite o rótulo dos produtos e a orientação do fabricante. Salve esta lista para a próxima limpeza. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-22T21:00:00+00:00",
+      "scheduled_at": "2026-10-29T18:00:00-03:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "0d0e40c27bd891aad8e7a8ef3ad9d8bd46901f51b0a05bce42a85759488b9b0a",
         "duration": 17.071,
         "size": 4039101,
@@ -924,7 +924,19 @@
         "required_public_credits": [],
         "source_licenses": [
           "https://www.pexels.com/license/"
-        ]
+        ],
+        "editorial_review": {
+          "reviewed_at": "2026-10-29T11:38:00Z",
+          "checks": [
+            "eight-frame final MP4 visual review",
+            "caption and script coherence review",
+            "1080x1920 H.264/AAC, 17.07s, continuous non-silent audio validated",
+            "exact SHA-256 matches GitHub Release and queue",
+            "three real-footage scenes show countertop, sink edge and refrigerator handle with useful cuts",
+            "Metricool planner reconciled before submission and exact two-post schedule read back after submission"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "pontos-de-toque",
       "category": "rotina",
@@ -945,8 +957,18 @@
       "script_sha256": "bbfc5d389076f8cdba63035665ac446350b197a9fd33368e53018bd76d6a694b",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "SCHEDULED_VIA_METRICOOL",
+      "media_storage": "release",
+      "publication_provider": "metricool",
+      "original_scheduled_at": "2026-10-22T21:00:00+00:00",
+      "metricool_post_id": 409967050,
+      "metricool_uuid": "7313418118329421114",
+      "metricool_status": "PENDING",
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=7313418118329421114",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-12220559716013055346.mp4",
+      "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile.",
+      "public_url": null,
+      "publicly_verified": false
     },
     {
       "id": "casasem-2026-10-23-1",
