@@ -952,12 +952,12 @@
       "id": "casasem-2026-10-23-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-1-ebdb069e3f6b2808.mp4",
       "title": "Sua gaveta mistura tudo? Retire apenas uma categoria por vez. Separe o que realmente pertence à gaveta. Dobre de um jeito que permita ver as peças. Devolva primeiro o que usa com frequência. Não aperte além do espaço disponível. Termine uma gaveta antes de abrir outra. Salve para organizar sem bagunçar tudo. #CasaSemEsforco #OrganizacaoDaCasa",
-      "scheduled_at": "2026-10-23T13:00:00+00:00",
+      "scheduled_at": "2026-10-29T10:00:00-03:00",
       "approved": false,
       "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": false,
+        "editorial_approved": true,
         "sha256": "ebdb069e3f6b2808b6c0e997e5b111780d1a99f10b173a17faf3b5fae20e2789",
         "duration": 21.266667,
         "size": 5290817,
@@ -1008,7 +1008,19 @@
         "required_public_credits": [],
         "source_licenses": [
           "https://www.pexels.com/license/"
-        ]
+        ],
+        "editorial_review": {
+          "reviewed_at": "2026-10-29T11:35:00Z",
+          "checks": [
+            "eight-frame final MP4 visual review",
+            "caption and script coherence review",
+            "1080x1920 H.264/AAC, 21.27s, continuous non-silent audio validated",
+            "exact SHA-256 matches GitHub Release and queue",
+            "real vertical footage with a coherent folding-and-drawer action sequence",
+            "Metricool planner checked empty before submission and exact scheduled post read back after submission"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "gaveta-uma-categoria",
       "category": "organizacao",
@@ -1032,14 +1044,24 @@
       "script_sha256": "6a2c77d533eb4950791886f11b56842f4fdce39e4671cd97c56652e7e57ca066",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "SCHEDULED_VIA_METRICOOL",
+      "media_storage": "release",
+      "publication_provider": "metricool",
+      "original_scheduled_at": "2026-10-23T13:00:00+00:00",
+      "metricool_post_id": 409964813,
+      "metricool_uuid": "2789792919823138862",
+      "metricool_status": "PENDING",
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=2789792919823138862",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-14020098363035497475.mp4",
+      "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile.",
+      "public_url": null,
+      "publicly_verified": false
     },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
       "title": "Aqui, o secador aparece em uso. Observe como a pessoa movimenta o aparelho enquanto separa os fios com a mão. Esta é uma cena ilustrativa, sem comparação de resultados. Para usar o seu secador, siga as orientações do fabricante. Salve este lembrete para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Engin_Akyurt; https://pixabay.com/videos/id-37325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-10-23T21:00:00+00:00",
+      "scheduled_at": null,
       "approved": false,
       "consented_at": null,
       "quality": {
@@ -1125,8 +1147,10 @@
       "script_sha256": "a2693a59635356ef47545e2dca9147455f7de40facfcbdbd18f4c50f4e50e9d0",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "AWAITING_EDITORIAL_REVIEW_AND_VALID_PUBLISHING_ROUTE",
-      "media_storage": "release"
+      "publishing_status": "EDITORIALLY_REJECTED_WEAK_FRAMING_AND_REPETITIVE_FOOTAGE",
+      "media_storage": "release",
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "editorial_rejection": "Real footage and safe script, but the source remains a narrow horizontal strip centered inside a vertical frame with large blurred/dead areas and repeats essentially the same hair-dryer scene; held because it does not meet the useful-cut visual standard."
     },
     {
       "id": "casasem-2026-10-24-1",
