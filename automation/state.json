@@ -476,6 +476,30 @@
       "publicly_available_post_id": [
         "7701826259063409921"
       ]
+    },
+    "casasem-2026-10-23-1": {
+      "provider": "metricool",
+      "status": "SCHEDULED",
+      "sha256": "ebdb069e3f6b2808b6c0e997e5b111780d1a99f10b173a17faf3b5fae20e2789",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-1-ebdb069e3f6b2808.mp4",
+      "concept": "gaveta-uma-categoria",
+      "script_sha256": "6a2c77d533eb4950791886f11b56842f4fdce39e4671cd97c56652e7e57ca066",
+      "submitted_at": "2026-10-29T11:35:00Z",
+      "scheduled_at": {
+        "dateTime": "2026-10-29T10:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "publicly_verified": false,
+      "editorial_review": "Final MP4 reviewed: real vertical footage, coherent folding and drawer action sequence, legible synchronized captions, no false promise or dangerous advice; H.264/AAC and continuous narration validated; exact Release hash matched.",
+      "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
+      "metricool_post_id": 409964813,
+      "metricool_uuid": "2789792919823138862",
+      "metricool_status": "PENDING",
+      "auto_publish": true,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=2789792919823138862",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-14020098363035497475.mp4",
+      "last_checked_at": "2026-10-29T11:36:00Z",
+      "verification_source": "Metricool exact read-back after creation for brand 7212680; provider PENDING means scheduled, not published."
     }
   },
   "buffer_api_usage": [
