@@ -312,7 +312,11 @@ def main():
                 rendered = True
                 break
             except Exception as exc:
+                # Do not retry the same rejected footage for a second slot in
+                # this run; a later scheduled run may recheck transient failures.
+                available.remove(idea)
                 failures.append(type(exc).__name__+': '+str(exc))
+                print('RENDER_SOURCE_REJECTED=' + idea[0] + '; reason=' + type(exc).__name__, flush=True)
         if not rendered and len(failures) >= MAX_RENDER_CANDIDATES:
             raise RuntimeError('Render failed after bounded candidate attempts: ' + '; '.join(failures)) from None
         if not rendered:
