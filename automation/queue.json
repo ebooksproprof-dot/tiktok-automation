@@ -957,18 +957,23 @@
       "script_sha256": "bbfc5d389076f8cdba63035665ac446350b197a9fd33368e53018bd76d6a694b",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "SCHEDULED_VIA_METRICOOL",
+      "publishing_status": "PUBLISHED_VIA_METRICOOL",
       "media_storage": "release",
       "publication_provider": "metricool",
       "original_scheduled_at": "2026-10-22T21:00:00+00:00",
       "metricool_post_id": 409967050,
       "metricool_uuid": "7313418118329421114",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=7313418118329421114",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-12220559716013055346.mp4",
       "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile.",
-      "public_url": null,
-      "publicly_verified": false
+      "public_url": "https://www.tiktok.com/@.casasemesforo/video/7702198357716094229",
+      "publicly_verified": true,
+      "publicly_available_post_id": [
+        "7702198357716094229"
+      ],
+      "last_checked_at": "2026-10-30T11:29:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl for the exact id, uuid, brand and media."
     },
     {
       "id": "casasem-2026-10-23-1",
@@ -1066,18 +1071,23 @@
       "script_sha256": "6a2c77d533eb4950791886f11b56842f4fdce39e4671cd97c56652e7e57ca066",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "SCHEDULED_VIA_METRICOOL",
+      "publishing_status": "PUBLISHED_VIA_METRICOOL",
       "media_storage": "release",
       "publication_provider": "metricool",
       "original_scheduled_at": "2026-10-23T13:00:00+00:00",
       "metricool_post_id": 409964813,
       "metricool_uuid": "2789792919823138862",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=2789792919823138862",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-14020098363035497475.mp4",
       "direct_post_consent_note": "approved/consented_at remain false/null because they belong to the separate own-app Direct Post controls; this Metricool schedule used the user's standing authorization for the confirmed profile.",
-      "public_url": null,
-      "publicly_verified": false
+      "public_url": "https://www.tiktok.com/@.casasemesforo/video/7702074924390714625",
+      "publicly_verified": true,
+      "publicly_available_post_id": [
+        "7702074924390714625"
+      ],
+      "last_checked_at": "2026-10-30T11:29:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl for the exact id, uuid, brand and media."
     },
     {
       "id": "casasem-2026-10-23-2",
@@ -1178,12 +1188,12 @@
       "id": "casasem-2026-10-24-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4",
       "title": "Sua próxima cuba cabe na pia? Nesta cena, veja o espaço disponível para lavar as mãos. Antes de comprar, confira as medidas, o local de instalação e a compatibilidade com a torneira. A filmagem ilustra o uso e não comprova a qualidade de um modelo. Salve para comparar suas opções. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Engin_Akyurt; https://pixabay.com/videos/id-38115/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-10-30T10:00:00-03:00",
-      "approved": true,
-      "consented_at": "2026-10-29T23:08:09-03:00",
+      "scheduled_at": null,
+      "approved": false,
+      "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": true,
+        "editorial_approved": false,
         "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
         "duration": 18.6,
         "size": 5980733,
@@ -1274,20 +1284,22 @@
       "script_sha256": "746877dbbee892ea1bff5db54ee23a8d3fa3da98e33db1e15b713625e045081d",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "APPROVED_FOR_BUFFER_NOT_SUBMITTED",
+      "publishing_status": "EDITORIALLY_REJECTED_VISUAL_SCRIPT_MISMATCH",
       "media_storage": "release",
-      "publication_provider": "buffer",
+      "publication_provider": null,
       "approved_provider": "buffer",
       "editorial_review": "Titular autorizou expressamente a publicação deste arquivo identificado por hash em 29/10/2026. Metadados técnicos, roteiro, atribuição, seleção visual registrada e ausência de duplicatas conferidos; escuta perceptual integral não realizada nesta sessão.",
-      "approval_scope": "owner_authorization_of_previously_prepared_real_footage"
+      "approval_scope": "prior owner authorization superseded by current editorial rejection; no own-app Direct Post consent retained",
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "editorial_rejection": "The footage only shows handwashing in a sink; it does not show measuring, installation or faucet compatibility, and the composition remains one repetitive scene. Held because technical validation and prior owner authorization do not replace editorial adequacy."
     },
     {
       "id": "casasem-2026-10-24-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
       "title": "Vai levar outro livro para casa? Antes de trazer outro livro para casa, confira o que você já tem. Leia a sinopse e algumas páginas para ver se o tema interessa. Pense onde vai guardar o exemplar. Se estiver em dúvida, anote título e autor para decidir depois. Salve para sua próxima leitura. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-10-30T18:00:00-03:00",
-      "approved": true,
-      "consented_at": "2026-10-29T23:08:09-03:00",
+      "scheduled_at": "2026-10-30T10:00:00-03:00",
+      "approved": false,
+      "consented_at": null,
       "quality": {
         "technical_pass": true,
         "editorial_approved": true,
@@ -1358,7 +1370,19 @@
         ],
         "source_licenses": [
           "https://pixabay.com/service/license-summary/"
-        ]
+        ],
+        "editorial_review": {
+          "reviewed_at": "2026-10-30T11:34:00Z",
+          "checks": [
+            "eight-frame final MP4 visual review",
+            "caption and script coherence review",
+            "1080x1920 H.264/AAC, 19.53s, continuous non-silent audio validated",
+            "exact SHA-256 matches GitHub Release and queue",
+            "real footage of people browsing and reading books matches the purchase-decision context",
+            "Metricool planner checked empty before submission and exact scheduled post read back after submission"
+          ],
+          "source": "authorized assistant review"
+        }
       },
       "concept": "livros-escolha-consciente",
       "category": "organizacao",
@@ -1381,12 +1405,21 @@
       "script_sha256": "e0ed55fdab32caeb876519b38ff104477757d8b455cd6342674d0467e5849630",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "APPROVED_FOR_BUFFER_NOT_SUBMITTED",
+      "publishing_status": "SCHEDULED_VIA_METRICOOL",
       "media_storage": "release",
-      "publication_provider": "buffer",
+      "publication_provider": "metricool",
       "approved_provider": "buffer",
       "editorial_review": "Titular autorizou expressamente a publicação deste arquivo identificado por hash em 29/10/2026. Metadados técnicos, roteiro, atribuição, seleção visual registrada e ausência de duplicatas conferidos; escuta perceptual integral não realizada nesta sessão.",
-      "approval_scope": "owner_authorization_of_previously_prepared_real_footage"
+      "approval_scope": "owner_authorization_of_previously_prepared_real_footage",
+      "original_scheduled_at": "2026-10-30T18:00:00-03:00",
+      "metricool_post_id": 411099681,
+      "metricool_uuid": "4359955835825702752",
+      "metricool_status": "PENDING",
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=4359955835825702752",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-7221149356723799521.mp4",
+      "direct_post_consent_note": "approved/consented_at were cleared because they are controls for the separate own-app Direct Post route. This Metricool schedule used the user's standing authorization for the confirmed profile.",
+      "public_url": null,
+      "publicly_verified": false
     },
     {
       "id": "casasem-2026-10-25-1",
