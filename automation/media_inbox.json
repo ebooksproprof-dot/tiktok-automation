@@ -602,11 +602,73 @@
       "reviewed_at": "2026-10-29T08:29:00-03:00",
       "review_source": "authorized assistant visual-metadata gate",
       "editorial_rejection": "Rejeitado: o provedor identifica a cena como AI generated, não filmagem real, e a duração única é 8,75 s, abaixo do mínimo de 15 s sem repetição."
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "119500",
+      "url": "https://cdn.pixabay.com/video/2022/06/07/119500-718118089_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-119500/",
+      "author": "adege",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: adege / Pixabay — https://pixabay.com/videos/id-119500/",
+      "category": "vassoura",
+      "query": "sweeping floor broom",
+      "selection_reason": "Provider tags: broom, blossom, bloom, flower, rain",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/06/07/119500-718118089_large.mp4",
+      "sha256": "5640f20e470154e51e6093663e6ce191a1ca9b3efb5861a2fe69b8d6533d2e6b",
+      "dhash": [
+        "735e775fcfef878d",
+        "775e775f8fef878d",
+        "735e775f8f6f8f8d",
+        "775e775f8f6f878d",
+        "775e775f8f6f878d"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 14.633333,
+      "bytes": 27234856,
+      "acquired_at": 1793358636
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34821",
+      "url": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34821/",
+      "author": "jaumeps99",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: jaumeps99 / Pixabay — https://pixabay.com/videos/id-34821/",
+      "category": "vassoura",
+      "query": "sweeping floor broom",
+      "selection_reason": "Provider tags: sweeping, cleaning, clean, work, dirty, housekeeping, broom, broomstick, cleanliness, hygiene",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
+      "sha256": "e7da0c5ea4f76261bbb8871409695d16b9cb97c3c15c00282942785f454c0fae",
+      "dhash": [
+        "878d8d87878f8f0f",
+        "878d8d9b9b898f0f",
+        "8f8d99898d8f8f0f",
+        "8d8d898d878f8f0f",
+        "87858d85878f8f0f"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 15.92,
+      "bytes": 33732874,
+      "acquired_at": 1793358643
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1793272471,
+    "at": 1793358630,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
@@ -615,18 +677,46 @@
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "roupas",
+        "category": "toalhas",
         "status": "search_ok",
-        "eligible_candidates": 10,
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "toalhas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "potes",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "potes",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "vassoura",
+        "status": "search_ok",
+        "eligible_candidates": 3,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "folding clothes laundry",
-      "kitchen utensils drawer",
-      "organizing shoes rack",
-      "cleaning table cloth"
+      "folding towels bathroom",
+      "food storage containers kitchen",
+      "sweeping floor broom",
+      "organizing desk stationery"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
