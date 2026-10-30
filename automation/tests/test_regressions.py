@@ -51,6 +51,43 @@ class RegressionTests(unittest.TestCase):
                     render.main()
             self.assertEqual(json.loads(queue.read_text()), {'posts': []})
 
+    def test_render_retries_distinct_short_sources_before_succeeding(self):
+        """A too-short clip must not prevent the next viable original concept."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/'automation').mkdir()
+            queue = root/'automation/queue.json'
+            queue.write_text('{"posts": []}')
+            (root/'automation/state.json').write_text('{"posts": {}}')
+            ideas = [
+                ('short-first', [], ['First short source']),
+                ('short-second', [], ['Second short source']),
+                ('valid-third', [], ['Distinct verified original footage']),
+            ]
+            quality = dict(duration=20, technical_pass=True, editorial_approved=False)
+            future_day = render.dt.date(2030, 1, 1)
+            with (patch.object(render, 'ROOT', root),
+                  patch.object(render, 'QUEUE', queue),
+                  patch.object(render, 'ASSETS', root/'tmp'),
+                  patch.object(render, 'OUT', root/'public/rendered'),
+                  patch.object(render, 'IDEAS', ideas),
+                  patch.object(render, 'load_voice', return_value=object()),
+                  patch.object(render, 'planned_reserve_slots', return_value=[(future_day, 1, 10)]),
+                  patch.object(render, 'render', side_effect=[
+                      ValueError('SOURCE_TOO_SHORT_WITHOUT_REPEATING: 4.31s available'),
+                      ValueError('SOURCE_TOO_SHORT_WITHOUT_REPEATING: choose more adequate footage'),
+                      (Path('valid-third.mp4'), quality),
+                  ]) as renderer,
+                  patch.dict(os.environ, {'MEDIA_STORAGE': 'git', 'EDITORIAL_RESERVE_DAYS': '1'})):
+                render.main()
+            posts = json.loads(queue.read_text())['posts']
+            self.assertEqual(renderer.call_count, 3)
+            self.assertEqual(len(posts), 1)
+            self.assertEqual(posts[0]['concept'], 'valid-third')
+            self.assertFalse(posts[0]['approved'])
+            self.assertIsNone(posts[0]['consented_at'])
+            self.assertFalse(posts[0]['quality']['editorial_approved'])
+
     def test_second_slot_failure_does_not_reuse_first_video(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
