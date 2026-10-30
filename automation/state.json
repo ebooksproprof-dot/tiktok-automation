@@ -585,7 +585,7 @@
       "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
-      "last_reconcile_attempt_at": "2026-10-30T15:02:00Z"
+      "last_reconcile_attempt_at": "2026-10-30T20:40:31Z"
     },
     "casasem-2026-10-24-2": {
       "provider": "metricool",
@@ -799,7 +799,9 @@
     "2026-10-30T12:10:22.198583Z",
     "2026-10-30T12:54:38.055978Z",
     "2026-10-30T14:06:27.728046Z",
-    "2026-10-30T15:02:00.575400Z"
+    "2026-10-30T15:02:00.575400Z",
+    "2026-10-30T20:40:31.208492Z",
+    "2026-10-30T20:40:31.424103Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -807,29 +809,29 @@
         "policy": "150-in-15min",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-10-30T15:17:00.779051Z",
-        "observed_at": "2026-10-30T15:02:00.779051Z"
+        "remaining": 148,
+        "reset_at": "2026-10-30T20:55:31.509547Z",
+        "observed_at": "2026-10-30T20:40:31.509547Z"
       },
       "86400": {
         "policy": "600-in-1day",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 582,
-        "reset_at": "2026-10-31T02:10:05.779051Z",
-        "observed_at": "2026-10-30T15:02:00.779051Z"
+        "remaining": 580,
+        "reset_at": "2026-10-31T02:10:05.509547Z",
+        "observed_at": "2026-10-30T20:40:31.509547Z"
       },
       "2592000": {
         "policy": "1000-in-30days",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 856,
-        "reset_at": "2026-11-16T22:01:05.779051Z",
-        "observed_at": "2026-10-30T15:02:00.779051Z"
+        "remaining": 854,
+        "reset_at": "2026-11-16T22:01:05.509547Z",
+        "observed_at": "2026-10-30T20:40:31.509547Z"
       }
     },
-    "consecutive_errors": 4,
-    "last_error_code": 503,
-    "next_allowed_at": "2026-10-30T15:10:00.780779Z"
+    "consecutive_errors": 1,
+    "next_allowed_at": "2026-10-30T20:41:31.511168Z",
+    "last_error_code": 503
   }
 }
