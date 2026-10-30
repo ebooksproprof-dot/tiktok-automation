@@ -1,49 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-30T02:10:19.392847+00:00",
-  "expires_at": "2026-10-30T02:10:19.392847+00:00",
-  "queue_snapshot_sha256": "36236c3f83a19bc7080643b38b0f092d88c501f1fc0269e46e5d074cd3abdf74",
-  "state_snapshot_sha256": "1d74e0fb4e3e769f2b1982ade6f45c04e5aa34e1c69c73eb45d71224c4bd04a6",
+  "generated_at": "2026-10-30T11:38:53.806664+00:00",
+  "expires_at": "2026-10-30T11:38:53.806664+00:00",
+  "queue_snapshot_sha256": "c91beba4a2af071efc4265db97b7ac928b9840a60759a2d19a24515c55dc3916",
+  "state_snapshot_sha256": "39a4fd0fffb3e266217154d439807a70a2a0fea171e9a1e12cb2990241498cbb",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-10-25-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4",
-      "sha256": "e5ed7c26239ad88fc5e7f87159a553a6514d28cda67370cb9de2588e7a957296",
-      "script_hash": "748f14eaa522436be1885efa871af649785036cc9596fb41bf30f8d0d6ff2f41",
-      "post_snapshot_sha256": "af2aad0d863ed5c6e7fb0cd76ee4952268503500577b91cc8b166b6c6b62b8b6",
-      "title": "Você guarda o tecido ainda úmido? Depois de lavar, confira a etiqueta. Se ela permitir secagem ao ar, estenda sem sobrepor. Deixe o ar circular. Espere secar completamente antes de dobrar e guardar. Salve este cuidado para a próxima lavagem. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — NickyPe; https://pixabay.com/videos/id-165820/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Você guarda o tecido ainda úmido?",
-        "Depois de lavar, confira a",
-        "etiqueta.",
-        "Se ela permitir secagem ao",
-        "ar, estenda sem sobrepor.",
-        "Deixe o ar circular.",
-        "Espere secar completamente",
-        "antes de dobrar e guardar.",
-        "Salve este cuidado para a",
-        "próxima lavagem."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-10-31T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-25-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
@@ -261,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "8f4945468b67e6d2a5059224a373dea3c721f2e954bde560d7d1207d8127f4d5"
+  "manifest_sha256": "74f67db2fd51453a39af036de60886313bf3832c3ba39b5f8174e071228be793"
 }
