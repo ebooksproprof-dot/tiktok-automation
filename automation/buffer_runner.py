@@ -386,7 +386,8 @@ def main(check_only=False):
                 submitted += 1
             blocked += max(0, min(2, len(candidates)) - submitted)
         blocked += sum(p.get("provider") == "buffer" and not p.get("publicly_verified")
-                       and p.get("status") not in ("SCHEDULED", "SENDING") for p in state["posts"].values())
+                       and p.get("status") not in ("SCHEDULED", "SENDING", "CANCELLED_EDITORIAL")
+                       for p in state["posts"].values())
         return 2 if blocked else 0
     finally:
         common.save_json(common.STATE_PATH, state)
