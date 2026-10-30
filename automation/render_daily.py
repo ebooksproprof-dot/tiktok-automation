@@ -237,6 +237,30 @@ def planned_reserve_slots(today, horizon):
             for offset in range(horizon) for slot, hour in enumerate((10, 18), 1)]
 
 
+
+MAX_RENDER_CANDIDATES = 5  # Bounded fallback: never loop or reuse published footage.
+
+
+def ranked_render_candidates(ideas):
+    """Prefer measured adequate source capacity; skip provably short candidates.
+
+    Unknown durations remain eligible and are validated by ffprobe in render().
+    This never changes source licenses, script originality or editorial consent.
+    """
+    candidates = []
+    for position, idea in enumerate(ideas):
+        known = [PROVENANCE.get(key, {}).get('duration') for key in idea[1]]
+        measured = bool(known) and all(
+            isinstance(seconds, (int, float)) and seconds > 0
+            for seconds in known)
+        capacity = sum(seconds - .05 for seconds in known) if measured else None
+        if capacity is not None and capacity < 15:
+            continue
+        # Measured sufficient clips first; stable original ordering otherwise.
+        candidates.append((0 if measured else 1, -(capacity or 0), position, idea))
+    return [idea for _, _, _, idea in sorted(candidates)]
+
+
 def main():
     ASSETS.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
     today=dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
@@ -281,7 +305,7 @@ def main():
         # Try another licensed composition if an asset/quality check fails.
         failures=[]
         rendered = False
-        for idea in list(available):
+        for idea in ranked_render_candidates(available)[:MAX_RENDER_CANDIDATES]:
             try:
                 output,quality=render(idea,voice,post_id)
                 available.remove(idea)
@@ -289,7 +313,8 @@ def main():
                 break
             except Exception as exc:
                 failures.append(type(exc).__name__+': '+str(exc))
-                if len(failures)>=2: raise RuntimeError('Render failed after two compositions: '+'; '.join(failures)) from None
+        if not rendered and len(failures) >= MAX_RENDER_CANDIDATES:
+            raise RuntimeError('Render failed after bounded candidate attempts: ' + '; '.join(failures)) from None
         if not rendered:
             raise RuntimeError("Render failed; no validated output: " + "; ".join(failures))
         scheduled=dt.datetime.combine(production_day,dt.time(hour),ZoneInfo('America/Sao_Paulo'))
