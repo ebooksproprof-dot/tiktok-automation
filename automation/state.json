@@ -539,7 +539,7 @@
     },
     "casasem-2026-10-24-1": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "CANCELLED_EDITORIAL",
       "submitted_at": "2026-10-30T02:10:07Z",
       "sha256": "d0245f05ec607831c56248a94fc565f7d3defe8c1053d219b81a51323e30fa0d",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4",
@@ -579,10 +579,10 @@
       ],
       "scheduled_at": "2026-10-30T10:00:00-03:00",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "recovery": "Cancelled through Buffer API after exact id/channel/time reconciliation; do not resubmit.",
       "buffer_post_id": "6ae3fc81ba1ca51fd3edd932",
-      "last_checked_at": "2026-10-30T02:10:10Z",
-      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-30T11:38:43Z",
+      "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
     },
@@ -609,6 +609,46 @@
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-7221149356723799521.mp4",
       "last_checked_at": "2026-10-30T11:36:00Z",
       "verification_source": "Metricool exact read-back after moving the post to 18:00 for brand 7212680; provider PENDING means scheduled, not published."
+    },
+    "casasem-2026-10-25-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-10-30T11:38:46Z",
+      "sha256": "e5ed7c26239ad88fc5e7f87159a553a6514d28cda67370cb9de2588e7a957296",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4",
+      "concept": "tecidos-secar-antes-guardar",
+      "script_sha256": "748f14eaa522436be1885efa871af649785036cc9596fb41bf30f8d0d6ff2f41",
+      "script_lines": [
+        "Você guarda o tecido ainda úmido?",
+        "Depois de lavar, confira a",
+        "etiqueta.",
+        "Se ela permitir secagem ao",
+        "ar, estenda sem sobrepor.",
+        "Deixe o ar circular.",
+        "Espere secar completamente",
+        "antes de dobrar e guardar.",
+        "Salve este cuidado para a",
+        "próxima lavagem."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2023/06/05/165820-833522145_large.mp4",
+          "sha256": "a95396827ee3c8fb2adcd8c79a965b6312e58811fe75ab344002a456f64b7ec3",
+          "dhash": [
+            "2d89981847128304",
+            "2d8998186f138304",
+            "2d8998186f13830c",
+            "2d8998186f13830c",
+            "2d8998186f13830c"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-10-31T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -743,7 +783,11 @@
     "2026-10-30T02:10:08.633956Z",
     "2026-10-30T02:10:10.781018Z",
     "2026-10-30T02:10:15.643065Z",
-    "2026-10-30T02:10:17.770508Z"
+    "2026-10-30T02:10:17.770508Z",
+    "2026-10-30T11:38:42.468961Z",
+    "2026-10-30T11:38:43.055887Z",
+    "2026-10-30T11:38:43.249796Z",
+    "2026-10-30T11:38:43.525300Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -752,24 +796,24 @@
         "window_seconds": 900,
         "quota": 150,
         "remaining": 144,
-        "reset_at": "2026-10-30T02:25:05.922780Z",
-        "observed_at": "2026-10-30T02:10:17.922780Z"
+        "reset_at": "2026-10-30T11:50:07.961725Z",
+        "observed_at": "2026-10-30T11:38:43.961725Z"
       },
       "86400": {
         "policy": "600-in-1day",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 594,
-        "reset_at": "2026-10-31T02:10:05.922780Z",
-        "observed_at": "2026-10-30T02:10:17.922780Z"
+        "remaining": 588,
+        "reset_at": "2026-10-31T02:10:05.961725Z",
+        "observed_at": "2026-10-30T11:38:43.961725Z"
       },
       "2592000": {
         "policy": "1000-in-30days",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 868,
-        "reset_at": "2026-11-16T22:01:05.922780Z",
-        "observed_at": "2026-10-30T02:10:17.922780Z"
+        "remaining": 862,
+        "reset_at": "2026-11-16T22:01:05.961725Z",
+        "observed_at": "2026-10-30T11:38:43.961725Z"
       }
     },
     "consecutive_errors": 0
