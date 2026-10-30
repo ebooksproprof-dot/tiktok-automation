@@ -1297,7 +1297,7 @@
       "id": "casasem-2026-10-24-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
       "title": "Vai levar outro livro para casa? Antes de trazer outro livro para casa, confira o que você já tem. Leia a sinopse e algumas páginas para ver se o tema interessa. Pense onde vai guardar o exemplar. Se estiver em dúvida, anote título e autor para decidir depois. Salve para sua próxima leitura. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jadeallencook; https://pixabay.com/videos/id-140587/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-10-30T10:00:00-03:00",
+      "scheduled_at": "2026-10-30T18:00:00-03:00",
       "approved": false,
       "consented_at": null,
       "quality": {
@@ -1379,7 +1379,8 @@
             "1080x1920 H.264/AAC, 19.53s, continuous non-silent audio validated",
             "exact SHA-256 matches GitHub Release and queue",
             "real footage of people browsing and reading books matches the purchase-decision context",
-            "Metricool planner checked empty before submission and exact scheduled post read back after submission"
+            "Metricool planner checked empty before submission and exact scheduled post read back after submission",
+            "Metricool schedule moved from 10:00 to 18:00 after reconciling a pre-existing Buffer reservation; uuid remained stable and the new id was read back."
           ],
           "source": "authorized assistant review"
         }
@@ -1411,8 +1412,8 @@
       "approved_provider": "buffer",
       "editorial_review": "Titular autorizou expressamente a publicação deste arquivo identificado por hash em 29/10/2026. Metadados técnicos, roteiro, atribuição, seleção visual registrada e ausência de duplicatas conferidos; escuta perceptual integral não realizada nesta sessão.",
       "approval_scope": "owner_authorization_of_previously_prepared_real_footage",
-      "original_scheduled_at": "2026-10-30T18:00:00-03:00",
-      "metricool_post_id": 411099681,
+      "original_scheduled_at": "2026-10-30T10:00:00-03:00",
+      "metricool_post_id": 411102325,
       "metricool_uuid": "4359955835825702752",
       "metricool_status": "PENDING",
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=4359955835825702752",

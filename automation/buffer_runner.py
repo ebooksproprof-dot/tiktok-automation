@@ -32,6 +32,9 @@ CREATE_QUERY = """mutation($input: CreatePostInput!) {
     ... on PostActionSuccess { post { """ + POST_FIELDS + """ } }
   }
 }"""
+DELETE_QUERY = """mutation($input: DeletePostInput!) {
+  deletePost(input: $input) { __typename }
+}"""
 
 
 class Client:
@@ -249,6 +252,28 @@ def pending_reconciliation(state):
     return pending
 
 
+def cancellable_editorial_rejections(queue, state):
+    """Return exact future Buffer reservations superseded by editorial rejection."""
+    now = common.utc_now()
+    result = []
+    for post in queue.get("posts", []):
+        status = str(post.get("publishing_status") or "")
+        quality = post.get("quality") or {}
+        entry = state["posts"].get(post.get("id"))
+        if (not status.startswith("EDITORIALLY_REJECTED")
+                or quality.get("editorial_approved") is not False
+                or post.get("approved") is not False
+                or post.get("consented_at") is not None
+                or not entry or entry.get("provider") != "buffer"
+                or entry.get("status") not in ("SCHEDULED", "SENDING")
+                or not entry.get("buffer_post_id")):
+            continue
+        due = common.parse_time(entry.get("scheduled_at"))
+        if due and now + timedelta(minutes=2) < due:
+            result.append((post, entry))
+    return result
+
+
 def main(check_only=False):
     state = common.load_json(common.STATE_PATH, {"posts": {}})
     state.setdefault("posts", {})
@@ -272,6 +297,7 @@ def main(check_only=False):
             return 2  # Discovery never enables publishing.
         queue = common.load_json(common.QUEUE_PATH, {"posts": []}) if not check_only else {"posts": []}
         pending = pending_reconciliation(state)
+        cancellations = cancellable_editorial_rejections(queue, state) if not check_only else []
         eligible = 0
         invalid = 0
         for post in queue['posts']:
@@ -288,13 +314,13 @@ def main(check_only=False):
                         invalid += 1
                         print(f"::warning::{post.get('id', 'missing-id')}: {exc}")
                 continue
-        if not check_only and not pending and not eligible:
+        if not check_only and not pending and not eligible and not cancellations:
             print("Buffer: no due reconciliation or eligible submission; 0 API calls")
             blocked = invalid + sum(p.get('provider') == 'buffer' and p.get('status') == 'SUBMISSION_UNKNOWN'
                           and not p.get('buffer_post_id') for p in state['posts'].values())
             return 2 if blocked else 0
         client = Client(state)
-        required = 5 if check_only else bool(pending) + (2 + 2 * min(eligible, 2) if eligible else 0)
+        required = 5 if check_only else bool(pending) + 2 * len(cancellations) + (2 + 2 * min(eligible, 2) if eligible else 0)
         # Publishing reserves the full cycle; read-only reconciliation needs no channel query.
         client.check_budget(required=required)
         if check_only or eligible:
@@ -306,6 +332,24 @@ def main(check_only=False):
             return 0
         if len(pending) > 10:
             raise RuntimeError("Too many unresolved Buffer posts; reconcile before continuing")
+        for post, entry in cancellations:
+            post_id = entry["buffer_post_id"]
+            remote = client.call(
+                "query { post(input: {id: " + json.dumps(post_id) + "}) { " + POST_FIELDS + " } }", {}
+            )["post"]
+            expected_due = common.parse_time(entry.get("scheduled_at"))
+            remote_due = common.parse_time(remote.get("dueAt"))
+            if (remote.get("id") != post_id or remote.get("channelId") != channel_id
+                    or remote.get("status") != "scheduled" or remote_due != expected_due):
+                raise RuntimeError("Buffer cancellation identity, status or schedule mismatch")
+            result = client.call(DELETE_QUERY, {"input": {"id": post_id}})["deletePost"]
+            if result.get("__typename") != "DeletePostSuccess":
+                raise RuntimeError("Buffer rejected editorial cancellation")
+            entry.update(status="CANCELLED_EDITORIAL", buffer_status="deleted",
+                         publicly_verified=False, last_checked_at=common.iso_now(),
+                         recovery="Cancelled through Buffer API after exact id/channel/time reconciliation; do not resubmit.")
+            common.save_json(common.STATE_PATH, state)
+            print("Buffer editorial cancellation confirmed: " + post["id"])
         if pending:
             for entry in pending:
                 entry['last_reconcile_attempt_at'] = common.iso_now()

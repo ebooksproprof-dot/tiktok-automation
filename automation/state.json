@@ -595,20 +595,20 @@
       "script_sha256": "e0ed55fdab32caeb876519b38ff104477757d8b455cd6342674d0467e5849630",
       "submitted_at": "2026-10-30T11:34:00Z",
       "scheduled_at": {
-        "dateTime": "2026-10-30T10:00:00",
+        "dateTime": "2026-10-30T18:00:00",
         "timezone": "America/Sao_Paulo"
       },
       "publicly_verified": false,
       "editorial_review": "Final MP4 reviewed: real footage of people browsing and reading books, coherent purchase-decision context, legible synchronized captions, no false promise or dangerous advice; H.264/AAC and continuous narration validated; exact Release hash matched.",
       "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
-      "metricool_post_id": 411099681,
+      "metricool_post_id": 411102325,
       "metricool_uuid": "4359955835825702752",
       "metricool_status": "PENDING",
       "auto_publish": true,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=4359955835825702752",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-7221149356723799521.mp4",
-      "last_checked_at": "2026-10-30T11:35:00Z",
-      "verification_source": "Metricool exact read-back after creation for brand 7212680; provider PENDING means scheduled, not published."
+      "last_checked_at": "2026-10-30T11:36:00Z",
+      "verification_source": "Metricool exact read-back after moving the post to 18:00 for brand 7212680; provider PENDING means scheduled, not published."
     }
   },
   "buffer_api_usage": [
