@@ -618,7 +618,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2022/06/07/119500-718118089_large.mp4",
       "sha256": "5640f20e470154e51e6093663e6ce191a1ca9b3efb5861a2fe69b8d6533d2e6b",
       "dhash": [
@@ -632,7 +632,11 @@
       "height": 2160,
       "duration": 14.633333,
       "bytes": 27234856,
-      "acquired_at": 1793358636
+      "acquired_at": 1793358636,
+      "reviewed": true,
+      "reviewed_at": "2026-10-30T08:33:00-03:00",
+      "review_source": "authorized assistant visual and metadata review",
+      "editorial_rejection": "Provider tags and sampled frames show flowers in rain, not indoor sweeping; duration is also 14.633s, below the 15-second minimum."
     },
     {
       "provider": "pixabay",
@@ -647,9 +651,9 @@
       "query": "sweeping floor broom",
       "selection_reason": "Provider tags: sweeping, cleaning, clean, work, dirty, housekeeping, broom, broomstick, cleanliness, hygiene",
       "requires_crop_review": true,
-      "semantic_verified": false,
-      "editorial_approved": false,
-      "status": "pending_visual_review",
+      "semantic_verified": true,
+      "editorial_approved": true,
+      "status": "approved_for_catalog",
       "source_id": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
       "sha256": "e7da0c5ea4f76261bbb8871409695d16b9cb97c3c15c00282942785f454c0fae",
       "dhash": [
@@ -663,7 +667,11 @@
       "height": 2160,
       "duration": 15.92,
       "bytes": 33732874,
-      "acquired_at": 1793358643
+      "acquired_at": 1793358643,
+      "reviewed": true,
+      "reviewed_at": "2026-10-30T08:33:00-03:00",
+      "review_source": "authorized assistant eight-frame visual review",
+      "editorial_context": "Real indoor footage shows a broom moving debris toward a dustpan beside a sofa. Suitable for a short sweeping-floor routine; no product-performance claim. Source duration 15.92s means any future script must remain short and must not loop."
     }
   ],
   "rejected_until": {},
