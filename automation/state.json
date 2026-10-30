@@ -498,8 +498,8 @@
       "auto_publish": true,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=2789792919823138862",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-14020098363035497475.mp4",
-      "last_checked_at": "2026-10-30T01:42:49.359Z",
-      "verification_source": "Live Metricool provider read-back for brand 7212680: PUBLISHED with exact TikTok publicUrl; reconciled without resubmission.",
+      "last_checked_at": "2026-10-30T11:29:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl and provider video ID for the exact post.",
       "public_urls": [
         "https://www.tiktok.com/@.casasemesforo/video/7702074924390714625"
       ],
@@ -528,8 +528,8 @@
       "auto_publish": true,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=7313418118329421114",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-12220559716013055346.mp4",
-      "last_checked_at": "2026-10-30T01:42:49.361Z",
-      "verification_source": "Live Metricool provider read-back for brand 7212680: PUBLISHED with exact TikTok publicUrl; reconciled without resubmission.",
+      "last_checked_at": "2026-10-30T11:29:00Z",
+      "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl and provider video ID for the exact post.",
       "public_urls": [
         "https://www.tiktok.com/@.casasemesforo/video/7702198357716094229"
       ],
@@ -587,53 +587,28 @@
       "buffer_sent_at_present": false
     },
     "casasem-2026-10-24-2": {
-      "provider": "buffer",
+      "provider": "metricool",
       "status": "SCHEDULED",
-      "submitted_at": "2026-10-30T02:10:14Z",
       "sha256": "1ae57a0d43945dc05f505e09bfcdd8e5da10380765b57770db1b3156698001d3",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
       "concept": "livros-escolha-consciente",
       "script_sha256": "e0ed55fdab32caeb876519b38ff104477757d8b455cd6342674d0467e5849630",
-      "script_lines": [
-        "Vai levar outro livro para casa?",
-        "Antes de trazer outro livro",
-        "para casa, confira o que você",
-        "já tem.",
-        "Leia a sinopse e algumas",
-        "páginas para ver se o tema",
-        "interessa.",
-        "Pense onde vai guardar o",
-        "exemplar.",
-        "Se estiver em dúvida, anote",
-        "título e autor para decidir",
-        "depois.",
-        "Salve para sua próxima",
-        "leitura."
-      ],
-      "source_urls": [
-        "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4"
-      ],
-      "visual_sources": [
-        {
-          "source_id": "https://cdn.pixabay.com/video/2022/11/26/140587-775389277_large.mp4",
-          "sha256": "a0e633194bec446fef6f0d2c30a7d9dadd1c765435ef3798c193284678afb17e",
-          "dhash": [
-            "57a525a7e364ed87",
-            "57a525a7e364ed87",
-            "57a5a5a7e364ec87",
-            "57a527b7e764ed87",
-            "57ad27b7e664ed87"
-          ]
-        }
-      ],
-      "scheduled_at": "2026-10-30T18:00:00-03:00",
+      "submitted_at": "2026-10-30T11:34:00Z",
+      "scheduled_at": {
+        "dateTime": "2026-10-30T10:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
-      "buffer_post_id": "6ae3fc88a83a7fb63c8c9769",
-      "last_checked_at": "2026-10-30T02:10:17Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "editorial_review": "Final MP4 reviewed: real footage of people browsing and reading books, coherent purchase-decision context, legible synchronized captions, no false promise or dangerous advice; H.264/AAC and continuous narration validated; exact Release hash matched.",
+      "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
+      "metricool_post_id": 411099681,
+      "metricool_uuid": "4359955835825702752",
+      "metricool_status": "PENDING",
+      "auto_publish": true,
+      "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=4359955835825702752",
+      "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-7221149356723799521.mp4",
+      "last_checked_at": "2026-10-30T11:35:00Z",
+      "verification_source": "Metricool exact read-back after creation for brand 7212680; provider PENDING means scheduled, not published."
     }
   },
   "buffer_api_usage": [
