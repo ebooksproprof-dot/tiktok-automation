@@ -51,6 +51,19 @@ class RegressionTests(unittest.TestCase):
                     render.main()
             self.assertEqual(json.loads(queue.read_text()), {'posts': []})
 
+    def test_renderer_prioritizes_measured_sufficient_real_footage(self):
+        ideas = [
+            ('unknown', ['unknown-src'], ['New original script']),
+            ('too-short', ['short-src'], ['Short actual video']),
+            ('valid', ['full-src'], ['Sufficient real video']),
+        ]
+        with patch.object(render, 'PROVENANCE', {
+            'short-src': {'duration': 4.36},
+            'full-src': {'duration': 25.0},
+        }):
+            ranked = render.ranked_render_candidates(ideas)
+        self.assertEqual([idea[0] for idea in ranked], ['valid', 'unknown'])
+
     def test_render_retries_distinct_short_sources_before_succeeding(self):
         """A too-short clip must not prevent the next viable original concept."""
         with tempfile.TemporaryDirectory() as directory:
