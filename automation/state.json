@@ -585,7 +585,7 @@
       "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
-      "last_reconcile_attempt_at": "2026-10-31T20:37:55Z"
+      "last_reconcile_attempt_at": "2026-10-31T21:42:28Z"
     },
     "casasem-2026-10-24-2": {
       "provider": "metricool",
@@ -661,7 +661,7 @@
       "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
-      "last_reconcile_attempt_at": "2026-10-31T20:37:55Z"
+      "last_reconcile_attempt_at": "2026-10-31T21:42:28Z"
     }
   },
   "buffer_api_usage": [
@@ -826,7 +826,9 @@
     "2026-10-31T14:43:40.323245Z",
     "2026-10-31T14:43:40.665281Z",
     "2026-10-31T20:37:55.560770Z",
-    "2026-10-31T20:37:55.828972Z"
+    "2026-10-31T20:37:55.828972Z",
+    "2026-10-31T21:42:27.945604Z",
+    "2026-10-31T21:42:28.168183Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -835,28 +837,28 @@
         "window_seconds": 900,
         "quota": 150,
         "remaining": 148,
-        "reset_at": "2026-10-31T20:52:56.043571Z",
-        "observed_at": "2026-10-31T20:37:56.043571Z"
+        "reset_at": "2026-10-31T21:57:28.320326Z",
+        "observed_at": "2026-10-31T21:42:28.320326Z"
       },
       "86400": {
         "policy": "600-in-1day",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 586,
-        "reset_at": "2026-11-01T11:32:52.043571Z",
-        "observed_at": "2026-10-31T20:37:56.043571Z"
+        "remaining": 584,
+        "reset_at": "2026-11-01T11:32:52.320326Z",
+        "observed_at": "2026-10-31T21:42:28.320326Z"
       },
       "2592000": {
         "policy": "1000-in-30days",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 836,
-        "reset_at": "2026-11-16T22:01:05.043571Z",
-        "observed_at": "2026-10-31T20:37:56.043571Z"
+        "remaining": 834,
+        "reset_at": "2026-11-16T22:01:05.320326Z",
+        "observed_at": "2026-10-31T21:42:28.320326Z"
       }
     },
     "consecutive_errors": 1,
-    "next_allowed_at": "2026-10-31T20:38:56.045044Z",
+    "next_allowed_at": "2026-10-31T21:43:28.321661Z",
     "last_error_code": 503
   }
 }
