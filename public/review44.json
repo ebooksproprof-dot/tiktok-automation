@@ -1,9 +1,9 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-30T22:47:06.201381+00:00",
-  "expires_at": "2026-10-30T22:47:06.201381+00:00",
-  "queue_snapshot_sha256": "c91beba4a2af071efc4265db97b7ac928b9840a60759a2d19a24515c55dc3916",
-  "state_snapshot_sha256": "e4cdc5ecac6af6cd3ed61fecc0e0719aedd1156587aab79f824dca4dc81a68da",
+  "generated_at": "2026-10-31T11:32:51.927249+00:00",
+  "expires_at": "2026-10-31T11:32:51.927249+00:00",
+  "queue_snapshot_sha256": "80032084dfa5a88421f958a65aa03164de753514a4c110946bdf855c375e3984",
+  "state_snapshot_sha256": "e83604fb9a25d4162c80b962f00466fe65a42b2ee7696ee9f537862461ec7b23",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
@@ -12,42 +12,6 @@
   "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-10-25-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
-      "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
-      "script_hash": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
-      "post_snapshot_sha256": "0bb074b0b822367feb1de2adbd20641f17eba2869846f2f12797e24a32f227e0",
-      "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Terminou de usar a pia?",
-        "Confira se ficaram respingos",
-        "ao redor da cuba.",
-        "Se o material permitir, use",
-        "um pano limpo e macio",
-        "conforme a orientação do",
-        "fabricante.",
-        "Deixe a torneira livre e",
-        "coloque o sabonete em um",
-        "apoio estável.",
-        "Não aplique produtos sem",
-        "confirmar a compatibilidade.",
-        "Salve para revisar a pia",
-        "depois do uso."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-10-31T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-26-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
@@ -118,6 +82,42 @@
         "visual_review_scope": "Six sampled frames at 0,3,6,9,12,15s; no full perceptual audio/lip-sync review",
         "perceptual_audio_review": "not_listened"
       },
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-25-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
+      "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
+      "script_hash": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
+      "post_snapshot_sha256": "7d64feaa0cfb1405abda16927f2d34edc5acf48c887d4b990a08580e535dcdf3",
+      "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Terminou de usar a pia?",
+        "Confira se ficaram respingos",
+        "ao redor da cuba.",
+        "Se o material permitir, use",
+        "um pano limpo e macio",
+        "conforme a orientação do",
+        "fabricante.",
+        "Deixe a torneira livre e",
+        "coloque o sabonete em um",
+        "apoio estável.",
+        "Não aplique produtos sem",
+        "confirmar a compatibilidade.",
+        "Salve para revisar a pia",
+        "depois do uso."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": null,
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Rejeitado editorialmente: Eight-frame final MP4 review shows handwashing throughout, not wiping splashes, drying the basin, positioning soap, or checking material compatibility as narrated; the central visual action does not match the script."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
       "approved": false,
       "consented_at": null
     },
@@ -229,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "cad469d259b3104ef43f543f958511f3bcaaa1fd46dcb26fa544f570ed6cb1b8"
+  "manifest_sha256": "776a6657875d35c496b5aead9c4d20bc6258d20eb07a2e201400832188a36122"
 }
