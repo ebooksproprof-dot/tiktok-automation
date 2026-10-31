@@ -589,7 +589,7 @@
     },
     "casasem-2026-10-24-2": {
       "provider": "metricool",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "sha256": "1ae57a0d43945dc05f505e09bfcdd8e5da10380765b57770db1b3156698001d3",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4",
       "concept": "livros-escolha-consciente",
@@ -599,17 +599,23 @@
         "dateTime": "2026-10-30T18:00:00",
         "timezone": "America/Sao_Paulo"
       },
-      "publicly_verified": false,
+      "publicly_verified": true,
       "editorial_review": "Final MP4 reviewed: real footage of people browsing and reading books, coherent purchase-decision context, legible synchronized captions, no false promise or dangerous advice; H.264/AAC and continuous narration validated; exact Release hash matched.",
-      "recovery": "Reconcile Metricool planner by uuid, media and timestamp before any retry; PENDING is scheduled, not published.",
+      "recovery": "Publication reconciled by Metricool uuid/id and TikTok provider public URL; do not resubmit.",
       "metricool_post_id": 411102325,
       "metricool_uuid": "4359955835825702752",
-      "metricool_status": "PENDING",
+      "metricool_status": "PUBLISHED",
       "auto_publish": true,
       "planner_url": "https://app.metricool.com/planner/calendar?blogId=7212680&openWithPostUuid=4359955835825702752",
       "metricool_media_url": "https://static.metricool.com/planner/202610/7212680-file-7221149356723799521.mp4",
-      "last_checked_at": "2026-10-30T11:36:00Z",
-      "verification_source": "Metricool exact read-back after moving the post to 18:00 for brand 7212680; provider PENDING means scheduled, not published."
+      "last_checked_at": "2026-10-31T11:38:00Z",
+      "verification_source": "Metricool TikTok provider reported PUBLISHED with provider id 7702569410866842887 and publicUrl on 2026-10-31; scheduled acceptance alone was not treated as publication.",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7702569410866842887"
+      ],
+      "publicly_available_post_id": [
+        "7702569410866842887"
+      ]
     },
     "casasem-2026-10-25-1": {
       "provider": "buffer",
