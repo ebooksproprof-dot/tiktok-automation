@@ -672,84 +672,97 @@
       "reviewed_at": "2026-10-30T08:33:00-03:00",
       "review_source": "authorized assistant eight-frame visual review",
       "editorial_context": "Real indoor footage shows a broom moving debris toward a dustpan beside a sofa. Suitable for a short sweeping-floor routine; no product-performance claim. Source duration 15.92s means any future script must remain short and must not loop."
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "128638",
+      "url": "https://cdn.pixabay.com/video/2022/08/21/128638-741747819_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-128638/",
+      "author": "adege",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: adege / Pixabay — https://pixabay.com/videos/id-128638/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: rapids, waterfall, mountain stream, bach, torrent, stream bed, wild water, spray",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/08/21/128638-741747819_large.mp4",
+      "sha256": "42aee0eb1499a3006273b72eb259e942b5772bc92c2798b916027193b5e09be7",
+      "dhash": [
+        "8383c2e682012181",
+        "8383c2e682012181",
+        "8383c2e682012181",
+        "8383c2e682012181",
+        "8383c2e682012181"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 16.015,
+      "bytes": 51705048,
+      "acquired_at": 1793531298
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "128642",
+      "url": "https://cdn.pixabay.com/video/2022/08/21/128642-741747831_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-128642/",
+      "author": "adege",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: adege / Pixabay — https://pixabay.com/videos/id-128642/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: rocks, water, spray, riverbed, stream bed, watercourse, wild water",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/08/21/128642-741747831_large.mp4",
+      "sha256": "6a7c9f2eaab8157f88af35143d63c22edb854feaa8068e76b24949ee082e6737",
+      "dhash": [
+        "0e0c0e06060c0a8e",
+        "0e0c0e16070c0a8e",
+        "0e0c0e06070c0a0e",
+        "0e0c0e06070c0a0e",
+        "0e0c0e06060c0a06"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 12.278333,
+      "bytes": 40402533,
+      "acquired_at": 1793531305
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1793444647,
-    "acquired": 0,
+    "at": 1793531293,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 1,
+    "download_attempts": 2,
+    "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cabides",
+        "category": "cama",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cabides",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 10,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "clothes hangers wardrobe",
-      "washing dishes kitchen sink",
-      "books shelf organizing",
-      "microfiber cloth cleaning"
+      "making bed bedroom",
+      "laundry basket clothes",
+      "cutlery kitchen drawer",
+      "indoor plant pot tray"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 15,
+    "unreviewed_media_count": 17,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
