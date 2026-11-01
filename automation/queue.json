@@ -1652,24 +1652,23 @@
       "composition_revision": 6,
       "publishing_status": "EDITORIALLY_REJECTED_VISUAL_SCRIPT_MISMATCH",
       "media_storage": "release",
-      "publication_provider": "buffer",
-      "approved_provider": "buffer",
+      "publication_provider": null,
       "editorial_review": "Titular autorizou expressamente a publicação deste arquivo identificado por hash em 29/10/2026. Metadados técnicos, roteiro, atribuição, seleção visual registrada e ausência de duplicatas conferidos; escuta perceptual integral não realizada nesta sessão.",
       "approval_scope": "owner_authorization_of_previously_prepared_real_footage",
       "original_scheduled_at": "2026-10-31T18:00:00-03:00",
-      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION_NO_PROVIDER",
       "editorial_rejection": "Eight-frame final MP4 review shows handwashing throughout, not wiping splashes, drying the basin, positioning soap, or checking material compatibility as narrated; the central visual action does not match the script."
     },
     {
       "id": "casasem-2026-10-26-1",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
       "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "scheduled_at": "2026-11-01T10:00:00-03:00",
-      "approved": true,
-      "consented_at": "2026-10-29T23:08:09-03:00",
+      "scheduled_at": null,
+      "approved": false,
+      "consented_at": null,
       "quality": {
         "technical_pass": true,
-        "editorial_approved": true,
+        "editorial_approved": false,
         "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
         "duration": 19.4,
         "size": 2005886,
@@ -1737,7 +1736,18 @@
         ],
         "source_licenses": [
           "https://pixabay.com/service/license-summary/"
-        ]
+        ],
+        "editorial_review": {
+          "reviewed_at": "2026-11-01T11:32:00Z",
+          "checks": [
+            "eight-frame final MP4 visual review",
+            "exact SHA-256 matches GitHub Release and queue",
+            "1080x1920 H.264/AAC, 19.4s",
+            "useful cuts and visual-to-script action gate"
+          ],
+          "source": "authorized assistant review",
+          "decision": "rejected"
+        }
       },
       "concept": "mesa-caneca-afastada",
       "category": "organizacao",
@@ -1761,12 +1771,14 @@
       "script_sha256": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
       "render_version": 2,
       "composition_revision": 6,
-      "publishing_status": "APPROVED_FOR_BUFFER_NOT_SUBMITTED",
+      "publishing_status": "EDITORIALLY_REJECTED_REPETITIVE_SINGLE_COMPOSITION",
       "media_storage": "release",
-      "publication_provider": "buffer",
-      "approved_provider": "buffer",
+      "publication_provider": null,
       "editorial_review": "Titular autorizou expressamente a publicação deste arquivo identificado por hash em 29/10/2026. Metadados técnicos, roteiro, atribuição, seleção visual registrada e ausência de duplicatas conferidos; escuta perceptual integral não realizada nesta sessão.",
-      "approval_scope": "owner_authorization_of_previously_prepared_real_footage"
+      "approval_scope": "owner_authorization_of_previously_prepared_real_footage",
+      "original_scheduled_at": "2026-11-01T10:00:00-03:00",
+      "schedule_recovery": "REJECTED_BEFORE_SUBMISSION",
+      "editorial_rejection": "Eight-frame final MP4 review confirms essentially one unchanged composition of a mug beside a phone throughout 19.4s. It does not show moving the mug away, taking it to the kitchen, or clearing the work area, so the visual sequence is too repetitive and incomplete for publication."
     },
     {
       "id": "casasem-2026-10-28-1",
