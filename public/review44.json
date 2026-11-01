@@ -1,9 +1,9 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-10-31T22:42:14.679195+00:00",
-  "expires_at": "2026-10-31T22:42:14.679195+00:00",
-  "queue_snapshot_sha256": "80032084dfa5a88421f958a65aa03164de753514a4c110946bdf855c375e3984",
-  "state_snapshot_sha256": "debf693d0f2de7a468b05d92ecf9289f469213e3d5206c47cf20785e34430102",
+  "generated_at": "2026-11-01T11:31:16.190225+00:00",
+  "expires_at": "2026-11-01T11:31:16.190225+00:00",
+  "queue_snapshot_sha256": "57fc6817adea001f8d4b9aac3112b28a6814a0a792163010eea8dcfb37a15155",
+  "state_snapshot_sha256": "5ba59c071edab51e7a1732066ef7c460a6a0ccc992944adf28f0d3022a600e6c",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
@@ -12,43 +12,6 @@
   "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-10-26-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
-      "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
-      "script_hash": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
-      "post_snapshot_sha256": "5c0fe291798b95db902a01dd399f94e83cb522a3b9075ccfb6464c8cb5890cca",
-      "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Bebida tão perto do celular?",
-        "Na cena, a bebida é servida",
-        "perto do celular e do",
-        "teclado.",
-        "Reserve um lugar estável para",
-        "a caneca, afastado dos",
-        "aparelhos.",
-        "Confira o espaço antes de",
-        "servir.",
-        "Ao terminar, leve a caneca",
-        "para a cozinha.",
-        "Deixe livre a área de",
-        "trabalho.",
-        "Salve para organizar sua",
-        "mesa."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-01T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -90,7 +53,7 @@
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-2-17f85ab28f9b75d2.mp4",
       "sha256": "17f85ab28f9b75d2c8a0b7037851a8b3458ca00f96677a6c974e3fde482986b4",
       "script_hash": "58f7be0a21f9de10c05c5c6aefab497192fec4fb20f3f39fcda3a6427465d0e9",
-      "post_snapshot_sha256": "7d64feaa0cfb1405abda16927f2d34edc5acf48c887d4b990a08580e535dcdf3",
+      "post_snapshot_sha256": "aa4cb229c4e61d997727f52779059a1a56fe94917a401be0bb6fe8c1319ce871",
       "title": "Terminou de usar a pia? Confira se ficaram respingos ao redor da cuba. Se o material permitir, use um pano limpo e macio conforme a orientação do fabricante. Deixe a torneira livre e coloque o sabonete em um apoio estável. Não aplique produtos sem confirmar a compatibilidade. Salve para revisar a pia depois do uso. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34818/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
       "script_lines": [
         "Terminou de usar a pia?",
@@ -115,6 +78,43 @@
       "selectable": false,
       "blockers": [
         "Rejeitado editorialmente: Eight-frame final MP4 review shows handwashing throughout, not wiping splashes, drying the basin, positioning soap, or checking material compatibility as narrated; the central visual action does not match the script."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-10-26-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-26-1-7a56785a6c370d0c.mp4",
+      "sha256": "7a56785a6c370d0c2e301b8c3f864a9bc54b99e378a6cb262da3f2e3d899a85b",
+      "script_hash": "92d86f31c8db11c96535227116d8dfd9eddcd16b73e388c0aaadb52417067b60",
+      "post_snapshot_sha256": "c44f4a974524211351840401c8c51627971777f418bb42a94efa884b2af06e79",
+      "title": "Bebida tão perto do celular? Na cena, a bebida é servida perto do celular e do teclado. Reserve um lugar estável para a caneca, afastado dos aparelhos. Confira o espaço antes de servir. Ao terminar, leve a caneca para a cozinha. Deixe livre a área de trabalho. Salve para organizar sua mesa. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — KIMDAEJEUNG; https://pixabay.com/videos/id-133319/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Bebida tão perto do celular?",
+        "Na cena, a bebida é servida",
+        "perto do celular e do",
+        "teclado.",
+        "Reserve um lugar estável para",
+        "a caneca, afastado dos",
+        "aparelhos.",
+        "Confira o espaço antes de",
+        "servir.",
+        "Ao terminar, leve a caneca",
+        "para a cozinha.",
+        "Deixe livre a área de",
+        "trabalho.",
+        "Salve para organizar sua",
+        "mesa."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": null,
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Rejeitado editorialmente: Eight-frame final MP4 review confirms essentially one unchanged composition of a mug beside a phone throughout 19.4s. It does not show moving the mug away, taking it to the kitchen, or clearing the work area, so the visual sequence is too repetitive and incomplete for publication."
       ],
       "editorial_review": "PENDING",
       "audit_notes": null,
@@ -229,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "bb54b0823be7bb84b70a3686350f04154c2740b788143f3a4693225237e72f57"
+  "manifest_sha256": "f399e928963adafd364d4e520e1d3e5973c45ffc4131372dd305097160751fe3"
 }
