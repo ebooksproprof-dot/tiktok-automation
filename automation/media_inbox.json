@@ -688,7 +688,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2022/08/21/128638-741747819_large.mp4",
       "sha256": "42aee0eb1499a3006273b72eb259e942b5772bc92c2798b916027193b5e09be7",
       "dhash": [
@@ -702,7 +702,11 @@
       "height": 2160,
       "duration": 16.015,
       "bytes": 51705048,
-      "acquired_at": 1793531298
+      "acquired_at": 1793531298,
+      "reviewed": true,
+      "reviewed_at": "2026-11-01T08:32:00-03:00",
+      "review_source": "authorized assistant eight-frame visual review",
+      "editorial_rejection": "Eight-frame review shows a rocky waterfall and natural pool, not a bed, bedroom, bedding, laundry basket, cutlery drawer, indoor plant care, or any domestic action relevant to the catalog."
     },
     {
       "provider": "pixabay",
@@ -719,7 +723,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2022/08/21/128642-741747831_large.mp4",
       "sha256": "6a7c9f2eaab8157f88af35143d63c22edb854feaa8068e76b24949ee082e6737",
       "dhash": [
@@ -733,7 +737,11 @@
       "height": 2160,
       "duration": 12.278333,
       "bytes": 40402533,
-      "acquired_at": 1793531305
+      "acquired_at": 1793531305,
+      "reviewed": true,
+      "reviewed_at": "2026-11-01T08:32:00-03:00",
+      "review_source": "authorized assistant eight-frame visual and metadata review",
+      "editorial_rejection": "Eight-frame review shows a rocky mountain stream, unrelated to the requested domestic categories; its 12.278s duration is also below the 15-second minimum without looping."
     }
   ],
   "rejected_until": {},
