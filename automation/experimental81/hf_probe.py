@@ -34,6 +34,16 @@ def save(path, value):
     os.replace(temp, path)
 
 
+def cached_record(path):
+    record = json.loads(Path(path).read_text())
+    if record.get('status') == 'GENERATED_PENDING_VISUAL_REVIEW':
+        media = Path(path).parent / record.get('file', '')
+        if (not media.is_file() or
+                hashlib.sha256(media.read_bytes()).hexdigest() != record.get('media', {}).get('sha256')):
+            return {**record, 'status': 'BLOCKED', 'error': 'GENERATED_FILE_MISSING_OR_CHANGED'}
+    return record
+
+
 def request_spec(case):
     if case not in PROMPTS:
         raise ValueError('Unknown test case')
@@ -106,7 +116,7 @@ def run(case, directory, enabled=False, client_factory=None, before_submit=None)
     with (directory / (digest + '.lock')).open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         if path.exists():
-            return json.loads(path.read_text())  # Preserve failed/unknown as well as successful.
+            return cached_record(path)  # Never regenerate missing/changed media automatically.
         record = {'request': spec, 'request_sha256': digest, 'status': 'DISCOVERING',
                   'created_at': datetime.now(timezone.utc).isoformat(),
                   'generation_attempted': False, 'publication_allowed': False,

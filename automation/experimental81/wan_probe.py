@@ -44,7 +44,7 @@ def inspect_clip(path):
 
 
 def run(reference, case, directory, enabled=False, before_submit=None,
-        client_factory=None, file_handler=None):
+        client_factory=None, file_handler=None, prompt=None):
     if not enabled:
         return {'status':'DISABLED','generation_attempted':False,'publication_allowed':False}
     if os.getenv('GITHUB_ACTIONS')=='true' and before_submit is None:
@@ -54,14 +54,17 @@ def run(reference, case, directory, enabled=False, before_submit=None,
     if reference.suffix.lower() not in ('.png','.jpg','.jpeg') or not reference.is_file() or not 1000<=reference.stat().st_size<=20_000_000:
         raise ValueError('A bounded licensed reference image is required')
     if case not in common.PROMPTS:raise ValueError('Unknown test case')
+    prompt = common.PROMPTS[case] if prompt is None else prompt
+    if not isinstance(prompt,str) or not 40<=len(prompt)<=2000:
+        raise ValueError('Bounded descriptive prompt required')
     spec={'case':case,'space':SPACE,'model':MODEL,'reference_sha256':hashlib.sha256(reference.read_bytes()).hexdigest(),
-          'prompt':common.PROMPTS[case],'steps':4,'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
+          'prompt':prompt,'steps':4,'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
           'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
     digest=common.fingerprint(spec);directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     path=directory/(digest+'.json')
     with (directory/(digest+'.lock')).open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX)
-        if path.exists():return json.loads(path.read_text())
+        if path.exists():return common.cached_record(path)
         record={'request':spec,'request_sha256':digest,'status':'DISCOVERING',
                 'created_at':datetime.now(timezone.utc).isoformat(),'generation_attempted':False,
                 'publication_allowed':False,'authenticated':False,'billable_account_used':False,
@@ -103,10 +106,12 @@ def main():
     p.add_argument('--reference',type=Path,required=True)
     p.add_argument('--case',choices=list(common.PROMPTS),default='C')
     p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--prompt-file',type=Path)
     p.add_argument('--reference-rights-confirmed',action='store_true',required=True)
     a=p.parse_args()
     print(json.dumps(run(a.reference,a.case,a.output,
-        os.getenv('AI_VIDEO_EXPERIMENTAL_ENABLED','false').lower()=='true'),indent=2))
+        os.getenv('AI_VIDEO_EXPERIMENTAL_ENABLED','false').lower()=='true',
+        prompt=a.prompt_file.read_text() if a.prompt_file else None),indent=2))
 
 
 if __name__=='__main__':main()

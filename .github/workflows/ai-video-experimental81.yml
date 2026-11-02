@@ -1,0 +1,53 @@
+name: CasaSemEsforco 8.1 Experimental 30s
+
+on:
+  workflow_dispatch:
+  # Branch-scoped validation permits this experiment to be tested without merging
+  # its workflow into main. No production schedule or publication trigger exists.
+  push:
+    branches: [feature/ai-video-hybrid-30s]
+    paths:
+      - 'automation/experimental81/*.py'
+      - 'automation/experimental81/config.json'
+      - 'automation/experimental81/fixtures/**'
+      - 'automation/tests/test_*81.py'
+      - '.github/workflows/ai-video-experimental81.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: casasemesforco-experimental81
+  cancel-in-progress: false
+
+env:
+  AI_VIDEO_EXPERIMENTAL_ENABLED: 'false'
+  ORT_DISABLE_TELEMETRY: '1'
+
+jobs:
+  experiment:
+    if: github.ref == 'refs/heads/feature/ai-video-hybrid-30s'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing free CPU media dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
+          python -m pip install 'Pillow==12.3.0' 'kokoro-onnx==0.6.1' 'onnxruntime==1.31.0'
+      - name: Unit, real synthetic MP4 and full regression tests
+        env:
+          GITHUB_STEP_SUMMARY: ''
+        run: python -m unittest discover -s automation/tests -v
+      - name: Render isolated hybrid 30s from pinned AI fixture; new generation disabled
+        id: render
+        run: python automation/experimental81/cloud_run.py --output "$RUNNER_TEMP/experiment81"
+      - name: Persist outputs and failure evidence to experimental Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/experimental81/persist.py "$RUNNER_TEMP/experiment81"

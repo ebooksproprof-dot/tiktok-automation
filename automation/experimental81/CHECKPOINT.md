@@ -70,3 +70,26 @@ falha fechado. Nenhuma gravação na fila/estoque de publicação.
 
 Próxima prioridade: corrigir qualquer falha de montagem real, renderizar30s,
 salvar o resultado e testar o workflow experimental sem merge em main.
+
+### Primeiro híbrido válido e persistido
+
+ConfiguraçãoC real:5s do WanC +25s de intervalos não sobrepostos de filmagens
+licenciadas previamente existentes no projeto. **30,000s,1080×1920,H.264/AAC,
+7.176.507bytes**, SHA256 `e9d4eec90b61f3e13a97b99359a9a27aea57d5b1c5ca328c643c0a6631f46bce`.
+Render FFmpeg17,76s. Voz Kokoro pf_dora PT-BR existente, não Keren; produção
+Symphony não alterada. Legendas por limites medidos de frase, não alinhamento por palavra.
+Validação integral passou; reexecução validou e reutilizou o mesmo MP4 em2,176s.
+[MP4 híbrido preservado](https://chatgpt.com/library?file_id=libfile_8b50a76b559481918268408ed1e33792&account_id=personal).
+
+TesteB Wan também gerou clipe5,0625s em75,695s totais; cota desconhecida.
+[MP4 IA caixa organizadora](https://chatgpt.com/library?file_id=libfile_9343df6defd481919c2e8eadf7d9829f&account_id=personal).
+Total:2 clipesIA reais/10,125s; nenhuma taxa diária/semanal recorrente comprovada.
+
+Primeira montagem multiarquivo falhou (MP4 intermediário incompleto/moov e timing).
+Corrigida com um único filtergraph FFmpeg, limites de threads, lock e validação final.
+Não foi chamada de sucesso antes da correção. Evidência `evidence/first-hybrid-C.json`.
+
+Para reproduzir sem gastar outra geração, somente o pequeno clipeIA de414KB entra
+como fixture na branch experimental, vinculado a hash e evidência. Vídeos finais
+ficam fora do histórico Git. O workflow experimental publica apenas evidências em
+Releases, nunca na rede social; geração nova continua desativada.

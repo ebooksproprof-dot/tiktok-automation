@@ -94,6 +94,12 @@ class HF81Tests(unittest.TestCase):
             self.assertFalse(r['visual_quality_approved']);self.assertFalse(r['publication_allowed'])
             self.assertIsNone(r['usable_video_seconds'])
 
+    def test_cached_success_with_missing_file_is_blocked(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'record.json'
+            hf.save(p,{'status':'GENERATED_PENDING_VISUAL_REVIEW','file':'lost.mp4','media':{'sha256':'x'*64}})
+            self.assertEqual(hf.cached_record(p)['error'],'GENERATED_FILE_MISSING_OR_CHANGED')
+
     def test_error_classification_does_not_expose_body(self):
         self.assertEqual(hf.classify_error(Exception('Model loading failed (RepositoryNotFoundError)')),'SPACE_MODEL_UNAVAILABLE')
         self.assertEqual(hf.classify_error(Exception('401 secret')),'AUTHORIZATION_REQUIRED')
