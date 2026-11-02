@@ -758,7 +758,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_large.mp4",
       "sha256": "bae9ee0abf4390573d220cddc6d24d250402c0db5bb629ea5fd01c101588c8ca",
       "dhash": [
@@ -772,7 +772,11 @@
       "height": 2160,
       "duration": 22.89,
       "bytes": 56548928,
-      "acquired_at": 1793618621
+      "acquired_at": 1793618621,
+      "reviewed": true,
+      "reviewed_at": "2026-11-02T08:38:00-03:00",
+      "review_source": "authorized assistant eight-frame visual review",
+      "editorial_rejection": "Eight-frame review shows heavy machinery operating in a large outdoor landfill. It does not show a kitchen bin, household waste handling, indoor organization, or another safe domestic action suitable for CasaSemEsforço."
     },
     {
       "provider": "pixabay",
@@ -789,7 +793,7 @@
       "requires_crop_review": true,
       "semantic_verified": false,
       "editorial_approved": false,
-      "status": "pending_visual_review",
+      "status": "rejected_editorial",
       "source_id": "https://cdn.pixabay.com/video/2020/05/22/39813-423345557_large.mp4",
       "sha256": "82ef30f02f239a3f04cb53fce63aef89407ae99d98093b07a580e41f94076610",
       "dhash": [
@@ -803,7 +807,11 @@
       "height": 2160,
       "duration": 22.57,
       "bytes": 36124899,
-      "acquired_at": 1793618627
+      "acquired_at": 1793618627,
+      "reviewed": true,
+      "reviewed_at": "2026-11-02T08:38:00-03:00",
+      "review_source": "authorized assistant eight-frame visual review",
+      "editorial_rejection": "Eight-frame review shows a bulldozer in a large outdoor landfill, not a kitchen trash bin or domestic disposal routine. The scene is semantically unrelated to the requested household category."
     }
   ],
   "rejected_until": {
