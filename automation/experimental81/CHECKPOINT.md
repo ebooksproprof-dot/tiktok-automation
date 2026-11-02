@@ -27,3 +27,23 @@ o primeiro componente30s testado. Não interpretar Space público como API ilimi
 
 Leia este arquivo na branch experimental, confira o SHA remoto e os relatórios
 ao lado. Nunca limpe fila/estado de produção. Experimentos não publicam vídeos.
+
+## Checkpoint 2 — primeiro componente funcional
+
+Recuperação salva e relida no commit `8758939ba29f51367584645c933806471717b91f`.
+Baseline local: 327 testes aprovados. Novo `quality.py` implementa perfil30s
+com tolerância±0,15s, H.264/yuv420p, AAC,1080×1920,100KB–20MB, decodificação integral,
+volume/ausência de áudio, intervalos pretos/silêncio e alinhamento temporal.
+O perfil legado delega ao validador existente sem modificar sua regra15–28s.
+Sete testes novos passaram em5,593s, incluindo um MP4 sintético30s real, rejeição
+desse arquivo pelo perfil antigo, arquivo corrompido e ausência de áudio.
+Esse MP4 é fixture temporária de teste e **não é vídeo gerado por IA**.
+
+Tentativa real LTX-A: endpoint `/generate_video` do Space ChopperBlu foi chamado
+uma vez,576×1024,5s,seed8101; falhou em28,65s com AppError
+`Model loading failed (RepositoryNotFoundError)`. Nenhum MP4 retornado.
+Cota/GPU consumidos não expostos, registrados como desconhecidos, não zero.
+Evidência `evidence/ltx-attempt-A.json`. Sem repetição do serviço bloqueado.
+
+Pendente: testar uma alternativa I2V com referência licenciada; concluir montagem
+com narração PT-BR e preservar um MP4 experimental útil, mesmo sem cenas IA.
