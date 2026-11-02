@@ -1,0 +1,12 @@
+{
+  "AI_VIDEO_EXPERIMENTAL_ENABLED": false,
+  "additional_budget_brl": 0,
+  "publication_enabled": false,
+  "target_seconds": 30,
+  "duration_tolerance_seconds": 0.15,
+  "width": 1080,
+  "height": 1920,
+  "profiles": {"A": {"ai_seconds": 10, "licensed_seconds": 20}, "B": {"ai_seconds": 15, "licensed_seconds": 15}, "C": {"ai_seconds": 5, "licensed_seconds": 25}},
+  "creative_reference": "@vault_shopp",
+  "production_state_writes_allowed": false
+}
