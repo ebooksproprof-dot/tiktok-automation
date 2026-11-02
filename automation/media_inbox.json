@@ -742,31 +742,114 @@
       "reviewed_at": "2026-11-01T08:32:00-03:00",
       "review_source": "authorized assistant eight-frame visual and metadata review",
       "editorial_rejection": "Eight-frame review shows a rocky mountain stream, unrelated to the requested domestic categories; its 12.278s duration is also below the 15-second minimum without looping."
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "39812",
+      "url": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-39812/",
+      "author": "Rootka21407",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Rootka21407 / Pixabay — https://pixabay.com/videos/id-39812/",
+      "category": "lixeira",
+      "query": "kitchen trash bin",
+      "selection_reason": "Provider tags: trash, dust, rubbish, dust-heap, bolivia, peace",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_large.mp4",
+      "sha256": "bae9ee0abf4390573d220cddc6d24d250402c0db5bb629ea5fd01c101588c8ca",
+      "dhash": [
+        "c9cb6931aea474be",
+        "c98b733accc465ee",
+        "c98b663399c9dbac",
+        "d98b2e32139192ac",
+        "d9cb4a262323d428"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 22.89,
+      "bytes": 56548928,
+      "acquired_at": 1793618621
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "39813",
+      "url": "https://cdn.pixabay.com/video/2020/05/22/39813-423345557_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-39813/",
+      "author": "Rootka21407",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Rootka21407 / Pixabay — https://pixabay.com/videos/id-39813/",
+      "category": "lixeira",
+      "query": "kitchen trash bin",
+      "selection_reason": "Provider tags: trash, rubbish, dust-heap, tractor, bolivia",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/05/22/39813-423345557_large.mp4",
+      "sha256": "82ef30f02f239a3f04cb53fce63aef89407ae99d98093b07a580e41f94076610",
+      "dhash": [
+        "2d0c0647b633d9cc",
+        "2d0c0647b677d9ce",
+        "2d0c064fb635dbce",
+        "2d0c064fb637dbce",
+        "2d0c0647b633d9ce"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 22.57,
+      "bytes": 36124899,
+      "acquired_at": 1793618627
     }
   ],
-  "rejected_until": {},
+  "rejected_until": {
+    "pixabay:38116": 1794223410
+  },
   "last_run": {
-    "at": 1793531293,
+    "at": 1793618610,
     "acquired": 2,
-    "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 2,
+    "rejected": 1,
+    "download_attempts": 3,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cama",
+        "category": "pia",
         "status": "search_ok",
-        "eligible_candidates": 10,
+        "eligible_candidates": 2,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "provider_id": "38116",
+        "status": "CANDIDATE_VALIDATION_REJECTED"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "pia",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "lixeira",
+        "status": "search_ok",
+        "eligible_candidates": 7,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "making bed bedroom",
-      "laundry basket clothes",
-      "cutlery kitchen drawer",
-      "indoor plant pot tray"
+      "kitchen sink faucet",
+      "kitchen trash bin",
+      "organizing storage shelf",
+      "window cleaning cloth"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,

@@ -494,15 +494,64 @@
       "reviewed_at": "2026-10-26T08:44:00-03:00",
       "review_source": "authorized assistant visual review",
       "editorial_rejection": "Footage shows a person lying and moving in bed; it does not show gathering, sorting, identifying, or storing extra bedding, so the visuals do not substantiate the script."
+    },
+    {
+      "id": "draft-lixeira-saco-tamanho",
+      "topic": "lixeira-saco-tamanho",
+      "family": "lixeira",
+      "hook": "O saco fica caindo dentro da lixeira?",
+      "steps": "Confira o tamanho e o formato da lixeira antes de escolher o saco. Ajuste a borda conforme o modelo e evite encher além da capacidade. Separe os resíduos seguindo as regras locais. Limpe o recipiente de acordo com o material e deixe secar.",
+      "cta": "Anote o tamanho adequado para sua lixeira.",
+      "body_sha256": "da5e2d8984b5a0245f64bcf0daaffcdc67cc7e4ea103d8cc607f219a142f7fbd",
+      "script_sha256": "04ef657ff52e985562fbc3ed8050bf1eda83042f4abda367356ffc46745c6e1c",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "39812",
+        "url": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-39812/",
+        "author": "Rootka21407",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Rootka21407 / Pixabay — https://pixabay.com/videos/id-39812/",
+        "category": "lixeira",
+        "query": "kitchen trash bin",
+        "selection_reason": "Provider tags: trash, dust, rubbish, dust-heap, bolivia, peace",
+        "requires_crop_review": true,
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_large.mp4",
+        "sha256": "bae9ee0abf4390573d220cddc6d24d250402c0db5bb629ea5fd01c101588c8ca",
+        "dhash": [
+          "c9cb6931aea474be",
+          "c98b733accc465ee",
+          "c98b663399c9dbac",
+          "d98b2e32139192ac",
+          "d9cb4a262323d428"
+        ],
+        "width": 3840,
+        "height": 2160,
+        "duration": 22.89,
+        "bytes": 56548928,
+        "acquired_at": 1793618621
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 14,
-    "pending_review": 9,
+    "unused_templates": 13,
+    "pending_review": 10,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
