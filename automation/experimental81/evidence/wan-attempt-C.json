@@ -1,0 +1,57 @@
+{
+  "space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+  "case": "C",
+  "prompt": "A close-up of a pink-gloved hand gently wiping the ceramic countertop beside the metal faucet with the blue cleaning cloth in the reference image. One slow realistic wiping motion, consistent glove, cloth and faucet geometry, physically plausible contact, natural indoor light. Keep background unchanged. No added text, no logos.",
+  "parameters": {
+    "steps": 4,
+    "duration_seconds": 5,
+    "guidance_scale": 1,
+    "guidance_scale_2": 1,
+    "seed": 8103,
+    "randomize_seed": false
+  },
+  "reference_sha256": "07f7cfec886c17e4ee2937b4dac8149d8cc868206454ce49e621082919ae3ee8",
+  "reference_source": "Derived cropped frame from repository casasem-2026-10-16-1-v2.mp4; Pexels9472849; https://www.pexels.com/license/",
+  "reference_is_ai_generated": false,
+  "gpu_seconds_consumed": null,
+  "quota_consumed": null,
+  "publication_allowed": false,
+  "authenticated": false,
+  "endpoints": [
+    "/generate_video"
+  ],
+  "request_submitted": true,
+  "output": [
+    "/workspace/scratch/51c118329ff2/ai81-media/wan-download/631e17ed61f5a53a2c07b248be01992ce9ff7704efdda2ecbf40498db0ee0239/tmp7ex185rf.mp4",
+    8103
+  ],
+  "status": "GENERATED_PENDING_VISUAL_REVIEW",
+  "wall_seconds": 68.683,
+  "media": {
+    "filename": "wan-C-631e17ed61f5a53a.mp4",
+    "sha256": "631e17ed61f5a53a2c07b248be01992ce9ff7704efdda2ecbf40498db0ee0239",
+    "size": 414469,
+    "duration": 5.0625,
+    "width": 480,
+    "height": 832,
+    "codec": "h264",
+    "fps": "16/1",
+    "has_audio": false
+  },
+  "visual_quality_approved": false,
+  "local_file": "/workspace/scratch/51c118329ff2/ai81-media/wan-C-631e17ed61f5a53a.mp4",
+  "visual_review": {
+    "method": "Five sampled contact-sheet frames over5s plus full FFmpeg decode",
+    "photorealism": "Photographed-source appearance retained; low480x832 resolution and source motion blur limit clarity",
+    "continuity": "Faucet/tile layout broadly stable; pink glove and blue cloth remain recognizable",
+    "artifacts": "Hand/cloth edges blur and deform during rapid wiping; fine finger/contact correctness not established",
+    "professional_quality": false,
+    "experimental_use_approved": true,
+    "publication_approved": false,
+    "reviewer": "hf81 agent",
+    "contact_sheet": "wan-C-contact.png",
+    "black_intervals_over_300ms": 0,
+    "full_decode_passed": true
+  },
+  "usable_video_seconds": 5.0
+}

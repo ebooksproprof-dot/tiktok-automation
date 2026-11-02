@@ -47,3 +47,26 @@ Evidência `evidence/ltx-attempt-A.json`. Sem repetição do serviço bloqueado.
 
 Pendente: testar uma alternativa I2V com referência licenciada; concluir montagem
 com narração PT-BR e preservar um MP4 experimental útil, mesmo sem cenas IA.
+
+## Checkpoint 3 — primeiro MP4 IA real preservado
+
+Validador30s salvo e relido em `efa939bfb9b8c52de82863c55e7385fc71be79a3`.
+Alternativa Wan2.2 Fast: **testeC gerou MP4 real**, uma chamada anônima autorizada,
+sem conta paga, em68,683s de tempo total. Arquivo `wan-C-631e17ed61f5a53a.mp4`:
+5,0625s,480×832,H.264,16fps,sem áudio,414469bytes.
+SHA256 `631e17ed61f5a53a2c07b248be01992ce9ff7704efdda2ecbf40498db0ee0239`.
+Evidência completa em `evidence/wan-attempt-C.json`; clipe preservado:
+[MP4 IA real](https://chatgpt.com/library?file_id=libfile_2f3480460cc081919cd8857a956c4f85&account_id=personal).
+
+Inspeção visual independente: luva/pano/torneira reconhecíveis e fundo estável;
+baixa resolução, suavidade/borrão nos contornos mão-pano. **Não certificado como
+qualidade profissional**. Não aprovado para publicação. Tempo GPU consumido,
+cota consumida e saldo restante desconhecidos;68,683s é tempo total, não GPU medido.
+
+Adaptadores LTX e Wan documentam endpoints descobertos, estado atômico, bloqueio
+de repetições incertas e geração desativada por padrão. Execução habilitada no
+GitHub Actions exige reserva remota via callback antes da submissão; sem isso
+falha fechado. Nenhuma gravação na fila/estoque de publicação.
+
+Próxima prioridade: corrigir qualquer falha de montagem real, renderizar30s,
+salvar o resultado e testar o workflow experimental sem merge em main.

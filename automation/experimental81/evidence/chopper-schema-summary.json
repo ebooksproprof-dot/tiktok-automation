@@ -1,0 +1,60 @@
+{
+  "/prepare_prompt": {
+    "parameters": [
+      {
+        "name": "prompt",
+        "default": null
+      },
+      {
+        "name": "image_path",
+        "default": null
+      },
+      {
+        "name": "enhance",
+        "default": true
+      }
+    ],
+    "returns": 1
+  },
+  "/generate_video": {
+    "parameters": [
+      {
+        "name": "prompt",
+        "default": null
+      },
+      {
+        "name": "image_path",
+        "default": null
+      },
+      {
+        "name": "width",
+        "default": 1472
+      },
+      {
+        "name": "height",
+        "default": 832
+      },
+      {
+        "name": "duration_seconds",
+        "default": 2.0
+      },
+      {
+        "name": "auto_length",
+        "default": false
+      },
+      {
+        "name": "seed",
+        "default": 42
+      },
+      {
+        "name": "randomize_seed",
+        "default": true
+      },
+      {
+        "name": "decoder",
+        "default": "conv"
+      }
+    ],
+    "returns": 3
+  }
+}
