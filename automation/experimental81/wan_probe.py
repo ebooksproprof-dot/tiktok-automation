@@ -44,7 +44,8 @@ def inspect_clip(path):
 
 
 def run(reference, case, directory, enabled=False, before_submit=None,
-        client_factory=None, file_handler=None, prompt=None, hf_token=None, steps=4):
+        client_factory=None, file_handler=None, prompt=None, hf_token=None, steps=4,
+        seed_offset=0):
     if not enabled:
         return {'status':'DISABLED','generation_attempted':False,'publication_allowed':False}
     if os.getenv('GITHUB_ACTIONS')=='true' and before_submit is None:
@@ -61,9 +62,11 @@ def run(reference, case, directory, enabled=False, before_submit=None,
         raise ValueError('Unreviewed inference step count')
     if steps == 3 and not hf_token:
         raise ValueError('Three-step mode requires verified authenticated Free account')
+    if type(seed_offset) is not int or not 0 <= seed_offset <= 3:
+        raise ValueError('Unreviewed seed variation')
     spec={'case':case,'space':SPACE,'model':MODEL,'reference_sha256':hashlib.sha256(reference.read_bytes()).hexdigest(),
           'prompt':prompt,'steps':steps,'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
-          'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
+          'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,'seed':8100+ord(case)-ord('A')+1+seed_offset*101,'randomize_seed':False}
     digest=common.fingerprint(spec);directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     path=directory/(digest+'.json')
     with (directory/(digest+'.lock')).open('a') as lock:
