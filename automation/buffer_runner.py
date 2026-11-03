@@ -93,6 +93,14 @@ def prepare(post, state, channel_id):
     quality = post.get("quality") or {}
     if post.get("publication_provider") != "buffer":
         raise ValueError("Post not assigned to Buffer")
+    if post.get('video_origin') == 'ai_only30':
+        if (post.get('approval_scope') != 'owner_authorized_ai30_first_live_test_and_ongoing_automation'
+                or post.get('quality', {}).get('ai_generated_seconds') != 30
+                or post.get('quality', {}).get('machine_checks_only') is not True
+                or post.get('ai_disclosure_required') is not True
+                or not str(post.get('video_url', '')).startswith(
+                    'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-')):
+            raise ValueError('AI30_OWNER_CONSENT_AND_MEDIA_GUARD_REQUIRED')
     consent = post.get('consented_at')
     try:
         consent_time = common.parse_time(consent) if isinstance(consent, str) and re.search(r'(Z|[+-]\d\d:\d\d)$', consent) else None
@@ -162,7 +170,11 @@ def verify_hosted(post):
                 if total > 20_000_000:
                     raise ValueError("Hosted media exceeds budget")
                 out.write(chunk)
-        if validate(target)["sha256"] != post["quality"]["sha256"]:
+        if post.get('video_origin') == 'ai_only30':
+            actual = validate(target, ai_only30=True)
+        else:
+            actual = validate(target)
+        if actual["sha256"] != post["quality"]["sha256"]:
             raise ValueError("Hosted media differs from reviewed video")
 
 
