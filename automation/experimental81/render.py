@@ -264,7 +264,10 @@ def _compose_locked(manifest, folder, requested='auto'):
     graph.append(''.join(f'[v{i}]' for i in range(len(shots))) + f'concat=n={len(shots)}:v=1:a=0[sequence]')
     caption_filters = filters(folder, timings)
     # Disclosure prevents reference footage being mistaken for generated IA.
-    label = folder/'origin-label.txt'; label.write_text('ESTUDO • SEM PUBLICAÇÃO' if profile != 'REFERENCE_ONLY' else 'ESTUDO • FILMAGENS REAIS • 0 IA')
+    label = folder/'origin-label.txt'
+    label.write_text('CONTEÚDO GERADO POR IA' if profile == 'AI_ONLY' else
+                     'ESTUDO • SEM PUBLICAÇÃO' if profile != 'REFERENCE_ONLY' else
+                     'ESTUDO • FILMAGENS REAIS • 0 IA')
     caption_filters.append(f'drawtext=textfile={label}:expansion=none:fontsize=25:fontcolor=white:box=1:boxcolor=black@0.6:x=40:y=100')
     temporary = output.with_name(output.stem+'.partial.mp4')
     try:
