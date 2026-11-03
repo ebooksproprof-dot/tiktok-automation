@@ -25,7 +25,7 @@ from visual_library import fingerprint, similar
 
 INVENTORY = 'automation/experimental81/auto_inventory.json'
 INV_API = API + '/contents/' + INVENTORY
-MAX_CLIPS_PER_RUN = 2
+MAX_CLIPS_PER_RUN = 6  # Free tier can attempt at most six unique clips; anonymous quota self-limits to two.
 # These are only input-image references from separately licensed Pexels footage.
 # The final video will use only actual AI-generated motion, not these videos.
 REFERENCE = [
@@ -178,14 +178,15 @@ def collect_one(folder):
     # This is NOT a check of actual HF credits, which the public endpoint
     # does not expose. A denied estimate should simply wait for renewal.
     from experimental81 import hf_probe as common
+    tier,hf_token=free_hf_identity()
+    steps=3 if tier=='free' else 4
     request_spec={'case':case,'space':wan_probe.SPACE,'model':wan_probe.MODEL,
         'reference_sha256':hashlib.sha256(image.read_bytes()).hexdigest(),
-        'prompt':description,'steps':4,
+        'prompt':description,'steps':steps,
         'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
         'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,
         'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
     request_sha=common.fingerprint(request_spec)
-    tier,hf_token=free_hf_identity()
     _, ledger=content_get('automation/experimental81/ledger.json')
     # A new Free token is not a way to reset an in-progress anonymous
     # 24-hour window; wait until its original start time has elapsed.
@@ -198,7 +199,8 @@ def collect_one(folder):
         if now_utc()<first+timedelta(hours=24):
             return {'status':'WAIT_CREDITS','clips':slot,'reason':'FREE_TIER_CHANGE_NEXT_WINDOW_ONLY'}
     try:
-        daily_budget.reserve(ledger,request_sha,now_utc(),tier=tier)
+        daily_budget.reserve(ledger,request_sha,now_utc(),tier=tier,
+                             estimated_seconds=daily_budget.estimated_request_seconds(steps))
     except daily_budget.QuotaError as exc:
         if str(exc)=='DAILY_QUOTA_ESTIMATE_EXCEEDED':
             return {'status':'WAIT_CREDITS','clips':slot,
@@ -209,7 +211,7 @@ def collect_one(folder):
     output.mkdir(exist_ok=True)
     result=wan_probe.run(image,case,output,enabled=True,
                          before_submit=lambda record: github_ledger.reserve_remote(record,tier=tier),
-                         prompt=description,hf_token=hf_token)
+                         prompt=description,hf_token=hf_token,steps=steps)
     if result.get('status')!='GENERATED_PENDING_VISUAL_REVIEW':
         # Known quota exhaustion is safe to reattempt only NEXT quota window
         # with a different fingerprint; an unknown transport result is NOT.
@@ -236,6 +238,7 @@ def collect_one(folder):
     asset_url=upload_clip(source,digest,now_utc())
     entry={'slot':slot,'episode':episode,'sha256':digest,'url':asset_url,
            'media':result['media'],'model':wan_probe.MODEL,'reference':provenance,
+           'inference_steps':steps,'gpu_quota_tier':tier,
            'generation_evidence':{'request_sha256':result['request_sha256'],
                'wall_seconds':result.get('wall_seconds'),'gpu_seconds_consumed':None},
            'prompt':description,'visual_source':visual,
