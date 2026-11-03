@@ -71,3 +71,18 @@ O `auto_finish.py` contém recuperação idempotente para uma fila que já foi g
 - CI corretiva: [run #41653526696](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/41653526696) — **71 testes executados; 4 skips, 0 falhas**; teste rápido sem chamadas ao modelo.
 - O agendamento principal `.github/workflows/ai30-free-collector.yml` continua inalterado em main e usará a branch experimental atualizada. **O sucesso deste teste não confirma geração nem publicação real**; verificar o próximo `schedule`.
 
+
+
+## TESTE REAL DE GERAÇÃO EM 03/11/2026 — SUCESSO PARCIAL VERIFICADO
+
+- O usuário autorizou testar imediatamente e declarou que as fichas/créditos voltaram; o fluxo do GitHub **não possui HF_FREE_TOKEN configurado** e operou de maneira **anônima**, com estimativa de 120s/24h.
+- Reexecutado de forma explícita o job originalmente falho [#41650152857](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/41650152857), attempt 2: **conclusão success**.
+- O preflight aprovado, a instalação CPU concluída, a geração pelo Wan bem-sucedida, duas Releases com MP4 IA verificados, inventário atualizado e `auto_finish.py` terminou em NOT_READY (2/6 clipes, sem postagem). Nenhum vídeo novo foi publicado.
+- 1º clipe SHA `9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689`; 5.0625s, 480x832, 16fps, 355783 bytes. Arquivo: [ai30-9beffe...mp4](https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-9beffe8705114e562201221c.mp4).
+- 2º clipe SHA `53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555`; 5.0625s. Arquivo: [ai30-530570...mp4](https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-53057032695adf534e1b6b37.mp4).
+- `auto_inventory.json` marcou `status=COLLECTING`, `clips=2`; `ledger.json` marcou duas solicitações e `tier=anonymous`, primeira reserva `2026-11-03T14:29:45Z` (= 11:29:45 Brasília).
+- DURAÇÃO TOTAL: 10.125s de clipes IA reais, faltam 4 clipes para 30s. A saída 1080x1920/Kokoro/Buffer ainda não foi executada com seis clipes, nem a publicação TikTok comprovada.
+- Corrigido cron da branch main para 03:10, 09:10 e **13:10** BRT (06:10,12:10,16:10 UTC), para capturar a renovação após a primeira janela de 24h, sem ultrapassar a cota. Commit main `31f4a48b6278ed41a1d651d5876c5cd88985ab8c`; teste rápido [#41654751534](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/41654751534) aprovado.
+- O fluxo automático agora é *comprovadamente capaz de produzir e armazenar até dois clipes em uma execução*, mas **não existe prova de que ele consiga produzir 30 segundos diários ou publicar automaticamente**.
+- Direitos e qualidade audiovisual do material gerado ainda não receberam revisão perceptual comercial. O modelo base Wan/Lightx2v upstream está sob Apache 2.0 (cartão do upstream), mas a distribuição espelho `Kijai/WanVideo_comfy` não declara de forma clara a licença do pacote; não declarar licença derivativa completamente verificada.
+
