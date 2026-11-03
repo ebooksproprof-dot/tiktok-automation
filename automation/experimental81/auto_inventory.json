@@ -175,13 +175,58 @@
         "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
         "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1"
       }
+    },
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "a6b4c25145356b29887d2f6c525c36eb2ebec87e97af0c221605d5288b5292e4",
+        "wall_seconds": 36.524
+      },
+      "gpu_quota_tier": "free",
+      "inference_steps": 3,
+      "media": {
+        "bytes": 694693,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic floor cleaning. A person moves a cleaning cloth gently over a small section of floor, clearly visible contact, no disappearing items, correct hand anatomy, natural daylight, one coherent action, no text or logos. Original episode 1, scene 5 of six. Variation 0. Stable camera, realistic contact and uninterrupted movements.",
+      "reference": {
+        "pexels_id": "9473227",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/01_piso_opaco.mp4",
+        "reference_video_sha256": "7bc4dfb163bd5bac48dc42362f5f83a88c58ebf4c7936d9275f9116d1acb6f29"
+      },
+      "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+      "slot": 4,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-1704813db0559080e288798f.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "73f7e37cf4e6c4fd",
+          "73f7e379fceec6fd",
+          "73f7e37cfceec5f5",
+          "73f7e379fceecdfd",
+          "73f3e379fcedcdfd"
+        ],
+        "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1"
+      }
     }
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-03T17:58:52.472191+00:00",
+    "at": "2026-11-03T17:59:33.277426+00:00",
     "result": "ASSET_VERIFIED",
-    "slot": 3
+    "slot": 4
   },
   "last_output": null,
   "publish_history": [],
