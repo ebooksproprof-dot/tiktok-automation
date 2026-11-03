@@ -2,9 +2,9 @@ name: CasaSemEsforco AI30 Free Collector
 
 on:
   schedule:
-    # 03:10 and 09:10 Sao Paulo time: allows the previous ZeroGPU 24h
-    # quota window to renew; the second check is not a new quota allowance.
-    - cron: '10 6,12 * * *'
+    # 03:10, 09:10 and 13:10 Sao Paulo. The afternoon check matters
+    # when the prior window began after 09:10; it never resets 24h quota.
+    - cron: '10 6,12,16 * * *'
   workflow_dispatch:
   push:
     branches: [main]
