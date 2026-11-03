@@ -76,7 +76,7 @@ class FinishPolicyTests(unittest.TestCase):
 
     def test_preferred_ten_oclock_and_existing_collision(self):
         zone=auto_finish.LOCAL
-        now=datetime(2026,11,3,6,0,tzinfo=timezone.utc)
+        now=datetime(2026,11,3,12,0,tzinfo=timezone.utc)
         chosen=auto_finish.choose_time({'posts':[]},{'posts':{}},now)
         self.assertEqual(chosen.hour,10)
         existing={'posts':[{'scheduled_at':chosen.isoformat()}]}
