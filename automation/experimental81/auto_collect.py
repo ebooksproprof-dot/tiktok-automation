@@ -153,6 +153,26 @@ def collect_one(folder):
     case='ABC'[slot%3]
     episode=state['episode_sequence']
     description=SCENES[slot]+f' Original episode {episode}, single distinctive scene {slot+1} of six.'
+    # Check the LOCAL conservative quota model before opening the Space.
+    # This is NOT a check of actual HF credits, which the public endpoint
+    # does not expose. A denied estimate should simply wait for renewal.
+    from experimental81 import hf_probe as common
+    request_spec={'case':case,'space':wan_probe.SPACE,'model':wan_probe.MODEL,
+        'reference_sha256':hashlib.sha256(image.read_bytes()).hexdigest(),
+        'prompt':description,'steps':4,
+        'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
+        'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,
+        'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
+    request_sha=common.fingerprint(request_spec)
+    _, ledger=content_get('automation/experimental81/ledger.json')
+    try:
+        daily_budget.reserve(ledger,request_sha,now_utc(),tier='anonymous')
+    except daily_budget.QuotaError as exc:
+        if str(exc)=='DAILY_QUOTA_ESTIMATE_EXCEEDED':
+            return {'status':'WAIT_CREDITS','clips':slot,
+                    'reason':'CONSERVATIVE_WINDOW_ESTIMATE_FULL',
+                    'not_before':ledger.get('window_start')}
+        raise
     output=Path(folder)/'generation'
     output.mkdir(exist_ok=True)
     result=wan_probe.run(image,case,output,enabled=True,
