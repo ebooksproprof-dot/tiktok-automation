@@ -12,6 +12,37 @@ from experimental81 import auto_collect, auto_finish, github_ledger
 
 
 class CollectorTests(unittest.TestCase):
+    def test_known_visual_duplicate_is_rejected_and_new_seed_allowed_next_run(self):
+        import tempfile
+        from unittest.mock import Mock
+        state={'schema_version':1,'episode_sequence':1,'status':'COLLECTING',
+               'clips':[{'sha256':'a'*64,'visual_source':{'dhash':['a'*16]*5}}],
+               'retry_variant':0,'last_attempt':None}
+        ledger={'schema_version':1,'window_start':None,'tier':None,
+                'claims':[],'window_claim_ids':[]}
+        with tempfile.TemporaryDirectory() as folder:
+            image=Path(folder)/'ref.png'
+            image.write_bytes(b'fake image bytes for controlled unit test')
+            generated={'status':'GENERATED_PENDING_VISUAL_REVIEW',
+                       'file':'test.mp4','request_sha256':'c'*64,
+                       'media':{'sha256':'b'*64}}
+            with patch.object(auto_collect,'content_get',side_effect=[('sha',state),('ls',ledger)]),\\
+                 patch.object(auto_collect,'content_put',return_value='committed') as save,\\
+                 patch.object(auto_collect,'extract_reference',return_value=(image,{})),\\
+                 patch.object(auto_collect,'free_hf_identity',return_value=('free','test')),\\
+                 patch.object(auto_collect.daily_budget,'reserve',return_value=ledger),\\
+                 patch.object(auto_collect.wan_probe,'run',return_value=generated),\\
+                 patch.object(auto_collect,'fingerprint',return_value={'dhash':['a'*16]*5}),\\
+                 patch.object(auto_collect,'similar',return_value=True),\\
+                 patch.object(auto_collect,'upload_clip',side_effect=AssertionError('should not upload')):
+                result=auto_collect.collect_one(folder)
+            self.assertEqual(result['status'],'WAIT_VARIANT')
+            self.assertEqual(state['status'],'COLLECTING')
+            self.assertEqual(state['retry_variant'],1)
+            self.assertEqual(len(state['clips']),1)
+            self.assertEqual(state['last_attempt']['result'],'VISUAL_NEAR_DUPLICATE')
+            save.assert_called_once()
+
     def test_optional_free_token_verified_without_billing(self):
         import io
         from unittest.mock import Mock
