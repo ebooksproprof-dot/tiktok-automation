@@ -11,13 +11,20 @@
       "estimated_seconds": 55.0,
       "request_sha256": "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
       "status": "RESERVED_NO_AUTO_RETRY"
+    },
+    {
+      "claimed_at": "2026-11-03T17:48:54.538126+00:00",
+      "estimated_seconds": 45.0,
+      "request_sha256": "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
+      "status": "RESERVED_NO_AUTO_RETRY"
     }
   ],
   "schema_version": 1,
-  "tier": "anonymous",
+  "tier": "free",
   "window_claim_ids": [
     "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
-    "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8"
+    "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
+    "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693"
   ],
   "window_start": "2026-11-03T14:29:45.349254+00:00"
 }
