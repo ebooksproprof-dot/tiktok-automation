@@ -12,6 +12,22 @@ from experimental81 import auto_collect, auto_finish, github_ledger
 
 
 class CollectorTests(unittest.TestCase):
+    def test_optional_free_token_verified_without_billing(self):
+        import io
+        from unittest.mock import Mock
+        response=io.BytesIO(b'{"type":"user","isPro":false}')
+        with patch.dict(os.environ,{'HF_FREE_TOKEN':'fake-read-token'}),\
+             patch.object(auto_collect,'urlopen',return_value=response):
+            self.assertEqual(auto_collect.free_hf_identity(),('free','fake-read-token'))
+
+    def test_paid_pro_token_never_reaches_generator(self):
+        import io
+        response=io.BytesIO(b'{"type":"user","isPro":true}')
+        with patch.dict(os.environ,{'HF_FREE_TOKEN':'fake-pro-token'}),\
+             patch.object(auto_collect,'urlopen',return_value=response):
+            with self.assertRaisesRegex(RuntimeError,'NO_PRO'):
+                auto_collect.free_hf_identity()
+
     def test_dry_run_never_touches_remote(self):
         with patch.object(auto_collect, 'content_get', side_effect=AssertionError('network')): 
             result=auto_collect.main(dry_run=True)
