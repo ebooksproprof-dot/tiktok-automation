@@ -1,9 +1,9 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-02T14:24:50.002180+00:00",
-  "expires_at": "2026-11-02T14:24:50.002180+00:00",
+  "generated_at": "2026-11-03T02:13:23.261142+00:00",
+  "expires_at": "2026-11-03T02:13:23.261142+00:00",
   "queue_snapshot_sha256": "57fc6817adea001f8d4b9aac3112b28a6814a0a792163010eea8dcfb37a15155",
-  "state_snapshot_sha256": "9b846fb0407ad9852d9ec63e3ba6fc0e7cdcfac2ee66aaef9e5baf040c6fb7f2",
+  "state_snapshot_sha256": "0722e3fb605fcbd8a44a21232b34b464dd09c048272218cd25416fec7d932a11",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
@@ -229,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "513c23a4fe45543b3877c169811e7d444b360191939b9e84d35a2fcf7fc955e6"
+  "manifest_sha256": "f0363ef92f130b17bf4e12f484f8deccddbbb598ec1f1012cf18c52c0a55bf46"
 }
