@@ -175,13 +175,20 @@ def finish():
         staged=collector.content_put('automation/queue.json',qsha,q,ref='main',
                    message='Queue owner-authorized 30s all-AI trial via existing Buffer runner')
         # Queue is durable; if this checkpoint fails, NEVER stage again blindly.
-        state['status']='BLOCKED'
-        state['last_output']={'status':'QUEUED_UNDER_BUFFER_CONTROLS',
-            'post_id':post['id'],'queue_commit':staged,'video_sha256':quality['sha256'],
+        completion={'status':'QUEUED_UNDER_BUFFER_CONTROLS',
+            'episode_sequence':state['episode_sequence'],'post_id':post['id'],
+            'queue_commit':staged,'video_sha256':quality['sha256'],
             'video_url':video_url,'scheduled_at':post['scheduled_at'],
             'publication_verified':False}
+        state['publish_history'].append(completion)
+        # Preserve the queued output and allow future episodes without losing
+        # already consumed request fingerprints in the separate quota ledger.
+        state['last_output']=completion
+        state['episode_sequence']+=1
+        state['clips']=[]
+        state['status']='COLLECTING'
         collector.content_put(collector.INVENTORY,sha,state,
-                   message='Record AI30 queue handoff; no duplicate submission')
+                   message='Record AI30 queue handoff and advance episode without duplicate posting')
         return {'status':'QUEUED_FOR_BUFFER','post_id':post['id'],
                 'scheduled_at':post['scheduled_at'],'video_url':video_url,
                 'queue_commit':staged,'publication_verified':False}
