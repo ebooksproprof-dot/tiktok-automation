@@ -125,6 +125,28 @@ def finish():
     collector.check_inventory(state)
     if state['status']!='READY' or len(state['clips'])!=6:
         return {'status':'NOT_READY','clips':len(state['clips'])}
+    # Repair interrupted handoff: queue write can succeed while the following
+    # experimental inventory checkpoint fails. Never create another post.
+    _,current_queue=collector.content_get('automation/queue.json','main')
+    proof_urls=[x['url'] for x in state['clips']]
+    old_post=next((p for p in current_queue.get('posts',[])
+                   if p.get('video_origin')=='ai_only30'
+                   and p.get('concept')=='faxina-ia30-'+str(state['episode_sequence'])
+                   and p.get('quality',{}).get('source_urls')==proof_urls),None)
+    if old_post is not None:
+        recovery={'status':'QUEUED_UNDER_BUFFER_CONTROLS',
+                  'episode_sequence':state['episode_sequence'],
+                  'post_id':old_post['id'],'video_sha256':old_post['quality']['sha256'],
+                  'video_url':old_post['video_url'],'scheduled_at':old_post['scheduled_at'],
+                  'publication_verified':False,'recovered_from_queue':True}
+        state['publish_history'].append(recovery)
+        state['last_output']=recovery
+        state['episode_sequence']+=1
+        state['clips']=[]
+        state['status']='COLLECTING'
+        collector.content_put(collector.INVENTORY,sha,state,
+                      message='Reconcile existing AI30 queue entry without duplicate posting')
+        return {'status':'QUEUED_ALREADY_RECOVERED','post_id':old_post['id']}
     with tempfile.TemporaryDirectory(prefix='ai30-final-') as folder:
         out=Path(folder)
         sources=[]
