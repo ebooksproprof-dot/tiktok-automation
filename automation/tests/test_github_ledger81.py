@@ -55,7 +55,12 @@ class Ledger81Tests(unittest.TestCase):
 
     def test_wrong_branch_does_not_access_remote(self):
         f = FakeGitHub()
-        with patch.dict(os.environ, {'GITHUB_REF_NAME': 'main'}):
+        # Scheduled GitHub Actions legitimately runs on main, but only from
+        # the EXACT dedicated AI30 workflow. An unrelated main job is denied.
+        with patch.dict(os.environ, {'GITHUB_REF_NAME': 'main',
+                    'GITHUB_WORKFLOW': 'Unrelated Main Workflow',
+                    'GITHUB_EVENT_NAME': 'schedule',
+                    'AI30_MAIN_SCHEDULER_ALLOW': 'true'}):
             with self.assertRaisesRegex(g.LedgerError, 'BRANCH_REQUIRED'):
                 g.reserve_remote(record(1), transport=f)
         self.assertEqual(f.writes, 0)
