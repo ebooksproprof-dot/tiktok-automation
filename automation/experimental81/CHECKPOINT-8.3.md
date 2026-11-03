@@ -42,6 +42,14 @@ Resultado: 68 testes unitários executados, 4 ignorados, zero falhas; `--dry-run
 - A autorização do proprietário para a primeira publicação de teste dispensa a prévia humana; os checks automáticos de vídeo não garantem fidelidade visual/semântica das mãos e objetos. Metadados explicitam isso.
 - A API pública do terceiro Space não promete disponibilidade/geração gratuita ilimitada. Mudanças de endpoint, fila ou cotas podem parar o workflow.
 
+## Atualização após auditoria de autenticação opcional
+
+O coletor também aceita opcionalmente um Secret de repositório chamado `HF_FREE_TOKEN`, mas **nenhum token foi configurado pelo assistente**. Quando ausente, mantém `token=False` (120 segundos de quota documentada anônima). Se existir, realiza `whoami-v2` e somente permite `type=user, isPro=false`; contas PRO/pagas/identidade desconhecida são bloqueadas, sem fallback cobrável, e a mudança anônimo→Free só vale após 24h do ciclo anterior. Esse Secret não dá garantia de seis clipes de 5 segundos diários: quatro steps ainda exigem cota estimada superior aos 300s da conta Free.
+
+O `auto_finish.py` contém recuperação idempotente para uma fila que já foi gravada em main, mas cuja confirmação de inventário falhou. Não reenvia a mesma postagem.
+
+**Último teste isolado:** run [41582223948](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/41582223948), **71 testes, 4 ignorados, 0 erros**. Unidade/mock não é prova de primeira geração em nuvem na versão 8.3.
+
 ## Checkpoints para retomar
 
 1. Conferir a primeira execução **schedule** no link do workflow principal após o cron: preflight, instalação FFmpeg, geração real e inventário.
