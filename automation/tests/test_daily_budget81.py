@@ -28,6 +28,22 @@ class Budget81Tests(unittest.TestCase):
             b.reserve(state,digest(6),START+timedelta(minutes=7),tier='free')
         self.assertFalse(b.estimate_full_video(tier='free')['fits_theoretical_cap'])
 
+    def test_six_three_step_free_requests_fit_conservative_300s_budget(self):
+        self.assertEqual(b.estimated_request_seconds(3),45.0)
+        self.assertEqual(b.estimated_request_seconds(4),55.0)
+        state=b.fresh()
+        for n in range(6):
+            state=b.reserve(state,digest(n+101),START+timedelta(minutes=n),
+                            tier='free',estimated_seconds=b.estimated_request_seconds(3))
+        self.assertEqual(len(state['window_claim_ids']),6)
+        self.assertEqual(sum(c['estimated_seconds'] for c in state['claims']),270)
+        self.assertTrue(b.estimate_full_video(seconds_per_clip=45,tier='free')['fits_theoretical_cap'])
+        with self.assertRaisesRegex(b.QuotaError, 'DAILY_QUOTA'):
+            b.reserve(state,digest(108),START+timedelta(minutes=7),
+                      tier='free',estimated_seconds=b.estimated_request_seconds(3))
+        with self.assertRaisesRegex(b.QuotaError,'UNREVIEWED'):
+            b.estimated_request_seconds(2)
+
     def test_reset_is_24h_from_first_use_not_midnight(self):
         state=b.reserve(b.fresh(),digest(1),START)
         with self.assertRaisesRegex(b.QuotaError,'DUPLICATE'):
