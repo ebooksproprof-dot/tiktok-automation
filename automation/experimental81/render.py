@@ -20,7 +20,7 @@ AUTOMATION = Path(__file__).resolve().parents[1]
 if str(AUTOMATION) not in sys.path:
     sys.path.insert(0, str(AUTOMATION))
 
-PROFILES = {'A': (10, 20), 'B': (15, 15), 'C': (5, 25), 'REFERENCE_ONLY': (0, 30)}
+PROFILES = {'AI_ONLY': (30, 0), 'A': (10, 20), 'B': (15, 15), 'C': (5, 25), 'REFERENCE_ONLY': (0, 30)}
 SCRIPT = [
     'Sua casa vive desorganizada? Comece por uma pequena área.',
     'No armário, mantenha os potes que você usa ao alcance das mãos.',
@@ -83,7 +83,7 @@ def select_profile(clips, requested='auto'):
     totals = {'ai': 0.0, 'real': 0.0}
     for clip in clips:
         totals['ai' if clip['kind'] == 'ai' else 'real'] += clip['duration']
-    options = ['A', 'B', 'C', 'REFERENCE_ONLY'] if requested == 'auto' else [requested]
+    options = ['AI_ONLY', 'A', 'B', 'C', 'REFERENCE_ONLY'] if requested == 'auto' else [requested]
     for name in options:
         if name not in PROFILES:
             raise ValueError('Unknown mix configuration')
