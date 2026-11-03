@@ -188,16 +188,8 @@ def collect_one(folder):
         'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
     request_sha=common.fingerprint(request_spec)
     _, ledger=content_get('automation/experimental81/ledger.json')
-    # A new Free token is not a way to reset an in-progress anonymous
-    # 24-hour window; wait until its original start time has elapsed.
-    started=ledger.get('window_start')
-    if started and ledger.get('tier') and ledger['tier']!=tier:
-        from datetime import timedelta
-        try: first=datetime.fromisoformat(started)
-        except (ValueError,TypeError):
-            raise ValueError('INVALID_LEDGER_WINDOW_START') from None
-        if now_utc()<first+timedelta(hours=24):
-            return {'status':'WAIT_CREDITS','clips':slot,'reason':'FREE_TIER_CHANGE_NEXT_WINDOW_ONLY'}
+    # One-way verified Free authentication keeps anonymous claims in the same
+    # quota window (the ledger does NOT reset), to avoid double-spending.
     try:
         daily_budget.reserve(ledger,request_sha,now_utc(),tier=tier,
                              estimated_seconds=daily_budget.estimated_request_seconds(steps))
