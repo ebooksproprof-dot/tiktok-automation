@@ -113,17 +113,23 @@ def check_inventory(value):
     return value
 
 
-def extract_reference(slot, folder):
+def extract_reference(slot, folder, variant=0):
     if not 0 <= slot < 6: raise ValueError('SLOT_OUT_OF_RANGE')
     name, pexels_id, second = REFERENCE[slot]
     source = AUTOMATION.parent/'public/rendered'/name
     if not source.is_file(): raise ValueError('PINNED_REFERENCE_VIDEO_MISSING')
     image = Path(folder)/('reference-'+str(slot)+'.png')
     # Crops the prior editing frame; source has existing Pexels provenance.
+    # A proved near-duplicate changes the camera composition, not just the
+    # prompt. Keep the licensed source and crop away its existing wrapper.
+    filters = 'crop=630:1090:224:560,scale=480:832:flags=lanczos'
+    if variant:
+        filters = ('crop=630:1090:224:560,'
+                   'scale=960:1664:flags=lanczos,'
+                   'crop=480:832:240:416')
     command = ['ffmpeg','-nostdin','-hide_banner','-loglevel','error',
         '-ss',str(second),'-i',str(source),'-frames:v','1',
-        '-vf','crop=630:1090:224:560,scale=480:832:flags=lanczos',
-        '-y',str(image)]
+        '-vf',filters,'-y',str(image)]
     subprocess.run(command,check=True,capture_output=True,timeout=45)
     if image.stat().st_size < 1000: raise ValueError('REFERENCE_EXTRACTION_INVALID')
     return image,{'reference_video':str(source.relative_to(AUTOMATION.parent)),
@@ -170,12 +176,15 @@ def collect_one(folder):
     if state['status']!='COLLECTING' or len(state['clips'])>=6:
         return {'status':state['status'],'clips':len(state['clips'])}
     slot=len(state['clips'])
-    image, provenance=extract_reference(slot,folder)
     case='ABC'[slot%3]
     episode=state['episode_sequence']
     variant=int(state.get('retry_variant',0))
-    if not 0<=variant<=50:raise ValueError('INVALID_RETRY_VARIANT')
-    description=SCENES[slot]+f' Original episode {episode}, single distinctive scene {slot+1} of six. Variation {variant}: preserve the same visible action with natural physically coherent micro-movement.'
+    if not 0<=variant<=3:raise ValueError('INVALID_RETRY_VARIANT')
+    image, provenance=extract_reference(slot,folder,variant)
+    distinct = (' A closer view sharply emphasizes the moving cloth and hand,'
+                ' with the previous background largely outside the shot.' if variant else
+                ' Stable camera, realistic contact and uninterrupted movements.')
+    description=SCENES[slot]+f' Original episode {episode}, scene {slot+1} of six. Variation {variant}.'+distinct
     # Check the LOCAL conservative quota model before opening the Space.
     # This is NOT a check of actual HF credits, which the public endpoint
     # does not expose. A denied estimate should simply wait for renewal.
@@ -187,7 +196,7 @@ def collect_one(folder):
         'prompt':description,'steps':steps,
         'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
         'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,
-        'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
+        'seed':8100+ord(case)-ord('A')+1+variant*101,'randomize_seed':False}
     request_sha=common.fingerprint(request_spec)
     _, ledger=content_get('automation/experimental81/ledger.json')
     # One-way verified Free authentication keeps anonymous claims in the same
@@ -205,7 +214,8 @@ def collect_one(folder):
     output.mkdir(exist_ok=True)
     result=wan_probe.run(image,case,output,enabled=True,
                          before_submit=lambda record: github_ledger.reserve_remote(record,tier=tier),
-                         prompt=description,hf_token=hf_token,steps=steps)
+                         prompt=description,hf_token=hf_token,steps=steps,
+                         seed_offset=variant)
     if result.get('status')!='GENERATED_PENDING_VISUAL_REVIEW':
         # Known quota exhaustion is safe to reattempt only NEXT quota window
         # with a different fingerprint; an unknown transport result is NOT.
@@ -224,11 +234,17 @@ def collect_one(folder):
     key='https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster'
     visual=fingerprint(source,key+'#'+digest)
     if any(similar(visual,previous.get('visual_source',{})) for previous in state['clips']):
-        state['status']='BLOCKED'
+        # Definitive visual comparison, not an uncertain remote submission:
+        # next scheduled run may try a DISTINCT reference crop, prompt and seed.
+        # Hard cap three variations to avoid wasting the free GPU quota.
+        state['retry_variant']=variant+1
+        state['status']='COLLECTING' if variant < 3 else 'BLOCKED'
         state['last_attempt']={'slot':slot,'result':'VISUAL_NEAR_DUPLICATE',
-                                'request_sha256':result['request_sha256']}
-        content_put(INVENTORY,sha,state,message='Pause AI30: generated scene perceptually duplicated')
-        return {'status':'BLOCKED','reason':'VISUAL_NEAR_DUPLICATE','clips':slot}
+                                'request_sha256':result['request_sha256'],
+                                'at':now_utc().isoformat()}
+        content_put(INVENTORY,sha,state,message='Reject near-duplicate AI30; allow one distinct variant on next run')
+        return {'status':'WAIT_VARIANT' if variant < 3 else 'BLOCKED',
+                'reason':'VISUAL_NEAR_DUPLICATE','clips':slot,'next_variant':variant+1}
     asset_url=upload_clip(source,digest,now_utc())
     entry={'slot':slot,'episode':episode,'sha256':digest,'url':asset_url,
            'media':result['media'],'model':wan_probe.MODEL,'reference':provenance,
