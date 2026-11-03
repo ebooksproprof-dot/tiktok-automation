@@ -1,7 +1,16 @@
 {
+  "claims": [
+    {
+      "claimed_at": "2026-11-03T14:29:45.349254+00:00",
+      "estimated_seconds": 55.0,
+      "request_sha256": "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
+      "status": "RESERVED_NO_AUTO_RETRY"
+    }
+  ],
   "schema_version": 1,
-  "window_start": null,
-  "tier": null,
-  "claims": [],
-  "window_claim_ids": []
+  "tier": "anonymous",
+  "window_claim_ids": [
+    "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c"
+  ],
+  "window_start": "2026-11-03T14:29:45.349254+00:00"
 }
