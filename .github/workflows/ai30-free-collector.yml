@@ -21,6 +21,7 @@ concurrency:
 
 env:
   ORT_DISABLE_TELEMETRY: '1'
+  HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
   AI30_MAIN_SCHEDULER_ALLOW: 'true'
   AI_VIDEO_EXPERIMENTAL_ENABLED: 'true'
 
@@ -75,6 +76,7 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
+          HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
         run: |
           python automation/experimental81/auto_collect.py
       - name: Complete and queue ONLY fully verified AI30 output
