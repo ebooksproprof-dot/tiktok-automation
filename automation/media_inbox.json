@@ -818,50 +818,80 @@
     "pixabay:38116": 1794223410
   },
   "last_run": {
-    "at": 1793618610,
-    "acquired": 2,
-    "rejected": 1,
-    "download_attempts": 3,
-    "skipped_known": 1,
+    "at": 1793728784,
+    "acquired": 0,
+    "rejected": 0,
+    "download_attempts": 0,
+    "skipped_known": 9,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "pia",
+        "category": "gavetas",
         "status": "search_ok",
-        "eligible_candidates": 2,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
-        "provider": "pixabay",
-        "provider_id": "38116",
-        "status": "CANDIDATE_VALIDATION_REJECTED"
-      },
-      {
         "provider": "wikimedia",
-        "category": "pia",
+        "category": "gavetas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "lixeira",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 7,
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "livros",
+        "status": "search_ok",
+        "eligible_candidates": 5,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "livros",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 4,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "kitchen sink faucet",
-      "kitchen trash bin",
-      "organizing storage shelf",
-      "window cleaning cloth"
+      "organizing drawers",
+      "washing dishes sponge",
+      "arranging books shelves",
+      "organizing bathroom storage"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 17,
+    "unreviewed_media_count": 15,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
