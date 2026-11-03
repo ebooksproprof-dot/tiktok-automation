@@ -57,6 +57,26 @@ SCRIPT = [
 def now_utc():
     return datetime.now(timezone.utc)
 
+def free_hf_identity():
+    """Only permit optional user-owned non-PRO Free account, never auto-bill."""
+    from functools import lru_cache
+    token=os.getenv('HF_FREE_TOKEN','').strip()
+    if not token:
+        return 'anonymous',None
+    request=Request('https://huggingface.co/api/whoami-v2',
+            headers={'Authorization':'Bearer '+token,
+                     'Accept':'application/json','User-Agent':'CasaSemEsforco-AI30/1.0'})
+    try:
+        with urlopen(request,timeout=20) as response:
+            data=json.load(response)
+    except Exception:
+        raise RuntimeError('HF_FREE_ACCOUNT_VERIFICATION_FAILED_NO_AUTH_CALL') from None
+    if not isinstance(data,dict) or data.get('isPro') is not False or data.get('type')!='user':
+        raise RuntimeError('HF_FREE_ONLY_NO_PRO_OR_UNKNOWN_TIER')
+    return 'free',token
+
+
+
 
 def content_get(path, ref='feature/ai-video-hybrid-30s'):
     token = os.environ['GH_TOKEN']
@@ -166,9 +186,10 @@ def collect_one(folder):
         'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,
         'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
     request_sha=common.fingerprint(request_spec)
+    tier,hf_token=free_hf_identity()
     _, ledger=content_get('automation/experimental81/ledger.json')
     try:
-        daily_budget.reserve(ledger,request_sha,now_utc(),tier='anonymous')
+        daily_budget.reserve(ledger,request_sha,now_utc(),tier=tier)
     except daily_budget.QuotaError as exc:
         if str(exc)=='DAILY_QUOTA_ESTIMATE_EXCEEDED':
             return {'status':'WAIT_CREDITS','clips':slot,
@@ -178,8 +199,8 @@ def collect_one(folder):
     output=Path(folder)/'generation'
     output.mkdir(exist_ok=True)
     result=wan_probe.run(image,case,output,enabled=True,
-                         before_submit=github_ledger.reserve_remote,
-                         prompt=description)
+                         before_submit=lambda record: github_ledger.reserve_remote(record,tier=tier),
+                         prompt=description,hf_token=hf_token)
     if result.get('status')!='GENERATED_PENDING_VISUAL_REVIEW':
         # Known quota exhaustion is safe to reattempt only NEXT quota window
         # with a different fingerprint; an unknown transport result is NOT.
