@@ -130,19 +130,64 @@
         "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
         "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4"
       }
+    },
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865",
+        "wall_seconds": 40.951
+      },
+      "gpu_quota_tier": "free",
+      "inference_steps": 3,
+      "media": {
+        "bytes": 696763,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic bathroom mirror. The same realistic person carefully buffs one visible smudge on a mirror using a dry microfiber cloth, gentle contact and physically consistent reflections, stable camera and geometry, no text or logos. Original episode 1, scene 4 of six. Variation 1. A closer view sharply emphasizes the moving cloth and hand, with the previous background largely outside the shot.",
+      "reference": {
+        "pexels_id": "9462884",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/03_espelho_limpo.mp4",
+        "reference_video_sha256": "10297dbb7d07546dd4bb23affc7acc73c677d3b001b8cb94b3c809f8c0e23c17"
+      },
+      "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+      "slot": 3,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-328c3dcef95f4e9787172bb4.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "9c8c1c3a7e1a3cd2",
+          "1c183c32263e3cf0",
+          "1c1c0c3a7e3a38f0",
+          "1c181c3a706c7cfe",
+          "1c18183272763ec4"
+        ],
+        "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1"
+      }
     }
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "request_sha256": "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef",
-    "result": "VISUAL_NEAR_DUPLICATE",
+    "at": "2026-11-03T17:58:52.472191+00:00",
+    "result": "ASSET_VERIFIED",
     "slot": 3
   },
   "last_output": null,
   "publish_history": [],
-  "retry_variant": 1,
+  "recovery_note": "Known near-duplicate of scene 4 rejected on 2026-11-03; distinct crop/seed/prompt variant 1 is allowed next; previous scene hashes and quota claims preserved",
+  "retry_variant": 0,
   "schema_version": 1,
   "status": "COLLECTING",
-  "topic": "limpeza-de-superficies",
-  "recovery_note": "Known near-duplicate of scene 4 rejected on 2026-11-03; distinct crop/seed/prompt variant 1 is allowed next; previous scene hashes and quota claims preserved"
+  "topic": "limpeza-de-superficies"
 }
