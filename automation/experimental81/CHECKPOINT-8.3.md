@@ -60,3 +60,14 @@ O `auto_finish.py` contém recuperação idempotente para uma fila que já foi g
 6. Se o workflow terminar verde apenas com test/preflight ou `WAIT_CREDITS`, registrar como PENDENTE, sem resultados falsos.
 
 **Classificação: SISTEMA DE TENTATIVA AUTOMÁTICA INSTALADO, publicação e produção recorrente NÃO COMPROVADAS.**
+
+
+## Incidente 03/11/2026 — execução automática #41650152857
+
+- O GitHub disparou o evento `schedule` realmente, **às 14:04 UTC / 11:04 Brasília**; o cron previsto era 09:10 Brasília e teve atraso. Cron do GitHub é best-effort, não garante execução no minuto.
+- O job `collect-and-stage` **falhou no preflight**: `test_wrong_branch_does_not_access_remote` supunha que toda invocação em `main` fosse proibida, mas a exceção controlada `GITHUB_WORKFLOW=CasaSemEsforco AI30 Free Collector` agora permite justamente esse fluxo programado. O teste herdou essas variáveis do runner e falhou com `AssertionError: LedgerError not raised`.
+- Não houve instalação de mídia, chamada ao Wan/ZeroGPU, reserva de cota, criação de MP4 ou postagem. `auto_inventory.json` ainda tinha 0/6 cenas; `ledger.json` tinha 0 claims.
+- Correção **commit 49977300efc92ed6354e27d51e74877480f7ef0f**: o teste de branch proibida passa explicitamente um workflow não autorizado. A regra de produção de bloqueio para outros workflows em `main` foi preservada.
+- CI corretiva: [run #41653526696](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/41653526696) — **71 testes executados; 4 skips, 0 falhas**; teste rápido sem chamadas ao modelo.
+- O agendamento principal `.github/workflows/ai30-free-collector.yml` continua inalterado em main e usará a branch experimental atualizada. **O sucesso deste teste não confirma geração nem publicação real**; verificar o próximo `schedule`.
+
