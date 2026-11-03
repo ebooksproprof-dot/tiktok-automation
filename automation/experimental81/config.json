@@ -6,7 +6,32 @@
   "duration_tolerance_seconds": 0.15,
   "width": 1080,
   "height": 1920,
-  "profiles": {"A": {"ai_seconds": 10, "licensed_seconds": 20}, "B": {"ai_seconds": 15, "licensed_seconds": 15}, "C": {"ai_seconds": 5, "licensed_seconds": 25}},
+  "profiles": {
+    "AI_ONLY": {
+      "ai_seconds": 30,
+      "licensed_seconds": 0
+    },
+    "A": {
+      "ai_seconds": 10,
+      "licensed_seconds": 20
+    },
+    "B": {
+      "ai_seconds": 15,
+      "licensed_seconds": 15
+    },
+    "C": {
+      "ai_seconds": 5,
+      "licensed_seconds": 25
+    }
+  },
   "creative_reference": "@vault_shopp",
-  "production_state_writes_allowed": false
+  "production_state_writes_allowed": false,
+  "target_videos_per_day": 1,
+  "target_videos_per_week": 7,
+  "ai_source_usable_seconds": 5,
+  "require_distinct_ai_clips": 6,
+  "zero_gpu_tier_assumed": "anonymous",
+  "quota_estimate_only": true,
+  "daily_generation_verified": false,
+  "automatic_publication_authorized_by_quality_gate": false
 }
