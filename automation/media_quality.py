@@ -31,7 +31,7 @@ def av_timing(video, audio):
                 av_end_delta_seconds=round(end_delta,6), lip_sync_verified=False)
 
 
-def validate(path):
+def validate(path, *, ai_only30=False):
     path = pathlib.Path(path)
     meta = json.loads(subprocess.check_output(
         ['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(path)], text=True, timeout=30))
@@ -46,7 +46,10 @@ def validate(path):
         errors.append('Expected 1080x1920')
     if audio.get('codec_name') != 'aac':
         errors.append('Expected AAC audio')
-    if not 15 <= duration <= 28:
+    if ai_only30:
+        if abs(duration - 30.0) > 0.15:
+            errors.append('AI-only duration outside 30.0 ± 0.15 seconds')
+    elif not 15 <= duration <= 28:
         errors.append('Duration outside 15–28 seconds')
     if not 100_000 <= path.stat().st_size <= 20_000_000:
         errors.append('File outside 100 KB–20 MB')

@@ -1,0 +1,54 @@
+{
+  "profile": "C",
+  "ai_seconds": 5,
+  "real_seconds": 25,
+  "quality": {
+    "profile": "hybrid30",
+    "technical_pass": true,
+    "editorial_approved": false,
+    "publication_enabled": false,
+    "sha256": "e9d4eec90b61f3e13a97b99359a9a27aea57d5b1c5ca328c643c0a6631f46bce",
+    "duration": 30.0,
+    "duration_tolerance_seconds": 0.15,
+    "size": 7176507,
+    "width": 1080,
+    "height": 1920,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_mean_db": -15.2,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.033,
+    "lip_sync_verified": false,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0
+  },
+  "render_seconds": 17.76,
+  "publication_enabled": false,
+  "approved": false,
+  "video_filename": "experimental81-478fef766e13deb5.mp4",
+  "source_mode": "Existing licensed project references, nonoverlapping intervals; not new live footage",
+  "narration_engine": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+  "caption_timing": "Measured utterance boundaries; sentence-level synchronization, not word-level forced alignment",
+  "visual_review": {
+    "sampled_frames": 6,
+    "caption_readable": true,
+    "black_frames": false,
+    "style_consistent": true,
+    "professional_quality": false,
+    "limitations": [
+      "AI source only480x83216fps upscaled; glove and cloth edges deform/blur",
+      "Reused project references; not new footage for posting",
+      "Cuts each5seconds; basic experimental editing, no retention benchmark",
+      "Source LoRA derivative license clearance pending"
+    ]
+  },
+  "reexecution": {
+    "same_output": true,
+    "no_generation": true
+  },
+  "failed_attempt": {
+    "stage": "multi-process intermediate shot montage",
+    "outcome": "Incomplete intermediate MP4/moov and audio-video timing mismatch observed; no valid deliverable claimed",
+    "correction": "Single FFmpeg filtergraph, explicit nostdin, limited filter threads, fresh output and full validation"
+  }
+}

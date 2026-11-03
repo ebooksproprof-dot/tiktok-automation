@@ -1,0 +1,22 @@
+{
+  "test": "Optional EffectCraft CPU/headless original fixture, not integration",
+  "binary_sha256": "fe78d8df0221d06d5519e02f3c382c1dfcd3241217a0e46644b4598a215b8d61",
+  "effectcraft_version": "0.11.1",
+  "wall_seconds": 1.522,
+  "width": 1080,
+  "height": 1920,
+  "duration": 1.0,
+  "codec": "h264",
+  "sha256": "ce53ae7cd23eee415c72931a4055299c874607858fbdb9e1aaf5fcb1bbc99f6d",
+  "bytes": 45091,
+  "full_decode_pass": true,
+  "gpu_acceleration": false,
+  "publication_enabled": false,
+  "audio": false,
+  "video": "effectcraft81-headless.mp4",
+  "limitations": [
+    "One-second graphics fixture; no footage or narration.",
+    "Technical execution alone is not visual quality approval.",
+    "No measured benefit for the 30-second composition; FFmpeg remains primary."
+  ]
+}

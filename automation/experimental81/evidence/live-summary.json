@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-02",
+  "ltx_space": "ChopperBlu/ltx-2-5-demo",
+  "ltx_runtime": "RUNNING",
+  "ltx_revision": "0bc4ac8cb4d398b035b5f3ae9d5dbd6074918bd6",
+  "ltx_notice": [
+    "\u2699\ufe0f **Setup required:** Model loading failed (RepositoryNotFoundError). The Space owner should inspect the runtime logs. It is never entered in this UI or committed."
+  ],
+  "ltx_endpoints": [
+    "/prepare_prompt",
+    "/generate_video"
+  ],
+  "ltx_model": "Lightricks/LTX-2.5-Diffusers",
+  "official_ltx_space_http_status": 401,
+  "wan_space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+  "wan_revision": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+  "wan_runtime": "RUNNING",
+  "wan_models": [
+    "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+    "cbensimon/WanTransformer3DModel-sm120-cu130-raa",
+    "Kijai/WanVideo_comfy",
+    "Wan-AI/Wan2.2-I2V-A14B-Diffusers"
+  ]
+}

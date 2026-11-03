@@ -1,0 +1,24 @@
+{
+  "space": "ChopperBlu/ltx-2-5-demo",
+  "case": "A",
+  "prompt": "Photorealistic vertical close-up in a bright home kitchen. One adult carefully places stainless steel spoons into a wooden drawer organizer. Anatomically correct hands, stable utensil geometry, physically coherent slow movement, natural daylight, locked camera, no text, no logos.",
+  "parameters": {
+    "width": 576,
+    "height": 1024,
+    "duration_seconds": 5,
+    "seed": 8101,
+    "decoder": "conv"
+  },
+  "gpu_seconds_consumed": null,
+  "quota_consumed": null,
+  "publication_allowed": false,
+  "status": "FAILED",
+  "wall_seconds": 28.65,
+  "endpoints": [
+    "/prepare_prompt",
+    "/generate_video"
+  ],
+  "request_submitted": true,
+  "error_type": "AppError",
+  "error": "Model loading failed (RepositoryNotFoundError). The Space owner should inspect the runtime logs."
+}
