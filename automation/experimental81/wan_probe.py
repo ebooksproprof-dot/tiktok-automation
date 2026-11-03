@@ -44,7 +44,7 @@ def inspect_clip(path):
 
 
 def run(reference, case, directory, enabled=False, before_submit=None,
-        client_factory=None, file_handler=None, prompt=None, hf_token=None):
+        client_factory=None, file_handler=None, prompt=None, hf_token=None, steps=4):
     if not enabled:
         return {'status':'DISABLED','generation_attempted':False,'publication_allowed':False}
     if os.getenv('GITHUB_ACTIONS')=='true' and before_submit is None:
@@ -57,8 +57,12 @@ def run(reference, case, directory, enabled=False, before_submit=None,
     prompt = common.PROMPTS[case] if prompt is None else prompt
     if not isinstance(prompt,str) or not 40<=len(prompt)<=2000:
         raise ValueError('Bounded descriptive prompt required')
+    if type(steps) is not int or steps not in (3,4):
+        raise ValueError('Unreviewed inference step count')
+    if steps == 3 and not hf_token:
+        raise ValueError('Three-step mode requires verified authenticated Free account')
     spec={'case':case,'space':SPACE,'model':MODEL,'reference_sha256':hashlib.sha256(reference.read_bytes()).hexdigest(),
-          'prompt':prompt,'steps':4,'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
+          'prompt':prompt,'steps':steps,'negative_prompt':'warped objects, deformed hands, duplicate objects, text, logos',
           'duration_seconds':5,'guidance_scale':1,'guidance_scale_2':1,'seed':8100+ord(case)-ord('A')+1,'randomize_seed':False}
     digest=common.fingerprint(spec);directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     path=directory/(digest+'.json')
