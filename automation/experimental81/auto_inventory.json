@@ -134,14 +134,14 @@
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-03T17:49:34.429132+00:00",
-    "result": "ASSET_VERIFIED",
-    "slot": 2
+    "request_sha256": "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef",
+    "result": "VISUAL_NEAR_DUPLICATE",
+    "slot": 3
   },
   "last_output": null,
   "publish_history": [],
   "retry_variant": 0,
   "schema_version": 1,
-  "status": "COLLECTING",
+  "status": "BLOCKED",
   "topic": "limpeza-de-superficies"
 }
