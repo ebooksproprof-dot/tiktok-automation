@@ -26,14 +26,14 @@ class CollectorTests(unittest.TestCase):
             generated={'status':'GENERATED_PENDING_VISUAL_REVIEW',
                        'file':'test.mp4','request_sha256':'c'*64,
                        'media':{'sha256':'b'*64}}
-            with patch.object(auto_collect,'content_get',side_effect=[('sha',state),('ls',ledger)]),\\
-                 patch.object(auto_collect,'content_put',return_value='committed') as save,\\
-                 patch.object(auto_collect,'extract_reference',return_value=(image,{})),\\
-                 patch.object(auto_collect,'free_hf_identity',return_value=('free','test')),\\
-                 patch.object(auto_collect.daily_budget,'reserve',return_value=ledger),\\
-                 patch.object(auto_collect.wan_probe,'run',return_value=generated),\\
-                 patch.object(auto_collect,'fingerprint',return_value={'dhash':['a'*16]*5}),\\
-                 patch.object(auto_collect,'similar',return_value=True),\\
+            with patch.object(auto_collect,'content_get',side_effect=[('sha',state),('ls',ledger)]),\
+                 patch.object(auto_collect,'content_put',return_value='committed') as save,\
+                 patch.object(auto_collect,'extract_reference',return_value=(image,{})),\
+                 patch.object(auto_collect,'free_hf_identity',return_value=('free','test')),\
+                 patch.object(auto_collect.daily_budget,'reserve',return_value=ledger),\
+                 patch.object(auto_collect.wan_probe,'run',return_value=generated),\
+                 patch.object(auto_collect,'fingerprint',return_value={'dhash':['a'*16]*5}),\
+                 patch.object(auto_collect,'similar',return_value=True),\
                  patch.object(auto_collect,'upload_clip',side_effect=AssertionError('should not upload')):
                 result=auto_collect.collect_one(folder)
             self.assertEqual(result['status'],'WAIT_VARIANT')
