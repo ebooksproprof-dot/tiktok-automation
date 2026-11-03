@@ -74,14 +74,18 @@ def reserve_remote(record, *, tier='anonymous', now=None, transport=request_json
     if not token:
         raise LedgerError('GITHUB_TOKEN_REQUIRED')
     spec = record.get('request', {})
-    if (spec.get('space') != SPACE or spec.get('steps') != 4
-            or spec.get('duration_seconds') != 5):
+    steps = spec.get('steps')
+    if (spec.get('space') != SPACE or spec.get('duration_seconds') != 5
+            or (tier == 'free' and steps not in (3, 4))
+            or (tier == 'anonymous' and steps != 4)
+            or tier not in ('anonymous', 'free')):
         raise LedgerError('UNVERIFIED_WAN_CONFIGURATION')
     request_id = record.get('request_sha256')
     now = datetime.now(timezone.utc) if now is None else now
     url = API + '?ref=' + urllib.parse.quote(BRANCH, safe='')
     old_sha, old_data = parse_file(transport('GET', url, token))
-    updated = daily_budget.reserve(old_data, request_id, now, tier=tier)
+    updated = daily_budget.reserve(old_data, request_id, now, tier=tier,
+                                   estimated_seconds=daily_budget.estimated_request_seconds(steps))
     body = {'message': 'Reserve experimental Wan request; no automatic retry',
             'content': base64.b64encode((json.dumps(updated, sort_keys=True, indent=2)+'\n').encode()).decode(),
             'sha': old_sha, 'branch': BRANCH}
