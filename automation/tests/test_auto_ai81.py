@@ -83,6 +83,26 @@ class FinishPolicyTests(unittest.TestCase):
         next_date=auto_finish.choose_time(existing,{'posts':{}},now)
         self.assertEqual((next_date-chosen).days,1)
 
+    def test_recover_existing_post_after_inventory_checkpoint_failure(self):
+        urls=['https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/clip-'+str(i)+'.mp4' for i in range(6)]
+        inventory={'schema_version':1,'episode_sequence':5,'status':'READY',
+                   'clips':[{'url':u,'sha256':f'{i:064x}'} for i,u in enumerate(urls)],
+                   'publish_history':[],'last_output':None}
+        queued={'id':'casasem-2026-11-04-1','video_origin':'ai_only30',
+                'concept':'faxina-ia30-5','scheduled_at':'2026-11-04T10:00:00-03:00',
+                'video_url':'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/test.mp4',
+                'quality':{'source_urls':urls,'sha256':'a'*64}}
+        with patch.object(auto_collect,'content_get',side_effect=[
+            ('old-inventory-sha',inventory),('queue-sha',{'posts':[queued]})]),\
+             patch.object(auto_collect,'content_put',return_value='saved') as commit,\
+             patch.object(auto_finish,'download',side_effect=AssertionError('must not redownload')):
+            result=auto_finish.finish()
+        self.assertEqual(result['status'],'QUEUED_ALREADY_RECOVERED')
+        self.assertEqual(inventory['status'],'COLLECTING')
+        self.assertEqual(inventory['episode_sequence'],6)
+        self.assertEqual(inventory['clips'],[])
+        commit.assert_called_once()
+
     def test_no_explicit_video_until_six(self):
         with patch.dict(os.environ,{'GITHUB_ACTIONS':'true','GITHUB_REF_NAME':'main',
             'GITHUB_WORKFLOW':'CasaSemEsforco AI30 Free Collector',
