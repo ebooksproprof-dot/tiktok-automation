@@ -44,7 +44,7 @@ def inspect_clip(path):
 
 
 def run(reference, case, directory, enabled=False, before_submit=None,
-        client_factory=None, file_handler=None, prompt=None):
+        client_factory=None, file_handler=None, prompt=None, hf_token=None):
     if not enabled:
         return {'status':'DISABLED','generation_attempted':False,'publication_allowed':False}
     if os.getenv('GITHUB_ACTIONS')=='true' and before_submit is None:
@@ -75,7 +75,7 @@ def run(reference, case, directory, enabled=False, before_submit=None,
             if client_factory is None or file_handler is None:
                 from gradio_client import Client,handle_file
                 client_factory=client_factory or Client;file_handler=file_handler or handle_file
-            client=client_factory(SPACE,token=False,verbose=False,
+            client=client_factory(SPACE,token=hf_token if hf_token else False,verbose=False,
                 download_files=str(directory/'downloads'),httpx_kwargs={'timeout':30})
             api=client.view_api(return_format='dict',print_info=False)
             endpoint=api.get('named_endpoints',{}).get('/generate_video',{})
