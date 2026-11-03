@@ -85,13 +85,58 @@
         "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
         "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555"
       }
+    },
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
+        "wall_seconds": 37.196
+      },
+      "gpu_quota_tier": "free",
+      "inference_steps": 3,
+      "media": {
+        "bytes": 454017,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic home cleaning. An adult hand uses a clean microfiber cloth to wipe one section of a bathroom mirror, natural continuous movement, reflections consistent with the real room, no added objects, no logos or text. Original episode 1, single distinctive scene 3 of six. Variation 0: preserve the same visible action with natural physically coherent micro-movement.",
+      "reference": {
+        "pexels_id": "9462884",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/03_espelho_limpo.mp4",
+        "reference_video_sha256": "10297dbb7d07546dd4bb23affc7acc73c677d3b001b8cb94b3c809f8c0e23c17"
+      },
+      "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+      "slot": 2,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-b64d4095fad0eb7252fde2d5.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "0c40481819393031",
+          "0440081819393831",
+          "0c00081819393831",
+          "1c00081819393831",
+          "0c00081819193831"
+        ],
+        "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4"
+      }
     }
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-03T14:31:25.929093+00:00",
+    "at": "2026-11-03T17:49:34.429132+00:00",
     "result": "ASSET_VERIFIED",
-    "slot": 1
+    "slot": 2
   },
   "last_output": null,
   "publish_history": [],
