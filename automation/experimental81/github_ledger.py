@@ -64,7 +64,11 @@ def reserve_remote(record, *, tier='anonymous', now=None, transport=request_json
     prior independent verification of a no-billing free HF account, not supplied
     by this module. Normal production should keep anonymous/token=False.
     """
-    if os.getenv('GITHUB_ACTIONS') != 'true' or os.getenv('GITHUB_REF_NAME') != BRANCH:
+    main_scheduler = (os.getenv('GITHUB_REF_NAME') == 'main'
+                      and os.getenv('GITHUB_WORKFLOW') == 'CasaSemEsforco AI30 Free Collector'
+                      and os.getenv('AI30_MAIN_SCHEDULER_ALLOW') == 'true'
+                      and os.getenv('GITHUB_EVENT_NAME') in ('schedule', 'workflow_dispatch'))
+    if os.getenv('GITHUB_ACTIONS') != 'true' or not (os.getenv('GITHUB_REF_NAME') == BRANCH or main_scheduler):
         raise LedgerError('EXPERIMENTAL_ACTIONS_BRANCH_REQUIRED')
     token = os.getenv('GITHUB_TOKEN') or os.getenv('GH_TOKEN')
     if not token:
