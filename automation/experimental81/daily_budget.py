@@ -79,7 +79,12 @@ def reserve(state, request_id, now, tier='anonymous', estimated_seconds=ESTIMATE
             value['tier'] = tier
             value['window_claim_ids'] = []
         elif value.get('tier') != tier:
-            raise QuotaError('TIER_CHANGE_WITHIN_WINDOW_NOT_ALLOWED')
+            # A verified, single Free account may replace anonymous mode once,
+            # but the existing claims/window stay in place: no quota reset.
+            if value.get('tier') == 'anonymous' and tier == 'free':
+                value['tier'] = 'free'
+            else:
+                raise QuotaError('TIER_CHANGE_WITHIN_WINDOW_NOT_ALLOWED')
     ids = value.get('window_claim_ids')
     if not isinstance(ids, list) or any(not isinstance(x, str) for x in ids):
         raise QuotaError('BAD_WINDOW_CLAIMS')
@@ -87,8 +92,10 @@ def reserve(state, request_id, now, tier='anonymous', estimated_seconds=ESTIMATE
     if any(x not in by_id for x in ids):
         raise QuotaError('MISSING_HISTORICAL_CLAIM')
     reserved = sum(float(by_id[x]['estimated_seconds']) for x in ids)
-    # Leave 5% unallocated for uncertainty. Provider may still debit differently.
-    cap = 0.95 * DOCUMENTED_SECONDS[tier]
+    # Leave 3% unallocated. For a one-way anonymous -> Free migration,
+    # previous anonymous claims are counted AGAINST the Free limit too.
+    # The provider remains authoritative; these are planning estimates only.
+    cap = 0.97 * DOCUMENTED_SECONDS[tier]
     if reserved + estimated_seconds > cap + 1e-6:
         raise QuotaError('DAILY_QUOTA_ESTIMATE_EXCEEDED')
     event = {'request_sha256': request_id, 'claimed_at': now.isoformat(),
@@ -103,7 +110,7 @@ def estimate_full_video(clips=6, seconds_per_clip=ESTIMATED_PER_CLIP_SECONDS, ti
     if clips < 1 or tier not in DOCUMENTED_SECONDS:
         raise QuotaError('INVALID_ESTIMATE')
     required = clips * seconds_per_clip
-    cap = 0.95 * DOCUMENTED_SECONDS[tier]
+    cap = 0.97 * DOCUMENTED_SECONDS[tier]
     return {'clips_required': clips, 'estimated_gpu_seconds': required,
             'documented_daily_quota_seconds': DOCUMENTED_SECONDS[tier],
             'unallocated_margin_seconds': DOCUMENTED_SECONDS[tier]-cap,
