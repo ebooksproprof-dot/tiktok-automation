@@ -12,7 +12,16 @@ DOCUMENTED_SECONDS = {'anonymous': 120, 'free': 300}
 # Estimation only: Wan 2.2 5s, 480x832, four steps ~= 50.5 s by Space
 # source formula; 55 reserves extra margin but is NOT observed billing.
 ESTIMATED_PER_CLIP_SECONDS = 55.0
+# Published ZeroGPU decorator formula for 5s 480x832:
+# 10 + steps * 15 * (81*480*832/(81*832*624))**1.5
+# 3 steps requests approximately 40.4s; 45s planning allowance.
+STEP_ESTIMATES = {3: 45.0, 4: 55.0}
 MAX_CLAIMS = 512
+
+def estimated_request_seconds(steps):
+    if type(steps) is not int or steps not in STEP_ESTIMATES:
+        raise QuotaError('UNREVIEWED_INFERENCE_STEPS')
+    return STEP_ESTIMATES[steps]
 
 
 class QuotaError(ValueError):
