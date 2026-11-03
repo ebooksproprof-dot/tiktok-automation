@@ -42,13 +42,56 @@
         "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
         "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689"
       }
+    },
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
+        "wall_seconds": 48.252
+      },
+      "media": {
+        "bytes": 431071,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic close-up of a kitchen faucet and countertop. A gloved hand folds a microfiber cloth, slowly cleans the area directly beside the faucet, consistent sink and cloth, no extra fingers, no camera shake, no logos and no text. Original episode 1, single distinctive scene 2 of six. Variation 0: preserve the same visible action with natural physically coherent micro-movement.",
+      "reference": {
+        "pexels_id": "9472849",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/02_pia_limpa.mp4",
+        "reference_video_sha256": "9a20261b3e8d69f60643814fdd00d9fa68d8501a5d2d860c729d4e4cf9d83870"
+      },
+      "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+      "slot": 1,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-53057032695adf534e1b6b37.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "0000c08e36e1d003",
+          "40008102a2c3c04f",
+          "0000838c6663616f",
+          "0000834ec687001f",
+          "0000818a86c7014f"
+        ],
+        "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555"
+      }
     }
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-03T14:30:32.701920+00:00",
+    "at": "2026-11-03T14:31:25.929093+00:00",
     "result": "ASSET_VERIFIED",
-    "slot": 0
+    "slot": 1
   },
   "last_output": null,
   "publish_history": [],
