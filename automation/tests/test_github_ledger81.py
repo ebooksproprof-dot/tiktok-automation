@@ -65,6 +65,20 @@ class Ledger81Tests(unittest.TestCase):
                 g.reserve_remote(record(1), transport=f)
         self.assertEqual(f.writes, 0)
 
+    def test_three_steps_only_under_verified_free_tier(self):
+        f=FakeGitHub()
+        rec=record(91)
+        rec['request']['steps']=3
+        with self.assertRaisesRegex(g.LedgerError,'UNVERIFIED_WAN'):
+            g.reserve_remote(rec,transport=f,tier='anonymous',
+                             now=datetime(2026,11,3,tzinfo=timezone.utc))
+        self.assertEqual(f.writes,0)
+        result=g.reserve_remote(rec,transport=f,tier='free',
+                                now=datetime(2026,11,3,tzinfo=timezone.utc))
+        self.assertTrue(result['reserved'])
+        self.assertEqual(f.data['claims'][0]['estimated_seconds'],45)
+        self.assertEqual(f.data['tier'],'free')
+
     def test_unreviewed_steps_or_space_rejected(self):
         f = FakeGitHub()
         for key, val in [('steps', 3), ('space', 'https://not-the-reviewed-space.example')]:
