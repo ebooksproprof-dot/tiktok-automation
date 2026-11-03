@@ -2,8 +2,12 @@ name: CasaSemEsforco 8.1 Experimental 30s
 
 on:
   workflow_dispatch:
-  # Branch-scoped validation permits this experiment to be tested without merging
-  # its workflow into main. No production schedule or publication trigger exists.
+    inputs:
+      render_demo:
+        description: 'Also run the costly 30s media proof (no new AI generation)'
+        required: false
+        type: boolean
+        default: false
   push:
     branches: [feature/ai-video-hybrid-30s]
     paths:
@@ -14,7 +18,7 @@ on:
       - '.github/workflows/ai-video-experimental81.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: casasemesforco-experimental81
@@ -25,28 +29,61 @@ env:
   ORT_DISABLE_TELEMETRY: '1'
 
 jobs:
-  experiment:
+  safety-tests:
     if: github.ref == 'refs/heads/feature/ai-video-hybrid-30s'
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install existing free CPU media dependencies
+      - name: Test all experimental controls without apt, GPU or service credentials
+        run: python -m unittest discover -s automation/tests -p 'test_*81.py' -v
+      - name: Confirm production remains disconnected
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from sys import path
+          path.insert(0, 'automation')
+          from experimental81 import render
+          config = json.loads(Path('automation/experimental81/config.json').read_text())
+          assert config['AI_VIDEO_EXPERIMENTAL_ENABLED'] is False
+          assert config['publication_enabled'] is False
+          assert config['production_state_writes_allowed'] is False
+          assert render.PROFILES['AI_ONLY'] == (30, 0)
+          assert len(render.plan([{'kind':'ai','duration':5} for _ in range(6)], 'AI_ONLY')) == 6
+          print('PASS: 30 seconds all AI planned; no publish or generation enabled.')
+          PY
+
+  optional-media-proof:
+    needs: safety-tests
+    if: github.event_name == 'workflow_dispatch' && inputs.render_demo == true
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU tools only for requested media proof
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null || ! command -v espeak-ng >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng fonts-dejavu-core
+          fi
           python -m pip install 'Pillow==12.3.0' 'kokoro-onnx==0.6.1' 'onnxruntime==1.31.0'
-      - name: Unit, real synthetic MP4 and full regression tests
+          command -v ffmpeg && command -v ffprobe && command -v espeak-ng
+      - name: Full regression tests
         env:
           GITHUB_STEP_SUMMARY: ''
         run: python -m unittest discover -s automation/tests -v
-      - name: Render isolated hybrid 30s from pinned AI fixture; new generation disabled
-        id: render
+      - name: Compose 30 seconds from pinned AI fixture; NEVER regenerate or publish
         run: python automation/experimental81/cloud_run.py --output "$RUNNER_TEMP/experiment81"
-      - name: Persist outputs and failure evidence to experimental Release
+      - name: Persist experimental files without touching live stock
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
