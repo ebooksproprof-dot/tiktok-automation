@@ -23,6 +23,12 @@
       "estimated_seconds": 45.0,
       "request_sha256": "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef",
       "status": "RESERVED_NO_AUTO_RETRY"
+    },
+    {
+      "claimed_at": "2026-11-03T17:58:09.913374+00:00",
+      "estimated_seconds": 45.0,
+      "request_sha256": "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865",
+      "status": "RESERVED_NO_AUTO_RETRY"
     }
   ],
   "schema_version": 1,
@@ -31,7 +37,8 @@
     "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
     "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
     "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
-    "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef"
+    "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef",
+    "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865"
   ],
   "window_start": "2026-11-03T14:29:45.349254+00:00"
 }
