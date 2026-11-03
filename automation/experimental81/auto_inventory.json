@@ -1,10 +1,59 @@
 {
-  "schema_version": 1,
+  "clips": [
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
+        "wall_seconds": 44.654
+      },
+      "media": {
+        "bytes": 355783,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic household cleaning demonstration. A pink gloved adult hand gently wipes ceramic countertop with microfiber cloth near steel faucet, stable sink geometry, consistent natural lighting, clear realistic contact, single unhurried action, no logos and no text. Original episode 1, single distinctive scene 1 of six. Variation 0: preserve the same visible action with natural physically coherent micro-movement.",
+      "reference": {
+        "pexels_id": "9472849",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/02_pia_limpa.mp4",
+        "reference_video_sha256": "9a20261b3e8d69f60643814fdd00d9fa68d8501a5d2d860c729d4e4cf9d83870"
+      },
+      "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+      "slot": 0,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-9beffe8705114e562201221c.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "0107198cf293858f",
+          "000201121263658f",
+          "010301820607b13f",
+          "010301830607f13f",
+          "0002414a9693c1df"
+        ],
+        "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689"
+      }
+    }
+  ],
   "episode_sequence": 1,
-  "topic": "limpeza-de-superficies",
-  "clips": [],
+  "last_attempt": {
+    "at": "2026-11-03T14:30:32.701920+00:00",
+    "result": "ASSET_VERIFIED",
+    "slot": 0
+  },
   "last_output": null,
   "publish_history": [],
+  "retry_variant": 0,
+  "schema_version": 1,
   "status": "COLLECTING",
-  "last_attempt": null
+  "topic": "limpeza-de-superficies"
 }
