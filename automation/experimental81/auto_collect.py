@@ -59,7 +59,6 @@ def now_utc():
 
 def free_hf_identity():
     """Only permit optional user-owned non-PRO Free account, never auto-bill."""
-    from functools import lru_cache
     token=os.getenv('HF_FREE_TOKEN','').strip()
     if not token:
         return 'anonymous',None
@@ -188,6 +187,16 @@ def collect_one(folder):
     request_sha=common.fingerprint(request_spec)
     tier,hf_token=free_hf_identity()
     _, ledger=content_get('automation/experimental81/ledger.json')
+    # A new Free token is not a way to reset an in-progress anonymous
+    # 24-hour window; wait until its original start time has elapsed.
+    started=ledger.get('window_start')
+    if started and ledger.get('tier') and ledger['tier']!=tier:
+        from datetime import timedelta
+        try: first=datetime.fromisoformat(started)
+        except (ValueError,TypeError):
+            raise ValueError('INVALID_LEDGER_WINDOW_START') from None
+        if now_utc()<first+timedelta(hours=24):
+            return {'status':'WAIT_CREDITS','clips':slot,'reason':'FREE_TIER_CHANGE_NEXT_WINDOW_ONLY'}
     try:
         daily_budget.reserve(ledger,request_sha,now_utc(),tier=tier)
     except daily_budget.QuotaError as exc:
