@@ -59,12 +59,27 @@ class Budget81Tests(unittest.TestCase):
         with self.assertRaisesRegex(b.QuotaError,'CLOCK_MOVED'):
             b.reserve(state,digest(2),START-timedelta(seconds=1))
 
-    def test_nonfree_tiers_forbidden_and_tier_switch_blocked(self):
+    def test_nonfree_tiers_forbidden_and_one_way_verified_free_migration(self):
         with self.assertRaisesRegex(b.QuotaError,'PAID_TIER'):
             b.reserve(b.fresh(),digest(1),START,tier='pro')
         state=b.reserve(b.fresh(),digest(1),START)
+        next_state=b.reserve(state,digest(2),START+timedelta(minutes=1),
+                             tier='free',estimated_seconds=b.estimated_request_seconds(3))
+        self.assertEqual(next_state['tier'],'free')
+        self.assertEqual(next_state['window_start'],state['window_start'])
+        self.assertEqual(len(next_state['window_claim_ids']),2)
         with self.assertRaisesRegex(b.QuotaError,'TIER_CHANGE'):
-            b.reserve(state,digest(2),START+timedelta(minutes=1),tier='free')
+            b.reserve(next_state,digest(3),START+timedelta(minutes=2),tier='anonymous')
+        for n in (3,4,5):
+            next_state=b.reserve(next_state,digest(n),START+timedelta(minutes=n),
+                   tier='free',estimated_seconds=b.estimated_request_seconds(3))
+        self.assertEqual(sum(c['estimated_seconds'] for c in next_state['claims']),235)
+        next_state=b.reserve(next_state,digest(6),START+timedelta(minutes=6),
+                   tier='free',estimated_seconds=b.estimated_request_seconds(3))
+        self.assertEqual(sum(c['estimated_seconds'] for c in next_state['claims']),280)
+        with self.assertRaisesRegex(b.QuotaError,'DAILY_QUOTA'):
+            b.reserve(next_state,digest(7),START+timedelta(minutes=7),
+                      tier='free',estimated_seconds=b.estimated_request_seconds(3))
 
     def test_failed_unknown_claim_cannot_be_retried(self):
         state=b.reserve(b.fresh(),digest(1),START)
