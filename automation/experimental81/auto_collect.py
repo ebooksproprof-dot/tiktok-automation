@@ -152,7 +152,9 @@ def collect_one(folder):
     image, provenance=extract_reference(slot,folder)
     case='ABC'[slot%3]
     episode=state['episode_sequence']
-    description=SCENES[slot]+f' Original episode {episode}, single distinctive scene {slot+1} of six.'
+    variant=int(state.get('retry_variant',0))
+    if not 0<=variant<=50:raise ValueError('INVALID_RETRY_VARIANT')
+    description=SCENES[slot]+f' Original episode {episode}, single distinctive scene {slot+1} of six. Variation {variant}: preserve the same visible action with natural physically coherent micro-movement.'
     # Check the LOCAL conservative quota model before opening the Space.
     # This is NOT a check of actual HF credits, which the public endpoint
     # does not expose. A denied estimate should simply wait for renewal.
@@ -179,14 +181,18 @@ def collect_one(folder):
                          before_submit=github_ledger.reserve_remote,
                          prompt=description)
     if result.get('status')!='GENERATED_PENDING_VISUAL_REVIEW':
-        # Persist the precise failure once; do not blindly re-submit an uncertain call.
-        state['status']='BLOCKED'
+        # Known quota exhaustion is safe to reattempt only NEXT quota window
+        # with a different fingerprint; an unknown transport result is NOT.
+        reason=result.get('error')
+        recoverable=(reason in ('QUOTA_OR_GPU_BUDGET','SPACE_MODEL_UNAVAILABLE'))
+        state['status']='COLLECTING' if recoverable else 'BLOCKED'
+        if recoverable: state['retry_variant']=variant+1
         state['last_attempt']={'slot':slot,'result':result.get('status'),
-                               'error':result.get('error'),'at':now_utc().isoformat(),
+                               'error':reason,'at':now_utc().isoformat(),
                                'request_sha256':result.get('request_sha256')}
-        content_put(INVENTORY,sha,state,message='Pause AI30 after generation failure; never retry unknown call')
-        return {'status':'BLOCKED','reason':result.get('error') or result.get('status'),
-                'clips':slot}
+        content_put(INVENTORY,sha,state,message='Preserve AI30 failed request; guard uncertain retries')
+        return {'status':'WAIT_CREDITS' if recoverable else 'BLOCKED',
+                'reason':reason or result.get('status'),'clips':slot}
     source=output/result['file']
     digest=result['media']['sha256']
     key='https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster'
@@ -206,6 +212,7 @@ def collect_one(folder):
            'visual_check':'automatic_fingerprint_only; no semantic/human review',
            'owner_test_publication_consent':True,'commercial_license_clearance':False}
     state['clips'].append(entry)
+    state['retry_variant']=0
     state['last_attempt']={'slot':slot,'result':'ASSET_VERIFIED','at':now_utc().isoformat()}
     if len(state['clips'])==6:state['status']='READY'
     content_put(INVENTORY,sha,state,message='Persist validated real AI30 clip '+str(slot+1)+' of 6')
