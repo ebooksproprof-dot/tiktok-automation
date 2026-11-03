@@ -133,7 +133,9 @@ def extract_reference(slot, folder):
 
 def upload_clip(path, digest, date):
     token = os.environ['GH_TOKEN']
-    tag='ai30-drafts-'+date.strftime('%Y-%m')
+    # Six scenes/day exceeds a single monthly Release's 95-asset safety cap.
+    # Weekly buckets keep <=42 assets at one episode/day.
+    tag='ai30-drafts-'+date.strftime('%G-W%V')
     name='ai30-'+digest[:24]+'.mp4'
     release = github_request(API+'/releases/tags/'+tag,token)
     if release is None:
