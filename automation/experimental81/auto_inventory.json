@@ -224,14 +224,15 @@
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-03T17:59:33.277426+00:00",
-    "result": "ASSET_VERIFIED",
-    "slot": 4
+    "at": "2026-11-04T21:51:37.090034+00:00",
+    "request_sha256": "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb",
+    "result": "VISUAL_NEAR_DUPLICATE",
+    "slot": 5
   },
   "last_output": null,
   "publish_history": [],
   "recovery_note": "Known near-duplicate of scene 4 rejected on 2026-11-03; distinct crop/seed/prompt variant 1 is allowed next; previous scene hashes and quota claims preserved",
-  "retry_variant": 0,
+  "retry_variant": 1,
   "schema_version": 1,
   "status": "COLLECTING",
   "topic": "limpeza-de-superficies"
