@@ -41,12 +41,19 @@
       "estimated_seconds": 45.0,
       "request_sha256": "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb",
       "status": "RESERVED_NO_AUTO_RETRY"
+    },
+    {
+      "claimed_at": "2026-11-05T14:33:52.187817+00:00",
+      "estimated_seconds": 45.0,
+      "request_sha256": "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f",
+      "status": "RESERVED_NO_AUTO_RETRY"
     }
   ],
   "schema_version": 1,
   "tier": "free",
   "window_claim_ids": [
-    "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb"
+    "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb",
+    "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f"
   ],
   "window_start": "2026-11-04T21:50:54.894309+00:00"
 }
