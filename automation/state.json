@@ -585,7 +585,7 @@
       "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
-      "last_reconcile_attempt_at": "2026-11-05T00:51:59Z"
+      "last_reconcile_attempt_at": "2026-11-05T18:55:24Z"
     },
     "casasem-2026-10-24-2": {
       "provider": "metricool",
@@ -661,7 +661,7 @@
       "buffer_status": "deleted",
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
-      "last_reconcile_attempt_at": "2026-11-05T00:51:59Z"
+      "last_reconcile_attempt_at": "2026-11-05T18:55:24Z"
     }
   },
   "buffer_api_usage": [
@@ -848,7 +848,8 @@
     "2026-11-04T00:35:04.135697Z",
     "2026-11-04T19:00:48.523295Z",
     "2026-11-04T20:25:47.489262Z",
-    "2026-11-05T00:51:59.946539Z"
+    "2026-11-05T00:51:59.946539Z",
+    "2026-11-05T18:55:24.570614Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -857,28 +858,28 @@
         "window_seconds": 900,
         "quota": 150,
         "remaining": 149,
-        "reset_at": "2026-11-05T01:07:00.848962Z",
-        "observed_at": "2026-11-05T00:52:00.848962Z"
+        "reset_at": "2026-11-05T19:10:24.748327Z",
+        "observed_at": "2026-11-05T18:55:24.748327Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 597,
-        "reset_at": "2026-11-05T19:00:48.848962Z",
-        "observed_at": "2026-11-05T00:52:00.848962Z"
+        "remaining": 596,
+        "reset_at": "2026-11-05T19:00:49.748327Z",
+        "observed_at": "2026-11-05T18:55:24.748327Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 814,
-        "reset_at": "2026-11-16T22:01:05.848962Z",
-        "observed_at": "2026-11-05T00:52:00.848962Z"
+        "remaining": 813,
+        "reset_at": "2026-11-16T22:01:05.748327Z",
+        "observed_at": "2026-11-05T18:55:24.748327Z"
       }
     },
-    "consecutive_errors": 19,
-    "next_allowed_at": "2026-11-05T01:52:00.850539Z",
+    "consecutive_errors": 20,
+    "next_allowed_at": "2026-11-05T19:55:24.749997Z",
     "last_error_code": 503
   }
 }
