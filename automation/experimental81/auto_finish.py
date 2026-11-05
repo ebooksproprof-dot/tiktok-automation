@@ -19,7 +19,7 @@ AUTOMATION=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(AUTOMATION))
 from experimental81 import auto_collect as collector
 from experimental81 import render
-from experimental81.quality import validate as validate_ai30
+from experimental81.quality import validate as validate_ai30, Policy
 from release_media import publish as publish_existing_release
 from visual_library import similar, fingerprint, require_evidence
 
@@ -76,7 +76,7 @@ def build_post(state,video,quality,source_visuals,now):
     existing_ids|=set(existing_state.get('posts',{}))
     chosen_id=next((x for x in candidate_ids if x not in existing_ids),None)
     if chosen_id is None:raise ValueError('POST_IDS_OCCUPIED')
-    if len({x['sha256'] for x in state['clips']})!=6:
+    if len({x['sha256'] for x in state['clips']})!=len(state['clips']) or len(state['clips'])<3:
         raise ValueError('SIX_UNIQUE_GENERATED_SOURCES_REQUIRED')
     prior_quality=[p.get('quality',{}) for p in queue['posts']]
     prior_quality+=list(existing_state.get('posts',{}).values())
@@ -84,8 +84,8 @@ def build_post(state,video,quality,source_visuals,now):
     quality.update(visual_policy_version=1,visual_distinct=True,
                    visual_sources=source_visuals,
                    source_urls=[x['url'] for x in state['clips']],
-                   scene_reuse_policy='six_distinct_AI_generated_clips_no_loop',
-                   ai_generated_seconds=30,
+                   scene_reuse_policy='distinct_AI_generated_clips_no_loop',
+                   ai_generated_seconds=quality['duration'],
                    model=state['clips'][0]['model'],
                    voice='kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br',
                    required_public_credits=[],
@@ -98,7 +98,7 @@ def build_post(state,video,quality,source_visuals,now):
     post={'id':chosen_id,
           'video_origin':'ai_only30',
           'video_url':video,
-          'title':'Uma casa mais prática começa com pequenas atitudes. Veja seis momentos de limpeza e organização gerados com inteligência artificial. Dicas ilustrativas: siga as instruções dos fabricantes dos produtos e superfícies. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial',
+          'title':'Uma casa mais prática começa com pequenas atitudes. Veja momentos de limpeza e organização gerados com inteligência artificial. Dicas ilustrativas: siga as instruções dos fabricantes dos produtos e superfícies. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial',
           'scheduled_at':when.isoformat(),
           'approved':True,'consented_at':now.isoformat(),
           'approval_scope':'owner_authorized_ai30_first_live_test_and_ongoing_automation',
@@ -108,8 +108,8 @@ def build_post(state,video,quality,source_visuals,now):
           'media_storage':'release',
           'render_version':3,
           'concept':'faxina-ia30-'+str(state['episode_sequence']),
-          'script_lines':collector.SCRIPT,
-          'script_sha256':hashlib.sha256('\n'.join(collector.SCRIPT).encode()).hexdigest(),
+          'script_lines':collector.SCRIPT[:len(state['clips'])],
+          'script_sha256':hashlib.sha256('\n'.join(collector.SCRIPT[:len(state['clips'])]).encode()).hexdigest(),
           'editorial_review':{'type':'owner_waived_preview',
              'owner_consent_reference':'automation/experimental81/FIRST-PUBLICATION-CONSENT.md',
              'verified':'technical+duplicate+scene_heuristics',
@@ -123,8 +123,10 @@ def build_post(state,video,quality,source_visuals,now):
 def finish():
     sha,state=collector.content_get(collector.INVENTORY)
     collector.check_inventory(state)
-    if state['status']!='READY' or len(state['clips'])!=6:
+    if len(state['clips'])<3 or state['status'] not in ('READY','COLLECTING'):
         return {'status':'NOT_READY','clips':len(state['clips'])}
+    if len(state['clips'])<6 and state.get('last_attempt',{}).get('error') not in ('QUOTA_OR_GPU_BUDGET','CONSERVATIVE_WINDOW_ESTIMATE_FULL'):
+        return {'status':'WAITING_FOR_QUOTA_CONFIRMATION','clips':len(state['clips'])}
     # Repair interrupted handoff: queue write can succeed while the following
     # experimental inventory checkpoint fails. Never create another post.
     _,current_queue=collector.content_get('automation/queue.json','main')
@@ -164,14 +166,17 @@ def finish():
                 'visual_review_passed':True,
                 'review_method':'automated distinctness, decode and owner waived preview; not human perceptual approval',
                 'derivative_license_status':'unconfirmed'})
-        narration=render.synthesize(out/'speech',collector.SCRIPT)
-        manifest={'experimental_only':True,'script':collector.SCRIPT,
+        count=len(sources)
+        target=5*count
+        lines=collector.SCRIPT[:count]
+        narration=render.synthesize(out/'speech',lines,target_seconds=target)
+        manifest={'experimental_only':True,'script':lines,
                   'clips':sources,'narration':narration}
-        output=render.compose(manifest,out/'render','AI_ONLY')
-        quality=validate_ai30(output['video_path'])
+        output=render.compose(manifest,out/'render','AI_ONLY',target_seconds=target)
+        quality=validate_ai30(output['video_path'],policy=Policy(target_seconds=target))
         if (quality.get('technical_pass') is not True
-                or output.get('ai_seconds')!=30 or output.get('real_seconds')!=0
-                or len(output['shots'])!=6):
+                or output.get('ai_seconds')!=target or output.get('real_seconds')!=0
+                or len(output['shots'])<count):
             raise ValueError('AI30_FULL_VIDEO_NOT_VERIFIED')
         now=collector.now_utc()
         # The only publication route is the existing Buffer queue; no other

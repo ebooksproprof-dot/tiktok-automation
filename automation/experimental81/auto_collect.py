@@ -206,6 +206,8 @@ def collect_one(folder):
                              estimated_seconds=daily_budget.estimated_request_seconds(steps))
     except daily_budget.QuotaError as exc:
         if str(exc)=='DAILY_QUOTA_ESTIMATE_EXCEEDED':
+            state['last_attempt']={'slot':slot,'result':'WAIT_CREDITS','error':'CONSERVATIVE_WINDOW_ESTIMATE_FULL','at':now_utc().isoformat()}
+            content_put(INVENTORY,sha,state,message='Record conservative free quota exhaustion for safe short fallback')
             return {'status':'WAIT_CREDITS','clips':slot,
                     'reason':'CONSERVATIVE_WINDOW_ESTIMATE_FULL',
                     'not_before':ledger.get('window_start')}

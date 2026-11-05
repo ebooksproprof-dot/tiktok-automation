@@ -93,8 +93,8 @@ def select_profile(clips, requested='auto'):
     raise ValueError('Insufficient unique clip duration; no looping fallback')
 
 
-def plan(clips, profile):
-    ai_seconds, real_seconds = PROFILES[profile]
+def plan(clips, profile, target_seconds=30):
+    ai_seconds, real_seconds = (target_seconds, 0) if profile == 'AI_ONLY' else PROFILES[profile]
     remaining = {'ai': float(ai_seconds), 'real': float(real_seconds)}
     used = [0.0] * len(clips)
     shots = []
@@ -122,12 +122,12 @@ def plan(clips, profile):
         shots.append({'source_index': selected, 'start': round(clips[selected].get('source_offset',0) + used[selected], 6), 'duration': round(length, 6)})
         used[selected] += length
         remaining[category] -= length
-    if abs(sum(s['duration'] for s in shots) - 30) > .001:
+    if abs(sum(s['duration'] for s in shots) - target_seconds) > .001:
         raise ValueError('Plan must total 30 seconds')
     return shots
 
 
-def synthesize(folder, lines=SCRIPT):
+def synthesize(folder, lines=SCRIPT, target_seconds=30):
     """Existing licensed Kokoro voice, measured sentence boundaries, modest tempo."""
     from narration import load_engine
     folder = Path(folder)
@@ -150,7 +150,7 @@ def synthesize(folder, lines=SCRIPT):
         gap = .08 if index < len(lines)-1 else 0
         pcm_parts.append(data + bytes(int(rate*gap)*2))
         position += duration+gap
-    tempo = position / 30
+    tempo = position / target_seconds
     if not .75 <= tempo <= 1.35:
         raise ValueError(f'Narration requires excessive speed change ({tempo:.3f}); edit script')
     source = folder/'narration-source.wav'
@@ -159,10 +159,10 @@ def synthesize(folder, lines=SCRIPT):
         out.writeframes(b''.join(pcm_parts))
     target = folder/'narration.wav'
     call(['ffmpeg','-v','error','-y','-i',str(source),'-af',f'atempo={tempo:.9f},loudnorm=I=-16:TP=-1.5:LRA=9,apad',
-          '-t','30','-ar','48000','-ac','1',str(target)])
+          '-t',str(target_seconds),'-ar','48000','-ac','1',str(target)])
     return {'path': str(target.resolve()), 'sha256': sha(target), 'engine': engine.name, 'language': 'pt-BR',
             'tempo': tempo, 'timing_method': 'Measured utterance boundaries; sentence-level synchronization, not word-level forced alignment',
-            'timings': [[start/tempo, min(30,end/tempo), text] for start,end,text in segments]}
+            'timings': [[start/tempo, min(target_seconds,end/tempo), text] for start,end,text in segments]}
 
 
 def fetch_demo_sources(folder):
@@ -210,16 +210,16 @@ def input_identity(manifest, profile):
     identity_manifest['narration'].pop('path', None)
     return hashlib.sha256(json.dumps({'manifest':identity_manifest,'profile':profile,'renderer':1},sort_keys=True).encode()).hexdigest()
 
-def compose(manifest, folder, requested='auto'):
+def compose(manifest, folder, requested='auto', target_seconds=30):
     import fcntl
     folder = Path(folder).resolve()
     folder.mkdir(parents=True, exist_ok=True)
     with (folder/'.render.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        return _compose_locked(manifest, folder, requested)
+        return _compose_locked(manifest, folder, requested, target_seconds)
 
 
-def _compose_locked(manifest, folder, requested='auto'):
+def _compose_locked(manifest, folder, requested='auto', target_seconds=30):
     """Render one experimental output; reuse a verified matching output on rerun."""
     from experimental81.quality import validate
     from caption_layout import filters
@@ -233,11 +233,19 @@ def _compose_locked(manifest, folder, requested='auto'):
     if narration.get('language') != 'pt-BR' or sha(audio) != narration['sha256']:
         raise ValueError('PT-BR narration and matching hash required')
     timings = narration['timings']
-    if not timings or timings[0][0] > .2 or timings[-1][1] < 29:
+    if not timings or timings[0][0] > .2 or timings[-1][1] < target_seconds-1:
         raise ValueError('Narration captions must cover the full video')
-    profile = select_profile(clips, requested)
-    shots = plan(clips, profile)
-    identity = input_identity(manifest, profile)
+    if requested == 'AI_ONLY' and target_seconds != 30:
+        if not 15 <= target_seconds <= 30 or len(clips) < 3 or any(c['kind'] != 'ai' for c in clips):
+            raise ValueError('INVALID_AI_SHORT_FALLBACK')
+        if sum(c['duration'] for c in clips) + 1e-6 < target_seconds:
+            raise ValueError('INSUFFICIENT_UNIQUE_AI_SECONDS')
+        profile = 'AI_ONLY'
+    else:
+        if target_seconds != 30: raise ValueError('SHORT_ONLY_ALLOWED_FOR_AI')
+        profile = select_profile(clips, requested)
+    shots = plan(clips, profile, target_seconds)
+    identity = hashlib.sha256((input_identity(manifest, profile)+':'+str(target_seconds)).encode()).hexdigest()
     output = folder/('experimental81-'+identity[:16]+'.mp4')
     record_path = output.with_suffix('.json')
     if output.exists() or record_path.exists():
@@ -246,7 +254,8 @@ def _compose_locked(manifest, folder, requested='auto'):
         record = json.loads(record_path.read_text())
         if record.get('input_sha256') != identity or record['quality']['sha256'] != sha(output):
             raise ValueError('Existing render identity/hash mismatch')
-        validate(output)
+        from experimental81.quality import Policy
+        validate(output,policy=Policy(target_seconds=target_seconds))
         return record
     start = time.monotonic()
     inputs = []
@@ -273,12 +282,13 @@ def _compose_locked(manifest, folder, requested='auto'):
     try:
         graph.append('[sequence]'+','.join(caption_filters)+'[final]')
         call(['ffmpeg','-v','error','-nostdin','-y','-filter_complex_threads','1',*inputs,'-i',str(audio),
-              '-filter_complex',';'.join(graph),'-map','[final]','-map',f'{len(shots)}:a:0','-t','30','-c:v','libx264',
+              '-filter_complex',';'.join(graph),'-map','[final]','-map',f'{len(shots)}:a:0','-t',str(target_seconds),'-c:v','libx264',
               '-preset','veryfast','-crf','22','-maxrate','3M','-bufsize','6M','-threads','2','-pix_fmt','yuv420p',
               '-c:a','aac','-b:a','128k','-ar','48000','-movflags','+faststart',str(temporary)],240)
-        quality = validate(temporary)
+        from experimental81.quality import Policy
+        quality = validate(temporary,policy=Policy(target_seconds=target_seconds))
         record = {'schema_version':1,'experimental_only':True,'publication_enabled':False,'approved':False,
-            'input_sha256':identity,'profile':profile,'ai_seconds':PROFILES[profile][0],'real_seconds':PROFILES[profile][1],
+            'input_sha256':identity,'profile':profile,'ai_seconds':target_seconds if profile == 'AI_ONLY' else PROFILES[profile][0],'real_seconds':PROFILES[profile][1],
             'video_path':str(output),'quality':quality,'sources':clips,'shots':shots,'narration':narration,
             'script':manifest.get('script'), 'render_seconds':round(time.monotonic()-start,3),
             'created_at':datetime.now(timezone.utc).isoformat(),
