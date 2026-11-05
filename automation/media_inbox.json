@@ -812,86 +812,141 @@
       "reviewed_at": "2026-11-02T08:38:00-03:00",
       "review_source": "authorized assistant eight-frame visual review",
       "editorial_rejection": "Eight-frame review shows a bulldozer in a large outdoor landfill, not a kitchen trash bin or domestic disposal routine. The scene is semantically unrelated to the requested household category."
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "137186",
+      "url": "https://cdn.pixabay.com/video/2022/10/31/137186-765701394_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-137186/",
+      "author": "u_jorg73foes",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: u_jorg73foes / Pixabay — https://pixabay.com/videos/id-137186/",
+      "category": "escrivaninha",
+      "query": "organizing desk stationery",
+      "selection_reason": "Provider tags: office, team work, desk, job, responsibility",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/10/31/137186-765701394_large.mp4",
+      "sha256": "4befbf30d6754fd11e9a377ac8b91a4db7967d4fecee2f0761f50743a837a9d9",
+      "dhash": [
+        "3d95cc18dc64ddfc",
+        "3d97cd18d864ddfc",
+        "3d97cd18dc64ddfc",
+        "3d97cd58d864ddfc",
+        "3d97cd5cd464ddfc"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 11.04,
+      "bytes": 21089048,
+      "acquired_at": 1793902383
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "203260",
+      "url": "https://cdn.pixabay.com/video/2024/03/06/203260-920602949_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-203260/",
+      "author": "Natures_Embrace",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Natures_Embrace / Pixabay — https://pixabay.com/videos/id-203260/",
+      "category": "escrivaninha",
+      "query": "organizing desk stationery",
+      "selection_reason": "Provider tags: woman, computer, laptop, typing, work, desk, business, marketing, communication, texting, cup, espresso, coffee, professional",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2024/03/06/203260-920602949_large.mp4",
+      "sha256": "3301cd30a5d9fc0ec2289a35fb7e6ff974ae750b23004aa323a8056df1f78f88",
+      "dhash": [
+        "591e7c79694d2d7e",
+        "4d5e787c6c2d2d7e",
+        "085e3c3c6c2e363e",
+        "0c5d3dbc26261e3f",
+        "8c0dbdbdb5979abf"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 5.076667,
+      "bytes": 11700870,
+      "acquired_at": 1793902391
     }
   ],
   "rejected_until": {
     "pixabay:38116": 1794223410
   },
   "last_run": {
-    "at": 1793728784,
-    "acquired": 0,
+    "at": 1793902376,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 9,
+    "download_attempts": 2,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "gavetas",
+        "category": "toalhas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "gavetas",
+        "category": "toalhas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "potes",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "potes",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "livros",
+        "category": "vassoura",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 3,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "livros",
+        "category": "vassoura",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "banheiro",
+        "category": "escrivaninha",
         "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 15,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing drawers",
-      "washing dishes sponge",
-      "arranging books shelves",
-      "organizing bathroom storage"
+      "folding towels bathroom",
+      "food storage containers kitchen",
+      "sweeping floor broom",
+      "organizing desk stationery"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 15,
+    "unreviewed_media_count": 17,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
