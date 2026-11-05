@@ -220,20 +220,64 @@
         "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
         "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1"
       }
+    },
+    {
+      "commercial_license_clearance": false,
+      "episode": 1,
+      "generation_evidence": {
+        "gpu_seconds_consumed": null,
+        "request_sha256": "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f",
+        "wall_seconds": 40.942
+      },
+      "gpu_quota_tier": "free",
+      "inference_steps": 3,
+      "media": {
+        "bytes": 806217,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "owner_test_publication_consent": true,
+      "prompt": "Photorealistic household clean floor after wiping. Adult hand makes a final gentle wiping pass with cloth and moves away leaving floor visibly tidy, consistent surface and natural shadows, no deformation, no text or logos. Original episode 1, scene 6 of six. Variation 1. A closer view sharply emphasizes the moving cloth and hand, with the previous background largely outside the shot.",
+      "reference": {
+        "pexels_id": "9473227",
+        "pexels_license": "https://www.pexels.com/license/",
+        "reference_video": "public/rendered/01_piso_opaco.mp4",
+        "reference_video_sha256": "7bc4dfb163bd5bac48dc42362f5f83a88c58ebf4c7936d9275f9116d1acb6f29"
+      },
+      "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+      "slot": 5,
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-d5a6944f09af63d3f76477b0.mp4",
+      "visual_check": "automatic_fingerprint_only; no semantic/human review",
+      "visual_source": {
+        "dhash": [
+          "a3a4eef3f3cb6f83",
+          "f6f9faeeee2f2123",
+          "7d7afb8100cdf97f",
+          "fdfbc408df3f3f3f",
+          "7bcb8000ff7f7f7f"
+        ],
+        "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+        "source_id": "https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster#d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b"
+      }
     }
   ],
   "episode_sequence": 1,
   "last_attempt": {
-    "at": "2026-11-04T21:51:37.090034+00:00",
-    "request_sha256": "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb",
-    "result": "VISUAL_NEAR_DUPLICATE",
+    "at": "2026-11-05T14:34:35.172794+00:00",
+    "result": "ASSET_VERIFIED",
     "slot": 5
   },
   "last_output": null,
   "publish_history": [],
   "recovery_note": "Known near-duplicate of scene 4 rejected on 2026-11-03; distinct crop/seed/prompt variant 1 is allowed next; previous scene hashes and quota claims preserved",
-  "retry_variant": 1,
+  "retry_variant": 0,
   "schema_version": 1,
-  "status": "COLLECTING",
+  "status": "READY",
   "topic": "limpeza-de-superficies"
 }
