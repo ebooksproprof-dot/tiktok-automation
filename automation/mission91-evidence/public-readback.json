@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-06T04:49:49.150973+00:00",
+  "canonical_url": "https://www.tiktok.com/@.casasemesforo/video/7704915298847132980",
+  "checks": [
+    {
+      "endpoint": "public_page",
+      "status": 200,
+      "bytes": 1462,
+      "video_id_in_html": false
+    },
+    {
+      "endpoint": "public_oembed",
+      "status": 200,
+      "bytes": 542,
+      "title": null,
+      "author_name": null,
+      "author_url": null,
+      "provider_name": "TikTok"
+    }
+  ],
+  "official_oembed": {
+    "type": "video",
+    "provider_name": "TikTok",
+    "provider_url": "https://www.tiktok.com",
+    "embed_product_id": "7704915298847132980",
+    "embed_type": "video"
+  },
+  "page_inspection": "TikTok WAF JavaScript challenge; HTTP 200 did not expose the video page",
+  "publication_verification_basis": "Buffer API sent + valid timestamp + exact-account externalLink; oEmbed is supplemental and not a content inspection"
+}

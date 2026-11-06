@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-06T04:51:45.686786+00:00",
+  "approved_unsubmitted": [],
+  "capacity_claim": "No validated ongoing frequency; first proof alone does not establish daily replenishment",
+  "recurring_workflow_ids": {
+    "collector": 405311454,
+    "creation": 386023642,
+    "publisher": 375815182,
+    "stock": 399667265
+  },
+  "workflow_states_checked": "active",
+  "routine_brt_hours": [
+    10,
+    18
+  ],
+  "additional_paid_services_enabled": false,
+  "current_delivery": {
+    "day": "2026-11-06",
+    "slots": [
+      {
+        "scheduled_at": "2026-11-06T10:00:00-03:00",
+        "status": "NO_VIDEO",
+        "blocking": false
+      },
+      {
+        "scheduled_at": "2026-11-06T18:00:00-03:00",
+        "status": "NO_VIDEO",
+        "blocking": false
+      }
+    ],
+    "blocked": false,
+    "note": "Provider evidence only; this does not prove sustained autonomous production."
+  },
+  "tomorrow_forecast_evaluated_at": "2026-11-07T13:01:00+00:00",
+  "tomorrow_forecast_note": "Scenario using current inventory unchanged at the stated future time; not an observed future execution",
+  "tomorrow_forecast": {
+    "day": "2026-11-07",
+    "slots": [
+      {
+        "scheduled_at": "2026-11-07T10:00:00-03:00",
+        "status": "NO_VIDEO",
+        "blocking": true
+      },
+      {
+        "scheduled_at": "2026-11-07T18:00:00-03:00",
+        "status": "NO_VIDEO",
+        "blocking": false
+      }
+    ],
+    "blocked": true,
+    "note": "Provider evidence only; this does not prove sustained autonomous production."
+  }
+}

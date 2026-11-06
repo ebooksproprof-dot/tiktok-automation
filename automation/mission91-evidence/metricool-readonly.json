@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-06T04:47:02Z",
+  "brand_label": ".casasemesforo",
+  "brand_id": 7212680,
+  "query_from": "2026-11-06T00:00:00-03:00",
+  "query_to": "2026-11-06T02:00:00-03:00",
+  "selected_fields": [
+    "published_time",
+    "video_url",
+    "description",
+    "duration"
+  ],
+  "rows": [],
+  "interpretation": "Analytics freshness not established; empty analytics is not evidence of a publication failure",
+  "new_metricool_scheduling_calls": 0
+}

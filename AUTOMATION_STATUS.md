@@ -1,3 +1,15 @@
+# CasaSemEsforço 9.1 — 06/11/2026
+
+**Uma publicação nova real confirmada; automação contínua ainda PARCIAL.**
+
+- TikTok: https://www.tiktok.com/@.casasemesforo/video/7704915298847132980 . Buffer `6aed59747b7e47e8f40a39a7`, projeto `casasem-2026-11-06-1`, `PUBLISH_COMPLETE` e `publicly_verified=true`. Não reenviar.
+- Render 15,166667s validado/preservado em Release, narração pt-BR e legendas medidas. Fonte real gratuita Pixabay; os seis clipes AI continuam preservados e sem liberação comercial. Quinto clipe não utilizado por semelhança excessiva.
+- Nova configuração de rede aplicada e funcional; publicação feita no Actions pelo Buffer existente. 344 testes no runner de confirmação, replay real sem chamadas/reenvios. Nenhum crédito novo de geração nem serviço pago.
+- Crons 10h/18h BRT ativos; **zero vídeos aprovados ainda não submetidos**. Não há frequência contínua comprovada, nem autorização para fabricar licenças/aprovações. O limite é reposição licenciada/editorial, não a conexão Buffer.
+- Relatório completo: [automation/MISSION-9.1.md](automation/MISSION-9.1.md), licenças, auditoria e snapshots vinculados. Não declarar CASASEMESFORÇO OPERACIONAL antes de provar continuidade.
+
+---
+
 # CasaSemEsforço 5.1 — 25/10/2026
 
 **PARCIAL.** Legendas medidas integradas e ativadas para novas renderizações; dois MP4s comparativos reais salvos no Release `validation-v51-2026-10-25`. 275 testes locais e 275 na prova em nuvem. Auditoria independente e inventário das dez ferramentas em `automation/AUDIT-5.1.md` e `automation/TOOLS-5.1.md`.

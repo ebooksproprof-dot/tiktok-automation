@@ -32,3 +32,9 @@ ZeroGPU Free: 300s/dia, anônimo 120s/dia; resets 24h após primeiro uso, não m
 A prova gratuita consome uma fonte inédita revisada; não demonstra reposição automática diária. O acervo permanente e os metadados foram preservados, mas o limite intencional de seis coleções mensais também impede prometer operação indefinida sem política de arquivo. Não se declara 2/dia nem CASASEMESFORÇO OPERACIONAL com essas pendências.
 
 A confirmação nova de publicação deve ser registrada em `MISSION-9.1.md` e no snapshot de estado correspondente; o sucesso da prova de renderização não a substitui.
+
+## Fechamento da publicação real
+
+Run `42164621731`: 344 testes aprovados; reconciliação real do mesmo ID, zero novos envios. Buffer respondeu `sent`, automático, timestamp válido e permalink da conta correta. Estado persistido como `PUBLISH_COMPLETE`, `publicly_verified=true`; vídeo TikTok `7704915298847132980`. O readback HTTP da página pública recebeu desafio JavaScript WAF, portanto não certifica inspeção do conteúdo publicado. oEmbed oficial retornou o player desse ID. Snapshot durável: `mission91-evidence/publication-confirmed.json`.
+
+Continuidade conferida após a confirmação: zero posts aprovados ainda não submetidos; slots 10h/18h sem cobertura no estado atual. Workflows ativos não substituem esse estoque. A missão permanece PARCIAL por reposição/licenciamento, sem desativar proteções, inventar frequência ou ativar serviços pagos.
