@@ -82,6 +82,16 @@ class BufferRecoveryTests(unittest.TestCase):
         self.state['posts']['existing'] = entry
         self.assertEqual(b.pending_reconciliation(self.state), [])
 
+    def test_first_due_check_is_not_delayed_by_recent_acceptance(self):
+        entry = self.entry(scheduled_at=(NOW-dt.timedelta(seconds=1)).isoformat(),
+                           last_checked_at=(NOW-dt.timedelta(minutes=10)).isoformat())
+        self.state['posts']['existing'] = entry
+        self.assertEqual(b.pending_reconciliation(self.state), [entry])
+        # An attempted check after dueAt restores normal throttling, including
+        # after a timeout. No createPost or repeated rapid queries are allowed.
+        entry['last_reconcile_attempt_at'] = NOW.isoformat()
+        self.assertEqual(b.pending_reconciliation(self.state), [])
+
     def test_two_other_reservations_block_third_same_local_day(self):
         self.state['posts'] = {
             'confirmed': dict(status='PUBLISH_COMPLETE', scheduled_at='2026-10-21T08:00:00-03:00'),

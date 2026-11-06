@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-06T04:30:32.170819+00:00",
+  "network": {
+    "applied_policy": "unrestricted/enforced",
+    "github_fetch_and_push": "successful",
+    "github_workflow_dispatch": "successful",
+    "github_actions_secrets_list": "403 Resource not accessible by integration; endpoint permission, not network",
+    "github_actions_permissions_read": "403 Resource not accessible by integration; endpoint permission, not network",
+    "huggingface_model_and_space_metadata": 200,
+    "pexels_license": 200,
+    "pixabay_source_page_license_and_mp4_with_application_user_agent": 200,
+    "pixabay_mp4_without_application_user_agent": 403,
+    "buffer_docs": 200,
+    "buffer_authenticated_channel": "verified by Actions 42161484178; no create called",
+    "expired_buffer_credentials_observed": false
+  },
+  "free_capacity": {
+    "buffer_max_queued_per_channel": 10,
+    "buffer_api_requests_per_channel_30_days": 1000,
+    "local_policy_requests_30_days": 900,
+    "buffer_pricing": "https://buffer.com/pricing",
+    "buffer_api_limits": "https://developers.buffer.com/guides/api-limits.html",
+    "metricool_free_posts_month": 20,
+    "metricool_free_api_entitlement_verified": false,
+    "metricool_pricing": "https://metricool.com/pricing/",
+    "hf_anonymous_gpu_seconds_daily": 120,
+    "hf_free_gpu_seconds_daily": 300,
+    "hf_docs": "https://huggingface.co/docs/hub/spaces-zerogpu",
+    "hf_planning_seconds_per_clip_3_steps": 45,
+    "two_30s_ai_videos_gpu_estimate": 540,
+    "two_15s_ai_videos_gpu_estimate": 270,
+    "two_15s_guaranteed": false,
+    "ai_clips_with_verified_commercial_chain": 0,
+    "sustainable_ongoing_frequency_demonstrated": false,
+    "additional_paid_services_enabled": false,
+    "storage_limits_preserved": {
+      "monthly_outputs": 64,
+      "max_output_bytes": 20000000,
+      "monthly_release_collections": 6
+    }
+  }
+}

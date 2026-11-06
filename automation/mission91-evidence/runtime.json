@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-06T04:30:31.491Z",
+  "environment_id": "ccarenv_b64_Y2NhcmVudl83YzcxNDE3ZTZlZWM4MTkxOTUxZDRkOGY0ZmU2OTQ2ZQ",
+  "source_config_id": "d23512dba7807d41ea28efae875437a91b5f215e243597f86314d507857fd766~cecfg_4a19e2f98fe8819aa270b30655dd69f3",
+  "source_config_version_id": "d23512dba7807d41ea28efae875437a91b5f215e243597f86314d507857fd766~cecfgver_6aed221edb8c819aa43725243923e272",
+  "spec_revision": "1",
+  "observed_spec_revision": "1",
+  "observations_current": true,
+  "provider": "cloud",
+  "desired_phase": "running",
+  "observed_phase": "running",
+  "failure": null,
+  "connectivity": "connected",
+  "network_policy": {
+    "mode": "unrestricted",
+    "state": "enforced"
+  },
+  "capabilities": [
+    {
+      "remote_desktop": {
+        "enabled": true,
+        "state": "unknown",
+        "description": "This environment supports a shared desktop and browser. In on-demand mode, use the desktop's NodeREPL js tool for your first action if it is available. A valid call such as js({\"code\":\"1 + 1\"}) starts the runtime. Connecting an authorized desktop viewer also starts it. Tool discovery and status polling leave it idle. To show the desktop in the Codex side panel, call open_in_codex with the cloud-desktop target if offered."
+      }
+    }
+  ],
+  "secrets": [],
+  "runtime_variables": [],
+  "outbound_identities": [],
+  "network_diagnostics": null
+}

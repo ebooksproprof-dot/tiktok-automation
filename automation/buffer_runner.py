@@ -286,7 +286,12 @@ def pending_reconciliation(state):
         checked = common.parse_time(entry.get('last_reconcile_attempt_at') or entry.get('last_checked_at'))
         if entry.get('status') == 'SCHEDULED' and due and now < due:
             continue
-        if checked and now < checked + timedelta(minutes=30):
+        # The create/readback can happen shortly before dueAt. Permit the first
+        # read after that boundary instead of delaying publication evidence for
+        # thirty minutes merely because acceptance was recently checked.
+        first_due_check = (entry.get('status') in ('SCHEDULED', 'SENDING')
+                           and due and checked and checked < due <= now)
+        if checked and now < checked + timedelta(minutes=30) and not first_due_check:
             continue
         pending.append(entry)
     return pending

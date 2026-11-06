@@ -100,6 +100,56 @@
       "name": "Kijai--WanVideo_comfy.json",
       "sha256": "c0ba334018a4dd9303b17144fce0782ad6e2af4325c8b12f842face838ff8342",
       "bytes": 25936
+    },
+    {
+      "name": "ffmpeg-license",
+      "sha256": "0c0f84b347baa5edb55ad594cb9b8dc3a6ae47b652131ff4533a16b3773e89df",
+      "bytes": 10746
+    },
+    {
+      "name": "onnx-license",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "bytes": 1073
+    },
+    {
+      "name": "espeak-license",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147
+    },
+    {
+      "name": "dejavu-license",
+      "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+      "bytes": 8816
+    },
+    {
+      "name": "github-billing",
+      "sha256": "675a27f24416fa97de0bd30cd49a5382516c4ac8cfaadca8bf14ec9203927990",
+      "bytes": 233817
+    },
+    {
+      "name": "github-releases",
+      "sha256": "7bfe64e9c17a0083152c59b447a8a176853d595e669c41c77b0937b81bbb62a5",
+      "bytes": 182571
+    },
+    {
+      "name": "buffer-pricing",
+      "sha256": "91b9eaa30782ed4b67b47e8e22d5b8f3b2b316a2d29cff7fbc0ad9a26360dad6",
+      "bytes": 475841
+    },
+    {
+      "name": "hf-quota",
+      "sha256": "52d86210937d2a8945a4227d2db4cb0eccccbcc92a46ebfa610c1654ae8f2602",
+      "bytes": 226272
+    },
+    {
+      "name": "metricool",
+      "sha256": "e956eb36927315b254572359c5f4d75fd13c0096bce752df7b283d33d1c7b6b8",
+      "bytes": 1037822
+    },
+    {
+      "name": "buffer",
+      "sha256": "91ced7c3fd66f0422f37fb1848c056354d357c44c9516441cd7d9f4f7357fa72",
+      "bytes": 124837
     }
   ]
 }
