@@ -18,9 +18,6 @@ jobs:
     timeout-minutes: 15
     env:
       ORT_DISABLE_TELEMETRY: '1'
-      NARRATION_ENGINE: kokoro-female
-      CAPTION_STYLE: measured-v51
-      MEDIA_STORAGE: release
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +36,9 @@ jobs:
         run: python -m unittest discover -s automation/tests -v
       - name: Render, validate, preserve and queue exactly one reviewed proof
         env:
+          NARRATION_ENGINE: kokoro-female
+          CAPTION_STYLE: measured-v51
+          MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
           FIRST_TEST_SOON: ${{ inputs.first_test_soon }}
