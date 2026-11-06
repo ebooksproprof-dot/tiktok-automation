@@ -1903,6 +1903,103 @@
       ],
       "last_checked_at": "2026-10-29T11:27:00Z",
       "verification_source": "Metricool TikTok provider returned PUBLISHED with publicUrl for the exact id, uuid, brand and media."
+    },
+    {
+      "id": "casasem-2026-11-06-1",
+      "concept": "vassoura-pa-residuos-91",
+      "title": "Sujeira espalhada no piso? Reúna os resíduos com movimentos curtos. Aproxime a pá e recolha aos poucos. Antes de começar, retire os objetos do caminho. Escolha uma vassoura adequada ao seu piso. Salve para a próxima limpeza. #CasaSemEsforco #LimpezaDaCasa\n\nVideo — jaumeps99; https://pixabay.com/videos/id-34821/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "scheduled_at": "2026-11-06T01:46:29-03:00",
+      "approved": true,
+      "consented_at": "2026-11-06T04:31:29.941895+00:00",
+      "publication_provider": "buffer",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "38174601f1dcf86f7af67f6fadce118870dcc60339a6e53d06329dc7f8b7d372",
+        "duration": 15.166667,
+        "size": 2187388,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.029667,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
+            "sha256": "e7da0c5ea4f76261bbb8871409695d16b9cb97c3c15c00282942785f454c0fae",
+            "dhash": [
+              "878d8d87878f8f0f",
+              "878d8d9b9b898f0f",
+              "8f8d99898d8f8f0f",
+              "8d8d898d878f8f0f",
+              "87858d85878f8f0f"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          15.92
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "vassoura-pa-residuos-91",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — jaumeps99; https://pixabay.com/videos/id-34821/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "rights_review_reference": "automation/MISSION-9.1-LICENSES.md",
+        "editorial_review": {
+          "basis": "source contact sheet, matching script and framing reviewed; final decode and timings measured",
+          "reviewed_at": "2026-11-06T04:31:29.941895+00:00",
+          "human_listening_verified": false
+        }
+      },
+      "script_lines": [
+        "Sujeira espalhada no piso?",
+        "Reúna os resíduos com movimentos curtos.",
+        "Aproxime a pá e recolha aos poucos.",
+        "Antes de começar, retire os objetos do caminho.",
+        "Escolha uma vassoura adequada ao seu piso.",
+        "Salve para a próxima limpeza."
+      ],
+      "script_sha256": "50878e2b549b6fabe0e681f39d61038d1fabf4a1dc01bf7379fa5b6eb30ef219",
+      "render_version": 2,
+      "media_storage": "release",
+      "approval_scope": "mission91_explicit_owner_publication_request",
+      "publishing_status": "RENDERED_VALIDATED_PENDING_BUFFER",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-06-1-38174601f1dcf86f.mp4",
+      "first_test_outside_recurring_slots": true
     }
   ]
 }
