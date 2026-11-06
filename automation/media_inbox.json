@@ -880,69 +880,76 @@
     "pixabay:38116": 1794223410
   },
   "last_run": {
-    "at": 1793902376,
-    "acquired": 2,
+    "at": 1793986794,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 4,
+    "download_attempts": 0,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "toalhas",
+        "category": "cabides",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "toalhas",
+        "category": "cabides",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "potes",
+        "category": "louca",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "potes",
+        "category": "louca",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "vassoura",
+        "category": "estante",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 1,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "vassoura",
+        "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "escrivaninha",
+        "category": "panos",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "panos",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "folding towels bathroom",
-      "food storage containers kitchen",
-      "sweeping floor broom",
-      "organizing desk stationery"
+      "clothes hangers wardrobe",
+      "washing dishes kitchen sink",
+      "books shelf organizing",
+      "microfiber cloth cleaning"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
