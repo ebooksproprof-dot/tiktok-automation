@@ -1,0 +1,205 @@
+{
+  "checked_at": "2026-11-06T04:08:08.386787+00:00",
+  "main_base": "ae3a4ab",
+  "main_scheduler_fix": "cbf4f4025a10d182719466df8c2fa037a15d0ed7",
+  "collector_fix": "ec184ff",
+  "runtime": {
+    "environment_id": "ccarenv_b64_Y2NhcmVudl8zY2I1ZjM0NDdjNDA4MTkxOTYzMzYxMGQ2MWNmNGE3ZA",
+    "source_config_version_id": "d23512dba7807d41ea28efae875437a91b5f215e243597f86314d507857fd766~cecfgver_6aed1a382044819ab9f1a38f05a3b71d",
+    "spec_revision": "1",
+    "observations_current": true,
+    "network_state": "enforced",
+    "allowed_hosts": [],
+    "secret_binding_names": []
+  },
+  "network_checks": [
+    {
+      "host": "api.github.com",
+      "result": "HTTPS CONNECT refused by proxy: 403 Forbidden"
+    },
+    {
+      "host": "huggingface.co",
+      "result": "HTTPS CONNECT refused by proxy: 403 Forbidden"
+    },
+    {
+      "host": "www.pexels.com",
+      "result": "HTTPS CONNECT refused by proxy: 403 Forbidden"
+    },
+    {
+      "host": "developers.buffer.com",
+      "result": "HTTPS CONNECT refused by proxy: 403 Forbidden"
+    }
+  ],
+  "render": {
+    "video_path": "/workspace/ai30-validation/mission90/render/experimental81-c93e8b19e3058d3f.mp4",
+    "quality": {
+      "profile": "hybrid30",
+      "technical_pass": true,
+      "editorial_approved": false,
+      "publication_enabled": false,
+      "sha256": "e6e3c238dc6c80179643b99aa47d83b8fc20b95262690811a0b3f1138bae310a",
+      "duration": 29.977,
+      "duration_tolerance_seconds": 0.15,
+      "size": 9893920,
+      "width": 1080,
+      "height": 1920,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "audio_mean_db": -15.2,
+      "av_start_delta_seconds": 0.0,
+      "av_end_delta_seconds": 0.010333,
+      "lip_sync_verified": false,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0
+    },
+    "shots": [
+      {
+        "source_index": 0,
+        "start": 0.0,
+        "duration": 5.0
+      },
+      {
+        "source_index": 1,
+        "start": 0.0,
+        "duration": 5.0
+      },
+      {
+        "source_index": 2,
+        "start": 0.0,
+        "duration": 5.0
+      },
+      {
+        "source_index": 3,
+        "start": 0.0,
+        "duration": 5.0
+      },
+      {
+        "source_index": 4,
+        "start": 0.0,
+        "duration": 5.0
+      },
+      {
+        "source_index": 5,
+        "start": 0.0,
+        "duration": 5.0
+      }
+    ],
+    "visual_distinct": false,
+    "visual_blocker": "VISUAL_NEAR_DUPLICATE",
+    "commercial_license_status": "AI_COMMERCIAL_CLEARANCE_REQUIRED",
+    "new_ai_requests": 0,
+    "publication_verified": false,
+    "renderer_branch_commit": "b747e7a0048583c200cef51f7aed59d342fad1e1"
+  },
+  "duplicate_findings": [
+    {
+      "clip_slot": 4,
+      "clip_sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+      "prior_source_id": "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4",
+      "prior_sha256": "4ec7f9969e5d7babf47f240b7b6b7ec3f07db5ffeb49ccbb415a3cb68080aa25",
+      "nearest_frame_hamming_distances": [
+        4,
+        8,
+        7,
+        5,
+        6
+      ],
+      "matching_sample_frames": 5
+    }
+  ],
+  "clips": [
+    {
+      "slot": 0,
+      "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-9beffe8705114e562201221c.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9472849"
+    },
+    {
+      "slot": 1,
+      "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/ai30-53057032695adf534e1b6b37.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9472849"
+    },
+    {
+      "slot": 2,
+      "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-b64d4095fad0eb7252fde2d5.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9462884"
+    },
+    {
+      "slot": 3,
+      "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-328c3dcef95f4e9787172bb4.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9462884"
+    },
+    {
+      "slot": 4,
+      "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-1704813db0559080e288798f.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9473227"
+    },
+    {
+      "slot": 5,
+      "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-d5a6944f09af63d3f76477b0.mp4",
+      "commercial_license_clearance": false,
+      "model": "Wan-AI/Wan2.2-I2V-A14B-Diffusers + Lightx2v I2V14B LoRA",
+      "reference_pexels_id": "9473227"
+    }
+  ],
+  "tests": {
+    "main_passed": 336,
+    "collector_branch_passed": 416,
+    "failed": 0,
+    "skipped": 0
+  },
+  "runner_after_change": {
+    "id": "42160430701",
+    "state": {
+      "status": "WORKFLOW_RUN_STATUS_COMPLETED",
+      "conclusion": "WORKFLOW_RUN_CONCLUSION_SUCCESS"
+    },
+    "runUrl": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42160430701",
+    "description": {
+      "primaryText": "Commit",
+      "linkText": "cbf4f40",
+      "linkUrl": "/ebooksproprof-dot/tiktok-automation/commit/cbf4f4025a10d182719466df8c2fa037a15d0ed7",
+      "action": "pushed",
+      "showActor": true,
+      "actorName": "ebooksproprof-dot",
+      "actorUrl": "/ebooksproprof-dot",
+      "actorType": "WORKFLOW_RUN_ACTOR_TYPE_USER",
+      "actorHovercard": {
+        "type": "WORKFLOW_RUN_HOVERCARD_TYPE_USER",
+        "url": "/users/ebooksproprof-dot/hovercard"
+      }
+    }
+  },
+  "capacity_estimate_only": {
+    "two_30s_videos_clips": 12,
+    "seconds_per_clip_estimate": 45,
+    "estimated_gpu_seconds": 540,
+    "planner_documented_free_seconds": 300,
+    "provider_quota_not_independently_verified": true,
+    "two_30s_daily_guaranteed": false
+  },
+  "new_ai_requests": 0,
+  "new_publications_confirmed": 0,
+  "preserved_main_files": {
+    "automation/queue.json": "406522668444e9d175ecca918bfc793db6403fd0dc3613a2299f1932b851042c",
+    "automation/state.json": "5350411c3511e32d6af88749568792909c82a5b3fec56c1f5ba4a58ed843c86f",
+    "automation/visual_history.json": "562effa78c9f47f3bf2dcdd22658d4e331908b3f847a5fe0951e857f6ba7a9c7",
+    "automation/video_stock.json": "24a685d473c3386a616d2ba3cd9fca72b40e9f57d9267b07f025d2266ae47d73"
+  },
+  "required_external_action": "Attach this task to the published environment version with the saved domains applied; this instance still reports source revision 1 with no custom hosts. Then review exact licenses and perform read-only publisher authentication before a live test."
+}
