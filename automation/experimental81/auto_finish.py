@@ -98,7 +98,8 @@ def build_post(state,video,quality,source_visuals,now):
                    visual_sources=source_visuals,
                    source_urls=[x['url'] for x in state['clips']],
                    scene_reuse_policy='distinct_AI_generated_clips_no_loop',
-                   ai_generated_seconds=quality['duration'],
+                   # Nominal scene plan; measured duration stays in duration.
+                   ai_generated_seconds=5*len(state['clips']),
                    model=state['clips'][0]['model'],
                    voice='kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br',
                    required_public_credits=[],
@@ -213,18 +214,13 @@ def finish():
         # The only publication route is the existing Buffer queue; no other
         # API publisher, no new TikTok credentials, and no direct TikTok calls.
         # Publishing is committed LAST, only after release readback.
-        existing_sha,existing_queue=collector.content_get('automation/queue.json','main')
-        _,existing_state=collector.content_get('automation/state.json','main')
-        when=choose_time(existing_queue,existing_state,now)
-        post_id=next((f"casasem-{when:%Y-%m-%d}-{n}"
-                      for n in (1,2)
-                      if all(p.get('id')!=f"casasem-{when:%Y-%m-%d}-{n}"
-                             for p in existing_queue['posts'])
-                      and f"casasem-{when:%Y-%m-%d}-{n}" not in existing_state.get('posts',{})),None)
-        if post_id is None:raise ValueError('NO_POST_ID_AVAILABLE')
+        # Reject licensed-but-repeated visuals BEFORE creating a Release asset.
+        # Recheck the same gates after upload; the final queue write remains CAS.
+        existing_sha,_,prepared=build_post(state,'',quality,visuals,now)
+        post_id=prepared['id']
         video_url=publish_existing_release(output['video_path'],post_id,quality)
         qsha,q,post=build_post(state,video_url,quality,visuals,now)
-        if qsha!=existing_sha or post['id']!=post_id or post['scheduled_at']!=when.isoformat():
+        if qsha!=existing_sha or post['id']!=post_id or post['scheduled_at']!=prepared['scheduled_at']:
             raise ValueError('QUEUE_CHANGED_DURING_MEDIA_UPLOAD_RECHECK')
         if any(p.get('video_url')==video_url or p.get('quality',{}).get('sha256')==quality['sha256']
                for p in q['posts']):

@@ -69,6 +69,40 @@ class FinishRegressionTests(unittest.TestCase):
         upload.assert_not_called();write.assert_not_called()
         self.assertEqual(state,before)
 
+    def test_composer_metadata_enters_publisher_with_measured_duration_tolerance(self):
+        for count in (3,4,5,6):
+            clips=[dict(cleared_source(i+1),url=f'https://example.org/mock-generated-{i}',
+                        model='controlled-test-model') for i in range(count)]
+            state=dict(clips=clips,episode_sequence=1)
+            visuals=[dict(source_id=c['url'],sha256=c['sha256'],
+                          dhash=[hashlib.sha256(f'{i}-{j}'.encode()).hexdigest()[:16] for j in range(5)])
+                     for i,c in enumerate(clips)]
+            quality=dict(technical_pass=True,duration=5*count-.023,sha256='a'*64)
+            with patch.object(auto_collect,'content_get',side_effect=[
+                    ('queue-sha',{'posts':[]}),('state-sha',{'posts':{}})]):
+                _,_,post=auto_finish.build_post(state,
+                    'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-test/mock.mp4',
+                    quality,visuals,datetime.now(timezone.utc))
+            with self.subTest(count=count):
+                self.assertEqual(post['quality']['ai_generated_seconds'],5*count)
+                self.assertAlmostEqual(post['quality']['duration'],5*count-.023)
+                self.assertFalse(post['quality']['editorial_approved'])
+                self.assertEqual(buffer.prepare(post,{'posts':{}},'channel')['channelId'],'channel')
+
+    def test_visual_rejection_prevents_release_and_inventory_writes(self):
+        state=json.loads((ROOT/'experimental81/auto_inventory.json').read_text())
+        before=copy.deepcopy(state)
+        with patch.object(auto_collect,'content_get',side_effect=[('sha',state),('q',{'posts':[]})]),\
+             patch.object(auto_finish,'render_episode',return_value=({}, {}, [])),\
+             patch.object(auto_finish,'require_clearance'),\
+             patch.object(auto_finish,'build_post',side_effect=ValueError('VISUAL_NEAR_DUPLICATE')),\
+             patch.object(auto_finish,'publish_existing_release') as upload,\
+             patch.object(auto_collect,'content_put') as write:
+            with self.assertRaisesRegex(ValueError,'VISUAL_NEAR_DUPLICATE'):
+                auto_finish.finish()
+        upload.assert_not_called();write.assert_not_called()
+        self.assertEqual(state,before)
+
     def test_schedule_preserves_evening_and_metricool_dict_reservations(self):
         now=datetime(2026,11,3,12,tzinfo=timezone.utc)
         queue={'posts':[{'scheduled_at':'2026-11-03T10:00:00-03:00'}]}
