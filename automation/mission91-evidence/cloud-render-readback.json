@@ -1,0 +1,17 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "38174601f1dcf86f7af67f6fadce118870dcc60339a6e53d06329dc7f8b7d372",
+  "duration": 15.166667,
+  "size": 2187388,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -15.3,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.029667,
+  "lip_sync_verified": false,
+  "checked_from": "GitHub Release independent download in task cloud workspace",
+  "publication_confirmed": false
+}
