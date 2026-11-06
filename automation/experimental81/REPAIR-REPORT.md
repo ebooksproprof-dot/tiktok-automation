@@ -35,5 +35,11 @@ Após liberar acesso: verificar os termos exatos e registrar evidência vinculad
 - Correções completas de desenvolvimento enviadas em `65f1b8b`, na branch `feature/ai-video-hybrid-30s` (414 testes).
 - Reparo operacional focado em `5634239`, branch `fix/ai30-live-publisher` (336 testes na base main atual). Não inclui o merge integral do experimento nem arquivos de estado.
 - O envio direto de `5634239` à main foi rejeitado pela revisão automática de aprovação: considerou que o deployment na branch padrão exige autorização específica. Nenhum contorno foi tentado; o commit foi disponibilizado em branch de revisão. [Comparar reparo operacional](https://github.com/ebooksproprof-dot/tiktok-automation/compare/main...fix/ai30-live-publisher).
-- A main segue com o workflow antigo até essa aprovação. O collector existente obtém o código atualizado da branch experimental, mas o tratamento da falha no workflow e os reparos do publicador só serão ativados após aplicar o commit operacional.
+- Atualização após autorização expressa do titular: `5634239` aplicado à main e confirmado por `git ls-remote`. O tratamento da falha obrigatória e os reparos operacionais estão ativos. A rejeição anterior foi resolvida pela autorização do titular; não é mais um bloqueio.
 - Continua pendente o teste real de publicação; não há ID/URL novo do TikTok que comprove a conclusão da missão.
+
+## Verificação após deployment autorizado
+
+[Run 42137273444](https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42137273444), disparado pelo push de `5634239`: terminou em 33 s. A única anotação de erro é saída 2 no step 10, correspondente à verificação de entrega diária. `daily_coverage.py` reproduz localmente `NO_VIDEO` para os dois slots de 05/11/2026 em Brasília. A etapa de fila não apresentou o erro GraphQL anterior nesta execução; isso não prova autenticação Buffer, pois não havia trabalho elegível para nova submissão/reconciliação. As duas advertências sobre conteúdo vencido/sem aprovação são emitidas no step 5 (testes), não são evidência de tentativa real de publicar aquele conteúdo.
+
+A política de rede observada continua sem domínios personalizados aplicados, apesar de o rascunho persistido conter os domínios necessários. Publicar a configuração do ambiente continua necessário para consultar as licenças e a API GitHub daqui. Os seis registros do inventário permanecem READY com clearance comercial false. Nenhuma publicação nova confirmada; nenhum gasto adicional ou nova geração de IA foi solicitado nesta retomada.

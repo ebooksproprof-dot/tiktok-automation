@@ -1,0 +1,16 @@
+{
+  "authorized_deployment_commit": "5634239215db017b238530d5746fa25106c26094",
+  "remote_main_verified": true,
+  "run_id": "42137273444",
+  "run_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42137273444",
+  "run_conclusion": "failure",
+  "error_step": 10,
+  "error_reason": "daily delivery coverage: NO_VIDEO for both local-day slots",
+  "buffer_authentication_verified": false,
+  "new_publications_confirmed": 0,
+  "new_ai_requests": 0,
+  "remaining_blockers": [
+    "Network draft saved but not applied/published",
+    "Commercial rights for exact model derivatives, references and voice still unconfirmed"
+  ]
+}
