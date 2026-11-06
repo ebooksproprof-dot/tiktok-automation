@@ -25,6 +25,10 @@ on:
         description: "Check Buffer connection without scheduling or publishing"
         type: boolean
         default: false
+      confirm_post_id:
+        description: "Read-only: require real publication evidence for this existing queue ID"
+        type: string
+        default: ""
   schedule:
     - cron: "7 12,20 * * *" # BRT 09:07/17:07: prepare 10h/18h slots
     - cron: "17 13,14,21,22 * * *" # BRT 10:17/11:17/18:17/19:17: verify publication
@@ -85,8 +89,11 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
           BUFFER_CHECK_ONLY: ${{ inputs.buffer_check_only }}
+          BUFFER_CONFIRM_POST_ID: ${{ inputs.confirm_post_id }}
         run: |
-          if [ "$BUFFER_CHECK_ONLY" = "true" ]; then
+          if [ -n "$BUFFER_CONFIRM_POST_ID" ]; then
+            python automation/buffer_runner.py --confirm-post "$BUFFER_CONFIRM_POST_ID"
+          elif [ "$BUFFER_CHECK_ONLY" = "true" ]; then
             python automation/buffer_runner.py --check
           elif [ "$PUBLISHING_PROVIDER" = "buffer" ]; then
             python automation/buffer_runner.py
@@ -120,7 +127,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Check daily delivery after reconciliation and persistence
-        if: ${{ !cancelled() && inputs.buffer_check_only != true }}
+        if: ${{ !cancelled() && inputs.buffer_check_only != true && inputs.confirm_post_id == '' }}
         run: python automation/daily_coverage.py
 
       - name: Keep one actionable failure issue

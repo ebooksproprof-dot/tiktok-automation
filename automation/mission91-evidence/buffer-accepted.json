@@ -1,0 +1,46 @@
+{
+  "post_id": "casasem-2026-11-06-1",
+  "state": {
+    "provider": "buffer",
+    "status": "SCHEDULED",
+    "submitted_at": "2026-11-06T04:37:06Z",
+    "sha256": "38174601f1dcf86f7af67f6fadce118870dcc60339a6e53d06329dc7f8b7d372",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-06-1-38174601f1dcf86f.mp4",
+    "concept": "vassoura-pa-residuos-91",
+    "script_sha256": "50878e2b549b6fabe0e681f39d61038d1fabf4a1dc01bf7379fa5b6eb30ef219",
+    "script_lines": [
+      "Sujeira espalhada no piso?",
+      "Re\u00fana os res\u00edduos com movimentos curtos.",
+      "Aproxime a p\u00e1 e recolha aos poucos.",
+      "Antes de come\u00e7ar, retire os objetos do caminho.",
+      "Escolha uma vassoura adequada ao seu piso.",
+      "Salve para a pr\u00f3xima limpeza."
+    ],
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4"
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
+        "sha256": "e7da0c5ea4f76261bbb8871409695d16b9cb97c3c15c00282942785f454c0fae",
+        "dhash": [
+          "878d8d87878f8f0f",
+          "878d8d9b9b898f0f",
+          "8f8d99898d8f8f0f",
+          "8d8d898d878f8f0f",
+          "87858d85878f8f0f"
+        ]
+      }
+    ],
+    "scheduled_at": "2026-11-06T01:46:29-03:00",
+    "publicly_verified": false,
+    "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+    "buffer_post_id": "6aed59747b7e47e8f40a39a7",
+    "last_checked_at": "2026-11-06T04:37:10Z",
+    "buffer_status": "scheduled",
+    "buffer_external_link": null,
+    "buffer_sent_at_present": false
+  },
+  "run_id": 42163112491,
+  "new_publication_confirmed": false
+}

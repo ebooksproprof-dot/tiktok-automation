@@ -92,6 +92,34 @@ class BufferRecoveryTests(unittest.TestCase):
         entry['last_reconcile_attempt_at'] = NOW.isoformat()
         self.assertEqual(b.pending_reconciliation(self.state), [])
 
+    def test_explicit_confirmation_queries_only_existing_id_and_requires_public_link(self):
+        entry = self.entry()
+        self.state['posts']['existing'] = entry
+        remote = dict(id='remote', channelId='channel', status='scheduled',
+                      schedulingType='automatic', dueAt=entry['scheduled_at'])
+        with patch.object(b.common, 'load_json', return_value=self.state), \
+             patch.object(b.common, 'save_json'), \
+             patch.dict(b.os.environ, {'BUFFER_CHANNEL_ID': 'channel'}), \
+             patch.object(b, 'Client') as client:
+            client.return_value.call.return_value = {'post': remote}
+            self.assertEqual(b.confirm_post('existing'), 2)
+            query, variables = client.return_value.call.call_args.args
+            self.assertTrue(query.startswith('query('))
+            self.assertEqual(variables['input']['id'], 'remote')
+            remote.update(status='sent', sentAt=NOW.isoformat(),
+                          externalLink='https://www.tiktok.com/@.casasemesforo/video/123')
+            self.assertEqual(b.confirm_post('existing'), 0)
+            self.assertEqual(entry['public_urls'], ['https://www.tiktok.com/@.casasemesforo/video/123'])
+
+    def test_explicit_confirmation_without_reservation_never_calls_network(self):
+        with patch.object(b.common, 'load_json', return_value=self.state), \
+             patch.object(b.common, 'save_json'), \
+             patch.dict(b.os.environ, {'BUFFER_CHANNEL_ID': 'channel'}), \
+             patch.object(b, 'Client') as client:
+            with self.assertRaisesRegex(ValueError, 'Existing Buffer reservation'):
+                b.confirm_post('not-in-state')
+            client.assert_not_called()
+
     def test_two_other_reservations_block_third_same_local_day(self):
         self.state['posts'] = {
             'confirmed': dict(status='PUBLISH_COMPLETE', scheduled_at='2026-10-21T08:00:00-03:00'),

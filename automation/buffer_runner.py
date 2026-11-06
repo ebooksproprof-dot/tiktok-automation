@@ -445,9 +445,45 @@ def unresolved_count(state):
                for p in state['posts'].values())
 
 
+def confirm_post(post_id):
+    """Explicit read-only reconciliation of ONE existing reservation.
+
+    This operator check never calls createPost or resets a retry/cooldown. It
+    bypasses only the routine 30-minute polling delay, retaining API budgets.
+    Exit success requires actual public evidence, rather than scheduling.
+    """
+    state = common.load_json(common.STATE_PATH, {'posts': {}})
+    try:
+        entry = state.get('posts', {}).get(post_id)
+        channel_id = os.getenv('BUFFER_CHANNEL_ID', '').strip()
+        if (not entry or entry.get('provider') != 'buffer'
+                or not entry.get('buffer_post_id') or not channel_id):
+            raise ValueError('Existing Buffer reservation and channel required; no submission attempted')
+        if entry.get('publicly_verified') is not True:
+            client = Client(state)
+            remote = client.call('query($input: PostInput!) { post(input: $input) { ' +
+                                 POST_FIELDS + ' } }',
+                                 {'input': {'id': entry['buffer_post_id']}})['post']
+            record_remote(entry, remote, channel_id)
+            entry['last_reconcile_attempt_at'] = common.iso_now()
+        print(json.dumps({'post_id': post_id, 'status': entry.get('status'),
+                          'publicly_verified': entry.get('publicly_verified', False),
+                          'public_urls': entry.get('public_urls', [])}))
+        return 0 if (entry.get('status') == 'PUBLISH_COMPLETE'
+                     and entry.get('publicly_verified') is True
+                     and entry.get('public_urls')) else 2
+    finally:
+        common.save_json(common.STATE_PATH, state)
+
+
 if __name__ == "__main__":
     try:
-        raise SystemExit(main(check_only="--check" in sys.argv))
+        import argparse
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument('--check', action='store_true')
+        parser.add_argument('--confirm-post', help='Require published evidence for an existing post; never submits')
+        args = parser.parse_args()
+        raise SystemExit(confirm_post(args.confirm_post) if args.confirm_post else main(check_only=args.check))
     except Exception as exc:
         print(f"::error::{type(exc).__name__}: {exc}", file=sys.stderr)
         raise SystemExit(1)
