@@ -1,4 +1,4 @@
-# CasaSemEsforço 9.0 — retomada de 06/11/2026, Brasília
+# CasaSemEsforço 9.0 — retomada após publicação do ambiente
 
 **Missão ainda bloqueada. Nenhuma publicação nova confirmada no TikTok.**
 
