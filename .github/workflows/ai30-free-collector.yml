@@ -82,7 +82,6 @@ jobs:
       - name: Complete and queue ONLY fully verified AI30 output
         id: finish
         if: always() && steps.preflight.outcome == 'success' && steps.install.outcome == 'success'
-        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -97,3 +96,8 @@ jobs:
           echo 'AI-only composition and existing queue handoff: ${{ steps.finish.outcome }}' >> "$GITHUB_STEP_SUMMARY"
           echo 'A green workflow alone does not mean a TikTok video was published.' >> "$GITHUB_STEP_SUMMARY"
           echo 'Inspect automation/experimental81/auto_inventory.json and the existing Buffer/TikTok runner state.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Fail when required composition did not succeed
+        if: always() && steps.finish.outcome != 'success'
+        run: |
+          echo '::error::Required AI video assembly failed or was skipped. No publication is confirmed.'
+          exit 1

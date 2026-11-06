@@ -73,7 +73,15 @@ class Client:
         if not isinstance(result, dict) or result.get("errors") or not isinstance(result.get("data"), dict):
             buffer_quota.record_error(self.state, 503, {}, common.utc_now())
             common.save_json(common.STATE_PATH, self.state)
-            raise RuntimeError("Buffer GraphQL request failed; response body omitted")
+            allowed = {'UNAUTHENTICATED', 'FORBIDDEN', 'BAD_USER_INPUT',
+                       'GRAPHQL_VALIDATION_FAILED', 'NOT_FOUND', 'RATE_LIMITED',
+                       'INTERNAL_SERVER_ERROR'}
+            errors = result.get('errors') if isinstance(result, dict) else None
+            codes = sorted({error.get('extensions', {}).get('code') for error in errors
+                            if isinstance(error, dict) and isinstance(error.get('extensions'), dict)
+                            and error['extensions'].get('code') in allowed}) if isinstance(errors, list) else []
+            raise RuntimeError("Buffer GraphQL request failed; safe_codes=" + ','.join(codes)
+                               + "; response body omitted")
         buffer_quota.record_success(self.state)
         common.save_json(common.STATE_PATH, self.state)
         return result["data"]
@@ -94,13 +102,23 @@ def prepare(post, state, channel_id):
     if post.get("publication_provider") != "buffer":
         raise ValueError("Post not assigned to Buffer")
     if post.get('video_origin') == 'ai_only30':
+        seconds = quality.get('ai_generated_seconds')
+        sources = quality.get('licensed_sources') or []
         if (post.get('approval_scope') != 'owner_authorized_ai30_first_live_test_and_ongoing_automation'
-                or post.get('quality', {}).get('ai_generated_seconds') != 30
+                or seconds not in (15, 20, 25, 30)
+                or abs(quality.get('duration', 0)-seconds) > .15
+                or len(sources) != seconds//5
+                or len({s.get('sha256') for s in sources}) != len(sources)
+                or {s.get('sha256') for s in sources} != {s.get('sha256') for s in quality.get('visual_sources', [])}
                 or post.get('quality', {}).get('machine_checks_only') is not True
                 or post.get('ai_disclosure_required') is not True
                 or not str(post.get('video_url', '')).startswith(
-                    'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-')):
+                     'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-')):
             raise ValueError('AI30_OWNER_CONSENT_AND_MEDIA_GUARD_REQUIRED')
+        from experimental81.rights import require_clearance
+        require_clearance(sources)
+        if quality.get('commercial_license_clearance') is not True:
+            raise ValueError('AI_COMMERCIAL_CLEARANCE_REQUIRED')
     consent = post.get('consented_at')
     try:
         consent_time = common.parse_time(consent) if isinstance(consent, str) and re.search(r'(Z|[+-]\d\d:\d\d)$', consent) else None
@@ -108,7 +126,9 @@ def prepare(post, state, channel_id):
         consent_time = None
     if post.get('approved') is not True or not consent_time or consent_time > common.utc_now():
         raise ValueError('Explicit post approval and valid consent timestamp required')
-    if quality.get("technical_pass") is not True or quality.get("editorial_approved") is not True:
+    waived_ai_preview = (post.get('video_origin') == 'ai_only30'
+                        and quality.get('owner_waived_preview') is True)
+    if quality.get("technical_pass") is not True or (quality.get("editorial_approved") is not True and not waived_ai_preview):
         raise ValueError("Technical and editorial review required")
     from visual_library import history
     previous_visuals = history({}, state)
@@ -171,7 +191,8 @@ def verify_hosted(post):
                     raise ValueError("Hosted media exceeds budget")
                 out.write(chunk)
         if post.get('video_origin') == 'ai_only30':
-            actual = validate(target, ai_only30=True)
+            from experimental81.quality import validate as validate_ai, Policy
+            actual = validate_ai(target, policy=Policy(target_seconds=post['quality']['ai_generated_seconds']))
         else:
             actual = validate(target)
         if actual["sha256"] != post["quality"]["sha256"]:
@@ -182,6 +203,8 @@ def record_remote(entry, remote, channel_id):
     if remote.get("channelId") != channel_id or remote.get("id") != entry.get("buffer_post_id"):
         raise ValueError("Buffer post identity mismatch")
     entry.update(last_checked_at=common.iso_now(), buffer_status=remote.get("status"), publicly_verified=False)
+    entry.pop('public_urls', None)
+    entry.pop('publicly_available_post_id', None)
     if remote.get("schedulingType") != "automatic":
         entry["status"] = "BLOCKED_NOTIFICATION"
         return
@@ -193,7 +216,12 @@ def record_remote(entry, remote, channel_id):
     entry['buffer_sent_at_present'] = bool(remote.get('sentAt'))
     pattern = r"https://(?:www\.)?tiktok\.com/@" + re.escape(common.EXPECTED_USERNAME) + r"/video/(\d+)(?:\?.*)?"
     match = re.fullmatch(pattern, url)
-    if status == "sent" and remote.get("sentAt") and match:
+    try:
+        sent_at = common.parse_time(remote.get('sentAt'))
+    except (ValueError, TypeError, AttributeError):
+        sent_at = None
+    valid_sent = sent_at is not None and sent_at <= common.utc_now() + timedelta(minutes=5)
+    if status == "sent" and valid_sent and match:
         canonical_url = 'https://www.tiktok.com/@' + common.EXPECTED_USERNAME + '/video/' + match[1]
         entry.pop('evidence_pending_reason', None)
         entry.update(status="PUBLISH_COMPLETE", publicly_verified=True, public_urls=[canonical_url],
@@ -215,7 +243,7 @@ def record_remote(entry, remote, channel_id):
         entry["status"] = "AWAITING_PUBLIC_EVIDENCE"
         entry['evidence_pending_reason'] = ('PUBLIC_LINK_MISSING' if not url else
             'PUBLIC_LINK_FORMAT_OR_ACCOUNT_MISMATCH' if not match else
-            'SENT_TIMESTAMP_MISSING' if not remote.get('sentAt') else 'STATUS_NOT_SENT')
+            'SENT_TIMESTAMP_MISSING_OR_INVALID' if not valid_sent else 'STATUS_NOT_SENT')
 
 
 def submit(client, post, state, channel_id):
@@ -252,7 +280,7 @@ def pending_reconciliation(state):
     pending = []
     for entry in state['posts'].values():
         if (entry.get('provider') != 'buffer' or not entry.get('buffer_post_id')
-                or entry.get('publicly_verified') or entry.get('status') == 'FAILED'):
+                or entry.get('publicly_verified') or entry.get('status') in ('FAILED', 'CANCELLED_EDITORIAL')):
             continue
         due = common.parse_time(entry.get('scheduled_at'))
         checked = common.parse_time(entry.get('last_reconcile_attempt_at') or entry.get('last_checked_at'))
@@ -291,6 +319,9 @@ def main(check_only=False):
     state.setdefault("posts", {})
     submitted = blocked = 0
     try:
+        max_new = int(os.getenv('MAX_NEW_POSTS_PER_RUN', '2'))
+        if not 0 <= max_new <= 2:
+            raise ValueError('MAX_NEW_POSTS_PER_RUN must be between 0 and 2')
         channel_id = os.getenv("BUFFER_CHANNEL_ID", "").strip()
         if not channel_id:
             client = Client(state)
@@ -328,11 +359,10 @@ def main(check_only=False):
                 continue
         if not check_only and not pending and not eligible and not cancellations:
             print("Buffer: no due reconciliation or eligible submission; 0 API calls")
-            blocked = invalid + sum(p.get('provider') == 'buffer' and p.get('status') == 'SUBMISSION_UNKNOWN'
-                          and not p.get('buffer_post_id') for p in state['posts'].values())
+            blocked = invalid + unresolved_count(state)
             return 2 if blocked else 0
         client = Client(state)
-        required = 5 if check_only else bool(pending) + 2 * len(cancellations) + (2 + 2 * min(eligible, 2) if eligible else 0)
+        required = 5 if check_only else bool(pending) + 2 * len(cancellations) + (2 + 2 * min(eligible, max_new) if eligible else 0)
         # Publishing reserves the full cycle; read-only reconciliation needs no channel query.
         client.check_budget(required=required)
         if check_only or eligible:
@@ -393,17 +423,21 @@ def main(check_only=False):
             if result["pageInfo"]["hasNextPage"]:
                 raise RuntimeError("Buffer queue truncated; cannot verify free queue capacity")
             occupied = sum(e["node"]["channelId"] == channel_id for e in result.get("edges") or [])
-            for post in sorted(candidates, key=lambda p: p["scheduled_at"])[:min(2, max(0, 10 - occupied))]:
+            for post in sorted(candidates, key=lambda p: p["scheduled_at"])[:min(max_new, max(0, 10 - occupied))]:
                 submit(client, post, state, channel_id)
                 submitted += 1
-            blocked += max(0, min(2, len(candidates)) - submitted)
-        blocked += sum(p.get("provider") == "buffer" and not p.get("publicly_verified")
-                       and p.get("status") not in ("SCHEDULED", "SENDING", "CANCELLED_EDITORIAL")
-                       for p in state["posts"].values())
+            blocked += max(0, min(max_new, len(candidates)) - submitted)
+        blocked += unresolved_count(state)
         return 2 if blocked else 0
     finally:
         common.save_json(common.STATE_PATH, state)
         common.summary(state, blocked, submitted)
+
+
+def unresolved_count(state):
+    return sum(p.get('provider') == 'buffer' and not p.get('publicly_verified')
+               and p.get('status') not in ('SCHEDULED', 'SENDING', 'CANCELLED_EDITORIAL')
+               for p in state['posts'].values())
 
 
 if __name__ == "__main__":
