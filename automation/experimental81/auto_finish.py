@@ -1,8 +1,8 @@
-"""Finish a complete six-scene AI-only episode and enqueue through EXISTING Buffer runner.
+"""Render unique AI scenes and enqueue through the EXISTING Buffer runner.
 
 Never call Buffer here. It stages ONE fully checked, owner-authorized AI30 post
 in main's existing queue; the preexisting TikTok Online Runner remains the sole
-publication path. No queue entry is created from fewer than six real AI assets.
+publication path. Short fallback requires 3–5 real AI assets and confirmed free-quota exhaustion.
 """
 import argparse
 import json
@@ -19,6 +19,7 @@ AUTOMATION=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(AUTOMATION))
 from experimental81 import auto_collect as collector
 from experimental81 import render
+from experimental81.rights import require_clearance
 from experimental81.quality import validate as validate_ai30, Policy
 from release_media import publish as publish_existing_release
 from visual_library import similar, fingerprint, require_evidence
@@ -48,26 +49,36 @@ def download(entry, folder):
 def choose_time(queue,state,now):
     def matches(item,stamp):
         value=item.get('scheduled_at')
+        if isinstance(value,dict):
+            raw=value.get('dateTime')
+            if not isinstance(raw,str):return False
+            try:
+                t=datetime.fromisoformat(raw.replace('Z','+00:00'))
+                if t.tzinfo is None:t=t.replace(tzinfo=ZoneInfo(value.get('timezone','America/Sao_Paulo')))
+                return t.astimezone(LOCAL)==stamp
+            except (ValueError,KeyError):return False
         if not isinstance(value,str):return False
         try:t=datetime.fromisoformat(value.replace('Z','+00:00'))
         except ValueError:return False
         if t.tzinfo is None:return False
         return t.astimezone(LOCAL)==stamp
-    # Buffer requires >5 minutes in the future and <=26h.
+    # Preserve both daily slots; ambiguous reservations remain occupied.
     local=now.astimezone(LOCAL)
     for days in (0,1):
-        chosen=(local+timedelta(days=days)).replace(hour=10,minute=0,second=0,microsecond=0)
-        if not timedelta(minutes=20)<chosen-local<timedelta(hours=26):
-            continue
-        if any(matches(item,chosen) for item in queue.get('posts',[])):
-            continue
-        if any(matches(item,chosen) for item in state.get('posts',{}).values()):
-            continue
-        return chosen
-    raise ValueError('NO_FREE_BUFFER_10H_SLOT_IN_NEXT_26H')
+        for hour in (10,18):
+            chosen=(local+timedelta(days=days)).replace(hour=hour,minute=0,second=0,microsecond=0)
+            if not timedelta(minutes=20)<chosen-local<timedelta(hours=26):
+                continue
+            if any(matches(item,chosen) for item in queue.get('posts',[])):
+                continue
+            if any(matches(item,chosen) for item in state.get('posts',{}).values()):
+                continue
+            return chosen
+    raise ValueError('NO_FREE_BUFFER_SLOT_IN_NEXT_26H')
 
 
 def build_post(state,video,quality,source_visuals,now):
+    require_clearance(state['clips'])
     queue_sha,queue=collector.content_get('automation/queue.json','main')
     _,existing_state=collector.content_get('automation/state.json','main')
     when=choose_time(queue,existing_state,now)
@@ -77,9 +88,11 @@ def build_post(state,video,quality,source_visuals,now):
     chosen_id=next((x for x in candidate_ids if x not in existing_ids),None)
     if chosen_id is None:raise ValueError('POST_IDS_OCCUPIED')
     if len({x['sha256'] for x in state['clips']})!=len(state['clips']) or len(state['clips'])<3:
-        raise ValueError('SIX_UNIQUE_GENERATED_SOURCES_REQUIRED')
+        raise ValueError('UNIQUE_GENERATED_SOURCES_REQUIRED')
     prior_quality=[p.get('quality',{}) for p in queue['posts']]
     prior_quality+=list(existing_state.get('posts',{}).values())
+    archive=AUTOMATION/'visual_history.json'
+    if archive.exists():prior_quality.append(json.loads(archive.read_text()))
     # All sources were genuine model video outputs, not reference stock.
     quality.update(visual_policy_version=1,visual_distinct=True,
                    visual_sources=source_visuals,
@@ -91,7 +104,10 @@ def build_post(state,video,quality,source_visuals,now):
                    required_public_credits=[],
                    # The owner explicitly authorized the first fully AI video
                    # as a real publication test without separate preview.
-                   editorial_approved=True,
+                   editorial_approved=False,
+                   owner_waived_preview=True,
+                   commercial_license_clearance=True,
+                   licensed_sources=[{k:clip[k] for k in ('sha256','commercial_license_clearance','commercial_license_evidence')} for clip in state['clips']],
                    editorial_basis='Owner authorized live AI30 test on 2026-11-03; no human visual quality certification',
                    machine_checks_only=True,
                    professional_quality_certified=False)
@@ -113,11 +129,49 @@ def build_post(state,video,quality,source_visuals,now):
           'editorial_review':{'type':'owner_waived_preview',
              'owner_consent_reference':'automation/experimental81/FIRST-PUBLICATION-CONSENT.md',
              'verified':'technical+duplicate+scene_heuristics',
-             'not_verified':'human_perceptual_scene_review; commercial derivative licensing'},
+             'not_verified':'human_perceptual_scene_review'},
           'ai_disclosure_required':True}
     # Reuse project's duplicate/visual fingerprints gate before remotely staging.
     require_evidence(post,prior_quality)
     return queue_sha,queue,post
+
+
+def render_episode(state, folder, source_folder=None):
+    collector.check_inventory(state)
+    count=len(state['clips'])
+    if not 3 <= count <= 6:raise ValueError('AI_SCENE_COUNT_REQUIRED_3_TO_6')
+    out=Path(folder)
+    out.mkdir(parents=True,exist_ok=True)
+    sources=[]
+    visuals=[]
+    for item in state['clips']:
+        src=(Path(source_folder)/('ai-shot-'+str(item['slot'])+'.mp4')
+             if source_folder else download(item,out))
+        if render.sha(src)!=item['sha256']:raise ValueError('AI30_SOURCE_HASH_MISMATCH')
+        visual=fingerprint(src,item['url'])
+        if any(similar(visual,v) for v in visuals):
+            raise ValueError('AI30_VISUAL_REPETITION')
+        visuals.append(visual)
+        sources.append({'path':str(src),'sha256':item['sha256'],'kind':'ai',
+            'model':item['model'],'source_url':item['url'],
+            'license_url':'https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers',
+            'generation_evidence':item['generation_evidence']['request_sha256'],
+            'visual_review_passed':True,
+            'review_method':'automated distinctness, decode and owner waived preview; not human perceptual approval',
+            'derivative_license_status':'cleared' if item.get('commercial_license_clearance') is True else 'unconfirmed'})
+    count=len(sources)
+    target=5*count
+    lines=collector.SCRIPT[:count]
+    narration=render.synthesize(out/'speech',lines,target_seconds=target)
+    manifest={'experimental_only':True,'script':lines,
+              'clips':sources,'narration':narration}
+    output=render.compose(manifest,out/'render','AI_ONLY',target_seconds=target)
+    quality=validate_ai30(output['video_path'],policy=Policy(target_seconds=target))
+    if (quality.get('technical_pass') is not True
+            or output.get('ai_seconds')!=target or output.get('real_seconds')!=0
+            or len(output['shots'])<count):
+        raise ValueError('AI30_FULL_VIDEO_NOT_VERIFIED')
+    return output,quality,visuals
 
 
 def finish():
@@ -125,7 +179,7 @@ def finish():
     collector.check_inventory(state)
     if len(state['clips'])<3 or state['status'] not in ('READY','COLLECTING'):
         return {'status':'NOT_READY','clips':len(state['clips'])}
-    if len(state['clips'])<6 and state.get('last_attempt',{}).get('error') not in ('QUOTA_OR_GPU_BUDGET','CONSERVATIVE_WINDOW_ESTIMATE_FULL'):
+    if len(state['clips'])<6 and (state.get('last_attempt') or {}).get('error') not in ('QUOTA_OR_GPU_BUDGET','CONSERVATIVE_WINDOW_ESTIMATE_FULL'):
         return {'status':'WAITING_FOR_QUOTA_CONFIRMATION','clips':len(state['clips'])}
     # Repair interrupted handoff: queue write can succeed while the following
     # experimental inventory checkpoint fails. Never create another post.
@@ -140,7 +194,8 @@ def finish():
                   'episode_sequence':state['episode_sequence'],
                   'post_id':old_post['id'],'video_sha256':old_post['quality']['sha256'],
                   'video_url':old_post['video_url'],'scheduled_at':old_post['scheduled_at'],
-                  'publication_verified':False,'recovered_from_queue':True}
+                  'publication_verified':False,'recovered_from_queue':True,
+                  'clips':state['clips']}
         state['publish_history'].append(recovery)
         state['last_output']=recovery
         state['episode_sequence']+=1
@@ -151,33 +206,9 @@ def finish():
         return {'status':'QUEUED_ALREADY_RECOVERED','post_id':old_post['id']}
     with tempfile.TemporaryDirectory(prefix='ai30-final-') as folder:
         out=Path(folder)
-        sources=[]
-        visuals=[]
-        for item in state['clips']:
-            src=download(item,out)
-            visual=fingerprint(src,item['url'])
-            if any(similar(visual,v) for v in visuals):
-                raise ValueError('AI30_VISUAL_REPETITION')
-            visuals.append(visual)
-            sources.append({'path':str(src),'sha256':item['sha256'],'kind':'ai',
-                'model':item['model'],'source_url':item['url'],
-                'license_url':'https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers',
-                'generation_evidence':item['generation_evidence']['request_sha256'],
-                'visual_review_passed':True,
-                'review_method':'automated distinctness, decode and owner waived preview; not human perceptual approval',
-                'derivative_license_status':'unconfirmed'})
-        count=len(sources)
-        target=5*count
-        lines=collector.SCRIPT[:count]
-        narration=render.synthesize(out/'speech',lines,target_seconds=target)
-        manifest={'experimental_only':True,'script':lines,
-                  'clips':sources,'narration':narration}
-        output=render.compose(manifest,out/'render','AI_ONLY',target_seconds=target)
-        quality=validate_ai30(output['video_path'],policy=Policy(target_seconds=target))
-        if (quality.get('technical_pass') is not True
-                or output.get('ai_seconds')!=target or output.get('real_seconds')!=0
-                or len(output['shots'])<count):
-            raise ValueError('AI30_FULL_VIDEO_NOT_VERIFIED')
+        output,quality,visuals=render_episode(state,out)
+        # Render evidence does not grant commercial rights or publish consent.
+        require_clearance(state['clips'])
         now=collector.now_utc()
         # The only publication route is the existing Buffer queue; no other
         # API publisher, no new TikTok credentials, and no direct TikTok calls.
@@ -193,7 +224,7 @@ def finish():
         if post_id is None:raise ValueError('NO_POST_ID_AVAILABLE')
         video_url=publish_existing_release(output['video_path'],post_id,quality)
         qsha,q,post=build_post(state,video_url,quality,visuals,now)
-        if qsha!=existing_sha:
+        if qsha!=existing_sha or post['id']!=post_id or post['scheduled_at']!=when.isoformat():
             raise ValueError('QUEUE_CHANGED_DURING_MEDIA_UPLOAD_RECHECK')
         if any(p.get('video_url')==video_url or p.get('quality',{}).get('sha256')==quality['sha256']
                for p in q['posts']):
@@ -206,7 +237,7 @@ def finish():
             'episode_sequence':state['episode_sequence'],'post_id':post['id'],
             'queue_commit':staged,'video_sha256':quality['sha256'],
             'video_url':video_url,'scheduled_at':post['scheduled_at'],
-            'publication_verified':False}
+            'publication_verified':False,'clips':state['clips']}
         state['publish_history'].append(completion)
         # Preserve the queued output and allow future episodes without losing
         # already consumed request fingerprints in the separate quota ledger.
@@ -221,7 +252,19 @@ def finish():
                 'queue_commit':staged,'publication_verified':False}
 
 
-def main():
+def main(argv=()):
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--render-local',type=Path,metavar='OUTPUT_DIR',
+                        help='Render only: no remote state writes or publication')
+    parser.add_argument('--source-folder',type=Path,
+                        help='Existing ai-shot-N.mp4 files; SHA-256 checked')
+    parser.add_argument('--inventory',type=Path,default=Path(__file__).with_name('auto_inventory.json'))
+    args=parser.parse_args(argv)
+    if args.render_local:
+        state=json.loads(args.inventory.read_text())
+        output,quality,_=render_episode(state,args.render_local,args.source_folder)
+        return {'status':'RENDERED_LOCAL_ONLY','video_path':output['video_path'],
+                'quality':quality,'publication_verified':False}
     if collector.now_utc().tzinfo is None:raise RuntimeError('TIMEZONE_MISSING')
     if (collector.os.getenv('GITHUB_ACTIONS')!='true'
             or collector.os.getenv('GITHUB_WORKFLOW')!='CasaSemEsforco AI30 Free Collector'
@@ -231,10 +274,27 @@ def main():
     return finish()
 
 
+def safe_reason(exc):
+    # Only controlled media/policy errors may enter public Actions logs.
+    message=str(exc)
+    if isinstance(exc,ValueError) and re.fullmatch(r'[A-Z][A-Z0-9_]{2,100}',message):
+        return message
+    if isinstance(exc,ValueError) and message.startswith('Audio/video stream timing mismatch'):
+        return 'AV_STREAM_TIMING_MISMATCH'
+    if isinstance(exc,ValueError) and message.startswith('Narration requires excessive speed change'):
+        return 'NARRATION_TEMPO_OUT_OF_RANGE'
+    if isinstance(exc,ValueError) and message == 'Caption cannot fit safely; shorten editorial text':
+        return 'CAPTION_DOES_NOT_FIT_SAFE_AREA'
+    return 'UNEXPECTED_FINISH_ERROR_BODY_OMITTED'
+
+
 if __name__=='__main__':
     try:
-        print(json.dumps(main(),ensure_ascii=False,indent=2))
+        result=main(sys.argv[1:])
+        print(json.dumps(result,ensure_ascii=False,indent=2))
+        if result.get('status','').startswith('SAFE_BLOCKED'):
+            sys.exit(2)
     except Exception as exc:
         print(json.dumps({'status':'FINISH_BLOCKED','error_type':type(exc).__name__,
-                          'reason':'No unverified output was staged; inspect safe local logs'}))
+                          'reason':safe_reason(exc)}))
         sys.exit(2)

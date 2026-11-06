@@ -123,7 +123,7 @@ def plan(clips, profile, target_seconds=30):
         used[selected] += length
         remaining[category] -= length
     if abs(sum(s['duration'] for s in shots) - target_seconds) > .001:
-        raise ValueError('Plan must total 30 seconds')
+        raise ValueError('PLAN_DURATION_MISMATCH')
     return shots
 
 
@@ -132,7 +132,7 @@ def synthesize(folder, lines=SCRIPT, target_seconds=30):
     from narration import load_engine
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
-    engine = load_engine(folder/'voice-cache', 'kokoro-female')
+    engine = load_engine(Path(os.getenv('AI30_VOICE_CACHE', str(folder/'voice-cache'))), 'kokoro-female')
     pcm_parts, segments, position, expected = [], [], 0.0, None
     for index, sentence in enumerate(lines):
         path = folder/f'utterance-{index}.wav'
@@ -162,7 +162,43 @@ def synthesize(folder, lines=SCRIPT, target_seconds=30):
           '-t',str(target_seconds),'-ar','48000','-ac','1',str(target)])
     return {'path': str(target.resolve()), 'sha256': sha(target), 'engine': engine.name, 'language': 'pt-BR',
             'tempo': tempo, 'timing_method': 'Measured utterance boundaries; sentence-level synchronization, not word-level forced alignment',
-            'timings': [[start/tempo, min(target_seconds,end/tempo), text] for start,end,text in segments]}
+            'timings': caption_timings([[start/tempo, min(target_seconds,end/tempo), text]
+                                       for start,end,text in segments])}
+
+
+def caption_timings(timings):
+    """Fit two measured lines per caption within each measured utterance.
+
+    Preserve every word and the sentence boundaries. Subsentence durations
+    are proportional to character counts; this is not forced word alignment.
+    """
+    from caption_layout import layout
+    result = []
+    for start, end, text in timings:
+        chunks, current = [], ''
+        for word in text.split():
+            candidate = (current + ' ' + word).strip()
+            try:
+                layout(candidate)
+            except ValueError:
+                if not current:
+                    raise
+                chunks.append(current)
+                layout(word)
+                current = word
+            else:
+                current = candidate
+        if current:
+            chunks.append(current)
+        if not chunks or end <= start:
+            raise ValueError('INVALID_CAPTION_SEGMENT')
+        total = sum(len(chunk) for chunk in chunks)
+        cursor = start
+        for index, chunk in enumerate(chunks):
+            stop = end if index == len(chunks)-1 else cursor + (end-start)*len(chunk)/total
+            result.append([cursor, stop, chunk])
+            cursor = stop
+    return result
 
 
 def fetch_demo_sources(folder):

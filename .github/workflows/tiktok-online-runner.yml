@@ -52,7 +52,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install media validator
-        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
 
       - name: Test publishing safeguards
         env:

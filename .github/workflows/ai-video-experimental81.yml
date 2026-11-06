@@ -38,6 +38,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install measured caption dependency
+        run: python -m pip install 'Pillow==12.3.0'
       - name: Test all experimental controls without apt, GPU or service credentials
         run: python -m unittest discover -s automation/tests -p 'test_*81.py' -v
       - name: Confirm production remains disconnected

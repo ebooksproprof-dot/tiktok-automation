@@ -26,12 +26,12 @@ class BufferAI81Tests(unittest.TestCase):
     def test_ai_only_30_media_uses_explicit_opt_in(self):
         item={'video_origin':'ai_only30',
               'video_url':'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/example.mp4',
-              'quality':{'sha256':'a'*64}}
+              'quality':{'sha256':'a'*64,'ai_generated_seconds':30}}
         with patch.object(buffer_runner.urllib.request,'urlopen',return_value=io.BytesIO(b'not-a-real-mp4')),\
-             patch.object(buffer_runner,'validate',return_value={'sha256':'a'*64}) as check:
+             patch('experimental81.quality.validate',return_value={'sha256':'a'*64}) as check:
             buffer_runner.verify_hosted(item)
         check.assert_called_once()
-        self.assertEqual(check.call_args.kwargs,{'ai_only30':True})
+        self.assertEqual(check.call_args.kwargs['policy'].target_seconds,30)
 
     def test_legacy_video_keeps_one_arg_validator(self):
         item={'video_url':'https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/example.mp4',

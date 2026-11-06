@@ -128,7 +128,8 @@ class FinishPolicyTests(unittest.TestCase):
         self.assertEqual(chosen.hour,10)
         existing={'posts':[{'scheduled_at':chosen.isoformat()}]}
         next_date=auto_finish.choose_time(existing,{'posts':{}},now)
-        self.assertEqual((next_date-chosen).days,1)
+        self.assertEqual((next_date-chosen).total_seconds(),8*3600)
+        self.assertEqual(next_date.hour,18)
 
     def test_recover_existing_post_after_inventory_checkpoint_failure(self):
         urls=['https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-11/clip-'+str(i)+'.mp4' for i in range(6)]

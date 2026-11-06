@@ -1,0 +1,217 @@
+{
+  "start_commit": "ff2776ff43c707ad525e35b188fafac1af921653",
+  "baseline_tests": 401,
+  "final_tests": 414,
+  "failures": 0,
+  "new_ai_requests": 0,
+  "new_publications_confirmed": 0,
+  "reproduced_error": "ValueError: Caption cannot fit safely; shorten editorial text",
+  "full_render": {
+    "status": "RENDERED_LOCAL_ONLY",
+    "video_path": "/workspace/ai30-validation/full-episode/render/experimental81-088873c6a4ef7791.mp4",
+    "quality": {
+      "profile": "hybrid30",
+      "technical_pass": true,
+      "editorial_approved": false,
+      "publication_enabled": false,
+      "sha256": "46e80ddf7a7258f0a731e111aea9d63d9c10b295ec98abab00433ef5aafe4892",
+      "duration": 29.977,
+      "duration_tolerance_seconds": 0.15,
+      "size": 9877241,
+      "width": 1080,
+      "height": 1920,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "audio_mean_db": -15.2,
+      "av_start_delta_seconds": 0.0,
+      "av_end_delta_seconds": 0.010333,
+      "lip_sync_verified": false,
+      "black_intervals_over_300ms": 0,
+      "silence_intervals_over_800ms": 0
+    },
+    "publication_verified": false
+  },
+  "fallback_renders": [
+    {
+      "count": 3,
+      "quality": {
+        "profile": "hybrid30",
+        "technical_pass": true,
+        "editorial_approved": false,
+        "publication_enabled": false,
+        "sha256": "ea85bdf8a6a00f918a5b6137cea996e6210e558973825022e5e4d908af848390",
+        "duration": 14.975,
+        "duration_tolerance_seconds": 0.15,
+        "size": 3914745,
+        "width": 1080,
+        "height": 1920,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "audio_mean_db": -15.2,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.008333,
+        "lip_sync_verified": false,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0
+      },
+      "video_path": "/workspace/ai30-validation/fallback-3/render/experimental81-4f7fb85299e07d9c.mp4",
+      "shots": [
+        {
+          "source_index": 0,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 1,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 2,
+          "start": 0.0,
+          "duration": 5.0
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "quality": {
+        "profile": "hybrid30",
+        "technical_pass": true,
+        "editorial_approved": false,
+        "publication_enabled": false,
+        "sha256": "a634b3915ba2a4367f3783c8524f0f9d16c906d013b80818efca56143ee88868",
+        "duration": 19.975,
+        "duration_tolerance_seconds": 0.15,
+        "size": 5929717,
+        "width": 1080,
+        "height": 1920,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "audio_mean_db": -15.2,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.008333,
+        "lip_sync_verified": false,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0
+      },
+      "video_path": "/workspace/ai30-validation/fallback-4/render/experimental81-f05057b625330a71.mp4",
+      "shots": [
+        {
+          "source_index": 0,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 1,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 2,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 3,
+          "start": 0.0,
+          "duration": 5.0
+        }
+      ]
+    },
+    {
+      "count": 5,
+      "quality": {
+        "profile": "hybrid30",
+        "technical_pass": true,
+        "editorial_approved": false,
+        "publication_enabled": false,
+        "sha256": "06d826d9fbd0cb9ceed5aaff315b19b3e2ff886e42a95649fe89b0a141c286b6",
+        "duration": 24.977,
+        "duration_tolerance_seconds": 0.15,
+        "size": 7591821,
+        "width": 1080,
+        "height": 1920,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "audio_mean_db": -15.2,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.010333,
+        "lip_sync_verified": false,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0
+      },
+      "video_path": "/workspace/ai30-validation/fallback-5/render/experimental81-321487b9749b4ead.mp4",
+      "shots": [
+        {
+          "source_index": 0,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 1,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 2,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 3,
+          "start": 0.0,
+          "duration": 5.0
+        },
+        {
+          "source_index": 4,
+          "start": 0.0,
+          "duration": 5.0
+        }
+      ]
+    }
+  ],
+  "licenses": {
+    "checked_at": "2026-11-06T00:22:20.540241+00:00",
+    "fetched": [
+      {
+        "component": "wan_repository_code",
+        "url": "https://raw.githubusercontent.com/Wan-Video/Wan2.2/main/LICENSE.txt",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "license": "Apache-2.0"
+      },
+      {
+        "component": "lightx2v_repository_code",
+        "url": "https://raw.githubusercontent.com/ModelTC/LightX2V/main/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "license": "Apache-2.0"
+      },
+      {
+        "component": "kokoro_onnx_wrapper",
+        "url": "https://raw.githubusercontent.com/thewh1teagle/kokoro-onnx/main/LICENSE",
+        "sha256": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+        "license": "MIT"
+      }
+    ],
+    "commercial_clearance": false,
+    "unverified": [
+      "Exact Space weights and Lightx2v LoRA revision/license",
+      "Reference Pexels license terms and third-party rights",
+      "Exact Kokoro weights/voice terms"
+    ],
+    "network_blocker": "huggingface.co and www.pexels.com not in enforced custom allowed domains; API access also denied",
+    "note": "Repository code licenses alone do not clear all weights, derivatives, references or generated output."
+  },
+  "preserved_files": {
+    "automation/experimental81/auto_inventory.json": "c46d090f46d82a44fd85afdb16760ee288cb779d9c69a66e193b40c55609aba1",
+    "automation/experimental81/ledger.json": "8b43a7304ed9c75dc54b55908884627696aac094a8dac4394ea663d7519dcc2b",
+    "automation/queue.json": "406522668444e9d175ecca918bfc793db6403fd0dc3613a2299f1932b851042c",
+    "automation/state.json": "439356145f39d70951d42c24c6f7ce98a24da6f79fdf7a0c75e67cfa0651b081",
+    "automation/visual_history.json": "562effa78c9f47f3bf2dcdd22658d4e331908b3f847a5fe0951e857f6ba7a9c7"
+  },
+  "publisher_runs": {
+    "42105299182": "Buffer GraphQL request failed (body omitted in existing logs)",
+    "42097979809": "Buffer budget blocked: ROLLING_QUOTA_OR_BACKOFF",
+    "42088832562": "Buffer GraphQL request failed (body omitted in existing logs)"
+  }
+}

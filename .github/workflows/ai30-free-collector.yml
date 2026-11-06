@@ -1,0 +1,103 @@
+name: CasaSemEsforco AI30 Free Collector
+
+on:
+  schedule:
+    # 03:10, 09:10 and 13:10 Sao Paulo. The afternoon check matters
+    # when the prior window began after 09:10; it never resets 24h quota.
+    - cron: '10 6,12,16 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ai30-free-collector.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: casasemesforco-ai30-collector
+  cancel-in-progress: false
+
+env:
+  ORT_DISABLE_TELEMETRY: '1'
+  HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+  AI30_MAIN_SCHEDULER_ALLOW: 'true'
+  AI_VIDEO_EXPERIMENTAL_ENABLED: 'true'
+
+jobs:
+  config-smoke:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/ai-video-hybrid-30s
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify AI30 no-charge controls
+        run: |
+          python -m unittest discover -s automation/tests -p 'test_*81.py' -v
+          python automation/experimental81/auto_collect.py --dry-run
+  collect-and-stage:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout isolated, previously preserved AI30 code
+        uses: actions/checkout@v4
+        with:
+          ref: feature/ai-video-hybrid-30s
+          persist-credentials: false
+      - name: Prepare Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify offline publishing and budget guards
+        id: preflight
+        run: |
+          python -m unittest discover -s automation/tests -p 'test_*81.py' -v
+          python automation/experimental81/auto_collect.py --dry-run
+      - name: Install free CPU media tools only (never paid GPU)
+        id: install
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null || ! command -v espeak-ng >/dev/null; then
+            sudo apt-get -o Acquire::Retries=2 update -qq
+            sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng fonts-dejavu-core
+          fi
+          python -m pip install --disable-pip-version-check \
+            'gradio_client>=1.13,<3' 'socksio>=1.0,<2' \
+            'Pillow==12.3.0' 'kokoro-onnx==0.6.1' 'onnxruntime==1.31.0'
+          command -v ffmpeg && command -v ffprobe && command -v espeak-ng
+      - name: Attempt bounded ZeroGPU generation and persist every useful clip
+        id: collect
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
+        run: |
+          python automation/experimental81/auto_collect.py
+      - name: Complete and queue ONLY fully verified AI30 output
+        id: finish
+        if: always() && steps.preflight.outcome == 'success' && steps.install.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python automation/experimental81/auto_finish.py
+      - name: Accurate final run summary
+        if: always()
+        run: |
+          echo '## AI30 free collector' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Safety preflight: ${{ steps.preflight.outcome }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'CPU dependencies: ${{ steps.install.outcome }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'ZeroGPU bounded attempt: ${{ steps.collect.outcome }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'AI-only composition and existing queue handoff: ${{ steps.finish.outcome }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'A green workflow alone does not mean a TikTok video was published.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Inspect automation/experimental81/auto_inventory.json and the existing Buffer/TikTok runner state.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Fail when required composition did not succeed
+        if: always() && steps.finish.outcome != 'success'
+        run: |
+          echo '::error::Required AI video assembly failed or was skipped. No publication is confirmed.'
+          exit 1
