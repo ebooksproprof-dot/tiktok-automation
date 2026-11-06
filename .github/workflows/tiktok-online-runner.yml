@@ -3,8 +3,10 @@ name: TikTok Online Runner
 on:
   # A shared concurrency group can replace pending push runs. Always reconcile
   # once trusted main-branch creation finishes; keep durable-state serialization.
+  # AI30 writes its queue through github.token, which does not trigger push runs.
+  # Its 09:10 collection also finishes after the 09:07 preparation cron.
   workflow_run:
-    workflows: [CasaSemEsforco Daily Video Creation]
+    workflows: [CasaSemEsforco Daily Video Creation, CasaSemEsforco AI30 Free Collector]
     types: [completed]
     branches: [main]
   push:
