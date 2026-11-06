@@ -697,7 +697,8 @@
       ],
       "scheduled_at": "2026-11-06T01:46:29-03:00",
       "publicly_verified": false,
-      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+      "buffer_post_id": "6aed59747b7e47e8f40a39a7"
     }
   },
   "buffer_api_usage": [
@@ -889,7 +890,8 @@
     "2026-11-05T20:39:15.698152Z",
     "2026-11-06T04:16:39.607160Z",
     "2026-11-06T04:37:05.015935Z",
-    "2026-11-06T04:37:05.206529Z"
+    "2026-11-06T04:37:05.206529Z",
+    "2026-11-06T04:37:08.559878Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -897,25 +899,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 148,
-        "reset_at": "2026-11-06T04:52:05.320853Z",
-        "observed_at": "2026-11-06T04:37:05.320853Z"
+        "remaining": 147,
+        "reset_at": "2026-11-06T04:52:06.227630Z",
+        "observed_at": "2026-11-06T04:37:09.227630Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 596,
-        "reset_at": "2026-11-06T20:39:16.320853Z",
-        "observed_at": "2026-11-06T04:37:05.320853Z"
+        "remaining": 595,
+        "reset_at": "2026-11-06T20:39:17.227630Z",
+        "observed_at": "2026-11-06T04:37:09.227630Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 809,
-        "reset_at": "2026-11-16T22:01:05.320853Z",
-        "observed_at": "2026-11-06T04:37:05.320853Z"
+        "remaining": 808,
+        "reset_at": "2026-11-16T22:01:06.227630Z",
+        "observed_at": "2026-11-06T04:37:09.227630Z"
       }
     },
     "consecutive_errors": 0,
