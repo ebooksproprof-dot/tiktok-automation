@@ -662,6 +662,42 @@
       "buffer_external_link": null,
       "buffer_sent_at_present": false,
       "last_reconcile_attempt_at": "2026-11-05T20:39:15Z"
+    },
+    "casasem-2026-11-06-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-06T04:37:06Z",
+      "sha256": "38174601f1dcf86f7af67f6fadce118870dcc60339a6e53d06329dc7f8b7d372",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-06-1-38174601f1dcf86f.mp4",
+      "concept": "vassoura-pa-residuos-91",
+      "script_sha256": "50878e2b549b6fabe0e681f39d61038d1fabf4a1dc01bf7379fa5b6eb30ef219",
+      "script_lines": [
+        "Sujeira espalhada no piso?",
+        "Reúna os resíduos com movimentos curtos.",
+        "Aproxime a pá e recolha aos poucos.",
+        "Antes de começar, retire os objetos do caminho.",
+        "Escolha uma vassoura adequada ao seu piso.",
+        "Salve para a próxima limpeza."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/04/02/34821-405202995_large.mp4",
+          "sha256": "e7da0c5ea4f76261bbb8871409695d16b9cb97c3c15c00282942785f454c0fae",
+          "dhash": [
+            "878d8d87878f8f0f",
+            "878d8d9b9b898f0f",
+            "8f8d99898d8f8f0f",
+            "8d8d898d878f8f0f",
+            "87858d85878f8f0f"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-06T01:46:29-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -851,7 +887,9 @@
     "2026-11-05T00:51:59.946539Z",
     "2026-11-05T18:55:24.570614Z",
     "2026-11-05T20:39:15.698152Z",
-    "2026-11-06T04:16:39.607160Z"
+    "2026-11-06T04:16:39.607160Z",
+    "2026-11-06T04:37:05.015935Z",
+    "2026-11-06T04:37:05.206529Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -859,25 +897,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-11-06T04:31:39.833726Z",
-        "observed_at": "2026-11-06T04:16:39.833726Z"
+        "remaining": 148,
+        "reset_at": "2026-11-06T04:52:05.320853Z",
+        "observed_at": "2026-11-06T04:37:05.320853Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 598,
-        "reset_at": "2026-11-06T20:39:16.833726Z",
-        "observed_at": "2026-11-06T04:16:39.833726Z"
+        "remaining": 596,
+        "reset_at": "2026-11-06T20:39:16.320853Z",
+        "observed_at": "2026-11-06T04:37:05.320853Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 811,
-        "reset_at": "2026-11-16T22:01:05.833726Z",
-        "observed_at": "2026-11-06T04:16:39.833726Z"
+        "remaining": 809,
+        "reset_at": "2026-11-16T22:01:05.320853Z",
+        "observed_at": "2026-11-06T04:37:05.320853Z"
       }
     },
     "consecutive_errors": 0,
