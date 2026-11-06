@@ -29,3 +29,11 @@ As páginas públicas dos runs [42105299182](https://github.com/ebooksproprof-do
 4. Foram salvos no rascunho do ambiente `install_script`, `start_skill` e domínios de diagnóstico/licença/publicação. O salvamento não aplica rede nem publica a configuração: revisar/salvar nas configurações e publicar o ambiente para retomar as operações bloqueadas. Não inserir segredos no chat ou no Git.
 
 Após liberar acesso: verificar os termos exatos e registrar evidência vinculada aos hashes; checar a conexão Buffer sem submissão; executar o collector existente sem gerar novamente os seis clipes; reconciliar a fila antes de submeter uma única peça; aguardar confirmação `sent` + timestamp válido + URL `/@.casasemesforo/video/ID` obtida em leitura posterior. Não contar posts antigos, upload, render ou agendamento como cumprimento desta missão. Disponibilidade recorrente de ZeroGPU e capacidade gratuita diária não foram demonstradas.
+
+## Entrega dos commits e ativação
+
+- Correções completas de desenvolvimento enviadas em `65f1b8b`, na branch `feature/ai-video-hybrid-30s` (414 testes).
+- Reparo operacional focado em `5634239`, branch `fix/ai30-live-publisher` (336 testes na base main atual). Não inclui o merge integral do experimento nem arquivos de estado.
+- O envio direto de `5634239` à main foi rejeitado pela revisão automática de aprovação: considerou que o deployment na branch padrão exige autorização específica. Nenhum contorno foi tentado; o commit foi disponibilizado em branch de revisão. [Comparar reparo operacional](https://github.com/ebooksproprof-dot/tiktok-automation/compare/main...fix/ai30-live-publisher).
+- A main segue com o workflow antigo até essa aprovação. O collector existente obtém o código atualizado da branch experimental, mas o tratamento da falha no workflow e os reparos do publicador só serão ativados após aplicar o commit operacional.
+- Continua pendente o teste real de publicação; não há ID/URL novo do TikTok que comprove a conclusão da missão.
