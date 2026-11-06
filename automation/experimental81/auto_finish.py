@@ -205,6 +205,9 @@ def finish():
         collector.content_put(collector.INVENTORY,sha,state,
                       message='Reconcile existing AI30 queue entry without duplicate posting')
         return {'status':'QUEUED_ALREADY_RECOVERED','post_id':old_post['id']}
+    # A recurring run must not spend CPU rendering material that is already
+    # known to lack commercial clearance. Recovery above still takes priority.
+    require_clearance(state['clips'])
     with tempfile.TemporaryDirectory(prefix='ai30-final-') as folder:
         out=Path(folder)
         output,quality,visuals=render_episode(state,out)
@@ -284,12 +287,18 @@ def safe_reason(exc):
     return 'UNEXPECTED_FINISH_ERROR_BODY_OMITTED'
 
 
+def result_exit_code(result):
+    # A collection checkpoint or a wait is not a successful mandatory handoff.
+    # Local render-only mode is deliberately separate from publication.
+    return 0 if result.get('status') in (
+        'QUEUED_FOR_BUFFER', 'QUEUED_ALREADY_RECOVERED', 'RENDERED_LOCAL_ONLY') else 2
+
+
 if __name__=='__main__':
     try:
         result=main(sys.argv[1:])
         print(json.dumps(result,ensure_ascii=False,indent=2))
-        if result.get('status','').startswith('SAFE_BLOCKED'):
-            sys.exit(2)
+        sys.exit(result_exit_code(result))
     except Exception as exc:
         print(json.dumps({'status':'FINISH_BLOCKED','error_type':type(exc).__name__,
                           'reason':safe_reason(exc)}))

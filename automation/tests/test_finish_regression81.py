@@ -115,6 +115,21 @@ class FinishRegressionTests(unittest.TestCase):
         self.assertEqual(auto_finish.safe_reason(ValueError('AI30_VISUAL_REPETITION')),'AI30_VISUAL_REPETITION')
         self.assertEqual(auto_finish.safe_reason(RuntimeError('secret remote body')),'UNEXPECTED_FINISH_ERROR_BODY_OMITTED')
 
+    def test_incomplete_handoff_cannot_make_required_workflow_green(self):
+        for status in ('NOT_READY', 'WAITING_FOR_QUOTA_CONFIRMATION',
+                       'SAFE_BLOCKED_INVALID_CLOUD_CONTEXT', 'SCHEDULED', 'PUBLISHED', ''):
+            self.assertEqual(auto_finish.result_exit_code({'status': status}), 2)
+        for status in ('QUEUED_FOR_BUFFER', 'QUEUED_ALREADY_RECOVERED', 'RENDERED_LOCAL_ONLY'):
+            self.assertEqual(auto_finish.result_exit_code({'status': status}), 0)
+
+    def test_unlicensed_inventory_is_blocked_before_render_cpu_work(self):
+        state=json.loads((ROOT/'experimental81/auto_inventory.json').read_text())
+        with patch.object(auto_collect,'content_get',side_effect=[('sha',state),('q',{'posts':[]})]), \
+             patch.object(auto_finish,'render_episode') as media:
+            with self.assertRaisesRegex(ValueError,'AI_COMMERCIAL_CLEARANCE_REQUIRED'):
+                auto_finish.finish()
+        media.assert_not_called()
+
     def test_required_finish_workflow_propagates_failure(self):
         workflow=(ROOT.parent/'.github/workflows/ai30-free-collector.yml').read_text()
         finish=workflow.split('- name: Complete and queue ONLY fully verified AI30 output')[1].split('- name: Accurate final run summary')[0]
