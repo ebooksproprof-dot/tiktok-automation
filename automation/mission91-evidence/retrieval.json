@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-11-06T04:22:25.607940+00:00",
+  "files": [
+    {
+      "name": "lightx2v--Wan2.2-Lightning.json",
+      "sha256": "72990d768a49de8e4f0b3fa40f318778c670dcebc8c5076fe82f09f34b28de3c",
+      "bytes": 7007
+    },
+    {
+      "name": "hf-quota",
+      "sha256": "52d86210937d2a8945a4227d2db4cb0eccccbcc92a46ebfa610c1654ae8f2602",
+      "bytes": 226272
+    },
+    {
+      "name": "kokoro-readme",
+      "sha256": "91dcabced89db6f109b8786642f50402d3ee87450e8189589b6f85520e7f4d78",
+      "bytes": 6348
+    },
+    {
+      "name": "cbensimon--WanTransformer3DModel-sm120-cu130-raa.json",
+      "sha256": "4cdfe5117672f3f5096edd448a52310d8c8a88eb759ad7d3a397efcb56f75cb0",
+      "bytes": 5016
+    },
+    {
+      "name": "pexels",
+      "sha256": "09b49050e63aaab70d61c30a640365c2c756df887140cd7843764cd3bc331576",
+      "bytes": 80622
+    },
+    {
+      "name": "kokoro",
+      "sha256": "28122995781e111833735388841c6879e83d0d18d592bef2964d16bb134a809f",
+      "bytes": 6224
+    },
+    {
+      "name": "buffer",
+      "sha256": "91ced7c3fd66f0422f37fb1848c056354d357c44c9516441cd7d9f4f7357fa72",
+      "bytes": 124837
+    },
+    {
+      "name": "pixabay-terms",
+      "sha256": "0cb6b4998e223e0430db02e386ca946bb7685b9e6d2e2f5d3ffba9905a11bfef",
+      "bytes": 146735
+    },
+    {
+      "name": "kokoro-voices",
+      "sha256": "ec7e4941ad7e194af61e3455928528a9ff5360c7c505e412efab27d6a69ea106",
+      "bytes": 7625
+    },
+    {
+      "name": "cbensimon--Wan2.2-I2V-A14B-bf16-Diffusers.json",
+      "sha256": "d47b5e1c488bd74b10aad02c43b1d99c86202d40db522ddc554d4784e4019599",
+      "bytes": 5500
+    },
+    {
+      "name": "metricool",
+      "sha256": "e956eb36927315b254572359c5f4d75fd13c0096bce752df7b283d33d1c7b6b8",
+      "bytes": 1037822
+    },
+    {
+      "name": "kokoro-wrapper",
+      "sha256": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e",
+      "bytes": 1080
+    },
+    {
+      "name": "aoti-readme",
+      "sha256": "7ce9e5b189f6c2ee31b67a4c76f3984ebe6b2ccf83889554677e462e8f162ea8",
+      "bytes": 9824
+    },
+    {
+      "name": "lightx-exact",
+      "sha256": "c46aaccef8cd9ee7bd3282df3e5681e678d2496af91f318937d313a2015fb2e6",
+      "bytes": 8607
+    },
+    {
+      "name": "buffer-pricing",
+      "sha256": "91b9eaa30782ed4b67b47e8e22d5b8f3b2b316a2d29cff7fbc0ad9a26360dad6",
+      "bytes": 475841
+    },
+    {
+      "name": "kijai-lora-readme",
+      "sha256": "9b23cbbac3e5d80770ac458af93ddbb9cf92821aeb241ec7d1d0ed0d2f0a9e4e",
+      "bytes": 758
+    },
+    {
+      "name": "wan",
+      "sha256": "db0001537da39651f3b91b18ee7d817c57cc2036713c473f186a85e4ff79ee46",
+      "bytes": 7265
+    },
+    {
+      "name": "space",
+      "sha256": "93d7a5fc78d7f24e39084c229a2b54e5d38b2851851c82269962c45e7ef0742d",
+      "bytes": 1580
+    },
+    {
+      "name": "space_app",
+      "sha256": "c2a68ee5f877ee9d206383a1b5da4a9e7e1c42f08fbd94fe0161c43101f868c1",
+      "bytes": 13810
+    },
+    {
+      "name": "Kijai--WanVideo_comfy.json",
+      "sha256": "c0ba334018a4dd9303b17144fce0782ad6e2af4325c8b12f842face838ff8342",
+      "bytes": 25936
+    }
+  ]
+}

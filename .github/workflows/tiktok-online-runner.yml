@@ -6,7 +6,7 @@ on:
   # AI30 writes its queue through github.token, which does not trigger push runs.
   # Its 09:10 collection also finishes after the 09:07 preparation cron.
   workflow_run:
-    workflows: [CasaSemEsforco Daily Video Creation, CasaSemEsforco AI30 Free Collector]
+    workflows: [CasaSemEsforco Daily Video Creation, CasaSemEsforco AI30 Free Collector, CasaSemEsforco 9.1 reviewed recovery proof]
     types: [completed]
     branches: [main]
   push:

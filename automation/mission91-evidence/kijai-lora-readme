@@ -1,0 +1,10 @@
+14B-T2V comparison test with 4steps at 832x480x81 using Q6 GGUF T2V model as base.
+---
+Extracted from: https://huggingface.co/lightx2v/Wan2.1-T2V-14B-StepDistill-CfgDistill-Lightx2v/blob/main/distill_models/distill_model.safetensors
+<video controls autoplay width=50% src=https://cdn-uploads.huggingface.co/production/uploads/63297908f0b2fc94904a65b8/o6QiE-yCTuYS3xkbB6L9b.mp4></video>
+
+14B-I2V-480P comparison test with 4steps at 624x624x81 using Q8 GGUF I2V model as base.
+---
+Extracted from: https://huggingface.co/lightx2v/Wan2.1-I2V-14B-480P-StepDistill-CfgDistill-Lightx2v/tree/main/distill_models
+
+<video controls autoplay width=50% src=https://cdn-uploads.huggingface.co/production/uploads/63297908f0b2fc94904a65b8/xUsd2JICjweZHcDK6ckOg.mp4></video>

@@ -1,0 +1,166 @@
+{
+  "_id": "6888d4a4f21b82fca1028f4f",
+  "id": "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+  "private": false,
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "safetensors",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 5,
+  "modelId": "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+  "author": "cbensimon",
+  "sha": "1f424b0caf6617cfb63822bb0298331bcf44e0e1",
+  "lastModified": "2025-07-29T14:29:22.000Z",
+  "gated": false,
+  "disabled": false,
+  "config": {},
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "transformer/config.json"
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model.safetensors.index.json"
+    },
+    {
+      "rfilename": "transformer_2/config.json"
+    },
+    {
+      "rfilename": "transformer_2/diffusion_pytorch_model-00001-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer_2/diffusion_pytorch_model-00002-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer_2/diffusion_pytorch_model-00003-of-00003.safetensors"
+    },
+    {
+      "rfilename": "transformer_2/diffusion_pytorch_model.safetensors.index.json"
+    }
+  ],
+  "spaces": [
+    "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+    "prithivMLmods/Wan2.2-Fast",
+    "Upsampler/wan-2-2-14b-image-to-video",
+    "mcp-tools/wan-2-2-first-last-frame",
+    "dream2589632147/Dream-wan2-2-faster-Pro",
+    "multimodalart/wan-2-2-first-last-frame",
+    "rahul7star/wan22-AOT",
+    "linoyts/wan2-2-i2v-rCM",
+    "GiorgioV/test-wan-2-2-first-last-frame",
+    "Heartsync/wan2_2-I2V-14B-FAST",
+    "DawnC/VividFlow",
+    "haggai/wan2-2-fp8da-aoti-faster",
+    "cakegreen/Wan-2-2-first-last-frame",
+    "rahul7star/Wan2.2-T2V-A14B",
+    "lionfxxx/wan-2-2-first-last-frame",
+    "jbilcke-hf/Hunyuan-GameCraft",
+    "luklue/wan2-2-fp8da-aoti-faster",
+    "rahul7star/wan2-2-FAST-T2v-14B",
+    "cbensimon/wan2-2-fp8da-aoti-blocks-load",
+    "Fradeck619/wan2-2-fp8da-aoti-faster",
+    "ginigen/wan2_2-I2V-14B-FAST",
+    "rahul7star/Wan2.2-Lora",
+    "VIDraft/wan2_2-I2V-14B-FAST",
+    "Tinchote/wan-2-2-14b-image-to-video",
+    "rahul7star/wan2-2-fast14B-T2V",
+    "bep40/wan-2-2-first-last-frame",
+    "rahul7star/wan-2-2-first-last-frame-diffuser",
+    "liady/image-animate",
+    "HAL1993/wan-2-2-first-last-frame",
+    "hamza531212/wan2-2-fp8da-aoti-faster",
+    "EdBanshee/Wan22_14B_Fast_I2I",
+    "mrwajahatalimir/mir-image-generator",
+    "Sabhan/wan-2-2-first-last-frame",
+    "GiorgioV/Test_Space_Wan",
+    "RosticFACE/video",
+    "wifi-lover/test",
+    "thepetitgoldfish/wan2-2-fp8da-aoti-faster",
+    "thepetitgoldfish/wan-2-2-first-last-frame",
+    "jiuface/wan-fast",
+    "Paulina2/wan2-2-fp8da-aoti-faster",
+    "Aziz0123/virtual-video-ai",
+    "tatendachirume/Ai.avatar.wan2.fp8",
+    "wannji86/wan22-AOT",
+    "Spirit43/wan2-2-spirit-v2",
+    "qu33fy/Dream-wan2-2-faster-Pro",
+    "frogleo/ai-video-maker",
+    "Pimmert/wan2-2-fp8da-aoti-faster",
+    "cherry-moxxa04/wan2-2-fp8da-aoti-faster",
+    "silverfx/wan2-2-fp8da-aoti-faster",
+    "Catniti/wan2-2-fp8da-aoti-faster",
+    "cbensimon/wan2-2-fp8da-aoti-81-frames",
+    "cbensimon/wan2-2-fp8da-aoti-81-frames-duration",
+    "bep40/wan2-2-fp8da-faster",
+    "wana14/Wan2.2-T2V-A14B",
+    "Aleksmorshen/wan2-2-fp8da-aoti-faster",
+    "dinhvietduy/wan2-2-fp8da-aoti-faster",
+    "MindCraft24729/wan2-2-fp8da-aoti-faster",
+    "rahul7star/wan2.2-14B-TI2V-ALL",
+    "rahul7star/Wan2.2-Lora-1",
+    "Paloppp/wan2-2-fpnsbbwvvd",
+    "alxsnchz/wan2-2-fp8da-aoti-faster",
+    "ucelloloquace/wan2-2-fp8da-aoti-faster2",
+    "Spericolato/wan2-2-fp8da-aoti-faster2",
+    "lionfxxx/wan2-2-fp8da-aoti-faster",
+    "Vijayveer99/Wan_vifro",
+    "HAL1993/MDFi2vfast9f3b7c2d1e6f8a4b4c8e2a1f9d7g6h5z7x3c9v1b5n2m8l4q1w2e3r4t5y6u7i8",
+    "Imoveispr/Aduc-sdr-2_5",
+    "imchos/wan2-2-fp8da-aoti-faster",
+    "tddandroid/wan2-2-fp8da-aoti-faster",
+    "EdBanshee/Wan22_14B_Lightning_14b_I2V_UI",
+    "kingfishcooker/sexyboigobli34213",
+    "kingfishcooker/fns5525252555555",
+    "kingfishcooker/secyfishcookfisher",
+    "kingfishcooker/workshop3212312321",
+    "JS6969/wan-2-2-first-last-frame",
+    "abdulaliansari/wan2-2-fp8da-aoti-faster",
+    "Brdhgs/wan2-2-fp8da-aoti-faster",
+    "xxcttn/wan2-2-fp8da-aoti-faster",
+    "xxcttn/wan-2-2-first-last-framed",
+    "Fonseca96953/wan2-2-fp8da-aoti-faster2",
+    "WallingWalling/Walling",
+    "itsVilen/wan2-2-fp8da-aoti-faster",
+    "ayaanji123/wan2-2-fp8da-aoti-faster",
+    "ginipick/wan2_2-I2V-14B-FAST",
+    "haggai/wan-2-2-first-last-frame",
+    "therutss/wan-22-aio",
+    "savvyf/kelvinapptest",
+    "ANGELOLO1111/Hunyuan-GameCraft",
+    "t3chjames/wan2-2-fp8da-aoti-faster",
+    "rahul7star/wan22-AOT-Lora",
+    "kp-forks/wan2-2-fp8da-aoti-faster",
+    "HAL1993/wan2-2",
+    "dannyboy84/vhmgvhm",
+    "marrtrobinson/wan_more_images",
+    "JudeRobert/wan-2-2-first-last-frame",
+    "johny6969/clean-bot-98",
+    "Oss11/wan2-2-fp8da-aoti-faster",
+    "Revrse/wanflf",
+    "Gippoo/wan2-2-fp8da-aoti-faster",
+    "aakashraawat/wan2_2_I2V_14b"
+  ],
+  "createdAt": "2025-07-29T14:03:16.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 29184000,
+      "BF16": 14259717184
+    },
+    "total": 14288901184
+  },
+  "usedStorage": 57272563936
+}
