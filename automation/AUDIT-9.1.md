@@ -20,7 +20,8 @@ Escopo: retomada da main `05bfc62`, ambiente efetivamente aplicado, material exi
 - Main com a prova: 341 testes locais; 341 testes na nuvem no run `42162321026`.
 - Correção da primeira tentativa: `MEDIA_STORAGE=release` estava afetando fixtures de teste; variável limitada à etapa real de renderização. Run `42162148165` falhou antes de renderizar/enviar e não foi tratado como publicação.
 - Coletor: 91 testes pertinentes locais e 91 no run `42162290740`; inclui dois novos testes para impedir sucesso falso e renderização sem licença. Não repetir as 416 regressões anteriores como se fossem evidência nova.
-- Reconciliação Buffer: 56 testes pertinentes locais aprovados, incluindo a primeira checagem após o horário marcado.
+- Reconciliação Buffer: 58 testes pertinentes locais aprovados, incluindo a primeira checagem após o horário marcado e confirmação explícita somente por leitura.
+- Reexecução real `42164108196`: 344 testes cloud, zero chamadas Buffer, zero reenvios; mesmo ID remoto preservado enquanto o post aguardava dueAt. Modo `--confirm-post` exige reserva existente e evidência pública, não chama createPost e conserva o orçamento/cooldowns.
 
 ## Limites de continuidade
 

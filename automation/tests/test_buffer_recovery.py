@@ -97,7 +97,8 @@ class BufferRecoveryTests(unittest.TestCase):
         self.state['posts']['existing'] = entry
         remote = dict(id='remote', channelId='channel', status='scheduled',
                       schedulingType='automatic', dueAt=entry['scheduled_at'])
-        with patch.object(b.common, 'load_json', return_value=self.state), \
+        with patch('sys.stdout', new_callable=io.StringIO), \
+             patch.object(b.common, 'load_json', return_value=self.state), \
              patch.object(b.common, 'save_json'), \
              patch.dict(b.os.environ, {'BUFFER_CHANNEL_ID': 'channel'}), \
              patch.object(b, 'Client') as client:
