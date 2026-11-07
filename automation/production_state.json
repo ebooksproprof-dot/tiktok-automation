@@ -652,7 +652,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "QUEUED",
       "source_sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
       "license": {
         "source_sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
@@ -665,7 +665,7 @@
         "author": "MabelAmber",
         "commercial_use": true,
         "reviewed_at": "2026-11-07T05:49:41.926039+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "4993898f5a84ad82b61cfcfcbd8631323093ebf3c2e1fbad94d0ad678354777f",
         "license_policy": {
@@ -689,7 +689,7 @@
         "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
         "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
         "model_license_id": "Apache-2.0",
-        "family": "clothes",
+        "family": "laundry",
         "captions": [
           "The image shows a grassy field with a clothesline strung across it. The clothesline is draped with various pieces of clothing, including a pair of black pants, a red and white striped shirt, and a black jacket. The",
           "The image shows a scene with clothes hanging to dry in a field. The clothes are of various colors, including black, white, and possibly some shades of red and pink. They are spread out horizontally, indicating that they are being dried by",
@@ -703,7 +703,7 @@
         "source_sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
         "frame_mode": "preserve_full",
         "accepted": true,
-        "review_seconds": 96.509,
+        "review_seconds": 120.005,
         "human_review": false,
         "hosted_inference_calls": 0,
         "decoder_pass": true,
@@ -712,7 +712,7 @@
       }
     },
     "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "QUEUED",
       "source_sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
       "license": {
         "source_sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
@@ -725,7 +725,7 @@
         "author": "overjupiter",
         "commercial_use": true,
         "reviewed_at": "2026-11-07T05:51:20.194083+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "d2f7d95ae360d62af240ea7b51b918cb3f6bbeccf7829e12498d93d9e4881fd4",
         "license_policy": {
@@ -835,6 +835,196 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2016/09/03/4906-181288859_large.mp4": {
+      "status": "ACCEPTED",
+      "source_sha256": "428dc1410460b7197e19bd4a28ea4c6a0619da082a5f3d6d86e047bbf5d042c3",
+      "license": {
+        "source_sha256": "428dc1410460b7197e19bd4a28ea4c6a0619da082a5f3d6d86e047bbf5d042c3",
+        "source_url": "https://cdn.pixabay.com/video/2016/09/03/4906-181288859_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-4906/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "150d442de48affed8250cd9382c2bfe4a949035e75cf327ae743ae04b12d1533",
+        "author": "klimkin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T06:03:29.139784+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "150d442de48affed8250cd9382c2bfe4a949035e75cf327ae743ae04b12d1533",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image is a close-up shot of a person's hand holding a shower head. The shower head is positioned in the center of the image and is attached to a grey shower fixture. The shower head is metallic and has a shiny appearance",
+          "The image shows a person washing their hands under a running tap. The tap is positioned above the person's hands, and the water is flowing in a stream. The person's hands are wet, and they are holding the tap with their right",
+          "The image shows a person washing their hands. The hands are positioned in front of a faucet, which is the main source of water for the action. The faucet is mounted on a wall, which appears to be made of a material that is"
+        ],
+        "frame_sha256": [
+          "04ae629d9bd711fb3807f89ce9efdc9614e1bc3f2e9cae592c8bf4cd386f73f2",
+          "8da4dd6bf1631451b97b308c4e38e045388bee0ea495927d283ab2270269642b",
+          "db944db3b80a524e90a70466b1914fa9cf6b9486f617ecdca1114947c681457b"
+        ],
+        "source_sha256": "428dc1410460b7197e19bd4a28ea4c6a0619da082a5f3d6d86e047bbf5d042c3",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 120.017,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    "https://cdn.pixabay.com/video/2015/09/22/818-140182080_medium.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "4739b8bfd50e433381f7acbba61e6b87641625b1da2a95facc87cdd681d4bdce",
+      "license": {
+        "source_sha256": "4739b8bfd50e433381f7acbba61e6b87641625b1da2a95facc87cdd681d4bdce",
+        "source_url": "https://cdn.pixabay.com/video/2015/09/22/818-140182080_medium.mp4",
+        "source_page": "https://pixabay.com/videos/id-818/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "37138435a2d81c3ca3a61d0757dd3f9a4d97522d4b5277d5f481a40a4c12e9a3",
+        "author": "klimkin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T06:05:31.565591+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "37138435a2d81c3ca3a61d0757dd3f9a4d97522d4b5277d5f481a40a4c12e9a3",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a person reading a book in a library. The person is seated on a chair and appears to be focused on the book. The book is open to a page with a title that is not fully visible. The background shows a",
+          "The image shows a woman reading a book in a library. She is seated on a chair in a well-lit area with bookshelves lining the walls. The shelves are filled with various books, some of which are open, suggesting that",
+          "The image shows a library or a similar indoor space with multiple rows of bookshelves. The bookshelves are organized in a grid-like pattern, with each shelf containing a variety of books. The books are arranged in a way that"
+        ],
+        "frame_sha256": [
+          "d5e15928829e89111c8d9b40a7212e1f0cc92a46a2c8f282c2a33dccf023121c",
+          "9fb3f1eea5ed03920c4c28bca135ac8e6c11765b85a4dc9bb8ce69a0f485ca6d",
+          "04698560d995d03338870bb979624a978459d307b6c348789a892df726728595"
+        ],
+        "source_sha256": "4739b8bfd50e433381f7acbba61e6b87641625b1da2a95facc87cdd681d4bdce",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 119.817,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2015/09/27/846-140823862_medium.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "f0853faf787db96b8ff6bc42b15fabba019135ab60000eebecf1b1d4dbe66ccd",
+      "license": {
+        "source_sha256": "f0853faf787db96b8ff6bc42b15fabba019135ab60000eebecf1b1d4dbe66ccd",
+        "source_url": "https://cdn.pixabay.com/video/2015/09/27/846-140823862_medium.mp4",
+        "source_page": "https://pixabay.com/videos/id-846/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "63575df46ba9cdf7f4585c4acbc81843fa476af26312da01d093e9b506a8d27c",
+        "author": "klimkin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T06:08:21.324819+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "63575df46ba9cdf7f4585c4acbc81843fa476af26312da01d093e9b506a8d27c",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a long, indoor library setting. The library appears to be well-lit, with a warm, inviting atmosphere. The floor is polished and reflective, suggesting it is made of a smooth material like polished concrete or polished stone.",
+          "The image is a photograph taken from the inside of a building. The focal point of the image is a long, narrow hallway with a polished, light-colored floor. The hallway is lined with bookshelves on both sides,",
+          "The image depicts a well-lit, modern library or bookstore environment. The central focus is on the interior of the building, which appears to be a spacious, open space with a high ceiling. The floor is polished and reflective, suggesting a"
+        ],
+        "frame_sha256": [
+          "4e0ffcc18f520d8fe47de75bae28e5c27500cf2e1fd1b240339b5c813a53b26d",
+          "a6c043beef6a182b2cad1a87f7d3dbfd83aab2bc679a096882eb6589797005f0",
+          "f28ad65b0b9e8b9bfcb7f1ccb94f1e05c4810df3e7386d8f3f042370ae206544"
+        ],
+        "source_sha256": "f0853faf787db96b8ff6bc42b15fabba019135ab60000eebecf1b1d4dbe66ccd",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 119.366,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -862,13 +1052,22 @@
       "provider_id": "6aeeba3c229bf05daf2e0527",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-08-1": {
+      "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+        "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 1,
-    "ready_after": 1,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,

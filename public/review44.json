@@ -1,17 +1,45 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-07T05:56:25.727843+00:00",
-  "expires_at": "2026-11-07T05:56:25.727843+00:00",
-  "queue_snapshot_sha256": "e02a92e1d799c372cf9b2e39c7245b16d9a101f938b877efe0b398593cdaa4d6",
+  "generated_at": "2026-11-07T06:11:08.623170+00:00",
+  "expires_at": "2026-11-07T06:11:08.623170+00:00",
+  "queue_snapshot_sha256": "da4478936aad727278c95c5689b131cce061439afee4a47759d1542e5b1f3bb8",
   "state_snapshot_sha256": "31a90cbb92aad8048d74ae4720615c1ac0d8422547ad0fc30b5b95c7cacfacb5",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-08-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-1-448ec4a6ae33f368.mp4",
+      "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+      "script_hash": "1c957c446a9e39c2d0da5927eeb025ace5c043a43ca2fc84fb06a33c39dc980a",
+      "post_snapshot_sha256": "8b23edcfd14595e2f7de2e5a5c778c346eb635b27e90776da454496efe274273",
+      "title": "Vai colocar roupa para lavar? Mantenha os produtos na embalagem original e longe de crianças. Revise os bolsos antes de colocar as peças no tambor. Siga o manual da sua máquina e a capacidade indicada. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — overjupiter; https://pixabay.com/videos/id-33220/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — MabelAmber; https://pixabay.com/videos/id-27178/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Mantenha os produtos na embalagem original e longe de crianças.",
+        "Revise os bolsos antes de colocar as peças no tambor.",
+        "Siga o manual da sua máquina e a capacidade indicada.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-08T10:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "7e22ae1737b7bccb5f47dc43f7082e593174dec7d0957b9e9fac3a049408012f"
+  "manifest_sha256": "f835b23ce02d16e9ec419306ddfd5a17fca504881bccd6cbddd184bae7f37fec"
 }

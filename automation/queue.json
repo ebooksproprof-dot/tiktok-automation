@@ -2358,6 +2358,237 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-08-1",
+      "concept": "auto-laundry-1c957c446a9e",
+      "title": "Vai colocar roupa para lavar? Mantenha os produtos na embalagem original e longe de crianças. Revise os bolsos antes de colocar as peças no tambor. Siga o manual da sua máquina e a capacidade indicada. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — overjupiter; https://pixabay.com/videos/id-33220/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — MabelAmber; https://pixabay.com/videos/id-27178/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-07T06:03:25.558715+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+        "duration": 19.2,
+        "size": 5263504,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.019,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+            "sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+            "dhash": [
+              "7f7f5f57cfb76733",
+              "373d7933593e6733",
+              "3f3f177787871f7b",
+              "1ffcbc9e9cdf9f3f",
+              "1ffdbc9a9c9e9f3f"
+            ]
+          },
+          {
+            "source_id": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+            "sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+            "dhash": [
+              "3b9fbf61698ccce7",
+              "bf9f31616c9ccfd7",
+              "9f9f31616c8ce7d7",
+              "9f9f31654c8ce7c3",
+              "9f9f61654ccce7c7"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          13.346667,
+          6.676667
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 8,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "auto-laundry-1c957c446a9e",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+          "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — overjupiter; https://pixabay.com/videos/id-33220/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+          "Video — MabelAmber; https://pixabay.com/videos/id-27178/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+            "source_url": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-33220/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "page_sha256": "d2f7d95ae360d62af240ea7b51b918cb3f6bbeccf7829e12498d93d9e4881fd4",
+            "author": "overjupiter",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-07T05:51:20.194083+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "d2f7d95ae360d62af240ea7b51b918cb3f6bbeccf7829e12498d93d9e4881fd4",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+              "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          },
+          {
+            "source_sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+            "source_url": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-27178/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "page_sha256": "4993898f5a84ad82b61cfcfcbd8631323093ebf3c2e1fbad94d0ad678354777f",
+            "author": "MabelAmber",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-07T05:49:41.926039+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "4993898f5a84ad82b61cfcfcbd8631323093ebf3c2e1fbad94d0ad678354777f",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+              "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "laundry",
+            "captions": [
+              "A person is using a computer. The person is wearing a red shirt. The computer is white and has a lot of buttons on the screen.",
+              "In the image there is a washing machine on the left side of the image. On the right side of the image there is a person wearing a red shirt.",
+              "The image shows a washing machine with two control knobs. The washing machine is white and has a smooth surface. The control knobs are located on the front of the machine and are circular in shape. \n\n**Washing Machine Control"
+            ],
+            "frame_sha256": [
+              "29d62252965e1c3c7b1d8f6894f98efecc8027e7a314e6a17749287d8281bea8",
+              "413f256cfc1358ccdae76cfcf2b9d562ab0e8573153f185b36233caf02dfccc9",
+              "fcb1936b3dcaf268544000d3db7c7c98db61d3fe13d7784a753dc89310ae2103"
+            ],
+            "source_sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 91.567,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "laundry",
+            "captions": [
+              "The image shows a grassy field with a clothesline strung across it. The clothesline is draped with various pieces of clothing, including a pair of black pants, a red and white striped shirt, and a black jacket. The",
+              "The image shows a scene with clothes hanging to dry in a field. The clothes are of various colors, including black, white, and possibly some shades of red and pink. They are spread out horizontally, indicating that they are being dried by",
+              "The image features a dog in the center. The dog is black and white, and it is wearing a red hat. The dog is standing on a grassy field, and there are several clothes hanging in front of it. The clothes are in"
+            ],
+            "frame_sha256": [
+              "42ee22e439ec0729484d887924f9ab27dbab6dcb6815d969f3a56aa82ca7bea7",
+              "8367eedaacfd79ee3199402c096ddd9a5d238869d6a7312686e935dac4acb990",
+              "63b3dfd82ca37ca4430f912d1de1c8ea190f6bb88ca49409243e9e9dca14838e"
+            ],
+            "source_sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 120.005,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-1-448ec4a6ae33f368.mp4",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Mantenha os produtos na embalagem original e longe de crianças.",
+        "Revise os bolsos antes de colocar as peças no tambor.",
+        "Siga o manual da sua máquina e a capacidade indicada.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "1c957c446a9e39c2d0da5927eeb025ace5c043a43ca2fc84fb06a33c39dc980a",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }
