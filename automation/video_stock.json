@@ -10,19 +10,15 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T05:41:34.848752Z",
-    "channel_verified": true,
-    "cloud_probe": {
-      "cloud_readback": true,
-      "publication_attempted": false,
-      "stale_writer_rejected": true
-    },
+    "at": "2026-11-07T05:42:56.610700Z",
+    "channel_verified": null,
+    "cloud_probe": null,
     "generation_enabled": true,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "CHECK_ONLY"
+      "status": "NO_NEW_CONFIRMED_CONSUMPTION"
     },
     "stock": {
       "held_ids": [],
