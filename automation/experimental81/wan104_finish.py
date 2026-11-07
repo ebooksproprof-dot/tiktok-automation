@@ -96,6 +96,7 @@ def register_production_output(producer_store, post):
     if existing and existing.get('sha256') != post['quality']['sha256']:
         raise ValueError('EXISTING_OUTPUT_MUST_NOT_BE_OVERWRITTEN')
     if not existing:
+        require_quality(post.get('quality', {}))
         ledger['outputs'][post['id']] = {'post_id': post['id'], 'sha256': post['quality']['sha256'],
             'video_url': post['video_url'], 'status': 'QUEUED', 'origin': 'licensed_wan104',
             'scheduled_at': post['scheduled_at'], 'publicly_verified': False}
@@ -149,11 +150,7 @@ def stage(trial=False):
     if not trial and not stock_status(queue, state, wan104.now())['refill_needed']:
         return {'status': 'LICENSED_AI_READY_HELD_STOCK_FULL', 'clips': 3, 'publicly_verified': False}
     require_sources(inventory['clips'])
-    ideas = [(concept, [], lines) for lines in wan104.script_variants(inventory['episode'])]
-    old_bodies = {tuple(p.get('script_lines', [])[1:]) for p in queue['posts']
-                  if str(p.get('concept', '')).startswith('licensed-wan104-episode-')}
-    ideas = [idea for idea in ideas if tuple(idea[2][1:]) not in old_bodies]
-    ideas = novel_scripts(ideas, queue, state)
+    ideas = wan104.script_choices(inventory['episode'], queue, state)
     if not ideas:
         raise ValueError('WAN_SCRIPT_REPEATS_EXISTING_CONTENT')
     lines = ideas[0][2]
@@ -175,7 +172,7 @@ def stage(trial=False):
     else:
         post_id, when = choose_slot(queue, state, current)
     post = {'id': post_id, 'concept': concept, 'video_origin': 'ai_only30', 'quality': quality,
-        'title': ' '.join(lines)+' Cenas geradas por IA: Wan 2.2, variante FastWan 5B. '
+        'title': ' '.join(lines)+' Cenas ilustrativas geradas por inteligência artificial. '
                  'Orientações ilustrativas; siga as instruções dos fabricantes. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial',
         'scheduled_at': when.isoformat(), 'approved': True, 'consented_at': current.isoformat(),
         'approval_scope': SCOPE, 'owner_mission': '10.4', 'wan104_first_public_test': trial,

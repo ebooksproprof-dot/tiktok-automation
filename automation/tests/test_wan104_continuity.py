@@ -59,6 +59,26 @@ class WanContinuityTests(unittest.TestCase):
         self.assertTrue(remaining)
         self.assertTrue(any(lines[1:] != wan.SCRIPT[1:] for _, _, lines in remaining))
 
+    def test_exhausted_factual_bank_can_be_detected_before_generation(self):
+        used = {'posts': [{'concept': 'licensed-wan104-episode-'+str(i), 'script_lines': lines}
+                          for i, lines in enumerate(wan.script_variants(2))]}
+        self.assertFalse(wan.script_choices(2, used, {'posts': {}}))
+
+    def test_receipts_only_mirror_matching_publicly_verified_media(self):
+        receipt = {'post_id': 'p', 'sha256': 'a'*64, 'status': 'QUEUED_UNDER_EXISTING_BUFFER_CONTROLS'}
+        entry = {'status': 'SCHEDULED', 'sha256': 'a'*64, 'buffer_post_id': 'provider', 'publicly_verified': False}
+        inventory = {'outputs': [receipt]}
+        self.assertTrue(wan.sync_publication_receipts(inventory, {'posts': {'p': entry}}))
+        self.assertFalse(receipt['publicly_verified'])
+        entry.update(status='PUBLISH_COMPLETE', publicly_verified=True, public_urls=['public-url'],
+                     public_visibility_evidence={'public_playback_verified': True})
+        self.assertTrue(wan.sync_publication_receipts(inventory, {'posts': {'p': entry}}))
+        self.assertTrue(receipt['publicly_verified'])
+        self.assertEqual(receipt['publication_status'], 'PUBLISH_COMPLETE')
+        self.assertEqual(receipt['status'], 'QUEUED_UNDER_EXISTING_BUFFER_CONTROLS')
+        entry['sha256'] = 'b'*64
+        self.assertFalse(wan.sync_publication_receipts(inventory, {'posts': {'p': entry}}))
+
     def test_queue_committed_inventory_failed_recovers_without_overwriting_history(self):
         post = post_fixture(); post['concept'] = 'licensed-wan104-episode-1'
         inventory = {'episode': 1, 'clips': post['quality']['licensed_sources'], 'outputs': []}

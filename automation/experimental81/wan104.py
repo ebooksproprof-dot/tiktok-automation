@@ -58,6 +58,31 @@ def script_variants(episode):
     return [[rng.choice(bank) for bank in SCRIPT_BANKS] for _ in range(36)]
 
 
+def script_choices(episode, queue, state):
+    from content_catalog import novel_scripts
+    concept = 'licensed-wan104-episode-'+str(episode)
+    old_bodies = {tuple(p.get('script_lines', [])[1:]) for p in queue.get('posts', [])
+                  if str(p.get('concept', '')).startswith('licensed-wan104-episode-')}
+    ideas = [(concept, [], lines) for lines in script_variants(episode) if tuple(lines[1:]) not in old_bodies]
+    return novel_scripts(ideas, queue, state)
+
+
+def sync_publication_receipts(inventory, state):
+    changed = False
+    for receipt in inventory.get('outputs', []):
+        entry = state.get('posts', {}).get(receipt.get('post_id'), {})
+        if not entry or entry.get('sha256') != receipt.get('sha256'):
+            continue
+        verified = (entry.get('status') == 'PUBLISH_COMPLETE' and entry.get('publicly_verified') is True
+                    and entry.get('public_visibility_evidence', {}).get('public_playback_verified') is True)
+        update = {'publication_status': entry.get('status'), 'provider_id': entry.get('buffer_post_id'),
+                  'publicly_verified': verified, 'public_urls': entry.get('public_urls', []) if verified else [],
+                  'last_provider_check': entry.get('last_checked_at')}
+        if any(receipt.get(key) != value for key, value in update.items()):
+            receipt.update(update); changed = True
+    return changed
+
+
 def now():
     return dt.datetime.now(dt.timezone.utc)
 
@@ -206,12 +231,16 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     inventory, revision = inventory_store.load()
     if inventory.get('version') != 1 or not isinstance(inventory.get('clips'), list):
         raise ValueError('WAN104_INVENTORY_REQUIRED')
+    if not trial and sync_publication_receipts(inventory, state):
+        revision = inventory_store.save(inventory, revision)
     if reconcile_app_failure and reconcile_initial_app_failure(inventory):
         revision = inventory_store.save(inventory, revision)
     if any(r['status'] in ('INTENT_RECORDED_NO_RETRY', 'UNKNOWN_NO_RETRY') for r in inventory['requests'].values()):
         raise ValueError('UNCERTAIN_WAN_GENERATION_REQUIRES_RECONCILIATION')
     if len(inventory['clips']) >= 3:
         return {'status': 'READY_PRESERVED_NO_GPU_CALL', 'clips': len(inventory['clips'])}
+    if not trial and not script_choices(inventory['episode'], queue, state):
+        return {'status': 'SCRIPT_BANK_EXHAUSTED_CONVENTIONAL_FALLBACK_REQUIRED', 'new_gpu_calls': 0, 'publicly_verified': False}
     profile_check(profile)
     tier, token = legacy.free_hf_identity()
     ledger, _ = budget_store.load()
