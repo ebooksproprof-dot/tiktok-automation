@@ -161,6 +161,15 @@ BANK = {
     'Evite espalhar os resíduos para áreas já limpas.',
     'Mantenha os produtos longe de crianças e animais.',
     'Ao terminar, guarde os materiais em local adequado.']),
+ 'drying': ('Roupa pronta para secar?', [
+    'Confira a etiqueta antes de escolher a secagem.',
+    'Deixe espaço entre as peças para o ar circular.',
+    'Use um apoio adequado ao peso das roupas.',
+    'Prenda as peças sem deformar o tecido.',
+    'Consulte a etiqueta sobre exposição ao sol.',
+    'Guarde as peças somente quando estiverem totalmente secas.',
+    'Evite empilhar roupas ainda úmidas.',
+    'Separe as peças que exigem cuidados especiais.']),
 }
 
 
@@ -264,6 +273,8 @@ def scripts(pool, queue, state):
     iron_seen = bool(re.search(r'\biron(?:ing)?\b', descriptions))
     key = ('iron' if 'ironing' in tags and iron_seen else 'hangers' if any(w in descriptions for w in ('hanger', 'closet', 'clothing rack'))
            else 'folding') if family == 'clothes' else family
+    if family == 'laundry' and not re.search(r'\b(machine|washer|drum)\b', descriptions):
+        key = 'drying'
     hook, sentences = BANK[key]
     seed = int(hashlib.sha256(''.join(x['record']['sha256'] for x in pool).encode()).hexdigest(), 16)
     rng = random.Random(seed)
@@ -273,9 +284,12 @@ def scripts(pool, queue, state):
         if key == 'iron' and any('closet' in x['record']['selection_reason'].lower() for x in pool):
             storage = next(s for s in sentences if s.startswith('Guarde'))
             tips = rng.sample([s for s in sentences if s != storage], 3)+[storage]
+        if key == 'laundry' and 'clothesline' in tags:
+            drying_tip = next(s for s in sentences if s.startswith('Retire as roupas'))
+            tips = rng.sample([s for s in sentences if s != drying_tip], 3)+[drying_tip]
         # Ironing demonstrator first, storage footage last: keep storage advice
         # at the end instead of claiming that a hanger is an iron demonstration.
-        tips.sort(key=lambda s: 'Guarde' in s)
+        tips.sort(key=lambda s: 'Guarde' in s or 'Retire as roupas' in s)
         lines = [hook, *tips, 'Salve este cuidado para a sua rotina.']
         concept = 'auto-'+key+'-'+script_sha(lines)[:12]
         choices.append((concept, [x['record']['id'] for x in pool], lines))
@@ -351,6 +365,7 @@ def run(stage=False, soon=False, limit=2):
                 cached_review = read_json(render.ASSETS/('review-'+measured['provider_id'])/'review.json', {})
             if (cached_review.get('source_sha256') == measured['sha256']
                     and cached_review.get('frame_mode', 'reviewed_portrait') == measured['frame_mode']
+                    and cached_review.get('family') == nominate(measured)
                     and cached_review.get('revision') == REVISION and cached_review.get('accepted') is True):
                 review = cached_review
             else:
@@ -365,12 +380,12 @@ def run(stage=False, soon=False, limit=2):
             pool = pools.setdefault(review['family'], [])
             pool.append({'record': measured, 'visual_review': review, 'license': license_proof})
             capacity = sum(x['record']['duration']-.05 for x in pool)
-            if capacity < 19 and len(pool) < 3:
-                continue
             if capacity < 15:
                 continue
             if review['family'] == 'clothes':
                 pool.sort(key=lambda x: 'ironing' not in x['record']['selection_reason'].lower())
+            elif review['family'] == 'laundry':
+                pool.sort(key=lambda x: not re.search(r'\b(machine|washer|drum)\b', ' '.join(x['visual_review']['captions']).lower()))
             for x in pool:
                 record = x['record']
                 render.SOURCE[record['id']] = record['url']

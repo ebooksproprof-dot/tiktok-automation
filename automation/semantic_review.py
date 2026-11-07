@@ -23,7 +23,7 @@ FAMILIES = {
     'wiping': ({'cloth', 'microfiber', 'wiping'}, {'cloth', 'wiping', 'wipe', 'cleaning', 'countertop', 'sponge'}),
     'books': ({'books', 'bookshelf', 'shelf', 'shelves', 'bookcase'}, {'books', 'book', 'shelf', 'shelves', 'bookcase', 'library'}),
     'handwashing': ({'handwashing'}, {'washing', 'wash', 'soap', 'sink', 'hands'}),
-    'laundry': ({'washer', 'washingmachine', 'laundromat'}, {'washer', 'washing', 'machine', 'laundry', 'clothes', 'clothing', 'drum'}),
+    'laundry': ({'washer', 'washingmachine', 'laundromat', 'clothesline'}, {'washer', 'machine', 'laundry', 'clothes', 'clothing', 'drum', 'clothesline'}),
     'surfaces': ({'countertop', 'window', 'mirror'}, {'window', 'windows', 'floor', 'table', 'countertop', 'surface', 'sink', 'cabinet', 'door', 'mirror'}),
 }
 FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'waterfall', 'river', 'mountain',
@@ -54,7 +54,7 @@ def nominate(record):
         return 'handwashing'
     # Prefer the supported context with most corroborating tags: a library
     # tagged "books, shelves, closet" must not become a clothes demonstration.
-    matches = sorted(((len(hints & tags), name) for name, (hints, _) in FAMILIES.items()), reverse=True)
+    matches = sorted(((len(hints & tags), name) for name, (hints, _) in FAMILIES.items() if name != 'surfaces'), reverse=True)
     score, family = matches[0]
     if not score:
         return None

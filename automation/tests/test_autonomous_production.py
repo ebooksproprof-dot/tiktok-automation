@@ -18,6 +18,20 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_short_laundry_cycle_keeps_washing_before_drying_without_machine_claim_on_line_only(self):
+        self.assertEqual(semantic.nominate({'selection_reason': 'laundry, clothesline, drying, clothes'}), 'laundry')
+        def item(key, text, caption):
+            return {'record': {'id': key, 'sha256': key*64, 'selection_reason': text},
+                    'visual_review': {'family': 'laundry', 'captions': [caption]*3}}
+        washer = item('a', 'washer, laundry', 'A washing machine is washing clothes.')
+        line = item('b', 'clothesline, laundry', 'Clothes hanging on a clothesline.')
+        choices = production.scripts([washer, line], {'posts': []}, {'posts': {}})
+        self.assertTrue(choices)
+        self.assertTrue(all('secagem' in idea[2][-2] for idea in choices))
+        only_line = production.scripts([line], {'posts': []}, {'posts': {}})
+        self.assertTrue(all(idea[2][0] == 'Roupa pronta para secar?' for idea in only_line))
+        self.assertTrue(all('máquina' not in ' '.join(idea[2]) for idea in only_line))
+
     def test_pixabay_resolution_change_does_not_create_a_new_original_source(self):
         import visual_library as library
         first = 'https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4'
