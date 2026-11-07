@@ -21,7 +21,7 @@ from zoneinfo import ZoneInfo
 
 import render_daily as render
 from content_catalog import fingerprint as script_sha, novel_scripts
-from daily_coverage import stamp
+from daily_coverage import stamp, confirmed_live_tests
 from media_acquisition import download_and_measure, read_json, save_json
 from media_providers import crop_capable, native_full_frame, plain
 from media_rights import caption_with_credits
@@ -237,11 +237,13 @@ def choose_slot(queue, state, now, soon=False):
             when = (local+dt.timedelta(days=day)).replace(hour=hour, minute=0, second=0, microsecond=0)
             if soon and day == 0:
                 when = (local+dt.timedelta(minutes=20)).replace(microsecond=0)
+            completed_tests = confirmed_live_tests(queue, state, when.date())
             if (when < local+dt.timedelta(minutes=15) or when in reservations.values()
-                    or sum(x.date() == when.date() for x in reservations.values()) >= 2):
+                    or sum(x.date() == when.date() for key, x in reservations.items() if key not in completed_tests) >= 2):
                 continue
             occupied = {p.get('id') for p in queue['posts']} | set(state['posts'])
-            post_id = next((f'casasem-{when.date()}-{n}' for n in (1, 2)
+            numbers = (1, 2, 3) if completed_tests else (1, 2)
+            post_id = next((f'casasem-{when.date()}-{n}' for n in numbers
                             if f'casasem-{when.date()}-{n}' not in occupied), None)
             if post_id:
                 return post_id, when

@@ -44,8 +44,16 @@ def verified_asset(asset, name, digest, size):
 
 def publish(path, post_id, quality):
     path = Path(path)
-    if not re.fullmatch(r'casasem-\d{4}-\d{2}-\d{2}-[12]', post_id):
+    if not re.fullmatch(r'casasem-\d{4}-\d{2}-\d{2}-[123]', post_id):
         raise ValueError('Invalid video ID')
+    if post_id.endswith('-3'):
+        import datetime as dt
+        from daily_coverage import confirmed_live_tests
+        root = Path(__file__).resolve().parent
+        if not confirmed_live_tests(json.loads((root/'queue.json').read_text()),
+                                    json.loads((root/'state.json').read_text()),
+                                    dt.date.fromisoformat(post_id[8:18])):
+            raise ValueError('Third ID requires a separately confirmed authorized live test; routine limit remains two')
     body = path.read_bytes()
     digest = hashlib.sha256(body).hexdigest()
     if not quality.get('technical_pass') or digest != quality.get('sha256') or len(body) > 20_000_000:

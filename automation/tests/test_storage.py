@@ -9,6 +9,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import release_media as r
 
 class ReleaseStorageTests(unittest.TestCase):
+    def test_third_daily_id_never_bypasses_proof_authorization(self):
+        with patch('daily_coverage.confirmed_live_tests', return_value=set()), patch.object(r, 'request') as api:
+            with self.assertRaisesRegex(ValueError, 'Third ID requires'):
+                r.publish('/not-read.mp4', 'casasem-2026-11-07-3', {})
+            api.assert_not_called()
     def setUp(self):
         self.content = b'validated-media-test'
         self.digest = hashlib.sha256(self.content).hexdigest()

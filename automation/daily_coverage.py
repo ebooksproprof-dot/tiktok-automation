@@ -18,6 +18,31 @@ def stamp(value):
     return result
 
 
+def confirmed_live_tests(queue, state, day):
+    """An owner-authorized, completed off-slot proof is extra to the 10h/18h routine.
+
+    Unknown/scheduled outcomes still consume capacity. This never marks an
+    ordinary missing slot as published or exempts it from the delivery gate.
+    """
+    confirmed = set()
+    for post in queue.get('posts', []):
+        entry = state.get('posts', {}).get(post.get('id'), {})
+        if (post.get('approval_scope') != 'mission102_owner_authorized_automated_quality_and_license_checks'
+                or entry.get('status') != 'PUBLISH_COMPLETE' or entry.get('publicly_verified') is not True
+                or entry.get('public_visibility_evidence', {}).get('public_playback_verified') is not True
+                or not entry.get('buffer_post_id') or not entry.get('public_urls')
+                or not entry.get('sha256') or entry['sha256'] != post.get('quality', {}).get('sha256')):
+            continue
+        try:
+            when = stamp(post['scheduled_at']).astimezone(TZ)
+        except (ValueError, TypeError, KeyError, AttributeError):
+            continue
+        ordinary = when.hour in (10, 18) and when.minute == when.second == when.microsecond == 0
+        if when.date() == day and not ordinary:
+            confirmed.add(post['id'])
+    return confirmed
+
+
 def inspect(queue, state, now):
     day = now.astimezone(TZ).date()
     rows = []

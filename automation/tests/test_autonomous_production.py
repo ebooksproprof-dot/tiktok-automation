@@ -18,6 +18,24 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_completed_extra_proof_keeps_both_regular_slots_without_freeing_unknown_attempt(self):
+        now = dt.datetime(2026, 11, 7, 6, tzinfo=dt.timezone.utc)
+        proof = {'id': 'casasem-2026-11-07-1', 'scheduled_at': '2026-11-07T02:03:51-03:00',
+                 'approval_scope': 'mission102_owner_authorized_automated_quality_and_license_checks',
+                 'quality': {'sha256': 'a'*64}}
+        morning = {'id': 'casasem-2026-11-07-2', 'scheduled_at': '2026-11-07T10:00:00-03:00'}
+        queue = {'posts': [proof, morning]}
+        entry = {'status': 'PUBLISH_COMPLETE', 'publicly_verified': True, 'sha256': 'a'*64,
+                 'buffer_post_id': 'known', 'public_urls': ['https://www.tiktok.com/@.casasemesforo/video/123'],
+                 'scheduled_at': proof['scheduled_at'],
+                 'public_visibility_evidence': {'public_playback_verified': True}}
+        state = {'posts': {proof['id']: entry}}
+        post_id, when = production.choose_slot(queue, state, now)
+        self.assertEqual(post_id, 'casasem-2026-11-07-3')
+        self.assertEqual((when.day, when.hour), (7, 18))
+        entry['status'] = 'SUBMISSION_UNKNOWN'
+        self.assertNotEqual(production.choose_slot(queue, state, now)[1].day, 7)
+
     def test_other_household_objects_need_visual_confirmation_without_relabeling_street_tools(self):
         self.assertEqual(semantic.nominate({'selection_reason': 'washbasin, drain, sink, water, cleaning'}), 'drain')
         self.assertEqual(semantic.nominate({'selection_reason': 'laundry, washing machine, iron, hairdryer'}), 'laundry')
