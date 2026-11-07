@@ -2,16 +2,94 @@
   "version": 1,
   "candidates": {
     "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047670.8779488
+      "status": "QUEUED",
+      "source_sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+      "license": {
+        "source_sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+        "source_page": "https://pixabay.com/videos/id-163116/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "page_sha256": "f202d76c3e03ae9b0acaf439425ea461ed7fbdafd358479939b1ee07e6e70220",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "author": "livesmart",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T04:26:25.655867+00:00",
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution",
+        "source_url": "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4",
+        "evidence_origin": "Official individual Pixabay page and binding terms retrieved in Codex Cloud on 2026-11-07",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image shows a group of clothing items hanging on a metal rod. The clothing items are primarily black and dark blue in color, suggesting they might be formal or business attire. The rod is positioned horizontally, and it appears to be part of",
+          "The image shows a clothing rack with various suits hanging on it. The suits are of different colors and styles, including a black suit with a white shirt and a black tie, a black suit with a white shirt and a black tie, a",
+          "The image shows a series of clothing items hanging on a metal hook. The clothing items include jackets and shirts. The jackets are dark in color, likely black or dark grey, and the shirts are light in color, possibly beige or white"
+        ],
+        "frame_sha256": [
+          "24013bb8517324fb3131be9c4cbdd58eefcd3ebc55c3098db6a90ce4f32fdda6",
+          "ebac270eda03d80141ee28224edd57e6e00b5591b5aef524ba1ca0f4d7547109",
+          "3c90f77302279a3c82e92ba7322c6c168588a1ee94e385e16a3f32728c1dd012"
+        ],
+        "source_sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+        "accepted": true,
+        "review_seconds": 87.9,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     },
     "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047674.379248
+      "status": "QUEUED",
+      "source_sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+      "license": {
+        "source_sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+        "source_page": "https://pixabay.com/videos/id-34772/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "page_sha256": "d368cfd984e106329bd306f813bb32abf1cd788f958b11abf28cf88aecfea532",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "author": "jaumeps99",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T04:26:31.024921+00:00",
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution",
+        "source_url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+        "evidence_origin": "Official individual Pixabay page and binding terms retrieved in Codex Cloud on 2026-11-07",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image shows a close-up view of an electric iron placed on a pink and white surface. The iron is predominantly white with a blue and purple body. The iron has a circular button on the top, likely for adjusting the temperature or",
+          "The image shows a person's hands holding a piece of paper. The paper appears to be a folded or creased piece of fabric, possibly a shirt or a similar garment. The fabric is pink with a white letter \"L\" in the",
+          "The image shows a bed with a white sheet and a pink cover. The sheet has a pattern of light and dark pink circles, resembling hearts, arranged in a somewhat circular pattern. The pink cover has a pattern of light and dark pink circles"
+        ],
+        "frame_sha256": [
+          "b3e84a7afa7d4af2112ce1eb1e3175ab6ae8ae3d8632480ec103fa046c4f993b",
+          "18c9cf25ffa04babad58f6599be8e0152fac5907c6d0b4090f664599fc1ec28c",
+          "9cdbfcdfb0ef93223194705009ddaa1bb9f209116ed343900e5495dc09d33de7"
+        ],
+        "source_sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+        "accepted": true,
+        "review_seconds": 88.238,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     },
     "https://cdn.pixabay.com/video/2020/06/08/41506-429661323_large.mp4": {
       "status": "RETRYABLE",
@@ -38,12 +116,22 @@
       "retry_after": 1794047690.0826359
     }
   },
-  "outputs": {},
+  "outputs": {
+    "casasem-2026-11-07-1": {
+      "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-07T02:03:51-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+        "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4"
+      ]
+    }
+  },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 0,
-    "ready_after": 0,
+    "ready_after": 1,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,

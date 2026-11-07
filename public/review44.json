@@ -1,15 +1,15 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-07T04:38:59.514498+00:00",
-  "expires_at": "2026-11-07T04:38:59.514498+00:00",
-  "queue_snapshot_sha256": "9e4d90f7a288e5d6d038c4165e97a814ef917783a0c5af1f864396aa0c765f3a",
+  "generated_at": "2026-11-07T04:45:06.795573+00:00",
+  "expires_at": "2026-11-07T04:45:06.795573+00:00",
+  "queue_snapshot_sha256": "3e1e37c0d261c777c8364791164afc22f74440a227a438fc72e04068513afc4b",
   "state_snapshot_sha256": "eedbf27ea09bf3c0cf6b555e5b230493b44d765db10db35ff6ab3a3832586327",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
     {
@@ -115,6 +115,34 @@
       "selectable": false,
       "blockers": [
         "Rejeitado editorialmente: Eight-frame final MP4 review confirms essentially one unchanged composition of a mug beside a phone throughout 19.4s. It does not show moving the mug away, taking it to the kitchen, or clearing the work area, so the visual sequence is too repetitive and incomplete for publication."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-11-07-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-1-3027bb2dc7640b3c.mp4",
+      "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+      "script_hash": "ec85ef436af5cfc0fc04b218f4b6d1bbf8a77e6cc9fac1903fa1a321e35966b3",
+      "post_snapshot_sha256": "f92c14375b669b2165c67d9bb9460aba5ec7237f7a08fe0d1f90b820aabe8f6d",
+      "title": "Vai passar roupa? Reserve espaço para movimentar o tecido sem puxar o fio. Use um apoio firme e mantenha o fio fora da passagem. Confira a etiqueta antes de escolher a temperatura. Guarde apenas peças secas, depois de esfriarem completamente. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jaumeps99; https://pixabay.com/videos/id-34772/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — livesmart; https://pixabay.com/videos/id-163116/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai passar roupa?",
+        "Reserve espaço para movimentar o tecido sem puxar o fio.",
+        "Use um apoio firme e mantenha o fio fora da passagem.",
+        "Confira a etiqueta antes de escolher a temperatura.",
+        "Guarde apenas peças secas, depois de esfriarem completamente.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-07T02:03:51-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
       ],
       "editorial_review": "PENDING",
       "audit_notes": null,
@@ -229,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "5b72c6642f50e1628aabe0cd74f393b11c1b36c04590c1a2900ee608ca15bd5f"
+  "manifest_sha256": "5d039205e22835ecb50037dcbe22f665c6efc2dd8c1bd78c02a87f1661209250"
 }
