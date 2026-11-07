@@ -1100,24 +1100,24 @@
         "window_seconds": 900,
         "quota": 150,
         "remaining": 145,
-        "reset_at": "2026-11-07T06:44:33.613423Z",
-        "observed_at": "2026-11-07T06:29:37.613423Z"
+        "reset_at": "2026-11-07T06:44:33.670619Z",
+        "observed_at": "2026-11-07T06:35:47.670619Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
         "remaining": 582,
-        "reset_at": "2026-11-08T04:10:10.613423Z",
-        "observed_at": "2026-11-07T06:29:37.613423Z"
+        "reset_at": "2026-11-08T04:10:10.670619Z",
+        "observed_at": "2026-11-07T06:35:47.670619Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
         "remaining": 788,
-        "reset_at": "2026-11-16T22:01:05.613423Z",
-        "observed_at": "2026-11-07T06:29:37.613423Z"
+        "reset_at": "2026-11-16T22:01:05.670619Z",
+        "observed_at": "2026-11-07T06:35:47.670619Z"
       }
     },
     "consecutive_errors": 0,
