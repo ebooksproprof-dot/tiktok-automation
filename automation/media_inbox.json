@@ -1265,7 +1265,8 @@
       "height": 1080,
       "duration": 6.52,
       "bytes": 4346554,
-      "acquired_at": 1794056982
+      "acquired_at": 1794056982,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1297,7 +1298,8 @@
       "height": 1080,
       "duration": 7.88,
       "bytes": 5066162,
-      "acquired_at": 1794056983
+      "acquired_at": 1794056983,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1329,7 +1331,8 @@
       "height": 1080,
       "duration": 11.455,
       "bytes": 8953518,
-      "acquired_at": 1794060885
+      "acquired_at": 1794060885,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1361,7 +1364,72 @@
       "height": 1080,
       "duration": 32.405,
       "bytes": 23039877,
-      "acquired_at": 1794060888
+      "acquired_at": 1794060888,
+      "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "4906",
+      "url": "https://cdn.pixabay.com/video/2016/09/03/4906-181288859_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-4906/",
+      "author": "klimkin",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: klimkin / Pixabay — https://pixabay.com/videos/id-4906/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: wash, hands, soap, tap, water, clean, bath",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/09/03/4906-181288859_large.mp4",
+      "sha256": "428dc1410460b7197e19bd4a28ea4c6a0619da082a5f3d6d86e047bbf5d042c3",
+      "dhash": [
+        "113135a0110220c0",
+        "113115119389c8e0",
+        "11311140494210c2",
+        "11317510210280c0",
+        "11313504113220a0"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.173333,
+      "bytes": 5366926,
+      "acquired_at": 1794061617
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34211",
+      "url": "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34211/",
+      "author": "josecr1920",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: josecr1920 / Pixabay — https://pixabay.com/videos/id-34211/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: hands, soap, virus, coronavirus, hygiene, health, sanitizer, covid-19, bacteria, allergy, healthcare, protection, wash, sanitation, disi, disinfect",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4",
+      "sha256": "7d61d92af9e96ce138b75d490f8befc7203756a231a67e7f2dc4696cb80d6633",
+      "dhash": [
+        "3233950e169bea6c",
+        "327235170e87e26c",
+        "32331d4606834a3c",
+        "1393c54646c75654",
+        "0205c56646465250"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 10.046667,
+      "bytes": 5456610,
+      "acquired_at": 1794061618
     }
   ],
   "rejected_until": {
@@ -1369,11 +1437,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794060883,
+    "at": 1794061616,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 4,
+    "skipped_known": 6,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1388,14 +1456,14 @@
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "maos2",
         "status": "search_ok",
         "eligible_candidates": 13,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1407,7 +1475,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 32,
+    "unreviewed_media_count": 34,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
