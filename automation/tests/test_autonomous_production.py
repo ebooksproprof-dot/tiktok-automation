@@ -18,6 +18,15 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_other_household_objects_need_visual_confirmation_without_relabeling_street_tools(self):
+        self.assertEqual(semantic.nominate({'selection_reason': 'washbasin, drain, sink, water, cleaning'}), 'drain')
+        self.assertEqual(semantic.nominate({'selection_reason': 'laundry, washing machine, iron, hairdryer'}), 'laundry')
+        self.assertEqual(semantic.nominate({'selection_reason': 'disinfectant, sprayer, household'}), 'products')
+        self.assertTrue(semantic.assess('drain', ['Water is flowing into the drain of a white sink.']*3))
+        self.assertFalse(semantic.assess('drain', ['Water is flowing rapidly.']*3))
+        self.assertTrue(semantic.assess('products', ['A hand is holding a spray bottle.']*3))
+        self.assertFalse(semantic.assess('products', ['A child is holding a spray bottle.']*3))
+
     def test_short_laundry_cycle_keeps_washing_before_drying_without_machine_claim_on_line_only(self):
         self.assertEqual(semantic.nominate({'selection_reason': 'laundry, clothesline, drying, clothes'}), 'laundry')
         def item(key, text, caption):

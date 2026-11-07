@@ -25,6 +25,8 @@ FAMILIES = {
     'handwashing': ({'handwashing'}, {'washing', 'wash', 'soap', 'sink', 'hands'}),
     'laundry': ({'washer', 'washingmachine', 'laundromat', 'clothesline'}, {'washer', 'machine', 'laundry', 'clothes', 'clothing', 'drum', 'clothesline'}),
     'surfaces': ({'countertop', 'window', 'mirror'}, {'window', 'windows', 'floor', 'table', 'countertop', 'surface', 'sink', 'cabinet', 'door', 'mirror'}),
+    'drain': ({'drain', 'washbasin', 'efflux'}, {'drain', 'sink', 'basin', 'washbasin', 'plug', 'faucet'}),
+    'products': ({'disinfectant', 'sprayer'}, {'bottle', 'sprayer', 'spray', 'container', 'trigger'}),
 }
 FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'waterfall', 'river', 'mountain',
              'ocean', 'flamingo', 'bird', 'duck', 'mosque', 'quran', 'cigarette', 'cigarettes', 'smoking',
@@ -47,6 +49,10 @@ def nominate(record):
         return None
     if 'washer' in tags and tags & {'pressure', 'street', 'road'}:
         return None  # A street pressure washer is not a laundry appliance.
+    if 'drain' in tags and tags & {'sink', 'basin', 'washbasin'}:
+        return 'drain'
+    if {'washing', 'machine'} <= tags and tags & {'laundry', 'clothes', 'clothing', 'appliance', 'housework'}:
+        return 'laundry'
     surface = tags & FAMILIES['surfaces'][1]
     cleaning = tags & {'cleaning', 'clean', 'wiping', 'wipe'}
     specific = tags & {'broom', 'sweeping', 'dishes', 'dishwashing', 'washer', 'laundry', 'clothes'}
@@ -73,6 +79,8 @@ def assess(family, captions):
         return False
     allowed = FAMILIES[family][1]
     tokens = [words(caption) for caption in captions]
+    if family == 'products' and any(t & {'child', 'children', 'baby', 'toddler'} for t in tokens):
+        return False
     if family == 'surfaces':
         if any(t & {'car', 'vehicle', 'truck', 'windshield', 'solar', 'factory'} for t in tokens):
             return False

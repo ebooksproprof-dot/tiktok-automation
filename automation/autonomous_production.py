@@ -170,6 +170,24 @@ BANK = {
     'Guarde as peças somente quando estiverem totalmente secas.',
     'Evite empilhar roupas ainda úmidas.',
     'Separe as peças que exigem cuidados especiais.']),
+ 'drain': ('O que vai parar no ralo?', [
+    'Retire os restos de comida antes de lavar a louça.',
+    'Use um coletor adequado ao ralo da sua pia.',
+    'Não despeje óleo de cozinha no escoamento.',
+    'Mantenha objetos pequenos longe da abertura.',
+    'Descarte os resíduos recolhidos no local adequado.',
+    'Siga as orientações do fabricante para limpar as peças.',
+    'Não improvise misturas de produtos para desentupir.',
+    'Confira se o coletor está bem encaixado depois da limpeza.']),
+ 'products': ('Vai usar um produto de limpeza?', [
+    'Leia o rótulo antes de abrir a embalagem.',
+    'Confira se o produto é indicado para a superfície.',
+    'Siga a diluição e o modo de uso recomendados.',
+    'Não improvise misturas de produtos de limpeza.',
+    'Mantenha o produto na embalagem original.',
+    'Guarde os produtos longe de crianças e animais.',
+    'Siga as orientações de ventilação indicadas no rótulo.',
+    'Feche a embalagem corretamente depois de usar.']),
 }
 
 
