@@ -3,10 +3,27 @@ import datetime as dt
 import hashlib
 import json
 import re
+from pathlib import Path
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 
 from media_rights import valid_source
+
+CACHE = Path(__file__).with_name('stock_license_evidence.json')
+
+
+def known_evidence(record):
+    evidence = json.loads(CACHE.read_text()).get('sources', {}).get(record['url'], {}) if CACHE.exists() else {}
+    if (evidence.get('source_sha256') == record.get('sha256')
+            and evidence.get('author') == record.get('author')
+            and evidence.get('source_page') == record.get('source_page')
+            and evidence.get('license_url') == record.get('license_url')
+            and evidence.get('commercial_use') is True
+            and evidence.get('page_sha256') and evidence.get('terms_sha256')):
+        # The recorded grant is perpetual for these exact bytes; a later WAF
+        # denial doesn't revoke it. Never extend this evidence to another file.
+        return dict(evidence, verification_method='previously_retrieved_official_evidence_exact_bytes')
+    return None
 
 
 def fetch(url):
@@ -21,6 +38,9 @@ def verify(record, fetcher=fetch):
     if (record.get('provider') != 'pixabay' or not valid_source(record)
             or not re.fullmatch(r'[a-f0-9]{64}', record.get('sha256', ''))):
         raise ValueError('UNVERIFIED_SOURCE_RIGHTS')
+    cached = known_evidence(record)
+    if cached:
+        return cached
     page = fetcher(record['source_page'])
     text = page.decode('utf-8', errors='replace')
     objects = []

@@ -26,7 +26,7 @@ from media_acquisition import download_and_measure, read_json, save_json
 from media_providers import crop_capable, plain
 from media_rights import caption_with_credits
 from semantic_review import Reviewer, nominate, motion, REVISION
-from source_license import verify as license_verify
+from source_license import verify as license_verify, CACHE as RIGHTS_CACHE
 import visual_library as visuals
 
 ROOT = Path(__file__).resolve().parent
@@ -257,9 +257,12 @@ def run(stage=False, soon=False, limit=2):
         prior = ledger['candidates'].get(key, {})
         if prior.get('status') in ('REJECTED', 'QUEUED'):
             continue
-        if prior.get('retry_after', 0) > time.time():
+        known_rights = read_json(RIGHTS_CACHE, {'sources': {}})['sources']
+        new_evidence = prior.get('error_type') == 'HTTPError' and key in known_rights
+        if prior.get('retry_after', 0) > time.time() and not new_evidence:
             continue
         try:
+            phase = 'download'
             if not visuals.preflight([key], previous):
                 continue
             examined += 1
@@ -269,6 +272,7 @@ def run(stage=False, soon=False, limit=2):
                 raise ValueError('PREVIOUS_SOURCE_BYTES_CHANGED')
             measured.update(id='auto-pixabay-'+measured['provider_id'], frame_mode='reviewed_portrait',
                             context='Illustrative real household footage, accepted by local CPU frame review.')
+            phase = 'license'
             license_proof = license_verify(measured)
             cached_review = prior.get('visual_review') or {}
             if not stage and not cached_review:
@@ -280,7 +284,9 @@ def run(stage=False, soon=False, limit=2):
                 review = cached_review
             else:
                 if reviewer is None:
+                    phase = 'semantic_model_load'
                     reviewer = Reviewer(os.getenv('SEMANTIC_MODEL_CACHE'))
+                phase = 'semantic_review'
                 review = reviewer.review(render.ASSETS/('pixabay-'+measured['provider_id']+'.mp4'),
                     measured, render.ASSETS/('review-'+measured['provider_id']))
             ledger['candidates'][key] = {'status': 'ACCEPTED', 'source_sha256': measured['sha256'],
@@ -305,6 +311,7 @@ def run(stage=False, soon=False, limit=2):
             if not scripts(pool, queue, state):
                 raise ValueError('NO_NEW_SCRIPT_COMBINATION')
             failure = None
+            phase = 'render'
             for idea in scripts(pool, queue, state)[:3]:
                 post_id, when = choose_slot(queue, state, dt.datetime.now(dt.timezone.utc), soon and not outputs)
                 try:
@@ -332,6 +339,7 @@ def run(stage=False, soon=False, limit=2):
                 publishing_status='READY_FOR_EXISTING_BUFFER_RUNNER')
             visuals.require_evidence(post, previous)
             if stage:
+                phase = 'release_and_queue'
                 from release_media import publish
                 post['video_url'] = publish(video, post_id, quality)
                 queue['posts'].append(post)
@@ -349,6 +357,7 @@ def run(stage=False, soon=False, limit=2):
             code = str(exc) if controlled else 'SOURCE_OR_RENDER_UNAVAILABLE'
             ledger['candidates'][key] = {'status': 'REJECTED' if controlled else 'RETRYABLE',
                 'error': code, 'error_type': type(exc).__name__,
+                'error_stage': phase,
                 'retry_after': time.time()+6*3600 if not controlled else 0}
             print('AUTONOMOUS_CANDIDATE_HELD='+candidate['provider_id']+'; REASON='+code)
         finally:
