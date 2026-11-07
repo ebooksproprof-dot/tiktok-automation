@@ -2,9 +2,8 @@ name: CasaSemEsforco AI30 Free Collector
 
 on:
   schedule:
-    # 03:10, 09:10 and 13:10 Sao Paulo. The afternoon check matters
-    # when the prior window began after 09:10; it never resets 24h quota.
-    - cron: '10 6,12,16 * * *'
+    # More than one renewal check after the rolling 24h boundary; never resets quota.
+    - cron: '10 6,12,16,22 * * *'
   workflow_dispatch:
     inputs:
       licensed_wan_trial:
@@ -46,24 +45,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: feature/ai-video-hybrid-30s
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Verify AI30 no-charge controls
         run: |
-          python -m unittest discover -s automation/tests -p 'test_*81.py' -v
-          python automation/experimental81/auto_collect.py --dry-run
+          python -m unittest discover -s automation/tests -p 'test_wan104*.py' -v
+          python automation/experimental81/wan104.py --dry-run
   collect-and-stage:
     if: github.ref == 'refs/heads/main' && github.event_name != 'push' && inputs.licensed_wan_trial != true && inputs.licensed_wan_stage_trial != true
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 20
+    outputs:
+      ready: ${{ steps.collect.outputs.ready }}
+      collection_status: ${{ steps.collect.outputs.collection_status }}
     steps:
-      - name: Checkout isolated, previously preserved AI30 code
+      - name: Checkout tested licensed route without changing preserved A14B inventory
         uses: actions/checkout@v4
         with:
-          ref: feature/ai-video-hybrid-30s
-          persist-credentials: false
+          ref: main
       - name: Prepare Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -71,34 +72,33 @@ jobs:
       - name: Verify offline publishing and budget guards
         id: preflight
         run: |
-          python -m unittest discover -s automation/tests -p 'test_*81.py' -v
-          python automation/experimental81/auto_collect.py --dry-run
+          python -m unittest discover -s automation/tests -p 'test_wan104*.py' -v
+          python automation/experimental81/wan104.py --dry-run
       - name: Install free CPU media tools only (never paid GPU)
         id: install
         run: |
-          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null || ! command -v espeak-ng >/dev/null; then
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
             sudo apt-get -o Acquire::Retries=2 update -qq
-            sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng fonts-dejavu-core
+            sudo apt-get install -y --no-install-recommends ffmpeg
           fi
           python -m pip install --disable-pip-version-check \
-            'gradio_client>=1.13,<3' 'socksio>=1.0,<2' \
-            'Pillow==12.3.0' 'kokoro-onnx==0.6.1' 'onnxruntime==1.31.0'
-          command -v ffmpeg && command -v ffprobe && command -v espeak-ng
+            'gradio_client==2.7.2' 'socksio>=1.0,<2'
+          command -v ffmpeg && command -v ffprobe
       - name: Attempt bounded ZeroGPU generation and persist every useful clip
         id: collect
-        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
         run: |
-          python automation/experimental81/auto_collect.py
-      - name: Complete and queue ONLY fully verified AI30 output
-        id: finish
-        if: always() && steps.preflight.outcome == 'success' && steps.install.outcome == 'success'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python automation/experimental81/auto_finish.py
+          python automation/experimental81/wan104.py
+      - name: Preserve partial generated files even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wan104-generated-source-proof
+          path: tmp/wan104/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Accurate final run summary
         if: always()
         run: |
@@ -106,14 +106,11 @@ jobs:
           echo 'Safety preflight: ${{ steps.preflight.outcome }}' >> "$GITHUB_STEP_SUMMARY"
           echo 'CPU dependencies: ${{ steps.install.outcome }}' >> "$GITHUB_STEP_SUMMARY"
           echo 'ZeroGPU bounded attempt: ${{ steps.collect.outcome }}' >> "$GITHUB_STEP_SUMMARY"
-          echo 'AI-only composition and existing queue handoff: ${{ steps.finish.outcome }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Collection state: ${{ steps.collect.outputs.collection_status }}' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Ready for separate CPU assembly: ${{ steps.collect.outputs.ready }}' >> "$GITHUB_STEP_SUMMARY"
           echo 'A green workflow alone does not mean a TikTok video was published.' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Inspect automation/experimental81/auto_inventory.json and the existing Buffer/TikTok runner state.' >> "$GITHUB_STEP_SUMMARY"
-      - name: Fail when required composition did not succeed
-        if: always() && steps.finish.outcome != 'success'
-        run: |
-          echo '::error::Required AI video assembly failed or was skipped. No publication is confirmed.'
-          exit 1
+          echo 'WAIT_FREE_QUOTA is a deliberate no-inference state. Existing Pixabay replenishment remains independent.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Inspect automation/experimental81/wan104_inventory.json and existing provider state.' >> "$GITHUB_STEP_SUMMARY"
   licensed-collection-trial:
     if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' && inputs.licensed_wan_trial == true
     runs-on: ubuntu-latest
@@ -150,7 +147,8 @@ jobs:
           retention-days: 3
           if-no-files-found: ignore
   licensed-stage-trial:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' && inputs.licensed_wan_stage_trial == true
+    needs: [collect-and-stage]
+    if: always() && github.ref == 'refs/heads/main' && ((github.event_name == 'workflow_dispatch' && inputs.licensed_wan_stage_trial == true) || (needs.collect-and-stage.result == 'success' && needs.collect-and-stage.outputs.ready == 'true'))
     concurrency:
       group: casasemesforco-state
       cancel-in-progress: false
@@ -187,12 +185,21 @@ jobs:
       - name: Assemble approved AI sources and hand off to existing publisher
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python automation/experimental81/wan104_finish.py --trial
+          TRIAL: ${{ inputs.licensed_wan_stage_trial }}
+        run: |
+          args=()
+          if [ "$TRIAL" = 'true' ]; then args+=(--trial); fi
+          python automation/experimental81/wan104_finish.py "${args[@]}"
       - name: Keep rendering and review evidence independently of publication
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: wan104-reviewed-assembly
-          path: tmp/wan104-finish/
+          # Sources/final MP4 live in Releases. Do not archive the 140MB voice
+          # weights or duplicate full videos on every automatic run.
+          path: |
+            tmp/wan104-finish/**/*.json
+            tmp/wan104-finish/**/*.jpg
+            tmp/wan104-finish/**/*.srt
           retention-days: 3
           if-no-files-found: ignore

@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import random
 import sys
 import time
 import urllib.request
@@ -32,6 +33,29 @@ SCENES = [
 SCRIPT = ['Armário sem espaço? Separe os itens por categoria antes de organizar.',
           'Guarde somente os tecidos que já estão completamente secos e limpos.',
           'Deixe os utensílios de uso frequente bem visíveis e fáceis de alcançar.']
+SCRIPT_BANKS = [
+    [SCRIPT[0], 'Perde tempo procurando potes? Deixe os grupos visíveis na prateleira.',
+     'Vai organizar a despensa? Reserve espaço para retirar os itens com segurança.',
+     'Sua prateleira vive cheia? Organize uma categoria pequena antes de começar outra.',
+     'Cada pote tem lugar? Mantenha os itens de uso frequente fáceis de pegar.',
+     'Vai mexer no armário? Confira a estabilidade da prateleira antes de organizar.'],
+    [SCRIPT[1], 'Guarde as toalhas sem apertar a pilha além do espaço disponível.',
+     'Antes de guardar os panos, confira se precisam de lavagem ou reparo.',
+     'Separe as toalhas por uso e deixe as mais usadas fáceis de retirar.',
+     'Ajuste a dobra das peças ao espaço disponível, sem prender nas portas.',
+     'Separe os tecidos limpos dos usados e termine uma pequena pilha por vez.'],
+    [SCRIPT[2], 'Escolha um suporte firme para os utensílios e respeite a capacidade indicada.',
+     'Organize os utensílios sem bloquear a área livre da bancada de trabalho.',
+     'Agrupe os utensílios pelo uso e deixe espaço para retirar cada peça.',
+     'Antes de guardar os utensílios, confira se estão limpos e completamente secos.',
+     'Mantenha os utensílios de uso diário ao alcance sem formar uma pilha instável.']]
+
+
+def script_variants(episode):
+    if episode == 1:
+        return [SCRIPT]
+    rng = random.Random(104000+episode)
+    return [[rng.choice(bank) for bank in SCRIPT_BANKS] for _ in range(36)]
 
 
 def now():
@@ -64,6 +88,35 @@ def profile_check(profile, fetch=fetch_json):
                     or runtime.get('hardware', {}).get('current') != 'zero-a10g'):
                 raise ValueError('PINNED_FREE_SPACE_NOT_RUNNING')
     return True
+
+
+def require_public_activation(profile, queue, state):
+    from experimental81.wan104_policy import is_trial, require_quality
+    proof = profile.get('activation_proof') or {}
+    post = next((p for p in queue.get('posts', []) if p.get('id') == proof.get('post_id')), None)
+    entry = state.get('posts', {}).get(proof.get('post_id'), {})
+    if not post or not is_trial(post):
+        raise ValueError('VERIFIED_FIRST_WAN_PUBLICATION_REQUIRED')
+    require_quality(post['quality'])
+    if (entry.get('status') != 'PUBLISH_COMPLETE' or entry.get('publicly_verified') is not True
+            or entry.get('public_visibility_evidence', {}).get('public_playback_verified') is not True
+            or entry.get('sha256') != post['quality']['sha256'] or entry['sha256'] != proof.get('sha256')
+            or entry.get('buffer_post_id') != proof.get('provider_id')
+            or proof.get('public_url') not in entry.get('public_urls', [])):
+        raise ValueError('VERIFIED_FIRST_WAN_PUBLICATION_REQUIRED')
+    return True
+
+
+def quota_wait(ledger, spec, tier):
+    try:
+        daily_budget.reserve(ledger, hf_probe.fingerprint(spec), now(), tier=tier,
+                             estimated_seconds=60 if spec['space'] == 'Upsampler/wan-2-2-5b-video' else 75)
+    except daily_budget.QuotaError as exc:
+        if str(exc) != 'DAILY_QUOTA_ESTIMATE_EXCEEDED':
+            raise
+        return {'status': 'WAIT_FREE_QUOTA', 'new_gpu_calls': 0, 'publicly_verified': False,
+                'not_before': (dt.datetime.fromisoformat(ledger['window_start'])+dt.timedelta(days=1)).isoformat()}
+    return None
 
 
 def stores():
@@ -145,6 +198,11 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     if not trial and not profile['activated_after_public_trial']:
         raise ValueError('WAN_PUBLIC_TRIAL_NOT_CONFIRMED')
     inventory_store, budget_store = stores()
+    if not trial:
+        token = os.environ['GH_TOKEN']
+        queue, _ = GitHubStore(token, path='automation/queue.json', validate=False).load()
+        state, _ = GitHubStore(token, path='automation/state.json', validate=False).load()
+        require_public_activation(profile, queue, state)
     inventory, revision = inventory_store.load()
     if inventory.get('version') != 1 or not isinstance(inventory.get('clips'), list):
         raise ValueError('WAN104_INVENTORY_REQUIRED')
@@ -156,6 +214,12 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
         return {'status': 'READY_PRESERVED_NO_GPU_CALL', 'clips': len(inventory['clips'])}
     profile_check(profile)
     tier, token = legacy.free_hf_identity()
+    ledger, _ = budget_store.load()
+    waiting = quota_wait(ledger, request_spec(profile, inventory['episode'], len(inventory['clips'])), tier)
+    if waiting:
+        inventory['last_wait'] = dict(waiting, at=now().isoformat())
+        inventory_store.save(inventory, revision)
+        return waiting
     if client_factory is None:
         from gradio_client import Client
         client_factory = Client
@@ -235,7 +299,12 @@ def main():
 
 if __name__ == '__main__':
     try:
-        print(json.dumps(main(), ensure_ascii=False, indent=2))
+        result = main()
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if os.getenv('GITHUB_OUTPUT'):
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+                out.write('collection_status='+result['status']+'\n')
+                out.write('ready='+str(result['status'] in ('READY_FOR_REVIEW', 'READY_PRESERVED_NO_GPU_CALL')).lower()+'\n')
     except Exception as exc:
         print(json.dumps({'status': 'WAN104_BLOCKED', 'error_type': type(exc).__name__,
                           'reason': str(exc) if isinstance(exc, (ValueError, daily_budget.QuotaError)) else 'SAFE_ERROR_BODY_OMITTED'}))

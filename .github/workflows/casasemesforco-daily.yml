@@ -109,6 +109,15 @@ jobs:
         env:
           GITHUB_STEP_SUMMARY: "" # Keep mock evidence out of operational summaries.
         run: python -m unittest discover -s automation/tests -v
+      - name: Prefer ready licensed Wan clips, then retain mandatory conventional fallback
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python automation/experimental81/wan104_finish.py --optional-ai
+          # The optional handoff writes remote files with CAS. Read that durable
+          # queue before the existing producer counts stock and renders more.
+          git pull --ff-only origin main
       - name: Migrate unpublished binaries outside source history
         if: github.event_name != 'push'
         env:

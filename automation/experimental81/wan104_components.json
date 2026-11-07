@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "activated_after_public_trial": false,
+  "activated_after_public_trial": true,
   "model_family": "Wan 2.2",
   "variant": "FastWan2.2-TI2V-5B-FullAttn; does not clear or relabel legacy A14B clips",
   "space": "Upsampler/wan-2-2-5b-video",
@@ -44,5 +44,12 @@
   "use_aoti_package": false,
   "reference_kind": "authored_text_only",
   "reviewed_at": "2026-11-07T13:01:11.373409+00:00",
-  "provider_formula": "clip(15+steps*8*(round(duration*24)*height*width)/(49*896*896),25,110); 5s,4 steps,480x832 => 53s, local reservation 60s"
+  "provider_formula": "clip(15+steps*8*(round(duration*24)*height*width)/(49*896*896),25,110); 5s,4 steps,480x832 => 53s, local reservation 60s",
+  "activation_proof": {
+    "post_id": "casasem-2026-11-07-wan104",
+    "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+    "provider_id": "6aef299f229bf05daf51f11e",
+    "public_url": "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676",
+    "confirmed_at": "2026-11-07T13:52:39Z"
+  }
 }
