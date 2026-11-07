@@ -26130,5 +26130,2341 @@
         }
       }
     }
+  },
+  "pixabay:housework": {
+    "at": 1794029284.8549173,
+    "data": {
+      "total": 1,
+      "totalHits": 1,
+      "hits": [
+        {
+          "id": 34772,
+          "pageURL": "https://pixabay.com/videos/id-34772/",
+          "type": "film",
+          "tags": "ironing, iron, ironing clothes, clothes, housework, clothing, work",
+          "duration": 15,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 34812385,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 18883344,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 10700684,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 5030620,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_tiny.jpg"
+            }
+          },
+          "views": 10096,
+          "downloads": 5267,
+          "likes": 37,
+          "comments": 12,
+          "user_id": 3692799,
+          "user": "jaumeps99",
+          "userImageURL": "",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": true,
+          "userURL": "https://pixabay.com/users/3692799/",
+          "name": "ironing, iron, ironing clothes",
+          "heading": "",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "wikimedia:keywords:housework": {
+    "at": 1794029284.8549206,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "185829305": {
+            "pageid": 185829305,
+            "ns": 6,
+            "title": "File:3rd WikiWomen Summit - Opening Session, Housekeeping – Wikimania 2025 in Nairobi, Kenya.webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 207122472,
+                "width": 1920,
+                "height": 1080,
+                "duration": 365.02,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/3rd_WikiWomen_Summit_-_Opening_Session%2C_Housekeeping_%E2%80%93_Wikimania_2025_in_Nairobi%2C_Kenya.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:3rd_WikiWomen_Summit_-_Opening_Session,_Housekeeping_%E2%80%93_Wikimania_2025_in_Nairobi,_Kenya.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=185829305",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-03-10 06:00:24",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "3rd WikiWomen Summit - Opening Session, Housekeeping – Wikimania 2025 in Nairobi, Kenya",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wikimania 2025 pre-conference recordings",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The WikiWomen Summit is a series of events focused on advancing gender equity and inclusion within Wikipedia and other Wikimedia projects. It aims to address the gender gap in online content and encourage women's participation in Wikimedia projects. The Summit, which has been co-designed in feminist solidarity, features presentations, discussions, and other activities related to gender equality and inclusion. \n<p>Wikimania is the annual global conference of the Wikimedia movement, celebrating free knowledge projects like Wikipedia, Wikimedia Commons, Wikisource, Wikidata, Wikivoyage, Wiktionary, Wikifunctions and the volunteer community that makes them possible. It features presentations, discussions, meetups, training, and workshops on Wikimedia projects and related topics such as free and open-source software, free knowledge, and free content. The event fosters connection, learning, idea exchange, and fun among Wikimedians and free knowledge enthusiasts from around the world.\n</p>\nWikimania 2025 was held from 5–9 August in Gigiri, Nairobi, Kenya and online. The theme for this 20th anniversary edition was “Wikimania@20: Inclusivity. Impact. Sustainability.”, bringing attention to the need to ensure a sustainable future for Wikimedia projects and the volunteers and efforts that make them possible.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2025-08-05",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=CkmxMjM1gDg\">Wikimania 2025</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"https://wikimania.wikimedia.org/wiki/2025:Organisers\" class=\"extiw\" title=\"wikimania:2025:Organisers\">Wikimania 2025 East African Organising Team</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "161742436": {
+            "pageid": 161742436,
+            "ns": 6,
+            "title": "File:OnlyFans creators doing chores on a dairy farm.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 9522971,
+                "width": 640,
+                "height": 360,
+                "duration": 66.95100000000001,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/OnlyFans_creators_doing_chores_on_a_dairy_farm.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:OnlyFans_creators_doing_chores_on_a_dairy_farm.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161742436",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2025-03-11 14:57:33",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "OnlyFans creators doing chores on a dairy farm",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "OnlyFans|Media from YouTube|Reality television programs|Uploaded with video2commons|Female farmers from the United States",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "OnlyFans creators doing chores on a dairy farm",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "July 7, 2022",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=Np8kf07-i7o\"><bdi lang=\"\">https://www.youtube.com/watch?v=Np8kf07-i7o</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=Np8kf07-i7o\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"https://en.wikipedia.org/wiki/OnlyFans\" class=\"extiw\" title=\"w:OnlyFans\">OnlyFans</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "146781397": {
+            "pageid": 146781397,
+            "ns": 6,
+            "title": "File:Steamboat Willie; Chore Chase -- Official Trailer.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 25484089,
+                "width": 1920,
+                "height": 1080,
+                "duration": 58.501,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Steamboat_Willie%3B_Chore_Chase_--_Official_Trailer.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Steamboat_Willie;_Chore_Chase_--_Official_Trailer.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=146781397",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2024-03-26 04:14:03",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Steamboat Willie; Chore Chase -- Official Trailer",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Media from YouTube|With trademark|License review needed (video)|PD US expired|Uploaded with video2commons|PD Old auto: author died less than 50 years ago|Videos by Ozzbit Games|Trademarks of the United States|Mickey Mouse games|Video game trailers of Steamboat Willie: Chore Chase",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Try out the game: <a rel=\"nofollow\" class=\"external free\" href=\"https://ozzbit-games.itch.io/steamboat-willie\">https://ozzbit-games.itch.io/steamboat-willie</a>\n<p>The Making: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.youtube.com/watch?v=GCfJBTqwFjQ\">https://www.youtube.com/watch?v=GCfJBTqwFjQ</a>\n</p>\n<ul><li>Support Us*</li></ul>\n<p>Join our Discord Server!:  <a rel=\"nofollow\" class=\"external free\" href=\"https://discord.com/invite/Sga2rmgrKT\">https://discord.com/invite/Sga2rmgrKT</a>\n</p><p>Follow us on Twitter (X):  <a rel=\"nofollow\" class=\"external free\" href=\"https://x.com/OzzbitGames\">https://x.com/OzzbitGames</a>\n</p><p>Buy us a coffee: <a rel=\"nofollow\" class=\"external free\" href=\"https://ko-fi.com/ozzbit\">https://ko-fi.com/ozzbit</a>\n</p><p>Credits:\n</p>\nBGM: Steamboat Willie 64 (Super Mario 64 Remix) by @DPlex",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2024-03-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=3xURkZRCVtc\"><bdi lang=\"\">Steamboat Willie: Chore Chase || Official Trailer</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=3xURkZRCVtc\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@OzzbitGames\">Ozzbit Games</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "trademarked",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "128466884": {
+            "pageid": 128466884,
+            "ns": 6,
+            "title": "File:Water and Life ( Black Volta).webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 42050926,
+                "width": 1280,
+                "height": 720,
+                "duration": 30.764,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Water_and_Life_%28_Black_Volta%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Water_and_Life_(_Black_Volta).webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128466884",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-02-06 18:20:43",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Water and Life ( Black Volta)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Black Volta River|Self-published work|Images from Wiki Loves Folklore 2023|Washing laundry|Images from Wiki Loves Folklore 2023 in Ghana|Images from Wiki Loves Folklore 2023 to check|Uploaded via Campaign:wlf 2023|Videos from Wiki Loves Folklore 2023",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Women and Children wash and perform other chores around and in the River",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2022-07-11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:OJjnr\" title=\"User:OJjnr\">OJjnr</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "202743180": {
+            "pageid": 202743180,
+            "ns": 6,
+            "title": "File:Welcome and housekeeping by Rosie and Vanj – Wikiwomen Summit - Wikimania 2026 in Paris, France.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 51551368,
+                "width": 1920,
+                "height": 1080,
+                "duration": 667.016,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Welcome_and_housekeeping_by_Rosie_and_Vanj_%E2%80%93_Wikiwomen_Summit_-_Wikimania_2026_in_Paris%2C_France.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Welcome_and_housekeeping_by_Rosie_and_Vanj_%E2%80%93_Wikiwomen_Summit_-_Wikimania_2026_in_Paris,_France.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=202743180",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-11-03 11:36:33",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Welcome and housekeeping by Rosie and Vanj – Wikiwomen Summit - Wikimania 2026 in Paris, France",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Creative Commons Attribution-Share Alike missing SDC copyright status|Creative Commons Attribution-Share Alike 4.0 missing SDC copyright license|Wikimania 2026 pre-conference recordings",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The Fourth Annual WikiWomen+ Summit was held in Paris, France, on July 21 as a vital preconference event for Wikimania 2026. Co-designed in feminist solidarity, the gathering provided a safe and inclusive space for gender equity advocates from around the world to strategize, envision the future, and address the ongoing gender gap within the Wikimedia movement. Participants were encouraged to wear yellow in support of the broader Wikimania theme, coming together both in person and online to share achievements, reflect on their progress, and build essential alliances.\nThe summit featured a robust schedule of collaborative activities, beginning with welcoming remarks and moving into diverse discussions on the content gender gap, generative AI ethics, and the unique challenges surrounding the blocking and banning of women+ contributors. Attendees engaged in a variety of dynamic sessions, including an open unconference, lightning talks, a hackathon, and panels highlighting French feminist free software activists and new tools like Wiki Gender Stats. The event successfully culminated with a special WikiWomen Lunch on July 23, cementing the connections made and leaving attendees inspired for future initiatives like the planned WikiWomenCamp 2027.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2026-07-21",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a href=\"https://wikimania.wikimedia.org/wiki/2026:Wikimania/WikiWomen%2B_Summit\" class=\"extiw\" title=\"wikimania:2026:Wikimania/WikiWomen+ Summit\">WikiWomen+ Summit</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"https://wikimania.wikimedia.org/wiki/2026:Wikimania/WikiWomen%2B_Summit\" class=\"extiw\" title=\"wikimania:2026:Wikimania/WikiWomen+ Summit\">WikiWomen+ Summit organizers</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pixabay:cleaning": {
+    "at": 1794029284.8549173,
+    "data": {
+      "total": 283,
+      "totalHits": 283,
+      "hits": [
+        {
+          "id": 34818,
+          "pageURL": "https://pixabay.com/videos/id-34818/",
+          "type": "film",
+          "tags": "washing, hands, coronavirus, soap, hygiene, corona, wash, protection, covid-19, faucet, water, clean, bathroom, cleaning, hand, prevention",
+          "duration": 25,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 62702306,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 26987883,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 16863116,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 8146402,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34818-403432727_tiny.jpg"
+            }
+          },
+          "views": 60850,
+          "downloads": 36173,
+          "likes": 160,
+          "comments": 53,
+          "user_id": 12141240,
+          "user": "BreakDownPictures",
+          "userImageURL": "https://cdn.pixabay.com/user/2019/04/09/13-56-32-461_250x250.png",
+          "noAiTraining": true,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/12141240/",
+          "name": "washing, hands, coronavirus",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 38116,
+          "pageURL": "https://pixabay.com/videos/id-38116/",
+          "type": "film",
+          "tags": "dish, wash, that, kitchen, cleaning, food, house, soap, sink, bubbles, washing, coronavirus, disinfection, bacteria, detergent, faucet, human, fork, knife, spoon, glass, plate, dirt",
+          "duration": 60,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 103487257,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 39496607,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 24402199,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 13009926,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/05/04/38116-415315967_tiny.jpg"
+            }
+          },
+          "views": 33472,
+          "downloads": 20155,
+          "likes": 155,
+          "comments": 31,
+          "user_id": 3656355,
+          "user": "Engin_Akyurt",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/09/20/08-02-23-312_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/3656355/",
+          "name": "dish, wash, that",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 215070,
+          "pageURL": "https://pixabay.com/videos/id-215070/",
+          "type": "film",
+          "tags": "flamingo, bathing, swimming, water, clean, cleaning, hygiene, liquid, feathers",
+          "duration": 17,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2024/06/03/215070_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 119387080,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/06/03/215070_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2024/06/03/215070_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 75499060,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/06/03/215070_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2024/06/03/215070_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 50664846,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/06/03/215070_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2024/06/03/215070_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 23594847,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/06/03/215070_tiny.jpg"
+            }
+          },
+          "views": 2732,
+          "downloads": 740,
+          "likes": 18,
+          "comments": 2,
+          "user_id": 26289376,
+          "user": "McPix22",
+          "userImageURL": "https://cdn.pixabay.com/user/2025/03/30/03-50-37-728_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/26289376/",
+          "name": "flamingo, bathing, swimming",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 142223,
+          "pageURL": "https://pixabay.com/videos/id-142223/",
+          "type": "film",
+          "tags": "duck, water bird, plumage, bird, cleaning, wildlife",
+          "duration": 11,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 22308264,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 10121436,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 6362811,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 2705146,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/12/09/142223-779684630_tiny.jpg"
+            }
+          },
+          "views": 5122,
+          "downloads": 2344,
+          "likes": 66,
+          "comments": 15,
+          "user_id": 10327513,
+          "user": "NickyPe",
+          "userImageURL": "https://cdn.pixabay.com/user/2024/02/05/16-05-14-742_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/10327513/",
+          "name": "duck, water bird, plumage",
+          "heading": "",
+          "description": "... morgendliches Yoga 😂😉"
+        },
+        {
+          "id": 122610,
+          "pageURL": "https://pixabay.com/videos/id-122610/",
+          "type": "film",
+          "tags": "cat, domestic cat, pet, striped, animal, cute, beauty care, paw, cleaning, wildlife",
+          "duration": 21,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 60881687,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 32744319,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 15404656,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 7906873,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/06/30/122610-725894536_tiny.jpg"
+            }
+          },
+          "views": 20223,
+          "downloads": 12514,
+          "likes": 195,
+          "comments": 12,
+          "user_id": 10327513,
+          "user": "NickyPe",
+          "userImageURL": "https://cdn.pixabay.com/user/2024/02/05/16-05-14-742_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/10327513/",
+          "name": "cat, domestic cat, pet",
+          "heading": "",
+          "description": "Give me five ... 😉 😂"
+        },
+        {
+          "id": 233940,
+          "pageURL": "https://pixabay.com/videos/id-233940/",
+          "type": "film",
+          "tags": "bird, river, heron, blue heron, wild birds, feathers, preening, cleaning",
+          "duration": 37,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2024/09/30/233940_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 193572323,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/09/30/233940_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2024/09/30/233940_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 94938543,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/09/30/233940_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2024/09/30/233940_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 57517932,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/09/30/233940_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2024/09/30/233940_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 21880609,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/09/30/233940_tiny.jpg"
+            }
+          },
+          "views": 1264,
+          "downloads": 428,
+          "likes": 29,
+          "comments": 1,
+          "user_id": 26289376,
+          "user": "McPix22",
+          "userImageURL": "https://cdn.pixabay.com/user/2025/03/30/03-50-37-728_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/26289376/",
+          "name": "bird, river, heron",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 123663,
+          "pageURL": "https://pixabay.com/videos/id-123663/",
+          "type": "film",
+          "tags": "mourning swan, black, swan, water bird, plumage, cleaning, black swan, wildlife",
+          "duration": 19,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 58335971,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 28680571,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 14697857,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 7568441,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/07/10/123663-728697995_tiny.jpg"
+            }
+          },
+          "views": 5174,
+          "downloads": 1896,
+          "likes": 62,
+          "comments": 1,
+          "user_id": 10327513,
+          "user": "NickyPe",
+          "userImageURL": "https://cdn.pixabay.com/user/2024/02/05/16-05-14-742_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/10327513/",
+          "name": "mourning swan, black, swan",
+          "heading": "",
+          "description": "... nein Danke, ich brauche keine Hilfe beim Reinigen ! 😉😃🤗"
+        },
+        {
+          "id": 128579,
+          "pageURL": "https://pixabay.com/videos/id-128579/",
+          "type": "film",
+          "tags": "bird, river, swan, cleaning, grooming, plumage, feathers",
+          "duration": 29,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 91826549,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 50353564,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 21372434,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 11025656,
+              "thumbnail": "https://cdn.pixabay.com/video/2022/08/21/128579-741747738_tiny.jpg"
+            }
+          },
+          "views": 1091,
+          "downloads": 403,
+          "likes": 12,
+          "comments": 1,
+          "user_id": 18696359,
+          "user": "Trek_Jason",
+          "userImageURL": "https://cdn.pixabay.com/user/2025/01/20/03-44-00-248_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/18696359/",
+          "name": "bird, river, swan",
+          "heading": "",
+          "description": "Taken in London. Give me a thumbs up or a follow if you like this clip."
+        },
+        {
+          "id": 237539,
+          "pageURL": "https://pixabay.com/videos/id-237539/",
+          "type": "film",
+          "tags": "duck, bird, animal, beak, ornithology, feathers, cleaning, pond, river, wing, nature",
+          "duration": 60,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2024/10/22/237539_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 504539681,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/22/237539_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2024/10/22/237539_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 357574524,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/22/237539_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2024/10/22/237539_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 249376030,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/22/237539_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2024/10/22/237539_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 120254136,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/22/237539_tiny.jpg"
+            }
+          },
+          "views": 1908,
+          "downloads": 704,
+          "likes": 15,
+          "comments": 1,
+          "user_id": 3656355,
+          "user": "Engin_Akyurt",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/09/20/08-02-23-312_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/3656355/",
+          "name": "duck, bird, animal",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 27804,
+          "pageURL": "https://pixabay.com/videos/id-27804/",
+          "type": "film",
+          "tags": "environment, earth, autumn, message, clean, save, education, stop motion, leaves, autumn colors, responsible, cleaning, caring, ground, soil, forest",
+          "duration": 29,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 85774563,
+              "thumbnail": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 48668988,
+              "thumbnail": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 20278190,
+              "thumbnail": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 10141605,
+              "thumbnail": "https://cdn.pixabay.com/video/2019/10/11/27804-365891138_tiny.jpg"
+            }
+          },
+          "views": 10400,
+          "downloads": 3463,
+          "likes": 52,
+          "comments": 6,
+          "user_id": 6346290,
+          "user": "FreeCreativeStuff",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/05/06/12-55-05-329_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/6346290/",
+          "name": "environment, earth, autumn",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 98115,
+          "pageURL": "https://pixabay.com/videos/id-98115/",
+          "type": "film",
+          "tags": "gull, bird, water bird, sitting, feathers, plumage, cleaning, lakeside, animal, white, wildlife",
+          "duration": 16,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 34507930,
+              "thumbnail": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 18694816,
+              "thumbnail": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 11391008,
+              "thumbnail": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 5743436,
+              "thumbnail": "https://cdn.pixabay.com/video/2021/11/17/98115-647000920_tiny.jpg"
+            }
+          },
+          "views": 3053,
+          "downloads": 1764,
+          "likes": 37,
+          "comments": 6,
+          "user_id": 10327513,
+          "user": "NickyPe",
+          "userImageURL": "https://cdn.pixabay.com/user/2024/02/05/16-05-14-742_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/10327513/",
+          "name": "gull, bird, water bird",
+          "heading": "",
+          "description": "Beauty Time ... was sein muss, muss sein 😉😃"
+        },
+        {
+          "id": 236701,
+          "pageURL": "https://pixabay.com/videos/id-236701/",
+          "type": "film",
+          "tags": "pigeons, birds, nature, animals, wash, family, cleaning, sunny, daytime, pond, garden, feathers, wings, beak",
+          "duration": 59,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2024/10/17/236701_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 508566523,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/17/236701_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2024/10/17/236701_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 320328157,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/17/236701_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2024/10/17/236701_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 211832696,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/17/236701_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2024/10/17/236701_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 87901421,
+              "thumbnail": "https://cdn.pixabay.com/video/2024/10/17/236701_tiny.jpg"
+            }
+          },
+          "views": 1286,
+          "downloads": 522,
+          "likes": 11,
+          "comments": 2,
+          "user_id": 3656355,
+          "user": "Engin_Akyurt",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/09/20/08-02-23-312_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/3656355/",
+          "name": "pigeons, birds, nature",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 264361,
+          "pageURL": "https://pixabay.com/videos/id-264361/",
+          "type": "film",
+          "tags": "cheetah, male cheetah, predator, feast, licking, savannah, wildlife, big cat, africa, wild animal, hunting, survival, carnivore, nature, fierce, alert, cleaning",
+          "duration": 5,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2025/03/13/264361_large.mp4",
+              "width": 1080,
+              "height": 1920,
+              "size": 4041818,
+              "thumbnail": "https://cdn.pixabay.com/video/2025/03/13/264361_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2025/03/13/264361_medium.mp4",
+              "width": 720,
+              "height": 1280,
+              "size": 2346291,
+              "thumbnail": "https://cdn.pixabay.com/video/2025/03/13/264361_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2025/03/13/264361_small.mp4",
+              "width": 540,
+              "height": 960,
+              "size": 1597258,
+              "thumbnail": "https://cdn.pixabay.com/video/2025/03/13/264361_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2025/03/13/264361_tiny.mp4",
+              "width": 360,
+              "height": 640,
+              "size": 980971,
+              "thumbnail": "https://cdn.pixabay.com/video/2025/03/13/264361_tiny.jpg"
+            }
+          },
+          "views": 5221,
+          "downloads": 2659,
+          "likes": 30,
+          "comments": 1,
+          "user_id": 49259487,
+          "user": "MikoEP",
+          "userImageURL": "",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/49259487/",
+          "name": "cheetah, male cheetah, predator",
+          "heading": "",
+          "description": "A male cheetah sits in the savannah, licking its mouth clean after a successful hunt. Its golden fur glistens under the sun as it remains alert, scanning the surroundings for any lurking scavengers"
+        },
+        {
+          "id": 34592,
+          "pageURL": "https://pixabay.com/videos/id-34592/",
+          "type": "film",
+          "tags": "corona, virus, mask, infection, epidemic, covid-19, quarantine, disease, computer, house, internet, woman, portrait, protection, coronavirus, cleaning, hygiene, wuhan, doctor, flu, health, pathogen, panic, mouthpiece",
+          "duration": 20,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 32090005,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 11611241,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 7438509,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 2199281,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/03/30/34592-402679701_tiny.jpg"
+            }
+          },
+          "views": 85213,
+          "downloads": 47973,
+          "likes": 206,
+          "comments": 68,
+          "user_id": 3656355,
+          "user": "Engin_Akyurt",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/09/20/08-02-23-312_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/3656355/",
+          "name": "corona, virus, mask",
+          "heading": "",
+          "description": ""
+        },
+        {
+          "id": 34804,
+          "pageURL": "https://pixabay.com/videos/id-34804/",
+          "type": "film",
+          "tags": "coronavirus, mask, virus, quarantine, epidemic, disease, infection, covid-19, health, medical, protection, flu, pathogen, cleaning, hygiene, corona, biology, mouthpiece, distance, doctor, nurse, clinical, portrait, woman, human",
+          "duration": 20,
+          "videos": {
+            "large": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_large.mp4",
+              "width": 3840,
+              "height": 2160,
+              "size": 63398843,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_large.jpg"
+            },
+            "medium": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_medium.mp4",
+              "width": 2560,
+              "height": 1440,
+              "size": 29611848,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_medium.jpg"
+            },
+            "small": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_small.mp4",
+              "width": 1920,
+              "height": 1080,
+              "size": 14476949,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_small.jpg"
+            },
+            "tiny": {
+              "url": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_tiny.mp4",
+              "width": 1280,
+              "height": 720,
+              "size": 5661059,
+              "thumbnail": "https://cdn.pixabay.com/video/2020/04/02/34804-403432641_tiny.jpg"
+            }
+          },
+          "views": 88425,
+          "downloads": 40339,
+          "likes": 189,
+          "comments": 60,
+          "user_id": 3656355,
+          "user": "Engin_Akyurt",
+          "userImageURL": "https://cdn.pixabay.com/user/2018/09/20/08-02-23-312_250x250.jpg",
+          "noAiTraining": false,
+          "isAiGenerated": false,
+          "isGRated": true,
+          "isLowQuality": false,
+          "userURL": "https://pixabay.com/users/3656355/",
+          "name": "coronavirus, mask, virus",
+          "heading": "",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "wikimedia:keywords:cleaning": {
+    "at": 1794029284.8549206,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "113961101": {
+            "pageid": 113961101,
+            "ns": 6,
+            "title": "File:National CleanUp Day Welcome.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 64455722,
+                "width": 3840,
+                "height": 2160,
+                "duration": 69.387,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/National_CleanUp_Day_Welcome.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:National_CleanUp_Day_Welcome.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113961101",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2022-01-03 21:18:14",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "National CleanUp Day Welcome",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Observances in the United States|Volunteering in the United States|Plastics|Environment|Litter|Days in September|Environmental awareness days|World Cleanup Day|Community organizations|Self-published work|National CleanUp Day",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "This is the welcome video for National CleanUp Day by Steve Jewett and Bill Willoughby.  National CleanUp Day is the third Saturday in September.  National CleanUp Day is held in conjunction with World CleanUp Day .  \nNational CleanUp Month is all of September.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-10-16",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Stevejewett&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Stevejewett (page does not exist)\">Stevejewett</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "195836548": {
+            "pageid": 195836548,
+            "ns": 6,
+            "title": "File:Nimitz Park Clean Up (955905).webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 8122874,
+                "width": 1920,
+                "height": 1080,
+                "duration": 29.996000000000002,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Nimitz_Park_Clean_Up_%28955905%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nimitz_Park_Clean_Up_(955905).webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=195836548",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-07-17 23:34:49",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Nimitz Park Clean Up (955905)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "PD US Navy|Files created by the United States Navy with known IDs|Files with closed captioning in English|CC-PD-Mark|Uploaded with video2commons|Video display resolution 1920 x 1080|Videos of 2025 from Japan|Videos by the Defense Visual Information Distribution Service|DVIDS files uploaded by OptimusPrimeBot|Milimedia files, Japan (review needed)|Videos taken on 2025-03-17|Videos of the United States Navy",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The Commander, Fleet Activities Sasebo First Class Petty Officer Association hosted a local trash clean-up at Nimitz Park March 18th. American Forces Network produces and delivers unique, immediate and uninterrupted media services to inform and entertain overseas DoD personnel and families. (U.S. Navy video by Mass Communication Specialist Seaman Matthew Miller)",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "Taken on 17 March 2025",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<table class=\"layouttemplate sourcetemplate\" style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; box-sizing: border-box; padding: 0; border-spacing: 8px; background-color: var(--background-color-neutral-subtle, #f6f7f5); color: var(--color-base, #202122); border: var(--border-subtle, 1px solid #555555);\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Seal_of_the_United_States_Department_of_the_Navy.svg/120px-Seal_of_the_United_States_Department_of_the_Navy.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"80\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Seal_of_the_United_States_Department_of_the_Navy.svg/250px-Seal_of_the_United_States_Department_of_the_Navy.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"889\" data-file-height=\"889\"></span></span>\n</td>\n<td align=\"center\">\n<p><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=ID-USMil 1%3D250318-N-FJ198-1001 2%3DNavy url%3Dhttps%3A%2F%2Fwww.dvidshub.net%2Fvideo%2F955905\"> </span>\nThis image was released by the United States Navy with the <a href=\"//commons.wikimedia.org/wiki/Commons:VIRIN\" title=\"Commons:VIRIN\">ID</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.dvidshub.net/video/955905\">250318-N-FJ198-1001</a> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Category:Files_created_by_the_United_States_Navy_with_known_IDs&amp;filefrom=250318-N-FJ198-1001#mw-category-media\" href=\"https://commons.wikimedia.org/w/index.php?title=Category:Files_created_by_the_United_States_Navy_with_known_IDs&amp;filefrom=250318-N-FJ198-1001#mw-category-media\"><small>(next)</small></a>.<br>\n<small>This tag does not indicate the copyright status of the attached work. <span style=\"white-space:nowrap\">A normal <a href=\"//commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Copyright_tags\" title=\"Special:MyLanguage/Commons:Copyright tags\">copyright tag</a> is still required.</span> <span style=\"white-space:nowrap\">See <a href=\"//commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Licensing\" title=\"Special:MyLanguage/Commons:Licensing\">Commons:Licensing</a>.</span></small>\n</p>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ar\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/bn\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/id\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/jax\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/jax\"><bdi class=\"language lang-jax\" lang=\"jax\">Bahaso Jambi</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/de\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/de-formal\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/de-formal\"><bdi class=\"language lang-de-formal\" lang=\"de-formal\">Deutsch (Sie-Form)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/en\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/es\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/es\"><bdi class=\"language lang-es\" lang=\"es\">español</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/eu\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/eu\"><bdi class=\"language lang-eu\" lang=\"eu\">euskara</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/fa\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/fa\"><bdi class=\"language lang-fa\" lang=\"fa\">فارسی</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/fr\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/it\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ja\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ko\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ko\"><bdi class=\"language lang-ko\" lang=\"ko\">한국어</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/mk\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ml\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/nds\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/nds\"><bdi class=\"language lang-nds\" lang=\"nds\">Plattdüütsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/nl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/pl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/pl\"><bdi class=\"language lang-pl\" lang=\"pl\">polski</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ps\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ps\"><bdi class=\"language lang-ps\" lang=\"ps\">پښتو</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/pt\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ru\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/sl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/sv\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/tr\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/tr\"><bdi class=\"language lang-tr\" lang=\"tr\">Türkçe</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/uk\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/zh-hans\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/zh-hans\"><bdi class=\"language lang-zh-hans\" lang=\"zh-hans\">简体中文</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/zh-hant\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/zh-hant\"><bdi class=\"language lang-zh-hant\" lang=\"zh-hant\">繁體中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:ID-USMil/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:ID-USMil/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td>\n<td><span class=\"mw-image-border\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/120px-Flag_of_the_United_States.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"47\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/250px-Flag_of_the_United_States.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1235\" data-file-height=\"650\"></span></span>\n</td></tr></tbody></table>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "U.S. Navy video by Seaman <a rel=\"nofollow\" class=\"external text\" href=\"https://www.dvidshub.net/portfolio/1821845\">Matthew Miller</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "143637605": {
+            "pageid": 143637605,
+            "ns": 6,
+            "title": "File:Reinigung 4711-Werbung Köln Hbf.webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 160218469,
+                "width": 1920,
+                "height": 1080,
+                "duration": 63.307,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Reinigung_4711-Werbung_K%C3%B6ln_Hbf.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Reinigung_4711-Werbung_K%C3%B6ln_Hbf.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=143637605",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2024-01-07 16:15:43",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Reinigung 4711-Werbung Köln Hbf",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos of 2019 from Germany|4711 (brand)|WebM videos|Self-published work|Information field template with formatting|Uploaded with video2commons|Video display resolution 1920 x 1080|Videos from Cologne|Train shed of Köln Hauptbahnhof|Köln Hauptbahnhof in 2019|Files by User:Raymond from de.wikipedia/Cologne|Videos of Köln Hauptbahnhof|Files by User:Raymond from de.wikipedia/Videos",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Reinigung Werbung Köln Hbf",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-09-24",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q108103612\" class=\"extiw\" title=\"d:Q108103612\"><span title=\"Wikipedian and OpenStreetMap mapper from Cologne, Open Data activist\">Raimond Spekking</span></a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Attribution": {
+                    "value": "© Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "61353542": {
+            "pageid": 61353542,
+            "ns": 6,
+            "title": "File:Reinigung Glasdach Köln Hauptbahnhof.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 59789686,
+                "width": 1920,
+                "height": 1080,
+                "duration": 72.304,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Reinigung_Glasdach_K%C3%B6ln_Hauptbahnhof.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Reinigung_Glasdach_K%C3%B6ln_Hauptbahnhof.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61353542",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2017-07-28 19:39:56",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Reinigung Glasdach Köln Hauptbahnhof",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos of 2017 from Germany|WebM videos|Self-published work|Information field template with formatting|Documentary videos|Video display resolution 1920 x 1080|Köln Hauptbahnhof in 2017|Files by User:Raymond from de.wikipedia/Cologne|Videos of Köln Hauptbahnhof|Files by User:Raymond from de.wikipedia/Videos|Reinigung Glasdach Köln Hauptbahnhof",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "50.936260",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "6.872162",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Reinigung Glasdach Köln Hauptbahnhof. Ein ferngesteuerter Roboter (Hycleaner) reinigt die trichterförmige Dachkonstruktion des Architekten Stefan Polónyi",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2017-07-28",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q108103612\" class=\"extiw\" title=\"d:Q108103612\"><span title=\"Wikipedian and OpenStreetMap mapper from Cologne, Open Data activist\">Raimond Spekking</span></a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Attribution": {
+                    "value": "© Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "201348888": {
+            "pageid": 201348888,
+            "ns": 6,
+            "title": "File:Senrigahama Beach Clean Up (1025793).webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 49949479,
+                "width": 1920,
+                "height": 1080,
+                "duration": 60.026,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Senrigahama_Beach_Clean_Up_%281025793%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Senrigahama_Beach_Clean_Up_(1025793).webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=201348888",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-10-08 20:21:07",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Senrigahama Beach Clean Up (1025793)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "PD US Navy|Files created by the United States Navy with known IDs|Files with closed captioning in English|CC-PD-Mark|Uploaded with video2commons|Video display resolution 1920 x 1080|Videos of 2026 from Japan|Videos by the Defense Visual Information Distribution Service|DVIDS files uploaded by OptimusPrimeBot|Milimedia files, Japan (review needed)|Videos of the United States Navy|Videos taken on 2026-09-29",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "COMMANDER, FLEET ACTIVITIES SASEBO, Japan (Oct. 7, 2026) – Commander, Fleet Activities Sasebo’s Religious Ministries Department hosts a beach clean-up COMREL at Senrigahama Beach in Hirado, Japan, Sept. 29, 2026. The American Forces Network produces and delivers unique, immediate and uninterrupted media services to inform and entertain overseas DoW personnel and families. (U.S. Navy video by Mass Communication Specialist Seaman Joelle Angrand)",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "Taken on 29 September 2026",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<table class=\"layouttemplate sourcetemplate\" style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; box-sizing: border-box; padding: 0; border-spacing: 8px; background-color: var(--background-color-neutral-subtle, #f6f7f5); color: var(--color-base, #202122); border: var(--border-subtle, 1px solid #555555);\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Seal_of_the_United_States_Department_of_the_Navy.svg/120px-Seal_of_the_United_States_Department_of_the_Navy.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"80\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Seal_of_the_United_States_Department_of_the_Navy.svg/250px-Seal_of_the_United_States_Department_of_the_Navy.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"889\" data-file-height=\"889\"></span></span>\n</td>\n<td align=\"center\">\n<p><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=ID-USMil 1%3D260929-N-HA212-9125 2%3DNavy url%3Dhttps%3A%2F%2Fwww.dvidshub.net%2Fvideo%2F1025793\"> </span>\nThis image was released by the United States Navy with the <a href=\"//commons.wikimedia.org/wiki/Commons:VIRIN\" title=\"Commons:VIRIN\">ID</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.dvidshub.net/video/1025793\">260929-N-HA212-9125</a> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Category:Files_created_by_the_United_States_Navy_with_known_IDs&amp;filefrom=260929-N-HA212-9125#mw-category-media\" href=\"https://commons.wikimedia.org/w/index.php?title=Category:Files_created_by_the_United_States_Navy_with_known_IDs&amp;filefrom=260929-N-HA212-9125#mw-category-media\"><small>(next)</small></a>.<br>\n<small>This tag does not indicate the copyright status of the attached work. <span style=\"white-space:nowrap\">A normal <a href=\"//commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Copyright_tags\" title=\"Special:MyLanguage/Commons:Copyright tags\">copyright tag</a> is still required.</span> <span style=\"white-space:nowrap\">See <a href=\"//commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Licensing\" title=\"Special:MyLanguage/Commons:Licensing\">Commons:Licensing</a>.</span></small>\n</p>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ar\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/bn\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/id\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/jax\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/jax\"><bdi class=\"language lang-jax\" lang=\"jax\">Bahaso Jambi</bdi></a> <b>∙</b> \n<a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/de\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/de-formal\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/de-formal\"><bdi class=\"language lang-de-formal\" lang=\"de-formal\">Deutsch (Sie-Form)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/en\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/es\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/es\"><bdi class=\"language lang-es\" lang=\"es\">español</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/eu\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/eu\"><bdi class=\"language lang-eu\" lang=\"eu\">euskara</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/fa\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/fa\"><bdi class=\"language lang-fa\" lang=\"fa\">فارسی</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/fr\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/it\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ja\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ko\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ko\"><bdi class=\"language lang-ko\" lang=\"ko\">한국어</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/mk\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ml\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/nds\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/nds\"><bdi class=\"language lang-nds\" lang=\"nds\">Plattdüütsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/nl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/pl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/pl\"><bdi class=\"language lang-pl\" lang=\"pl\">polski</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ps\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ps\"><bdi class=\"language lang-ps\" lang=\"ps\">پښتو</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/pt\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/ru\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/sl\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/sv\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/tr\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/tr\"><bdi class=\"language lang-tr\" lang=\"tr\">Türkçe</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/uk\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/zh-hans\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/zh-hans\"><bdi class=\"language lang-zh-hans\" lang=\"zh-hans\">简体中文</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:ID-USMil/zh-hant\" href=\"https://commons.wikimedia.org/wiki/Template:ID-USMil/zh-hant\"><bdi class=\"language lang-zh-hant\" lang=\"zh-hant\">繁體中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:ID-USMil/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:ID-USMil/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td>\n<td><span class=\"mw-image-border\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/120px-Flag_of_the_United_States.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"47\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/250px-Flag_of_the_United_States.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1235\" data-file-height=\"650\"></span></span>\n</td></tr></tbody></table>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "U.S. Navy video by Seaman <a rel=\"nofollow\" class=\"external text\" href=\"https://www.dvidshub.net/portfolio/1900826\">Joelle Angrand</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Public domain",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Copyrighted": {
+                    "value": "False",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "pd",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pixabay:wardrobe": {
+    "at": 1794029284.8549173,
+    "data": {
+      "total": 0,
+      "totalHits": 0,
+      "hits": []
+    }
+  },
+  "wikimedia:keywords:wardrobe": {
+    "at": 1794029284.8549206,
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 5,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "191182792": {
+            "pageid": 191182792,
+            "ns": 6,
+            "title": "File:In The Closet- Common objective.webm",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 19404151,
+                "width": 1280,
+                "height": 720,
+                "duration": 153.62800000000001,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/In_The_Closet-_Common_objective.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:In_The_Closet-_Common_objective.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=191182792",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2026-05-04 14:00:38",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "In The Closet- Common objective",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos from YouTube|License review needed (video)|Videos of 2018|Videos of fashion|Uploaded with video2commons|Videos in English|Qiulae Wong",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "This week on ‘In The Closet’ our Creative Director gets an insight on the latest business network; Common Objective with Marketer Qiulae Wong.\n<p>CO was founded in 2005 and builds on ten years of work by the Ethical Fashion Forum, which now reaches a global network spanning 141 countries. Intelligent technology matches members with the connections and resources they need to succeed and makes it easier for them to work in the most sustainable way. \n</p><p>Building successful businesses with a positive impact for people and the environment is the common objective among members. \nRegister to become a founding member of the platform to help take sustainable fashion from niche to norm.\n</p><p>Visit their website here: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.commonobjective.co/\">https://www.commonobjective.co/</a>\n</p><p>Please subscribe to our channel if you enjoyed this video and give it a thumbs up if you liked it!\n</p><p>Find us on Facebook: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.facebook.com/theformary/\">https://www.facebook.com/theformary/</a>\nInstagram: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.instagram.com/theformary/\">https://www.instagram.com/theformary/</a>\nTwitter: <a rel=\"nofollow\" class=\"external free\" href=\"https://twitter.com/TheFormary\">https://twitter.com/TheFormary</a>\nPinterest: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.pinterest.nz/theformary/p\">https://www.pinterest.nz/theformary/p</a>...\n</p>\nWebsite: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.textilereuse.com\">http://www.textilereuse.com</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2018-08-09",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=quJ8X1R1n44\"><bdi lang=\"\">In The Closet: Common objective</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=quJ8X1R1n44\">archive.org</a></bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@TheFormary\">The Formary</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "The Formary",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "85195522": {
+            "pageid": 85195522,
+            "ns": 6,
+            "title": "File:Wardrobe Heroes - Romance in Marrakech.webm",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 20579513,
+                "width": 1920,
+                "height": 1080,
+                "duration": 38.813,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Wardrobe_Heroes_-_Romance_in_Marrakech.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wardrobe_Heroes_-_Romance_in_Marrakech.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=85195522",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-12-24 09:03:53",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wardrobe Heroes - Romance in Marrakech",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos of 2017|Uploaded with video2commons|Videos from Vimeo|License reviewed by YouTubeReviewBot",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "This is \"Wardrobe Heroes | Romance in Marrakech\" by Tania Bornacin on Vimeo, the home for high quality videos and the people who love them.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2017-03-20",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/Category:Vimeo\" title=\"Category:Vimeo\">Vimeo</a>: <a rel=\"nofollow\" class=\"external text\" data-mw-original-href=\"//vimeo.com/209179055\" href=\"https://vimeo.com/209179055\">Wardrobe Heroes | Romance in Marrakech</a> (<a rel=\"nofollow\" class=\"external text\" href=\"//web.archive.org/web/*/https://vimeo.com/209179055\"><span style=\"color:#9602fc\">view archived source</span></a>)",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://vimeo.com/user2883565\">Tania Bornacin</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "Tania Bornacin",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "147912277": {
+            "pageid": 147912277,
+            "ns": 6,
+            "title": "File:Wardrobe Making.webm",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 1146200,
+                "width": 320,
+                "height": 240,
+                "duration": 5.936,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Wardrobe_Making.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wardrobe_Making.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147912277",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2024-04-30 21:03:27",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wardrobe Making",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Self-published work|Images from Wiki Loves Africa 2024|Uploaded via Campaign:wlafrica|Images from Wiki Loves Africa 2024 to check|Images from Wiki Loves Africa 2024 in Zimbabwe|Short clips from Wiki Loves Africa 2024|Videos from Wiki Loves Africa 2024",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Wardrobe making",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2024-04-30",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Phantomassassinbb2811\" title=\"User:Phantomassassinbb2811\">Phantomassassinbb2811</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "147912278": {
+            "pageid": 147912278,
+            "ns": 6,
+            "title": "File:Wardrobe Making 2.webm",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 4644437,
+                "width": 320,
+                "height": 240,
+                "duration": 20.836000000000002,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Wardrobe_Making_2.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wardrobe_Making_2.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147912278",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2024-04-30 21:03:27",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wardrobe Making 2",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Self-published work|Images from Wiki Loves Africa 2024|Uploaded via Campaign:wlafrica|Images from Wiki Loves Africa 2024 to check|Images from Wiki Loves Africa 2024 in Zimbabwe|Short clips from Wiki Loves Africa 2024|Videos from Wiki Loves Africa 2024",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Wardrobe making",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2024-04-30",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Phantomassassinbb2811\" title=\"User:Phantomassassinbb2811\">Phantomassassinbb2811</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          },
+          "85195684": {
+            "pageid": 85195684,
+            "ns": 6,
+            "title": "File:Wonder Woman Wardrobe Malfunction.webm",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "size": 22797361,
+                "width": 1920,
+                "height": 1080,
+                "duration": 90.738,
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Wonder_Woman_Wardrobe_Malfunction.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wonder_Woman_Wardrobe_Malfunction.webm",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=85195684",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-12-24 09:12:56",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wonder Woman Wardrobe Malfunction",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Videos of 2016|Uploaded with video2commons|Videos from Vimeo|License reviewed by YouTubeReviewBot",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "An awkward new superhero adventure from HUNKS\n<p>Directed by Rory Fallis\nWritten by HUNKS\nhunkscomedy.com\nLike us on Facebook: facebook.com/HUNKScomedy\nFollow us on Twitter: twitter.com/HUNKScomedy\nFollow us on Instagram: instagram.com/hunkscomedy/\nMusic:\n“Black Vortex” &amp; \"Take a Chance\" by Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 creativecommons.org/licenses/by/3.0/ \n“Tidal Wave” by Silent Partner\n“Dustsucker” by Jens Kiilstofte\nmachinimasound.com/music/dustsucker\n</p>\nLicensed under Creative Commons Attribution 4.0 International creativecommons.org/licenses/by/4.0/",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2016-12-29",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/Category:Vimeo\" title=\"Category:Vimeo\">Vimeo</a>: <a rel=\"nofollow\" class=\"external text\" data-mw-original-href=\"//vimeo.com/197428807\" href=\"https://vimeo.com/197428807\">Wonder Woman Wardrobe Malfunction</a> (<a rel=\"nofollow\" class=\"external text\" href=\"//web.archive.org/web/*/https://vimeo.com/197428807\"><span style=\"color:#9602fc\">view archived source</span></a>)",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://vimeo.com/roryfallis\">Rory Fallis</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "Rory Fallis",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                },
+                "mime": "video/webm"
+              }
+            ]
+          }
+        }
+      }
+    }
   }
 }
