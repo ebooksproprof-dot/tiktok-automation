@@ -18,6 +18,26 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_recovery_acquires_fresh_material_after_a_real_empty_production_result(self):
+        self.assertEqual(autonomous_stock.recovery_workflow({'last_run': {'status': 'NO_VALID_OUTPUT'}}), 'acquire-media.yml')
+        self.assertEqual(autonomous_stock.recovery_workflow({'last_run': {'status': 'QUEUED'}}), 'casasemesforco-daily.yml')
+        response = Mock();response.__enter__=Mock(return_value=response);response.__exit__=Mock(return_value=False);response.status=204
+        with patch.object(autonomous_stock.urllib.request, 'urlopen', return_value=response) as send:
+            autonomous_stock.dispatch('test-placeholder', 'acquire-media.yml')
+            request = send.call_args.args[0]
+            self.assertTrue(request.full_url.endswith('/acquire-media.yml/dispatches'))
+            self.assertEqual(json.loads(request.data), {'ref': 'main'})
+
+    def test_proven_category_repair_cannot_reopen_duplicates_unknown_rights_or_frozen_sources(self):
+        record = {'selection_reason': 'laundry, washing machine, iron, hairdryer'}
+        prior = {'error': 'PORTRAIT_VISUAL_CONTEXT_REJECTED', 'license': {'source_sha256': 'a'*64},
+                 'visual_review': {'family': 'clothes', 'accepted': False, 'source_sha256': 'a'*64,
+                  'revision': semantic.REVISION, 'decoder_pass': True, 'freeze_intervals_over_1s': 0,
+                  'captions': ['A washing machine with clothing inside.']*3}}
+        self.assertTrue(production.repaired_context(prior, record))
+        for reason in ('VISUAL_NEAR_DUPLICATE', 'UNVERIFIED_SOURCE_RIGHTS', 'SOURCE_FROZEN_OR_UNDECODABLE'):
+            self.assertFalse(production.repaired_context(dict(prior, error=reason), record))
+
     def test_low_stock_recovers_without_new_consumption_but_never_blind_repeats_dispatch(self):
         now = dt.datetime(2026, 11, 7, 6, 30, tzinfo=dt.timezone.utc)
         ledger = {'outputs': {}, 'refill_events': {}}

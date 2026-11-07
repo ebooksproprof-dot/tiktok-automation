@@ -25,10 +25,20 @@ def newly_published(ledger, state):
             and entry.get('sha256') == output.get('sha256')]
 
 
-def dispatch(token):
+def recovery_workflow(ledger):
+    return ('acquire-media.yml' if ledger.get('last_run', {}).get('status') == 'NO_VALID_OUTPUT'
+            else 'casasemesforco-daily.yml')
+
+
+def dispatch(token, workflow='casasemesforco-daily.yml'):
+    if workflow not in ('acquire-media.yml', 'casasemesforco-daily.yml'):
+        raise ValueError('EXISTING_RECOVERY_WORKFLOW_REQUIRED')
+    payload = {'ref': 'main'}
+    if workflow == 'casasemesforco-daily.yml':
+        payload['inputs'] = {'production_limit': '2'}
     request = urllib.request.Request(
-        'https://api.github.com/repos/'+stock.REPO+'/actions/workflows/casasemesforco-daily.yml/dispatches',
-        method='POST', data=json.dumps({'ref': 'main', 'inputs': {'production_limit': '2'}}).encode(),
+        'https://api.github.com/repos/'+stock.REPO+'/actions/workflows/'+workflow+'/dispatches',
+        method='POST', data=json.dumps(payload).encode(),
         headers={'Authorization': 'Bearer '+token, 'Accept': 'application/vnd.github+json',
                  'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28'})
     # Dispatch is not a video submission. Even so, stop on an uncertain reply;
@@ -41,7 +51,7 @@ def dispatch(token):
         raise RuntimeError('REFILL_DISPATCH_UNCERTAIN; no blind repeat; scheduled production remains active') from None
 
 
-def request_refill(store, state, now, sender, maintenance=False):
+def request_refill(store, state, now, sender, maintenance=False, target_workflow='casasemesforco-daily.yml'):
     ledger, revision = store.load()
     ids = newly_published(ledger, state)
     trigger = 'CONFIRMED_CONSUMPTION'
@@ -62,13 +72,15 @@ def request_refill(store, state, now, sender, maintenance=False):
                     return {'status': 'HOLD_UNCERTAIN_WORKFLOW_DISPATCH', 'publication_ids': []}
         bucket = dt.datetime.fromtimestamp(int(now.timestamp())//21600*21600, dt.timezone.utc).isoformat()
         receipts = ledger.setdefault('maintenance_refills', {})
-        if bucket in receipts:
+        key = bucket+'|'+target_workflow
+        if key in receipts or (target_workflow == 'casasemesforco-daily.yml' and bucket in receipts):
             return {'status': 'MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW', 'publication_ids': []}
-        ids, trigger = [bucket], 'LOW_STOCK_MAINTENANCE'
+        ids, trigger = [key], 'LOW_STOCK_MAINTENANCE'
     else:
         receipts = ledger.setdefault('refill_events', {})
     for key in ids:
-        receipts[key] = {'status': 'INTENT_RECORDED_NO_BLIND_RETRY', 'at': stock.stamp(now), 'trigger': trigger}
+        receipts[key] = {'status': 'INTENT_RECORDED_NO_BLIND_RETRY', 'at': stock.stamp(now),
+                         'trigger': trigger, 'target_workflow': target_workflow}
     revision = store.save(ledger, revision)  # A failed CAS prevents dispatch.
     try:
         sender()
@@ -81,7 +93,8 @@ def request_refill(store, state, now, sender, maintenance=False):
     for key in ids:
         receipts[key]['status'] = result
     store.save(ledger, revision)
-    return {'status': result, 'publication_ids': publication_ids, 'trigger': trigger}
+    return {'status': result, 'publication_ids': publication_ids, 'trigger': trigger,
+            'target_workflow': target_workflow}
 
 
 def run(token, check_channel=False, probe=None):
@@ -104,7 +117,10 @@ def run(token, check_channel=False, probe=None):
         channel_ok = True
     refill = {'status': 'CHECK_ONLY' if check_channel else 'STOCK_TARGET_MET', 'publication_ids': []}
     if not check_channel and status['refill_needed']:
-        refill = request_refill(producer_store, state, now, lambda: dispatch(token), maintenance=True)
+        ledger, _ = producer_store.load()
+        target = recovery_workflow(ledger)
+        refill = request_refill(producer_store, state, now, lambda: dispatch(token, target),
+                                maintenance=True, target_workflow=target)
     inventory, revision = inventory_store.load()
     old = inventory.get('production', {})
     if old.get('provider') == 'tiktok_symphony':

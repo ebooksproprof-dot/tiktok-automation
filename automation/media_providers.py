@@ -83,6 +83,8 @@ class PixabayProvider(CachedProvider):
         page = 1
         known = getattr(self, 'known_urls', None)
         if known is not None:
+            from visual_library import source_identity
+            known_ids = {source_identity(url) for url in known}
             for number in (1, 2):
                 key = self.name+':'+base+('' if number == 1 else '|page='+str(number))
                 prior = self.cache.get(key, {}).get('data', {})
@@ -96,7 +98,7 @@ class PixabayProvider(CachedProvider):
                     relevant = [hit for hit in hits if contextual(hit.get('tags', ''), words)
                                 and nominate({'selection_reason': hit.get('tags', '')})]
                 if (page == number and len(hits) == 15 and urls
-                        and all(any(f.get('url') in known for f in hit.get('videos', {}).values()) for hit in relevant)
+                        and all(any(source_identity(f.get('url', '')) in known_ids for f in hit.get('videos', {}).values()) for hit in relevant)
                         and int(prior.get('totalHits', 0)) > number*15):
                     page += 1
         params = dict(key=self.key, q=query[:100], video_type='film', safesearch='true',

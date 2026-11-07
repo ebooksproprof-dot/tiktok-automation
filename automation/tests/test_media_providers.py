@@ -193,6 +193,20 @@ class ProviderTests(unittest.TestCase):
             self.assertEqual(saved['items'][0]['provider'], 'wikimedia')
 
 class CropAndEvidenceTests(unittest.TestCase):
+    def test_old_resolution_in_history_does_not_trap_discovery_on_used_first_page(self):
+        hits = []
+        for n in range(15):
+            hit = pixabay();hit['id']=n
+            hit['videos']['large']['url']='https://cdn.pixabay.com/video/'+str(n)+'-hash_large.mp4'
+            hits.append(hit)
+        cache = {'pixabay:cleaning|native-full-v1': {'at':100,'data':{'hits':hits,'totalHits':40}}}
+        provider=p.PixabayProvider('test-placeholder',cache,now=101);provider.allow_full_frame=True
+        provider.known_urls={h['videos']['large']['url'].replace('_large','_medium') for h in hits}
+        with patch.object(p,'request',return_value=io.BytesIO(b'{"hits": []}')) as network:
+            provider.search('cleaning','cleaning',['cleaning'])
+            self.assertIn('page=2',network.call_args.args[0])
+            self.assertEqual(provider.requests,1)
+
     def test_native_hd_is_only_eligible_with_explicit_full_frame_policy(self):
         hit = pixabay(); hit['videos']['large'].update(width=1920, height=1080)
         provider = p.PixabayProvider('mock', {})

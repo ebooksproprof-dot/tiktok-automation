@@ -358,6 +358,9 @@ def run():
         providers['pixabay'].known_urls = {x['url'] for x in inbox['items']}
         providers['pixabay'].known_urls.update(url for url, entry in ledger.get('candidates', {}).items()
                                               if entry.get('status') in ('REJECTED', 'QUEUED'))
+        providers['pixabay'].known_urls.update(url for entry in previous for url in entry.get('source_urls', []))
+        providers['pixabay'].known_urls.update(record['source_id'] for entry in previous
+            for record in entry.get('visual_sources', []) if record.get('source_id'))
     # At most four queries/provider and four downloads total per run.
     selected_topics = daily_topics(now)
     errors = []

@@ -25,7 +25,7 @@ from daily_coverage import stamp, confirmed_live_tests
 from media_acquisition import download_and_measure, read_json, save_json
 from media_providers import crop_capable, native_full_frame, plain
 from media_rights import caption_with_credits
-from semantic_review import Reviewer, nominate, motion, REVISION
+from semantic_review import Reviewer, nominate, assess, motion, REVISION
 from source_license import verify as license_verify, CACHE as RIGHTS_CACHE, SourceLicenseBudgetExceeded
 import visual_library as visuals
 
@@ -316,6 +316,18 @@ def scripts(pool, queue, state):
     return novel_scripts(choices, queue, state)
 
 
+def repaired_context(prior, record):
+    """Re-review only a demonstrated category error; never override other gates."""
+    review = prior.get('visual_review', {})
+    family = nominate(record)
+    return (prior.get('error') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED'
+            and review.get('accepted') is False and family and family != review.get('family')
+            and review.get('revision') == REVISION and review.get('decoder_pass') is True
+            and review.get('freeze_intervals_over_1s') == 0
+            and review.get('source_sha256') == prior.get('license', {}).get('source_sha256')
+            and assess(family, review.get('captions', [])))
+
+
 def run(stage=False, soon=False, limit=2):
     if stage and (os.getenv('GITHUB_ACTIONS') != 'true'
                   or os.getenv('GITHUB_REF_NAME') != 'main'
@@ -351,7 +363,8 @@ def run(stage=False, soon=False, limit=2):
             break
         key = candidate['url']
         prior = ledger['candidates'].get(key, {})
-        if prior.get('status') in ('REJECTED', 'QUEUED'):
+        repair = repaired_context(prior, candidate)
+        if prior.get('status') == 'QUEUED' or prior.get('status') == 'REJECTED' and not repair:
             continue
         known_rights = read_json(RIGHTS_CACHE, {'sources': {}})['sources']
         new_evidence = prior.get('error_type') == 'HTTPError' and (key in known_rights or bool(os.getenv('PIXABAY_API_KEY')))
@@ -372,6 +385,8 @@ def run(stage=False, soon=False, limit=2):
             phase = 'license'
             license_proof = license_verify(measured)
             entry = ledger['candidates'].setdefault(key, {})
+            if repair:
+                entry.setdefault('classification_history', []).append(dict(entry['visual_review']))
             errors = ('error', 'error_type', 'error_stage', 'http_status', 'retry_after')
             if entry.get('error'):
                 entry.setdefault('hold_history', []).append({k: entry[k] for k in errors if k in entry})
