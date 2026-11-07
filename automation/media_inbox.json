@@ -1166,7 +1166,8 @@
       "height": 1080,
       "duration": 55.573333,
       "bytes": 29800082,
-      "acquired_at": 1794034472
+      "acquired_at": 1794034472,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -1198,7 +1199,40 @@
       "height": 1080,
       "duration": 19.44,
       "bytes": 10333630,
-      "acquired_at": 1794034474
+      "acquired_at": 1794034474,
+      "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34730",
+      "url": "https://cdn.pixabay.com/video/2020/04/01/34730-403408248_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34730/",
+      "author": "jLasWilson",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: jLasWilson / Pixabay — https://pixabay.com/videos/id-34730/",
+      "category": "limpeza",
+      "query": "cleaning",
+      "selection_reason": "Provider tags: washing hands, 20 seconds, 20 second hand wash, technique, coronavirus, covid-19, virus, pandemic, hygiene, protection, covid, worldwide, health, cleaning, washing, male, man, hands, wash, stop the spread",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/01/34730-403408248_large.mp4",
+      "sha256": "60381484eea7d1c173fa351dbd45b51b6183bda5e7dd2a7ae004807f646e9e2e",
+      "dhash": [
+        "4d437363e0000142",
+        "595b3db990101102",
+        "493b1d9998100102",
+        "d11b3db990101102",
+        "4d2b2d99d808090a"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 20.393333,
+      "bytes": 10081174,
+      "acquired_at": 1794035153
     }
   ],
   "rejected_until": {
@@ -1206,11 +1240,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794034470,
-    "acquired": 2,
+    "at": 1794035151,
+    "acquired": 1,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 5,
+    "download_attempts": 1,
+    "skipped_known": 7,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1231,7 +1265,7 @@
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 14,
+        "eligible_candidates": 13,
         "response_source": "live_api"
       },
       {
@@ -1246,7 +1280,28 @@
         "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 1,
+        "response_source": "cache"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "category": "vassoura2",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "vassoura2",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1258,7 +1313,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 27,
+    "unreviewed_media_count": 28,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
