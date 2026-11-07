@@ -969,7 +969,8 @@
       "height": 1080,
       "duration": 6.676667,
       "bytes": 4356195,
-      "acquired_at": 1794030232
+      "acquired_at": 1794030232,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -1001,7 +1002,8 @@
       "height": 1080,
       "duration": 13.346667,
       "bytes": 8890513,
-      "acquired_at": 1794030233
+      "acquired_at": 1794030233,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -1098,7 +1100,8 @@
       "height": 1080,
       "duration": 6.25,
       "bytes": 4106145,
-      "acquired_at": 1794031621
+      "acquired_at": 1794031621,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1130,7 +1133,72 @@
       "height": 1080,
       "duration": 27.711667,
       "bytes": 16513747,
-      "acquired_at": 1794031622
+      "acquired_at": 1794031622,
+      "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34817",
+      "url": "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34817/",
+      "author": "BreakDownPictures",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: BreakDownPictures / Pixabay — https://pixabay.com/videos/id-34817/",
+      "category": "limpeza",
+      "query": "cleaning",
+      "selection_reason": "Provider tags: washing, hands, coronavirus, soap, hygiene, corona, wash, protection, covid-19, faucet, water, clean, bathroom, cleaning, hand, prevention, slomo",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4",
+      "sha256": "4b3ad942f304c77325db4f615d658a50a69defc678f7d8252a96bf0918e8bee2",
+      "dhash": [
+        "333317173d0f8be1",
+        "31331b133f0e8ee0",
+        "31331b17360683e3",
+        "35310919330781e3",
+        "33331d1f331b97ff"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 55.573333,
+      "bytes": 29800082,
+      "acquired_at": 1794034472
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "1006",
+      "url": "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-1006/",
+      "author": "Coverr-Free-Footage",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Coverr-Free-Footage / Pixabay — https://pixabay.com/videos/id-1006/",
+      "category": "armario",
+      "query": "wardrobe",
+      "selection_reason": "Provider tags: clothing, clothes, fashion, shop, store, dress, retail, wear, shirt, women, shopping, colorful, apparel, buy, sale, wardrobe, color, woman, garment, boutique, female, hanger, fabric, clothing store, fashionable, textile, buying, model",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4",
+      "sha256": "5d510217ef0ae5eca11ebd5d8b4fcb1e70ab22355a81fc5f76d1c29bd196aaf2",
+      "dhash": [
+        "41e1e40e4e4a0e2e",
+        "59ece4424345636a",
+        "4cece447230b5262",
+        "4ce4e60525652dad",
+        "41e1e40e0e2a2e2e"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 19.44,
+      "bytes": 10333630,
+      "acquired_at": 1794034474
     }
   ],
   "rejected_until": {
@@ -1138,11 +1206,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794031620,
+    "at": 1794034470,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 6,
+    "skipped_known": 5,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1164,7 +1232,21 @@
         "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 14,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
@@ -1176,7 +1258,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 25,
+    "unreviewed_media_count": 27,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }

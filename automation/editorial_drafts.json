@@ -593,15 +593,65 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-cabides-pecas-visiveis",
+      "topic": "cabides-pecas-visiveis",
+      "family": "cabides",
+      "hook": "Você esquece as roupas no fundo do armário?",
+      "steps": "Separe as peças por tipo e confira se os cabides têm espaço para se mover. Evite esconder várias roupas no mesmo cabide. Use um modelo adequado ao peso e ao formato de cada peça. Deixe as opções de uso frequente visíveis.",
+      "cta": "Revise um trecho do armário por vez.",
+      "body_sha256": "b5557ac3a5a7c58d189f8424fc40fc8a26396dce13180a46db072e4468f70be7",
+      "script_sha256": "379f01d566d091a50c96eef28f603fe4eb30978962ef5d898a2d2e73da081d70",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "1006",
+        "url": "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-1006/",
+        "author": "Coverr-Free-Footage",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Coverr-Free-Footage / Pixabay — https://pixabay.com/videos/id-1006/",
+        "category": "armario",
+        "query": "wardrobe",
+        "selection_reason": "Provider tags: clothing, clothes, fashion, shop, store, dress, retail, wear, shirt, women, shopping, colorful, apparel, buy, sale, wardrobe, color, woman, garment, boutique, female, hanger, fabric, clothing store, fashionable, textile, buying, model",
+        "requires_crop_review": true,
+        "frame_mode": "preserve_full",
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4",
+        "sha256": "5d510217ef0ae5eca11ebd5d8b4fcb1e70ab22355a81fc5f76d1c29bd196aaf2",
+        "dhash": [
+          "41e1e40e4e4a0e2e",
+          "59ece4424345636a",
+          "4cece447230b5262",
+          "4ce4e60525652dad",
+          "41e1e40e0e2a2e2e"
+        ],
+        "width": 1920,
+        "height": 1080,
+        "duration": 19.44,
+        "bytes": 10333630,
+        "acquired_at": 1794034474
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 12,
-    "pending_review": 11,
+    "unused_templates": 11,
+    "pending_review": 12,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
