@@ -108,6 +108,7 @@ class Reviewer:
         folder.mkdir(parents=True, exist_ok=True)
         duration = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries',
             'format=duration', '-of', 'default=nw=1:nk=1', str(path)], timeout=30))
+        motion_result = motion(path)  # Reject freezes before expensive CPU captioning.
         captions, hashes = [], []
         started = time.monotonic()
         for index, fraction in enumerate((.15, .5, .85)):
@@ -134,8 +135,8 @@ class Reviewer:
                   'source_sha256': record['sha256'], 'accepted': assess(family, captions),
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
+        result.update(motion_result)
         (folder/'review.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
         if not result['accepted']:
             raise ValueError('PORTRAIT_VISUAL_CONTEXT_REJECTED')
-        result.update(motion(path))
         return result

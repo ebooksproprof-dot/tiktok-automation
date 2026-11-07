@@ -114,15 +114,20 @@ class GitHubStore:
         self.validate = validate
         self.url = 'https://api.github.com/repos/' + REPO + '/contents/' + path
 
-    def request(self, method, payload=None):
+    def request(self, method, payload=None, raw=False):
         url = self.url + ('?ref=' + self.branch if method == 'GET' else '')
         request = urllib.request.Request(url, method=method,
             data=json.dumps(payload).encode() if payload is not None else None,
             headers={'Authorization': 'Bearer ' + self.token,
-                     'Accept': 'application/vnd.github+json',
+                     'Accept': 'application/vnd.github.raw+json' if raw else 'application/vnd.github+json',
                      'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json'})
         try:
             with urllib.request.urlopen(request, timeout=60) as response:
+                if raw:
+                    content = response.read(100_000_001)
+                    if len(content) > 100_000_000:
+                        raise ValueError('Metadata exceeds GitHub single-file limit')
+                    return content
                 return json.load(response)
         except urllib.error.HTTPError as exc:
             if method == 'GET' and exc.code == 404:
@@ -137,9 +142,20 @@ class GitHubStore:
         result = self.request('GET')
         if result is None:
             return empty(), None
-        if result.get('encoding') != 'base64':
+        if result.get('encoding') == 'none' and type(result.get('size')) is int and 1_000_000 < result['size'] <= 100_000_000:
+            # Contents API omits inline data above 1MB. Keep its CAS revision,
+            # fetch official raw media, and bind both reads to the Git blob SHA.
+            content = self.request('GET', raw=True)
+            if not isinstance(content, bytes) or len(content) != result['size']:
+                raise Conflict('Large inventory changed or incomplete; reload before mutations')
+            digest = hashlib.sha1(b'blob '+str(len(content)).encode()+b'\0'+content).hexdigest()
+            if digest != result.get('sha'):
+                raise Conflict('Large inventory revision changed; reload before mutations')
+        elif result.get('encoding') == 'base64':
+            content = base64.b64decode(result['content'])
+        else:
             raise ValueError('Inventory content unavailable; refusing empty fallback')
-        state = json.loads(base64.b64decode(result['content']))
+        state = json.loads(content)
         if self.validate:
             validate_state(state)
         return state, result['sha']

@@ -15,6 +15,25 @@ import video_stock as s
 NOW = datetime(2026, 10, 28, 11, tzinfo=timezone.utc)
 
 
+class LargeHistoryTests(unittest.TestCase):
+    def test_official_large_file_read_binds_raw_bytes_to_cas_revision(self):
+        body = b'{"history":["preserved"]}'+b' '*1_100_000
+        digest = hashlib.sha1(b'blob '+str(len(body)).encode()+b'\0'+body).hexdigest()
+        meta = {'encoding': 'none', 'content': '', 'size': len(body), 'sha': digest}
+        store = s.GitHubStore('test-placeholder', validate=False)
+        with patch.object(store, 'request', side_effect=[meta, body]) as request:
+            value, revision = store.load()
+            self.assertEqual(value['history'], ['preserved'])
+            self.assertEqual(revision, digest)
+            request.assert_called_with('GET', raw=True)
+        with patch.object(store, 'request', side_effect=[meta, body[:-1]+b'x']):
+            with self.assertRaises(s.Conflict):
+                store.load()
+        with patch.object(store, 'request', return_value={'encoding': 'none', 'size': 3, 'sha': digest}):
+            with self.assertRaises(ValueError):
+                store.load()
+
+
 def metadata(n=0):
     digest = hashlib.sha256(str(n).encode()).hexdigest()
     return dict(filename=f'{n}.mp4', storage_url=f'https://github.com/{s.REPO}/releases/download/stock-inbox/{n}.mp4',
