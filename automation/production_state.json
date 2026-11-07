@@ -1422,6 +1422,266 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2017/08/09/11253-229053638_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "e43453a68669b26f38ecd4405be89ed738d39324f415da14af2b01655112b1c6",
+      "license": {
+        "source_sha256": "e43453a68669b26f38ecd4405be89ed738d39324f415da14af2b01655112b1c6",
+        "source_url": "https://cdn.pixabay.com/video/2017/08/09/11253-229053638_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-11253/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "4d2001ed9f47bb6a94a442bef0647b38ec76634e0eed486fc818a7c28949c77f",
+        "author": "GreenCardShow",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:16:12.103175+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "4d2001ed9f47bb6a94a442bef0647b38ec76634e0eed486fc818a7c28949c77f",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a person holding a long stick or bat. The person is wearing a blue jacket with a belt looped through the belt loop. The person's hand is holding the bat, and the bat appears to be made of metal or",
+          "The image shows a shelf containing books and other items. The shelf is white and appears to be made of wood. On the shelf, there are several books arranged in a vertical manner. The books are of various sizes and colors, and they",
+          "The image shows a white, rectangular bookcase with multiple shelves. On the top shelf, there are two framed pictures hanging on the wall. The left frame is rectangular and has a dark background with a white border, while the right frame is"
+        ],
+        "frame_sha256": [
+          "aa9c7bc4ba0d1f6f2e89c68ab248be0081064de730f5fa168d6198796325ef41",
+          "13761e16e1c7fc7031064575910072bdac9060f49d9f8e2896755b6cc7e1b3c1",
+          "16396f076b1c62afd118bc9136efb8561ab4ace60a20fb592fbde930c52a06ba"
+        ],
+        "source_sha256": "e43453a68669b26f38ecd4405be89ed738d39324f415da14af2b01655112b1c6",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 95.494,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/08/09/11254-229053639_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "6c686a17fb7e10895665b951662ac5647ce7a88521c586f96df754dbb5b82d6b",
+      "license": {
+        "source_sha256": "6c686a17fb7e10895665b951662ac5647ce7a88521c586f96df754dbb5b82d6b",
+        "source_url": "https://cdn.pixabay.com/video/2017/08/09/11254-229053639_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-11254/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "dc5f4415f0a303c5de5517fafda38266cd4dd350eb3bbd0d6bf2123e9824eba5",
+        "author": "GreenCardShow",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:18:25.406722+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "dc5f4415f0a303c5de5517fafda38266cd4dd350eb3bbd0d6bf2123e9824eba5",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a person holding a black book with silver text on it. The book appears to be a hymnal, which is a collection of Christian hymns. The person is holding the book with both hands, with the book resting on a",
+          "The image shows a person's hands in the foreground. The person is wearing a blue sweater and appears to be holding something, possibly a book or a paper. The background shows a signboard with various symbols and text. The signboard",
+          "The image shows a close-up view of a book shelf. The book on the shelf is titled \"World Art.\" The book is placed on a shelf that is partially visible, with other books visible behind it. The shelf is made of"
+        ],
+        "frame_sha256": [
+          "a635cb3f56b53c9447a2cbe9228d46d14aa659391dce70fbc44d2c9f7a0cbbca",
+          "4b7508a3cd96c70bc65e77d01c39f04b89ec07f5982c354c93c292ebce0a7914",
+          "e9ae0c062338662eabe5e5e80ba81fea86e0a59f4677b21e9f834fdb39de55c9"
+        ],
+        "source_sha256": "6c686a17fb7e10895665b951662ac5647ce7a88521c586f96df754dbb5b82d6b",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 98.831,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2022/04/08/113322-697585654_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "b6b0b57797019e089f10c8d7e9af4a5178e224c5bd60e0224f005f5cba6b55aa",
+      "license": {
+        "source_sha256": "b6b0b57797019e089f10c8d7e9af4a5178e224c5bd60e0224f005f5cba6b55aa",
+        "source_url": "https://cdn.pixabay.com/video/2022/04/08/113322-697585654_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-113322/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "9f572ff85b439faa36d093d791b167153cb2c43e230723a06f1c750e29f6a48e",
+        "author": "BirenDas",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:20:38.574353+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "9f572ff85b439faa36d093d791b167153cb2c43e230723a06f1c750e29f6a48e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a room with a large bookshelf filled with books. The books are arranged in a way that suggests they are organized by subject or category. The shelf is positioned against a wall, and there is a person sitting on a chair",
+          "The image shows a room with a wooden floor. In the background, there is a wall with a window. On the left side of the image, there is a person sitting on a chair. The person is wearing a red shirt and appears",
+          "The image shows a room with a shelf containing books. On the shelf, there are books arranged in a row. The books are of various colors and sizes, and they appear to be different types of books. The shelf is placed against a"
+        ],
+        "frame_sha256": [
+          "2d88c79ceff8fed6e5942f5996c6b67cf9397f3bf9803b8a1b2a50b8a2be629d",
+          "fdc3959f1ab49f49510ec8d9938ab3fe92377118fef01fd15dc52d48080c5dc8",
+          "25434fedd1daab7945e6b48b18136be6376acea9428053f4999076eeaaec336b"
+        ],
+        "source_sha256": "b6b0b57797019e089f10c8d7e9af4a5178e224c5bd60e0224f005f5cba6b55aa",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 99.081,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/03/15/33742-398256907_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "9d2e83aa7e1f6da7f12e1c734184944b3479f5227f397860977dd5a52f5d3a3b",
+      "license": {
+        "source_sha256": "9d2e83aa7e1f6da7f12e1c734184944b3479f5227f397860977dd5a52f5d3a3b",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/15/33742-398256907_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-33742/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "35b8aef6be388dba1f9f1c32eb2e58c6e0fdbf88af7376629c6ec0dba77db68a",
+        "author": "wollschu",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:22:53.564976+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "35b8aef6be388dba1f9f1c32eb2e58c6e0fdbf88af7376629c6ec0dba77db68a",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image shows a person washing their hands. The hands are visible, and they are interacting with a soap dispenser. The soap dispenser is white with a geometric pattern and is placed on a white counter or surface. The person's hands",
+          "The image shows a bathroom sink with a soap dispenser. The soap dispenser is white and has a geometric pattern on its body. The dispenser has a handle on the right side for easy gripping. The faucet is made of metal and",
+          "The image shows a bathroom sink with two main objects: a soap dispenser and a faucet. The soap dispenser is white and has a geometric pattern on its surface. The dispenser is placed on a white counter or shelf, which is"
+        ],
+        "frame_sha256": [
+          "540f686c8ab6099b6408cffd7f22788a13b4d3259a0e90984b59cabb8c449226",
+          "d249a5304b823934d83b0f242f653b375db7452226903a780e29fc0cda797c5f",
+          "80507cffe7cd47d31bedcfc8403ab67cef30980f6c1e7f1d2e41334c90502250"
+        ],
+        "source_sha256": "9d2e83aa7e1f6da7f12e1c734184944b3479f5227f397860977dd5a52f5d3a3b",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 96.925,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -1490,10 +1750,14 @@
       "post_id": "casasem-2026-11-07-wan104",
       "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4",
-      "status": "QUEUED",
+      "status": "PUBLISH_COMPLETE",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-07T10:48:30-03:00",
-      "publicly_verified": false
+      "publicly_verified": true,
+      "provider_id": "6aef299f229bf05daf51f11e",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676"
+      ]
     }
   },
   "last_run": {
