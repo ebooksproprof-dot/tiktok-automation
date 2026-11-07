@@ -18,6 +18,30 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_low_stock_recovers_without_new_consumption_but_never_blind_repeats_dispatch(self):
+        now = dt.datetime(2026, 11, 7, 6, 30, tzinfo=dt.timezone.utc)
+        ledger = {'outputs': {}, 'refill_events': {}}
+        store = Mock(); store.load.return_value = (ledger, 'v0')
+        store.save.side_effect = ['v1', 'v2']
+        def sender():
+            self.assertEqual(store.save.call_count, 1)
+            self.assertEqual(next(iter(ledger['maintenance_refills'].values()))['status'], 'INTENT_RECORDED_NO_BLIND_RETRY')
+        send = Mock(side_effect=sender)
+        result = autonomous_stock.request_refill(store, {'posts': {}}, now, send, maintenance=True)
+        self.assertEqual(result['trigger'], 'LOW_STOCK_MAINTENANCE')
+        self.assertEqual(result['publication_ids'], [])
+        autonomous_stock.request_refill(store, {'posts': {}}, now, send, maintenance=True)
+        self.assertEqual(send.call_count, 1)
+        self.assertEqual(store.save.call_count, 2)
+        ledger['maintenance_refills'].clear()
+        store.save.reset_mock(side_effect=True);store.save.side_effect=['v1','v2']
+        send.reset_mock();send.side_effect=TimeoutError('lost acknowledgment')
+        with self.assertRaises(TimeoutError):
+            autonomous_stock.request_refill(store, {'posts': {}}, now, send, maintenance=True)
+        result = autonomous_stock.request_refill(store, {'posts': {}}, now+dt.timedelta(minutes=10), send, maintenance=True)
+        self.assertEqual(result['status'], 'HOLD_UNCERTAIN_WORKFLOW_DISPATCH')
+        self.assertEqual(send.call_count, 1)
+
     def test_completed_extra_proof_keeps_both_regular_slots_without_freeing_unknown_attempt(self):
         now = dt.datetime(2026, 11, 7, 6, tzinfo=dt.timezone.utc)
         proof = {'id': 'casasem-2026-11-07-1', 'scheduled_at': '2026-11-07T02:03:51-03:00',

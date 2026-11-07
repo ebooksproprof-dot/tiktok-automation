@@ -41,27 +41,47 @@ def dispatch(token):
         raise RuntimeError('REFILL_DISPATCH_UNCERTAIN; no blind repeat; scheduled production remains active') from None
 
 
-def request_refill(store, state, now, sender):
+def request_refill(store, state, now, sender, maintenance=False):
     ledger, revision = store.load()
     ids = newly_published(ledger, state)
+    trigger = 'CONFIRMED_CONSUMPTION'
+    publication_ids = ids.copy()
     if not ids:
-        return {'status': 'NO_NEW_CONFIRMED_CONSUMPTION', 'publication_ids': []}
-    ledger.setdefault('refill_events', {})
+        if not maintenance:
+            return {'status': 'NO_NEW_CONFIRMED_CONSUMPTION', 'publication_ids': []}
+        # Cold/partial stock must recover even when a previous consumption
+        # already has a dispatch receipt. Bound maintenance to once per six
+        # hours and retain uncertain replies instead of blindly repeating them.
+        receipts = list(ledger.get('refill_events', {}).values())+list(ledger.get('maintenance_refills', {}).values())
+        for receipt in receipts:
+            if receipt.get('status') in ('INTENT_RECORDED_NO_BLIND_RETRY', 'UNKNOWN_WORKFLOW_DISPATCH'):
+                try:
+                    if now-stock.instant(receipt['at']) < dt.timedelta(hours=6):
+                        return {'status': 'HOLD_UNCERTAIN_WORKFLOW_DISPATCH', 'publication_ids': []}
+                except (ValueError, KeyError, TypeError):
+                    return {'status': 'HOLD_UNCERTAIN_WORKFLOW_DISPATCH', 'publication_ids': []}
+        bucket = dt.datetime.fromtimestamp(int(now.timestamp())//21600*21600, dt.timezone.utc).isoformat()
+        receipts = ledger.setdefault('maintenance_refills', {})
+        if bucket in receipts:
+            return {'status': 'MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW', 'publication_ids': []}
+        ids, trigger = [bucket], 'LOW_STOCK_MAINTENANCE'
+    else:
+        receipts = ledger.setdefault('refill_events', {})
     for key in ids:
-        ledger['refill_events'][key] = {'status': 'INTENT_RECORDED_NO_BLIND_RETRY', 'at': stock.stamp(now)}
+        receipts[key] = {'status': 'INTENT_RECORDED_NO_BLIND_RETRY', 'at': stock.stamp(now), 'trigger': trigger}
     revision = store.save(ledger, revision)  # A failed CAS prevents dispatch.
     try:
         sender()
         result = 'DISPATCHED'
     except Exception:
         for key in ids:
-            ledger['refill_events'][key]['status'] = 'UNKNOWN_WORKFLOW_DISPATCH'
+            receipts[key]['status'] = 'UNKNOWN_WORKFLOW_DISPATCH'
         store.save(ledger, revision)
         raise
     for key in ids:
-        ledger['refill_events'][key]['status'] = result
+        receipts[key]['status'] = result
     store.save(ledger, revision)
-    return {'status': result, 'publication_ids': ids}
+    return {'status': result, 'publication_ids': publication_ids, 'trigger': trigger}
 
 
 def run(token, check_channel=False, probe=None):
@@ -84,7 +104,7 @@ def run(token, check_channel=False, probe=None):
         channel_ok = True
     refill = {'status': 'CHECK_ONLY' if check_channel else 'STOCK_TARGET_MET', 'publication_ids': []}
     if not check_channel and status['refill_needed']:
-        refill = request_refill(producer_store, state, now, lambda: dispatch(token))
+        refill = request_refill(producer_store, state, now, lambda: dispatch(token), maintenance=True)
     inventory, revision = inventory_store.load()
     old = inventory.get('production', {})
     if old.get('provider') == 'tiktok_symphony':

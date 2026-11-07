@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - 'automation/video_stock.py'
+      - 'automation/autonomous_stock.py'
       - 'automation/stock_*.py'
       - 'automation/tests/test_stock*.py'
       - 'automation/tests/test_video_stock.py'
