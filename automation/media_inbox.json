@@ -1002,6 +1002,70 @@
       "duration": 13.346667,
       "bytes": 8890513,
       "acquired_at": 1794030233
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "5629",
+      "url": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-5629/",
+      "author": "Coverr-Free-Footage",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Coverr-Free-Footage / Pixabay — https://pixabay.com/videos/id-5629/",
+      "category": "tarefas",
+      "query": "housework",
+      "selection_reason": "Provider tags: dishes, washing, clean, glass, water, wash, kitchen, housework, domestic, dish, household, sponge, dishwashing, chores, dirty, hygiene, soap, tap",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+      "sha256": "064fa2b913b591e61c3cec05ccb0562fb501ce3b11cf0151f3a086a732cb8503",
+      "dhash": [
+        "332aba0cdc4ec9c9",
+        "332a3a0c5c8ec9c9",
+        "c3da9a943c66c9c9",
+        "b33a9a3c7cc689c9",
+        "738ada0c8c262969"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 17.6,
+      "bytes": 9915053,
+      "acquired_at": 1794031221
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "2333",
+      "url": "https://cdn.pixabay.com/video/2016/02/29/2333-157269889_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-2333/",
+      "author": "Life-Of-Vids",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Life-Of-Vids / Pixabay — https://pixabay.com/videos/id-2333/",
+      "category": "limpeza",
+      "query": "cleaning",
+      "selection_reason": "Provider tags: cleaning, street, pressure washer, road, water, high pressure, high-pressure cleaner, cleaning services",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/02/29/2333-157269889_large.mp4",
+      "sha256": "2c4c22b51032a10783aa484ccbd3c31d8d755de397cd6d0a3dffbe7844a9261f",
+      "dhash": [
+        "7231111b2b2f29b0",
+        "0606061dff2f2938",
+        "381811192b2f29b0",
+        "7e74f4bb2b2f21b0",
+        "0e07030b2b0f0107"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 20.095,
+      "bytes": 11398483,
+      "acquired_at": 1794031223
     }
   ],
   "rejected_until": {
@@ -1009,11 +1073,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794030230,
+    "at": 1794031220,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 3,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1021,6 +1085,20 @@
         "category": "tarefas",
         "status": "search_ok",
         "eligible_candidates": 5,
+        "response_source": "cache"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "tarefas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 14,
         "response_source": "live_api"
       }
     ],
@@ -1033,7 +1111,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 21,
+    "unreviewed_media_count": 23,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }

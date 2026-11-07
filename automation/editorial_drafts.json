@@ -543,15 +543,65 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-louca-espaco-escorredor",
+      "topic": "louca-espaco-escorredor",
+      "family": "louca",
+      "hook": "Faltou espaço no escorredor?",
+      "steps": "Antes de começar, guarde a louça que já está seca. Deixe uma área livre para as peças que serão lavadas. Organize os utensílios sem empilhar de forma instável. Termine um pequeno grupo antes de aumentar a pilha.",
+      "cta": "Salve para organizar a próxima lavagem.",
+      "body_sha256": "5eda92bf424c79fe3baf1b9508beeb5ed4ce40314e219c0bd9246371d4bacf93",
+      "script_sha256": "4511f3c7da122bd157731328e7566ddf61e4e33b482c2c916da0f386c88b4723",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "5629",
+        "url": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-5629/",
+        "author": "Coverr-Free-Footage",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Coverr-Free-Footage / Pixabay — https://pixabay.com/videos/id-5629/",
+        "category": "tarefas",
+        "query": "housework",
+        "selection_reason": "Provider tags: dishes, washing, clean, glass, water, wash, kitchen, housework, domestic, dish, household, sponge, dishwashing, chores, dirty, hygiene, soap, tap",
+        "requires_crop_review": true,
+        "frame_mode": "preserve_full",
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+        "sha256": "064fa2b913b591e61c3cec05ccb0562fb501ce3b11cf0151f3a086a732cb8503",
+        "dhash": [
+          "332aba0cdc4ec9c9",
+          "332a3a0c5c8ec9c9",
+          "c3da9a943c66c9c9",
+          "b33a9a3c7cc689c9",
+          "738ada0c8c262969"
+        ],
+        "width": 1920,
+        "height": 1080,
+        "duration": 17.6,
+        "bytes": 9915053,
+        "acquired_at": 1794031221
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 13,
-    "pending_review": 10,
+    "unused_templates": 12,
+    "pending_review": 11,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }
