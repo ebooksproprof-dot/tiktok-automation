@@ -1515,6 +1515,12 @@
       "status": "DISPATCHED",
       "at": "2026-11-07T06:39:21.175619Z",
       "trigger": "LOW_STOCK_MAINTENANCE"
+    },
+    "2026-11-07T12:00:00+00:00|acquire-media.yml": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-07T13:08:59.705762Z",
+      "trigger": "LOW_STOCK_MAINTENANCE",
+      "target_workflow": "acquire-media.yml"
     }
   }
 }
