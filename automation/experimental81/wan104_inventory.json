@@ -34,7 +34,7 @@
       "evidence": "Actions 42375392951 AppError; gradio_client emits it only for explicit server error response"
     },
     "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766": {
-      "status": "INTENT_RECORDED_NO_RETRY",
+      "status": "GENERATED_AWAITING_STORAGE",
       "at": "2026-11-07T13:14:31.874669+00:00",
       "spec": {
         "space": "Upsampler/wan-2-2-5b-video",
@@ -52,7 +52,17 @@
         "seed": 104101,
         "randomize_seed": false
       },
-      "provider_job_id": "5ac09802c2604efea530af44ae059377"
+      "provider_job_id": "5ac09802c2604efea530af44ae059377",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+        "bytes": 443823
+      }
     }
   },
   "outputs": [],
