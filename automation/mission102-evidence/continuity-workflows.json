@@ -1,0 +1,229 @@
+{
+  "retrieved_at": "2026-11-07T07:12:31.578796+00:00",
+  "workflows": [
+    {
+      "id": 390798191,
+      "name": "CasaSemEsforco official media acquisition",
+      "path": ".github/workflows/acquire-media.yml",
+      "state": "active",
+      "crons_utc": [
+        "30 10,18 * * *"
+      ]
+    },
+    {
+      "id": 405311454,
+      "name": "CasaSemEsforco AI30 Free Collector",
+      "path": ".github/workflows/ai30-free-collector.yml",
+      "state": "active",
+      "crons_utc": [
+        "10 6,12,16 * * *"
+      ]
+    },
+    {
+      "id": 386023642,
+      "name": "CasaSemEsforco Daily Video Creation",
+      "path": ".github/workflows/casasemesforco-daily.yml",
+      "state": "active",
+      "crons_utc": [
+        "20 6,11,19,23 * * *"
+      ]
+    },
+    {
+      "id": 375815182,
+      "name": "TikTok Online Runner",
+      "path": ".github/workflows/tiktok-online-runner.yml",
+      "state": "active",
+      "crons_utc": [
+        "7 12,20 * * *",
+        "17 13,14,21,22 * * *"
+      ]
+    },
+    {
+      "id": 399667265,
+      "name": "CasaSemEsforco Persistent Video Stock",
+      "path": ".github/workflows/video-stock.yml",
+      "state": "active",
+      "crons_utc": [
+        "37 0,6,12,18 * * *",
+        "37 13,21 * * *"
+      ]
+    }
+  ],
+  "runs": {
+    "42337189009": {
+      "name": "TikTok Online Runner",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T04:09:37Z",
+      "run_started_at": "2026-11-07T04:09:37Z",
+      "updated_at": "2026-11-07T04:10:15Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42337189009",
+      "head_sha": "301dbc14fe0de8bb2ddfdfad496b2fc4a16838cc"
+    },
+    "42339330707": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T04:38:28Z",
+      "run_started_at": "2026-11-07T04:38:28Z",
+      "updated_at": "2026-11-07T04:45:18Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42339330707",
+      "head_sha": "2a1da85bfefb695c38ccc9b5583608f9d0f2f730"
+    },
+    "42341348778": {
+      "name": "TikTok Online Runner",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T05:07:09Z",
+      "run_started_at": "2026-11-07T05:07:09Z",
+      "updated_at": "2026-11-07T05:08:41Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42341348778",
+      "head_sha": "7b60dbb447b18236824d9bec6ee7604df45a749e"
+    },
+    "42342940314": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T05:29:31Z",
+      "run_started_at": "2026-11-07T05:29:31Z",
+      "updated_at": "2026-11-07T05:41:04Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42342940314",
+      "head_sha": "c8729dd7cc8a2bd95a7b49b1e0d0291e1db5ca80"
+    },
+    "42344976190": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T05:59:02Z",
+      "run_started_at": "2026-11-07T05:59:02Z",
+      "updated_at": "2026-11-07T06:11:16Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42344976190",
+      "head_sha": "a573b903245f650c6d96620a958bcbc5296beea0"
+    },
+    "42347253865": {
+      "name": "CasaSemEsforco Persistent Video Stock",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T06:29:46Z",
+      "run_started_at": "2026-11-07T06:29:46Z",
+      "updated_at": "2026-11-07T06:32:17Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42347253865",
+      "head_sha": "4a49e1606cba51a993a0655d7601ebed912a1432"
+    },
+    "42347927467": {
+      "name": "CasaSemEsforco Persistent Video Stock",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T06:38:43Z",
+      "run_started_at": "2026-11-07T06:38:43Z",
+      "updated_at": "2026-11-07T06:39:30Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42347927467",
+      "head_sha": "5c59e794e87e0ed976c16646fb15d71600c491e8"
+    },
+    "42347970977": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T06:39:23Z",
+      "run_started_at": "2026-11-07T06:39:23Z",
+      "updated_at": "2026-11-07T06:41:11Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42347970977",
+      "head_sha": "40a384ef1aaba9d9a84d0e502c1c10af45f21bff"
+    },
+    "42348967448": {
+      "name": "CasaSemEsforco official media acquisition",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T06:53:46Z",
+      "run_started_at": "2026-11-07T06:53:46Z",
+      "updated_at": "2026-11-07T06:54:42Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42348967448",
+      "head_sha": "8a29d86dd77a6f424da66dad9ab6f043225dc5ab"
+    },
+    "42349031125": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T06:54:44Z",
+      "run_started_at": "2026-11-07T06:54:44Z",
+      "updated_at": "2026-11-07T07:04:13Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42349031125",
+      "head_sha": "a38f3df944434e69c29c576698e4899a33576d0a"
+    },
+    "42349777554": {
+      "name": "CasaSemEsforco official media acquisition",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T07:05:19Z",
+      "run_started_at": "2026-11-07T07:05:19Z",
+      "updated_at": "2026-11-07T07:05:59Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42349777554",
+      "head_sha": "bd8defe532ed0c4ed32f5579a5100d5474b41df0"
+    },
+    "42349828692": {
+      "name": "CasaSemEsforco Daily Video Creation",
+      "event": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T07:06:01Z",
+      "run_started_at": "2026-11-07T07:06:01Z",
+      "updated_at": "2026-11-07T07:09:20Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42349828692",
+      "head_sha": "a556fccb480bb9ad0615bf8f694e8bc545667e52"
+    },
+    "42350065198": {
+      "name": "TikTok Online Runner",
+      "event": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T07:09:22Z",
+      "run_started_at": "2026-11-07T07:09:22Z",
+      "updated_at": "2026-11-07T07:10:05Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42350065198",
+      "head_sha": "ee6bd6357ff6dceeb55f84d368a2e52c1dd4b1ed"
+    },
+    "42350121522": {
+      "name": "CasaSemEsforco Persistent Video Stock",
+      "event": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T07:10:07Z",
+      "run_started_at": "2026-11-07T07:10:07Z",
+      "updated_at": "2026-11-07T07:10:45Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42350121522",
+      "head_sha": "b19e8ae1f2bb799c338017035b02638c89b9ae61"
+    },
+    "42350134666": {
+      "name": "TikTok Online Runner",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T07:10:17Z",
+      "run_started_at": "2026-11-07T07:10:17Z",
+      "updated_at": "2026-11-07T07:11:28Z",
+      "html_url": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42350134666",
+      "head_sha": "b19e8ae1f2bb799c338017035b02638c89b9ae61"
+    }
+  },
+  "public_repository": true,
+  "cache_usage": {
+    "full_name": "ebooksproprof-dot/tiktok-automation",
+    "active_caches_size_in_bytes": 796034309,
+    "active_caches_count": 1
+  },
+  "latest_daily_cron": "2026-11-06T18:14:59Z",
+  "cron_delivery_exact_time_guaranteed": false,
+  "scheduled_delivery_via": "existing Buffer queue; 52h lookahead; 10h/18h America/Sao_Paulo",
+  "paid_services_enabled": false
+}

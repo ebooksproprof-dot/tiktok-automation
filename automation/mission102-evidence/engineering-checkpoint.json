@@ -1,0 +1,12 @@
+{
+  "starting_main": "e75ada1a8d4271eb3f7c238aa25b06b7caae453c",
+  "checkpoint": "6806065",
+  "checkpoint_is_ancestor_of_starting_main": true,
+  "work_branch": "codex/casasem-10-2",
+  "tests_passed": 377,
+  "tests_scope": "main unittest discovery; same mandatory suite also passed in real Actions runs",
+  "test_log_summary": "Ran 377 tests in 2.668s; OK",
+  "evidence_json_parse_pass": true,
+  "secret_pattern_scan_pass": true,
+  "no_force_push": true
+}

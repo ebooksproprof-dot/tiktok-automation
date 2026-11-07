@@ -1,0 +1,20 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+  "duration": 18.619,
+  "size": 7882547,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -15.2,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.019,
+  "lip_sync_verified": false,
+  "decoder_pass": true,
+  "freeze_intervals_over_1s": 0,
+  "freeze_threshold_db": -50,
+  "checked_at": "2026-11-07T05:15:30.904985+00:00",
+  "independent_machine": "current Codex Cloud, downloaded immutable GitHub Release bytes"
+}

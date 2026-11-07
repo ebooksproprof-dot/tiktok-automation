@@ -1,0 +1,18 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+  "duration": 19.2,
+  "size": 5263504,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -15.2,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.019,
+  "lip_sync_verified": false,
+  "decoder_pass": true,
+  "freeze_intervals_over_1s": 0,
+  "freeze_threshold_db": -50
+}

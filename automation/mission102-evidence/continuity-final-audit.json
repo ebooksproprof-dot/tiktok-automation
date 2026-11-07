@@ -1,0 +1,589 @@
+{
+  "checked_at": "2026-11-07T07:11:51.415891+00:00",
+  "immutable_main_revision": "f7865139a5f4c33a47b5842c28a53889905423c8",
+  "read_only": true,
+  "creates_or_dispatches": 0,
+  "posts": [
+    {
+      "id": "casasem-2026-11-07-1",
+      "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+      "duration": 18.619,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "scheduled_at": "2026-11-07T02:03:51-03:00",
+      "status": "PUBLISH_COMPLETE",
+      "provider_id": "6aeead2a229bf05daf2ad3a0",
+      "provider_status": "sent",
+      "provider_sent_at": "2026-11-07T05:05:43.639000+00:00",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596"
+      ],
+      "publicly_verified": true,
+      "source_rights": [
+        {
+          "sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+          "source_url": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-34772/",
+          "author": "jaumeps99",
+          "method": "previously_retrieved_official_evidence_exact_bytes",
+          "dhash": [
+            "525b6f3fb83a380e",
+            "327e3e170e1e1c0e",
+            "afbee7674a661a85",
+            "b39fde4f673b1b87",
+            "3f6e675965391a85"
+          ]
+        },
+        {
+          "sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+          "source_url": "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-163116/",
+          "author": "livesmart",
+          "method": "previously_retrieved_official_evidence_exact_bytes",
+          "dhash": [
+            "dfefe7e8f0b09090",
+            "dfdec4c1e1612121",
+            "b79d8983c3434383",
+            "6f3b130787074705",
+            "de722e0e0e0f8f0f"
+          ]
+        }
+      ],
+      "independent_av": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+        "duration": 18.619,
+        "size": 7882547,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.019,
+        "lip_sync_verified": false,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50,
+        "checked_at": "2026-11-07T05:15:30.904985+00:00",
+        "independent_machine": "current Codex Cloud, downloaded immutable GitHub Release bytes"
+      }
+    },
+    {
+      "id": "casasem-2026-11-07-2",
+      "sha256": "cdfa9ac88f8866fea92272bccdff1eb2c15454712e24d76ab906be4c80d6498c",
+      "duration": 18.0,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "scheduled_at": "2026-11-07T10:00:00-03:00",
+      "status": "SCHEDULED",
+      "provider_id": "6aeeba3c229bf05daf2e0527",
+      "provider_status": "scheduled",
+      "provider_sent_at": null,
+      "public_urls": [],
+      "publicly_verified": false,
+      "source_rights": [
+        {
+          "sha256": "69775256825d0978f77ebed172e8feeb52c7d6565a85a0620e86323d1ae251b9",
+          "source_url": "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-34091/",
+          "author": "jLasWilson",
+          "method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+          "dhash": [
+            "ca8c9e9c8c8bc7c6",
+            "1c4f4d1e96968e8c",
+            "caee6c0b06838386",
+            "8cced67c2cc4c4c4",
+            "8a4b4a9abbdbd286"
+          ]
+        }
+      ],
+      "independent_av": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "cdfa9ac88f8866fea92272bccdff1eb2c15454712e24d76ab906be4c80d6498c",
+        "duration": 18.0,
+        "size": 8774871,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.0,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.023,
+        "lip_sync_verified": false,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "id": "casasem-2026-11-08-1",
+      "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+      "duration": 19.2,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "status": "SCHEDULED",
+      "provider_id": "6aeec550d6bbae6fa16c63f7",
+      "provider_status": "scheduled",
+      "provider_sent_at": null,
+      "public_urls": [],
+      "publicly_verified": false,
+      "source_rights": [
+        {
+          "sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+          "source_url": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-33220/",
+          "author": "overjupiter",
+          "method": "previously_retrieved_official_evidence_exact_bytes",
+          "dhash": [
+            "7f7f5f57cfb76733",
+            "373d7933593e6733",
+            "3f3f177787871f7b",
+            "1ffcbc9e9cdf9f3f",
+            "1ffdbc9a9c9e9f3f"
+          ]
+        },
+        {
+          "sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+          "source_url": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-27178/",
+          "author": "MabelAmber",
+          "method": "previously_retrieved_official_evidence_exact_bytes",
+          "dhash": [
+            "3b9fbf61698ccce7",
+            "bf9f31616c9ccfd7",
+            "9f9f31616c8ce7d7",
+            "9f9f31654c8ce7c3",
+            "9f9f61654ccce7c7"
+          ]
+        }
+      ],
+      "independent_av": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+        "duration": 19.2,
+        "size": 5263504,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.019,
+        "lip_sync_verified": false,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "id": "casasem-2026-11-07-3",
+      "sha256": "6bec86bb91286dafcd6587a2c9650d90cd6eb433a76538d188918f731bf1272c",
+      "duration": 18.011,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "scheduled_at": "2026-11-07T18:00:00-03:00",
+      "status": "SCHEDULED",
+      "provider_id": "6aeecd8f004e4879a73ca9a7",
+      "provider_status": "scheduled",
+      "provider_sent_at": null,
+      "public_urls": [],
+      "publicly_verified": false,
+      "source_rights": [
+        {
+          "sha256": "4b3ad942f304c77325db4f615d658a50a69defc678f7d8252a96bf0918e8bee2",
+          "source_url": "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-34817/",
+          "author": "BreakDownPictures",
+          "method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+          "dhash": [
+            "333317173d0f8be1",
+            "31331b133f0e8ee0",
+            "31331b17360683e3",
+            "35310919330781e3",
+            "33331d1f331b97ff"
+          ]
+        }
+      ],
+      "independent_av": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "6bec86bb91286dafcd6587a2c9650d90cd6eb433a76538d188918f731bf1272c",
+        "duration": 18.011,
+        "size": 3070618,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.044333,
+        "lip_sync_verified": false,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "id": "casasem-2026-11-08-2",
+      "sha256": "c44701af820b64ff4a7b70e8de5011416c60fa7875a24e1390716ff09ccc51fd",
+      "duration": 17.913,
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "scheduled_at": "2026-11-08T18:00:00-03:00",
+      "status": "SCHEDULED",
+      "provider_id": "6aeecec4004e4879a73d1634",
+      "provider_status": "scheduled",
+      "provider_sent_at": null,
+      "public_urls": [],
+      "publicly_verified": false,
+      "source_rights": [
+        {
+          "sha256": "60381484eea7d1c173fa351dbd45b51b6183bda5e7dd2a7ae004807f646e9e2e",
+          "source_url": "https://cdn.pixabay.com/video/2020/04/01/34730-403408248_large.mp4",
+          "source_page": "https://pixabay.com/videos/id-34730/",
+          "author": "jLasWilson",
+          "method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+          "dhash": [
+            "4d437363e0000142",
+            "595b3db990101102",
+            "493b1d9998100102",
+            "d11b3db990101102",
+            "4d2b2d99d808090a"
+          ]
+        }
+      ],
+      "independent_av": {
+        "technical_pass": true,
+        "editorial_approved": false,
+        "sha256": "c44701af820b64ff4a7b70e8de5011416c60fa7875a24e1390716ff09ccc51fd",
+        "duration": 17.913,
+        "size": 3990404,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.013,
+        "lip_sync_verified": false,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    }
+  ],
+  "ready": 4,
+  "scheduled": 4,
+  "published_with_public_playback": 1,
+  "unique_final_hashes": true,
+  "unique_provider_ids": true,
+  "source_visual_comparisons": [
+    {
+      "left": "casasem-2026-11-07-1",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        23,
+        26,
+        22,
+        26,
+        18
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-2",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        30,
+        24,
+        26,
+        28,
+        25
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-2",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        25,
+        24,
+        19,
+        27,
+        29
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        26,
+        28,
+        24,
+        23,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        18,
+        25,
+        17,
+        21,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-2",
+      "closest_frame_hamming_distances": [
+        29,
+        36,
+        28,
+        24,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        26,
+        27,
+        29,
+        27,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        30,
+        29,
+        29,
+        27,
+        27
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-07-2",
+      "closest_frame_hamming_distances": [
+        26,
+        27,
+        25,
+        25,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-1",
+      "right": "casasem-2026-11-08-1",
+      "closest_frame_hamming_distances": [
+        27,
+        24,
+        24,
+        24,
+        26
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-3",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        25,
+        23,
+        26,
+        32,
+        22
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-3",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        21,
+        24,
+        21,
+        22,
+        26
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-3",
+      "right": "casasem-2026-11-07-2",
+      "closest_frame_hamming_distances": [
+        32,
+        27,
+        28,
+        31,
+        29
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-3",
+      "right": "casasem-2026-11-08-1",
+      "closest_frame_hamming_distances": [
+        20,
+        25,
+        22,
+        25,
+        21
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-07-3",
+      "right": "casasem-2026-11-08-1",
+      "closest_frame_hamming_distances": [
+        25,
+        24,
+        28,
+        30,
+        30
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        28,
+        19,
+        24,
+        20,
+        23
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-07-1",
+      "closest_frame_hamming_distances": [
+        25,
+        24,
+        26,
+        25,
+        28
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-07-2",
+      "closest_frame_hamming_distances": [
+        30,
+        28,
+        28,
+        30,
+        28
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-08-1",
+      "closest_frame_hamming_distances": [
+        31,
+        27,
+        28,
+        29,
+        27
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-08-1",
+      "closest_frame_hamming_distances": [
+        27,
+        32,
+        33,
+        31,
+        32
+      ],
+      "near_duplicate": false
+    },
+    {
+      "left": "casasem-2026-11-08-2",
+      "right": "casasem-2026-11-07-3",
+      "closest_frame_hamming_distances": [
+        27,
+        27,
+        24,
+        26,
+        27
+      ],
+      "near_duplicate": false
+    }
+  ],
+  "producer_last_run": {
+    "status": "QUEUED",
+    "created": 1,
+    "ready_before": 3,
+    "ready_after": 4,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+  },
+  "maintenance_receipts": {
+    "2026-11-07T06:00:00+00:00": {
+      "status": "DISPATCHED",
+      "at": "2026-11-07T06:39:21.175619Z",
+      "trigger": "LOW_STOCK_MAINTENANCE"
+    }
+  },
+  "consumption_receipts": {
+    "casasem-2026-11-07-1": {
+      "status": "DISPATCHED",
+      "at": "2026-11-07T05:09:51.848204Z"
+    }
+  },
+  "buffer_rolling_usage_count": 220,
+  "buffer_observed_quotas": {
+    "windows": {
+      "900": {
+        "policy": "15m",
+        "window_seconds": 900,
+        "quota": 150,
+        "remaining": 145,
+        "reset_at": "2026-11-07T07:24:52.753923Z",
+        "observed_at": "2026-11-07T07:11:12.753923Z"
+      },
+      "86400": {
+        "policy": "24h",
+        "window_seconds": 86400,
+        "quota": 600,
+        "remaining": 572,
+        "reset_at": "2026-11-08T04:10:10.753923Z",
+        "observed_at": "2026-11-07T07:11:12.753923Z"
+      },
+      "2592000": {
+        "policy": "30d",
+        "window_seconds": 2592000,
+        "quota": 1000,
+        "remaining": 778,
+        "reset_at": "2026-11-16T22:01:05.753923Z",
+        "observed_at": "2026-11-07T07:11:12.753923Z"
+      }
+    },
+    "consecutive_errors": 0,
+    "next_allowed_at": "2026-11-05T21:39:16.060035Z"
+  }
+}

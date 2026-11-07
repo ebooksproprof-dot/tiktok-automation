@@ -1,0 +1,13 @@
+{
+  "spec_revision": "1",
+  "observed_spec_revision": "1",
+  "observations_current": true,
+  "observed_phase": "running",
+  "network_policy": {
+    "mode": "unrestricted",
+    "state": "enforced"
+  },
+  "provider": "cloud",
+  "checked_at": "2026-11-07 06:41:35 UTC",
+  "published_configuration_version": "cecfgver_6aed221edb8c819aa43725243923e272"
+}

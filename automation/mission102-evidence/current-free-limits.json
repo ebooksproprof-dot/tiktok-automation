@@ -1,0 +1,32 @@
+{
+  "buffer_free_plan": {
+    "url": "https://buffer.com/pricing",
+    "http": 200,
+    "body_sha256": "e92fb1883a7ea670edc9eb9ce17a32b8c87cfe35260f71f87e72997b62f5f4b1",
+    "excerpts": [
+      "heduled post limit for each plan?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\" The Free plan allows 10 scheduled posts per channel. Once a post is published, the slot becomes available again, up to the 10-post maximum per channel. For paid plans, you have unlimited scheduled posts per channel. Unlimited scheduling is subject to our fair",
+      " AI Assistant description Insights Insights description API access API access description 1 API key 1,000 requests per channel/month, up to 3,000 Community inbox Community inbox description World-class customer support World-class customer support description Essentials Recommended $5 /month 1 channel · $ 60 billed yearly (",
+      "Not included Included YouTube (Shorts) Included Included Included Not included Included X / Twitter free profiles Included Not included Not included Included Included X / Twitter premium profiles Included Not included Included Included Included \"}},{\"@type\":\"Question\",\"name\":\"What are the billing options for Buffer's paid "
+    ]
+  },
+  "buffer_api_limits": {
+    "url": "https://developers.buffer.com/guides/api-limits.html",
+    "http": 200,
+    "body_sha256": "1deb464b1ded48e3334514c477418701a9c629682c09d4147475649cd3c51217",
+    "excerpts": [
+      "PI Keys 1 3 5 App Clients 1 3 5 15-min limit 150 450 1,500 24-hr limit 600 1,800 6,000 30-day limit 1,000 per channel, up to 3,000 3,000 per channel, up to 30,000 10,000 per channel, up to 100,000 The 30-day limit grows with the number of unlocked channels in your organization, up to your plan&#39;s maximum. For example, a ",
+      "aiting ${ Math .round(wait)} s` ) await new Promise ( ( resolve ) =&gt; setTimeout (resolve, wait * 1000 )) } } Copy Copied! import random import time import requests MAX_ATTEMPTS = 3 MAX_WAIT_SECONDS = 900 # a 30d Retry-After can be weeks away def buffer_request ( query ): for attempt in range ( 1 , MAX_ATTEMPTS + 1 ): re",
+      "s your API keys and MCP connections can make in each 15-minute, 24-hour, and 30-day window. Feature Free Essentials Team API Keys 1 3 5 App Clients 1 3 5 15-min limit 150 450 1,500 24-hr limit 600 1,800 6,000 30-day limit 1,000 per channel, up to 3,000 3,000 per channel, up to 30,000 10,000 per channel, up to 100,000 The 3"
+    ]
+  },
+  "github_public_runners": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "http": 200,
+    "body_sha256": "d4d3463e4e6a9f3d77c2b84ae05c015ddd03486ccd9d0e78bc88476c5578ef4a",
+    "excerpts": [
+      "ority over another when drawing from the shared included compute usage. The following usage remains free independently and does not reduce the included compute usage: Standard GitHub-hosted runners in public repositories. See Choosing the runner for a job . Self-hosted runners. Larger runners are billed for public reposito",
+      "ree independently and does not reduce the included compute usage: Standard GitHub-hosted runners in public repositories. See Choosing the runner for a job . Self-hosted runners. Larger runners are billed for public repositories. For private repositories , usage is measured against two parts of your plan: Compute: The calculated cost of e"
+    ]
+  },
+  "retrieved_at": "2026-11-07T07:06:38.134936+00:00"
+}
