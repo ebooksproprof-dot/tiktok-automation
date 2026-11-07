@@ -1,0 +1,26 @@
+{
+  "checked_date": "2026-11-07",
+  "provider": "cloud",
+  "connectivity": "connected",
+  "observed_phase": "running",
+  "desired_phase": "running",
+  "observations_current": true,
+  "observed_spec_revision": "1",
+  "spec_revision": "1",
+  "source_config_version": "cecfgver_6aed221edb8c819aa43725243923e272",
+  "network_policy": {
+    "mode": "unrestricted",
+    "state": "enforced"
+  },
+  "failure": null,
+  "scope": "Applied managed environment status; GitHub Actions repository secrets are a separate scope and were preserved. No secret values included.",
+  "real_accesses": [
+    "GitHub fetch/push/dispatch",
+    "Hugging Face model/space metadata",
+    "free authenticated ZeroGPU in Actions",
+    "Buffer existing publisher in Actions",
+    "anonymous public TikTok playback",
+    "Pixabay authenticated acquisition in Actions"
+  ],
+  "environment_republication_requested": false
+}

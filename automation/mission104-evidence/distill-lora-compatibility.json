@@ -1,0 +1,105 @@
+{
+  "model": "lightx2v/Wan2.2-Distill-Loras",
+  "revision": "57adea585d1d21085e2dfc91ce3c7b646cdd9345",
+  "license": "apache-2.0",
+  "headers": {
+    "wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors": {
+      "tensors": 1500,
+      "first_shapes": {
+        "diffusion_model.blocks.0.cross_attn.k.diff_b": {
+          "dtype": "BF16",
+          "shape": [
+            5120
+          ],
+          "data_offsets": [
+            0,
+            10240
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.k.lora_down.weight": {
+          "dtype": "BF16",
+          "shape": [
+            64,
+            5120
+          ],
+          "data_offsets": [
+            10240,
+            665600
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.k.lora_up.weight": {
+          "dtype": "BF16",
+          "shape": [
+            5120,
+            64
+          ],
+          "data_offsets": [
+            665600,
+            1320960
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.norm_k.diff": {
+          "dtype": "BF16",
+          "shape": [
+            5120
+          ],
+          "data_offsets": [
+            1320960,
+            1331200
+          ]
+        }
+      },
+      "metadata": null
+    },
+    "wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors": {
+      "tensors": 1749,
+      "first_shapes": {
+        "diffusion_model.blocks.0.cross_attn.k.diff_b": {
+          "dtype": "BF16",
+          "shape": [
+            5120
+          ],
+          "data_offsets": [
+            0,
+            10240
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.k.lora_down.weight": {
+          "dtype": "BF16",
+          "shape": [
+            64,
+            5120
+          ],
+          "data_offsets": [
+            10240,
+            665600
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.k.lora_up.weight": {
+          "dtype": "BF16",
+          "shape": [
+            5120,
+            64
+          ],
+          "data_offsets": [
+            665600,
+            1320960
+          ]
+        },
+        "diffusion_model.blocks.0.cross_attn.k_img.diff_b": {
+          "dtype": "BF16",
+          "shape": [
+            5120
+          ],
+          "data_offsets": [
+            1320960,
+            1331200
+          ]
+        }
+      },
+      "metadata": null
+    }
+  },
+  "original_space_allows_component_override": false,
+  "old_clips_relicensed": false
+}

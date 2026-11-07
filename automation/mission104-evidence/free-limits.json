@@ -1,0 +1,48 @@
+{
+  "checked_date": "2026-11-07",
+  "additional_paid_services_enabled": false,
+  "new_paid_gpu_or_credit_purchase": false,
+  "new_own_space_or_subscription": false,
+  "huggingface_documentation": "https://huggingface.co/docs/hub/spaces-zerogpu",
+  "huggingface_document_sha256": "316cdcb2807625c5f7009b8fa99312ff89f352bfcc94b354f11dec32335dcf1d",
+  "authenticated_tier_verified_in_cloud": "free user, isPro false",
+  "free_quota_seconds_per_rolling_window": 300,
+  "local_budget_seconds": 291,
+  "local_reserved_seconds_per_new_clip": 60,
+  "server_requested_seconds_per_new_clip": 53,
+  "new_clips_per_15_second_video": 3,
+  "local_reserved_seconds_per_video": 180,
+  "two_ai_videos_required_local_seconds": 360,
+  "two_ai_videos_fit_free_policy": false,
+  "actual_remote_debit_seconds": null,
+  "maximum_complete_ai_videos_in_fresh_local_window_at_current_profile": 1,
+  "fresh_window_assumption": "Zero carried source clips at start; up to four new60s clips fit291s, partial clips can carry to the next window. This is a planning ceiling, not observed sustained throughput.",
+  "daily_ai_capacity_guaranteed": false,
+  "free_hosting_documentation": "Current docs allow up to two own ZeroGPU Spaces for eligible free personal accounts (verified email, account older than 30 days). Eligibility/write scope and a replacement A14B runtime were not validated; no paid hosting is assumed or activated.",
+  "fallback": "Existing licensed Pixabay acquisition and existing Buffer publisher, subject to licence, quality, novelty and quotas.",
+  "github": {
+    "visibility": "public",
+    "runner": "ubuntu-latest standard",
+    "official_billing_doc": "https://docs.github.com/en/actions/concepts/billing-and-usage",
+    "billing_doc_sha256": "64a0b1c6094b777a21e62958f01923580e3bd8a781a66eb0a47680afa6916fba",
+    "new_mp4_storage": "Existing immutable GitHub Releases, max20MB/file, bounded monthly and weekly assets.",
+    "future_ai_review_artifacts": "JSON/JPG/SRT only, retention3days; source recovery artifact retained3days.",
+    "existing_first_assembly_artifact": "Preserved; included redundant voice weights. Future uploads corrected; download via local auxiliary blob endpoint returned403. No histories/artifacts removed blindly.",
+    "cache_observed": {
+      "total_bytes": 796034309,
+      "total_count": 1
+    },
+    "active_repository_artifact_storage_bytes_observed": 3392492902,
+    "account_storage_invoice_verified": false
+  },
+  "buffer_limits": "Existing Free safeguards retained: 10 concurrent queued posts/channel; local900/30days channel-request limit and local60/24h. Actual provider rate limit remains authoritative.",
+  "permanent_two_publications_per_day_proven": false,
+  "held_on": [
+    "pinned model/space revision drift",
+    "unknown inference result",
+    "quota exhausted",
+    "source/final quality or visual duplication failure",
+    "finite factual script bank exhausted",
+    "media storage cap or Buffer quota"
+  ]
+}

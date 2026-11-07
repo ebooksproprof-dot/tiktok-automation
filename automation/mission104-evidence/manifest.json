@@ -1,0 +1,82 @@
+{
+  "active-workflows.json": {
+    "sha256": "f133229e5a326231e3e2aa1f71bd76eaca4e8d2650e2d79bb8d125b4813635f7",
+    "bytes": 3793
+  },
+  "aoti-package-manifest.json": {
+    "sha256": "6f74384bc0547e34e20588d22995c92c9c9830ea11ed8fb1bba6cc4c41c20aae",
+    "bytes": 3996
+  },
+  "continuity.json": {
+    "sha256": "94d08a90a37a8c008d774497ea3e7a872a63f5428e6d9534ad6db6821705e43b",
+    "bytes": 10853
+  },
+  "current-service-terms-summary.json": {
+    "sha256": "57bfa6b44e58ea00fa341e2dd04c0a57b6bfe037d68666f7f8772d67faf43e61",
+    "bytes": 5092
+  },
+  "distill-lora-compatibility.json": {
+    "sha256": "68dd1587a237b35cb76251dcae92cde99c25ed525ccb488751dc2bc11fb20a43",
+    "bytes": 2473
+  },
+  "fastwan-model-card.md": {
+    "sha256": "8a33f233acb733af76f079886ad02d76162bf63ce3b78361644f2b65411434c1",
+    "bytes": 4315
+  },
+  "first-ai-contact.jpg": {
+    "sha256": "e8affe3d1332a704878bbf42ac2ee60dcd17ed6b4488adfcfb99ff499eb03118",
+    "bytes": 69168
+  },
+  "free-limits.json": {
+    "sha256": "8ae2af7eec23766f2a449068be1e9066492a3549ebd19bc1506f9d3a8d035b41",
+    "bytes": 2955
+  },
+  "independent-final-av.json": {
+    "sha256": "31443885917fa70a1198b6a7154ec4e9a68617e34405f25371839664c566ea63",
+    "bytes": 639
+  },
+  "independent-public-ai-proof.json": {
+    "sha256": "af11d9b61252b21bc1360abe9a028dd1e3f31473927454415df2248032bcdc0f",
+    "bytes": 609
+  },
+  "legacy-references-audit.json": {
+    "sha256": "575948e70d566b81509ac0f8f312c655d4570f99989f8878b85bec29198e4b42",
+    "bytes": 4075
+  },
+  "licensing.json": {
+    "sha256": "87b0983865b97d98b70db673420c402c7b60b29fa92000c118645c82b0db4f0f",
+    "bytes": 36421
+  },
+  "new-clips-visual-check.json": {
+    "sha256": "fa86a5786de3849bb8c1fc3e79fcab43d466c693641fd25a68a49818f1fdf2ff",
+    "bytes": 1319
+  },
+  "old-clips-verified.json": {
+    "sha256": "01dcd0822fca9806d73d7a53a331cb0c27775ddd2b981381c18776c2f05b4710",
+    "bytes": 4273
+  },
+  "public-ai-proof.png": {
+    "sha256": "cb5c987bbe8958a674ac3ed8de40313afca32b480d683293e6c40d5a05dd06ce",
+    "bytes": 262037
+  },
+  "publication.json": {
+    "sha256": "ab7d7e7129c2d695f5bac4d53487525d918aafe385e628c45ff3ff32d6209f28",
+    "bytes": 5834
+  },
+  "recovered-conventional-post.json": {
+    "sha256": "1788b7d365c81d49ab3d144eb03c904280311e03d9e74d94cc9df55ccdfc00ea",
+    "bytes": 13970
+  },
+  "repository-runtime.json": {
+    "sha256": "6232330d0842caf438470c53e16d1aa6d043c850f44eba8217c53db70c1b0237",
+    "bytes": 99
+  },
+  "runtime-current.json": {
+    "sha256": "02f3ab7bcd9b85e7fea0f07641d5c24441f9f5c150f212ccc9e38324bc97a59b",
+    "bytes": 890
+  },
+  "voice-exact-assets.json": {
+    "sha256": "1d06401af1a4943cb3c482b790274dceea84fb6b1ee79dcc0c91282c5a77f365",
+    "bytes": 1094
+  }
+}

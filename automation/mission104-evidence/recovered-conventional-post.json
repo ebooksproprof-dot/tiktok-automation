@@ -1,0 +1,231 @@
+{
+  "id": "casasem-2026-11-09-1",
+  "concept": "auto-handwashing-7fa3bc1143de",
+  "title": "Vai lavar as mãos? Use um produto indicado para a higiene das mãos. Mantenha a área da pia livre para utilizar com segurança. Siga as orientações dos órgãos de saúde para a higiene. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34209/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — josecr1920; https://pixabay.com/videos/id-34211/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+  "approved": true,
+  "consented_at": "2026-11-07T14:42:40.584146+00:00",
+  "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+  "publication_provider": "buffer",
+  "scheduled_at": "2026-11-09T10:00:00-03:00",
+  "quality": {
+    "technical_pass": true,
+    "editorial_approved": true,
+    "sha256": "1c5bca90c1319f0e2de6d886795538fa0212906d84e4862d7378d71f0e7e57a4",
+    "duration": 18.333333,
+    "size": 5194306,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -15.1,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.006333,
+    "lip_sync_verified": false,
+    "visual_policy_version": 1,
+    "visual_distinct": true,
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
+        "sha256": "4bca935d84d33d840bbad142475b872849e263a3e46a747381c0350c595b90b1",
+        "dhash": [
+          "0b8f4e666161991d",
+          "1b8b466660611919",
+          "8bf37272c3213999",
+          "0f9378e2c030399b",
+          "1bd3e8c030391b9b"
+        ]
+      },
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4",
+        "sha256": "7d61d92af9e96ce138b75d490f8befc7203756a231a67e7f2dc4696cb80d6633",
+        "dhash": [
+          "3233950e169bea6c",
+          "327235170e87e26c",
+          "32331d4606834a3c",
+          "1393c54646c75654",
+          "0205c56646465250"
+        ]
+      }
+    ],
+    "caption_style": "measured-v51",
+    "scene_reuse_policy": "sequential_no_loop",
+    "source_durations": [
+      9.726667,
+      10.046667
+    ],
+    "graphics_style": "casasem-v43-preserve-full",
+    "crop_shifts_pixels": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rendered_shots": 8,
+    "frame_modes": [
+      "preserve_full",
+      "preserve_full",
+      "preserve_full",
+      "preserve_full",
+      "preserve_full",
+      "preserve_full",
+      "preserve_full",
+      "preserve_full"
+    ],
+    "concept": "auto-handwashing-7fa3bc1143de",
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
+      "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4"
+    ],
+    "source_license": "https://pixabay.com/service/license-summary/",
+    "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+    "render_version": 2,
+    "composition_revision": 6,
+    "required_public_credits": [
+      "Video — josecr1920; https://pixabay.com/videos/id-34209/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "Video — josecr1920; https://pixabay.com/videos/id-34211/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+    ],
+    "source_licenses": [
+      "https://pixabay.com/service/license-summary/"
+    ],
+    "requested_voice": "pf_dora",
+    "voice_fallback_reason": null,
+    "automated_review": true,
+    "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+    "source_rights": [
+      {
+        "source_sha256": "4bca935d84d33d840bbad142475b872849e263a3e46a747381c0350c595b90b1",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34209/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "77b174bae046e570743902d5a06df39370b22e862eb310819f9832199726d809",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:38:19.831326+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "77b174bae046e570743902d5a06df39370b22e862eb310819f9832199726d809",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      {
+        "source_sha256": "7d61d92af9e96ce138b75d490f8befc7203756a231a67e7f2dc4696cb80d6633",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34211/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "538008868b4f6a47ead202f7087c63b54fd5f5c6de5d45a6149471121eefda61",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T14:40:08.284716+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "538008868b4f6a47ead202f7087c63b54fd5f5c6de5d45a6149471121eefda61",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      }
+    ],
+    "semantic_reviews": [
+      {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a person washing their hands under a sink. The sink is white and rectangular, with a metallic faucet on the right side. The person's hands are visible, and they are holding a small, white object, possibly a sponge",
+          "The image shows two hands washing in a sink. The hands are positioned in the center of the image, with the left hand on the left side of the sink and the right hand on the right side of the sink. The hands are covered",
+          "The image shows a person washing their hands under a sink. The sink is white and rectangular, with a single faucet on the right side. The faucet has a chrome finish and a single handle for controlling the water flow. The sink has"
+        ],
+        "frame_sha256": [
+          "d190711a1c5c239281e035577f686830fcc7cef15c04767be9d2aa20acc3c74d",
+          "fbffbdce2b509281cc923e33b2ac8c62ab00f4beab94e4c0bfc0926fd180c857",
+          "3a1d66bd7fe782cb6dff51654cb07ce4d11b1cd05fc366fa1635233ea731d3ff"
+        ],
+        "source_sha256": "4bca935d84d33d840bbad142475b872849e263a3e46a747381c0350c595b90b1",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 106.706,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a bathroom sink with a person's hands holding a sponge. The hands are positioned in the center of the sink, and the sponge is being used to scrub a surface. The person's hands are wet, and the sponge appears",
+          "The image shows a person's hands holding a white substance, possibly a substance like flour or sugar, and a white substance, possibly sugar, being mixed with a white substance, possibly flour or sugar, in a white container. The hands are",
+          "The image shows a person's hands or arms covered in a white, possibly textured, material. The texture appears to be made of a soft, possibly synthetic material, and the person seems to be holding or manipulating this material. The hands are"
+        ],
+        "frame_sha256": [
+          "9264bd2d0254b7c1f5b5fd08fac0953a9fc103580e79090833337d0c86a79afa",
+          "71e21d25a470a3fc0766582da7a033b0a713ca64c3d16563ecb9d6e4b1b81ec8",
+          "1794b8bd11997ef9592f156563539800e31f091f425e6cbca27388323bd3799b"
+        ],
+        "source_sha256": "7d61d92af9e96ce138b75d490f8befc7203756a231a67e7f2dc4696cb80d6633",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 106.771,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    ],
+    "human_perceptual_review": false
+  },
+  "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-09-1-1c5bca90c1319f0e.mp4",
+  "script_lines": [
+    "Vai lavar as mãos?",
+    "Use um produto indicado para a higiene das mãos.",
+    "Mantenha a área da pia livre para utilizar com segurança.",
+    "Siga as orientações dos órgãos de saúde para a higiene.",
+    "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
+    "Salve este cuidado para a sua rotina."
+  ],
+  "script_sha256": "7fa3bc1143dee0f397f1620bc2b5a8e29eaea5d83953b8342114adc0f808803d",
+  "media_storage": "release",
+  "render_version": 2,
+  "video_origin": "licensed_stock_cpu_review",
+  "first_test_outside_recurring_slots": false,
+  "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+}

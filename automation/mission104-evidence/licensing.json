@@ -1,0 +1,945 @@
+{
+  "review_date": "2026-11-07",
+  "components": [
+    {
+      "repo": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "source": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "revision": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "declared_license": "apache-2.0",
+      "last_modified": "2025-08-09T03:33:59.000Z",
+      "conclusion": "Official original model explicitly Apache-2.0; allowed model, does not clear additional components.",
+      "artifacts": [
+        {
+          "rfilename": "README.md",
+          "blobId": "14f92430cf8b3e904b0e631f16e48ae8f68ac47c",
+          "size": 18554
+        },
+        {
+          "rfilename": "assets/comp_effic.png",
+          "blobId": "bdc26da30b575b80d78f5972a08811eca9a6c455",
+          "size": 202156,
+          "lfs": {
+            "sha256": "75ee012dcfb08365bec67a3ec7afc126fc2817f79b9f80e38711792d4770e32b",
+            "size": 202156,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/moe_2.png",
+          "blobId": "c788c691cf96bbf9c0598cb440c23935848e8619",
+          "size": 527914,
+          "lfs": {
+            "sha256": "4ea471ccb64349bd08bc9a78f336ae000e9ca3b40da9a652b8028b214a8c6093",
+            "size": 527914,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/performance.png",
+          "blobId": "ca558e3e33efc415814aeb3b103ae2e2b34ba233",
+          "size": 306535,
+          "lfs": {
+            "sha256": "97ef99c13c8ae717a8a11c8d8ec927b69077c647cc6689755d08fc38e7fbb830",
+            "size": 306535,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/vae.png",
+          "blobId": "7d290425cf3f7ab20e2d80bece0d780259b24303",
+          "size": 165486,
+          "lfs": {
+            "sha256": "4aaea5e187f1c5908e15ade5bef24c9fb59882986bc3d2ad75f7fe820f3d772f",
+            "size": 165486,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "examples/i2v_input.JPG",
+          "blobId": "8c7fabd943752179587eb717362db32ce1eb4800",
+          "size": 250628,
+          "lfs": {
+            "sha256": "077e3d965090c9028c69c00931675f42e1acc815c6eb450ab291b3b72d211a8e",
+            "size": 250628,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00001-of-00003.safetensors",
+          "blobId": "3e671d382b9dd6c7fff4cb11756526032d5e6f6c",
+          "size": 4935812536,
+          "lfs": {
+            "sha256": "a8e861969c7433e707cc5a74065d795d36cca07ec96eb6763eb4083df7248f58",
+            "size": 4935812536,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00002-of-00003.safetensors",
+          "blobId": "b35fc9ac361a2b8ee0289121cd045e00cfe57e49",
+          "size": 4983103192,
+          "lfs": {
+            "sha256": "d57d948ece4837d850b7a859a4415121d57cacf8b9ee1d4db200c67f592902d7",
+            "size": 4983103192,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00003-of-00003.safetensors",
+          "blobId": "a76bb7245d7e1cb456132b1a8abe2b1e48a87481",
+          "size": 1442935480,
+          "lfs": {
+            "sha256": "0da9ee284e21d1406df708788db1d502d95d75f69faa25cd26151bf8829b7c5f",
+            "size": 1442935480,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "tokenizer/spiece.model",
+          "blobId": "2fe5f347e9f9367585589ae89e997dfbd5cf802c",
+          "size": 4548313,
+          "lfs": {
+            "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "size": 4548313,
+            "pointerSize": 132
+          }
+        },
+        {
+          "rfilename": "tokenizer/tokenizer.json",
+          "blobId": "9c6427ab2f801c942da4ee9740f1a750d3978a3b",
+          "size": 16837459,
+          "lfs": {
+            "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef",
+            "size": 16837459,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00001-of-00012.safetensors",
+          "blobId": "2e8daa68525c8d9f1e728e40e8c665059d3060f6",
+          "size": 4864810208,
+          "lfs": {
+            "sha256": "0400c403bd7cfe6c1c29b47ff9cb575495dc590c9be2511a3b44ae5795add106",
+            "size": 4864810208,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00002-of-00012.safetensors",
+          "blobId": "7096f7cbdadad1e79e16864c5e7587e9cba115df",
+          "size": 4919594456,
+          "lfs": {
+            "sha256": "0da8ce107f7ccbe323be7b35c5e81ce90504995b9cf0a0c06e4132f836474ba4",
+            "size": 4919594456,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00003-of-00012.safetensors",
+          "blobId": "3b5761941f8486fc7fef0dcd9c70a4a57bd8a2ea",
+          "size": 4919465128,
+          "lfs": {
+            "sha256": "4bee4dbbb916f167ce96d3f795ae316cd221713302ee427b7df457ea4dafe034",
+            "size": 4919465128,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00004-of-00012.safetensors",
+          "blobId": "9fd00fd46a0d72d8880ddc2d09b92389aaf2eac2",
+          "size": 4919594536,
+          "lfs": {
+            "sha256": "e6fec68a39ce49cfde2e6464061df64b853f0354151ca17931f8dd028dd47ff6",
+            "size": 4919594536,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00005-of-00012.safetensors",
+          "blobId": "46c934bf4dda971e8c7849de625ead1ecf291ec0",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "cf66f3fcf66788d2e939d0e60da015fa0953c48da92ae67f04ff085c4e826104",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00006-of-00012.safetensors",
+          "blobId": "e88512b958722dc6ed10623bb072fd31fbcabd77",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "cdc4bb9e21d17e8577c915215429827ad5d58bee2021ed0d63c6854596b06c90",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00007-of-00012.safetensors",
+          "blobId": "74df92b42c80cc55d2132d24603fc884c04950bc",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "c9c48dfd22c8546e20a805a5e5d698f6fbebc7b1426db92d693b75ccd10e574c",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00008-of-00012.safetensors",
+          "blobId": "e98de073820663319f689931a0b022712ba4dace",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "1bed82c03707de72ef06f624f2bbc9d43370cc208d657989dd07b08b1ff998ab",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00009-of-00012.safetensors",
+          "blobId": "767f4850bf19b784de11ca34b23ea3782b4cd919",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "779d7d8901239b5deef86597f74a4eccaf91fee674f05854dfc3d808e556805b",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00010-of-00012.safetensors",
+          "blobId": "ac8e09d90578cdbe99b7588e52ecd93969e396c8",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "ea1ebb7975f001bda912c56bf8095865605e6a019b0c180e1de74129cfbfef98",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00011-of-00012.safetensors",
+          "blobId": "12cf0733e53421335be29996a51a1c40fbae3f3e",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "38d9349f1c29a99c1f78ef53d228c1f51dde301bd3e33296db1a7e7f8c25f6fe",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00012-of-00012.safetensors",
+          "blobId": "926636d7f73156b7d74f9fc9f287f2ecd9b4112e",
+          "size": 3095607280,
+          "lfs": {
+            "sha256": "978ff94fe927dab5dc2a60030297043abff35a7d93524ce286b07c49025edfe1",
+            "size": 3095607280,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00001-of-00012.safetensors",
+          "blobId": "b8da83276f4f1206856c0bff2223474ee2fc3dcd",
+          "size": 4864810208,
+          "lfs": {
+            "sha256": "95256668a2f7f60fd80db7b0ef2edd0700d18bfd44365a546c4eb75150b43518",
+            "size": 4864810208,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00002-of-00012.safetensors",
+          "blobId": "0cc0867b60401d97f5a45102b5d105ff331ffb2e",
+          "size": 4919594456,
+          "lfs": {
+            "sha256": "3af2c8d8990a9a214fa13d2206dabc6ddd7148260ceffa570a93ff3a077d0ea0",
+            "size": 4919594456,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00003-of-00012.safetensors",
+          "blobId": "fd028f6da1609f9fd5ee6460f926cb595b6cfa5e",
+          "size": 4919465128,
+          "lfs": {
+            "sha256": "47895d51e50eb833cfb729a55c0a88d69801171c3da64b895b44a2128315894f",
+            "size": 4919465128,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00004-of-00012.safetensors",
+          "blobId": "12bc39aad050d24e73dc7902106bf0ac353ae9a2",
+          "size": 4919594536,
+          "lfs": {
+            "sha256": "c60f290bf6173bcd451ce4bb69054de077e6bc68609dc575033123996feebe70",
+            "size": 4919594536,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00005-of-00012.safetensors",
+          "blobId": "86ac0b9d18ed1fd686dee50a74445c2edad37dd7",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "fa53bebbb015efcf3de972a3029a34d4a8535a8d098f8f6e6210ea92d392b8f3",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00006-of-00012.safetensors",
+          "blobId": "03ad937d873ce4b0bf333b964638fe779e8333dc",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "11afdf78c0219e950484e72e046ee0aa2a583052d048f57c339ce4eee3737130",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00007-of-00012.safetensors",
+          "blobId": "0966123e5cfb8695a6f447c05736a73e242a3838",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "8dc3fc3f8398854f6e1a521ef79d7e2199da7d039caa38625929acf83ab0f41c",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00008-of-00012.safetensors",
+          "blobId": "4dd6d2aeffc588a281efc2e7cf565f2eae619ba7",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "fcf286f8a4745b6e7dd557d50f2e8126ac20037c1f4c3d75493b2a32861b29a4",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00009-of-00012.safetensors",
+          "blobId": "7b679317c9d81f2f8d9158228b086274ad240630",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "2571fe8aefce8557b97809e9879e7d2650b9033944cf28e77007977cb1b6d7b7",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00010-of-00012.safetensors",
+          "blobId": "da9d097e76a2dceee6751532d2dce3aca632eda4",
+          "size": 4919594552,
+          "lfs": {
+            "sha256": "8496ff20bb26d39484c940bc27047f0a7ca107f8ee23ef4ba7b2bd2f36c1dbfd",
+            "size": 4919594552,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00011-of-00012.safetensors",
+          "blobId": "56bae9ed4aa1e197eef5e47394cc9e4aec642c82",
+          "size": 4919465224,
+          "lfs": {
+            "sha256": "2bb74907c0cfffcdae0be5efe462a05179f199eee21be79b5ad20ea296a45869",
+            "size": 4919465224,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00012-of-00012.safetensors",
+          "blobId": "84c825e871d83ee7acef8e1a52ad858924344591",
+          "size": 3095607280,
+          "lfs": {
+            "sha256": "2d3f1aca89bc664f029efd5a9cf848b47fa671d781681ce05dfeb4671a5bd77d",
+            "size": 3095607280,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "vae/diffusion_pytorch_model.safetensors",
+          "blobId": "af13d1f7b1bc28a9f1e9cd85cac5da951aead1b3",
+          "size": 507591892,
+          "lfs": {
+            "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+            "size": 507591892,
+            "pointerSize": 134
+          }
+        }
+      ]
+    },
+    {
+      "repo": "Kijai/WanVideo_comfy",
+      "source": "https://huggingface.co/Kijai/WanVideo_comfy",
+      "revision": "8260d429d19fd7a72304cad059160b95d843913f",
+      "declared_license": null,
+      "last_modified": "2026-06-13T16:56:23.000Z",
+      "conclusion": "Exact extracted Lightx2v rank128 file has no explicit license declaration; upstream Apache-2.0 and discussion do not prove this exact derivative grant.",
+      "artifacts": [
+        {
+          "rfilename": "Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors",
+          "blobId": "ddb98c396954514b2d0cd8fa218418dbcbdc3095",
+          "size": 1466506280,
+          "lfs": {
+            "sha256": "5c324ada09cfa447844f5d9a57240463a515de38270ef40c7513d74be3e64e72",
+            "size": 1466506280,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    {
+      "repo": "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+      "source": "https://huggingface.co/cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+      "revision": "1f424b0caf6617cfb63822bb0298331bcf44e0e1",
+      "declared_license": null,
+      "last_modified": "2025-07-29T14:29:22.000Z",
+      "conclusion": "No explicit license declaration. Original FP32 and converted BF16 weights are not identical byte artifacts; original model name alone is insufficient.",
+      "artifacts": [
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+          "blobId": "115698627fa365fe19408a54b36cfb1e5e223c76",
+          "size": 9972847480,
+          "lfs": {
+            "sha256": "df54c7d7f0580437ea6474abf79323d05c01e9359c5d0ac45a0024b2df7a6137",
+            "size": 9972847480,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+          "blobId": "9e709c7f0d4c488ed64eec6ad29fc17ea2a8081d",
+          "size": 9945145600,
+          "lfs": {
+            "sha256": "d2d0fa8970977742e121fe93ff18ff023b8158ca8770b49ef2152586800f46a2",
+            "size": 9945145600,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+          "blobId": "afab3b7ca0eab9af7aaea2afd69a9cd5f9929e53",
+          "size": 8718288888,
+          "lfs": {
+            "sha256": "fe136f794b99068bca57b174dca503c614cfb848f7a114403e9246a3b452012f",
+            "size": 8718288888,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00001-of-00003.safetensors",
+          "blobId": "d39a77fedafb674d5f6d5074c074845eb29d8637",
+          "size": 9972847480,
+          "lfs": {
+            "sha256": "a2072302890c1d0f0340131c20ac440264da791cbc028ee2bd6de5ae40d98c0a",
+            "size": 9972847480,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00002-of-00003.safetensors",
+          "blobId": "3df107fa21fe6dbdf11e890eb44703c8cf51b721",
+          "size": 9945145600,
+          "lfs": {
+            "sha256": "5a65ba6199430d7020d3954c877d1aff779d0a62f6c85f4aaa21af4bacf8d6be",
+            "size": 9945145600,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer_2/diffusion_pytorch_model-00003-of-00003.safetensors",
+          "blobId": "937b9bf9c5559aa542370d8a18340ad813e130a9",
+          "size": 8718288888,
+          "lfs": {
+            "sha256": "96e99eb3246d73e136b36402e0124b34a1290ce4d41948e9808a990aff4e7991",
+            "size": 8718288888,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    {
+      "repo": "cbensimon/WanTransformer3DModel-sm120-cu130-raa",
+      "source": "https://huggingface.co/cbensimon/WanTransformer3DModel-sm120-cu130-raa",
+      "revision": "81e794f80b118f78d9f1f7fec4efe445c392eb61",
+      "declared_license": null,
+      "last_modified": "2026-05-14T12:45:55.000Z",
+      "conclusion": "Inspected AOTI package contains compiled code/kernels, no learned weights. No explicit package license; not used by new route.",
+      "artifacts": [
+        {
+          "rfilename": "package/submodules/blocks/package.pt2",
+          "blobId": "58e3d731bc7a519caedf5d6757f1a95c4b89dce0",
+          "size": 1800335,
+          "lfs": {
+            "sha256": "264a36c1cbb5700431b015a73575c53ab6543b56542128d955682c74b8070fdf",
+            "size": 1800335,
+            "pointerSize": 132
+          }
+        }
+      ]
+    },
+    {
+      "repo": "lightx2v/Wan2.2-Distill-Loras",
+      "source": "https://huggingface.co/lightx2v/Wan2.2-Distill-Loras",
+      "revision": "57adea585d1d21085e2dfc91ce3c7b646cdd9345",
+      "declared_license": "apache-2.0",
+      "last_modified": "2026-10-16T06:20:38.000Z",
+      "conclusion": "Explicit Apache-2.0 alternative; structural I2V A14B compatibility checked from exact high/low safetensors headers. Original Space has no component override; no runtime substitution claimed.",
+      "artifacts": [
+        {
+          "rfilename": "README.md",
+          "blobId": "9f6e41731914a38df91a4932ded8cd00f227c320",
+          "size": 12615
+        },
+        {
+          "rfilename": "wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors",
+          "blobId": "70a7b43e9c345375cbf5c5d8cc471ea006a5d4ae",
+          "size": 634645944,
+          "lfs": {
+            "sha256": "887c3bdeb74e83859c920438e16ca31f39ab18ce189abc5f0e36f8348c5bbb19",
+            "size": 634645944,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors",
+          "blobId": "56ebfd3237c412eb06aa04e07c26d1fe137fe922",
+          "size": 739472104,
+          "lfs": {
+            "sha256": "8833bd4fd7c8eabebf0bc8ee5cfaf47f4f310ce116928a02c1adf8941dd4b0f1",
+            "size": 739472104,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "wan2.2_t2v_A14b_high_noise_lora_rank64_lightx2v_4step_1217.safetensors",
+          "blobId": "15dccc6e6f62e8b48c1be72d727aa6913d38e94a",
+          "size": 613518320,
+          "lfs": {
+            "sha256": "89003385f8a9d53ba58fd6ede647fdc90292e8568a54683fcfe6db5556a31769",
+            "size": 613518320,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors",
+          "blobId": "29f8c3e24551b2f7549f04f7d624f495fc05e6d0",
+          "size": 613518320,
+          "lfs": {
+            "sha256": "4df7c206f3189472da2f92c0a42dcf308f04433d9c14302d08d56e99a3f51322",
+            "size": 613518320,
+            "pointerSize": 134
+          }
+        }
+      ]
+    },
+    {
+      "repo": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "source": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "declared_license": "apache-2.0",
+      "last_modified": "2025-11-25T07:56:21.000Z",
+      "conclusion": "New actually generated and published profile. Explicit Apache-2.0, derived from official Wan2.2 TI2V 5B. No legacy LoRA, CB weights or AOTI.",
+      "artifacts": [
+        {
+          "rfilename": "README.md",
+          "blobId": "ad63eab11ae26d6561f83d72b101ff4d5535855b",
+          "size": 4315
+        },
+        {
+          "rfilename": "assets/comp_effic.png",
+          "blobId": "bdc26da30b575b80d78f5972a08811eca9a6c455",
+          "size": 202156,
+          "lfs": {
+            "sha256": "75ee012dcfb08365bec67a3ec7afc126fc2817f79b9f80e38711792d4770e32b",
+            "size": 202156,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/moe_2.png",
+          "blobId": "c788c691cf96bbf9c0598cb440c23935848e8619",
+          "size": 527914,
+          "lfs": {
+            "sha256": "4ea471ccb64349bd08bc9a78f336ae000e9ca3b40da9a652b8028b214a8c6093",
+            "size": 527914,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/performance.png",
+          "blobId": "ca558e3e33efc415814aeb3b103ae2e2b34ba233",
+          "size": 306535,
+          "lfs": {
+            "sha256": "97ef99c13c8ae717a8a11c8d8ec927b69077c647cc6689755d08fc38e7fbb830",
+            "size": 306535,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/vae.png",
+          "blobId": "7d290425cf3f7ab20e2d80bece0d780259b24303",
+          "size": 165486,
+          "lfs": {
+            "sha256": "4aaea5e187f1c5908e15ade5bef24c9fb59882986bc3d2ad75f7fe820f3d772f",
+            "size": 165486,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "examples/i2v_input.JPG",
+          "blobId": "8c7fabd943752179587eb717362db32ce1eb4800",
+          "size": 250628,
+          "lfs": {
+            "sha256": "077e3d965090c9028c69c00931675f42e1acc815c6eb450ab291b3b72d211a8e",
+            "size": 250628,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00001-of-00003.safetensors",
+          "blobId": "3e671d382b9dd6c7fff4cb11756526032d5e6f6c",
+          "size": 4935812536,
+          "lfs": {
+            "sha256": "a8e861969c7433e707cc5a74065d795d36cca07ec96eb6763eb4083df7248f58",
+            "size": 4935812536,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00002-of-00003.safetensors",
+          "blobId": "b35fc9ac361a2b8ee0289121cd045e00cfe57e49",
+          "size": 4983103192,
+          "lfs": {
+            "sha256": "d57d948ece4837d850b7a859a4415121d57cacf8b9ee1d4db200c67f592902d7",
+            "size": 4983103192,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00003-of-00003.safetensors",
+          "blobId": "a76bb7245d7e1cb456132b1a8abe2b1e48a87481",
+          "size": 1442935480,
+          "lfs": {
+            "sha256": "0da9ee284e21d1406df708788db1d502d95d75f69faa25cd26151bf8829b7c5f",
+            "size": 1442935480,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "tokenizer/spiece.model",
+          "blobId": "2fe5f347e9f9367585589ae89e997dfbd5cf802c",
+          "size": 4548313,
+          "lfs": {
+            "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "size": 4548313,
+            "pointerSize": 132
+          }
+        },
+        {
+          "rfilename": "tokenizer/tokenizer.json",
+          "blobId": "9c6427ab2f801c942da4ee9740f1a750d3978a3b",
+          "size": 16837459,
+          "lfs": {
+            "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef",
+            "size": 16837459,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model.safetensors",
+          "blobId": "edca65c3fa66a4ef7de8d9bf9a6763136f98b5c1",
+          "size": 9999660080,
+          "lfs": {
+            "sha256": "a1cf4acd5d0242ca0cad68e115064f4ac7e748686c9cf0da050ce87decc6b9bf",
+            "size": 9999660080,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "vae/diffusion_pytorch_model.safetensors",
+          "blobId": "ce286de5e77fb7878058355c6dcee7be8308a83c",
+          "size": 2818777808,
+          "lfs": {
+            "sha256": "62cd18f19438e35b32ac63020e2852f566e9b02f46b6cdbd87972a356e3c6f4b",
+            "size": 2818777808,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    {
+      "repo": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "source": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "revision": "b8fff7315c768468a5333511427288870b2e9635",
+      "declared_license": "apache-2.0",
+      "last_modified": "2025-08-09T03:35:40.000Z",
+      "conclusion": "Official 5B backbone explicitly Apache-2.0.",
+      "artifacts": [
+        {
+          "rfilename": "README.md",
+          "blobId": "f940f55ea91f0d5713b7fa7b42be2590ea17a9e7",
+          "size": 17633
+        },
+        {
+          "rfilename": "assets/comp_effic.png",
+          "blobId": "bdc26da30b575b80d78f5972a08811eca9a6c455",
+          "size": 202156,
+          "lfs": {
+            "sha256": "75ee012dcfb08365bec67a3ec7afc126fc2817f79b9f80e38711792d4770e32b",
+            "size": 202156,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/moe_2.png",
+          "blobId": "c788c691cf96bbf9c0598cb440c23935848e8619",
+          "size": 527914,
+          "lfs": {
+            "sha256": "4ea471ccb64349bd08bc9a78f336ae000e9ca3b40da9a652b8028b214a8c6093",
+            "size": 527914,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/performance.png",
+          "blobId": "ca558e3e33efc415814aeb3b103ae2e2b34ba233",
+          "size": 306535,
+          "lfs": {
+            "sha256": "97ef99c13c8ae717a8a11c8d8ec927b69077c647cc6689755d08fc38e7fbb830",
+            "size": 306535,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "assets/vae.png",
+          "blobId": "7d290425cf3f7ab20e2d80bece0d780259b24303",
+          "size": 165486,
+          "lfs": {
+            "sha256": "4aaea5e187f1c5908e15ade5bef24c9fb59882986bc3d2ad75f7fe820f3d772f",
+            "size": 165486,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "examples/i2v_input.JPG",
+          "blobId": "8c7fabd943752179587eb717362db32ce1eb4800",
+          "size": 250628,
+          "lfs": {
+            "sha256": "077e3d965090c9028c69c00931675f42e1acc815c6eb450ab291b3b72d211a8e",
+            "size": 250628,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00001-of-00003.safetensors",
+          "blobId": "3e671d382b9dd6c7fff4cb11756526032d5e6f6c",
+          "size": 4935812536,
+          "lfs": {
+            "sha256": "a8e861969c7433e707cc5a74065d795d36cca07ec96eb6763eb4083df7248f58",
+            "size": 4935812536,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00002-of-00003.safetensors",
+          "blobId": "b35fc9ac361a2b8ee0289121cd045e00cfe57e49",
+          "size": 4983103192,
+          "lfs": {
+            "sha256": "d57d948ece4837d850b7a859a4415121d57cacf8b9ee1d4db200c67f592902d7",
+            "size": 4983103192,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "text_encoder/model-00003-of-00003.safetensors",
+          "blobId": "a76bb7245d7e1cb456132b1a8abe2b1e48a87481",
+          "size": 1442935480,
+          "lfs": {
+            "sha256": "0da9ee284e21d1406df708788db1d502d95d75f69faa25cd26151bf8829b7c5f",
+            "size": 1442935480,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "tokenizer/spiece.model",
+          "blobId": "2fe5f347e9f9367585589ae89e997dfbd5cf802c",
+          "size": 4548313,
+          "lfs": {
+            "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "size": 4548313,
+            "pointerSize": 132
+          }
+        },
+        {
+          "rfilename": "tokenizer/tokenizer.json",
+          "blobId": "9c6427ab2f801c942da4ee9740f1a750d3978a3b",
+          "size": 16837459,
+          "lfs": {
+            "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef",
+            "size": 16837459,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00001-of-00005.safetensors",
+          "blobId": "5f2663afa6a380303681b8d56fb5420dc94a02a4",
+          "size": 4978254344,
+          "lfs": {
+            "sha256": "511bec832a201caa410d09c5ce7dbbf8ad2708c345d82038f684fc74cce982be",
+            "size": 4978254344,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00002-of-00005.safetensors",
+          "blobId": "6a7b8f823a5056fc35ad31384444e82ef590d287",
+          "size": 4846784976,
+          "lfs": {
+            "sha256": "7c42724912b1911429125dc50c0e9a49ccbada5a601b657d4ed2e15e7597c193",
+            "size": 4846784976,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00003-of-00005.safetensors",
+          "blobId": "ea8adff51d7c5af5bd35218cea9a71e7fb9575f8",
+          "size": 4972658392,
+          "lfs": {
+            "sha256": "e9c3d0c76de786566382f8258101fea973ae37681c6e9fe0e5fe1fb93b806424",
+            "size": 4972658392,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00004-of-00005.safetensors",
+          "blobId": "560eb932bb3ca510154e7dbf06464d8deb1367ce",
+          "size": 4846785080,
+          "lfs": {
+            "sha256": "a331121771790939678db6f585553fd5184609f7d02593c699a4d241b0d834c5",
+            "size": 4846785080,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "transformer/diffusion_pytorch_model-00005-of-00005.safetensors",
+          "blobId": "f1e5de6d8c24ec7b760cde5e4459745dae3eb16d",
+          "size": 354751840,
+          "lfs": {
+            "sha256": "78b655685c47efdb2349f36826bb101264e9f212a16325d584aeb5f53c88e719",
+            "size": 354751840,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "vae/diffusion_pytorch_model.safetensors",
+          "blobId": "ce286de5e77fb7878058355c6dcee7be8308a83c",
+          "size": 2818777808,
+          "lfs": {
+            "sha256": "62cd18f19438e35b32ac63020e2852f566e9b02f46b6cdbd87972a356e3c6f4b",
+            "size": 2818777808,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    {
+      "repo": "hexgrad/Kokoro-82M",
+      "source": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+      "declared_license": "apache-2.0",
+      "last_modified": "2025-04-10T18:12:48.000Z",
+      "conclusion": "Explicit Apache-2.0; existing CPU Kokoro-ONNX pf_dora pt-br voice retained.",
+      "artifacts": [
+        {
+          "rfilename": "README.md"
+        }
+      ]
+    },
+    {
+      "repo": "google/umt5-xxl",
+      "source": "https://huggingface.co/google/umt5-xxl",
+      "revision": "66cb9e7e85526fe440a945569e42c72fb6cbc0ad",
+      "declared_license": "apache-2.0",
+      "last_modified": "2023-07-03T05:37:17.000Z",
+      "conclusion": "Apache-2.0 upstream text encoder. New Space loads the text encoder from the licensed FastWan repository, without a separate undeclared model.",
+      "artifacts": [
+        {
+          "rfilename": "README.md"
+        }
+      ]
+    }
+  ],
+  "original_space": {
+    "repo": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+    "revision": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+    "runtime_revision": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+    "app_sha256": "c2a68ee5f877ee9d206383a1b5da4a9e7e1c42f08fbd94fe0161c43101f868c1",
+    "loader_inputs": [
+      "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers/transformer",
+      "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers/transformer_2",
+      "Kijai/WanVideo_comfy/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors",
+      "cbensimon/WanTransformer3DModel-sm120-cu130-raa"
+    ],
+    "limitation": "Legacy inventory lacks executed server snapshot. Stable pre-generation public histories and pinned source reconstruct likely revisions, not cryptographic attestation of old remote execution."
+  },
+  "new_executed_profile": {
+    "version": 1,
+    "activated_after_public_trial": true,
+    "model_family": "Wan 2.2",
+    "variant": "FastWan2.2-TI2V-5B-FullAttn; does not clear or relabel legacy A14B clips",
+    "space": "Upsampler/wan-2-2-5b-video",
+    "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+    "space_app_sha256": "d6a0deb9b9017c5368b8bdaf16bd7150aa8587a599a01b63029742a2566a577d",
+    "endpoint": "/generate_video",
+    "order": [
+      "input_image",
+      "prompt",
+      "height",
+      "width",
+      "negative_prompt",
+      "duration_seconds",
+      "guidance_scale",
+      "steps",
+      "seed",
+      "randomize_seed"
+    ],
+    "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+    "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+    "model_license": "apache-2.0",
+    "model_license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+    "backbone": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+    "backbone_revision": "b8fff7315c768468a5333511427288870b2e9635",
+    "backbone_license": "apache-2.0",
+    "voice": "hexgrad/Kokoro-82M",
+    "voice_revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "voice_license": "apache-2.0",
+    "voice_license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md",
+    "steps": 4,
+    "height": 832,
+    "width": 480,
+    "duration_seconds": 5,
+    "guidance_scale": 0,
+    "max_clips_per_run": 3,
+    "quota_estimate_per_clip_seconds": 60,
+    "quota_estimate_only": true,
+    "additional_budget_brl": 0,
+    "use_lora": false,
+    "use_cbensimon_weights": false,
+    "use_aoti_package": false,
+    "reference_kind": "authored_text_only",
+    "reviewed_at": "2026-11-07T13:01:11.373409+00:00",
+    "provider_formula": "clip(15+steps*8*(round(duration*24)*height*width)/(49*896*896),25,110); 5s,4 steps,480x832 => 53s, local reservation 60s",
+    "activation_proof": {
+      "post_id": "casasem-2026-11-07-wan104",
+      "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+      "provider_id": "6aef299f229bf05daf51f11e",
+      "public_url": "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676",
+      "confirmed_at": "2026-11-07T13:52:39Z"
+    }
+  },
+  "exact_lora_open_question": "https://huggingface.co/Kijai/WanVideo_comfy/discussions/133",
+  "exact_lora_question_answered": false,
+  "apache_terms": "https://www.apache.org/licenses/LICENSE-2.0",
+  "redistribution": "No model weights redistributed by the application. Retain upstream license/notice and changes if redistributing code or weights; commercial permission is not a third-party trademark/likeness release.",
+  "old_clip_clearance_changed": false
+}

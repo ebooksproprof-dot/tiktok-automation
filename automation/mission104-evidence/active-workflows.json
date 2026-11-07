@@ -1,0 +1,146 @@
+[
+  {
+    "id": 390798191,
+    "name": "CasaSemEsforco official media acquisition",
+    "path": ".github/workflows/acquire-media.yml",
+    "state": "active"
+  },
+  {
+    "id": 404725891,
+    "name": "CasaSemEsforco 8.1 Experimental 30s",
+    "path": ".github/workflows/ai-video-experimental81.yml",
+    "state": "active"
+  },
+  {
+    "id": 405311454,
+    "name": "CasaSemEsforco AI30 Free Collector",
+    "path": ".github/workflows/ai30-free-collector.yml",
+    "state": "active"
+  },
+  {
+    "id": 394473120,
+    "name": "Avatar 4.3 isolated CPU experiment",
+    "path": ".github/workflows/avatar43-smoke.yml",
+    "state": "active"
+  },
+  {
+    "id": 396514341,
+    "name": "Avatar 5.2 accelerated CPU experiment",
+    "path": ".github/workflows/avatar52-accelerated.yml",
+    "state": "active"
+  },
+  {
+    "id": 386023642,
+    "name": "CasaSemEsforco Daily Video Creation",
+    "path": ".github/workflows/casasemesforco-daily.yml",
+    "state": "active"
+  },
+  {
+    "id": 408937186,
+    "name": "CasaSemEsforco 9.1 reviewed recovery proof",
+    "path": ".github/workflows/mission91-proof.yml",
+    "state": "active"
+  },
+  {
+    "id": 381367633,
+    "name": "Render casasemesforco TikToks",
+    "path": ".github/workflows/render-casasemesforco.yml",
+    "state": "active"
+  },
+  {
+    "id": 381536498,
+    "name": "Render CasaSemEsforco Formula Example",
+    "path": ".github/workflows/render-example-short.yml",
+    "state": "active"
+  },
+  {
+    "id": 383906205,
+    "name": "Render Faceless Mascot TikTok Demo",
+    "path": ".github/workflows/render-faceless-mascot-demo.yml",
+    "state": "active"
+  },
+  {
+    "id": 383905169,
+    "name": "Render Mascot TikTok Demo",
+    "path": ".github/workflows/render-mascot-demo.yml",
+    "state": "active"
+  },
+  {
+    "id": 381548266,
+    "name": "Render CasaSemEsforco Premium Batch",
+    "path": ".github/workflows/render-premium-batch.yml",
+    "state": "active"
+  },
+  {
+    "id": 381549818,
+    "name": "Render CasaSemEsforco Premium Fast",
+    "path": ".github/workflows/render-premium-fast.yml",
+    "state": "active"
+  },
+  {
+    "id": 390033739,
+    "name": "CasaSemEsforco reviewed content quality proof",
+    "path": ".github/workflows/review-v3.yml",
+    "state": "active"
+  },
+  {
+    "id": 390037096,
+    "name": "Stage reviewed book proof for second daily slot",
+    "path": ".github/workflows/stage-v3-proof.yml",
+    "state": "active"
+  },
+  {
+    "id": 397424577,
+    "name": "Symphony configuration and intake validation",
+    "path": ".github/workflows/symphony-readiness.yml",
+    "state": "active"
+  },
+  {
+    "id": 384380128,
+    "name": "Test MP4 cloud render",
+    "path": ".github/workflows/test-mp4-render.yml",
+    "state": "active"
+  },
+  {
+    "id": 375815182,
+    "name": "TikTok Online Runner",
+    "path": ".github/workflows/tiktok-online-runner.yml",
+    "state": "active"
+  },
+  {
+    "id": 393212610,
+    "name": "CasaSemEsforco 4 validation only",
+    "path": ".github/workflows/validation-v4.yml",
+    "state": "active"
+  },
+  {
+    "id": 393234302,
+    "name": "CasaSemEsforco 4.1 female validation only",
+    "path": ".github/workflows/validation-v41.yml",
+    "state": "active"
+  },
+  {
+    "id": 394476386,
+    "name": "CasaSemEsforco 4.3 framing proofs only",
+    "path": ".github/workflows/validation-v43.yml",
+    "state": "active"
+  },
+  {
+    "id": 396294977,
+    "name": "CasaSemEsforco 5.1 caption comparison only",
+    "path": ".github/workflows/validation-v51.yml",
+    "state": "active"
+  },
+  {
+    "id": 399667265,
+    "name": "CasaSemEsforco Persistent Video Stock",
+    "path": ".github/workflows/video-stock.yml",
+    "state": "active"
+  },
+  {
+    "id": 375775854,
+    "name": "pages-build-deployment",
+    "path": "dynamic/pages/pages-build-deployment",
+    "state": "active"
+  }
+]

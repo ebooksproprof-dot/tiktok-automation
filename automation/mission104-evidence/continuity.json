@@ -1,0 +1,258 @@
+{
+  "snapshot_at": "2026-11-07T14:48:42.223312+00:00",
+  "initial_main_head": "8a1d76e8a9bf3a18d66a77f15609e3d087d6e6fd",
+  "initial_experimental_head": "3f8d609843d9691ecd16e392958e4a3062e798ad",
+  "experimental_head": "3951e2e4fffced8f049f8159ac8ecdf02692b166",
+  "main_snapshot_before_audit_commit": "9ba5ad45583ced6c849289d88a46280bf2e1df7d",
+  "legacy_inventory_before_sha256": "c46d090f46d82a44fd85afdb16760ee288cb779d9c69a66e193b40c55609aba1",
+  "legacy_inventory_after_sha256": "c46d090f46d82a44fd85afdb16760ee288cb779d9c69a66e193b40c55609aba1",
+  "legacy_inventory_identical": true,
+  "new_inventory_episode": 2,
+  "pending_ai_clips": 0,
+  "request_count": 4,
+  "request_statuses": {
+    "a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc": "FAILED_PROVIDER_NO_OUTPUT",
+    "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW",
+    "f3611e4d0e0ecd314073dd8701edbf2340678d656be375df54fe28b9ca160159": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW",
+    "148d7fcf7a3d5738a38775c09c95aca6081ae6b9c33eb341395c687052a63204": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW"
+  },
+  "publication_receipt": [
+    {
+      "post_id": "casasem-2026-11-07-wan104",
+      "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4",
+      "status": "QUEUED_UNDER_EXISTING_BUFFER_CONTROLS",
+      "publicly_verified": true,
+      "scheduled_at": "2026-11-07T10:48:30-03:00",
+      "publication_status": "PUBLISH_COMPLETE",
+      "provider_id": "6aef299f229bf05daf51f11e",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676"
+      ],
+      "last_provider_check": "2026-11-07T13:52:39Z"
+    }
+  ],
+  "quota_ledger": {
+    "claims": [
+      {
+        "claimed_at": "2026-11-03T14:29:45.349254+00:00",
+        "estimated_seconds": 55.0,
+        "request_sha256": "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-03T14:30:35.651663+00:00",
+        "estimated_seconds": 55.0,
+        "request_sha256": "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-03T17:48:54.538126+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-03T17:49:37.864312+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "6630a8ff130815bbd10495532b6e8ec092a9e9d1a5e383b52b81bc134d411eef",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-03T17:58:09.913374+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-03T17:58:54.977196+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "a6b4c25145356b29887d2f6c525c36eb2ebec87e97af0c221605d5288b5292e4",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-04T21:50:54.894309+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "413746fd0b3340e2c97df4bec521dc5848d6b5c834ae40f1a7b857fd625660bb",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "claimed_at": "2026-11-05T14:33:52.187817+00:00",
+        "estimated_seconds": 45.0,
+        "request_sha256": "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f",
+        "status": "RESERVED_NO_AUTO_RETRY"
+      },
+      {
+        "request_sha256": "a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc",
+        "claimed_at": "2026-11-07T13:06:35.806020+00:00",
+        "estimated_seconds": 75.0,
+        "status": "RESERVED_NO_AUTO_RETRY",
+        "profile": "wan104_licensed_fastwan5b",
+        "space": "KingNish/wan2-2-fast"
+      },
+      {
+        "request_sha256": "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766",
+        "claimed_at": "2026-11-07T13:14:30.494870+00:00",
+        "estimated_seconds": 60.0,
+        "status": "RESERVED_NO_AUTO_RETRY",
+        "profile": "wan104_licensed_fastwan5b",
+        "space": "Upsampler/wan-2-2-5b-video"
+      },
+      {
+        "request_sha256": "f3611e4d0e0ecd314073dd8701edbf2340678d656be375df54fe28b9ca160159",
+        "claimed_at": "2026-11-07T13:15:19.969884+00:00",
+        "estimated_seconds": 60.0,
+        "status": "RESERVED_NO_AUTO_RETRY",
+        "profile": "wan104_licensed_fastwan5b",
+        "space": "Upsampler/wan-2-2-5b-video"
+      },
+      {
+        "request_sha256": "148d7fcf7a3d5738a38775c09c95aca6081ae6b9c33eb341395c687052a63204",
+        "claimed_at": "2026-11-07T13:16:05.280676+00:00",
+        "estimated_seconds": 60.0,
+        "status": "RESERVED_NO_AUTO_RETRY",
+        "profile": "wan104_licensed_fastwan5b",
+        "space": "Upsampler/wan-2-2-5b-video"
+      }
+    ],
+    "schema_version": 1,
+    "tier": "free",
+    "window_claim_ids": [
+      "a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc",
+      "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766",
+      "f3611e4d0e0ecd314073dd8701edbf2340678d656be375df54fe28b9ca160159",
+      "148d7fcf7a3d5738a38775c09c95aca6081ae6b9c33eb341395c687052a63204"
+    ],
+    "window_start": "2026-11-07T13:06:35.806020+00:00"
+  },
+  "last_quota_wait": {
+    "status": "WAIT_FREE_QUOTA",
+    "new_gpu_calls": 0,
+    "publicly_verified": false,
+    "not_before": "2026-11-08T13:06:35.806020+00:00",
+    "at": "2026-11-07T14:33:44.961961+00:00"
+  },
+  "normal_publications_and_reservations_preserved": {
+    "casasem-2026-11-07-2": {
+      "status": "PUBLISH_COMPLETE",
+      "sha256": "cdfa9ac88f8866fea92272bccdff1eb2c15454712e24d76ab906be4c80d6498c",
+      "buffer_post_id": "6aeeba3c229bf05daf2e0527",
+      "scheduled_at": "2026-11-07T10:00:00-03:00",
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705413968000568594"
+      ]
+    },
+    "casasem-2026-11-08-1": {
+      "status": "SCHEDULED",
+      "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+      "buffer_post_id": "6aeec550d6bbae6fa16c63f7",
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "publicly_verified": false,
+      "public_urls": null
+    },
+    "casasem-2026-11-07-3": {
+      "status": "SCHEDULED",
+      "sha256": "6bec86bb91286dafcd6587a2c9650d90cd6eb433a76538d188918f731bf1272c",
+      "buffer_post_id": "6aeecd8f004e4879a73ca9a7",
+      "scheduled_at": "2026-11-07T18:00:00-03:00",
+      "publicly_verified": false,
+      "public_urls": null
+    },
+    "casasem-2026-11-08-2": {
+      "status": "SCHEDULED",
+      "sha256": "c44701af820b64ff4a7b70e8de5011416c60fa7875a24e1390716ff09ccc51fd",
+      "buffer_post_id": "6aeecec4004e4879a73d1634",
+      "scheduled_at": "2026-11-08T18:00:00-03:00",
+      "publicly_verified": false,
+      "public_urls": null
+    }
+  },
+  "existing_buffer_ids_and_video_hashes_unchanged": 18,
+  "full_offline_tests": {
+    "passed": 401,
+    "log_sha256": "5d4f54d86083d9046bea436b8a935a89b61be66552f0fcd5871cddec619e2dd8"
+  },
+  "full_tests_in_real_cloud_producer": {
+    "passed": 401,
+    "run": 42382116816
+  },
+  "deployed_targeted_tests": {
+    "passed": 24,
+    "run": 42382114492
+  },
+  "deployed_routine_quota_wait_run": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42382114492",
+  "quota_wait_new_gpu_calls": 0,
+  "conventional_acquisition_run": 42380651250,
+  "candidates_acquired": 2,
+  "conventional_rejection_run": 42380698445,
+  "valid_outputs": 0,
+  "conventional_rejection_reason": "SOURCE_FROZEN_OR_UNDECODABLE or PORTRAIT_VISUAL_CONTEXT_REJECTED; workflow failed correctly and preserved three ready scheduled videos",
+  "new_fallback_verification_run": 42382116816,
+  "new_fallback_verification_conclusion": "success",
+  "new_fallback_created": 1,
+  "new_fallback_ready_before": 3,
+  "new_fallback_ready_after": 4,
+  "new_fallback_ai_gpu_calls": 0,
+  "new_fallback_internal_id": "casasem-2026-11-09-1",
+  "new_fallback_provider_receipt": {
+    "provider": "buffer",
+    "status": "SCHEDULED",
+    "submitted_at": "2026-11-07T14:43:19Z",
+    "sha256": "1c5bca90c1319f0e2de6d886795538fa0212906d84e4862d7378d71f0e7e57a4",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-09-1-1c5bca90c1319f0e.mp4",
+    "concept": "auto-handwashing-7fa3bc1143de",
+    "script_sha256": "7fa3bc1143dee0f397f1620bc2b5a8e29eaea5d83953b8342114adc0f808803d",
+    "script_lines": [
+      "Vai lavar as mãos?",
+      "Use um produto indicado para a higiene das mãos.",
+      "Mantenha a área da pia livre para utilizar com segurança.",
+      "Siga as orientações dos órgãos de saúde para a higiene.",
+      "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
+      "Salve este cuidado para a sua rotina."
+    ],
+    "source_urls": [
+      "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
+      "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4"
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
+        "sha256": "4bca935d84d33d840bbad142475b872849e263a3e46a747381c0350c595b90b1",
+        "dhash": [
+          "0b8f4e666161991d",
+          "1b8b466660611919",
+          "8bf37272c3213999",
+          "0f9378e2c030399b",
+          "1bd3e8c030391b9b"
+        ]
+      },
+      {
+        "source_id": "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4",
+        "sha256": "7d61d92af9e96ce138b75d490f8befc7203756a231a67e7f2dc4696cb80d6633",
+        "dhash": [
+          "3233950e169bea6c",
+          "327235170e87e26c",
+          "32331d4606834a3c",
+          "1393c54646c75654",
+          "0205c56646465250"
+        ]
+      }
+    ],
+    "scheduled_at": "2026-11-09T10:00:00-03:00",
+    "publicly_verified": false,
+    "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+    "buffer_post_id": "6aef3909d6bbae6fa1928169",
+    "last_checked_at": "2026-11-07T14:43:23Z",
+    "buffer_status": "scheduled",
+    "buffer_external_link": null,
+    "buffer_sent_at_present": false
+  },
+  "new_fallback_submission_run": 42382881253,
+  "confirmed_ai_consumption_refill": {
+    "status": "DISPATCHED",
+    "at": "2026-11-07T14:26:25.498678Z",
+    "trigger": "CONFIRMED_CONSUMPTION",
+    "target_workflow": "acquire-media.yml"
+  }
+}

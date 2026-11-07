@@ -1,0 +1,138 @@
+{
+  "internal_id": "casasem-2026-11-07-wan104",
+  "provider_evidence": {
+    "provider": "buffer",
+    "status": "PUBLISH_COMPLETE",
+    "submitted_at": "2026-11-07T13:37:33Z",
+    "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+    "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4",
+    "concept": "licensed-wan104-episode-1",
+    "script_sha256": "138e2c8ff69a608c29cb9f92c412bc880d259adbe915b93c388c398d18afa5dc",
+    "script_lines": [
+      "Armário sem espaço? Separe os itens por categoria antes de organizar.",
+      "Guarde somente os tecidos que já estão completamente secos e limpos.",
+      "Deixe os utensílios de uso frequente bem visíveis e fáceis de alcançar."
+    ],
+    "source_urls": [
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4"
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+        "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+        "dhash": [
+          "ebcdcceded937d3f",
+          "ebcdcddddd977b6f",
+          "62dbd9d9d91b7b6e",
+          "fac9cddddd177b6e",
+          "76dbd9dbdb9bfbfe"
+        ]
+      },
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+        "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+        "dhash": [
+          "00f8c91d1f78622e",
+          "00f8c0471f7c622e",
+          "407860030f7c612e",
+          "6c6046cf5f7c612f",
+          "7c6040434e7c6107"
+        ]
+      },
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4",
+        "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+        "dhash": [
+          "4bb48a8a8c500100",
+          "db258a8e0c130300",
+          "da25048c1c320300",
+          "922154141cb30306",
+          "9221441c1cb30306"
+        ]
+      }
+    ],
+    "scheduled_at": "2026-11-07T10:48:30-03:00",
+    "publicly_verified": true,
+    "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+    "buffer_post_id": "6aef299f229bf05daf51f11e",
+    "last_checked_at": "2026-11-07T13:52:39Z",
+    "buffer_status": "sent",
+    "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7705426078436838676",
+    "buffer_sent_at_present": true,
+    "last_reconcile_attempt_at": "2026-11-07T13:52:51Z",
+    "buffer_sent_at": "2026-11-07T13:50:13.458000+00:00",
+    "public_urls": [
+      "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676"
+    ],
+    "publicly_available_post_id": [
+      "7705426078436838676"
+    ],
+    "verification_source": "Buffer API sent + automatic + exact-account externalLink + unauthenticated public TikTok playback",
+    "public_visibility_evidence": {
+      "checked_at": "2026-11-07T13:52:50.275733+00:00",
+      "url": "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676",
+      "video_id": "7705426078436838676",
+      "public_playback_verified": true,
+      "caption_hook_matches": true,
+      "playback_progressed": true,
+      "media_duration": 15.15848,
+      "width": 576,
+      "height": 1024,
+      "authenticated": false,
+      "method": "public browser video + matching caption + playback progression"
+    }
+  },
+  "independent_public_evidence": {
+    "checked_at": "2026-11-07T13:54:55.785531+00:00",
+    "url": "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676",
+    "http": 200,
+    "video_id": "7705426078436838676",
+    "authenticated": false,
+    "playback_progressed": true,
+    "media": {
+      "t": 5.575626,
+      "d": 15.15848,
+      "w": 576,
+      "h": 1024,
+      "r": 4
+    },
+    "caption_matches": true,
+    "caption_declares_AI": true,
+    "platform_ai_label_visible": true,
+    "platform_ai_metadata": null,
+    "author": ".casasemesforo",
+    "createTime": "1794059311",
+    "public_playback_verified": true,
+    "created_at_utc": "2026-11-07T13:48:31+00:00"
+  },
+  "independent_mp4_checks": {
+    "profile": "hybrid30",
+    "technical_pass": true,
+    "editorial_approved": false,
+    "publication_enabled": false,
+    "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+    "duration": 15.0,
+    "duration_tolerance_seconds": 0.15,
+    "size": 5510935,
+    "width": 1080,
+    "height": 1920,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_mean_db": -15.4,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.023,
+    "lip_sync_verified": false,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50
+  },
+  "source_generation_run": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42376012055",
+  "assembly_run": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42377548608",
+  "first_pending_confirmation_run": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42377763413",
+  "successful_read_only_confirmation_run": "https://github.com/ebooksproprof-dot/tiktok-automation/actions/runs/42378917911",
+  "resubmission_count": 0
+}

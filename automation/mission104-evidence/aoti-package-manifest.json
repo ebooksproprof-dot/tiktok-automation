@@ -1,0 +1,125 @@
+{
+  "sha256": "264a36c1cbb5700431b015a73575c53ab6543b56542128d955682c74b8070fdf",
+  "files": [
+    {
+      "name": "archive/data/aotinductor/model/cmir6igebianqzyvcpbbnplg7lmvwkbojyq5h74ka7z5ta4q473f.cubin",
+      "size": 25800
+    },
+    {
+      "name": "archive/data/aotinductor/model/cqhwoncpi3bsjtyeyp632yiyzxqybrmw736qxzexqsrkw2bp5aro.cubin",
+      "size": 34512
+    },
+    {
+      "name": "archive/data/aotinductor/model/cackfee7mcu6rlkeyqjhewek6m2vm4kqxg5i2oivliv77uzos4bb.cubin",
+      "size": 55168
+    },
+    {
+      "name": "archive/data/aotinductor/model/cttbkblxze5xla3wbdtebiqafyfisft5y4zxfmuo5tdvppu6njgp.cubin",
+      "size": 20440
+    },
+    {
+      "name": "archive/data/aotinductor/model/cl7pywkumo22rd3p7gntr5tvv4jkpcjdhnqa7hke734erax5miby.cubin",
+      "size": 214856
+    },
+    {
+      "name": "archive/data/aotinductor/model/c23ri5sebtp3uzmp4pshvfm4axhbntvvxyvcnbcapgwyqykcsbxw.cubin",
+      "size": 66824
+    },
+    {
+      "name": "archive/data/aotinductor/model/c2uj3nhfg7yney7kxmxqbp4dt66uv3bwoa7e3odan4o6jcu4rlkn.cubin",
+      "size": 48544
+    },
+    {
+      "name": "archive/data/aotinductor/model/c7cpurwbrwyl5ax4cb7kuod54h53af6g7tjtoqhdxxobgspvzskf.cubin",
+      "size": 20432
+    },
+    {
+      "name": "archive/data/aotinductor/model/cvhalo5dxl2e4mf2tmh3tt7ypioyqqwt2cggtv7hz7bumebd2q6j.cubin",
+      "size": 42368
+    },
+    {
+      "name": "archive/data/aotinductor/model/cegu5hpwwyrznkkvmjc3bt2xnhwtfepoetzbqtikyd5ansn5kmmw.cubin",
+      "size": 169448
+    },
+    {
+      "name": "archive/data/aotinductor/model/cplfxibdvcz5h33cbyuri2bsbr7dmthpu72ifz4ubtxubwqwzsre.cubin",
+      "size": 47072
+    },
+    {
+      "name": "archive/data/aotinductor/model/cqopc5l4krm3ouxx7laronjj65ttlxtoiqyfdeirggrblagv7zwh.cubin",
+      "size": 15368
+    },
+    {
+      "name": "archive/data/aotinductor/model/cnbiclh3dj7ro6j27gnax3lx43ysbnoxntgb4skdvulgppqae7hr.cubin",
+      "size": 27744
+    },
+    {
+      "name": "archive/data/aotinductor/model/cd73hdcurerc7tzkoq4bxwbovuxjgnaxg33jycrm4hjozxvcd4jf.cubin",
+      "size": 23760
+    },
+    {
+      "name": "archive/data/aotinductor/model/ca42m5soxe6kdtzm76ewqcrnlt2ioreovqcuuslr6qde7pm2k3wz.cubin",
+      "size": 35224
+    },
+    {
+      "name": "archive/data/aotinductor/model/cicjejj7saqpdak4vn6is27gaeovum5gujmxjkfarkex6bc4r7cd.cubin",
+      "size": 109664
+    },
+    {
+      "name": "archive/data/aotinductor/model/cj6k2ugwmzy2z3bcqktnrtj7u352ycxsq5wvw3shm24t2cfa75x5.cubin",
+      "size": 38440
+    },
+    {
+      "name": "archive/data/aotinductor/model/ck2fir34v6ijptx4zgskulyqmkrwinv26vbl2h5a27pfb6t3vjsf.cubin",
+      "size": 18272
+    },
+    {
+      "name": "archive/data/aotinductor/model/c2yyadvrkhyrlfqxwnn52j6jrd5y6hqvsy3vyyt5ymj7geohzon4.cubin",
+      "size": 33896
+    },
+    {
+      "name": "archive/data/aotinductor/model/cxsorsdglz45d4xatnp4fivbwhpb67ix43eihywslga5yfo63thy.cubin",
+      "size": 19504
+    },
+    {
+      "name": "archive/data/aotinductor/model/c62rsku4etoi62sassqsa4buhciwxluvggnnhhao6soyz737igxe.wrapper.cpp",
+      "size": 248581
+    },
+    {
+      "name": "archive/data/aotinductor/model/cjrrjvm2oz4m25iwqcrw576wa6cos2bxnmzizbxd2u32yzhtk37l.kernel.cpp",
+      "size": 3282
+    },
+    {
+      "name": "archive/data/aotinductor/model/c62rsku4etoi62sassqsa4buhciwxluvggnnhhao6soyz737igxe.wrapper_metadata.json",
+      "size": 160
+    },
+    {
+      "name": "archive/data/aotinductor/model/cjrrjvm2oz4m25iwqcrw576wa6cos2bxnmzizbxd2u32yzhtk37l.kernel_metadata.json",
+      "size": 160
+    },
+    {
+      "name": "archive/data/aotinductor/model/c62rsku4etoi62sassqsa4buhciwxluvggnnhhao6soyz737igxe.wrapper.so",
+      "size": 472040
+    },
+    {
+      "name": "archive/archive_format",
+      "size": 3
+    },
+    {
+      "name": "archive/archive_version",
+      "size": 1
+    },
+    {
+      "name": "archive/.data/version",
+      "size": 2
+    },
+    {
+      "name": "archive/byteorder",
+      "size": 6
+    },
+    {
+      "name": "archive/.data/serialization_id",
+      "size": 40
+    }
+  ]
+}

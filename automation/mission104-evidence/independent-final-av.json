@@ -1,0 +1,23 @@
+{
+  "profile": "hybrid30",
+  "technical_pass": true,
+  "editorial_approved": false,
+  "publication_enabled": false,
+  "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+  "duration": 15.0,
+  "duration_tolerance_seconds": 0.15,
+  "size": 5510935,
+  "width": 1080,
+  "height": 1920,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_mean_db": -15.4,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.023,
+  "lip_sync_verified": false,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "decoder_pass": true,
+  "freeze_intervals_over_1s": 0,
+  "freeze_threshold_db": -50
+}

@@ -1,0 +1,39 @@
+{
+  "visual_policy_version": 1,
+  "visual_distinct": true,
+  "visual_sources": [
+    {
+      "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+      "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+      "dhash": [
+        "ebcdcceded937d3f",
+        "ebcdcddddd977b6f",
+        "62dbd9d9d91b7b6e",
+        "fac9cddddd177b6e",
+        "76dbd9dbdb9bfbfe"
+      ]
+    },
+    {
+      "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+      "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+      "dhash": [
+        "00f8c91d1f78622e",
+        "00f8c0471f7c622e",
+        "407860030f7c612e",
+        "6c6046cf5f7c612f",
+        "7c6040434e7c6107"
+      ]
+    },
+    {
+      "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4",
+      "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+      "dhash": [
+        "4bb48a8a8c500100",
+        "db258a8e0c130300",
+        "da25048c1c320300",
+        "922154141cb30306",
+        "9221441c1cb30306"
+      ]
+    }
+  ]
+}

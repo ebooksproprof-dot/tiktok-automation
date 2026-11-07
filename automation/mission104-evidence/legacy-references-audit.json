@@ -1,0 +1,80 @@
+[
+  {
+    "slot": 0,
+    "reference_video": "public/rendered/02_pia_limpa.mp4",
+    "reference_video_sha256": "9a20261b3e8d69f60643814fdd00d9fa68d8501a5d2d860c729d4e4cf9d83870",
+    "pexels_id": "9472849",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "0b2ed762643603ac9146155e291ac66e2a98850a76906c4419fa19e7ef3b3183",
+    "reconstructed_full_request_sha256": "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
+    "recorded_request_sha256": "401f433ed3c59efb8b78acbad02b1a21395bb5adf6ddfd03827b25122a88039c",
+    "exact_request_reproduced": true,
+    "variant": 0
+  },
+  {
+    "slot": 1,
+    "reference_video": "public/rendered/02_pia_limpa.mp4",
+    "reference_video_sha256": "9a20261b3e8d69f60643814fdd00d9fa68d8501a5d2d860c729d4e4cf9d83870",
+    "pexels_id": "9472849",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "eb4eff7902162443b06861adb21f2261340ab9f60943f9ed47b483f43421b2ff",
+    "reconstructed_full_request_sha256": "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
+    "recorded_request_sha256": "7aa6bfc74cf0571e6a8a508db65f9233c127d3a5ef1c96da92d81330607ae3c8",
+    "exact_request_reproduced": true,
+    "variant": 0
+  },
+  {
+    "slot": 2,
+    "reference_video": "public/rendered/03_espelho_limpo.mp4",
+    "reference_video_sha256": "10297dbb7d07546dd4bb23affc7acc73c677d3b001b8cb94b3c809f8c0e23c17",
+    "pexels_id": "9462884",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "004a222c308fe92aefa46f18233aaf21acdb264206399df49e80460c77dec2da",
+    "reconstructed_full_request_sha256": "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
+    "recorded_request_sha256": "8608d0d0151607d0a02267e67db3db22c49edbcbd219c72321975f4224304693",
+    "exact_request_reproduced": true,
+    "variant": 0
+  },
+  {
+    "slot": 3,
+    "reference_video": "public/rendered/03_espelho_limpo.mp4",
+    "reference_video_sha256": "10297dbb7d07546dd4bb23affc7acc73c677d3b001b8cb94b3c809f8c0e23c17",
+    "pexels_id": "9462884",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "7c5cc11f058099bd8eda7d36284b439187d8423079f2bb108f7eb071bef00c03",
+    "reconstructed_full_request_sha256": "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865",
+    "recorded_request_sha256": "16d9bcfeabb65cf84128d8cc857becd0200aebfe12e7f341e058d1a2a996c865",
+    "exact_request_reproduced": true,
+    "variant": 1
+  },
+  {
+    "slot": 4,
+    "reference_video": "public/rendered/01_piso_opaco.mp4",
+    "reference_video_sha256": "7bc4dfb163bd5bac48dc42362f5f83a88c58ebf4c7936d9275f9116d1acb6f29",
+    "pexels_id": "9473227",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "096e6f008f8e7c524554c172ac792304e22ea88d0a4da24aff05ee8fd53d9019",
+    "reconstructed_full_request_sha256": "a6b4c25145356b29887d2f6c525c36eb2ebec87e97af0c221605d5288b5292e4",
+    "recorded_request_sha256": "a6b4c25145356b29887d2f6c525c36eb2ebec87e97af0c221605d5288b5292e4",
+    "exact_request_reproduced": true,
+    "variant": 0
+  },
+  {
+    "slot": 5,
+    "reference_video": "public/rendered/01_piso_opaco.mp4",
+    "reference_video_sha256": "7bc4dfb163bd5bac48dc42362f5f83a88c58ebf4c7936d9275f9116d1acb6f29",
+    "pexels_id": "9473227",
+    "pexels_license": "https://www.pexels.com/license/",
+    "source_video_sha_matches_inventory": true,
+    "reconstructed_png_sha256": "f95236718a8d6c2737b88884c018d57995f9e660fb1d1729448742b0e4b952cf",
+    "reconstructed_full_request_sha256": "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f",
+    "recorded_request_sha256": "f609057522fb1b916153b591d78394424bcd99317a83495fdeb262fe30130a2f",
+    "exact_request_reproduced": true,
+    "variant": 1
+  }
+]

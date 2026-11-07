@@ -1,0 +1,144 @@
+{
+  "checked_at": "2026-11-07T13:00:32.448455+00:00",
+  "experimental_head": "3f8d609843d9691ecd16e392958e4a3062e798ad",
+  "clips": [
+    {
+      "slot": 0,
+      "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+      "media": {
+        "bytes": 355783,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "slot": 1,
+      "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+      "media": {
+        "bytes": 431071,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "slot": 2,
+      "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+      "media": {
+        "bytes": 454017,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "slot": 3,
+      "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+      "media": {
+        "bytes": 696763,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "slot": 4,
+      "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+      "media": {
+        "bytes": 694693,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4",
+          "sha256": "4ec7f9969e5d7babf47f240b7b6b7ec3f07db5ffeb49ccbb415a3cb68080aa25",
+          "distances": [
+            4,
+            8,
+            7,
+            5,
+            6
+          ]
+        }
+      ],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    {
+      "slot": 5,
+      "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+      "media": {
+        "bytes": 806217,
+        "duration_seconds": 5.0625,
+        "fps": "16/1",
+        "has_audio": false,
+        "height": 832,
+        "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+        "video_codec": "h264",
+        "width": 480
+      },
+      "commercial_license_clearance": false,
+      "historical_visual_matches": [],
+      "decode_motion": {
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    }
+  ]
+}
