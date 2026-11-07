@@ -10,7 +10,7 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T05:57:38.707821Z",
+    "at": "2026-11-07T06:17:33.840666Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
@@ -23,10 +23,10 @@
     "stock": {
       "held_ids": [],
       "held_uncertain": 0,
-      "low_stock": true,
+      "low_stock": false,
       "publication_confirmation_is_separate": true,
-      "ready": 1,
-      "refill_needed": 3,
+      "ready": 2,
+      "refill_needed": 2,
       "target_max": 4
     },
     "this_monitor_generates_or_publishes": false
