@@ -19,14 +19,31 @@ on:
       - "automation/review_requested.py"
       - "automation/stage_requested_proofs.py"
       - "automation/review_requests.json"
+      - "automation/autonomous_production.py"
+      - "automation/semantic_review.py"
+      - "automation/source_license.py"
       - ".github/workflows/casasemesforco-daily.yml"
   workflow_dispatch:
+    inputs:
+      first_live_test_soon:
+        description: "One authorized live test soon; normal slots remain 10h/18h"
+        type: boolean
+        default: false
+      production_limit:
+        description: "Maximum new ready videos this run (1 or 2)"
+        type: choice
+        options: ['1', '2']
+        default: '2'
   schedule:
-    - cron: "30 11 * * *" # 08:30 America/Sao_Paulo; slots 10:00 and 18:00
+    - cron: "20 6,11,19,23 * * *" # BRT 03:20/08:20/16:20/20:20; replenish before/after slots
 
 env:
   ORT_DISABLE_TELEMETRY: "1"
   CAPTION_STYLE: "measured-v51"
+  HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+  HF_HUB_DISABLE_XET: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  SEMANTIC_MODEL_CACHE: ${{ github.workspace }}/tmp/semantic-model-cache
 
 permissions:
   contents: write
@@ -41,7 +58,7 @@ jobs:
   create-videos:
     # Standard public runner only. Never use larger/paid runners.
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,22 +72,40 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
           python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0' 'kokoro-onnx==0.6.1' 'Pillow==12.3.0'
+      - name: Cache pinned CPU review weights (under 2GB, no inference service)
+        if: github.event_name != 'push'
+        uses: actions/cache@v4
+        with:
+          path: tmp/semantic-model-cache
+          key: semantic-cpu-smolvlm-a7da5b986cb59-v1
+      - name: Install CPU-only semantic reviewer
+        if: github.event_name != 'push'
+        run: |
+          python -m pip install 'torch==2.6.0+cpu' 'torchvision==0.21.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers==4.51.3' 'sentencepiece==0.2.0' 'accelerate==1.6.0'
       - name: Test publishing safeguards
         id: tests
         env:
           GITHUB_STEP_SUMMARY: "" # Keep mock evidence out of operational summaries.
         run: python -m unittest discover -s automation/tests -v
       - name: Migrate unpublished binaries outside source history
+        if: github.event_name != 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python automation/release_media.py
       - name: Render narrated MP4 with technical validation
+        if: github.event_name != 'push'
         env:
           EDITORIAL_RESERVE_DAYS: "3" # At most two renders/run; never approves future slots.
           NARRATION_ENGINE: kokoro-female
           MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
-        run: python automation/render_daily.py
+          FIRST_LIVE_TEST_SOON: ${{ inputs.first_live_test_soon }}
+          PRODUCTION_LIMIT: ${{ inputs.production_limit || '2' }}
+        run: |
+          args=()
+          if [ "$FIRST_LIVE_TEST_SOON" = 'true' ]; then args+=(--soon); fi
+          python automation/autonomous_production.py --stage --limit "$PRODUCTION_LIMIT" "${args[@]}"
       - name: Render explicitly requested quality proofs (at most three)
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.tests.outcome == 'success' }}
         run: python automation/review_requested.py
@@ -114,6 +149,8 @@ jobs:
           python - <<'PYCODE'
           import json, pathlib, subprocess
           paths = ['automation/queue.json', 'automation/review_requests.json']
+          if pathlib.Path('automation/production_state.json').exists():
+              paths.append('automation/production_state.json')
           paths.extend(p for p in ('public/review44.html', 'public/review44.json') if pathlib.Path(p).exists())
           for entry in json.loads(pathlib.Path('automation/queue.json').read_text())['posts']:
               if entry.get('render_version') != 2 or not entry.get('quality', {}).get('technical_pass'):
@@ -137,6 +174,16 @@ jobs:
         with:
           name: requested-quality-proof
           path: tmp/review-v3/
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Retain automatic production evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: automatic-production-proof
+          path: |
+            tmp/autonomous-proof/
+            tmp/daily/release-output/
           retention-days: 7
           if-no-files-found: ignore
       - name: Evidence summary

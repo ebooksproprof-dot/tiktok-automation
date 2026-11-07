@@ -244,6 +244,9 @@ def record_remote(entry, remote, channel_id):
         entry['evidence_pending_reason'] = ('PUBLIC_LINK_MISSING' if not url else
             'PUBLIC_LINK_FORMAT_OR_ACCOUNT_MISMATCH' if not match else
             'SENT_TIMESTAMP_MISSING_OR_INVALID' if not valid_sent else 'STATUS_NOT_SENT')
+    if os.getenv('REQUIRE_PUBLIC_VERIFICATION') == 'true':
+        from public_visibility import require
+        require(entry)
 
 
 def submit(client, post, state, channel_id):

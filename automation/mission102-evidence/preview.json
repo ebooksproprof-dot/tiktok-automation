@@ -1,0 +1,185 @@
+{
+  "status": "RENDERED_PREVIEW",
+  "created": 1,
+  "ready_before": 0,
+  "ready_after": 0,
+  "target": 4,
+  "outputs": [
+    {
+      "post_id": "casasem-2026-11-07-1",
+      "video": "/workspace/tiktok-automation/tmp/daily/release-output/casasem-2026-11-07-1-v2.mp4",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "da48fe796a2b50fb9bc77798c3be4c37a85afb89503c4401c3dbc4470db762f9",
+        "duration": 18.619,
+        "size": 7884393,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.2,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.019,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+            "sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+            "dhash": [
+              "525b6f3fb83a380e",
+              "327e3e170e1e1c0e",
+              "afbee7674a661a85",
+              "b39fde4f673b1b87",
+              "3f6e675965391a85"
+            ]
+          },
+          {
+            "source_id": "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4",
+            "sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+            "dhash": [
+              "dfefe7e8f0b09090",
+              "dfdec4c1e1612121",
+              "b79d8983c3434383",
+              "6f3b130787074705",
+              "de722e0e0e0f8f0f"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          15.48,
+          6.166667
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 9,
+        "frame_modes": [
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait"
+        ],
+        "concept": "auto-iron-ec85ef436af5",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+          "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — jaumeps99; https://pixabay.com/videos/id-34772/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+          "Video — livesmart; https://pixabay.com/videos/id-163116/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+            "source_page": "https://pixabay.com/videos/id-34772/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "page_sha256": "d368cfd984e106329bd306f813bb32abf1cd788f958b11abf28cf88aecfea532",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "author": "jaumeps99",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-07T04:26:31.024921+00:00",
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          },
+          {
+            "source_sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+            "source_page": "https://pixabay.com/videos/id-163116/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "page_sha256": "f202d76c3e03ae9b0acaf439425ea461ed7fbdafd358479939b1ee07e6e70220",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "author": "livesmart",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-07T04:26:25.655867+00:00",
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "clothes",
+            "captions": [
+              "The image shows a close-up view of an electric iron placed on a pink and white surface. The iron is predominantly white with a blue and purple body. The iron has a circular button on the top, likely for adjusting the temperature or",
+              "The image shows a person's hands holding a piece of paper. The paper appears to be a folded or creased piece of fabric, possibly a shirt or a similar garment. The fabric is pink with a white letter \"L\" in the",
+              "The image shows a bed with a white sheet and a pink cover. The sheet has a pattern of light and dark pink circles, resembling hearts, arranged in a somewhat circular pattern. The pink cover has a pattern of light and dark pink circles"
+            ],
+            "frame_sha256": [
+              "6dae4413d7600a8451a18bdb054e9005baaa260b6c078e0ce29f2cf17984d6df",
+              "79e9f8fe3ddfe049a8446dca52621651ab41c4edc773d3e260a1ebdaefe87b6c",
+              "0510164ea9609208a76e55303cacd552ea4b3eddf08f8058fe7cc5053495c003"
+            ],
+            "source_sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+            "accepted": true,
+            "review_seconds": 109.558,
+            "human_review": false,
+            "hosted_inference_calls": 0
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "clothes",
+            "captions": [
+              "The image shows a group of clothing items hanging on a metal rod. The clothing items are primarily black and dark blue in color, suggesting they might be formal or business attire. The rod is positioned horizontally, and it appears to be part of",
+              "The image shows a clothing rack with various suits hanging on it. The suits are of different colors and styles, including a black suit with a white shirt and a black tie, a black suit with a white shirt and a black tie, a",
+              "The image shows a series of clothing items hanging on a metal hook. The clothing items include jackets and shirts. The jackets are dark in color, likely black or dark grey, and the shirts are light in color, possibly beige or white"
+            ],
+            "frame_sha256": [
+              "2449537ba439825ba16c27a8736eef7fe3cf75f12946d4dd394bd191468f0d43",
+              "5f53f6b8c7e64194aa047fd74dc538315fe37fc1a9ff7ff898b721b4f4ed0211",
+              "f7e8d7ac8611807c7a04daf044d450f820d525db5ce9bc37b977430c63c90f14"
+            ],
+            "source_sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+            "accepted": true,
+            "review_seconds": 109.856,
+            "human_review": false,
+            "hosted_inference_calls": 0
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "scheduled_at": "2026-11-07T01:46:31-03:00",
+      "video_url": ""
+    }
+  ],
+  "source": "licensed_stock_fallback",
+  "new_generative_ai_calls": 0,
+  "paid_services_enabled": false,
+  "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+}

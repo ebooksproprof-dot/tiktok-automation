@@ -64,6 +64,10 @@ jobs:
             sudo apt-get install -y --no-install-recommends ffmpeg fonts-dejavu-core
           fi
           python -m pip install 'Pillow==12.3.0'
+          python -m pip install 'playwright==1.51.0'
+          if ! command -v google-chrome >/dev/null && ! command -v chromium >/dev/null; then
+            python -m playwright install --with-deps chromium
+          fi
 
       - name: Test publishing safeguards
         env:
@@ -90,6 +94,7 @@ jobs:
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
           BUFFER_CHECK_ONLY: ${{ inputs.buffer_check_only }}
           BUFFER_CONFIRM_POST_ID: ${{ inputs.confirm_post_id }}
+          REQUIRE_PUBLIC_VERIFICATION: 'true'
         run: |
           if [ -n "$BUFFER_CONFIRM_POST_ID" ]; then
             python automation/buffer_runner.py --confirm-post "$BUFFER_CONFIRM_POST_ID"
@@ -125,6 +130,14 @@ jobs:
           git commit -m "Update TikTok automation state"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Preserve public playback evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-playback-evidence
+          path: tmp/public-proof/
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Check daily delivery after reconciliation and persistence
         if: ${{ !cancelled() && inputs.buffer_check_only != true && inputs.confirm_post_id == '' }}

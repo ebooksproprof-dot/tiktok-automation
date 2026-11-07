@@ -151,6 +151,9 @@ def render(idea, voice, post_id):
         elif mode == 'legacy':
             frame_filter, shift = shot_filter(*source_shapes[source_index], i) if DYNAMIC_STYLE else (BASE_CROP, 0)
             filter_arg = '-vf'
+        elif mode == 'reviewed_portrait':
+            from semantic_review import PORTRAIT
+            frame_filter, shift, filter_arg = PORTRAIT, 0, '-vf'
         else:
             raise ValueError('Unknown reviewed framing policy')
         frame_modes.append(mode)

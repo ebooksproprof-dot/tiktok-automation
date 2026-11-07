@@ -1,0 +1,20 @@
+{
+  "id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+  "sha": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+  "cardData": {
+    "library_name": "transformers",
+    "license": "apache-2.0",
+    "datasets": [
+      "HuggingFaceM4/the_cauldron",
+      "HuggingFaceM4/Docmatix"
+    ],
+    "pipeline_tag": "image-text-to-text",
+    "language": [
+      "en"
+    ],
+    "base_model": [
+      "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "google/siglip-base-patch16-512"
+    ]
+  }
+}

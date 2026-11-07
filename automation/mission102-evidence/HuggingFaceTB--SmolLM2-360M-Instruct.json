@@ -1,0 +1,20 @@
+{
+  "id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "sha": "a10cc1512eabd3dde888204e902eca88bddb4951",
+  "cardData": {
+    "library_name": "transformers",
+    "license": "apache-2.0",
+    "language": [
+      "en"
+    ],
+    "pipeline_tag": "text-generation",
+    "tags": [
+      "safetensors",
+      "onnx",
+      "transformers.js"
+    ],
+    "base_model": [
+      "HuggingFaceTB/SmolLM2-360M"
+    ]
+  }
+}

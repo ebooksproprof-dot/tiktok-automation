@@ -1,0 +1,17 @@
+{
+  "id": "google/siglip-base-patch16-512",
+  "sha": "753a949581523b60257d93e18391e8c27f72eb22",
+  "cardData": {
+    "license": "apache-2.0",
+    "tags": [
+      "vision"
+    ],
+    "widget": [
+      {
+        "src": "https://huggingface.co/datasets/mishig/sample_images/resolve/main/cat-dog-music.png",
+        "candidate_labels": "playing music, playing sports",
+        "example_title": "Cat & Dog"
+      }
+    ]
+  }
+}
