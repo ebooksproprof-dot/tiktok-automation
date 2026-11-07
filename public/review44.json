@@ -1,15 +1,15 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-07T05:40:56.467876+00:00",
-  "expires_at": "2026-11-07T05:40:56.467876+00:00",
+  "generated_at": "2026-11-07T05:42:23.606307+00:00",
+  "expires_at": "2026-11-07T05:42:23.606307+00:00",
   "queue_snapshot_sha256": "e02a92e1d799c372cf9b2e39c7245b16d9a101f938b877efe0b398593cdaa4d6",
-  "state_snapshot_sha256": "c80350ec2066828d07749779e88e44c0441e81fb11d267c1285f3fc3a5775f56",
+  "state_snapshot_sha256": "31a90cbb92aad8048d74ae4720615c1ac0d8422547ad0fc30b5b95c7cacfacb5",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
     {
@@ -115,34 +115,6 @@
       "selectable": false,
       "blockers": [
         "Rejeitado editorialmente: Eight-frame final MP4 review confirms essentially one unchanged composition of a mug beside a phone throughout 19.4s. It does not show moving the mug away, taking it to the kitchen, or clearing the work area, so the visual sequence is too repetitive and incomplete for publication."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
-    {
-      "id": "casasem-2026-11-07-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-2-cdfa9ac88f8866fe.mp4",
-      "sha256": "cdfa9ac88f8866fea92272bccdff1eb2c15454712e24d76ab906be4c80d6498c",
-      "script_hash": "ef708e15ef8200722e33ebbfa31f8e2c6131f32032eb6ce89e4bc94896f430b1",
-      "post_snapshot_sha256": "8d70c679fb984e549439d2344b6b1ef3592f79904bbfeda8b788a67a12ebd7ea",
-      "title": "Vai lavar as mãos? Confira se há sabonete disponível antes de começar. Ao terminar, feche a torneira sem deixar água correndo. Use um produto indicado para a higiene das mãos. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — jLasWilson; https://pixabay.com/videos/id-34091/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Confira se há sabonete disponível antes de começar.",
-        "Ao terminar, feche a torneira sem deixar água correndo.",
-        "Use um produto indicado para a higiene das mãos.",
-        "Mantenha a área da pia livre para utilizar com segurança.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-07T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
       ],
       "editorial_review": "PENDING",
       "audit_notes": null,
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "0c7fe7d05d46dbec17e65c0d7b6b0155e381593d2f2164306946d42e190c2a72"
+  "manifest_sha256": "24c70708acfdc4e4753a74b4285b9a0fab4a26fdd99e548398ff13f2e129f274"
 }
