@@ -1298,6 +1298,70 @@
       "duration": 7.88,
       "bytes": 5066162,
       "acquired_at": 1794056983
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "113322",
+      "url": "https://cdn.pixabay.com/video/2022/04/08/113322-697585654_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-113322/",
+      "author": "BirenDas",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: BirenDas / Pixabay — https://pixabay.com/videos/id-113322/",
+      "category": "estante",
+      "query": "bookshelf",
+      "selection_reason": "Provider tags: books, library, knowledge, bookshelf, storybook, shelf, education, reading",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/04/08/113322-697585654_large.mp4",
+      "sha256": "b6b0b57797019e089f10c8d7e9af4a5178e224c5bd60e0224f005f5cba6b55aa",
+      "dhash": [
+        "edededadad8dede7",
+        "e7fef6b6a6b6cfe7",
+        "fffff9f9b99bc86e",
+        "fabab9b9b999ada7",
+        "677377777336330f"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 11.455,
+      "bytes": 8953518,
+      "acquired_at": 1794060885
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "33742",
+      "url": "https://cdn.pixabay.com/video/2020/03/15/33742-398256907_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-33742/",
+      "author": "wollschu",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: wollschu / Pixabay — https://pixabay.com/videos/id-33742/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: wash your hands, water, soap, water tap, hygiene, hand, clean, hand washing, bathroom sink, coronavirus",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/15/33742-398256907_large.mp4",
+      "sha256": "9d2e83aa7e1f6da7f12e1c734184944b3479f5227f397860977dd5a52f5d3a3b",
+      "dhash": [
+        "1f2621a1e15d0587",
+        "f4fa1d61e1c9edf7",
+        "1e266161215d0597",
+        "1e266161615d0586",
+        "1e266161615d4516"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 32.405,
+      "bytes": 23039877,
+      "acquired_at": 1794060888
     }
   ],
   "rejected_until": {
@@ -1305,11 +1369,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794056980,
+    "at": 1794060883,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1317,6 +1381,20 @@
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 3,
+        "response_source": "cache"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "estante",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "maos2",
+        "status": "search_ok",
+        "eligible_candidates": 13,
         "response_source": "live_api"
       }
     ],
@@ -1329,7 +1407,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 30,
+    "unreviewed_media_count": 32,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
