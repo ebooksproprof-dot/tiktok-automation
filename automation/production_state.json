@@ -92,46 +92,126 @@
       }
     },
     "https://cdn.pixabay.com/video/2020/06/08/41506-429661323_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047677.3834836
+      "status": "REJECTED",
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047680.4085193
+      "status": "ACCEPTED",
+      "source_sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
+      "license": {
+        "source_sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
+        "source_url": "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-111280/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "1a1fab5d3bdae2fbbf42479fbbb9e2e8f50014ad7e7e0bbdb7bf43ed80462e63",
+        "author": "AttilaPergel",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:13:46.970182+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "1a1fab5d3bdae2fbbf42479fbbb9e2e8f50014ad7e7e0bbdb7bf43ed80462e63",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a dark, possibly indoor setting. The background is dark, suggesting that the image might be taken in a dimly lit room. There is a wooden or metal surface in the foreground, which appears to be a part of a",
+          "The image shows a person's hand with the index finger extended upward. The hand is positioned near the bottom of a book, which is open. The book has a light yellow cover with yellow text printed on it. The text appears to be",
+          "The image shows a book open to a page with text. The page is dark, likely due to the lighting conditions, and the text is in a serif font. The text is arranged in paragraphs, with each paragraph separated by a line"
+        ],
+        "frame_sha256": [
+          "f4f4a673b73e2143bd93e20a13e8d6363bbb58465a1f4d2a0f6baf0b2391c4cc",
+          "95afe88e826f62e85449426f359fbfe6f4fe0c069b611efc002046aa40438952",
+          "533f74532c2ae82fab8df2c949fef8caacc78a7e9ec879df556813f180646349"
+        ],
+        "source_sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
+        "accepted": true,
+        "review_seconds": 122.507,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     },
     "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047685.6333103
+      "status": "REJECTED",
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2022/11/26/140593-775389291_large.mp4": {
+      "status": "REJECTED",
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2024/09/29/233903_large.mp4": {
       "status": "RETRYABLE",
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "HTTPError",
-      "retry_after": 1794047690.0826359
+      "error_type": "RuntimeError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794050470.0318294
+    },
+    "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "RuntimeError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794050473.3830574
     }
   },
   "outputs": {
     "casasem-2026-11-07-1": {
       "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
-      "status": "QUEUED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-07T02:03:51-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
         "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4"
+      ],
+      "provider_id": "6aeead2a229bf05daf2ad3a0",
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596"
       ]
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
     "ready_before": 0,
-    "ready_after": 1,
+    "ready_after": 0,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
