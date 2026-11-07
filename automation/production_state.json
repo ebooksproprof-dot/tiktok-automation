@@ -1485,6 +1485,15 @@
       "provider_id": "6aeecec4004e4879a73d1634",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-07-wan104": {
+      "post_id": "casasem-2026-11-07-wan104",
+      "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4",
+      "status": "QUEUED",
+      "origin": "licensed_wan104",
+      "scheduled_at": "2026-11-07T10:48:30-03:00",
+      "publicly_verified": false
     }
   },
   "last_run": {
