@@ -939,35 +939,90 @@
     }
   ],
   "rejected_until": {
-    "pixabay:38116": 1794223410
+    "pixabay:38116": 1794223410,
+    "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794024436,
-    "acquired": 2,
-    "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 4,
+    "at": 1794027809,
+    "acquired": 0,
+    "rejected": 1,
+    "download_attempts": 1,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cama",
+        "category": "ferro3",
         "status": "search_ok",
-        "eligible_candidates": 10,
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "ferro3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "louca3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "louca3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "armario2",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "provider_id": "163116",
+        "status": "CANDIDATE_VALIDATION_REJECTED"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "armario2",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "vassoura3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "vassoura3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "making bed bedroom",
-      "laundry basket clothes",
-      "cutlery kitchen drawer",
-      "indoor plant pot tray"
+      "ironing shirt",
+      "plates washing",
+      "closet clothes",
+      "sweeping floor"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
     "unreviewed_media_count": 19,
     "approved_reserve_days": null,
-    "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
+    "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
 }
