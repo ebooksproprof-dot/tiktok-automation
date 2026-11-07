@@ -6,6 +6,11 @@ on:
     # when the prior window began after 09:10; it never resets 24h quota.
     - cron: '10 6,12,16 * * *'
   workflow_dispatch:
+    inputs:
+      licensed_wan_trial:
+        description: 'Collect at most three new explicitly licensed Wan 2.2 5B clips; no publishing in this collection test'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -42,7 +47,7 @@ jobs:
           python -m unittest discover -s automation/tests -p 'test_*81.py' -v
           python automation/experimental81/auto_collect.py --dry-run
   collect-and-stage:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'push' && inputs.licensed_wan_trial != true
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -101,3 +106,34 @@ jobs:
         run: |
           echo '::error::Required AI video assembly failed or was skipped. No publication is confirmed.'
           exit 1
+  licensed-collection-trial:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' && inputs.licensed_wan_trial == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test exact profile, shared quota and durable intent
+        run: python -m unittest discover -s automation/tests -p test_wan104.py -v
+      - name: Install free client and validator
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python -m pip install 'gradio_client>=1.13,<3' 'socksio>=1.0,<2'
+      - name: Collect licensed model outputs without any publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
+        run: python automation/experimental81/wan104.py --trial
+      - name: Preserve partial responses and footage on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wan104-generated-source-proof
+          path: tmp/wan104/
+          retention-days: 3
+          if-no-files-found: ignore
