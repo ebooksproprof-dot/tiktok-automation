@@ -1033,7 +1033,8 @@
       "height": 1080,
       "duration": 17.6,
       "bytes": 9915053,
-      "acquired_at": 1794031221
+      "acquired_at": 1794031221,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1066,6 +1067,70 @@
       "duration": 20.095,
       "bytes": 11398483,
       "acquired_at": 1794031223
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "30704",
+      "url": "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-30704/",
+      "author": "iha31",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: iha31 / Pixabay — https://pixabay.com/videos/id-30704/",
+      "category": "limpeza",
+      "query": "cleaning",
+      "selection_reason": "Provider tags: laundry, washing machine, cleaning clothes, clean clothes, water, iron, hairdryer, refrigerator, clean",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+      "sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
+      "dhash": [
+        "71f8eccccce8f069",
+        "71f0ece0e4e4f069",
+        "7178fce4e8e0f069",
+        "7170ece4ececec69",
+        "7078e4e0e4e07069"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.25,
+      "bytes": 4106145,
+      "acquired_at": 1794031621
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "271",
+      "url": "https://cdn.pixabay.com/video/2015/08/10/271-135876247_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-271/",
+      "author": "Life-Of-Vids",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Life-Of-Vids / Pixabay — https://pixabay.com/videos/id-271/",
+      "category": "limpeza",
+      "query": "cleaning",
+      "selection_reason": "Provider tags: washbasin, plug hole, drain, efflux, sink, basin, lavatory, wash-bowl, water, flow, leakage, washing, cleaning, bathroom, clean, porcelain, metal",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2015/08/10/271-135876247_large.mp4",
+      "sha256": "6821dc4bb0a509aabe38270b2aa2520ebfd5e15c6dcd39c97aa7db3e189a4ef3",
+      "dhash": [
+        "11173260e4c46001",
+        "11171361e4e44001",
+        "01131362e4c64004",
+        "01131361e4e44101",
+        "01111160e4c06401"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 27.711667,
+      "bytes": 16513747,
+      "acquired_at": 1794031622
     }
   ],
   "rejected_until": {
@@ -1073,11 +1138,11 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794031220,
+    "at": 1794031620,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 3,
+    "skipped_known": 6,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1099,7 +1164,7 @@
         "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 14,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1111,7 +1176,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 23,
+    "unreviewed_media_count": 25,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
