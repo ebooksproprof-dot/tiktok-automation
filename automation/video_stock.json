@@ -10,7 +10,7 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T14:27:04.098277Z",
+    "at": "2026-11-07T14:44:35.964037Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
@@ -18,15 +18,15 @@
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW"
+      "status": "STOCK_TARGET_MET"
     },
     "stock": {
       "held_ids": [],
       "held_uncertain": 0,
       "low_stock": false,
       "publication_confirmation_is_separate": true,
-      "ready": 3,
-      "refill_needed": 1,
+      "ready": 4,
+      "refill_needed": 0,
       "target_max": 4
     },
     "this_monitor_generates_or_publishes": false
