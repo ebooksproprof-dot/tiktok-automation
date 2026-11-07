@@ -1065,7 +1065,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4": {
-      "status": "REJECTED",
+      "status": "ACCEPTED",
       "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
       "license": {
         "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
@@ -1078,7 +1078,7 @@
         "author": "iha31",
         "commercial_use": true,
         "reviewed_at": "2026-11-07T06:13:02.841696+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "ab883fab900d86da7c1729e64216693a9dc5755be0629d184b794f28a7d3ed46",
         "license_policy": {
@@ -1102,7 +1102,7 @@
         "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
         "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
         "model_license_id": "Apache-2.0",
-        "family": "clothes",
+        "family": "laundry",
         "captions": [
           "A washing machine with a green item in it.",
           "A close-up shot of a washing machine with a clear plastic lid. Inside the lid, there are several items including a green object, a yellow object, and what appears to be a white object.",
@@ -1115,19 +1115,52 @@
         ],
         "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
         "frame_mode": "preserve_full",
-        "accepted": false,
-        "review_seconds": 105.461,
+        "accepted": true,
+        "review_seconds": 117.641,
         "human_review": false,
         "hosted_inference_calls": 0,
         "decoder_pass": true,
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
-      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
-      "error_type": "ValueError",
-      "error_stage": "semantic_review",
-      "http_status": null,
-      "retry_after": 0
+      "classification_history": [
+        {
+          "method": "automated_cpu_portrait_frame_semantics",
+          "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+          "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+          "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+          "model_license_id": "Apache-2.0",
+          "family": "clothes",
+          "captions": [
+            "A washing machine with a green item in it.",
+            "A close-up shot of a washing machine with a clear plastic lid. Inside the lid, there are several items including a green object, a yellow object, and what appears to be a white object.",
+            "The image shows a close-up view of an electric washing machine. The machine has a transparent door that allows the user to see the contents inside. The door is white and has a circular design, typical of many washing machines. Inside the"
+          ],
+          "frame_sha256": [
+            "e9aeadfd5a52bd87b806bb8c7ad220d2cd60666358d688bb322ce03dceee5688",
+            "06de78260773e064119fd7d4fa832910cdf1124fcd908a18fe5b80cf1f3d2d12",
+            "52640b108d6b40079b1f4619b89161018c943058502429126b72e191f735f5c5"
+          ],
+          "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
+          "frame_mode": "preserve_full",
+          "accepted": false,
+          "review_seconds": 105.461,
+          "human_review": false,
+          "hosted_inference_calls": 0,
+          "decoder_pass": true,
+          "freeze_intervals_over_1s": 0,
+          "freeze_threshold_db": -50
+        }
+      ],
+      "hold_history": [
+        {
+          "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+          "error_type": "ValueError",
+          "error_stage": "semantic_review",
+          "http_status": null,
+          "retry_after": 0
+        }
+      ]
     },
     "https://cdn.pixabay.com/video/2017/02/26/7954-205810619_large.mp4": {
       "status": "REJECTED",
@@ -1204,6 +1237,131 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "5d510217ef0ae5eca11ebd5d8b4fcb1e70ab22355a81fc5f76d1c29bd196aaf2",
+      "license": {
+        "source_sha256": "5d510217ef0ae5eca11ebd5d8b4fcb1e70ab22355a81fc5f76d1c29bd196aaf2",
+        "source_url": "https://cdn.pixabay.com/video/2015/10/16/1006-142621176_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-1006/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "59447731eb85f10b80d02237e4975ad321a0e8fd40a8c6bc0d3bf72a3a7fca4e",
+        "author": "Coverr-Free-Footage",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T06:56:17.263683+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "59447731eb85f10b80d02237e4975ad321a0e8fd40a8c6bc0d3bf72a3a7fca4e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "Clothes are hanging on a clothesline.",
+          "The image shows a woman standing in front of a clothing rack. She is wearing a sleeveless top and has long, dark hair. The clothing rack is filled with various articles of clothing, including tops, pants, and dresses. The",
+          "The image shows a clothing store with various clothing items hanging on a metal rod. The clothing items include a variety of tops and bottoms, which are neatly arranged on the rod. The topmost items are primarily colored, with one being predominantly pink"
+        ],
+        "frame_sha256": [
+          "276f45eeaf0534432607e95ebc0f8813296cf1c6cb21db55d63302b0d2979110",
+          "af100f81b68063f7d26c8b8ffaf2244f65d3201727ead23279273d0f9f2cf3f1",
+          "a6c4e57ac2d2e2ef9dcee6e429a6d31f63c41ac5e86459fc3b24fc4a6cfc46aa"
+        ],
+        "source_sha256": "5d510217ef0ae5eca11ebd5d8b4fcb1e70ab22355a81fc5f76d1c29bd196aaf2",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 118.899,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "4b3ad942f304c77325db4f615d658a50a69defc678f7d8252a96bf0918e8bee2",
+      "license": {
+        "source_sha256": "4b3ad942f304c77325db4f615d658a50a69defc678f7d8252a96bf0918e8bee2",
+        "source_url": "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34817/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "9bc79db6c754c199a753520cb7fbaf7e1bc854ad977e53e4732f40397396b122",
+        "author": "BreakDownPictures",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T07:01:13.348280+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "9bc79db6c754c199a753520cb7fbaf7e1bc854ad977e53e4732f40397396b122",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a person washing their hands under a sink. The sink is white and smooth, with a silver faucet on the left side of the sink. The faucet has a cylindrical shape with a slight curve, and it appears to be made",
+          "The image shows a close-up of a person's hands holding a toothbrush and toothpaste. The person is using the toothbrush to brush the person's teeth. The toothbrush is metallic and has a cylindrical shape with a handle and a head. The",
+          "The image shows a close-up view of a white ceramic sink with a chrome faucet. The faucet has a single handle, which is mostly visible in the lower right corner of the image. The handle is metallic and has a polished finish"
+        ],
+        "frame_sha256": [
+          "07a077d27aee37cdf63e52aa8f0ba2f586b5d254ea2012059d6e732188d7601e",
+          "a62eb08c2b1cc59ca9b1fd727e517b35bca2385b4510fc9d11a94735154528f4",
+          "75b04c5c4252504513a9316c3a83ed8d837b25b81153c65cd17587c7aaeeb179"
+        ],
+        "source_sha256": "4b3ad942f304c77325db4f615d658a50a69defc678f7d8252a96bf0918e8bee2",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 123.576,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     }
   },
   "outputs": {
@@ -1243,13 +1401,21 @@
       "provider_id": "6aeec550d6bbae6fa16c63f7",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-07-3": {
+      "sha256": "6bec86bb91286dafcd6587a2c9650d90cd6eb433a76538d188918f731bf1272c",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-07T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/02/34817-403432718_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 2,
-    "ready_after": 2,
+    "ready_after": 3,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
