@@ -1,15 +1,15 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-07T07:04:07.559027+00:00",
-  "expires_at": "2026-11-07T07:04:07.559027+00:00",
+  "generated_at": "2026-11-07T07:04:50.017104+00:00",
+  "expires_at": "2026-11-07T07:04:50.017104+00:00",
   "queue_snapshot_sha256": "ff61baa0761828ccc4cfca5ef60f2303a7a63b5f9a99e018cd0453d8995513bb",
-  "state_snapshot_sha256": "f0451a37e86039205b05633b5a1fbc0ac0fbc300e883675ea414961db72aaa05",
+  "state_snapshot_sha256": "7d5320e8060b43b2f93858839a1bed306204d8ac7976a34db3d672ed76550508",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
     {
@@ -115,34 +115,6 @@
       "selectable": false,
       "blockers": [
         "Rejeitado editorialmente: Eight-frame final MP4 review confirms essentially one unchanged composition of a mug beside a phone throughout 19.4s. It does not show moving the mug away, taking it to the kitchen, or clearing the work area, so the visual sequence is too repetitive and incomplete for publication."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
-    {
-      "id": "casasem-2026-11-07-3",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-3-6bec86bb91286daf.mp4",
-      "sha256": "6bec86bb91286dafcd6587a2c9650d90cd6eb433a76538d188918f731bf1272c",
-      "script_hash": "1f13b57d7b85d4fcd0353f466c6721eedfd64df98b75e37f08f8e13ece15da5f",
-      "post_snapshot_sha256": "79d3af9af3d142ab5cf4bc7c9cfdee839d002a6759b2bb399c3c90e760e3c963",
-      "title": "Vai lavar as mãos? Siga o modo de uso e a quantidade indicados no rótulo. Use um produto indicado para a higiene das mãos. Confira se há sabonete disponível antes de começar. Ao terminar, feche a torneira sem deixar água correndo. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — BreakDownPictures; https://pixabay.com/videos/id-34817/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Siga o modo de uso e a quantidade indicados no rótulo.",
-        "Use um produto indicado para a higiene das mãos.",
-        "Confira se há sabonete disponível antes de começar.",
-        "Ao terminar, feche a torneira sem deixar água correndo.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-07T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
       ],
       "editorial_review": "PENDING",
       "audit_notes": null,
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "c76d824f8bb50801de3541e601ef1d4ea22e02cb8185fa82e3e3be32dbcd41a8"
+  "manifest_sha256": "c058850d50d061042d236a433c54821c5c1db94460e79b70300fa77b7f070ed2"
 }
