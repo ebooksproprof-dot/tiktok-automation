@@ -10,17 +10,15 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T05:09:51.848204Z",
+    "at": "2026-11-07T05:23:19.420964Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
-      "publication_ids": [
-        "casasem-2026-11-07-1"
-      ],
-      "status": "DISPATCHED"
+      "publication_ids": [],
+      "status": "NO_NEW_CONFIRMED_CONSUMPTION"
     },
     "stock": {
       "held_ids": [],
