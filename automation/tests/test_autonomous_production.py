@@ -65,6 +65,8 @@ class PolicyTests(unittest.TestCase):
         self.assertIsNone(semantic.nominate({'selection_reason': 'iron bridge, architecture'}))
         self.assertEqual(semantic.nominate({'selection_reason': 'books, shelves, library, closet'}), 'books')
         self.assertIsNone(semantic.nominate({'selection_reason': 'plate, pizza, meal, restaurant, tree'}))
+        self.assertIsNone(semantic.nominate({'selection_reason': 'pressure washer, street, road, cleaning'}))
+        self.assertIsNone(semantic.nominate({'selection_reason': 'washer, nut, bolt, hardware'}))
 
     def test_api_evidence_binds_same_id_author_file_and_keeps_credentials_private(self):
         record = {'provider_id': '1', 'url': 'https://cdn.pixabay.com/video/a.mp4',

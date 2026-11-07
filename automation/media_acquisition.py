@@ -391,6 +391,9 @@ def run():
                     if identity in known:
                         skipped_known += 1
                         continue
+                    if automatic and name == 'pixabay' and record['url'] in provider.known_urls:
+                        skipped_known += 1
+                        continue
                     if automatic and not preflight([record['url']], previous):
                         skipped_known += 1
                         continue

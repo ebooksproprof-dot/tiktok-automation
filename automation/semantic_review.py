@@ -45,6 +45,8 @@ def nominate(record):
     # A botanical "broom" is not a housekeeping action.
     if tags & {'blossom', 'blossoms', 'flower', 'flowers', 'rain'}:
         return None
+    if 'washer' in tags and tags & {'pressure', 'street', 'road'}:
+        return None  # A street pressure washer is not a laundry appliance.
     surface = tags & FAMILIES['surfaces'][1]
     cleaning = tags & {'cleaning', 'clean', 'wiping', 'wipe'}
     specific = tags & {'broom', 'sweeping', 'dishes', 'dishwashing', 'washer', 'laundry', 'clothes'}
@@ -57,6 +59,9 @@ def nominate(record):
     matches = sorted(((len(hints & tags), name) for name, (hints, _) in FAMILIES.items() if name != 'surfaces'), reverse=True)
     score, family = matches[0]
     if not score:
+        return None
+    if family == 'laundry' and not (tags & {'laundry', 'clothes', 'clothing', 'garment', 'garments', 'clothesline'}
+                                    or {'washing', 'machine'} <= tags):
         return None
     if family == 'dishes' and not tags & {'wash', 'washing', 'dishwashing', 'cleaning', 'soap', 'sink', 'detergent'}:
         return None
