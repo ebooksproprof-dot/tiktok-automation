@@ -113,7 +113,7 @@
         "author": "AttilaPergel",
         "commercial_use": true,
         "reviewed_at": "2026-11-07T05:13:46.970182+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "1a1fab5d3bdae2fbbf42479fbbb9e2e8f50014ad7e7e0bbdb7bf43ed80462e63",
         "license_policy": {
@@ -175,12 +175,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2024/09/29/233903_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
-      "error_type": "RuntimeError",
-      "error_stage": "license",
-      "http_status": null,
-      "retry_after": 0,
+      "status": "REJECTED",
       "hold_history": [
         {
           "status": "RETRYABLE",
@@ -189,21 +184,81 @@
           "error_stage": "license",
           "http_status": null,
           "retry_after": 1794050470.0318294
+        },
+        {
+          "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
+          "error_type": "RuntimeError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 0
         }
       ],
       "recovery_evidence": {
         "run_id": 42341545319,
         "checked_at": "2026-11-07T05:25:49.726473+00:00",
         "reason": "Old verify_api raises before HTTP after four checks. Retry licensing with bounded six-source policy; no external quota or publishing state reset."
-      }
+      },
+      "source_sha256": "b3e9c4a1a070ddf25ac4d2925b3edd9d649f4db8a07562cf871d14a1761f3e34",
+      "license": {
+        "source_sha256": "b3e9c4a1a070ddf25ac4d2925b3edd9d649f4db8a07562cf871d14a1761f3e34",
+        "source_url": "https://cdn.pixabay.com/video/2024/09/29/233903_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-233903/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "7a158158598935c58ee2217df70a78c4d803e7d9976470429091d73009a57f0e",
+        "author": "Engin_Akyurt",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:31:17.495806+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "7a158158598935c58ee2217df70a78c4d803e7d9976470429091d73009a57f0e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "laundry",
+        "captions": [
+          "The image shows a close-up view of a glass or a container with a dark background. There are visible water droplets on the surface of the glass, which are scattered across the entire image. The droplets are of varying sizes and are spread",
+          "The image shows a close-up view of a car windshield. The windshield is dark, likely due to the presence of rain or other light sources. The windshield has a few droplets of water on it, which are scattered across",
+          "The image is a close-up of a car windshield. The windshield is dark, likely due to the presence of a light source, such as a headlight or brake light. There is a small, round, white object in"
+        ],
+        "frame_sha256": [
+          "e70aa005b57622bc045eca48e4e2deb61866efbe5c63d3a850b5f032af0c9a7a",
+          "490eac87e608a058d00111c592f6a6a01af18099cb247f8975bcfae58416d691",
+          "c6c5c905fb9338f6c03c7ac54a4d1642ed68093916c13396974114420e52324e"
+        ],
+        "source_sha256": "b3e9c4a1a070ddf25ac4d2925b3edd9d649f4db8a07562cf871d14a1761f3e34",
+        "accepted": false,
+        "review_seconds": 96.526,
+        "human_review": false,
+        "hosted_inference_calls": 0
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
-      "error_type": "RuntimeError",
-      "error_stage": "license",
-      "http_status": null,
-      "retry_after": 0,
+      "status": "QUEUED",
       "hold_history": [
         {
           "status": "RETRYABLE",
@@ -212,13 +267,259 @@
           "error_stage": "license",
           "http_status": null,
           "retry_after": 1794050473.3830574
+        },
+        {
+          "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
+          "error_type": "RuntimeError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 0
         }
       ],
       "recovery_evidence": {
         "run_id": 42341545319,
         "checked_at": "2026-11-07T05:25:49.726473+00:00",
         "reason": "Old verify_api raises before HTTP after four checks. Retry licensing with bounded six-source policy; no external quota or publishing state reset."
+      },
+      "source_sha256": "69775256825d0978f77ebed172e8feeb52c7d6565a85a0620e86323d1ae251b9",
+      "license": {
+        "source_sha256": "69775256825d0978f77ebed172e8feeb52c7d6565a85a0620e86323d1ae251b9",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34091/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "66ebe1adc0de7a199c55d24ae954ee1638836c961a1321588a1e6d33e4c2a6b2",
+        "author": "jLasWilson",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:33:02.654038+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "66ebe1adc0de7a199c55d24ae954ee1638836c961a1321588a1e6d33e4c2a6b2",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a person holding a stream of water in their hands. The water appears clear and clean, indicating it might be from a tap or a clean source. The person's hands are positioned in a way that suggests they are about to",
+          "The image shows a close-up of two hands, presumably belonging to a person. The hands are positioned in such a way that the fingers are spread out, with the palms facing upwards. The individual appears to be holding or washing something,",
+          "The image shows a person washing their hands. The hands are positioned in a way that suggests they are actively engaged in the task of washing. The person's hands are wet, and the water appears to be flowing over them, indicating that the"
+        ],
+        "frame_sha256": [
+          "e99ab9578de8ba0b92465b082539bc69fc8302f1114fb4cf769c5ffb04cf3cfc",
+          "12090a4a438f2da82e4c12d9c5dbcb712b7b9aa643c6fe07a2df831a9c89531e",
+          "1cf62004322ad4c7ae2dd049065455e9d444e8ef457f33d95c67fc3a3159bf42"
+        ],
+        "source_sha256": "69775256825d0978f77ebed172e8feeb52c7d6565a85a0620e86323d1ae251b9",
+        "accepted": true,
+        "review_seconds": 92.835,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2020/05/25/40135-424912054_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "2bb361fcfa4497a1a5d4b7d38376ffbdd63a8fe99c4f2ffdf357f41b7edee9bd",
+      "license": {
+        "source_sha256": "2bb361fcfa4497a1a5d4b7d38376ffbdd63a8fe99c4f2ffdf357f41b7edee9bd",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/25/40135-424912054_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-40135/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "f02ca6815058474c6166f8669cd8aa4da44e0e799fcf7aaf5ebccd618e05483e",
+        "author": "Engin_Akyurt",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:35:59.586689+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "f02ca6815058474c6166f8669cd8aa4da44e0e799fcf7aaf5ebccd618e05483e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image shows a clear glass with a thin stream of water flowing into it from the top. The glass is placed on a flat, light green surface, which might be a table or countertop. The stream of water appears to be coming",
+          "The image shows a clear glass filled with a clear liquid, likely water, placed on a green surface. The glass has a thin, transparent rim around its top edge, and the liquid inside appears to be slightly ruffled, indicating movement",
+          "The image shows a clear glass filled with a clear liquid, likely water, placed on a light green surface. The glass is round and transparent, allowing the viewer to see the liquid inside. The liquid appears to be slightly denser than the surrounding"
+        ],
+        "frame_sha256": [
+          "fcec59fad37f251de1b8c36e2b4028a06b2193c9694c3fed88c2705d3351d6bf",
+          "8ca7d25804d886d0c3885f392d9b2072bcc8cff8229bf691ba74f5817f32843d",
+          "8a7287cf0a1af9d291c870a462e5ac568f558088b925d87f4b9186ef2ea8b780"
+        ],
+        "source_sha256": "2bb361fcfa4497a1a5d4b7d38376ffbdd63a8fe99c4f2ffdf357f41b7edee9bd",
+        "accepted": false,
+        "review_seconds": 95.313,
+        "human_review": false,
+        "hosted_inference_calls": 0
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2021/09/11/88191-602895398_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "cd655f026d01a27f5f9e95e634d7d747b947a7ceb767da3a67cca80640ae7638",
+      "license": {
+        "source_sha256": "cd655f026d01a27f5f9e95e634d7d747b947a7ceb767da3a67cca80640ae7638",
+        "source_url": "https://cdn.pixabay.com/video/2021/09/11/88191-602895398_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-88191/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "682bc0bdd95a6edabc31940558fac625943d55d468d856b3130cb5ad896695cf",
+        "author": "Engin_Akyurt",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:37:42.148712+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "682bc0bdd95a6edabc31940558fac625943d55d468d856b3130cb5ad896695cf",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image features a palm tree. The palm tree is the main focus, and it is depicted in a close-up view. The palm tree has a long, slender trunk with a few branches extending upwards. The leaves are long and narrow",
+          "The image features a palm tree. The palm tree is the main focus, and it is depicted in a close-up view. The palm tree has a long, slender trunk with a few branches extending upwards. The leaves are long and narrow",
+          "The image features a palm tree. The palm tree is the main focus, and it is depicted in a close-up view. The palm tree has long, frond-like leaves that are green in color. The leaves are arranged in"
+        ],
+        "frame_sha256": [
+          "67a7ac93bccc0561667ab663eb25fd1eb2df919eb1443f1d5716a529b1798df4",
+          "6904f133adbb31dc08ab4c2175365b2e09d0c00c01134ea961789442ea57dbb7",
+          "0f7c1083228b7d93888b76fc8afa95694dd0229c86f0ad41334d615b92d1618d"
+        ],
+        "source_sha256": "cd655f026d01a27f5f9e95e634d7d747b947a7ceb767da3a67cca80640ae7638",
+        "accepted": false,
+        "review_seconds": 94.313,
+        "human_review": false,
+        "hosted_inference_calls": 0
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2021/09/11/88192-602895324_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "9babc44e6673f78171bb3e3f918c6408867db9c1a216e59702da91433bca736a",
+      "license": {
+        "source_sha256": "9babc44e6673f78171bb3e3f918c6408867db9c1a216e59702da91433bca736a",
+        "source_url": "https://cdn.pixabay.com/video/2021/09/11/88192-602895324_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-88192/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "393ef22d932296f062d3b219c0bd70b6fb7f7f509477e56b1cf7e5018b31580d",
+        "author": "Engin_Akyurt",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:39:21.977224+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "393ef22d932296f062d3b219c0bd70b6fb7f7f509477e56b1cf7e5018b31580d",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image shows a palm tree in the foreground. The palm tree has a few leaves and appears to be in full bloom, with the fronds extending outward and upwards. The background is blurred, but it shows a building with a roof that",
+          "The image shows a palm tree with green fronds. The palm tree is positioned on the left side of the image, extending towards the upper right corner. The fronds are spread out across the entire palm tree, indicating a mature and healthy",
+          "The image shows a partial view of a roof. The roof appears to be a sloped structure, likely part of a building or a structure with multiple levels. The roof is covered with a light-colored material, possibly a metal or plastic"
+        ],
+        "frame_sha256": [
+          "06a899ee37a9202e7e64e38294e2c3defb172428c05fba7ada36b2cb86a9cb52",
+          "3a042acfa4c7e5d6991c3d8d660f2b1648fcc70c94e04221486fdc29c40092d6",
+          "a9e727579eeb4cfbbdae8986a9c545f1ddf48f830c86f86dd05396abbd676f69"
+        ],
+        "source_sha256": "9babc44e6673f78171bb3e3f918c6408867db9c1a216e59702da91433bca736a",
+        "accepted": false,
+        "review_seconds": 93.538,
+        "human_review": false,
+        "hosted_inference_calls": 0
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -235,13 +536,21 @@
       "public_urls": [
         "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596"
       ]
+    },
+    "casasem-2026-11-07-2": {
+      "sha256": "cdfa9ac88f8866fea92272bccdff1eb2c15454712e24d76ab906be4c80d6498c",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-07T10:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 0,
-    "ready_after": 0,
+    "ready_after": 1,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
