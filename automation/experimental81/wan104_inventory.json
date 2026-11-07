@@ -347,5 +347,12 @@
     }
   ],
   "status": "COLLECTING",
-  "legacy_inventory_preserved_at": "feature/ai-video-hybrid-30s:automation/experimental81/auto_inventory.json"
+  "legacy_inventory_preserved_at": "feature/ai-video-hybrid-30s:automation/experimental81/auto_inventory.json",
+  "last_wait": {
+    "status": "WAIT_FREE_QUOTA",
+    "new_gpu_calls": 0,
+    "publicly_verified": false,
+    "not_before": "2026-11-08T13:06:35.806020+00:00",
+    "at": "2026-11-07T14:15:01.444522+00:00"
+  }
 }
