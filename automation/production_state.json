@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "candidates": {
+    "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047670.8779488
+    },
+    "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047674.379248
+    },
+    "https://cdn.pixabay.com/video/2020/06/08/41506-429661323_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047677.3834836
+    },
+    "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047680.4085193
+    },
+    "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047685.6333103
+    },
+    "https://cdn.pixabay.com/video/2022/11/26/140593-775389291_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "HTTPError",
+      "retry_after": 1794047690.0826359
+    }
+  },
+  "outputs": {},
+  "last_run": {
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
+    "ready_before": 0,
+    "ready_after": 0,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+  }
+}
