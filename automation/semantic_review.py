@@ -45,7 +45,15 @@ def nominate(record):
         return None
     if tags & {'hand', 'hands'} and tags & {'soap', 'washing'}:
         return 'handwashing'
-    return next((name for name, (hints, _) in FAMILIES.items() if hints & tags), None)
+    # Prefer the supported context with most corroborating tags: a library
+    # tagged "books, shelves, closet" must not become a clothes demonstration.
+    matches = sorted(((len(hints & tags), name) for name, (hints, _) in FAMILIES.items()), reverse=True)
+    score, family = matches[0]
+    if not score:
+        return None
+    if family == 'dishes' and not tags & {'wash', 'washing', 'dishwashing', 'cleaning', 'soap', 'sink', 'detergent'}:
+        return None
+    return family
 
 
 def assess(family, captions):
