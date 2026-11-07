@@ -91,6 +91,18 @@ def assess(family, captions):
             and sum(bool(t & allowed) for t in tokens) >= 2)
 
 
+def assess_generated_organization(slot, captions):
+    """Separate scope for the licensed Wan profile; stock gates stay unchanged."""
+    expected = ({'jar', 'jars', 'container', 'containers', 'pantry', 'shelf', 'shelves'},
+                {'towel', 'towels', 'linen', 'linens', 'cloth', 'cloths', 'fabric'},
+                {'utensil', 'utensils', 'spoon', 'spoons', 'ladle', 'ladles', 'spatula', 'spatulas'})
+    if type(slot) is not int or not 0 <= slot < 3 or len(captions) != 3:
+        return False
+    tokens = [words(caption) for caption in captions]
+    return (not any(t & (FORBIDDEN | {'person', 'people', 'child', 'children'}) for t in tokens)
+            and sum(bool(t & expected[slot]) for t in tokens) >= 2)
+
+
 def motion(path):
     result = subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-i', str(path),
         '-vf', 'freezedetect=n=-50dB:d=1', '-an', '-threads', '2', '-f', 'null', '-'],
@@ -114,7 +126,9 @@ class Reviewer:
 
     def review(self, path, record, folder):
         from PIL import Image
-        family = nominate(record)
+        generated_profile = (record.get('provider') == 'wan104_generated'
+                     and record.get('model') == 'FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers')
+        family = 'wan104_organization' if generated_profile else nominate(record)
         if not family:
             raise ValueError('UNSUPPORTED_OR_UNSAFE_SOURCE_CONTEXT')
         folder = Path(folder)
@@ -140,7 +154,8 @@ class Reviewer:
             image = Image.open(frame).convert('RGB')
             prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
                 {'type': 'image'}, {'type': 'text', 'text':
-                 'Describe the visible objects and what the hands or people are doing. Only describe what you can see.'}]}],
+                 ('Describe the visible objects, room, and camera view. Only describe what you can see.' if generated_profile else
+                  'Describe the visible objects and what the hands or people are doing. Only describe what you can see.')}]}],
                 add_generation_prompt=True)
             inputs = self.processor(text=prompt, images=[image], return_tensors='pt')
             with self.torch.inference_mode():
@@ -153,7 +168,8 @@ class Reviewer:
         result = {'method': 'automated_cpu_portrait_frame_semantics', 'model': MODEL,
                   'revision': REVISION, 'model_license': LICENSE, 'model_license_id': 'Apache-2.0',
                   'family': family, 'captions': captions, 'frame_sha256': hashes,
-                  'source_sha256': record['sha256'], 'frame_mode': frame_mode, 'accepted': assess(family, captions),
+                  'source_sha256': record['sha256'], 'frame_mode': frame_mode,
+                  'accepted': assess_generated_organization(record.get('generated_slot'), captions) if generated_profile else assess(family, captions),
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
         result.update(motion_result)

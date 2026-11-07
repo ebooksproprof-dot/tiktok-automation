@@ -13,7 +13,9 @@ import buffer_runner as buffer
 
 def candidate(queue, state, now):
     for post in queue.get('posts', []):
-        if post.get('approval_scope') != 'mission102_owner_authorized_automated_quality_and_license_checks':
+        from experimental81.wan104_policy import is_trial
+        if (post.get('approval_scope') != 'mission102_owner_authorized_automated_quality_and_license_checks'
+                and not is_trial(post)):
             continue
         entry = state.get('posts', {}).get(post['id'], {})
         try:

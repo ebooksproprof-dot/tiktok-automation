@@ -29,9 +29,9 @@ SCENES = [
     'Photorealistic linen cupboard with neatly folded cotton towels on an open shelf, soft window light. Slow continuous camera push toward the towels, realistic fabric texture, stable objects and natural shadows. No people, no hands, no logos, no text. One uninterrupted shot.',
     'Photorealistic clean domestic kitchen, simple unbranded utensils hanging separately from a secure wall rail above an empty counter. A gentle continuous camera slide shows the easy access and organized space. Stable geometry and natural daylight. No people, no hands, no text, no logos.'
 ]
-SCRIPT = ['Armário sem espaço? Separe os itens por categoria.',
-          'Guarde somente os tecidos que já estão bem secos.',
-          'Deixe o que você usa sempre fácil de alcançar.']
+SCRIPT = ['Armário sem espaço? Separe os itens por categoria antes de organizar.',
+          'Guarde somente os tecidos que já estão completamente secos e limpos.',
+          'Deixe os utensílios de uso frequente bem visíveis e fáceis de alcançar.']
 
 
 def now():

@@ -27,7 +27,10 @@ def confirmed_live_tests(queue, state, day):
     confirmed = set()
     for post in queue.get('posts', []):
         entry = state.get('posts', {}).get(post.get('id'), {})
-        if (post.get('approval_scope') != 'mission102_owner_authorized_automated_quality_and_license_checks'
+        from experimental81.wan104_policy import is_trial
+        authorized = (post.get('approval_scope') == 'mission102_owner_authorized_automated_quality_and_license_checks'
+                      or is_trial(post))
+        if (not authorized
                 or entry.get('status') != 'PUBLISH_COMPLETE' or entry.get('publicly_verified') is not True
                 or entry.get('public_visibility_evidence', {}).get('public_playback_verified') is not True
                 or not entry.get('buffer_post_id') or not entry.get('public_urls')

@@ -101,6 +101,13 @@ def check_channel(channel, channel_id):
 
 def prepare(post, state, channel_id):
     quality = post.get("quality") or {}
+    wan_trial = False
+    if quality.get('wan104_licensed_profile') is True:
+        from experimental81.wan104_policy import require_quality, is_trial, require_trial_available
+        require_quality(quality)
+        wan_trial = is_trial(post)
+        if wan_trial:
+            require_trial_available(post, common.load_json(common.QUEUE_PATH, {'posts': []}), state)
     if post.get("publication_provider") != "buffer":
         raise ValueError("Post not assigned to Buffer")
     if post.get('video_origin') == 'ai_only30':
@@ -166,10 +173,11 @@ def prepare(post, state, channel_id):
                 raise ValueError('Publication slot already reserved')
     if len(reserved) >= 2:
         tests = set()
-        if post.get('approval_scope') == 'mission102_owner_authorized_automated_quality_and_license_checks':
+        if (post.get('approval_scope') == 'mission102_owner_authorized_automated_quality_and_license_checks'
+                or quality.get('wan104_licensed_profile') is True):
             from daily_coverage import confirmed_live_tests
             tests = confirmed_live_tests(common.load_json(common.QUEUE_PATH, {'posts': []}), state, day)
-        if len(reserved-tests) >= 2:
+        if len(reserved-tests) >= 2 and not wan_trial:
             raise ValueError('Daily maximum of two publication reservations reached')
     text = post.get("title", "").strip()
     if not text or len(text) > 2200 or len(re.findall(r"(?<!\w)#\w+", text)) > 5:

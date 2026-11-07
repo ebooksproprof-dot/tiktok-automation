@@ -44,7 +44,13 @@ def verified_asset(asset, name, digest, size):
 
 def publish(path, post_id, quality):
     path = Path(path)
-    if not re.fullmatch(r'casasem-\d{4}-\d{2}-\d{2}-[123]', post_id):
+    wan_trial = re.fullmatch(r'casasem-\d{4}-\d{2}-\d{2}-wan104', post_id)
+    if wan_trial:
+        from experimental81.wan104_policy import require_quality
+        require_quality(quality)
+        if quality.get('wan104_public_trial') is not True:
+            raise ValueError('WAN104_EXPLICIT_FIRST_TEST_AUTHORIZATION_REQUIRED')
+    elif not re.fullmatch(r'casasem-\d{4}-\d{2}-\d{2}-[123]', post_id):
         raise ValueError('Invalid video ID')
     if post_id.endswith('-3'):
         import datetime as dt

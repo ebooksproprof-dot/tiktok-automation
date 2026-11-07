@@ -1,0 +1,89 @@
+{
+  "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f": {
+    "method": "automated_cpu_portrait_frame_semantics",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+    "model_license_id": "Apache-2.0",
+    "family": "wan104_organization",
+    "captions": [
+      "Three glass jars with white lids sit on a shelf in a wooden cabinet.",
+      "Three glass jars with white lids on a shelf.",
+      "The image shows a shelf with glass jars on it. The shelf is made of wood and has a light brown color. There are three glass jars on the shelf, each with a white lid and a silver-colored metal rim around the top"
+    ],
+    "frame_sha256": [
+      "e8af6b152592541e66fe24fa3e3cea000dec11e787e44b8816a4dbaaae49e6d4",
+      "b1a90a59f2ce018b9a9de6efabba02cf9d7c3dd0b3dd8c2136b89cafe1899dab",
+      "f2f1630735b712ab14b2605eb747a6a38504badcd2b27fc1fa4a4869bcdc25bf"
+    ],
+    "source_sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+    "frame_mode": "reviewed_portrait",
+    "accepted": true,
+    "review_seconds": 103.73,
+    "human_review": false,
+    "hosted_inference_calls": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "policy": "wan104_objects_v1",
+    "generated_slot": 0
+  },
+  "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d": {
+    "method": "automated_cpu_portrait_frame_semantics",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+    "model_license_id": "Apache-2.0",
+    "family": "wan104_organization",
+    "captions": [
+      "A hand is placing a folded white towel on the top shelf of a storage unit. The top shelf is beige and the bottom shelf is a darker color. The storage unit is made of fabric and has a light brown wooden shelf.",
+      "A beige, fabric shelf with two white towels on it.",
+      "The image shows a neatly stacked, light grey, fabric storage unit. The top shelf contains two white, folded towels, which are stacked vertically, occupying the top two slots of the unit. The bottom shelf also contains two white folded towels,"
+    ],
+    "frame_sha256": [
+      "2ea6ee2df6d89b3acca736bad6059a61353765ce10cf2d0690fa81376c302a04",
+      "ab83c7ee039f023be302be96a7d97cbfb440b449331108afb1a264ec4a59c5a1",
+      "e57217bc865a656174667dd4ffd153708bf7dcf824bf9fde7da59b9125a55393"
+    ],
+    "source_sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+    "frame_mode": "reviewed_portrait",
+    "accepted": true,
+    "review_seconds": 111.274,
+    "human_review": false,
+    "hosted_inference_calls": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "policy": "wan104_objects_v1",
+    "generated_slot": 1
+  },
+  "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb": {
+    "method": "automated_cpu_portrait_frame_semantics",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+    "model_license_id": "Apache-2.0",
+    "family": "wan104_organization",
+    "captions": [
+      "The image shows a wall with a horizontal wooden plank pattern. The wall is painted in a light gray color, and the planks are vertically aligned. On the wall, there is a metal rod hanging downwards, which is connected to a wooden dow",
+      "The image shows a kitchen counter with a wooden shelf. On the shelf, there are four kitchen utensils hanging from a metal rod. The utensils are of different shapes and sizes. From left to right, the utensils are:\n\n1. A",
+      "The image shows a kitchen shelf with various kitchen utensils hanging from a metal rod. The shelf is made of a light-colored wood, likely painted white, and has a horizontal design. The utensils hanging from the rod are of different shapes and"
+    ],
+    "frame_sha256": [
+      "5e65594ae27f4f419bfac5484a7bef971742220bae30c40a2080fe5fe1ec2bb2",
+      "74522450ad157085606b6954af990ea41a2a2cab6cca8513644940a96c3d1e11",
+      "6d932b8b7ddc31dbd834269b37adb88c8fd50a12a69666a74959b294483583d3"
+    ],
+    "source_sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+    "frame_mode": "reviewed_portrait",
+    "accepted": true,
+    "review_seconds": 110.813,
+    "human_review": false,
+    "hosted_inference_calls": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "policy": "wan104_objects_v1",
+    "generated_slot": 2
+  }
+}
