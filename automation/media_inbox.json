@@ -938,6 +938,70 @@
       "duration": 21.7217,
       "bytes": 96261956,
       "acquired_at": 1794024464
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "27178",
+      "url": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-27178/",
+      "author": "MabelAmber",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: MabelAmber / Pixabay — https://pixabay.com/videos/id-27178/",
+      "category": "tarefas",
+      "query": "housework",
+      "selection_reason": "Provider tags: laundry, clothes, washing, drying, clothesline, clean, housework, pegged, clothespins, wind, flapping, outside, sunny",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+      "sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+      "dhash": [
+        "3b9fbf61698ccce7",
+        "bf9f31616c9ccfd7",
+        "9f9f31616c8ce7d7",
+        "9f9f31654c8ce7c3",
+        "9f9f61654ccce7c7"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.676667,
+      "bytes": 4356195,
+      "acquired_at": 1794030232
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "33220",
+      "url": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-33220/",
+      "author": "overjupiter",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: overjupiter / Pixabay — https://pixabay.com/videos/id-33220/",
+      "category": "tarefas",
+      "query": "housework",
+      "selection_reason": "Provider tags: washer, washing machine, laundry, appliance, housework, clothes, chores, wash, clothing, jeans, dirty, detergent, buttons, controls, launder, apparel",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+      "sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+      "dhash": [
+        "7f7f5f57cfb76733",
+        "373d7933593e6733",
+        "3f3f177787871f7b",
+        "1ffcbc9e9cdf9f3f",
+        "1ffdbc9a9c9e9f3f"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.346667,
+      "bytes": 8890513,
+      "acquired_at": 1794030233
     }
   ],
   "rejected_until": {
@@ -945,68 +1009,19 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794029284,
-    "acquired": 0,
+    "at": 1794030230,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 3,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "tarefas",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 5,
         "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "tarefas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 13,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "vassoura2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "vassoura2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1018,7 +1033,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 19,
+    "unreviewed_media_count": 21,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
