@@ -13,9 +13,52 @@ import semantic_review as semantic
 import source_license
 import public_visibility
 import confirm_near_due
+import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_api_evidence_binds_same_id_author_file_and_keeps_credentials_private(self):
+        record = {'provider_id': '1', 'url': 'https://cdn.pixabay.com/video/a.mp4',
+                  'source_page': 'https://pixabay.com/videos/id-1/', 'author': 'Author',
+                  'sha256': 'a'*64, 'license_url': 'https://pixabay.com/service/license-summary/'}
+        data = {'hits': [{'id': 1, 'pageURL': record['source_page'], 'user': 'Author',
+                         'videos': {'large': {'url': record['url']}}}]}
+        policy = {'terms_url': 'https://pixabay.com/service/terms/', 'terms_sha256': 'b'*64}
+        with patch.object(source_license, 'API_CHECKS', 0):
+            evidence = source_license.verify_api(record, 'not-a-real-secret',
+                transport=lambda u: json.dumps(data).encode(), policy=policy)
+            self.assertTrue(evidence['commercial_use'])
+            self.assertNotIn('not-a-real-secret', json.dumps(evidence))
+            data['hits'][0]['user'] = 'Different author'
+            with self.assertRaisesRegex(ValueError, 'IDENTITY_AND_FILE'):
+                source_license.verify_api(record, 'not-a-real-secret',
+                    transport=lambda u: json.dumps(data).encode(), policy=policy)
+
+    def test_refill_intent_is_durable_before_dispatch_and_never_repeated_after_timeout(self):
+        class Memory:
+            def __init__(self):
+                self.value = {'outputs': {'post': {'sha256': 'a'*64}}}
+            def load(self):
+                import copy
+                return copy.deepcopy(self.value), 'revision'
+            def save(self, value, revision):
+                import copy
+                self.value = copy.deepcopy(value)
+                return 'revision'
+        store = Memory()
+        state = {'posts': {'post': {'sha256': 'a'*64, 'status': 'PUBLISH_COMPLETE',
+                 'publicly_verified': True, 'public_visibility_evidence': {'public_playback_verified': True}}}}
+        now = dt.datetime.now(dt.timezone.utc)
+        def sender():
+            self.assertIn('post', store.value['refill_events'])
+            raise TimeoutError()
+        with self.assertRaises(TimeoutError):
+            autonomous_stock.request_refill(store, state, now, sender)
+        self.assertEqual(store.value['refill_events']['post']['status'], 'UNKNOWN_WORKFLOW_DISPATCH')
+        self.assertEqual(autonomous_stock.newly_published(store.value, state), [])
+        # A provider's sent flag without public playback never triggers refill.
+        state['posts']['post']['public_visibility_evidence'] = {'public_playback_verified': False}
+        self.assertEqual(autonomous_stock.newly_published({'outputs': {'post': {'sha256': 'a'*64}}}, state), [])
     def test_near_due_confirmation_never_waits_for_unsubmitted_or_regular_slots(self):
         now = dt.datetime(2026, 11, 7, 4, tzinfo=dt.timezone.utc)
         post = {'id': 'p', 'approval_scope': 'mission102_owner_authorized_automated_quality_and_license_checks',

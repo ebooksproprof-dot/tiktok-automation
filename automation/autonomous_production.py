@@ -151,7 +151,34 @@ def ready(queue, state, now):
             and (p['id'] not in state['posts'] or state['posts'][p['id']].get('status') in ('SCHEDULED', 'SENDING'))
             and p.get('consented_at')
             and p.get('quality', {}).get('technical_pass') is True
-            and p.get('scheduled_at') and stamp(p['scheduled_at']) > now]
+            and p.get('scheduled_at') and (stamp(p['scheduled_at']) > now
+                 or state['posts'].get(p['id'], {}).get('status') in ('SCHEDULED', 'SENDING'))]
+
+
+def reconcile_outputs(ledger, state):
+    for post_id, output in ledger.get('outputs', {}).items():
+        remote = state.get('posts', {}).get(post_id, {})
+        if remote and remote.get('sha256') == output.get('sha256'):
+            output.update(status=remote.get('status', 'UNKNOWN'),
+                          provider_id=remote.get('buffer_post_id'),
+                          publicly_verified=remote.get('publicly_verified', False),
+                          public_urls=remote.get('public_urls', []))
+    return ledger
+
+
+def held_reservations(queue, state):
+    ids = {p['id'] for p in queue.get('posts', [])}
+    return [key for key, entry in state.get('posts', {}).items()
+            if key in ids and entry.get('provider') == 'buffer'
+            and entry.get('status') not in ('PUBLISH_COMPLETE', 'FAILED', 'CANCELLED_EDITORIAL', 'SCHEDULED', 'SENDING')]
+
+
+def stock_status(queue, state, now):
+    available = len(ready(queue, state, now))
+    held = held_reservations(queue, state)
+    return {'ready': available, 'held_uncertain': len(held), 'target_max': TARGET,
+            'low_stock': available < 2, 'refill_needed': max(0, TARGET-available-len(held)),
+            'held_ids': held, 'publication_confirmation_is_separate': True}
 
 
 def choose_slot(queue, state, now, soon=False):
@@ -207,7 +234,9 @@ def candidate_records(inbox, cache):
 def scripts(pool, queue, state):
     family = pool[0]['visual_review']['family']
     tags = ' '.join(x['record']['selection_reason'] for x in pool).lower()
-    key = ('iron' if 'ironing' in tags else 'hangers' if any(w in tags for w in ('hanger', 'closet'))
+    descriptions = ' '.join(' '.join(x['visual_review']['captions']) for x in pool).lower()
+    iron_seen = bool(re.search(r'\biron(?:ing)?\b', descriptions))
+    key = ('iron' if 'ironing' in tags and iron_seen else 'hangers' if any(w in descriptions for w in ('hanger', 'closet', 'clothing rack'))
            else 'folding') if family == 'clothes' else family
     hook, sentences = BANK[key]
     seed = int(hashlib.sha256(''.join(x['record']['sha256'] for x in pool).encode()).hexdigest(), 16)
@@ -239,10 +268,17 @@ def run(stage=False, soon=False, limit=2):
     if not isinstance(queue.get('posts'), list) or not isinstance(state.get('posts'), dict):
         raise ValueError('EXISTING_QUEUE_AND_STATE_REQUIRED')
     ledger = read_json(STATE_PATH, {'version': 1, 'candidates': {}, 'outputs': {}})
+    reconcile_outputs(ledger, state)
     now = dt.datetime.now(dt.timezone.utc)
     before = len(ready(queue, state, now))
-    if before >= TARGET:
-        return {'status': 'STOCK_TARGET_MET', 'ready': before, 'created': 0}
+    occupied = before+len(held_reservations(queue, state))
+    if occupied >= TARGET:
+        result = {'status': 'STOCK_TARGET_MET' if before >= TARGET else 'STOCK_RESERVED_UNCERTAIN',
+                  'ready': before, 'held_uncertain': occupied-before, 'created': 0}
+        if stage:
+            ledger['last_run'] = result
+            save_json(STATE_PATH, ledger)
+        return result
     previous = visuals.history(queue, state)+[read_json(ROOT/'visual_history.json', {})]
     inbox = read_json(ROOT/'media_inbox.json', {'items': []})
     cache = read_json(ROOT/'media_search_cache.json', {})
@@ -251,14 +287,14 @@ def run(stage=False, soon=False, limit=2):
     reviewer = None
     pools, outputs, examined = {}, [], 0
     for candidate in candidate_records(inbox, cache):
-        if len(outputs) >= min(limit, TARGET-before) or examined >= MAX_CANDIDATES:
+        if len(outputs) >= min(limit, TARGET-occupied) or examined >= MAX_CANDIDATES:
             break
         key = candidate['url']
         prior = ledger['candidates'].get(key, {})
         if prior.get('status') in ('REJECTED', 'QUEUED'):
             continue
         known_rights = read_json(RIGHTS_CACHE, {'sources': {}})['sources']
-        new_evidence = prior.get('error_type') == 'HTTPError' and key in known_rights
+        new_evidence = prior.get('error_type') == 'HTTPError' and (key in known_rights or bool(os.getenv('PIXABAY_API_KEY')))
         if prior.get('retry_after', 0) > time.time() and not new_evidence:
             continue
         try:
@@ -359,6 +395,7 @@ def run(stage=False, soon=False, limit=2):
             ledger['candidates'][key] = {'status': 'REJECTED' if controlled else 'RETRYABLE',
                 'error': code, 'error_type': type(exc).__name__,
                 'error_stage': phase,
+                'http_status': getattr(exc, 'code', None),
                 'retry_after': time.time()+6*3600 if not controlled else 0}
             print('AUTONOMOUS_CANDIDATE_HELD='+candidate['provider_id']+'; REASON='+code)
         finally:

@@ -1,6 +1,10 @@
 name: CasaSemEsforco Persistent Video Stock
 
 on:
+  workflow_run:
+    workflows: [TikTok Online Runner]
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
@@ -22,6 +26,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # Dispatch the existing producer once per confirmed consumption.
 
 concurrency:
   group: casasemesforco-state
@@ -47,13 +52,14 @@ jobs:
         env:
           GITHUB_STEP_SUMMARY: ''
         run: python -m unittest discover -s automation/tests -v
-      - name: Import, reserve and reconcile persistent stock
+      - name: Monitor automatic stock and replenish confirmed consumption
         env:
           GH_TOKEN: ${{ github.token }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
           CHECK_ONLY: ${{ github.event_name == 'push' || inputs.check_channel_only }}
           PROBE: ${{ github.event_name == 'push' }}
+          AUTONOMOUS_STOCK_MODE: 'true'
         run: |
           args=()
           if [ "$CHECK_ONLY" = 'true' ]; then args+=(--check-channel); fi

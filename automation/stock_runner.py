@@ -99,6 +99,10 @@ def main():
     if os.getenv('GITHUB_ACTIONS') != 'true':
         raise RuntimeError('Operational stock runner requires GitHub Actions')
     token = os.environ['GH_TOKEN']
+    if os.getenv('AUTONOMOUS_STOCK_MODE') == 'true':
+        from autonomous_stock import run
+        return run(token, check_channel=args.check_channel,
+                   probe=cloud_probe(token) if args.probe else None)
     now = datetime.now(timezone.utc)
     store = stock.GitHubStore(token)
     legacy_store = stock.GitHubStore(token, path='automation/state.json', validate=False)
@@ -134,7 +138,7 @@ def main():
 
 if __name__ == '__main__':
     try:
-        main()
+        raise SystemExit(main())
     except Exception as exc:
         # Avoid remote bodies, credentials and untrusted filenames in logs.
         print('::error::Stock runner stopped safely: ' + type(exc).__name__)
