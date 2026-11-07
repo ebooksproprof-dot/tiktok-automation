@@ -44,7 +44,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 35 # Includes only the first authorized near-term proof wait.
 
     steps:
       - name: Checkout
@@ -113,6 +113,14 @@ jobs:
         if: always()
         continue-on-error: true # Preserve state even if preview generation fails.
         run: python automation/refresh_review44.py
+
+      - name: Confirm explicitly authorized near-term live test without resubmission
+        if: ${{ success() && inputs.buffer_check_only != true && inputs.confirm_post_id == '' }}
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
+          REQUIRE_PUBLIC_VERIFICATION: 'true'
+        run: python automation/confirm_near_due.py
 
       - name: Persist runner state
         if: always()

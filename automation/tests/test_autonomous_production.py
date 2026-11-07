@@ -12,9 +12,20 @@ import autonomous_production as production
 import semantic_review as semantic
 import source_license
 import public_visibility
+import confirm_near_due
 
 
 class PolicyTests(unittest.TestCase):
+    def test_near_due_confirmation_never_waits_for_unsubmitted_or_regular_slots(self):
+        now = dt.datetime(2026, 11, 7, 4, tzinfo=dt.timezone.utc)
+        post = {'id': 'p', 'approval_scope': 'mission102_owner_authorized_automated_quality_and_license_checks',
+                'first_test_outside_recurring_slots': True}
+        self.assertIsNone(confirm_near_due.candidate({'posts': [post]}, {'posts': {}}, now))
+        entry = {'provider': 'buffer', 'buffer_post_id': 'known', 'status': 'SCHEDULED',
+                 'submitted_at': now.isoformat(), 'scheduled_at': (now+dt.timedelta(minutes=20)).isoformat()}
+        self.assertEqual(confirm_near_due.candidate({'posts': [post]}, {'posts': {'p': entry}}, now)[0], 'p')
+        entry['status'] = 'SUBMISSION_UNKNOWN'
+        self.assertIsNone(confirm_near_due.candidate({'posts': [post]}, {'posts': {'p': entry}}, now))
     def test_provider_sent_without_public_playback_stays_unverified_and_reserved(self):
         entry = dict(status='PUBLISH_COMPLETE', publicly_verified=True, buffer_post_id='existing-id',
                      public_urls=['https://www.tiktok.com/@.casasemesforo/video/123'],

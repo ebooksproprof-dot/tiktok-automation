@@ -336,6 +336,7 @@ def run(stage=False, soon=False, limit=2):
                 publication_provider='buffer', scheduled_at=when.isoformat(), quality=quality,
                 video_url='', script_lines=idea[2], script_sha256=script_sha(idea[2]),
                 media_storage='release', render_version=2, video_origin='licensed_stock_cpu_review',
+                first_test_outside_recurring_slots=bool(soon and not outputs),
                 publishing_status='READY_FOR_EXISTING_BUFFER_RUNNER')
             visuals.require_evidence(post, previous)
             if stage:
