@@ -2909,6 +2909,401 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-07-wan104",
+      "concept": "licensed-wan104-episode-1",
+      "video_origin": "ai_only30",
+      "quality": {
+        "profile": "hybrid30",
+        "technical_pass": true,
+        "editorial_approved": true,
+        "publication_enabled": false,
+        "sha256": "fd9a43b7150e4743e380e60dd88c2dd30ba13bed4a597d7da0adb5f74fea1da4",
+        "duration": 15.0,
+        "duration_tolerance_seconds": 0.15,
+        "size": 5510935,
+        "width": 1080,
+        "height": 1920,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "audio_mean_db": -15.4,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.023,
+        "lip_sync_verified": false,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50,
+        "wan104_licensed_profile": true,
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "ai_generated_seconds": 15,
+        "real_video_seconds": 0,
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "machine_checks_only": true,
+        "human_perceptual_review": false,
+        "commercial_license_clearance": true,
+        "licensed_sources": [
+          {
+            "slot": 0,
+            "episode": 1,
+            "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+            "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+            "media": {
+              "duration_seconds": 5.041667,
+              "width": 480,
+              "height": 832,
+              "video_codec": "h264",
+              "fps": "24/1",
+              "has_audio": false,
+              "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+              "bytes": 443823
+            },
+            "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+            "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "space": "Upsampler/wan-2-2-5b-video",
+            "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+            "prompt": "Photorealistic kitchen pantry, three clear unlabelled glass storage jars on a clean wooden shelf. Gentle continuous camera slide reveals the organized shelf, realistic reflections and stable geometry. No people, no hands, no logos, no text. One calm uninterrupted shot. Setting detail: light oak.",
+            "reference_kind": "authored_text_only",
+            "generation_evidence": {
+              "request_sha256": "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766",
+              "provider_job_id": "5ac09802c2604efea530af44ae059377",
+              "gpu_seconds_consumed": null,
+              "estimated_reserved_seconds": 60,
+              "tier": "free",
+              "paid_endpoint_used": false
+            },
+            "visual_source": {
+              "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+              "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+              "dhash": [
+                "ebcdcceded937d3f",
+                "ebcdcddddd977b6f",
+                "62dbd9d9d91b7b6e",
+                "fac9cddddd177b6e",
+                "76dbd9dbdb9bfbfe"
+              ]
+            },
+            "commercial_license_clearance": true,
+            "commercial_license_evidence": {
+              "source_sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+              "reviewed_at": "2026-11-07T13:15:18.734912+00:00",
+              "model": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "derivative": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "voice": {
+                "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+              },
+              "reference": {
+                "revision": "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766",
+                "commercial_use": true,
+                "basis": "original authored text; no third-party image",
+                "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+              }
+            }
+          },
+          {
+            "slot": 1,
+            "episode": 1,
+            "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+            "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+            "media": {
+              "duration_seconds": 5.041667,
+              "width": 480,
+              "height": 832,
+              "video_codec": "h264",
+              "fps": "24/1",
+              "has_audio": false,
+              "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+              "bytes": 495499
+            },
+            "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+            "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "space": "Upsampler/wan-2-2-5b-video",
+            "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+            "prompt": "Photorealistic linen cupboard with neatly folded cotton towels on an open shelf, soft window light. Slow continuous camera push toward the towels, realistic fabric texture, stable objects and natural shadows. No people, no hands, no logos, no text. One uninterrupted shot. Setting detail: light oak.",
+            "reference_kind": "authored_text_only",
+            "generation_evidence": {
+              "request_sha256": "f3611e4d0e0ecd314073dd8701edbf2340678d656be375df54fe28b9ca160159",
+              "provider_job_id": "2219e6d6bfc64a999d8a36f0d3bbdfa1",
+              "gpu_seconds_consumed": null,
+              "estimated_reserved_seconds": 60,
+              "tier": "free",
+              "paid_endpoint_used": false
+            },
+            "visual_source": {
+              "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+              "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+              "dhash": [
+                "00f8c91d1f78622e",
+                "00f8c0471f7c622e",
+                "407860030f7c612e",
+                "6c6046cf5f7c612f",
+                "7c6040434e7c6107"
+              ]
+            },
+            "commercial_license_clearance": true,
+            "commercial_license_evidence": {
+              "source_sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+              "reviewed_at": "2026-11-07T13:16:04.012762+00:00",
+              "model": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "derivative": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "voice": {
+                "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+              },
+              "reference": {
+                "revision": "f3611e4d0e0ecd314073dd8701edbf2340678d656be375df54fe28b9ca160159",
+                "commercial_use": true,
+                "basis": "original authored text; no third-party image",
+                "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+              }
+            }
+          },
+          {
+            "slot": 2,
+            "episode": 1,
+            "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+            "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4",
+            "media": {
+              "duration_seconds": 5.041667,
+              "width": 480,
+              "height": 832,
+              "video_codec": "h264",
+              "fps": "24/1",
+              "has_audio": false,
+              "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+              "bytes": 265323
+            },
+            "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+            "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "space": "Upsampler/wan-2-2-5b-video",
+            "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+            "prompt": "Photorealistic clean domestic kitchen, simple unbranded utensils hanging separately from a secure wall rail above an empty counter. A gentle continuous camera slide shows the easy access and organized space. Stable geometry and natural daylight. No people, no hands, no text, no logos. Setting detail: light oak.",
+            "reference_kind": "authored_text_only",
+            "generation_evidence": {
+              "request_sha256": "148d7fcf7a3d5738a38775c09c95aca6081ae6b9c33eb341395c687052a63204",
+              "provider_job_id": "dedce9190ef24112b9bc40c2e7d1b190",
+              "gpu_seconds_consumed": null,
+              "estimated_reserved_seconds": 60,
+              "tier": "free",
+              "paid_endpoint_used": false
+            },
+            "visual_source": {
+              "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4",
+              "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+              "dhash": [
+                "4bb48a8a8c500100",
+                "db258a8e0c130300",
+                "da25048c1c320300",
+                "922154141cb30306",
+                "9221441c1cb30306"
+              ]
+            },
+            "commercial_license_clearance": true,
+            "commercial_license_evidence": {
+              "source_sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+              "reviewed_at": "2026-11-07T13:16:49.382026+00:00",
+              "model": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "derivative": {
+                "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+              },
+              "voice": {
+                "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+                "commercial_use": true,
+                "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+              },
+              "reference": {
+                "revision": "148d7fcf7a3d5738a38775c09c95aca6081ae6b9c33eb341395c687052a63204",
+                "commercial_use": true,
+                "basis": "original authored text; no third-party image",
+                "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+              }
+            }
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "wan104_organization",
+            "captions": [
+              "Three glass jars with white lids sit on a shelf in a wooden cabinet.",
+              "Three glass jars with white lids on a shelf.",
+              "The image shows a shelf with glass jars on it. The shelf is made of wood and has a light brown color. There are three glass jars on the shelf, each with a white lid and a silver-colored metal rim around the top"
+            ],
+            "frame_sha256": [
+              "e8af6b152592541e66fe24fa3e3cea000dec11e787e44b8816a4dbaaae49e6d4",
+              "b1a90a59f2ce018b9a9de6efabba02cf9d7c3dd0b3dd8c2136b89cafe1899dab",
+              "f2f1630735b712ab14b2605eb747a6a38504badcd2b27fc1fa4a4869bcdc25bf"
+            ],
+            "source_sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 103.73,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50,
+            "policy": "wan104_objects_v1",
+            "generated_slot": 0
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "wan104_organization",
+            "captions": [
+              "A hand is placing a folded white towel on the top shelf of a storage unit. The top shelf is beige and the bottom shelf is a darker color. The storage unit is made of fabric and has a light brown wooden shelf.",
+              "A beige, fabric shelf with two white towels on it.",
+              "The image shows a neatly stacked, light grey, fabric storage unit. The top shelf contains two white, folded towels, which are stacked vertically, occupying the top two slots of the unit. The bottom shelf also contains two white folded towels,"
+            ],
+            "frame_sha256": [
+              "2ea6ee2df6d89b3acca736bad6059a61353765ce10cf2d0690fa81376c302a04",
+              "ab83c7ee039f023be302be96a7d97cbfb440b449331108afb1a264ec4a59c5a1",
+              "e57217bc865a656174667dd4ffd153708bf7dcf824bf9fde7da59b9125a55393"
+            ],
+            "source_sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 111.274,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50,
+            "policy": "wan104_objects_v1",
+            "generated_slot": 1
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "wan104_organization",
+            "captions": [
+              "The image shows a wall with a horizontal wooden plank pattern. The wall is painted in a light gray color, and the planks are vertically aligned. On the wall, there is a metal rod hanging downwards, which is connected to a wooden dow",
+              "The image shows a kitchen counter with a wooden shelf. On the shelf, there are four kitchen utensils hanging from a metal rod. The utensils are of different shapes and sizes. From left to right, the utensils are:\n\n1. A",
+              "The image shows a kitchen shelf with various kitchen utensils hanging from a metal rod. The shelf is made of a light-colored wood, likely painted white, and has a horizontal design. The utensils hanging from the rod are of different shapes and"
+            ],
+            "frame_sha256": [
+              "5e65594ae27f4f419bfac5484a7bef971742220bae30c40a2080fe5fe1ec2bb2",
+              "74522450ad157085606b6954af990ea41a2a2cab6cca8513644940a96c3d1e11",
+              "6d932b8b7ddc31dbd834269b37adb88c8fd50a12a69666a74959b294483583d3"
+            ],
+            "source_sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 110.813,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50,
+            "policy": "wan104_objects_v1",
+            "generated_slot": 2
+          }
+        ],
+        "visual_sources": [
+          {
+            "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+            "sha256": "82b22470d2c3937ea99b6e3afe1656cfb3d11c5de38e0f44c85a4c2303f5b83f",
+            "dhash": [
+              "ebcdcceded937d3f",
+              "ebcdcddddd977b6f",
+              "62dbd9d9d91b7b6e",
+              "fac9cddddd177b6e",
+              "76dbd9dbdb9bfbfe"
+            ]
+          },
+          {
+            "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+            "sha256": "e5e6f7df8083f65d0a30ba8cd81fa25f6917ec65357f7c8a444c219e580d7b6d",
+            "dhash": [
+              "00f8c91d1f78622e",
+              "00f8c0471f7c622e",
+              "407860030f7c612e",
+              "6c6046cf5f7c612f",
+              "7c6040434e7c6107"
+            ]
+          },
+          {
+            "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4",
+            "sha256": "2d02d18ee5df3d60e29d24fc8330bad9902ca2d977ef9de9ab7a821ad0fb78cb",
+            "dhash": [
+              "4bb48a8a8c500100",
+              "db258a8e0c130300",
+              "da25048c1c320300",
+              "922154141cb30306",
+              "9221441c1cb30306"
+            ]
+          }
+        ],
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "source_urls": [
+          "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-82b22470d2c3937ea99b6e3a.mp4",
+          "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-e5e6f7df8083f65d0a30ba8c.mp4",
+          "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-2d02d18ee5df3d60e29d24fc.mp4"
+        ],
+        "scene_reuse_policy": "sequential_distinct_AI_clips_no_loop",
+        "required_public_credits": [],
+        "caption_style": "measured-v51",
+        "wan104_public_trial": true
+      },
+      "title": "Armário sem espaço? Separe os itens por categoria antes de organizar. Guarde somente os tecidos que já estão completamente secos e limpos. Deixe os utensílios de uso frequente bem visíveis e fáceis de alcançar. Cenas geradas por IA: Wan 2.2, variante FastWan 5B. Orientações ilustrativas; siga as instruções dos fabricantes. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial",
+      "scheduled_at": "2026-11-07T10:48:30-03:00",
+      "approved": true,
+      "consented_at": "2026-11-07T13:36:30.533361+00:00",
+      "approval_scope": "owner_authorized_ai30_first_live_test_and_ongoing_automation",
+      "owner_mission": "10.4",
+      "wan104_first_public_test": true,
+      "first_test_outside_recurring_slots": true,
+      "ai_disclosure_required": true,
+      "publication_provider": "buffer",
+      "media_storage": "release",
+      "render_version": 3,
+      "script_lines": [
+        "Armário sem espaço? Separe os itens por categoria antes de organizar.",
+        "Guarde somente os tecidos que já estão completamente secos e limpos.",
+        "Deixe os utensílios de uso frequente bem visíveis e fáceis de alcançar."
+      ],
+      "script_sha256": "138e2c8ff69a608c29cb9f92c412bc880d259adbe915b93c388c398d18afa5dc",
+      "publishing_status": "VALIDATED_LICENSED_WAN_READY_FOR_EXISTING_BUFFER",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4"
     }
   ]
 }
