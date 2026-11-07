@@ -4,8 +4,18 @@ import json
 import re
 import subprocess
 from pathlib import Path
+from urllib.parse import urlsplit
 
 POLICY_VERSION = 1
+
+
+def source_identity(value):
+    parsed = urlsplit(value)
+    if parsed.scheme == 'https' and parsed.netloc == 'cdn.pixabay.com':
+        match = re.match(r'(\d+)(?:[-_]|\.mp4$)', parsed.path.rsplit('/', 1)[-1])
+        if match:
+            return 'pixabay:'+match[1]
+    return value
 
 
 def fingerprint(path, source_id):
@@ -52,10 +62,10 @@ def check_sources(records, previous):
     checked = []
     for record in records:
         for old in list(previous) + [{'visual_sources': checked}]:
-            if record['source_id'] in old.get('source_urls', []):
+            if source_identity(record['source_id']) in {source_identity(u) for u in old.get('source_urls', [])}:
                 raise ValueError('VISUAL_SOURCE_REUSED: ' + record['source_id'])
             for existing in old.get('visual_sources', []):
-                if record['source_id'] == existing['source_id'] or record['sha256'] == existing['sha256']:
+                if source_identity(record['source_id']) == source_identity(existing['source_id']) or record['sha256'] == existing['sha256']:
                     raise ValueError('VISUAL_DUPLICATE_SOURCE')
                 if similar(record, existing):
                     raise ValueError('VISUAL_NEAR_DUPLICATE')
@@ -64,9 +74,9 @@ def check_sources(records, previous):
 
 
 def preflight(source_ids, previous):
-    used = {url for p in previous for url in p.get('source_urls', [])}
-    used.update(r['source_id'] for p in previous for r in p.get('visual_sources', []))
-    return not set(source_ids).intersection(used)
+    used = {source_identity(url) for p in previous for url in p.get('source_urls', [])}
+    used.update(source_identity(r['source_id']) for p in previous for r in p.get('visual_sources', []))
+    return not {source_identity(url) for url in source_ids}.intersection(used)
 
 
 def require_evidence(post, previous=None):

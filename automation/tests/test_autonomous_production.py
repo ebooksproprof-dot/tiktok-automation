@@ -18,6 +18,13 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_pixabay_resolution_change_does_not_create_a_new_original_source(self):
+        import visual_library as library
+        first = 'https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4'
+        other = 'https://cdn.pixabay.com/video/2020/04/01/34772-405202917_medium.mp4'
+        self.assertFalse(library.preflight([other], [{'source_urls': [first]}]))
+        self.assertTrue(library.preflight(['https://cdn.pixabay.com/video/34091-123_large.mp4'], [{'source_urls': [first]}]))
+
     def test_license_budget_is_bounded_and_exhaustion_does_not_call_provider(self):
         transport = Mock()
         with patch.object(source_license, 'API_CHECKS', 6):

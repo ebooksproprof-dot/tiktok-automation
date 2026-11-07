@@ -239,7 +239,13 @@ def download_and_measure(record, folder, previous):
         w, h = int(stream['width']), int(stream['height'])
         duration = float(probe['format']['duration'])
         max_ratio = 2.0 if record.get('provider') == 'pixabay' else .6
-        if w < 1080 or h < 1920 or not .5 <= w/h <= max_ratio or not MIN_SCENE_SECONDS <= duration <= MAX_SCENE_SECONDS:
+        full_frame = record.get('provider') == 'pixabay' and record.get('frame_mode') == 'preserve_full'
+        if full_frame:
+            from media_providers import native_full_frame
+            geometry_ok = native_full_frame(w, h)
+        else:
+            geometry_ok = w >= 1080 and h >= 1920 and .5 <= w/h <= max_ratio
+        if not geometry_ok or not MIN_SCENE_SECONDS <= duration <= MAX_SCENE_SECONDS:
             raise AcquisitionError('MEDIA_TECHNICAL_REJECTED')
         evidence = fingerprint(temporary, record['url'])
         check_sources([evidence], previous)
@@ -348,6 +354,7 @@ def run():
     skipped_known, skipped_cooldown = 0, 0
     known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
     if automatic and 'pixabay' in providers:
+        providers['pixabay'].allow_full_frame = True
         providers['pixabay'].known_urls = {x['url'] for x in inbox['items']}
         providers['pixabay'].known_urls.update(url for url, entry in ledger.get('candidates', {}).items()
                                               if entry.get('status') in ('REJECTED', 'QUEUED'))

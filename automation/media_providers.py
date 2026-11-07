@@ -28,6 +28,12 @@ def crop_capable(width, height):
     return width >= 1080 and height >= 1920 and .5 <= width / height <= 2.0
 
 
+def native_full_frame(width, height):
+    # Existing preserve_full compositor fits this into <=1080x720 without
+    # enlarging the foreground. Never pass HD as a native 1080x1920 crop.
+    return width >= 1920 and height >= 1080 and 1.5 <= width/height <= 2.0
+
+
 class CachedProvider:
     def __init__(self, cache, now=None):
         self.cache = cache
@@ -70,24 +76,32 @@ class PixabayProvider(CachedProvider):
         self.key = key
 
     def search(self, category, query, words):
+        full_frame = getattr(self, 'allow_full_frame', False)
+        base = query+('|native-full-v1' if full_frame else '')
         # Advance only when the preceding small page has been reviewed/used.
         # At most one page per query/run, three pages total, same API budget.
         page = 1
         known = getattr(self, 'known_urls', None)
         if known is not None:
             for number in (1, 2):
-                key = self.name+':'+query+('' if number == 1 else '|page='+str(number))
+                key = self.name+':'+base+('' if number == 1 else '|page='+str(number))
                 prior = self.cache.get(key, {}).get('data', {})
                 hits = prior.get('hits', [])
                 urls = [f.get('url') for hit in hits for f in hit.get('videos', {}).values()
-                        if crop_capable(f.get('width', 0), f.get('height', 0))]
+                        if crop_capable(f.get('width', 0), f.get('height', 0))
+                        or full_frame and native_full_frame(f.get('width', 0), f.get('height', 0))]
+                relevant = hits
+                if full_frame:
+                    from semantic_review import nominate
+                    relevant = [hit for hit in hits if contextual(hit.get('tags', ''), words)
+                                and nominate({'selection_reason': hit.get('tags', '')})]
                 if (page == number and len(hits) == 15 and urls
-                        and all(any(f.get('url') in known for f in hit.get('videos', {}).values()) for hit in hits)
+                        and all(any(f.get('url') in known for f in hit.get('videos', {}).values()) for hit in relevant)
                         and int(prior.get('totalHits', 0)) > number*15):
                     page += 1
         params = dict(key=self.key, q=query[:100], video_type='film', safesearch='true',
-                      min_width=1080, min_height=1920, per_page=15, page=page)
-        cache_key = query+('' if page == 1 else '|page='+str(page))
+                      min_width=1080, min_height=1080 if full_frame else 1920, per_page=15, page=page)
+        cache_key = base+('' if page == 1 else '|page='+str(page))
         data = self.json(cache_key, 'https://pixabay.com/api/videos/?' + urlencode(params))
         result = []
         for hit in data.get('hits', [])[:15]:
@@ -98,18 +112,20 @@ class PixabayProvider(CachedProvider):
                 if not safe_url(page, 'pixabay.com') or not hit['user'].strip():
                     continue
                 files = [f for f in hit['videos'].values()
-                         if crop_capable(f['width'], f['height'])
+                         if (crop_capable(f['width'], f['height'])
+                             or full_frame and native_full_frame(f['width'], f['height']))
                          and safe_url(f['url'], 'cdn.pixabay.com')
                          and f['url'].endswith('.mp4') and 0 < f.get('size', 0) <= 250*1024*1024]
                 if not files:
                     continue
-                file = min(files, key=lambda f: f['width'] * f['height'])
+                file = min(files, key=lambda f: (not crop_capable(f['width'], f['height']), f['width']*f['height']))
                 result.append(dict(provider=self.name, provider_id=str(int(hit['id'])),
                     url=file['url'], source_page=page, author=plain(hit['user']),
                     license='Pixabay Content License', license_url='https://pixabay.com/service/license-summary/',
                     attribution=f"Video: {plain(hit['user'])} / Pixabay — {page}",
                     category=category, query=query, selection_reason='Provider tags: ' + plain(hit['tags']),
                     requires_crop_review=not vertical(file['width'], file['height']),
+                    frame_mode='reviewed_portrait' if crop_capable(file['width'], file['height']) else 'preserve_full',
                     semantic_verified=False, editorial_approved=False, status='pending_visual_review'))
             except (KeyError, TypeError, ValueError, AttributeError, ZeroDivisionError):
                 continue

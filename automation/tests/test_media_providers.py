@@ -193,6 +193,21 @@ class ProviderTests(unittest.TestCase):
             self.assertEqual(saved['items'][0]['provider'], 'wikimedia')
 
 class CropAndEvidenceTests(unittest.TestCase):
+    def test_native_hd_is_only_eligible_with_explicit_full_frame_policy(self):
+        hit = pixabay(); hit['videos']['large'].update(width=1920, height=1080)
+        provider = p.PixabayProvider('mock', {})
+        with patch.object(provider, 'json', return_value={'hits': [hit]}):
+            self.assertEqual(provider.search('cozinha', 'cleaning kitchen', ['cleaning']), [])
+            provider.allow_full_frame = True
+            record = provider.search('cozinha', 'cleaning kitchen', ['cleaning'])[0]
+            self.assertEqual(record['frame_mode'], 'preserve_full')
+            self.assertFalse(record['editorial_approved'])
+        self.assertFalse(p.native_full_frame(1280, 720))
+        from framing import product_geometry
+        box = product_geometry(1920, 1080)
+        self.assertLessEqual(box['width'], 1920)
+        self.assertLessEqual(box['height'], 1080)
+
     def test_4k_landscape_requires_crop_review(self):
         hit = pixabay(); hit['videos']['large'].update(width=3840, height=2160)
         provider = p.PixabayProvider('mock', {})

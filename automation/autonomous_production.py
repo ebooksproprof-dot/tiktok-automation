@@ -23,7 +23,7 @@ import render_daily as render
 from content_catalog import fingerprint as script_sha, novel_scripts
 from daily_coverage import stamp
 from media_acquisition import download_and_measure, read_json, save_json
-from media_providers import crop_capable, plain
+from media_providers import crop_capable, native_full_frame, plain
 from media_rights import caption_with_credits
 from semantic_review import Reviewer, nominate, motion, REVISION
 from source_license import verify as license_verify, CACHE as RIGHTS_CACHE, SourceLicenseBudgetExceeded
@@ -230,23 +230,31 @@ def candidate_records(inbox, cache):
             continue
         for hit in entry.get('data', {}).get('hits', []):
             files = [f for f in hit.get('videos', {}).values()
-                     if crop_capable(f.get('width', 0), f.get('height', 0))
+                     if (crop_capable(f.get('width', 0), f.get('height', 0))
+                         or native_full_frame(f.get('width', 0), f.get('height', 0)))
                      and 0 < f.get('size', 0) <= 250*1024*1024
                      and str(f.get('url', '')).startswith('https://cdn.pixabay.com/')]
             if not files:
                 continue
-            f = min(files, key=lambda x: x['width']*x['height'])
+            f = min(files, key=lambda x: (not crop_capable(x['width'], x['height']), x['width']*x['height']))
             r = dict(provider='pixabay', provider_id=str(hit['id']), url=f['url'],
                      source_page=hit['pageURL'], author=plain(hit['user']),
                      license_url='https://pixabay.com/service/license-summary/',
                      selection_reason='Provider tags: '+plain(hit['tags']),
-                     category='autonomous', query=key[8:], status='pending_visual_review')
+                     category='autonomous', query=key[8:], status='pending_visual_review',
+                     frame_mode='reviewed_portrait' if crop_capable(f['width'], f['height']) else 'preserve_full')
             records.setdefault(r['url'], r)
     def priority(r):
         tags = r.get('selection_reason', '').lower()
         return (0 if any(w in tags for w in ('ironing', 'closet', 'sweeping', 'dish,')) else 1,
                 r['provider_id'])
-    return sorted((r for r in records.values() if nominate(r)), key=priority)
+    selected = {}
+    for record in records.values():
+        identity = record['provider_id']
+        old = selected.get(identity)
+        if old is None or (old.get('frame_mode') == 'preserve_full' and record.get('frame_mode') != 'preserve_full'):
+            selected[identity] = record
+    return sorted((r for r in selected.values() if nominate(r)), key=priority)
 
 
 def scripts(pool, queue, state):
@@ -324,7 +332,8 @@ def run(stage=False, soon=False, limit=2):
             measured = download_and_measure(candidate, render.ASSETS, previous)
             if candidate.get('sha256') and candidate['sha256'] != measured['sha256']:
                 raise ValueError('PREVIOUS_SOURCE_BYTES_CHANGED')
-            measured.update(id='auto-pixabay-'+measured['provider_id'], frame_mode='reviewed_portrait',
+            measured.update(id='auto-pixabay-'+measured['provider_id']+'-'+measured['sha256'][:12],
+                            frame_mode='reviewed_portrait' if crop_capable(measured['width'], measured['height']) else 'preserve_full',
                             context='Illustrative real household footage, accepted by local CPU frame review.')
             phase = 'license'
             license_proof = license_verify(measured)
@@ -341,6 +350,7 @@ def run(stage=False, soon=False, limit=2):
                 # acceptance caches come exclusively from durable main state.
                 cached_review = read_json(render.ASSETS/('review-'+measured['provider_id'])/'review.json', {})
             if (cached_review.get('source_sha256') == measured['sha256']
+                    and cached_review.get('frame_mode', 'reviewed_portrait') == measured['frame_mode']
                     and cached_review.get('revision') == REVISION and cached_review.get('accepted') is True):
                 review = cached_review
             else:
@@ -369,6 +379,8 @@ def run(stage=False, soon=False, limit=2):
                 dest = render.ASSETS/(record['id']+'.mp4')
                 if not dest.exists():
                     shutil.copyfile(src, dest)
+                if hashlib.sha256(dest.read_bytes()).hexdigest() != record['sha256']:
+                    raise ValueError('RENDER_SOURCE_COPY_HASH_MISMATCH')
             if not scripts(pool, queue, state):
                 raise ValueError('NO_NEW_SCRIPT_COMBINATION')
             failure = None

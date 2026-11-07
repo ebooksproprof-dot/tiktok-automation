@@ -1,6 +1,10 @@
 name: CasaSemEsforco Daily Video Creation
 
 on:
+  workflow_run:
+    workflows: [CasaSemEsforco official media acquisition]
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
@@ -52,6 +56,7 @@ permissions:
 
 jobs:
   create-videos:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     concurrency:
       group: casasemesforco-state
       cancel-in-progress: false

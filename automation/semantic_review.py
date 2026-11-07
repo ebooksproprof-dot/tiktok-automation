@@ -109,12 +109,20 @@ class Reviewer:
         duration = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries',
             'format=duration', '-of', 'default=nw=1:nk=1', str(path)], timeout=30))
         motion_result = motion(path)  # Reject freezes before expensive CPU captioning.
+        frame_mode = record.get('frame_mode', 'reviewed_portrait')
+        if frame_mode == 'preserve_full':
+            from framing import product_frame_filter
+            frame_filter, filter_arg = product_frame_filter(record['width'], record['height']), '-filter_complex'
+        elif frame_mode == 'reviewed_portrait':
+            frame_filter, filter_arg = PORTRAIT, '-vf'
+        else:
+            raise ValueError('UNREVIEWED_SOURCE_FRAME_MODE')
         captions, hashes = [], []
         started = time.monotonic()
         for index, fraction in enumerate((.15, .5, .85)):
             frame = folder/f'frame-{index}.jpg'
             subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-ss', str(duration*fraction),
-                '-i', str(path), '-frames:v', '1', '-vf', PORTRAIT+',scale=384:672',
+                '-i', str(path), '-frames:v', '1', filter_arg, frame_filter+',scale=384:672',
                 '-threads', '1', '-y', str(frame)], check=True, timeout=45)
             image = Image.open(frame).convert('RGB')
             prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
@@ -132,7 +140,7 @@ class Reviewer:
         result = {'method': 'automated_cpu_portrait_frame_semantics', 'model': MODEL,
                   'revision': REVISION, 'model_license': LICENSE, 'model_license_id': 'Apache-2.0',
                   'family': family, 'captions': captions, 'frame_sha256': hashes,
-                  'source_sha256': record['sha256'], 'accepted': assess(family, captions),
+                  'source_sha256': record['sha256'], 'frame_mode': frame_mode, 'accepted': assess(family, captions),
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
         result.update(motion_result)
