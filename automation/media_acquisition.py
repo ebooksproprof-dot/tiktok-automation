@@ -50,7 +50,7 @@ QUERIES_PER_PROVIDER = 4
 # manual discovery bank stays available; tags still never grant approval.
 HOUSEHOLD_TOPICS = [
     ('ferro', 'ironing', ['ironing']),
-    ('louca', 'washing dishes', ['dishes']),
+    ('louca', 'washing dishes', ['washing', 'dishes']),
     ('cabides', 'clothes hangers', ['hangers']),
     ('vassoura', 'sweeping', ['sweeping']),
     ('livros', 'books shelf', ['books', 'shelf']),
