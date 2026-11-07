@@ -1,0 +1,74 @@
+{
+  "provider": "buffer",
+  "status": "PUBLISH_COMPLETE",
+  "submitted_at": "2026-11-07T04:46:32Z",
+  "sha256": "3027bb2dc7640b3c8ba27722c47433c7ab73b4a6aed8ecb4a54adae284a09a14",
+  "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-1-3027bb2dc7640b3c.mp4",
+  "concept": "auto-iron-ec85ef436af5",
+  "script_sha256": "ec85ef436af5cfc0fc04b218f4b6d1bbf8a77e6cc9fac1903fa1a321e35966b3",
+  "script_lines": [
+    "Vai passar roupa?",
+    "Reserve espaço para movimentar o tecido sem puxar o fio.",
+    "Use um apoio firme e mantenha o fio fora da passagem.",
+    "Confira a etiqueta antes de escolher a temperatura.",
+    "Guarde apenas peças secas, depois de esfriarem completamente.",
+    "Salve este cuidado para a sua rotina."
+  ],
+  "source_urls": [
+    "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+    "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4"
+  ],
+  "visual_sources": [
+    {
+      "source_id": "https://cdn.pixabay.com/video/2020/04/01/34772-405202917_large.mp4",
+      "sha256": "ac8cabf8ecd319261143d56dac1efd9e674b66086acd2db810e41b2a6efac44b",
+      "dhash": [
+        "525b6f3fb83a380e",
+        "327e3e170e1e1c0e",
+        "afbee7674a661a85",
+        "b39fde4f673b1b87",
+        "3f6e675965391a85"
+      ]
+    },
+    {
+      "source_id": "https://cdn.pixabay.com/video/2023/05/15/163116-827112881_large.mp4",
+      "sha256": "f5f44b670c5e6e7148b89555c3b2efa53487aded1750f7c6a6a00fc9f3e2e925",
+      "dhash": [
+        "dfefe7e8f0b09090",
+        "dfdec4c1e1612121",
+        "b79d8983c3434383",
+        "6f3b130787074705",
+        "de722e0e0e0f8f0f"
+      ]
+    }
+  ],
+  "scheduled_at": "2026-11-07T02:03:51-03:00",
+  "publicly_verified": true,
+  "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
+  "buffer_post_id": "6aeead2a229bf05daf2ad3a0",
+  "last_checked_at": "2026-11-07T05:08:18Z",
+  "buffer_status": "sent",
+  "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7705290911931960596",
+  "buffer_sent_at_present": true,
+  "last_reconcile_attempt_at": "2026-11-07T05:08:35Z",
+  "public_urls": [
+    "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596"
+  ],
+  "publicly_available_post_id": [
+    "7705290911931960596"
+  ],
+  "verification_source": "Buffer API sent + automatic + exact-account externalLink + unauthenticated public TikTok playback",
+  "public_visibility_evidence": {
+    "checked_at": "2026-11-07T05:08:35.187518+00:00",
+    "url": "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596",
+    "video_id": "7705290911931960596",
+    "public_playback_verified": true,
+    "caption_hook_matches": true,
+    "playback_progressed": true,
+    "media_duration": 18.781156,
+    "width": 576,
+    "height": 1024,
+    "authenticated": false,
+    "method": "public browser video + matching caption + playback progression"
+  }
+}

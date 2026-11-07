@@ -221,6 +221,10 @@ def record_remote(entry, remote, channel_id):
     except (ValueError, TypeError, AttributeError):
         sent_at = None
     valid_sent = sent_at is not None and sent_at <= common.utc_now() + timedelta(minutes=5)
+    if valid_sent:
+        entry['buffer_sent_at'] = sent_at.isoformat()
+    else:
+        entry.pop('buffer_sent_at', None)
     if status == "sent" and valid_sent and match:
         canonical_url = 'https://www.tiktok.com/@' + common.EXPECTED_USERNAME + '/video/' + match[1]
         entry.pop('evidence_pending_reason', None)
@@ -472,6 +476,9 @@ def confirm_post(post_id):
         record_remote(entry, remote, channel_id)
         entry['last_reconcile_attempt_at'] = common.iso_now()
         print(json.dumps({'post_id': post_id, 'status': entry.get('status'),
+                          'buffer_post_id': entry.get('buffer_post_id'),
+                          'scheduled_at': entry.get('scheduled_at'),
+                          'provider_sent_at': entry.get('buffer_sent_at'),
                           'publicly_verified': entry.get('publicly_verified', False),
                           'public_urls': entry.get('public_urls', [])}))
         return 0 if (entry.get('status') == 'PUBLISH_COMPLETE'

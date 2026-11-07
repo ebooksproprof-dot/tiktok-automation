@@ -18,6 +18,11 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_failed_refill_is_not_success_just_because_old_stock_exists(self):
+        self.assertEqual(production.exit_status({'status': 'NO_VALID_OUTPUT', 'created': 0, 'ready_after': 3}), 2)
+        self.assertEqual(production.exit_status({'status': 'STOCK_TARGET_MET', 'created': 0}), 0)
+        self.assertEqual(production.exit_status({'status': 'QUEUED', 'created': 1}), 0)
+
     def test_ironing_ski_lift_is_not_a_clothes_candidate(self):
         self.assertIsNone(semantic.nominate({'selection_reason': 'ironing lift, ski, tractor, winter sports'}))
         self.assertIsNone(semantic.nominate({'selection_reason': 'iron bridge, architecture'}))

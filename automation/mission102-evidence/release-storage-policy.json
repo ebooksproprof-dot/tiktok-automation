@@ -1,0 +1,12 @@
+{
+  "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
+  "at": "2026-11-07T05:09:29.759927+00:00",
+  "sha256": "a261e1eea1c21bb81419bd1f3f3435ed011240e74ba09dca357ff6eccbdfbd85",
+  "quota_excerpt": "Up to 1000 release assets may be associated with a single release. Each file included in a release must be under 2 GiB. There is no limit on the total size of a release, nor bandwidth usage. Back to top Help and support Was this Doc helpful? Yes No Help us make GitHub Docs great! All Docs are open source. See something",
+  "retained_local_limits": {
+    "max_outputs_month": 64,
+    "max_bytes_output": 20000000,
+    "delete_prior_months": false,
+    "paid_storage_enabled": false
+  }
+}

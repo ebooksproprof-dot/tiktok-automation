@@ -416,6 +416,11 @@ def run(stage=False, soon=False, limit=2):
     return result
 
 
+def exit_status(result):
+    # Existing stock is not evidence that a required refill succeeded.
+    return 0 if result.get('created', 0) or result['status'] == 'STOCK_TARGET_MET' else 2
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--stage', action='store_true')
@@ -424,5 +429,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     result = run(args.stage, args.soon, args.limit)
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    raise SystemExit(0 if result['created'] or result['status'] == 'STOCK_TARGET_MET'
-                     or result.get('ready_after', 0) else 2)
+    raise SystemExit(exit_status(result))

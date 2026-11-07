@@ -49,8 +49,10 @@ class ReleaseStorageTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):self.call_publish()
             self.assertEqual(api.call_count,3)
 
-    def test_total_storage_budget_blocks_new_month(self):
-        with patch.object(r, 'request', side_effect=[None, [{'tag_name': 'media-'+str(i)} for i in range(6)]]) as api:
-            with self.assertRaisesRegex(RuntimeError, 'Six-month'):
-                self.call_publish()
-            self.assertEqual(api.call_count, 2)
+    def test_new_month_preserves_history_and_needs_verified_upload(self):
+        with patch.object(r, 'request', side_effect=[None, {'id': 1}, [], {'id': 12}, self.asset]) as api:
+            self.assertEqual(self.call_publish(), self.asset['browser_download_url'])
+            self.assertEqual(api.call_count, 5)
+            self.assertTrue(api.call_args_list[0].args[0].endswith('/releases/tags/media-2026-10'))
+            self.assertEqual(api.call_args_list[1].args[2], 'POST')
+            self.assertFalse(any('DELETE' in call.args for call in api.call_args_list))
