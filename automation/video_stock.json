@@ -10,27 +10,23 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T06:54:48.881300Z",
-    "channel_verified": true,
-    "cloud_probe": {
-      "cloud_readback": true,
-      "publication_attempted": false,
-      "stale_writer_rejected": true
-    },
+    "at": "2026-11-07T07:05:28.195593Z",
+    "channel_verified": null,
+    "cloud_probe": null,
     "generation_enabled": true,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "CHECK_ONLY"
+      "status": "MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW"
     },
     "stock": {
       "held_ids": [],
       "held_uncertain": 0,
       "low_stock": false,
       "publication_confirmation_is_separate": true,
-      "ready": 2,
-      "refill_needed": 2,
+      "ready": 3,
+      "refill_needed": 1,
       "target_max": 4
     },
     "this_monitor_generates_or_publishes": false
