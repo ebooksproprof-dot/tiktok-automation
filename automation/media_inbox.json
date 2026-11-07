@@ -1232,7 +1232,72 @@
       "height": 1080,
       "duration": 20.393333,
       "bytes": 10081174,
-      "acquired_at": 1794035153
+      "acquired_at": 1794035153,
+      "automatic_review_status": "QUEUED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "11253",
+      "url": "https://cdn.pixabay.com/video/2017/08/09/11253-229053638_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-11253/",
+      "author": "GreenCardShow",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: GreenCardShow / Pixabay — https://pixabay.com/videos/id-11253/",
+      "category": "estante",
+      "query": "bookshelf",
+      "selection_reason": "Provider tags: book, shelf, inserting, library, literature, education, bookshelf, study, knowledge, read, bookcase, hand, male, placing, setting",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/08/09/11253-229053638_large.mp4",
+      "sha256": "e43453a68669b26f38ecd4405be89ed738d39324f415da14af2b01655112b1c6",
+      "dhash": [
+        "97575d0929383002",
+        "97574d0929383002",
+        "87271d1939303012",
+        "8707151131301012",
+        "870715113130101a"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.52,
+      "bytes": 4346554,
+      "acquired_at": 1794056982
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "11254",
+      "url": "https://cdn.pixabay.com/video/2017/08/09/11254-229053639_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-11254/",
+      "author": "GreenCardShow",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: GreenCardShow / Pixabay — https://pixabay.com/videos/id-11254/",
+      "category": "estante",
+      "query": "bookshelf",
+      "selection_reason": "Provider tags: bookshelf, book, library, education, knowledge, literature, shelf, textbook, bookstore, read, bookcase, studying, row, hand, male, man, setting, putting back",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/08/09/11254-229053639_large.mp4",
+      "sha256": "6c686a17fb7e10895665b951662ac5647ce7a88521c586f96df754dbb5b82d6b",
+      "dhash": [
+        "7971d1d171717149",
+        "7971d1d171717149",
+        "3878382ce9697999",
+        "78787a6868686aba",
+        "68786a6a68686aba"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 7.88,
+      "bytes": 5066162,
+      "acquired_at": 1794056983
     }
   ],
   "rejected_until": {
@@ -1240,80 +1305,31 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794035151,
-    "acquired": 1,
+    "at": 1794056980,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 1,
-    "skipped_known": 7,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "tarefas",
+        "category": "estante",
         "status": "search_ok",
-        "eligible_candidates": 5,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "tarefas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 13,
+        "eligible_candidates": 3,
         "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "vassoura2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "vassoura2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "housework",
-      "cleaning",
-      "wardrobe",
-      "sweeping floor"
+      "bookshelf",
+      "washing hands soap",
+      "cleaning table",
+      "laundry folding"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 28,
+    "unreviewed_media_count": 30,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
