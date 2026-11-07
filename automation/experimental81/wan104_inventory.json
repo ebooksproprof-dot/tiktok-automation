@@ -4,7 +4,7 @@
   "clips": [],
   "requests": {
     "a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc": {
-      "status": "UNKNOWN_NO_RETRY",
+      "status": "FAILED_PROVIDER_NO_OUTPUT",
       "at": "2026-11-07T13:06:36.637206+00:00",
       "spec": {
         "space": "KingNish/wan2-2-fast",
@@ -24,7 +24,14 @@
       },
       "provider_job_id": null,
       "error_type": "AppError",
-      "reason": "REMOTE_OR_TRANSPORT_FAILURE"
+      "reason": "GRADIO_COMPLETED_WITH_SERVER_ERROR",
+      "prior_classification": {
+        "status": "UNKNOWN_NO_RETRY",
+        "reason": "REMOTE_OR_TRANSPORT_FAILURE"
+      },
+      "reconciled_at": "2026-11-07T13:14:27.931840+00:00",
+      "quota_claim_preserved": true,
+      "evidence": "Actions 42375392951 AppError; gradio_client emits it only for explicit server error response"
     }
   },
   "outputs": [],
