@@ -10,40 +10,44 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-07T01:08:09.360002Z",
+    "at": "2026-11-07T05:06:01.420090Z",
+    "channel_verified": null,
     "cloud_probe": null,
-    "generation_enabled": false,
-    "import": {
-      "errors": [],
-      "imported": [],
-      "skipped": [],
-      "waiting_for_manifest": []
-    },
-    "publication": {
-      "api_calls": 0,
-      "held": [],
-      "reconciled": 0,
-      "submitted": 0
+    "generation_enabled": true,
+    "legacy_inventory_preserved": 0,
+    "mode": "AUTOMATIC_LICENSED_STOCK",
+    "refill": {
+      "publication_ids": [],
+      "status": "NO_NEW_CONFIRMED_CONSUMPTION"
     },
     "stock": {
-      "available": 0,
-      "held_commercial": 0,
+      "held_ids": [],
+      "held_uncertain": 0,
       "low_stock": true,
-      "missed_slots": [],
-      "published": 0,
-      "refill_needed": 14,
-      "target_max": 28,
-      "target_min": 14,
-      "total_inventory": 0,
-      "unknown": 0
-    }
+      "publication_confirmation_is_separate": true,
+      "ready": 1,
+      "refill_needed": 3,
+      "target_max": 4
+    },
+    "this_monitor_generates_or_publishes": false
   },
-  "production": {
+  "legacy_production_settings": {
     "api_balance": null,
     "api_renews_at": null,
     "enabled": false,
     "provider": "tiktok_symphony",
     "reason": "API entitlement, free terms and Keren mapping unverified"
+  },
+  "production": {
+    "enabled": true,
+    "fallback": "piper_on_proven_TTS_failure",
+    "legacy_symphony_import_enabled": false,
+    "paid_services_enabled": false,
+    "provider": "licensed_stock_cpu_and_existing_cleared_Wan",
+    "runner": "CasaSemEsforco Daily Video Creation",
+    "target_max": 4,
+    "tts": "kokoro_cpu",
+    "voice": "pf_dora"
   },
   "schema_version": 1
 }
