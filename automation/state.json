@@ -826,6 +826,54 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-08-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-07T06:29:34Z",
+      "sha256": "448ec4a6ae33f3688d2a5cbc2d2e1ff37807c0b6f7686767ca68ff24698f066c",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-1-448ec4a6ae33f368.mp4",
+      "concept": "auto-laundry-1c957c446a9e",
+      "script_sha256": "1c957c446a9e39c2d0da5927eeb025ace5c043a43ca2fc84fb06a33c39dc980a",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Mantenha os produtos na embalagem original e longe de crianças.",
+        "Revise os bolsos antes de colocar as peças no tambor.",
+        "Siga o manual da sua máquina e a capacidade indicada.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+        "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/03/04/33220-396487864_large.mp4",
+          "sha256": "4479c0a3435d09367399fa75a1dfa3c3a8aaebfd5c2da341c3a1cea535b12b61",
+          "dhash": [
+            "7f7f5f57cfb76733",
+            "373d7933593e6733",
+            "3f3f177787871f7b",
+            "1ffcbc9e9cdf9f3f",
+            "1ffdbc9a9c9e9f3f"
+          ]
+        },
+        {
+          "source_id": "https://cdn.pixabay.com/video/2019/09/23/27178-362258186_large.mp4",
+          "sha256": "b12a4bbd15ce7f11a62b429f6baf1c6503818f2c54c64db5f5a37cb328f5a3d5",
+          "dhash": [
+            "3b9fbf61698ccce7",
+            "bf9f31616c9ccfd7",
+            "9f9f31616c8ce7d7",
+            "9f9f31654c8ce7c3",
+            "9f9f61654ccce7c7"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -1033,7 +1081,9 @@
     "2026-11-07T05:42:14.981363Z",
     "2026-11-07T05:42:15.193978Z",
     "2026-11-07T05:42:19.503712Z",
-    "2026-11-07T05:42:21.750185Z"
+    "2026-11-07T05:42:21.750185Z",
+    "2026-11-07T06:29:32.576049Z",
+    "2026-11-07T06:29:32.753333Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -1041,25 +1091,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 145,
-        "reset_at": "2026-11-07T05:56:36.909757Z",
-        "observed_at": "2026-11-07T05:42:21.909757Z"
+        "remaining": 148,
+        "reset_at": "2026-11-07T06:44:32.833858Z",
+        "observed_at": "2026-11-07T06:29:32.833858Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 587,
-        "reset_at": "2026-11-08T04:10:10.909757Z",
-        "observed_at": "2026-11-07T05:42:21.909757Z"
+        "remaining": 585,
+        "reset_at": "2026-11-08T04:10:10.833858Z",
+        "observed_at": "2026-11-07T06:29:32.833858Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 793,
-        "reset_at": "2026-11-16T22:01:05.909757Z",
-        "observed_at": "2026-11-07T05:42:21.909757Z"
+        "remaining": 791,
+        "reset_at": "2026-11-16T22:01:05.833858Z",
+        "observed_at": "2026-11-07T06:29:32.833858Z"
       }
     },
     "consecutive_errors": 0,
