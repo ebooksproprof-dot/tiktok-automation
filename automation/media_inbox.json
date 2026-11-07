@@ -874,86 +874,99 @@
       "duration": 5.076667,
       "bytes": 11700870,
       "acquired_at": 1793902391
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "128633",
+      "url": "https://cdn.pixabay.com/video/2022/08/21/128633-741747807_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-128633/",
+      "author": "adege",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: adege / Pixabay — https://pixabay.com/videos/id-128633/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: mountain stream, bach, stream bed, watercourse, rock, rush, rushing water, torrent, wild water",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/08/21/128633-741747807_large.mp4",
+      "sha256": "6803a87e7f0a0776adf2d2e274da0427dd7ba8e069c5397f353debd4e02afacc",
+      "dhash": [
+        "a92e6f61354f839b",
+        "a90e6f61374f839b",
+        "a92e6f613747839b",
+        "a92e6f61374f039b",
+        "a92e6f613747839b"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 16.415,
+      "bytes": 52911595,
+      "acquired_at": 1794024444
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "348106",
+      "url": "https://cdn.pixabay.com/video/2026/04/22/348106_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-348106/",
+      "author": "Ian5152",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Ian5152 / Pixabay — https://pixabay.com/videos/id-348106/",
+      "category": "cama",
+      "query": "making bed bedroom",
+      "selection_reason": "Provider tags: salt lake, aerial view, nature, salt, outdoors, landscape, travel, western australia, lake bed, lake, scenic",
+      "requires_crop_review": true,
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2026/04/22/348106_large.mp4",
+      "sha256": "eef024c79c7a896c97487bb9e89a1bacdbde3a64adda48e438d6052735298d12",
+      "dhash": [
+        "afbf9f460d193307",
+        "979d4f06060c1983",
+        "1e5b4322061c0985",
+        "99916163060c93c7",
+        "19118123262d2b26"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 21.7217,
+      "bytes": 96261956,
+      "acquired_at": 1794024464
     }
   ],
   "rejected_until": {
     "pixabay:38116": 1794223410
   },
   "last_run": {
-    "at": 1793986794,
-    "acquired": 0,
+    "at": 1794024436,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 1,
+    "download_attempts": 2,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cabides",
+        "category": "cama",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cabides",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "estante",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "panos",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 10,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "clothes hangers wardrobe",
-      "washing dishes kitchen sink",
-      "books shelf organizing",
-      "microfiber cloth cleaning"
+      "making bed bedroom",
+      "laundry basket clothes",
+      "cutlery kitchen drawer",
+      "indoor plant pot tray"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 17,
+    "unreviewed_media_count": 19,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not an approved video reserve; manual semantic review required."
   }
