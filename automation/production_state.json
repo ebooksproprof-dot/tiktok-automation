@@ -137,5 +137,11 @@
     "new_generative_ai_calls": 0,
     "paid_services_enabled": false,
     "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+  },
+  "refill_events": {
+    "casasem-2026-11-07-1": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-07T05:09:51.848204Z"
+    }
   }
 }
