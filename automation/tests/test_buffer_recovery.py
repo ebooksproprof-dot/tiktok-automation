@@ -14,6 +14,26 @@ NOW = dt.datetime(2026, 10, 21, 12, tzinfo=dt.timezone.utc)
 
 
 class BufferRecoveryTests(unittest.TestCase):
+    def test_reserve_can_be_scheduled_two_days_ahead_with_bounded_horizon(self):
+        self.post['scheduled_at'] = (NOW+dt.timedelta(hours=48)).isoformat()
+        self.assertEqual(b.prepare(self.post, self.state, 'channel')['channelId'], 'channel')
+        self.post['scheduled_at'] = (NOW+dt.timedelta(hours=53)).isoformat()
+        with self.assertRaisesRegex(ValueError, '52 hours'):
+            b.prepare(self.post, self.state, 'channel')
+
+    def test_extra_confirmed_owner_proof_does_not_displace_regular_schedule(self):
+        scope = 'mission102_owner_authorized_automated_quality_and_license_checks'
+        proof = dict(id='proof', approval_scope=scope, scheduled_at='2026-10-21T02:00:00-03:00', quality={'sha256': 'c'*64})
+        entry = dict(status='PUBLISH_COMPLETE', publicly_verified=True, sha256='c'*64, buffer_post_id='known',
+                     public_urls=['https://www.tiktok.com/@.casasemesforo/video/123'], scheduled_at=proof['scheduled_at'],
+                     public_visibility_evidence={'public_playback_verified': True})
+        self.state['posts'] = {'proof': entry, 'evening': {'scheduled_at': '2026-10-21T18:00:00-03:00'}}
+        self.post['approval_scope'] = scope
+        with patch.object(b.common, 'load_json', return_value={'posts': [proof]}):
+            self.assertEqual(b.prepare(self.post, self.state, 'channel')['channelId'], 'channel')
+            entry['status'] = 'SUBMISSION_UNKNOWN'
+            with self.assertRaisesRegex(ValueError, 'Daily maximum'):
+                b.prepare(self.post, self.state, 'channel')
     def setUp(self):
         self.clock = patch.object(b.common, 'utc_now', return_value=NOW)
         self.clock.start()

@@ -20,6 +20,8 @@ import buffer_quota
 from media_quality import validate
 from visual_library import require_evidence
 
+LOOKAHEAD_HOURS = 52  # Cover the existing four-video reserve before delayed crons.
+
 POST_FIELDS = "id channelId status schedulingType dueAt sentAt externalLink"
 CHANNEL_QUERY = """query($input: ChannelInput!) {
   channel(input: $input) { id name service organizationId externalLink
@@ -145,9 +147,9 @@ def prepare(post, state, channel_id):
         raise ValueError("Post already submitted through Metricool")
     when = common.parse_time(post.get("scheduled_at"))
     now = common.utc_now()
-    if not when or not now + timedelta(minutes=5) <= when <= now + timedelta(hours=26):
-        raise ValueError("Schedule must be 5 minutes to 26 hours in the future")
-    day = when.astimezone(ZoneInfo('America/Fortaleza')).date()
+    if not when or not now + timedelta(minutes=5) <= when <= now + timedelta(hours=LOOKAHEAD_HOURS):
+        raise ValueError(f"Schedule must be 5 minutes to {LOOKAHEAD_HOURS} hours in the future")
+    day = when.astimezone(ZoneInfo('America/Sao_Paulo')).date()
     reserved = set()
     for key, previous in state['posts'].items():
         prior = previous.get('scheduled_at')
@@ -155,15 +157,20 @@ def prepare(post, state, channel_id):
             raw = prior.get('dateTime')
             prior = common.parse_time(raw) if raw else None
             if prior and raw and not re.search(r'(Z|[+-]\d\d:\d\d)$', raw):
-                prior = prior.replace(tzinfo=ZoneInfo(previous['scheduled_at'].get('timezone', 'America/Fortaleza')))
+                prior = prior.replace(tzinfo=ZoneInfo(previous['scheduled_at'].get('timezone', 'America/Sao_Paulo')))
         else:
             prior = common.parse_time(prior)
-        if prior and prior.astimezone(ZoneInfo('America/Fortaleza')).date() == day:
+        if prior and prior.astimezone(ZoneInfo('America/Sao_Paulo')).date() == day:
             reserved.add(key)
             if prior == when:
                 raise ValueError('Publication slot already reserved')
     if len(reserved) >= 2:
-        raise ValueError('Daily maximum of two publication reservations reached')
+        tests = set()
+        if post.get('approval_scope') == 'mission102_owner_authorized_automated_quality_and_license_checks':
+            from daily_coverage import confirmed_live_tests
+            tests = confirmed_live_tests(common.load_json(common.QUEUE_PATH, {'posts': []}), state, day)
+        if len(reserved-tests) >= 2:
+            raise ValueError('Daily maximum of two publication reservations reached')
     text = post.get("title", "").strip()
     if not text or len(text) > 2200 or len(re.findall(r"(?<!\w)#\w+", text)) > 5:
         raise ValueError("Caption exceeds TikTok limits or is empty")
@@ -365,7 +372,7 @@ def main(check_only=False):
                         due = common.parse_time(post.get('scheduled_at'))
                     except (ValueError, TypeError, AttributeError):
                         due = None
-                    if due is None or due <= common.utc_now() + timedelta(hours=26):
+                    if due is None or due <= common.utc_now() + timedelta(hours=LOOKAHEAD_HOURS):
                         invalid += 1
                         print(f"::warning::{post.get('id', 'missing-id')}: {exc}")
                 continue
@@ -420,7 +427,7 @@ def main(check_only=False):
             if post.get("id") in state["posts"] or not post.get("id", "").startswith("casasem-"):
                 continue
             when = common.parse_time(post.get("scheduled_at"))
-            if when and when <= common.utc_now() + timedelta(hours=26):
+            if when and when <= common.utc_now() + timedelta(hours=LOOKAHEAD_HOURS):
                 try:
                     prepare(post, state, channel_id)
                     candidates.append(post)
