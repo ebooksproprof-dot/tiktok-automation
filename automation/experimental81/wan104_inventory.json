@@ -51,7 +51,8 @@
         "guidance_scale": 0,
         "seed": 104101,
         "randomize_seed": false
-      }
+      },
+      "provider_job_id": "5ac09802c2604efea530af44ae059377"
     }
   },
   "outputs": [],
