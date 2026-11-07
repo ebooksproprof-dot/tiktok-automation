@@ -26,7 +26,7 @@ from media_acquisition import download_and_measure, read_json, save_json
 from media_providers import crop_capable, plain
 from media_rights import caption_with_credits
 from semantic_review import Reviewer, nominate, motion, REVISION
-from source_license import verify as license_verify, CACHE as RIGHTS_CACHE
+from source_license import verify as license_verify, CACHE as RIGHTS_CACHE, SourceLicenseBudgetExceeded
 import visual_library as visuals
 
 ROOT = Path(__file__).resolve().parent
@@ -143,6 +143,24 @@ BANK = {
     'Ao terminar, feche a torneira sem deixar água correndo.',
     'Mantenha a área da pia livre para utilizar com segurança.',
     'Siga as orientações dos órgãos de saúde para a higiene.']),
+ 'laundry': ('Vai colocar roupa para lavar?', [
+    'Confira a etiqueta das peças antes de escolher o ciclo.',
+    'Siga o manual da sua máquina e a capacidade indicada.',
+    'Use o produto e a quantidade recomendados no rótulo.',
+    'Revise os bolsos antes de colocar as peças no tambor.',
+    'Separe os tecidos conforme as orientações de lavagem.',
+    'Mantenha os produtos na embalagem original e longe de crianças.',
+    'Retire as roupas ao terminar e organize a secagem.',
+    'Confira as instruções de limpeza do filtro no manual.']),
+ 'surfaces': ('Vai limpar esta superfície?', [
+    'Confira qual material é compatível com o acabamento.',
+    'Siga a diluição e o modo de uso indicados no rótulo.',
+    'Retire os objetos soltos para deixar a área livre.',
+    'Cuide de uma pequena parte antes de avançar.',
+    'Não improvise misturas de produtos de limpeza.',
+    'Evite espalhar os resíduos para áreas já limpas.',
+    'Mantenha os produtos longe de crianças e animais.',
+    'Ao terminar, guarde os materiais em local adequado.']),
 }
 
 
@@ -310,6 +328,13 @@ def run(stage=False, soon=False, limit=2):
                             context='Illustrative real household footage, accepted by local CPU frame review.')
             phase = 'license'
             license_proof = license_verify(measured)
+            entry = ledger['candidates'].setdefault(key, {})
+            errors = ('error', 'error_type', 'error_stage', 'http_status', 'retry_after')
+            if entry.get('error'):
+                entry.setdefault('hold_history', []).append({k: entry[k] for k in errors if k in entry})
+            for field in errors:
+                entry.pop(field, None)
+            entry.update(status='LICENSE_VERIFIED_PENDING_VISUAL', source_sha256=measured['sha256'], license=license_proof)
             cached_review = prior.get('visual_review') or {}
             if not stage and not cached_review:
                 # Only preview mode may reuse local proof files. Operational
@@ -325,8 +350,8 @@ def run(stage=False, soon=False, limit=2):
                 phase = 'semantic_review'
                 review = reviewer.review(render.ASSETS/('pixabay-'+measured['provider_id']+'.mp4'),
                     measured, render.ASSETS/('review-'+measured['provider_id']))
-            ledger['candidates'][key] = {'status': 'ACCEPTED', 'source_sha256': measured['sha256'],
-                'license': license_proof, 'visual_review': review}
+            entry.update(status='ACCEPTED', source_sha256=measured['sha256'],
+                         license=license_proof, visual_review=review)
             pool = pools.setdefault(review['family'], [])
             pool.append({'record': measured, 'visual_review': review, 'license': license_proof})
             capacity = sum(x['record']['duration']-.05 for x in pool)
@@ -391,12 +416,18 @@ def run(stage=False, soon=False, limit=2):
             pools[review['family']] = []
         except Exception as exc:
             controlled = isinstance(exc, ValueError) and bool(re.fullmatch(r'[A-Z][A-Z0-9_]{2,100}', str(exc)))
-            code = str(exc) if controlled else 'SOURCE_OR_RENDER_UNAVAILABLE'
-            ledger['candidates'][key] = {'status': 'REJECTED' if controlled else 'RETRYABLE',
+            local_cap = isinstance(exc, SourceLicenseBudgetExceeded)
+            code = str(exc) if controlled or local_cap else 'SOURCE_OR_RENDER_UNAVAILABLE'
+            entry = ledger['candidates'].setdefault(key, {})
+            review_path = render.ASSETS/('review-'+candidate['provider_id'])/'review.json'
+            sampled = read_json(review_path, {}) if review_path.exists() else {}
+            if sampled.get('source_sha256') and sampled['source_sha256'] == entry.get('source_sha256'):
+                entry['visual_review'] = sampled
+            entry.update({'status': 'REJECTED' if controlled else 'RETRYABLE',
                 'error': code, 'error_type': type(exc).__name__,
                 'error_stage': phase,
                 'http_status': getattr(exc, 'code', None),
-                'retry_after': time.time()+6*3600 if not controlled else 0}
+                'retry_after': time.time()+6*3600 if not controlled and not local_cap else 0})
             print('AUTONOMOUS_CANDIDATE_HELD='+candidate['provider_id']+'; REASON='+code)
         finally:
             if stage:

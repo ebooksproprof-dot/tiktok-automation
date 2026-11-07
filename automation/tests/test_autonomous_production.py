@@ -18,6 +18,22 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_license_budget_is_bounded_and_exhaustion_does_not_call_provider(self):
+        transport = Mock()
+        with patch.object(source_license, 'API_CHECKS', 6):
+            with self.assertRaises(source_license.SourceLicenseBudgetExceeded):
+                source_license.verify_api({}, 'never-log', transport=transport)
+        transport.assert_not_called()
+        self.assertEqual(semantic.nominate({'selection_reason': 'laundry, clothes, washer, detergent'}), 'laundry')
+        self.assertEqual(semantic.nominate({'selection_reason': 'laundry, folding, clothes'}), 'clothes')
+
+    def test_surface_review_needs_visible_cleaning_and_matching_household_object(self):
+        self.assertEqual(semantic.nominate({'selection_reason': 'window, cleaning, housework'}), 'surfaces')
+        self.assertIsNone(semantic.nominate({'selection_reason': 'car, window, cleaning'}))
+        self.assertTrue(semantic.assess('surfaces', ['A person is cleaning a window with a cloth.']*3))
+        self.assertFalse(semantic.assess('surfaces', ['A clean window overlooks a beautiful garden.']*3))
+        self.assertFalse(semantic.assess('surfaces', ['A person is cleaning a car window.']*3))
+
     def test_failed_refill_is_not_success_just_because_old_stock_exists(self):
         self.assertEqual(production.exit_status({'status': 'NO_VALID_OUTPUT', 'created': 0, 'ready_after': 3}), 2)
         self.assertEqual(production.exit_status({'status': 'STOCK_TARGET_MET', 'created': 0}), 0)

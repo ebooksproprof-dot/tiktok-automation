@@ -14,6 +14,11 @@ from media_rights import valid_source
 CACHE = Path(__file__).with_name('stock_license_evidence.json')
 POLICY = Path(__file__).with_name('pixabay_license_policy.json')
 API_CHECKS = 0
+MAX_API_CHECKS = 6  # Two outputs can require three short source clips each.
+
+
+class SourceLicenseBudgetExceeded(RuntimeError):
+    """Local per-process cap, not a provider 429 or an uncertain mutation."""
 
 
 def known_evidence(record):
@@ -72,8 +77,8 @@ def policy_evidence():
 
 def verify_api(record, key, transport=None, policy=None):
     global API_CHECKS
-    if API_CHECKS >= 4:
-        raise RuntimeError('SOURCE_LICENSE_API_BUDGET_EXHAUSTED')
+    if API_CHECKS >= MAX_API_CHECKS:
+        raise SourceLicenseBudgetExceeded('SOURCE_LICENSE_API_BUDGET_EXHAUSTED')
     API_CHECKS += 1
     policy = policy or policy_evidence()
     if transport is None:

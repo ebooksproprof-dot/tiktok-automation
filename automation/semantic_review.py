@@ -23,6 +23,8 @@ FAMILIES = {
     'wiping': ({'cloth', 'microfiber', 'wiping'}, {'cloth', 'wiping', 'wipe', 'cleaning', 'countertop', 'sponge'}),
     'books': ({'books', 'bookshelf', 'shelf', 'shelves', 'bookcase'}, {'books', 'book', 'shelf', 'shelves', 'bookcase', 'library'}),
     'handwashing': ({'handwashing'}, {'washing', 'wash', 'soap', 'sink', 'hands'}),
+    'laundry': ({'washer', 'washingmachine', 'laundromat'}, {'washer', 'washing', 'machine', 'laundry', 'clothes', 'clothing', 'drum'}),
+    'surfaces': ({'countertop', 'window', 'mirror'}, {'window', 'windows', 'floor', 'table', 'countertop', 'surface', 'sink', 'cabinet', 'door', 'mirror'}),
 }
 FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'waterfall', 'river', 'mountain',
              'ocean', 'flamingo', 'bird', 'duck', 'mosque', 'quran', 'cigarette', 'cigarettes', 'smoking',
@@ -43,6 +45,11 @@ def nominate(record):
     # A botanical "broom" is not a housekeeping action.
     if tags & {'blossom', 'blossoms', 'flower', 'flowers', 'rain'}:
         return None
+    surface = tags & FAMILIES['surfaces'][1]
+    cleaning = tags & {'cleaning', 'clean', 'wiping', 'wipe'}
+    specific = tags & {'broom', 'sweeping', 'dishes', 'dishwashing', 'washer', 'laundry', 'clothes'}
+    if surface and cleaning and not specific:
+        return None if tags & {'car', 'vehicle', 'truck', 'windshield', 'solar', 'factory'} else 'surfaces'
     if tags & {'hand', 'hands'} and tags & {'soap', 'washing'}:
         return 'handwashing'
     # Prefer the supported context with most corroborating tags: a library
@@ -61,6 +68,11 @@ def assess(family, captions):
         return False
     allowed = FAMILIES[family][1]
     tokens = [words(caption) for caption in captions]
+    if family == 'surfaces':
+        if any(t & {'car', 'vehicle', 'truck', 'windshield', 'solar', 'factory'} for t in tokens):
+            return False
+        return (not any(t & FORBIDDEN for t in tokens)
+                and sum(bool(t & allowed) and bool(t & {'cleaning', 'wiping', 'wipe', 'wipes', 'cleans'}) for t in tokens) >= 2)
     # Two frames are insufficient if the remaining sample shows unsafe content.
     return (not any(t & FORBIDDEN for t in tokens)
             and sum(bool(t & allowed) for t in tokens) >= 2)

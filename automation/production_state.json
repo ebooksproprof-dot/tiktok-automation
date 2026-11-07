@@ -176,19 +176,49 @@
     },
     "https://cdn.pixabay.com/video/2024/09/29/233903_large.mp4": {
       "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
       "error_type": "RuntimeError",
       "error_stage": "license",
       "http_status": null,
-      "retry_after": 1794050470.0318294
+      "retry_after": 0,
+      "hold_history": [
+        {
+          "status": "RETRYABLE",
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "RuntimeError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794050470.0318294
+        }
+      ],
+      "recovery_evidence": {
+        "run_id": 42341545319,
+        "checked_at": "2026-11-07T05:25:49.726473+00:00",
+        "reason": "Old verify_api raises before HTTP after four checks. Retry licensing with bounded six-source policy; no external quota or publishing state reset."
+      }
     },
     "https://cdn.pixabay.com/video/2020/03/22/34091-399913636_large.mp4": {
       "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error": "LOCAL_FOUR_CALL_CAP_CONFIRMED_NO_HTTP_ATTEMPT",
       "error_type": "RuntimeError",
       "error_stage": "license",
       "http_status": null,
-      "retry_after": 1794050473.3830574
+      "retry_after": 0,
+      "hold_history": [
+        {
+          "status": "RETRYABLE",
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "RuntimeError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794050473.3830574
+        }
+      ],
+      "recovery_evidence": {
+        "run_id": 42341545319,
+        "checked_at": "2026-11-07T05:25:49.726473+00:00",
+        "reason": "Old verify_api raises before HTTP after four checks. Retry licensing with bounded six-source policy; no external quota or publishing state reset."
+      }
     }
   },
   "outputs": {

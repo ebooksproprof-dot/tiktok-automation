@@ -52,23 +52,23 @@ HOUSEHOLD_TOPICS = [
     ('ferro', 'ironing', ['ironing']),
     ('louca', 'washing dishes', ['washing', 'dishes']),
     ('cabides', 'clothes hangers', ['hangers']),
-    ('vassoura', 'sweeping', ['sweeping']),
+    ('janelas', 'cleaning window', ['cleaning', 'window']),
     ('livros', 'books shelf', ['books', 'shelf']),
     ('maos', 'handwashing', ['handwashing']),
     ('panos', 'wiping', ['wiping']),
     ('roupas', 'folding clothes', ['folding', 'clothes']),
-    ('ferro2', 'iron clothes', ['iron', 'clothes']),
-    ('louca2', 'dishwashing', ['dishwashing']),
+    ('tarefas', 'housework', ['housework']),
+    ('limpeza', 'cleaning', ['cleaning']),
     ('armario', 'wardrobe', ['wardrobe']),
-    ('vassoura2', 'broom floor', ['broom', 'floor']),
+    ('vassoura2', 'sweeping floor', ['sweeping', 'floor']),
     ('estante', 'bookshelf', ['bookshelf']),
     ('maos2', 'washing hands soap', ['hands', 'soap']),
-    ('panos2', 'cleaning cloth', ['cleaning', 'cloth']),
+    ('mesa', 'cleaning table', ['cleaning', 'table']),
     ('roupas2', 'laundry folding', ['laundry', 'folding']),
-    ('ferro3', 'ironing shirt', ['ironing', 'shirt']),
-    ('louca3', 'plates washing', ['plates', 'washing']),
+    ('ferro3', 'ironing clothes', ['ironing', 'clothes']),
+    ('louca3', 'dishwashing', ['dishwashing']),
     ('armario2', 'closet clothes', ['closet', 'clothes']),
-    ('vassoura3', 'sweeping floor', ['sweeping', 'floor']),
+    ('cozinha', 'cleaning kitchen', ['cleaning', 'kitchen']),
     ('livros2', 'library books', ['library', 'books']),
     ('maos3', 'hand washing', ['hand', 'washing']),
     ('panos3', 'microfiber', ['microfiber']),
@@ -83,7 +83,8 @@ def daily_topics(now):
     four searches. No pagination crawl, cache eviction or counter reset.
     """
     bank = HOUSEHOLD_TOPICS if os.getenv('AUTONOMOUS_HOUSEHOLD_DISCOVERY') == 'true' else TOPICS
-    offset = (int(now // 86400) * QUERIES_PER_PROVIDER) % len(bank)
+    period = 43200 if bank is HOUSEHOLD_TOPICS else 86400
+    offset = (int(now // period) * QUERIES_PER_PROVIDER) % len(bank)
     return [bank[(offset + i) % len(bank)]
             for i in range(min(QUERIES_PER_PROVIDER, len(bank)))]
 

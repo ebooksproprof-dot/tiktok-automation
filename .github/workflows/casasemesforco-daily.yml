@@ -203,6 +203,8 @@ jobs:
           path: |
             tmp/autonomous-proof/
             tmp/daily/release-output/*.json
+            tmp/daily/review-*/*.json
+            tmp/daily/review-*/*.jpg
           retention-days: 1 # MP4s are already preserved durably in Releases.
           if-no-files-found: ignore
       - name: Evidence summary
