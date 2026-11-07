@@ -111,6 +111,9 @@ class BufferRecoveryTests(unittest.TestCase):
                           externalLink='https://www.tiktok.com/@.casasemesforo/video/123')
             self.assertEqual(b.confirm_post('existing'), 0)
             self.assertEqual(entry['public_urls'], ['https://www.tiktok.com/@.casasemesforo/video/123'])
+            client.return_value.call.reset_mock()
+            self.assertEqual(b.confirm_post('existing'), 0)
+            client.return_value.call.assert_called_once()
 
     def test_explicit_confirmation_without_reservation_never_calls_network(self):
         with patch.object(b.common, 'load_json', return_value=self.state), \

@@ -459,13 +459,15 @@ def confirm_post(post_id):
         if (not entry or entry.get('provider') != 'buffer'
                 or not entry.get('buffer_post_id') or not channel_id):
             raise ValueError('Existing Buffer reservation and channel required; no submission attempted')
-        if entry.get('publicly_verified') is not True:
-            client = Client(state)
-            remote = client.call('query($input: PostInput!) { post(input: $input) { ' +
-                                 POST_FIELDS + ' } }',
-                                 {'input': {'id': entry['buffer_post_id']}})['post']
-            record_remote(entry, remote, channel_id)
-            entry['last_reconcile_attempt_at'] = common.iso_now()
+        # An explicit operator verification must refresh the provider, even
+        # when an earlier local snapshot says published. Routine runs still
+        # skip verified posts and never create another reservation here.
+        client = Client(state)
+        remote = client.call('query($input: PostInput!) { post(input: $input) { ' +
+                             POST_FIELDS + ' } }',
+                             {'input': {'id': entry['buffer_post_id']}})['post']
+        record_remote(entry, remote, channel_id)
+        entry['last_reconcile_attempt_at'] = common.iso_now()
         print(json.dumps({'post_id': post_id, 'status': entry.get('status'),
                           'publicly_verified': entry.get('publicly_verified', False),
                           'public_urls': entry.get('public_urls', [])}))
