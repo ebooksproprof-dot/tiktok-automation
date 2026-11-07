@@ -18,6 +18,10 @@ import autonomous_stock
 
 
 class PolicyTests(unittest.TestCase):
+    def test_ironing_ski_lift_is_not_a_clothes_candidate(self):
+        self.assertIsNone(semantic.nominate({'selection_reason': 'ironing lift, ski, tractor, winter sports'}))
+        self.assertIsNone(semantic.nominate({'selection_reason': 'iron bridge, architecture'}))
+
     def test_api_evidence_binds_same_id_author_file_and_keeps_credentials_private(self):
         record = {'provider_id': '1', 'url': 'https://cdn.pixabay.com/video/a.mp4',
                   'source_page': 'https://pixabay.com/videos/id-1/', 'author': 'Author',

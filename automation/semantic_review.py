@@ -25,7 +25,8 @@ FAMILIES = {
     'handwashing': ({'handwashing'}, {'washing', 'wash', 'soap', 'sink', 'hands'}),
 }
 FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'waterfall', 'river', 'mountain',
-             'ocean', 'flamingo', 'bird', 'duck', 'mosque', 'quran', 'cigarette', 'cigarettes', 'smoking'}
+             'ocean', 'flamingo', 'bird', 'duck', 'mosque', 'quran', 'cigarette', 'cigarettes', 'smoking',
+             'ski', 'skiing', 'pulleys', 'tractor', 'bridge', 'campfire', 'fire', 'burns', 'construction', 'classroom'}
 
 
 def words(text):

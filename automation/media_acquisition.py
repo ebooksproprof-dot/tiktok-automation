@@ -12,7 +12,7 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-from visual_library import fingerprint, check_sources, history
+from visual_library import fingerprint, check_sources, history, preflight
 
 ROOT = Path(__file__).resolve().parent
 MAX_BYTES = 250 * 1024 * 1024
@@ -381,6 +381,9 @@ def run():
                             continue
                     identity = name + ':' + record['provider_id']
                     if identity in known:
+                        skipped_known += 1
+                        continue
+                    if automatic and not preflight([record['url']], previous):
                         skipped_known += 1
                         continue
                     if identity in rejected:
