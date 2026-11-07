@@ -699,18 +699,18 @@
       "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6aed59747b7e47e8f40a39a7",
-      "last_checked_at": "2026-11-06T04:48:29Z",
+      "last_checked_at": "2026-11-07T04:10:10Z",
       "buffer_status": "sent",
       "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7704915298847132980",
       "buffer_sent_at_present": true,
-      "last_reconcile_attempt_at": "2026-11-06T04:48:29Z",
+      "last_reconcile_attempt_at": "2026-11-07T04:10:10Z",
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink",
       "public_urls": [
         "https://www.tiktok.com/@.casasemesforo/video/7704915298847132980"
       ],
       "publicly_available_post_id": [
         "7704915298847132980"
-      ],
-      "verification_source": "Buffer API sent + automatic + exact-account externalLink"
+      ]
     }
   },
   "buffer_api_usage": [
@@ -905,7 +905,8 @@
     "2026-11-06T04:37:05.206529Z",
     "2026-11-06T04:37:08.559878Z",
     "2026-11-06T04:37:10.559501Z",
-    "2026-11-06T04:48:29.734284Z"
+    "2026-11-06T04:48:29.734284Z",
+    "2026-11-07T04:10:09.738498Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -913,25 +914,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 145,
-        "reset_at": "2026-11-06T04:52:05.967202Z",
-        "observed_at": "2026-11-06T04:48:29.967202Z"
+        "remaining": 149,
+        "reset_at": "2026-11-07T04:25:10.003156Z",
+        "observed_at": "2026-11-07T04:10:10.003156Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 593,
-        "reset_at": "2026-11-06T20:39:16.967202Z",
-        "observed_at": "2026-11-06T04:48:29.967202Z"
+        "remaining": 599,
+        "reset_at": "2026-11-08T04:10:10.003156Z",
+        "observed_at": "2026-11-07T04:10:10.003156Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 806,
-        "reset_at": "2026-11-16T22:01:04.967202Z",
-        "observed_at": "2026-11-06T04:48:29.967202Z"
+        "remaining": 805,
+        "reset_at": "2026-11-16T22:01:05.003156Z",
+        "observed_at": "2026-11-07T04:10:10.003156Z"
       }
     },
     "consecutive_errors": 0,
