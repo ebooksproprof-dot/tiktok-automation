@@ -923,7 +923,7 @@
     },
     "casasem-2026-11-08-2": {
       "provider": "buffer",
-      "status": "SUBMISSION_UNKNOWN",
+      "status": "SCHEDULED",
       "submitted_at": "2026-11-07T07:09:53Z",
       "sha256": "c44701af820b64ff4a7b70e8de5011416c60fa7875a24e1390716ff09ccc51fd",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-2-c44701af820b64ff.mp4",
@@ -956,7 +956,11 @@
       "scheduled_at": "2026-11-08T18:00:00-03:00",
       "publicly_verified": false,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
-      "buffer_post_id": "6aeecec4004e4879a73d1634"
+      "buffer_post_id": "6aeecec4004e4879a73d1634",
+      "last_checked_at": "2026-11-07T07:09:57Z",
+      "buffer_status": "scheduled",
+      "buffer_external_link": null,
+      "buffer_sent_at_present": false
     }
   },
   "buffer_api_usage": [
@@ -1177,7 +1181,8 @@
     "2026-11-07T07:04:48.585586Z",
     "2026-11-07T07:09:52.046885Z",
     "2026-11-07T07:09:52.256280Z",
-    "2026-11-07T07:09:55.598984Z"
+    "2026-11-07T07:09:55.598984Z",
+    "2026-11-07T07:09:57.680872Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -1185,25 +1190,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 147,
-        "reset_at": "2026-11-07T07:24:53.236473Z",
-        "observed_at": "2026-11-07T07:09:56.236473Z"
+        "remaining": 146,
+        "reset_at": "2026-11-07T07:24:52.907472Z",
+        "observed_at": "2026-11-07T07:09:57.907472Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 574,
-        "reset_at": "2026-11-08T04:10:11.236473Z",
-        "observed_at": "2026-11-07T07:09:56.236473Z"
+        "remaining": 573,
+        "reset_at": "2026-11-08T04:10:10.907472Z",
+        "observed_at": "2026-11-07T07:09:57.907472Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 780,
-        "reset_at": "2026-11-16T22:01:06.236473Z",
-        "observed_at": "2026-11-07T07:09:56.236473Z"
+        "remaining": 779,
+        "reset_at": "2026-11-16T22:01:05.907472Z",
+        "observed_at": "2026-11-07T07:09:57.907472Z"
       }
     },
     "consecutive_errors": 0,
