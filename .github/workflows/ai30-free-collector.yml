@@ -11,6 +11,10 @@ on:
         description: 'Collect at most three new explicitly licensed Wan 2.2 5B clips; no publishing in this collection test'
         type: boolean
         default: false
+      reconcile_initial_app_failure:
+        description: 'Reclassify only the evidenced first Gradio AppError; retain its quota claim and request fingerprint'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -123,12 +127,16 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends ffmpeg
-          python -m pip install 'gradio_client>=1.13,<3' 'socksio>=1.0,<2'
+          python -m pip install 'gradio_client==2.7.2' 'socksio>=1.0,<2'
       - name: Collect licensed model outputs without any publication
         env:
           GH_TOKEN: ${{ github.token }}
           HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
-        run: python automation/experimental81/wan104.py --trial
+          RECONCILE: ${{ inputs.reconcile_initial_app_failure }}
+        run: |
+          args=()
+          if [ "$RECONCILE" = 'true' ]; then args+=(--reconcile-app-failure); fi
+          python automation/experimental81/wan104.py --trial "${args[@]}"
       - name: Preserve partial responses and footage on failure
         if: always()
         uses: actions/upload-artifact@v4

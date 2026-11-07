@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from experimental81 import wan104 as wan, daily_budget
@@ -95,6 +97,32 @@ class LicensedWanTests(unittest.TestCase):
         self.assertNotIn('reference_sha256', spec)
         self.assertNotEqual(spec['seed'], wan.request_spec(self.profile, 2, 0)['seed'])
         self.assertNotEqual(spec['prompt'], wan.request_spec(self.profile, 2, 0)['prompt'])
+
+    def test_failed_first_provider_claim_and_new_workload_fit_shared_free_window(self):
+        date = dt.datetime.now(dt.timezone.utc)
+        ledger = daily_budget.reserve(daily_budget.fresh(), 'a'*64, date, tier='free', estimated_seconds=75)
+        for symbol in 'bcd':
+            ledger = daily_budget.reserve(ledger, symbol*64, date, tier='free', estimated_seconds=60)
+        self.assertEqual(sum(c['estimated_seconds'] for c in ledger['claims']), 255)
+        with self.assertRaises(daily_budget.QuotaError):
+            daily_budget.reserve(ledger, 'e'*64, date, tier='free', estimated_seconds=60)
+
+    def test_completed_app_error_is_separate_from_transport_unknown(self):
+        class AppError(Exception):
+            pass
+        with patch.dict(sys.modules, {'gradio_client.exceptions': SimpleNamespace(AppError=AppError)}):
+            self.assertEqual(wan.provider_failure(AppError('hidden upstream exception'))[0], 'FAILED_PROVIDER_NO_OUTPUT')
+            self.assertEqual(wan.provider_failure(TimeoutError())[0], 'UNKNOWN_NO_RETRY')
+
+    def test_one_evidenced_reconciliation_retains_request_and_does_not_clear_timeout(self):
+        digest = 'a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc'
+        entry = {'status': 'UNKNOWN_NO_RETRY', 'error_type': 'AppError', 'reason': 'REMOTE_OR_TRANSPORT_FAILURE',
+                 'spec': {'space': 'KingNish/wan2-2-fast'}}
+        inventory = {'requests': {digest: copy.deepcopy(entry), 'another': copy.deepcopy(entry)}}
+        self.assertTrue(wan.reconcile_initial_app_failure(inventory))
+        self.assertEqual(inventory['requests'][digest]['status'], 'FAILED_PROVIDER_NO_OUTPUT')
+        self.assertEqual(inventory['requests']['another']['status'], 'UNKNOWN_NO_RETRY')
+        self.assertFalse(wan.reconcile_initial_app_failure(inventory))
 
 
 if __name__ == '__main__':

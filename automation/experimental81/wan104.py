@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import time
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,7 +47,9 @@ def profile_check(profile, fetch=fetch_json):
     if (profile.get('additional_budget_brl') != 0 or profile.get('use_lora') is not False
             or profile.get('use_cbensimon_weights') is not False or profile.get('use_aoti_package') is not False
             or profile.get('model') != 'FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers'
-            or profile.get('space') != 'KingNish/wan2-2-fast'
+            or profile.get('space') not in ('KingNish/wan2-2-fast', 'Upsampler/wan-2-2-5b-video')
+            or profile.get('quota_estimate_per_clip_seconds') != (75 if profile.get('space') == 'KingNish/wan2-2-fast' else 60)
+            or (profile.get('height'), profile.get('width'), profile.get('duration_seconds'), profile.get('steps')) != (832, 480, 5, 4)
             or profile.get('reference_kind') != 'authored_text_only'):
         raise ValueError('UNAPPROVED_WAN_PROFILE')
     for name, kind in [('model', 'models'), ('backbone', 'models'), ('voice', 'models'), ('space', 'spaces')]:
@@ -83,17 +86,42 @@ def request_spec(profile, episode, slot):
             'randomize_seed': False}
 
 
-def reserve(inventory_store, budget_store, inventory, revision, spec, tier):
+def reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimated_seconds=75):
     digest = hf_probe.fingerprint(spec)
     if digest in inventory['requests']:
         raise ValueError('KNOWN_OR_UNCERTAIN_WAN_REQUEST_NO_RETRY')
     ledger, budget_revision = budget_store.load()
-    updated = daily_budget.reserve(ledger, digest, now(), tier=tier, estimated_seconds=75)
+    updated = daily_budget.reserve(ledger, digest, now(), tier=tier, estimated_seconds=estimated_seconds)
     updated['claims'][-1].update(profile='wan104_licensed_fastwan5b', space=spec['space'])
     budget_store.save(updated, budget_revision)  # Includes old A14B claims; never reset or replace.
     inventory['requests'][digest] = {'status': 'INTENT_RECORDED_NO_RETRY', 'at': now().isoformat(), 'spec': spec}
     revision = inventory_store.save(inventory, revision)
     return digest, revision
+
+
+def provider_failure(exc):
+    # gradio_client raises AppError only after a completed server response with
+    # an explicit error. Timeout/transport errors provide no such evidence.
+    from gradio_client.exceptions import AppError
+    if isinstance(exc, AppError):
+        return 'FAILED_PROVIDER_NO_OUTPUT', 'GRADIO_COMPLETED_WITH_SERVER_ERROR'
+    return 'UNKNOWN_NO_RETRY', hf_probe.classify_error(exc)
+
+
+def reconcile_initial_app_failure(inventory):
+    """One evidenced migration of the first trial; never clear transport unknowns."""
+    changed = False
+    for digest, entry in inventory['requests'].items():
+        if (digest == 'a2b7465b46cf7160c40b732012e532ca44ff05d710095d1afedc3b9c0661f9bc'
+                and entry.get('status') == 'UNKNOWN_NO_RETRY' and entry.get('error_type') == 'AppError'
+                and entry.get('reason') == 'REMOTE_OR_TRANSPORT_FAILURE' and not entry.get('media')
+                and entry.get('spec', {}).get('space') == 'KingNish/wan2-2-fast'):
+            entry['prior_classification'] = dict(status=entry['status'], reason=entry['reason'])
+            entry.update(status='FAILED_PROVIDER_NO_OUTPUT', reason='GRADIO_COMPLETED_WITH_SERVER_ERROR',
+                         reconciled_at=now().isoformat(), quota_claim_preserved=True,
+                         evidence='Actions 42375392951 AppError; gradio_client emits it only for explicit server error response')
+            changed = True
+    return changed
 
 
 def inspect_clip(path):
@@ -112,7 +140,7 @@ def inspect_clip(path):
     return info
 
 
-def collect(trial=False, client_factory=None):
+def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     profile = json.loads(PROFILE.read_text())
     if not trial and not profile['activated_after_public_trial']:
         raise ValueError('WAN_PUBLIC_TRIAL_NOT_CONFIRMED')
@@ -120,6 +148,8 @@ def collect(trial=False, client_factory=None):
     inventory, revision = inventory_store.load()
     if inventory.get('version') != 1 or not isinstance(inventory.get('clips'), list):
         raise ValueError('WAN104_INVENTORY_REQUIRED')
+    if reconcile_app_failure and reconcile_initial_app_failure(inventory):
+        revision = inventory_store.save(inventory, revision)
     if any(r['status'] in ('INTENT_RECORDED_NO_RETRY', 'UNKNOWN_NO_RETRY') for r in inventory['requests'].values()):
         raise ValueError('UNCERTAIN_WAN_GENERATION_REQUIRES_RECONCILIATION')
     if len(inventory['clips']) >= 3:
@@ -143,12 +173,16 @@ def collect(trial=False, client_factory=None):
             if slot >= 3:
                 break
             spec = request_spec(profile, inventory['episode'], slot)
-            digest, revision = reserve(inventory_store, budget_store, inventory, revision, spec, tier)
+            estimate = profile['quota_estimate_per_clip_seconds']
+            digest, revision = reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimate)
             entry = inventory['requests'][digest]
             try:
                 values = [None]+[spec[key] for key in profile['order'][1:]]
                 job = client.submit(*values, api_name='/generate_video')
-                entry['provider_job_id'] = getattr(job, 'event_id', None)
+                deadline = time.monotonic()+10
+                while not getattr(getattr(job, 'communicator', None), 'event_id', None) and not job.done() and time.monotonic() < deadline:
+                    time.sleep(.1)
+                entry['provider_job_id'] = getattr(getattr(job, 'communicator', None), 'event_id', None)
                 revision = inventory_store.save(inventory, revision)
                 result = job.result(timeout=180)
                 path = Path(hf_probe.video_path(result))
@@ -163,7 +197,7 @@ def collect(trial=False, client_factory=None):
                     'space': profile['space'], 'space_revision': profile['space_revision'], 'prompt': spec['prompt'],
                     'reference_kind': 'authored_text_only', 'generation_evidence': {'request_sha256': digest,
                     'provider_job_id': entry['provider_job_id'], 'gpu_seconds_consumed': None,
-                    'estimated_reserved_seconds': 75, 'tier': tier, 'paid_endpoint_used': False},
+                    'estimated_reserved_seconds': estimate, 'tier': tier, 'paid_endpoint_used': False},
                     'visual_source': visual, 'commercial_license_clearance': True,
                     'commercial_license_evidence': {'source_sha256': media['sha256'], 'reviewed_at': now().isoformat(),
                         'model': {'revision': profile['model_revision'], 'commercial_use': True, 'license_url': profile['model_license_url']},
@@ -177,7 +211,8 @@ def collect(trial=False, client_factory=None):
                 revision = inventory_store.save(inventory, revision)
             except Exception as exc:
                 # A lost reply cannot grant permission to submit the same scene again.
-                entry.update(status='UNKNOWN_NO_RETRY', error_type=type(exc).__name__, reason=hf_probe.classify_error(exc))
+                status, reason = provider_failure(exc)
+                entry.update(status=status, error_type=type(exc).__name__, reason=reason)
                 inventory['status'] = 'GENERATION_HELD'
                 inventory_store.save(inventory, revision)
                 raise RuntimeError('WAN_GENERATION_HELD_NO_BLIND_RETRY') from None
@@ -188,13 +223,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--trial', action='store_true')
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--reconcile-app-failure', action='store_true')
     args = parser.parse_args()
     if args.dry_run:
         return {'status': 'OFFLINE_PROFILE_ONLY', 'new_gpu_calls': 0, 'published': False}
     if (os.getenv('GITHUB_ACTIONS') != 'true' or os.getenv('GITHUB_WORKFLOW') != 'CasaSemEsforco AI30 Free Collector'
             or os.getenv('GITHUB_REF_NAME') != 'main'):
         raise ValueError('AUTHORIZED_EXISTING_CLOUD_WORKFLOW_REQUIRED')
-    return collect(args.trial)
+    return collect(args.trial, reconcile_app_failure=args.reconcile_app_failure)
 
 
 if __name__ == '__main__':

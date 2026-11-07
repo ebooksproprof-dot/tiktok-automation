@@ -3,9 +3,9 @@
   "activated_after_public_trial": false,
   "model_family": "Wan 2.2",
   "variant": "FastWan2.2-TI2V-5B-FullAttn; does not clear or relabel legacy A14B clips",
-  "space": "KingNish/wan2-2-fast",
-  "space_revision": "f70992d594d5db9f9e77930048f560d90b53283c",
-  "space_app_sha256": "af1821ffb452d4d4d7c43aabe3306de06822d98d6d9f3b0226bff0bd0e159ccd",
+  "space": "Upsampler/wan-2-2-5b-video",
+  "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+  "space_app_sha256": "d6a0deb9b9017c5368b8bdaf16bd7150aa8587a599a01b63029742a2566a577d",
   "endpoint": "/generate_video",
   "order": [
     "input_image",
@@ -36,12 +36,13 @@
   "duration_seconds": 5,
   "guidance_scale": 0,
   "max_clips_per_run": 3,
-  "quota_estimate_per_clip_seconds": 75,
+  "quota_estimate_per_clip_seconds": 60,
   "quota_estimate_only": true,
   "additional_budget_brl": 0,
   "use_lora": false,
   "use_cbensimon_weights": false,
   "use_aoti_package": false,
   "reference_kind": "authored_text_only",
-  "reviewed_at": "2026-11-07T13:01:11.373409+00:00"
+  "reviewed_at": "2026-11-07T13:01:11.373409+00:00",
+  "provider_formula": "clip(15+steps*8*(round(duration*24)*height*width)/(49*896*896),25,110); 5s,4 steps,480x832 => 53s, local reservation 60s"
 }
