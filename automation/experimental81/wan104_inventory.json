@@ -32,6 +32,26 @@
       "reconciled_at": "2026-11-07T13:14:27.931840+00:00",
       "quota_claim_preserved": true,
       "evidence": "Actions 42375392951 AppError; gradio_client emits it only for explicit server error response"
+    },
+    "6fbb699d40ec575e743ff7860ff5be58a6a40784916a2cf4b19e73926e32f766": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-07T13:14:31.874669+00:00",
+      "spec": {
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic kitchen pantry, three clear unlabelled glass storage jars on a clean wooden shelf. Gentle continuous camera slide reveals the organized shelf, realistic reflections and stable geometry. No people, no hands, no logos, no text. One calm uninterrupted shot. Setting detail: light oak.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 104101,
+        "randomize_seed": false
+      }
     }
   },
   "outputs": [],
