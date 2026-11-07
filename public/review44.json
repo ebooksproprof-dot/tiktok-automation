@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-07T22:46:46.694060+00:00",
-  "expires_at": "2026-11-07T22:46:46.694060+00:00",
+  "generated_at": "2026-11-07T22:47:37.852755+00:00",
+  "expires_at": "2026-11-07T22:47:37.852755+00:00",
   "queue_snapshot_sha256": "05eb0e6bbcfe98cd75c3f2b6bdc7ef423d09cdfd8d0116e9302f69b9b31f4c46",
-  "state_snapshot_sha256": "7fa81a58e1da421e4c85c3a1389a995db9c7911287ee527e597e9870bdd85a35",
+  "state_snapshot_sha256": "9f27fa8a8389f639d2b64446c1a59393578aa6dc685ec1907871eb5fc322a92c",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-09-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-09-2-55c96e1ba2d39640.mp4",
-      "sha256": "55c96e1ba2d39640233235e1c9e9ccc37bbaba9a6147c74e28ac5141e59d8732",
-      "script_hash": "af82c91c2ca3387c9ad6215ba32d7c4484acde871d9435a7046708903fea85ce",
-      "post_snapshot_sha256": "d4f987cefc730bd19053ef4a44d7f0f811ff274cebae378a103c3c3d6709da30",
-      "title": "Vai lavar as mãos? Enxágue e use material limpo para a secagem. Siga as orientações dos órgãos de saúde para a higiene. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Siga o modo de uso e a quantidade indicados no rótulo. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34213/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — josecr1920; https://pixabay.com/videos/id-34325/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Enxágue e use material limpo para a secagem.",
-        "Siga as orientações dos órgãos de saúde para a higiene.",
-        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
-        "Siga o modo de uso e a quantidade indicados no rótulo.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-09T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "90089879906b21fbdfc7c4f9d4c40cde2a1719c58361b06b169b6f6ab4520ec5"
+  "manifest_sha256": "726d4f2d9a485ccb632581c476448ea6f5333f2d2b4978f8584ae0eed36251c9"
 }
