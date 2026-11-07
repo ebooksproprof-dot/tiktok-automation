@@ -28,13 +28,12 @@ permissions:
   contents: write
   actions: write # Dispatch the existing producer once per confirmed consumption.
 
-concurrency:
-  group: casasemesforco-state
-  cancel-in-progress: false
-
 jobs:
   stock:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
+    concurrency:
+      group: casasemesforco-state
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

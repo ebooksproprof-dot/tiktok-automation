@@ -50,12 +50,11 @@ permissions:
   issues: write
   actions: read
 
-concurrency:
-  group: casasemesforco-state
-  cancel-in-progress: false
-
 jobs:
   create-videos:
+    concurrency:
+      group: casasemesforco-state
+      cancel-in-progress: false
     # Standard public runner only. Never use larger/paid runners.
     runs-on: ubuntu-latest
     timeout-minutes: 55

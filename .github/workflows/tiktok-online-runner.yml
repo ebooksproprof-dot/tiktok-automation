@@ -37,13 +37,14 @@ permissions:
   contents: write
   issues: write
 
-concurrency:
-  group: casasemesforco-state
-  cancel-in-progress: false
-
 jobs:
   run:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
+    # Evaluate the trigger guard before joining the state lock. Skipped children
+    # of canceled runs must not evict a legitimate pending production job.
+    concurrency:
+      group: casasemesforco-state
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 35 # Includes only the first authorized near-term proof wait.
 
