@@ -2,7 +2,7 @@ name: CasaSemEsforco official media acquisition
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 10 * * *" # 07:30 Fortaleza; bounded acquisition and draft renewal
+    - cron: "30 10,18 * * *" # 07:30/15:30 America/Sao_Paulo, before production
   push:
     paths:
       - 'automation/media_acquisition.py'
@@ -50,6 +50,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           MEDIA_PROVIDER_ORDER: ${{ vars.MEDIA_PROVIDER_ORDER || 'pixabay,wikimedia,pexels' }}
+          AUTONOMOUS_HOUSEHOLD_DISCOVERY: 'true'
         run: python automation/media_acquisition.py
       - name: Preserve provenance, API cache and deduplication history
         if: always()

@@ -46,6 +46,34 @@ TOPICS = [
     ('janelas', 'window cleaning cloth', ['window', 'cleaning']),
 ]
 QUERIES_PER_PROVIDER = 4
+# Narrow action queries for the authorized CPU review pipeline. The legacy
+# manual discovery bank stays available; tags still never grant approval.
+HOUSEHOLD_TOPICS = [
+    ('ferro', 'ironing', ['ironing']),
+    ('louca', 'washing dishes', ['dishes']),
+    ('cabides', 'clothes hangers', ['hangers']),
+    ('vassoura', 'sweeping', ['sweeping']),
+    ('livros', 'books shelf', ['books', 'shelf']),
+    ('maos', 'handwashing', ['handwashing']),
+    ('panos', 'wiping', ['wiping']),
+    ('roupas', 'folding clothes', ['folding', 'clothes']),
+    ('ferro2', 'iron clothes', ['iron', 'clothes']),
+    ('louca2', 'dishwashing', ['dishwashing']),
+    ('armario', 'wardrobe', ['wardrobe']),
+    ('vassoura2', 'broom floor', ['broom', 'floor']),
+    ('estante', 'bookshelf', ['bookshelf']),
+    ('maos2', 'washing hands soap', ['hands', 'soap']),
+    ('panos2', 'cleaning cloth', ['cleaning', 'cloth']),
+    ('roupas2', 'laundry folding', ['laundry', 'folding']),
+    ('ferro3', 'ironing shirt', ['ironing', 'shirt']),
+    ('louca3', 'plates washing', ['plates', 'washing']),
+    ('armario2', 'closet clothes', ['closet', 'clothes']),
+    ('vassoura3', 'sweeping floor', ['sweeping', 'floor']),
+    ('livros2', 'library books', ['library', 'books']),
+    ('maos3', 'hand washing', ['hand', 'washing']),
+    ('panos3', 'microfiber', ['microfiber']),
+    ('roupas3', 'clothes folding', ['clothes', 'folding']),
+]
 
 
 def daily_topics(now):
@@ -54,9 +82,10 @@ def daily_topics(now):
     Rotate across the whole finite bank instead of merely reordering the same
     four searches. No pagination crawl, cache eviction or counter reset.
     """
-    offset = (int(now // 86400) * QUERIES_PER_PROVIDER) % len(TOPICS)
-    return [TOPICS[(offset + i) % len(TOPICS)]
-            for i in range(min(QUERIES_PER_PROVIDER, len(TOPICS)))]
+    bank = HOUSEHOLD_TOPICS if os.getenv('AUTONOMOUS_HOUSEHOLD_DISCOVERY') == 'true' else TOPICS
+    offset = (int(now // 86400) * QUERIES_PER_PROVIDER) % len(bank)
+    return [bank[(offset + i) % len(bank)]
+            for i in range(min(QUERIES_PER_PROVIDER, len(bank)))]
 
 
 class AcquisitionError(Exception):
@@ -275,8 +304,24 @@ def run():
     rejected = {key: until for key, until in inbox.get('rejected_until', {}).items()
                 if until > now}
     inbox['rejected_until'] = rejected
-    # Hard storage/review backlog limit; never evict deduplication history.
-    if len(inbox['items']) >= 120:
+    automatic = os.getenv('AUTONOMOUS_HOUSEHOLD_DISCOVERY') == 'true'
+    if automatic:
+        from autonomous_production import stock_status
+        import datetime as dt
+        status = stock_status(read_json(ROOT/'queue.json', {'posts': []}),
+                              read_json(ROOT/'state.json', {'posts': {}}), dt.datetime.now(dt.timezone.utc))
+        if not status['refill_needed']:
+            print('STOCK_TARGET_RESERVED; ACQUISITION_NOT_NEEDED')
+            return
+        ledger = read_json(ROOT/'production_state.json', {'candidates': {}})
+        for item in inbox['items']:
+            reviewed = ledger.get('candidates', {}).get(item['url'], {})
+            if reviewed.get('status') in ('REJECTED', 'QUEUED'):
+                item['automatic_review_status'] = reviewed['status']
+    def pending_count():
+        return sum(x.get('automatic_review_status') not in ('REJECTED', 'QUEUED') for x in inbox['items'])
+    # Limit the active review backlog, preserving consumed/rejected metadata.
+    if pending_count() >= 120:
         raise AcquisitionError('INBOX_REVIEW_CAPACITY_REACHED')
     providers = {}
     for name in os.environ.get('MEDIA_PROVIDER_ORDER', 'pixabay,wikimedia,pexels').split(','):
@@ -301,6 +346,10 @@ def run():
     acquired, attempts = 0, 0
     skipped_known, skipped_cooldown = 0, 0
     known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
+    if automatic and 'pixabay' in providers:
+        providers['pixabay'].known_urls = {x['url'] for x in inbox['items']}
+        providers['pixabay'].known_urls.update(url for url, entry in ledger.get('candidates', {}).items()
+                                              if entry.get('status') in ('REJECTED', 'QUEUED'))
     # At most four queries/provider and four downloads total per run.
     selected_topics = daily_topics(now)
     errors = []
@@ -326,6 +375,10 @@ def run():
                                         response_source=getattr(provider, 'last_response_source', 'not_recorded')))
                 provider_attempts = 0
                 for record in records:
+                    if automatic and name == 'pixabay':
+                        from semantic_review import nominate
+                        if not nominate(record):
+                            continue
                     identity = name + ':' + record['provider_id']
                     if identity in known:
                         skipped_known += 1
@@ -333,7 +386,7 @@ def run():
                     if identity in rejected:
                         skipped_cooldown += 1
                         continue
-                    if provider_attempts >= 2 or attempts >= 4 or acquired >= 2 or len(inbox['items']) >= 120:
+                    if provider_attempts >= 2 or attempts >= 4 or acquired >= 2 or pending_count() >= 120:
                         break
                     attempts += 1
                     provider_attempts += 1
@@ -365,12 +418,12 @@ def run():
                                 skipped_cooldown=skipped_cooldown,
                                 diagnostics=diagnostics, editorial_approved=0,
                                 query_plan=[query for _, query, _ in selected_topics],
-                                query_bank_size=len(TOPICS),
+                                query_bank_size=len(HOUSEHOLD_TOPICS if automatic else TOPICS),
                                 query_budget_per_provider=QUERIES_PER_PROVIDER,
                                 unreviewed_media_count=sum(
                                     r.get('status') == 'pending_visual_review' for r in inbox['items']),
                                 approved_reserve_days=None,
-                                reserve_note='Pending media is not an approved video reserve; manual semantic review required.')
+                                reserve_note='Pending media is not approved stock; rights, visual CPU review and final quality gates remain required.')
         save_json(cache_path, cache)
         save_json(inbox_path, inbox)
         (folder/'CREDITS.txt').write_text(credits(inbox['items']))

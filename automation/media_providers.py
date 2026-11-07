@@ -70,10 +70,25 @@ class PixabayProvider(CachedProvider):
         self.key = key
 
     def search(self, category, query, words):
-        # Modest user-triggered acquisition, not systematic library harvesting.
+        # Advance only when the preceding small page has been reviewed/used.
+        # At most one page per query/run, three pages total, same API budget.
+        page = 1
+        known = getattr(self, 'known_urls', None)
+        if known is not None:
+            for number in (1, 2):
+                key = self.name+':'+query+('' if number == 1 else '|page='+str(number))
+                prior = self.cache.get(key, {}).get('data', {})
+                hits = prior.get('hits', [])
+                urls = [f.get('url') for hit in hits for f in hit.get('videos', {}).values()
+                        if crop_capable(f.get('width', 0), f.get('height', 0))]
+                if (page == number and len(hits) == 15 and urls
+                        and all(any(f.get('url') in known for f in hit.get('videos', {}).values()) for hit in hits)
+                        and int(prior.get('totalHits', 0)) > number*15):
+                    page += 1
         params = dict(key=self.key, q=query[:100], video_type='film', safesearch='true',
-                      min_width=1080, min_height=1920, per_page=15, page=1)
-        data = self.json(query, 'https://pixabay.com/api/videos/?' + urlencode(params))
+                      min_width=1080, min_height=1920, per_page=15, page=page)
+        cache_key = query+('' if page == 1 else '|page='+str(page))
+        data = self.json(cache_key, 'https://pixabay.com/api/videos/?' + urlencode(params))
         result = []
         for hit in data.get('hits', [])[:15]:
             try:

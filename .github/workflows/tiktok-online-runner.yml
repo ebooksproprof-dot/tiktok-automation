@@ -43,6 +43,7 @@ concurrency:
 
 jobs:
   run:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
     timeout-minutes: 35 # Includes only the first authorized near-term proof wait.
 

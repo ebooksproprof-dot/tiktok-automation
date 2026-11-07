@@ -24,6 +24,16 @@ class Renewal44Tests(unittest.TestCase):
         self.assertEqual(m.daily_topics(100 * 86400), m.daily_topics(100 * 86400 + 86399))
         self.assertNotEqual(m.daily_topics(100 * 86400), m.daily_topics(101 * 86400))
 
+    def test_automatic_queries_nominate_household_actions_without_landscape_bed(self):
+        from semantic_review import nominate
+        with patch.dict(m.os.environ, {'AUTONOMOUS_HOUSEHOLD_DISCOVERY': 'true'}):
+            plans = [m.daily_topics(day*86400) for day in range(6)]
+        queries = [query for plan in plans for _, query, _ in plan]
+        self.assertEqual(len(set(queries)), 24)
+        self.assertNotIn('making bed bedroom', queries)
+        for _, query, words in m.HOUSEHOLD_TOPICS:
+            self.assertIsNotNone(nominate({'selection_reason': ' '.join(words)}), query)
+
     def test_pexels_budget_cache_does_not_spend_or_reset_counter(self):
         cache = {'cached': {'at': 100, 'videos': []}}
         provider = m.PexelsProvider('unit-test-placeholder', cache, now=101)

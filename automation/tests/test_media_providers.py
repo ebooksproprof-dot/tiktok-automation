@@ -89,6 +89,25 @@ class ProviderTests(unittest.TestCase):
         self.assertEqual(request.call_count, 1)
         self.assertNotIn('secret-test-value', json.dumps(cache))
 
+    def test_pagination_only_after_all_prior_candidates_known_and_same_budget(self):
+        hits = []
+        for n in range(15):
+            hit = pixabay(); hit['id'] = n
+            hit['videos']['large']['url'] = 'https://cdn.pixabay.com/video/'+str(n)+'.mp4'
+            hits.append(hit)
+        cache = {'pixabay:ironing': {'at': 100, 'data': {'hits': hits, 'totalHits': 40}}}
+        provider = p.PixabayProvider('never-log-this', cache, now=101)
+        provider.known_urls = {h['videos']['large']['url'] for h in hits[:-1]}
+        with patch.object(p, 'request', return_value=io.BytesIO(b'{"hits": []}')) as network:
+            provider.search('ferro', 'ironing', ['ironing'])
+            self.assertEqual(network.call_count, 0)
+        provider.known_urls.add(hits[-1]['videos']['large']['url'])
+        with patch.object(p, 'request', return_value=io.BytesIO(b'{"hits": []}')) as network:
+            provider.search('ferro', 'ironing', ['ironing'])
+            self.assertIn('page=2', network.call_args.args[0])
+        self.assertEqual(provider.requests, 1)
+        self.assertNotIn('never-log-this', json.dumps(cache))
+
     def test_expired_cache_requests_again(self):
         provider = p.WikimediaProvider({'wikimedia:q': {'at': 1, 'data': {}}}, now=90000)
         with patch.object(p, 'request', return_value=io.BytesIO(b'{}')) as request:

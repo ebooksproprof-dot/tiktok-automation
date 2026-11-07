@@ -15,13 +15,13 @@ REVISION = 'a7da5b986cb59b408707209984f360a5f4ad7e47'
 LICENSE = 'https://huggingface.co/' + MODEL + '/blob/' + REVISION + '/README.md'
 PORTRAIT = 'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30'
 FAMILIES = {
-    'clothes': ({'ironing', 'iron', 'closet', 'hanger', 'hangers', 'folding', 'laundry'},
+    'clothes': ({'ironing', 'iron', 'closet', 'wardrobe', 'hanger', 'hangers', 'folding', 'laundry'},
                 {'iron', 'ironing', 'shirt', 'shirts', 'clothes', 'clothing', 'jacket', 'jackets', 'hanger', 'hangers', 'wardrobe', 'closet', 'garment'}),
-    'dishes': ({'dish', 'dishes', 'tableware', 'plate', 'utensils'},
+    'dishes': ({'dish', 'dishes', 'dishwashing', 'tableware', 'plate', 'plates', 'utensils'},
                {'dish', 'dishes', 'plate', 'plates', 'cutlery', 'spoon', 'utensils', 'washing'}),
     'sweeping': ({'sweeping', 'broom', 'dustpan'}, {'broom', 'sweeping', 'dustpan', 'sweep'}),
     'wiping': ({'cloth', 'microfiber', 'wiping'}, {'cloth', 'wiping', 'wipe', 'cleaning', 'countertop', 'sponge'}),
-    'books': ({'books', 'shelf', 'shelves', 'bookcase'}, {'books', 'book', 'shelf', 'shelves', 'bookcase', 'library'}),
+    'books': ({'books', 'bookshelf', 'shelf', 'shelves', 'bookcase'}, {'books', 'book', 'shelf', 'shelves', 'bookcase', 'library'}),
     'handwashing': ({'handwashing'}, {'washing', 'wash', 'soap', 'sink', 'hands'}),
 }
 FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'waterfall', 'river', 'mountain',
@@ -42,6 +42,8 @@ def nominate(record):
     # A botanical "broom" is not a housekeeping action.
     if tags & {'blossom', 'blossoms', 'flower', 'flowers', 'rain'}:
         return None
+    if tags & {'hand', 'hands'} and tags & {'soap', 'washing'}:
+        return 'handwashing'
     return next((name for name, (hints, _) in FAMILIES.items() if hints & tags), None)
 
 
