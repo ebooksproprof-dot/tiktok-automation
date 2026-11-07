@@ -21,7 +21,8 @@
         "guidance_scale": 0,
         "seed": 104101,
         "randomize_seed": false
-      }
+      },
+      "provider_job_id": null
     }
   },
   "outputs": [],
