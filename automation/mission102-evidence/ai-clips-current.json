@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-11-07T05:02:11.231225+00:00",
+  "clips": [
+    {
+      "slot": 0,
+      "sha256": "9beffe8705114e562201221ccf43013db950c72ad299500250060e14eb1e3689",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": []
+    },
+    {
+      "slot": 1,
+      "sha256": "53057032695adf534e1b6b37fa01d077e8b18d955fc49d9a8557e5d623be0555",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": []
+    },
+    {
+      "slot": 2,
+      "sha256": "b64d4095fad0eb7252fde2d5d83b4fd3041ba2d91b69395b499cd59e1e3206e4",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": []
+    },
+    {
+      "slot": 3,
+      "sha256": "328c3dcef95f4e9787172bb418d4f09e493405ea7a48f0cd9b8e8d9413174bc1",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": []
+    },
+    {
+      "slot": 4,
+      "sha256": "1704813db0559080e288798ff4761077568f3c7bb0f2903b7e95d6a1ab097df1",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": [
+        {
+          "source_id": "https://videos.pexels.com/video-files/9473227/9473227-uhd_2160_3840_24fps.mp4",
+          "source_sha256": "4ec7f9969e5d7babf47f240b7b6b7ec3f07db5ffeb49ccbb415a3cb68080aa25",
+          "distances": [
+            4,
+            9,
+            8,
+            5,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 5,
+      "sha256": "d5a6944f09af63d3f76477b023cec34931e16deccb312e13b4e17a611b235f7b",
+      "hash_matches_inventory": true,
+      "commercial_clearance": false,
+      "historical_visual_matches": []
+    }
+  ],
+  "flags_changed": false,
+  "gpu_calls": 0,
+  "fifth_clip_classification": "Different SHA; excessive visual similarity to already used reference. Protection preserved."
+}

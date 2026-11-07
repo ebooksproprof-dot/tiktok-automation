@@ -2,6 +2,7 @@ import datetime as dt
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 import tempfile
 import unittest
@@ -137,6 +138,7 @@ class PolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'COMMERCIAL_LICENSE'):
             source_license.verify(record, lambda url: b'Non-commercial use only' if url.endswith('/terms/') else page())
 
+    @unittest.skipUnless(shutil.which('ffmpeg'), 'FFmpeg integration requires installed validator')
     def test_real_freeze_detector_rejects_still_and_accepts_motion(self):
         with tempfile.TemporaryDirectory() as folder:
             for name, source, accepted in (('still', 'color=c=blue:s=96x160:r=15', False),

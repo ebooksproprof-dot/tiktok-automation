@@ -33,6 +33,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install media validator before integration tests
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Regression tests
         env:
           GITHUB_STEP_SUMMARY: ''
@@ -43,8 +45,6 @@ jobs:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           python -c "import os; [print(k + '_PRESENT=' + str(bool(os.environ.get(k)))) for k in ('PEXELS_API_KEY', 'PIXABAY_API_KEY')]"
-      - name: Install media validator
-        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Acquire at most two new review candidates
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}

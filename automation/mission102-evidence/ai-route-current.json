@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-11-07T05:01:48.595395+00:00",
+  "components": [
+    {
+      "component": "wan_model",
+      "url": "https://huggingface.co/api/models/Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "sha": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "license": "apache-2.0",
+      "license_name": null,
+      "private": false,
+      "runtime": null
+    },
+    {
+      "component": "repacked_wan",
+      "url": "https://huggingface.co/api/models/cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers",
+      "sha": "1f424b0caf6617cfb63822bb0298331bcf44e0e1",
+      "license": null,
+      "license_name": null,
+      "private": false,
+      "runtime": null
+    },
+    {
+      "component": "compiled_wan",
+      "url": "https://huggingface.co/api/models/cbensimon/WanTransformer3DModel-sm120-cu130-raa",
+      "sha": "81e794f80b118f78d9f1f7fec4efe445c392eb61",
+      "license": null,
+      "license_name": null,
+      "private": false,
+      "runtime": null
+    },
+    {
+      "component": "kijai_lora",
+      "url": "https://huggingface.co/api/models/Kijai/WanVideo_comfy",
+      "sha": "8260d429d19fd7a72304cad059160b95d843913f",
+      "license": null,
+      "license_name": null,
+      "private": false,
+      "runtime": null
+    },
+    {
+      "component": "space",
+      "url": "https://huggingface.co/api/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+      "sha": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+      "license": null,
+      "license_name": null,
+      "private": false,
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "zero-a10g",
+          "requested": "zero-a10g"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 4,
+          "requested": "auto"
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "zero-gpu-aot-wan2-2-fp8da-aoti-faster.hf.space",
+            "stage": "READY"
+          },
+          {
+            "domain": "zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+        "pySpacesVersion": "0.51.1"
+      }
+    }
+  ],
+  "additional_gpu_calls": 0,
+  "commercial_flags_changed": false
+}

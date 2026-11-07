@@ -203,8 +203,8 @@ jobs:
           name: automatic-production-proof
           path: |
             tmp/autonomous-proof/
-            tmp/daily/release-output/
-          retention-days: 7
+            tmp/daily/release-output/*.json
+          retention-days: 1 # MP4s are already preserved durably in Releases.
           if-no-files-found: ignore
       - name: Evidence summary
         if: always()
