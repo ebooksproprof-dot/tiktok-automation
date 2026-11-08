@@ -1429,7 +1429,72 @@
       "height": 1080,
       "duration": 10.046667,
       "bytes": 5456610,
-      "acquired_at": 1794061618
+      "acquired_at": 1794061618,
+      "automatic_review_status": "QUEUED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "140591",
+      "url": "https://cdn.pixabay.com/video/2022/11/26/140591-775389284_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-140591/",
+      "author": "jadeallencook",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: jadeallencook / Pixabay — https://pixabay.com/videos/id-140591/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: books, book store, library, reading, knowledge, education, learning, berkley",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/11/26/140591-775389284_large.mp4",
+      "sha256": "21588181645145bc83a69980d899cca3fc6d9f4022bd6e4c998fe530b2eb7503",
+      "dhash": [
+        "9b1567333637d2d7",
+        "9b15677576379bd7",
+        "9b15677333379bd7",
+        "9b15677533379fd7",
+        "9b15677533339fd7"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 12.411667,
+      "bytes": 40282229,
+      "acquired_at": 1794177045
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "35005",
+      "url": "https://cdn.pixabay.com/video/2020/04/04/35005-405620753_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-35005/",
+      "author": "gcova",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: gcova / Pixabay — https://pixabay.com/videos/id-35005/",
+      "category": "maos3",
+      "query": "hand washing",
+      "selection_reason": "Provider tags: hand sanitizer, sanitizer, hygiene, washing, hand",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/04/35005-405620753_large.mp4",
+      "sha256": "8adde05e5828e3a0bdaa35fa164072c752c12d9faf2afd3ae7f4ed5163fd6974",
+      "dhash": [
+        "17173737671f1f1f",
+        "1b181c3c343a1b19",
+        "1f3737377b1f0f1f",
+        "173737256f1f3c3e",
+        "173737277f3b3b1e"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 22.856167,
+      "bytes": 13650734,
+      "acquired_at": 1794177051
     }
   ],
   "rejected_until": {
@@ -1437,45 +1502,45 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794061616,
+    "at": 1794177040,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 6,
+    "skipped_known": 10,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "estante",
+        "category": "livros2",
         "status": "search_ok",
-        "eligible_candidates": 3,
-        "response_source": "cache"
+        "eligible_candidates": 4,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "estante",
+        "category": "livros2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "maos2",
+        "category": "maos3",
         "status": "search_ok",
-        "eligible_candidates": 13,
-        "response_source": "cache"
+        "eligible_candidates": 8,
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "bookshelf",
-      "washing hands soap",
-      "cleaning table",
-      "laundry folding"
+      "library books",
+      "hand washing",
+      "microfiber",
+      "clothes folding"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 34,
+    "unreviewed_media_count": 36,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
