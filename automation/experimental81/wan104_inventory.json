@@ -232,6 +232,26 @@
       },
       "sha256": "1a80e7d453c12e1208056f72c672b6b7b812c18bef1d540654f2dd0d57746cf9",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-1a80e7d453c12e1208056f72.mp4"
+    },
+    "1ccdd9e97831f988d4b771a2a1c9919a1c6ed29a60aabc22f6154c651a25b537": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-08T13:18:43.497823+00:00",
+      "spec": {
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic linen cupboard with neatly folded cotton towels on an open shelf, soft window light. Slow continuous camera push toward the towels, realistic fabric texture, stable objects and natural shadows. No people, no hands, no logos, no text. One uninterrupted shot. Setting detail: warm walnut.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 104203,
+        "randomize_seed": false
+      }
     }
   },
   "outputs": [
