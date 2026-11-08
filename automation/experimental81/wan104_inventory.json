@@ -68,6 +68,73 @@
           "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
         }
       }
+    },
+    {
+      "slot": 1,
+      "episode": 2,
+      "sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-c270d7a327a0f994b06da140.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+        "bytes": 403694
+      },
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "prompt": "Photorealistic linen cupboard with neatly folded cotton towels on an open shelf, soft window light. Slow continuous camera push toward the towels, realistic fabric texture, stable objects and natural shadows. No people, no hands, no logos, no text. One uninterrupted shot. Setting detail: warm walnut.",
+      "reference_kind": "authored_text_only",
+      "generation_evidence": {
+        "request_sha256": "1ccdd9e97831f988d4b771a2a1c9919a1c6ed29a60aabc22f6154c651a25b537",
+        "provider_job_id": "73d61672f17245fb9d48e234e4f665d4",
+        "gpu_seconds_consumed": null,
+        "estimated_reserved_seconds": 60,
+        "tier": "free",
+        "paid_endpoint_used": false
+      },
+      "visual_source": {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-c270d7a327a0f994b06da140.mp4",
+        "sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+        "dhash": [
+          "f8f8f9f8f8fc0300",
+          "f8f8f01f3f3f0180",
+          "f8fcf8003f3f0180",
+          "f07cf8003f3d0180",
+          "787c78003f3f0180"
+        ]
+      },
+      "commercial_license_clearance": true,
+      "commercial_license_evidence": {
+        "source_sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+        "reviewed_at": "2026-11-08T13:19:26.619154+00:00",
+        "model": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "derivative": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "voice": {
+          "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+        },
+        "reference": {
+          "revision": "1ccdd9e97831f988d4b771a2a1c9919a1c6ed29a60aabc22f6154c651a25b537",
+          "commercial_use": true,
+          "basis": "original authored text; no third-party image",
+          "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+        }
+      }
     }
   ],
   "requests": {
@@ -234,7 +301,7 @@
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-1a80e7d453c12e1208056f72.mp4"
     },
     "1ccdd9e97831f988d4b771a2a1c9919a1c6ed29a60aabc22f6154c651a25b537": {
-      "status": "GENERATED_AWAITING_STORAGE",
+      "status": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW",
       "at": "2026-11-08T13:18:43.497823+00:00",
       "spec": {
         "space": "Upsampler/wan-2-2-5b-video",
@@ -262,7 +329,9 @@
         "has_audio": false,
         "sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
         "bytes": 403694
-      }
+      },
+      "sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-c270d7a327a0f994b06da140.mp4"
     }
   },
   "outputs": [
