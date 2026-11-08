@@ -2353,15 +2353,10 @@
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
-    "ready_before": 3,
-    "ready_after": 4,
-    "target": 4,
-    "source": "licensed_stock_fallback",
-    "new_generative_ai_calls": 0,
-    "paid_services_enabled": false,
-    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+    "status": "STOCK_TARGET_MET",
+    "ready": 4,
+    "held_uncertain": 0,
+    "created": 0
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
