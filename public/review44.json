@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-08T13:35:33.649747+00:00",
-  "expires_at": "2026-11-08T13:35:33.649747+00:00",
+  "generated_at": "2026-11-08T13:36:18.514830+00:00",
+  "expires_at": "2026-11-08T13:36:18.514830+00:00",
   "queue_snapshot_sha256": "f5edbf7206fe99ca5dc7b10ab70c54f6a4a3bbd2e8f7c9a4654211d252ccf55f",
-  "state_snapshot_sha256": "ebfab45727130f44cd11ce0f118c6afb12b3d227fcadea212e49a60ce9ca2aa1",
+  "state_snapshot_sha256": "a4cd1536db338732abd67f959d5a57376f4c456c6e4a420fad16e5bf15c913df",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-10-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-10-1-9fc65411388d8bee.mp4",
-      "sha256": "9fc65411388d8beeee77eca4055042c49091e69ad4d222d2ac2be6f4f9a070cc",
-      "script_hash": "8bc208da933e4aaeceed47f7b5ca39c4cd8880a1d0a794e565b329905587ec0d",
-      "post_snapshot_sha256": "3c8c6f3fd612bdeada1fc2b5dc190a51b67f843fa4a91a083f91f28f385c01a8",
-      "title": "Vai lavar as mãos? Siga as orientações dos órgãos de saúde para a higiene. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Ao terminar, feche a torneira sem deixar água correndo. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Emilioamador16; https://pixabay.com/videos/id-34535/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — Emilioamador16; https://pixabay.com/videos/id-34537/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Siga as orientações dos órgãos de saúde para a higiene.",
-        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
-        "Ao terminar, feche a torneira sem deixar água correndo.",
-        "Mantenha a área da pia livre para utilizar com segurança.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-10T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "eeb317a4f1388e8c59e00ad08d8338cabada31962b49de7cc9005a99670c77b8"
+  "manifest_sha256": "24041b57824bfe8c135d0e16de989b1dcdcb6c274927741c0d1e04827ba78894"
 }
