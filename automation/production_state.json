@@ -3075,7 +3075,7 @@
       "target_workflow": "acquire-media.yml"
     },
     "2026-11-09T12:00:00+00:00|acquire-media.yml": {
-      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "status": "DISPATCHED",
       "at": "2026-11-09T16:31:28.789417Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "acquire-media.yml"
