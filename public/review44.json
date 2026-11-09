@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-09T02:52:09.805713+00:00",
-  "expires_at": "2026-11-09T02:52:09.805713+00:00",
+  "generated_at": "2026-11-09T02:53:07.030741+00:00",
+  "expires_at": "2026-11-09T02:53:07.030741+00:00",
   "queue_snapshot_sha256": "aa47bf2c46c16094d9738e1caa54e07c8529562e21c23659abd32ba298a9fb5f",
-  "state_snapshot_sha256": "3d00eef0e84f63ecc6af6e4df89a7238442ecd99582c518ab59a0371c23604b0",
+  "state_snapshot_sha256": "1227c576f51742afbe794ad4627373b8ef1e94d3f2ad4fe00a5fa8c075ce7a66",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-10-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-10-2-0380f723894ba8b0.mp4",
-      "sha256": "0380f723894ba8b055e1f65c66f1feb16a2f622655ef22a28cc88dd0141fc3aa",
-      "script_hash": "ee73222df2708c114888d6b13fef0069b249214f03f2b43d7d37814ee17f2294",
-      "post_snapshot_sha256": "0bb5e0532dc5f414aaded0d6265f93e4ff3a2d61d192974a5c3c4bb5aced51d5",
-      "title": "A louça acumulou? Use o produto e a esponja adequados ao material. Deixe espaço no escorredor sem formar uma pilha instável. Ao terminar, retire os resíduos do coletor do ralo. Mantenha os objetos cortantes separados e seguros. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — chayka1270; https://pixabay.com/videos/id-9631/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — chayka1270; https://pixabay.com/videos/id-9632/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "A louça acumulou?",
-        "Use o produto e a esponja adequados ao material.",
-        "Deixe espaço no escorredor sem formar uma pilha instável.",
-        "Ao terminar, retire os resíduos do coletor do ralo.",
-        "Mantenha os objetos cortantes separados e seguros.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-10T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "662898b49a61d7c762cc7fbacdbce6b2fb6a698e578a3e795fc5cfae931ac65c"
+  "manifest_sha256": "0551c3d11062380f7a01e2e0a115a370378583faa0a0f2de4cfa72b26e9dee80"
 }
