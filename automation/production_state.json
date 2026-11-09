@@ -2387,7 +2387,7 @@
         "author": "josecr1920",
         "commercial_use": true,
         "reviewed_at": "2026-11-08T23:01:33.149733+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "1d30af0344185dbceb4f679224541d9aec2e32ca6a2a56cc06aa449e90a4ffd9",
         "license_policy": {
@@ -2432,11 +2432,20 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1794200648.5309286
+        }
+      ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1794200648.5309286
+      "retry_after": 1794262714.8432758
     },
     "https://cdn.pixabay.com/video/2020/04/04/35005-405620753_large.mp4": {
       "status": "REJECTED",
@@ -2490,7 +2499,7 @@
         "author": "chayka1270",
         "commercial_use": true,
         "reviewed_at": "2026-11-09T02:45:03.670876+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "e207bc8579f69f675908d70f74ba8e51cecd789d2cf9fe6b71f4bf78bf28dfa9",
         "license_policy": {
@@ -2660,6 +2669,136 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2020/05/24/40054-424371552_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "e0f8823f52f945304767179275474a6228b76bdf5f5251d3ae1c1fc6030026be",
+      "license": {
+        "source_sha256": "e0f8823f52f945304767179275474a6228b76bdf5f5251d3ae1c1fc6030026be",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/24/40054-424371552_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-40054/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "17b5bab3804b2d9ec1b178b8c526d7a13641111ef4bfb68d1955404ba992f3ed",
+        "author": "AlexKopeykin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T16:18:36.179726+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "17b5bab3804b2d9ec1b178b8c526d7a13641111ef4bfb68d1955404ba992f3ed",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image depicts a large industrial setting with several large cylindrical objects. These cylindrical objects are likely part of a machine or equipment, possibly a part of a production line or a large machinery setup. The cylindrical objects are arranged in a somewhat orderly fashion",
+          "The image shows a factory setting with several metal objects and a worker. The worker is wearing a hard hat and protective gear, suggesting they are working in a hazardous environment. The metal objects in the foreground appear to be cylindrical, possibly part of",
+          "The image depicts a factory setting with several metal objects and machinery. The primary focus is on a series of cylindrical metal objects, which appear to be part of a machine or apparatus. These cylindrical objects are mounted on a platform or surface, and"
+        ],
+        "frame_sha256": [
+          "86ae8f932c72bfffd1544640deb4f6a669aea00680144a3bdb5117090703a05f",
+          "b3494765abf47b3f69eebe42266f1f073d7ff6aadf0aea0a12c8db214b9bf5f9",
+          "151592d6b961c5f88c9f88059df8a4e1abd6f7cc4c4a5e6e844445e226f4b174"
+        ],
+        "source_sha256": "e0f8823f52f945304767179275474a6228b76bdf5f5251d3ae1c1fc6030026be",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 93.02,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/08/03/46308-447422960_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "32338c3d45aea76acd7874d7a64c031bdaad548f85fc364b9ca9cc0a13f4932d",
+      "license": {
+        "source_sha256": "32338c3d45aea76acd7874d7a64c031bdaad548f85fc364b9ca9cc0a13f4932d",
+        "source_url": "https://cdn.pixabay.com/video/2020/08/03/46308-447422960_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-46308/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "f853fdb140d9f7aca15a5a17a36fe66c2b3a7eaed0b48bd3ab3873da29629eb4",
+        "author": "Matthias_Groeneveld",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T16:20:15.418852+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "f853fdb140d9f7aca15a5a17a36fe66c2b3a7eaed0b48bd3ab3873da29629eb4",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image shows a chain attached to a metal object. The chain is positioned horizontally and appears to be made of metal, possibly steel or iron. The metal object is likely a part of a larger structure, possibly a bridge or a rail.",
+          "The image features a chain. The chain appears to be made of metal and is attached to a structure that is not clearly visible. The chain is positioned horizontally and seems to be part of a larger system or mechanism.\n\nIn the background",
+          "The image shows a chain that appears to be attached to a metal object. The chain is black and appears to be made of metal, possibly steel or iron. The metal object is not clearly visible, but it is likely part of a larger"
+        ],
+        "frame_sha256": [
+          "e02e3cf4abe477d75b2b4d47b22ba35cc0591208bb2bdd77e053bf28a3eaccbf",
+          "9f7ecf55960c6acb2c4aa3e49e2b93f31033006b6cbeddb88e8739041f996210",
+          "caa4128ca350b1ca771b711d5ae949b680d83e20c2be83201f429ee2aa2ddbad"
+        ],
+        "source_sha256": "32338c3d45aea76acd7874d7a64c031bdaad548f85fc364b9ca9cc0a13f4932d",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 94.315,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -2745,15 +2884,17 @@
     },
     "casasem-2026-11-09-1": {
       "sha256": "1c5bca90c1319f0e2de6d886795538fa0212906d84e4862d7378d71f0e7e57a4",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-09T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/24/34209-400954427_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/24/34211-400954438_large.mp4"
       ],
       "provider_id": "6aef3909d6bbae6fa1928169",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706156862869146898"
+      ]
     },
     "casasem-2026-11-09-2": {
       "sha256": "55c96e1ba2d39640233235e1c9e9ccc37bbaba9a6147c74e28ac5141e59d8732",
@@ -2781,19 +2922,22 @@
     },
     "casasem-2026-11-10-2": {
       "sha256": "0380f723894ba8b055e1f65c66f1feb16a2f622655ef22a28cc88dd0141fc3aa",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-10T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2017/06/06/9631-220550299_large.mp4",
         "https://cdn.pixabay.com/video/2017/06/06/9632-220550301_large.mp4"
-      ]
+      ],
+      "provider_id": "6af1358fe29b1359f0c51a86",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
     "ready_before": 3,
-    "ready_after": 4,
+    "ready_after": 3,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
