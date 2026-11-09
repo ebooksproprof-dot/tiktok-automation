@@ -1462,7 +1462,8 @@
       "height": 2160,
       "duration": 12.411667,
       "bytes": 40282229,
-      "acquired_at": 1794177045
+      "acquired_at": 1794177045,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1494,7 +1495,72 @@
       "height": 1080,
       "duration": 22.856167,
       "bytes": 13650734,
-      "acquired_at": 1794177051
+      "acquired_at": 1794177051,
+      "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9396",
+      "url": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9396/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9396/",
+      "category": "ferro",
+      "query": "ironing",
+      "selection_reason": "Provider tags: iron, ironing, things, sheet, gardina, ironing board, woman, the maid, hot, steam",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+      "sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+      "dhash": [
+        "5b4b43a363636145",
+        "4b4b434363233115",
+        "4b43436363614115",
+        "5763437373312111",
+        "5959515161614515"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 8.52,
+      "bytes": 4735679,
+      "acquired_at": 1794185693
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9520",
+      "url": "https://cdn.pixabay.com/video/2017/06/03/9520-220204067_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9520/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9520/",
+      "category": "louca",
+      "query": "washing dishes",
+      "selection_reason": "Provider tags: view from above, grandmother, pensioner, old man, washing dishes, cup, a spoon, fork, tableware, sink, kitchen, detergents",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/06/03/9520-220204067_large.mp4",
+      "sha256": "6afed17a4ea5a4fa739dbe283d1c6ca7c4a64477008095d8b46b25724e2d0edb",
+      "dhash": [
+        "71b1b1f9e9f9cec6",
+        "71b1b1f9e9f1cec6",
+        "71b1b1f9e9e9cec6",
+        "71b3b9f9e9f1cece",
+        "71b1b9e9e9f1c6c6"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.44,
+      "bytes": 5370878,
+      "acquired_at": 1794185695
     }
   ],
   "rejected_until": {
@@ -1502,45 +1568,45 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794177040,
+    "at": 1794185691,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 10,
+    "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "livros2",
+        "category": "ferro",
         "status": "search_ok",
-        "eligible_candidates": 4,
+        "eligible_candidates": 5,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "livros2",
+        "category": "ferro",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "maos3",
+        "category": "louca",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 2,
         "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "library books",
-      "hand washing",
-      "microfiber",
-      "clothes folding"
+      "ironing",
+      "washing dishes",
+      "clothes hangers",
+      "cleaning window"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 36,
+    "unreviewed_media_count": 38,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
