@@ -3050,7 +3050,7 @@
       "target_workflow": "casasemesforco-daily.yml"
     },
     "casasem-2026-11-09-2": {
-      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "status": "DISPATCHED",
       "at": "2026-11-09T22:16:28.417514Z",
       "trigger": "CONFIRMED_CONSUMPTION",
       "target_workflow": "acquire-media.yml"
