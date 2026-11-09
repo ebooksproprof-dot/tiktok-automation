@@ -2475,6 +2475,191 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4": {
+      "status": "ACCEPTED",
+      "source_sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+      "license": {
+        "source_sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+        "source_url": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-9396/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "e207bc8579f69f675908d70f74ba8e51cecd789d2cf9fe6b71f4bf78bf28dfa9",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T02:45:03.670876+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "e207bc8579f69f675908d70f74ba8e51cecd789d2cf9fe6b71f4bf78bf28dfa9",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image shows a woman standing in front of a window. She is holding a white cloth with a black and yellow pattern. The woman is wearing a black and yellow patterned shirt. She is bending slightly, and her hands are holding the cloth",
+          "The image shows a woman standing in front of a table. She is holding a blue and white object, possibly a cup or a container, and appears to be arranging or putting something on the table. The table is covered with a white cloth",
+          "The image shows a woman standing at a table covered with a white cloth. She is wearing a black and white patterned shirt with black pants. The woman is holding a white object, possibly a book or a piece of paper, in her right"
+        ],
+        "frame_sha256": [
+          "40b6fd00c111553f2003f7a15efa3c05f64564277cddd3892a79cf9f1496e3bf",
+          "47f09774be996477186b686697c98882a7efec85f9858003963a421c22419144",
+          "b61f24cce74ddcd2fc3c6897abfa02806b05307291a30e7d15e81e4266cbcdfb"
+        ],
+        "source_sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 106.422,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    "https://cdn.pixabay.com/video/2017/06/06/9631-220550299_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "9a4f87dad0f525d518fda21a63ebc467f9087ac92b0b95c2baf5ae7aff6d4419",
+      "license": {
+        "source_sha256": "9a4f87dad0f525d518fda21a63ebc467f9087ac92b0b95c2baf5ae7aff6d4419",
+        "source_url": "https://cdn.pixabay.com/video/2017/06/06/9631-220550299_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-9631/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "1947de3693a3a195fdcb21cf17f82071d7bf4b4a44730510898adfb1fb4f9b97",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T02:46:56.460969+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "1947de3693a3a195fdcb21cf17f82071d7bf4b4a44730510898adfb1fb4f9b97",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "dishes",
+        "captions": [
+          "The image shows a woman washing dishes in a kitchen. She is wearing a floral-patterned shirt and is holding a yellow dishwashing sponge in her right hand. She is focused on washing the dishes, which are placed on a countertop",
+          "The image shows an elderly woman engaged in a task that appears to be washing dishes. She is standing in front of a kitchen counter, which is partially visible in the image. The counter has various kitchen items on it, including a sink,",
+          "The image shows a woman standing in front of a kitchen counter. She is wearing a patterned shirt and glasses. The woman is holding a small, round container in her hands. The counter has various items on it, including a small bowl,"
+        ],
+        "frame_sha256": [
+          "64df357bc436feef9dccd53a92d1b745d0f4e3ac8519b7e5afa22ca1621501fa",
+          "3eea25234d8b07304c7ec59631afb9b4a6ad76cff8570471341a3f4fe7f7d572",
+          "d614f700dcafb8e445b24c4d61059863710a6f981b7ca88cff0738b22b39ed2d"
+        ],
+        "source_sha256": "9a4f87dad0f525d518fda21a63ebc467f9087ac92b0b95c2baf5ae7aff6d4419",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 106.494,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 1794214179.4959855
+    },
+    "https://cdn.pixabay.com/video/2017/06/06/9632-220550301_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "2d5e30525f9ffa7b8941eb7cdb95a5425e41f5e2be73508c356417e05647c664",
+      "license": {
+        "source_sha256": "2d5e30525f9ffa7b8941eb7cdb95a5425e41f5e2be73508c356417e05647c664",
+        "source_url": "https://cdn.pixabay.com/video/2017/06/06/9632-220550301_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-9632/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "6384d88872be73cff8d4394b293f5e4b742ac403e1e08aac8fb6b2d763cb4b96",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T02:49:40.814503+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6384d88872be73cff8d4394b293f5e4b742ac403e1e08aac8fb6b2d763cb4b96",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "dishes",
+        "captions": [
+          "The image shows a person washing something in a yellow bowl. The person is holding a yellow bowl with their left hand and appears to be scrubbing or rinsing something inside the bowl. The bowl is placed on a counter or table, which is",
+          "The image shows a person preparing food. The person is holding a yellow bowl filled with food. The food appears to be a mixture of ingredients, possibly a salad or a dish, as it is in a bowl. The person is using their",
+          "The image shows a person holding a yellow bowl filled with food. The bowl is placed on a countertop, and the person's hands are visible inside the bowl. The food appears to be a type of pasta or similar dish, as it"
+        ],
+        "frame_sha256": [
+          "0b20c248bd61cd19bfad06a34dc853675b938260401e4f482a0ae07fd4efbd53",
+          "520b8969dcf933c49b5cb927d05e9aac01b2d379c0c532f18f8b2f1a76d23711",
+          "2bff1c294759069f6a7b745f315b08c63a54b38d949b4715801d4a6159438511"
+        ],
+        "source_sha256": "2d5e30525f9ffa7b8941eb7cdb95a5425e41f5e2be73508c356417e05647c664",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 106.439,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     }
   },
   "outputs": {
@@ -2593,13 +2778,22 @@
       "provider_id": "6af07acf9214322f6856cca5",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-10-2": {
+      "sha256": "0380f723894ba8b055e1f65c66f1feb16a2f622655ef22a28cc88dd0141fc3aa",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-10T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2017/06/06/9631-220550299_large.mp4",
+        "https://cdn.pixabay.com/video/2017/06/06/9632-220550301_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 3,
-    "ready_after": 3,
+    "ready_after": 4,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
