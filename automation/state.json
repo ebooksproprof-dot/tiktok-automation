@@ -1287,7 +1287,7 @@
     },
     "casasem-2026-11-10-1": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-11-08T13:36:13Z",
       "sha256": "9fc65411388d8beeee77eca4055042c49091e69ad4d222d2ac2be6f4f9a070cc",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-10-1-9fc65411388d8bee.mp4",
@@ -1330,13 +1330,35 @@
         }
       ],
       "scheduled_at": "2026-11-10T10:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6af07acf9214322f6856cca5",
-      "last_checked_at": "2026-11-08T13:36:17Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-11-10T15:15:26Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7706528322636877074",
+      "buffer_sent_at_present": true,
+      "last_reconcile_attempt_at": "2026-11-10T15:15:26Z",
+      "buffer_sent_at": "2026-11-10T13:08:07.020000+00:00",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706528322636877074"
+      ],
+      "publicly_available_post_id": [
+        "7706528322636877074"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink + unauthenticated public TikTok playback",
+      "public_visibility_evidence": {
+        "checked_at": "2026-11-10T15:15:44.536911+00:00",
+        "url": "https://www.tiktok.com/@.casasemesforo/video/7706528322636877074",
+        "video_id": "7706528322636877074",
+        "public_playback_verified": true,
+        "caption_hook_matches": true,
+        "playback_progressed": true,
+        "media_duration": 18.753809,
+        "width": 576,
+        "height": 1024,
+        "authenticated": false,
+        "method": "public browser video + matching caption + playback progression"
+      }
     },
     "casasem-2026-11-10-2": {
       "provider": "buffer",
@@ -1390,6 +1412,42 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-11-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-10T15:15:47Z",
+      "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-1-f8a7b6075c3d9bdb.mp4",
+      "concept": "auto-laundry-312dd26cc613",
+      "script_sha256": "312dd26cc613f5c9513893d2a5b46e3c41cd2a3cbef55073c5dfae06ce2fb837",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Separe os tecidos conforme as orientações de lavagem.",
+        "Confira as instruções de limpeza do filtro no manual.",
+        "Siga o manual da sua máquina e a capacidade indicada.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4",
+          "sha256": "16b92e3eaea57ad5e0dd19ea27931f48918926df34b379540e5d06f1465b0b33",
+          "dhash": [
+            "aaaaaa9aaeaaaafe",
+            "aaaaaa9eaeaaaafe",
+            "aaaa6abeaeaa6afe",
+            "aaaa6a9eaeaaeafe",
+            "aaea6a9eaeaaeafe"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-11T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -1640,7 +1698,10 @@
     "2026-11-09T02:53:03.338456Z",
     "2026-11-09T02:53:05.414349Z",
     "2026-11-09T16:11:50.777121Z",
-    "2026-11-09T22:15:27.046562Z"
+    "2026-11-09T22:15:27.046562Z",
+    "2026-11-10T15:15:25.842744Z",
+    "2026-11-10T15:15:26.080335Z",
+    "2026-11-10T15:15:45.166698Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -1648,25 +1709,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-11-09T22:30:27.226158Z",
-        "observed_at": "2026-11-09T22:15:27.226158Z"
+        "remaining": 147,
+        "reset_at": "2026-11-10T15:30:26.338497Z",
+        "observed_at": "2026-11-10T15:15:45.338497Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 598,
-        "reset_at": "2026-11-10T16:11:51.226158Z",
-        "observed_at": "2026-11-09T22:15:27.226158Z"
+        "remaining": 595,
+        "reset_at": "2026-11-10T16:11:51.338497Z",
+        "observed_at": "2026-11-10T15:15:45.338497Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 750,
-        "reset_at": "2026-11-16T22:01:05.226158Z",
-        "observed_at": "2026-11-09T22:15:27.226158Z"
+        "remaining": 747,
+        "reset_at": "2026-11-16T22:01:05.338497Z",
+        "observed_at": "2026-11-10T15:15:45.338497Z"
       }
     },
     "consecutive_errors": 0,
