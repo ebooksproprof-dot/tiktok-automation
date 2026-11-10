@@ -2863,6 +2863,266 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2017/09/07/11851-233049419_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "7567d825c4a411875a45775ed243c95542e75a673c56c0a80b63057ab73c0d37",
+      "license": {
+        "source_sha256": "7567d825c4a411875a45775ed243c95542e75a673c56c0a80b63057ab73c0d37",
+        "source_url": "https://cdn.pixabay.com/video/2017/09/07/11851-233049419_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-11851/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "52ce3bc2336bc0ebeca7b48f5802d79f3091be966178cd9340c07bed939e51b9",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T02:15:37.949744+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "52ce3bc2336bc0ebeca7b48f5802d79f3091be966178cd9340c07bed939e51b9",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wiping",
+        "captions": [
+          "The image shows a classroom setting with a chalkboard, a whiteboard, and a teacher. The teacher is standing in front of the chalkboard, facing the camera. She is wearing a blue patterned shirt and blue shorts. She has short hair",
+          "The image shows a classroom setting with a chalkboard, whiteboard, and a woman standing in front of it. The chalkboard has a design of flowers and hearts, with the flowers being yellow and the hearts being pink. The woman is wearing",
+          "A woman is writing on a blackboard."
+        ],
+        "frame_sha256": [
+          "24acf62dc7c7fbc0695f1fbd30ebbbd55971eb1f027d785b8d8604aa12096df0",
+          "82136c4d2b162f517a89a6058a90efaf43e95a5cf9d8bfd0c5d4414dd99e9a7e",
+          "9c4dd4d595bf2ab4ce123e5828d9d99ef4874c019b81d45ae579a76fcacd2c3d"
+        ],
+        "source_sha256": "7567d825c4a411875a45775ed243c95542e75a673c56c0a80b63057ab73c0d37",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 115.629,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/09/07/11852-233049422_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "3aa2355aa2212fb0fdd84d80a99f6cb18fc31b272ea42d7cac7246d2568986a1",
+      "license": {
+        "source_sha256": "3aa2355aa2212fb0fdd84d80a99f6cb18fc31b272ea42d7cac7246d2568986a1",
+        "source_url": "https://cdn.pixabay.com/video/2017/09/07/11852-233049422_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-11852/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "47303485165c997db7e09aaa95778ee321140ff205b69199e49b83424fc3d432",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T02:17:40.272389+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "47303485165c997db7e09aaa95778ee321140ff205b69199e49b83424fc3d432",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wiping",
+        "captions": [
+          "The image shows a classroom setting with a teacher standing in front of a blackboard. The teacher is wearing a patterned shirt and blue skirt. She is holding a yellow object, possibly a marker or crayon, and appears to be writing or",
+          "The image shows a classroom setting with a blackboard in the background. The blackboard has a few drawings on it, including flowers and hearts. There is a person standing in front of the blackboard, holding a yellow object, possibly a",
+          "The image shows a classroom setting with a chalkboard in the background. The chalkboard has a floral design with several flowers and hearts drawn on it. There are also some small drawings of leaves and stems on the chalkboard. The chalkboard"
+        ],
+        "frame_sha256": [
+          "2b3a45e5f7d47f997dbcb085f23b192134b782cff243beeaadbb04fb5ef1405c",
+          "77e93f5143ed634e89c538d3ff3686805ac3ca89c1a90897f777ead2b88ad80e",
+          "4ef6de1077c880c2e7d70808b4b277d4247289aef29b3f0b45a2ce2ae11430aa"
+        ],
+        "source_sha256": "3aa2355aa2212fb0fdd84d80a99f6cb18fc31b272ea42d7cac7246d2568986a1",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 119.816,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/09/07/11854-233049424_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "4222751ee350500e5d9af2f60ce4751b8e53285909f7889ae9f89e62d614c259",
+      "license": {
+        "source_sha256": "4222751ee350500e5d9af2f60ce4751b8e53285909f7889ae9f89e62d614c259",
+        "source_url": "https://cdn.pixabay.com/video/2017/09/07/11854-233049424_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-11854/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "57bfe0f555dce4dae72da8112276ea1802e1d2b4920099b6ebf51a18fa6af5c0",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T02:19:42.509541+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "57bfe0f555dce4dae72da8112276ea1802e1d2b4920099b6ebf51a18fa6af5c0",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wiping",
+        "captions": [
+          "The image is a split image. The top half of the image shows a green board with a blue and white sign on it. The sign has the letters \"E\" and \"I\" on it. The bottom half of the image shows",
+          "The image shows a woman standing in front of a chalkboard. She is wearing a black and white patterned dress and has her hair tied back. She is holding a small object, possibly a ball, in her right hand. The background is",
+          "The image shows a woman standing in front of a green background. She is wearing a black and white patterned dress. Her hair is short and dark. She has a bracelet on her right wrist. Her right arm is bent at the elbow"
+        ],
+        "frame_sha256": [
+          "9d1d2d5b8aad6284c404ff025424579b07e049557074be63c05f5c09e4ba8cef",
+          "bb32b443304a0d8382938a7a53f176eb19b498d000ea63a60f6a551cea06ac8c",
+          "0d6eea2110ccdb600fb02458bb885f6bc0a36d64892cda975cfa1341ce532804"
+        ],
+        "source_sha256": "4222751ee350500e5d9af2f60ce4751b8e53285909f7889ae9f89e62d614c259",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 119.983,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2022/06/04/119238-717347110_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "926096f58c8406770dbef7af1d9b82b0b06c14da224520b1f868d368ff4fdfab",
+      "license": {
+        "source_sha256": "926096f58c8406770dbef7af1d9b82b0b06c14da224520b1f868d368ff4fdfab",
+        "source_url": "https://cdn.pixabay.com/video/2022/06/04/119238-717347110_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-119238/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "28791bb94119e4ccf14bd557b6d62120c30fbe282f54f40446686934b958b081",
+        "author": "AttilaPergel",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T02:21:46.419425+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "28791bb94119e4ccf14bd557b6d62120c30fbe282f54f40446686934b958b081",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows two lit candles placed on a dark surface. The candles are placed side by side, with the one on the left slightly in the background. The candle on the left is smaller and has a white flame, while the candle on",
+          "The image shows a close-up view of a book or paper with a black background. The book appears to be a standard paperback format, with visible text and images on the cover. The text on the cover is partially visible and includes",
+          "The image shows a book with a black cover. The book appears to be open to a page with a handwritten note or text. The text is written in a cursive or cursive-like font, and it is difficult to decipher the exact content"
+        ],
+        "frame_sha256": [
+          "b0609a00c99187de356090c1f488ec66d7ca21e8ccf3c94c203efb68a1f57e7e",
+          "6cb3c447ca7915a0e9548bd61fe1c2c2b8e01c5de2cf774cb203efefa64b8a6b",
+          "d5dc1e7e8a1f8e98bcbf4b7058ff610593a3e667387010ec4616cac90b8af3c4"
+        ],
+        "source_sha256": "926096f58c8406770dbef7af1d9b82b0b06c14da224520b1f868d368ff4fdfab",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 120.66,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -2962,15 +3222,17 @@
     },
     "casasem-2026-11-09-2": {
       "sha256": "55c96e1ba2d39640233235e1c9e9ccc37bbaba9a6147c74e28ac5141e59d8732",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-09T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/24/34213-400954445_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/26/34325-402333132_large.mp4"
       ],
       "provider_id": "6aefaa8651492b796e0485fc",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706279830941125940"
+      ]
     },
     "casasem-2026-11-10-1": {
       "sha256": "9fc65411388d8beeee77eca4055042c49091e69ad4d222d2ac2be6f4f9a070cc",
@@ -3000,8 +3262,8 @@
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 3,
-    "ready_after": 3,
+    "ready_before": 2,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
