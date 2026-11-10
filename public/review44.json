@@ -1,17 +1,45 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-10T21:52:56.813920+00:00",
-  "expires_at": "2026-11-10T21:52:56.813920+00:00",
-  "queue_snapshot_sha256": "fe600f7292b1f4e6913c9cd6d2d01bbf8cbf8e0a86eae3223cfe62ba89d35cd1",
+  "generated_at": "2026-11-10T23:48:45.028331+00:00",
+  "expires_at": "2026-11-10T23:48:45.028331+00:00",
+  "queue_snapshot_sha256": "0b8cd6cbee3de5a8c36d69123ad49710eebd283d5eae5164aac4a77b65a91f12",
   "state_snapshot_sha256": "ba8f3e717c7239e253a9d491106e0d16580db887546b85d6c574608bb0925d8e",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-11-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-2-b743bfdce9c5cd93.mp4",
+      "sha256": "b743bfdce9c5cd93c07ac18b9c295ff46b839fd09a8c49debc4e0ca8478b8d15",
+      "script_hash": "4e8dce5ab49292cd5cc5a43758f46e1b399ed5c878fbe4355aa42f9c58cf381d",
+      "post_snapshot_sha256": "e2a66d2a224fb6cfb6d66aa40c3eaae9a6b8f3b565687b09a3f5246b3f5b9820",
+      "title": "Vai lavar as mãos? Siga o modo de uso e a quantidade indicados no rótulo. Siga as orientações dos órgãos de saúde para a higiene. Use um produto indicado para a higiene das mãos. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34210/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — josecr1920; https://pixabay.com/videos/id-34212/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Siga o modo de uso e a quantidade indicados no rótulo.",
+        "Siga as orientações dos órgãos de saúde para a higiene.",
+        "Use um produto indicado para a higiene das mãos.",
+        "Mantenha a área da pia livre para utilizar com segurança.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-11T18:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "82ecc4b3fc048d8cbf52d5304121e944afecc33c51409b166fae445c96d620a4"
+  "manifest_sha256": "da02b1495aa14bc10211384b61fb49932a88d0b77cff4966b4344614b97154eb"
 }

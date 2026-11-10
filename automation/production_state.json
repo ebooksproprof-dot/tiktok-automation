@@ -2378,7 +2378,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/03/24/34210-400954431_large.mp4": {
-      "status": "RETRYABLE",
+      "status": "QUEUED",
       "source_sha256": "86e983d09256647fd0b084f1b9f98ade305de20719dbf1808070a8bf32cb588d",
       "license": {
         "source_sha256": "86e983d09256647fd0b084f1b9f98ade305de20719dbf1808070a8bf32cb588d",
@@ -2450,13 +2450,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1794262714.8432758
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1794346312.0189087
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1794346312.0189087
+      "retry_after": 1794375850.9572866
     },
     "https://cdn.pixabay.com/video/2020/04/04/35005-405620753_large.mp4": {
       "status": "REJECTED",
@@ -3710,6 +3717,131 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/03/24/34212-400954441_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "8df070be50446b0ff65ea6d8eaededf518082bcfe3a173b7bf89c04fe8e45611",
+      "license": {
+        "source_sha256": "8df070be50446b0ff65ea6d8eaededf518082bcfe3a173b7bf89c04fe8e45611",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/24/34212-400954441_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34212/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "cbc9ac7d2887d16de7d14b90fce9b3dc6bd93951d6d582ba2b3121953c3255af",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T23:44:12.740058+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "cbc9ac7d2887d16de7d14b90fce9b3dc6bd93951d6d582ba2b3121953c3255af",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a person's hands with soap on them. The hands are positioned in front of a white sink. The person's hands are covered in soap, indicating that they have been washing their hands. The soap appears to be white,",
+          "The image shows a person washing their hands under a sink. The sink is white and rectangular, with a chrome faucet on the right side. The faucet has a circular design with a small hole in the center, which is likely used for",
+          "The image shows a person washing their hands under a sink. The hands are positioned in front of the sink, with the palms facing upwards. The person's hands are wet, and soap or a similar substance is visibly on their hands. The"
+        ],
+        "frame_sha256": [
+          "3b02046fe6037c92c608159d44bf4b26643ce9ca2f12be78c2860225c8761c5c",
+          "7be81ac64f1da8f6e8d2022d5d0581354e75595ffce314d172a2a2e1a220151b",
+          "04691747ae8685bb302b48f05d1c4461e63d427f54354caea02d2834f1d61823"
+        ],
+        "source_sha256": "8df070be50446b0ff65ea6d8eaededf518082bcfe3a173b7bf89c04fe8e45611",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 110.562,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    "https://cdn.pixabay.com/video/2020/03/24/34214-400954456_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "06f147f4fa46ae5f9fdb0987b805b4362e0d52f1483f6de502858aba25c23688",
+      "license": {
+        "source_sha256": "06f147f4fa46ae5f9fdb0987b805b4362e0d52f1483f6de502858aba25c23688",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/24/34214-400954456_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34214/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "6ca8f1924a79eb56a0af9a4eb88e07b65312ef757b156aeddf0bf02f386b6d87",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T23:46:53.397228+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6ca8f1924a79eb56a0af9a4eb88e07b65312ef757b156aeddf0bf02f386b6d87",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image contains a close-up of a textured, possibly porous, surface. The texture appears to be made up of small, irregularly shaped grains or particles, which give the surface a rough and uneven appearance. These particles are distributed randomly",
+          "The image shows a close-up view of a surface with a smooth, light-colored texture. The surface appears to be made of a material that is likely a fabric or a similar material, given the visible texture and the presence of small",
+          "The image contains a close-up of a plate of food. The plate is covered with a white, crumbly substance that appears to be a type of bread or cracker. The crumbly substance is unevenly distributed across the"
+        ],
+        "frame_sha256": [
+          "69e4d1bd121f61cf95aaa9f56356745b03add1e5ef98aad093bae516850c2866",
+          "e4b486d294b9873157bfb72e5cf7b8b280ad8bff230eba0126fe135794253b0e",
+          "9ef32681d54b7e32b0d1dc5dbb61dcbede880cfeb4b95f3083b1b0aba23cbde9"
+        ],
+        "source_sha256": "06f147f4fa46ae5f9fdb0987b805b4362e0d52f1483f6de502858aba25c23688",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 110.324,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -3837,15 +3969,17 @@
     },
     "casasem-2026-11-10-2": {
       "sha256": "0380f723894ba8b055e1f65c66f1feb16a2f622655ef22a28cc88dd0141fc3aa",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-10T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2017/06/06/9631-220550299_large.mp4",
         "https://cdn.pixabay.com/video/2017/06/06/9632-220550301_large.mp4"
       ],
       "provider_id": "6af1358fe29b1359f0c51a86",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706650055855410433"
+      ]
     },
     "casasem-2026-11-11-1": {
       "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
@@ -3857,12 +3991,21 @@
       "provider_id": "6af33525e9e4a87f7b4b5a47",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-11-2": {
+      "sha256": "b743bfdce9c5cd93c07ac18b9c295ff46b839fd09a8c49debc4e0ca8478b8d15",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-11T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/24/34210-400954431_large.mp4",
+        "https://cdn.pixabay.com/video/2020/03/24/34212-400954441_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
-    "ready_before": 2,
+    "status": "QUEUED",
+    "created": 1,
+    "ready_before": 1,
     "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
