@@ -3515,6 +3515,201 @@
       "error_stage": "render",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/03/21/34049-400217464_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "238b8263f7a9c209e651996c08227507d247d58548f2d37d3a5f2ed10a66efe9",
+      "license": {
+        "source_sha256": "238b8263f7a9c209e651996c08227507d247d58548f2d37d3a5f2ed10a66efe9",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/21/34049-400217464_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34049/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "6e59034737430941ada7d9eb72674e82431edc594fe1481aff06af42daa3f8d4",
+        "author": "mitchdurfee",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T18:08:24.038839+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6e59034737430941ada7d9eb72674e82431edc594fe1481aff06af42daa3f8d4",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image is blurry and shows a hand pointing at a surface. The hand is pointing at a surface that is not clearly visible.",
+          "The image shows a person's hands with a white substance on them. The hands are positioned in a way that suggests they might be interacting with a surface, possibly a table or countertop. The person's fingers are spread out, and the",
+          "The image is a photograph of a person's hand with a white fluffy animal paw. The hand is positioned in the lower half of the image, with the paw extending towards the upper right corner. The animal paw is fluffy and white, with"
+        ],
+        "frame_sha256": [
+          "4b99c3e9a3e88813b9dacffaf1669aa97b503b61962aa9610a07cf729ef2f507",
+          "7b0f9965ee097d7ffe7c1ed7e17fcf3184942c69694d8219e62d7505eae960c9",
+          "d4f5c90fa285621ed6197c1bb5504e93a73f377121c1b5fe23407dd37cac37d0"
+        ],
+        "source_sha256": "238b8263f7a9c209e651996c08227507d247d58548f2d37d3a5f2ed10a66efe9",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 85.259,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/03/21/34051-400217454_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "ec2835aae4d00076ade22a78daf8dcebbff065afde331233863ae884952a88da",
+      "license": {
+        "source_sha256": "ec2835aae4d00076ade22a78daf8dcebbff065afde331233863ae884952a88da",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/21/34051-400217454_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34051/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "ed36e8be780bf8564461a7ba2b3a09e2d88a0de68c1dc8ea200dc091043f522d",
+        "author": "mitchdurfee",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T18:09:56.418256+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "ed36e8be780bf8564461a7ba2b3a09e2d88a0de68c1dc8ea200dc091043f522d",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image shows a bathroom sink with several bathroom items placed on it. The sink appears to be made of ceramic and has a smooth, white surface. On the left side of the sink, there is a purple bottle with a white cap.",
+          "The image shows a bathroom scene. In the foreground, there is a woman with blonde hair. She is holding a purple object, possibly a toothbrush or a tube of toothpaste. She is brushing her teeth, as indicated by the visible toothpaste",
+          "The image is blurry and contains two hands. The left hand is holding a white object, possibly a wii remote, while the right hand is pointing with two fingers."
+        ],
+        "frame_sha256": [
+          "5621ad125c9d0b5fa69fc80b0100dade901366d02363fc3b5d42bd5645e8b3b9",
+          "6e8ca529c2ae72a8ba83984388ee48ac35d342eab6a6b8a45a921f9efbfd67c2",
+          "05068fec0a34bd7cd50f13e4e85359116c018e760dc2a0038d44caf9594be5c7"
+        ],
+        "source_sha256": "ec2835aae4d00076ade22a78daf8dcebbff065afde331233863ae884952a88da",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 85.703,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/03/24/34208-400954419_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "af3acb43d9bed2319ba27294fea901e5b50be66c18cfe5ef675c56caddd81190",
+      "license": {
+        "source_sha256": "af3acb43d9bed2319ba27294fea901e5b50be66c18cfe5ef675c56caddd81190",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/24/34208-400954419_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34208/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "e2f4f11a0e5a38ad647ab9f80f47201847201e080c12420f6ec406da14abdf80",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T18:11:26.629018+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "e2f4f11a0e5a38ad647ab9f80f47201847201e080c12420f6ec406da14abdf80",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a close-up of a person's hand holding a small, black, circular object. The object appears to be a type of keychain or small decorative item. The keychain is attached to a black plastic ring, which",
+          "The image shows a person holding a small, round object in their hand. The object appears to be a button or a small, white, circular object. The button is held between the thumb and the index finger of the person's right hand",
+          "The image is a close-up shot of a black dispenser. The dispenser is positioned centrally in the frame and is slightly tilted upwards, creating a slight shadow on the lower part of the image. The dispenser has a smooth,"
+        ],
+        "frame_sha256": [
+          "eda15d6fe93b73829f9fd24619bb066be3d7b6f493613d3f64a92fb674d88b02",
+          "2034c4fe46d62985bf7361446226ef5ac5597b1be0f1cf3c0edc1487283629c8",
+          "5e0f3770e2b14bac50bea6937b8edbe8d8859cc44c2d9e09081f0afade7f2572"
+        ],
+        "source_sha256": "af3acb43d9bed2319ba27294fea901e5b50be66c18cfe5ef675c56caddd81190",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 86.642,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
