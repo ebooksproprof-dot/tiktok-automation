@@ -1624,7 +1624,8 @@
       "height": 1080,
       "duration": 21.525,
       "bytes": 7651004,
-      "acquired_at": 1794333813
+      "acquired_at": 1794333813,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1657,17 +1658,81 @@
       "duration": 21.12,
       "bytes": 14408447,
       "acquired_at": 1794333815
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "35947",
+      "url": "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-35947/",
+      "author": "thenickmurphy",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: thenickmurphy / Pixabay — https://pixabay.com/videos/id-35947/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: washing hands, covid, hygiene, sanitizer, corona, coronavirus, protection, virus, health, soap, infection, pandemic, wash, quarantine, washing, disease, prevention, hand, care, epidemic, water, prevent",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4",
+      "sha256": "b8db82308ccf821d57f66909d19d0f0c1edfdf32461b6c4e3501ecf8c7576693",
+      "dhash": [
+        "06e7c7cf6f9bda65",
+        "1fe5ceec79f3f270",
+        "07e7c7cf77f4f070",
+        "07e7c7ef7cf9f271",
+        "c7e7c6c465b1fa71"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 17.748333,
+      "bytes": 38636413,
+      "acquired_at": 1794334557
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34214",
+      "url": "https://cdn.pixabay.com/video/2020/03/24/34214-400954456_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34214/",
+      "author": "josecr1920",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: josecr1920 / Pixabay — https://pixabay.com/videos/id-34214/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: hands, soap, virus, coronavirus, hygiene, health, sanitizer, covid-19, bacteria, allergy, healthcare, protection, wash, sanitation, disi, disinfect",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/24/34214-400954456_large.mp4",
+      "sha256": "06f147f4fa46ae5f9fdb0987b805b4362e0d52f1483f6de502858aba25c23688",
+      "dhash": [
+        "24cba5c160f6f35f",
+        "cd5833a7f56e37f1",
+        "4e1873776f2dbdc3",
+        "850d3b3f9bccec7e",
+        "868e8f1fcfc6f899"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.013333,
+      "bytes": 3310542,
+      "acquired_at": 1794334561
     }
   ],
   "rejected_until": {
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794333811,
+    "at": 1794334554,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 3,
+    "skipped_known": 6,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1675,21 +1740,21 @@
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 3,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "maos2",
         "status": "search_ok",
         "eligible_candidates": 12,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1701,7 +1766,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 41,
+    "unreviewed_media_count": 43,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
