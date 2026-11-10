@@ -10,7 +10,7 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-10T18:15:21.202569Z",
+    "at": "2026-11-10T19:39:51.041294Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
@@ -18,9 +18,7 @@
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "DISPATCHED",
-      "target_workflow": "acquire-media.yml",
-      "trigger": "LOW_STOCK_MAINTENANCE"
+      "status": "MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW"
     },
     "stock": {
       "held_ids": [],
