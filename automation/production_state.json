@@ -2443,13 +2443,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1794200648.5309286
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1794262714.8432758
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1794262714.8432758
+      "retry_after": 1794346312.0189087
     },
     "https://cdn.pixabay.com/video/2020/04/04/35005-405620753_large.mp4": {
       "status": "REJECTED",
@@ -3378,6 +3385,136 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2019/10/01/27444-363961136_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "9541e353a12a827bb28ff8d31d23fa03b524f35fd6c97732b72123e81efabf8a",
+      "license": {
+        "source_sha256": "9541e353a12a827bb28ff8d31d23fa03b524f35fd6c97732b72123e81efabf8a",
+        "source_url": "https://cdn.pixabay.com/video/2019/10/01/27444-363961136_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-27444/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "264adc25d40ef7ee86a3b275498f5bdaf57c0fd2c7a75727415e529a95901f5e",
+        "author": "Matthias_Groeneveld",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T15:24:48.944446+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "264adc25d40ef7ee86a3b275498f5bdaf57c0fd2c7a75727415e529a95901f5e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a collection of books placed on a shelf. The books are arranged in a vertical stack, with the top book slightly tilted to the left. The top book is titled \"Videotape\" and has a blue cover with",
+          "The image shows a stack of books placed on a shelf. The books are arranged vertically, with the top book being the largest and the bottom book being the smallest. The books are of various colors, including black, white, red, and",
+          "The image shows a collection of books arranged in a vertical stack. The top book is red with a white spine, and the book beneath it is black with a white spine. The following books are stacked vertically, with the top book being black"
+        ],
+        "frame_sha256": [
+          "4e7231c87f66e9a64708b23c37e44aed54bc78a49d29b6e544519f74b52c5fc3",
+          "79da6fdec4c343aada001e2a0d0234aa56fe9181562c8b1326bd113fd8d8fd33",
+          "bfd82073e92aeb114c84c21279e6cd3003b11545ec9b008ceb27a6d540540c96"
+        ],
+        "source_sha256": "9541e353a12a827bb28ff8d31d23fa03b524f35fd6c97732b72123e81efabf8a",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 124.567,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2019/10/01/27445-363961143_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "09e00a21425eb8c886915234bd2ad3d59e6f21d24bf6894b4d468f0c47974c4c",
+      "license": {
+        "source_sha256": "09e00a21425eb8c886915234bd2ad3d59e6f21d24bf6894b4d468f0c47974c4c",
+        "source_url": "https://cdn.pixabay.com/video/2019/10/01/27445-363961143_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-27445/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "3bf0176cbb839e9be4cfc72ba94dabcb00ece855205cf355a5d8f5dd1ca0dd29",
+        "author": "Matthias_Groeneveld",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-10T15:27:49.956961+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "3bf0176cbb839e9be4cfc72ba94dabcb00ece855205cf355a5d8f5dd1ca0dd29",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a book shelf with books arranged in a manner that suggests a library or a bookstore setting. The books are neatly stacked on the shelf, with some of them placed vertically and others horizontally. The shelf is made of a light-",
+          "The image shows a book shelf filled with books. The books are arranged in a way that suggests they are neatly organized. The shelf appears to be made of metal and has a grid-like design, typical of bookcases. The books are",
+          "The image shows a room with a shelf containing books. The shelf is made of metal and has a white color. On the shelf, there are several books arranged in a way that suggests they are neatly stacked. The books are of various sizes"
+        ],
+        "frame_sha256": [
+          "1137d3ecf0e8e44545c1a76ae26271e2bd421d038a2f57d6120d3a5590c1dbfd",
+          "b852fae7e6faac767088a9b48994da8a14e9bf5669bde273534dc363a2fdafe2",
+          "5cbde4b87e9afac92ff8c13739016ffb2ce9b63b58f7526bbf77653534521a99"
+        ],
+        "source_sha256": "09e00a21425eb8c886915234bd2ad3d59e6f21d24bf6894b4d468f0c47974c4c",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 124.028,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -3491,15 +3628,17 @@
     },
     "casasem-2026-11-10-1": {
       "sha256": "9fc65411388d8beeee77eca4055042c49091e69ad4d222d2ac2be6f4f9a070cc",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-10T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/29/34535-402679299_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/29/34537-402679338_large.mp4"
       ],
       "provider_id": "6af07acf9214322f6856cca5",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706528322636877074"
+      ]
     },
     "casasem-2026-11-10-2": {
       "sha256": "0380f723894ba8b055e1f65c66f1feb16a2f622655ef22a28cc88dd0141fc3aa",
@@ -3515,18 +3654,21 @@
     },
     "casasem-2026-11-11-1": {
       "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-11T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4"
-      ]
+      ],
+      "provider_id": "6af33525e9e4a87f7b4b5a47",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
     "ready_before": 2,
-    "ready_after": 3,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
