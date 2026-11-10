@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-10T15:14:35.861708+00:00",
-  "expires_at": "2026-11-10T15:14:35.861708+00:00",
+  "generated_at": "2026-11-10T15:15:53.285302+00:00",
+  "expires_at": "2026-11-10T15:15:53.285302+00:00",
   "queue_snapshot_sha256": "fe600f7292b1f4e6913c9cd6d2d01bbf8cbf8e0a86eae3223cfe62ba89d35cd1",
-  "state_snapshot_sha256": "0864b71bbef859cf7798178d7a9faa7340cfc29d97158a5dcd245204c9e35777",
+  "state_snapshot_sha256": "2fd7f4dad436aecf2e02e4b3ebf0f1987571b732058985ba5d85ecc19f2c1d0e",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-11-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-1-f8a7b6075c3d9bdb.mp4",
-      "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
-      "script_hash": "312dd26cc613f5c9513893d2a5b46e3c41cd2a3cbef55073c5dfae06ce2fb837",
-      "post_snapshot_sha256": "f7bd844e478475d3b1f3397cca7a64b8822e3ec07b88de3b35c9dfa407fa971d",
-      "title": "Vai colocar roupa para lavar? Separe os tecidos conforme as orientações de lavagem. Confira as instruções de limpeza do filtro no manual. Siga o manual da sua máquina e a capacidade indicada. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Onixphoto; https://pixabay.com/videos/id-142744/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai colocar roupa para lavar?",
-        "Separe os tecidos conforme as orientações de lavagem.",
-        "Confira as instruções de limpeza do filtro no manual.",
-        "Siga o manual da sua máquina e a capacidade indicada.",
-        "Retire as roupas ao terminar e organize a secagem.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-11T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "6d3b765ac354e37589cb9ce36ddb07604a061ffb4a0a3c371b4ffdd6e02338fc"
+  "manifest_sha256": "90a468bf51c498bf616958d84e8d9e405319a598df018373c54ade7b27cc3821"
 }
