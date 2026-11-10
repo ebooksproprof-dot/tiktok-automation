@@ -4226,6 +4226,163 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-11-1",
+      "concept": "auto-laundry-312dd26cc613",
+      "title": "Vai colocar roupa para lavar? Separe os tecidos conforme as orientações de lavagem. Confira as instruções de limpeza do filtro no manual. Siga o manual da sua máquina e a capacidade indicada. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Onixphoto; https://pixabay.com/videos/id-142744/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-10T15:12:24.668510+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-11T10:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
+        "duration": 18.433333,
+        "size": 2830593,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.025333,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4",
+            "sha256": "16b92e3eaea57ad5e0dd19ea27931f48918926df34b379540e5d06f1465b0b33",
+            "dhash": [
+              "aaaaaa9aaeaaaafe",
+              "aaaaaa9eaeaaaafe",
+              "aaaa6abeaeaa6afe",
+              "aaaa6a9eaeaaeafe",
+              "aaea6a9eaeaaeafe"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          18.836667
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "auto-laundry-312dd26cc613",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Onixphoto; https://pixabay.com/videos/id-142744/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "16b92e3eaea57ad5e0dd19ea27931f48918926df34b379540e5d06f1465b0b33",
+            "source_url": "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-142744/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "page_sha256": "c7d8ab214cdf1559913385001b3bb7dc1c1c2d1879364dec6c2e7eab7de13509",
+            "author": "Onixphoto",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-10T15:09:15.014797+00:00",
+            "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "c7d8ab214cdf1559913385001b3bb7dc1c1c2d1879364dec6c2e7eab7de13509",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+              "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "laundry",
+            "captions": [
+              "The image shows a row of washing machines. Each washing machine has a circular door with a black border and a glass window in the center. The glass windows allow visibility into the interior of the washing machine. The washing machines are arranged in a",
+              "The image shows a large, stainless steel washing machine with a black and white background. The washing machine has round windows that reflect the surroundings, including the inside of the machine and the surrounding environment. The washing machine is mounted horizontally and appears to",
+              "The image shows a wall-mounted washing machine with a series of circular openings. The washing machine is made of stainless steel and has a black and white color scheme. The circular openings are arranged in a grid pattern, with each circle containing a"
+            ],
+            "frame_sha256": [
+              "45dacfcfe9d17cf1536e9add15c46e199c77fad85222f1663e2d565dec259f72",
+              "4bab4dfa2b2385a73610c52f2f90a907a9bbd30b408871fe5e098cf240e7c6ec",
+              "03f2ee9165b8003c268cb5d0a7224bf9790b3a97ef9c478ded783a9f006aa29b"
+            ],
+            "source_sha256": "16b92e3eaea57ad5e0dd19ea27931f48918926df34b379540e5d06f1465b0b33",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 123.169,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-1-f8a7b6075c3d9bdb.mp4",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Separe os tecidos conforme as orientações de lavagem.",
+        "Confira as instruções de limpeza do filtro no manual.",
+        "Siga o manual da sua máquina e a capacidade indicada.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "312dd26cc613f5c9513893d2a5b46e3c41cd2a3cbef55073c5dfae06ce2fb837",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }
