@@ -1786,17 +1786,81 @@
       "duration": 10.41,
       "bytes": 5169858,
       "acquired_at": 1794347728
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34215",
+      "url": "https://cdn.pixabay.com/video/2020/03/24/34215-400954464_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34215/",
+      "author": "josecr1920",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: josecr1920 / Pixabay — https://pixabay.com/videos/id-34215/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: hands, soap, virus, coronavirus, hygiene, health, sanitizer, covid-19, bacteria, allergy, healthcare, protection, wash, sanitation, disi, disinfect",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/24/34215-400954464_large.mp4",
+      "sha256": "56fa5b100e0a8ed29b619c82b2c7de9eec03fe25022520f70045158e29e4c622",
+      "dhash": [
+        "4fdbdbe7cfc97ffd",
+        "cbcfcfcd53d3fff9",
+        "cfdbd3f7f1eb6f78",
+        "cfdfbff9f3e367e0",
+        "dfcfdffbe6e4efd9"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 10.09,
+      "bytes": 5815537,
+      "acquired_at": 1794353865
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "34324",
+      "url": "https://cdn.pixabay.com/video/2020/03/26/34324-402333127_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-34324/",
+      "author": "josecr1920",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: josecr1920 / Pixabay — https://pixabay.com/videos/id-34324/",
+      "category": "maos2",
+      "query": "washing hands soap",
+      "selection_reason": "Provider tags: hands, soap, virus, coronavirus, hygiene, health, sanitizer, covid-19, bacteria, allergy, healthcare, protection, wash, sanitation, disinfect",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/03/26/34324-402333127_large.mp4",
+      "sha256": "52223d05207382fa97af5e371992a370fca04506fb7856e7f0daf3d884e60968",
+      "dhash": [
+        "191d191212c46c39",
+        "393d1d97321888c8",
+        "391d0d07a6647010",
+        "393c1d17845c5c98",
+        "b9391d0d06406c68"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 24.063333,
+      "bytes": 13040400,
+      "acquired_at": 1794353867
     }
   ],
   "rejected_until": {
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794347725,
+    "at": 1794353864,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 9,
+    "skipped_known": 11,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1830,7 +1894,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 45,
+    "unreviewed_media_count": 47,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
