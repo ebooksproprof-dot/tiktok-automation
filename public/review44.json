@@ -1,17 +1,73 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-10T23:50:22.915396+00:00",
-  "expires_at": "2026-11-10T23:50:22.915396+00:00",
-  "queue_snapshot_sha256": "0b8cd6cbee3de5a8c36d69123ad49710eebd283d5eae5164aac4a77b65a91f12",
+  "generated_at": "2026-11-11T00:05:17.109965+00:00",
+  "expires_at": "2026-11-11T00:05:17.109965+00:00",
+  "queue_snapshot_sha256": "db6d01c771bf22f1e41d9a1b2b98383dd4c80cc15e89aeea4bd48d58e718d595",
   "state_snapshot_sha256": "b177e98e1ba4c193d7b6457dde1f45e211fa653efd40b06462dd78f5d4bab5e7",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 8,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-12-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-1-6029633df00275e7.mp4",
+      "sha256": "6029633df00275e78b6c9cae365c786cca5ab36656cc568bdac22361ed2d8952",
+      "script_hash": "142d3454420f2ee4ee0b26f52f533f43331d798544652c8dfe23c517a36119bd",
+      "post_snapshot_sha256": "b38c962f241e7efed15a25735a39eaab6c161381da634e6dcdc7be96301721dd",
+      "title": "Vai lavar as mãos? Mantenha a área da pia livre para utilizar com segurança. Use um produto indicado para a higiene das mãos. Ao terminar, feche a torneira sem deixar água correndo. Siga as orientações dos órgãos de saúde para a higiene. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34215/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — josecr1920; https://pixabay.com/videos/id-34216/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Mantenha a área da pia livre para utilizar com segurança.",
+        "Use um produto indicado para a higiene das mãos.",
+        "Ao terminar, feche a torneira sem deixar água correndo.",
+        "Siga as orientações dos órgãos de saúde para a higiene.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-12T10:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
+    {
+      "id": "casasem-2026-11-12-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-2-fa16092211d1d5db.mp4",
+      "sha256": "fa16092211d1d5dbbe7133c63876c9ac656c4302390367f9801d41a908cd3998",
+      "script_hash": "e799ba9262a99616e683ecc729b993f32c45639fecfa3f681e860830ef44390c",
+      "post_snapshot_sha256": "4012871e8c15008a9220f06e0114e0a24e22f4a881acea95aea7882ebc6cc7f8",
+      "title": "Vai lavar as mãos? Siga as orientações dos órgãos de saúde para a higiene. Use um produto indicado para a higiene das mãos. Enxágue e use material limpo para a secagem. Ao terminar, feche a torneira sem deixar água correndo. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34324/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Siga as orientações dos órgãos de saúde para a higiene.",
+        "Use um produto indicado para a higiene das mãos.",
+        "Enxágue e use material limpo para a secagem.",
+        "Ao terminar, feche a torneira sem deixar água correndo.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-12T18:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +285,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "d6f9338495cde90e988e641bbfa19e3c91e73778974819d1abf2d68cd5220c85"
+  "manifest_sha256": "5a21ac8f68c875d1baffc0543c296daf0ff7d3dab317de34b174d9be76476981"
 }
