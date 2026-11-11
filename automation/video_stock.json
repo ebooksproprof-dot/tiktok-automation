@@ -10,7 +10,7 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-10T23:51:05.710112Z",
+    "at": "2026-11-11T00:08:01.034704Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
@@ -18,17 +18,15 @@
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "DISPATCHED",
-      "target_workflow": "casasemesforco-daily.yml",
-      "trigger": "LOW_STOCK_MAINTENANCE"
+      "status": "STOCK_TARGET_MET"
     },
     "stock": {
       "held_ids": [],
       "held_uncertain": 0,
       "low_stock": false,
       "publication_confirmation_is_separate": true,
-      "ready": 2,
-      "refill_needed": 2,
+      "ready": 4,
+      "refill_needed": 0,
       "target_max": 4
     },
     "this_monitor_generates_or_publishes": false
