@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-11T00:06:18.133144+00:00",
-  "expires_at": "2026-11-11T00:06:18.133144+00:00",
+  "generated_at": "2026-11-11T00:07:15.456995+00:00",
+  "expires_at": "2026-11-11T00:07:15.456995+00:00",
   "queue_snapshot_sha256": "db6d01c771bf22f1e41d9a1b2b98383dd4c80cc15e89aeea4bd48d58e718d595",
-  "state_snapshot_sha256": "b177e98e1ba4c193d7b6457dde1f45e211fa653efd40b06462dd78f5d4bab5e7",
+  "state_snapshot_sha256": "05483f8bb645d0b64e6f3393df1872c40babfa4a520be8de6831b81e86ca5230",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 8,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-12-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-1-6029633df00275e7.mp4",
-      "sha256": "6029633df00275e78b6c9cae365c786cca5ab36656cc568bdac22361ed2d8952",
-      "script_hash": "142d3454420f2ee4ee0b26f52f533f43331d798544652c8dfe23c517a36119bd",
-      "post_snapshot_sha256": "b38c962f241e7efed15a25735a39eaab6c161381da634e6dcdc7be96301721dd",
-      "title": "Vai lavar as mãos? Mantenha a área da pia livre para utilizar com segurança. Use um produto indicado para a higiene das mãos. Ao terminar, feche a torneira sem deixar água correndo. Siga as orientações dos órgãos de saúde para a higiene. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — josecr1920; https://pixabay.com/videos/id-34215/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — josecr1920; https://pixabay.com/videos/id-34216/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Mantenha a área da pia livre para utilizar com segurança.",
-        "Use um produto indicado para a higiene das mãos.",
-        "Ao terminar, feche a torneira sem deixar água correndo.",
-        "Siga as orientações dos órgãos de saúde para a higiene.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-12T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-11-12-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-2-fa16092211d1d5db.mp4",
@@ -285,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "feeca6c0e11731c232c10d6bda5bcd3850b070e67d457593c25161851d11ebd5"
+  "manifest_sha256": "44837b5be15a8bec156a2f1dcb0408c95e5bac647bb4df6dc5b734283c0f382a"
 }
