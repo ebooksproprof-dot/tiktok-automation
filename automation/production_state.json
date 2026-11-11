@@ -4022,6 +4022,126 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2020/03/26/34326-402333158_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "f4a04dffe6128b89831e3bb45f767bbfb7aed73323d65bd63aff268880d04864",
+      "license": {
+        "source_sha256": "f4a04dffe6128b89831e3bb45f767bbfb7aed73323d65bd63aff268880d04864",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/26/34326-402333158_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34326/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "91e2bd2ea0f7540d7cbec3b5c4a66943e84c9cd102b7eeb2a47feb903f62133b",
+        "author": "josecr1920",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-11T18:07:02.442074+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "91e2bd2ea0f7540d7cbec3b5c4a66943e84c9cd102b7eeb2a47feb903f62133b",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a close-up of two hands, likely belonging to a person. The hands are positioned in a way that suggests they are holding or interacting with something. The fingers are spread apart, with the index and middle fingers of each",
+          "The image shows a close-up of a person's hand with a few visible details. The hand is positioned in the center of the image and appears to be resting on a surface, possibly a table or counter. The skin on the hand",
+          "The image shows a close-up of two hands. The hands are positioned in a way that suggests they are resting or holding something. The fingers are spread out, with the index and middle fingers extended and the ring and pinkie fingers slightly"
+        ],
+        "frame_sha256": [
+          "02070d4812df3b39a845bd9da9663b45556e76c841b26abdfc240b5bd0c3adb9",
+          "f45df49fac1b4dce0c25782d709fda20e3e3a9533f64190b2b653605b668588f",
+          "7619414fbfc6b6e5620f251d24de733cbaafb53962699631e4a83ebe98eea44b"
+        ],
+        "source_sha256": "f4a04dffe6128b89831e3bb45f767bbfb7aed73323d65bd63aff268880d04864",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 86.961,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    "https://cdn.pixabay.com/video/2020/03/29/34536-402679302_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "fa417bd7a7b081b6692d9561bd9b4398094efa80e3585c2325183b143024a222",
+      "license": {
+        "source_sha256": "fa417bd7a7b081b6692d9561bd9b4398094efa80e3585c2325183b143024a222",
+        "source_url": "https://cdn.pixabay.com/video/2020/03/29/34536-402679302_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-34536/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "998046c40700d74456de85d89cf4b2e3067acf83ec584d7ff292bac83bc9a83b",
+        "author": "Emilioamador16",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-11T18:08:36.336886+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "998046c40700d74456de85d89cf4b2e3067acf83ec584d7ff292bac83bc9a83b",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "handwashing",
+        "captions": [
+          "The image shows a person washing their hands under a sink. The sink is white and rectangular, with a smooth surface. The person's hands are visible, and they are positioned in a way that suggests they are actively washing their hands. The",
+          "The image shows a person's hands and feet. The person is holding a green object, possibly a knife or a similar tool, with their right hand. The left hand is extended outward, with the fingers spread apart. The person's feet",
+          "The image shows a person washing their hands under a sink. The sink is white and rectangular, with a single faucet. The faucet is mounted on the right side of the sink, and it has a chrome finish. The sink is located"
+        ],
+        "frame_sha256": [
+          "4b24bbf87b64dc97114462b9867e661cbb2ebf8b739549d01b2850f765f3e9eb",
+          "3084b0223891dc75b73b1961cd62d04319c1ef0d2e3cd32cc123bf1123132b05",
+          "1130c0319ad7548b627b95665a84f4b734bc6c12345a0da7294564881716c308"
+        ],
+        "source_sha256": "fa417bd7a7b081b6692d9561bd9b4398094efa80e3585c2325183b143024a222",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 87.591,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     }
   },
   "outputs": {
@@ -4163,14 +4283,16 @@
     },
     "casasem-2026-11-11-1": {
       "sha256": "f8a7b6075c3d9bdb329b9296ae7d5e3f54d33959eefd4c8950684ea2dbea069a",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-11T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2022/12/12/142744-780599604_large.mp4"
       ],
       "provider_id": "6af33525e9e4a87f7b4b5a47",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706899211819863303"
+      ]
     },
     "casasem-2026-11-11-2": {
       "sha256": "b743bfdce9c5cd93c07ac18b9c295ff46b839fd09a8c49debc4e0ca8478b8d15",
@@ -4206,13 +4328,27 @@
       "provider_id": "6af3b8947b2f1abd659caedd",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-13-1": {
+      "sha256": "71a7b3bf84781093977cba276f6e458aaaec457e8845607314eee6ff043da668",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-13T10:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/26/34326-402333158_large.mp4",
+        "https://cdn.pixabay.com/video/2020/03/29/34536-402679302_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "STOCK_TARGET_MET",
-    "ready": 4,
-    "held_uncertain": 0,
-    "created": 0
+    "status": "QUEUED",
+    "created": 1,
+    "ready_before": 3,
+    "ready_after": 4,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
