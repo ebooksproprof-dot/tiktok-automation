@@ -4186,20 +4186,26 @@
     },
     "casasem-2026-11-12-1": {
       "sha256": "6029633df00275e78b6c9cae365c786cca5ab36656cc568bdac22361ed2d8952",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-12T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/24/34215-400954464_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/24/34216-400954472_large.mp4"
-      ]
+      ],
+      "provider_id": "6af3b1b0850477b0c27dc7a6",
+      "publicly_verified": false,
+      "public_urls": []
     },
     "casasem-2026-11-12-2": {
       "sha256": "fa16092211d1d5dbbe7133c63876c9ac656c4302390367f9801d41a908cd3998",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-12T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/26/34324-402333127_large.mp4"
-      ]
+      ],
+      "provider_id": "6af3b8947b2f1abd659caedd",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
