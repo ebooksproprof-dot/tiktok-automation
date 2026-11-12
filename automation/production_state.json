@@ -4327,6 +4327,136 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2020/04/25/37119-422844843_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "7f696b75fa3ec6032afd6625467e1139ded3d3f6a1955b1af50b39820397d678",
+      "license": {
+        "source_sha256": "7f696b75fa3ec6032afd6625467e1139ded3d3f6a1955b1af50b39820397d678",
+        "source_url": "https://cdn.pixabay.com/video/2020/04/25/37119-422844843_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-37119/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "8c7fac94e3280dc170954bdbaa5b615a77a5d460d3149dd5c2a9427aa6672c31",
+        "author": "Peggy_Marco",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-12T15:16:55.968161+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "8c7fac94e3280dc170954bdbaa5b615a77a5d460d3149dd5c2a9427aa6672c31",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image shows a collection of colorful paper structures, likely origami, which are folded into various shapes and designs. The folds are intricate and create a sense of depth and complexity. The colors used in the paper are vibrant and varied, including shades",
+          "The image shows a person folding paper stars. The paper stars are of various colors, including yellow, green, blue, and pink. The folds are intricate and create a symmetrical pattern. The person is holding the paper stars with both hands,",
+          "The image shows a person holding a folded paper in their hand. The paper appears to be a paper craft, likely origami, given the intricate folds and the way the paper appears to be folded and manipulated. The folds are symmetrical and create a"
+        ],
+        "frame_sha256": [
+          "ab44243284236e5219224bc01e13b3b6337dc1ca882e4f1486c3f5978748c36e",
+          "d68d4466341f9df6266ef7ec6b5aefbe95d81d8340d237065f1f7e9a422f7513",
+          "b9fa1dcfadeb5f50e0c455c8a8d31ef90aa28ab9e93f59b171a8b7a197d1f618"
+        ],
+        "source_sha256": "7f696b75fa3ec6032afd6625467e1139ded3d3f6a1955b1af50b39820397d678",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 124.985,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/07/28/45780-446504366_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "75e7015255aa09c01b13839bf89fdbd2f5a16eceaf2440c23e2b76eb543b3a9a",
+      "license": {
+        "source_sha256": "75e7015255aa09c01b13839bf89fdbd2f5a16eceaf2440c23e2b76eb543b3a9a",
+        "source_url": "https://cdn.pixabay.com/video/2020/07/28/45780-446504366_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-45780/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "8c80323d12842786f81470ec61ca19f84439503fee7a068dd4dc61b87aba0200",
+        "author": "Joyvideo123",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-12T15:19:10.926988+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "8c80323d12842786f81470ec61ca19f84439503fee7a068dd4dc61b87aba0200",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wiping",
+        "captions": [
+          "The image shows a person holding a blue cloth. The cloth appears to be draped over a plant with large, green leaves. The person is interacting with the plant by gently wiping the leaves with the cloth. The background of the image",
+          "The image shows a person holding a black object, possibly a phone or a tablet. The person is using their right hand to hold the object, with their thumb and index finger on the screen, and their middle finger on the back of the",
+          "The image shows a person holding a cell phone. The person is interacting with a plant. The plant has large, dark green leaves that are curved and have a textured surface. The leaves are positioned in front of the person's hand, and"
+        ],
+        "frame_sha256": [
+          "2f446c9313ff5aa06cecf5ade47b3871df90d02f311b30212152fa17bf036595",
+          "875fcb201f04148aa8034e2be58cb6507aa3bca8097e884b9b4b0e6636fe309a",
+          "44695c28fbfe6647476a1987cbc9c6d6a2ca98384977ccd1df0b6d29914519f5"
+        ],
+        "source_sha256": "75e7015255aa09c01b13839bf89fdbd2f5a16eceaf2440c23e2b76eb543b3a9a",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 128.382,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -4495,15 +4625,17 @@
     },
     "casasem-2026-11-12-1": {
       "sha256": "6029633df00275e78b6c9cae365c786cca5ab36656cc568bdac22361ed2d8952",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-12T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/24/34215-400954464_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/24/34216-400954472_large.mp4"
       ],
       "provider_id": "6af3b1b0850477b0c27dc7a6",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707270175451581702"
+      ]
     },
     "casasem-2026-11-12-2": {
       "sha256": "fa16092211d1d5dbbe7133c63876c9ac656c4302390367f9801d41a908cd3998",
@@ -4542,10 +4674,15 @@
     }
   },
   "last_run": {
-    "status": "STOCK_TARGET_MET",
-    "ready": 4,
-    "held_uncertain": 0,
-    "created": 0
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
+    "ready_before": 3,
+    "ready_after": 3,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
