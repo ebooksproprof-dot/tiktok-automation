@@ -4530,12 +4530,15 @@
     },
     "casasem-2026-11-13-2": {
       "sha256": "386fa38cf54ac1bb5f1635e2ad52654e1af7c89c6457e4fa46f3c2c7b6bae9cd",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-13T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/31/34659-402634333_large.mp4",
         "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4"
-      ]
+      ],
+      "provider_id": "6af50efcbc9f3773a1af1a1e",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
