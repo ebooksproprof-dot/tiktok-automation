@@ -4760,6 +4760,12 @@
       "at": "2026-11-12T15:10:02.720109Z",
       "trigger": "CONFIRMED_CONSUMPTION",
       "target_workflow": "casasemesforco-daily.yml"
+    },
+    "casasem-2026-11-12-2": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-12T22:20:19.778535Z",
+      "trigger": "CONFIRMED_CONSUMPTION",
+      "target_workflow": "acquire-media.yml"
     }
   },
   "maintenance_refills": {
