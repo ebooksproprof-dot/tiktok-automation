@@ -2832,7 +2832,7 @@
         "author": "chayka1270",
         "commercial_use": true,
         "reviewed_at": "2026-11-09T16:27:47.808252+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "076658617c1c437c06aadef93f53e3137ce39556e905a09604d5d7ffffa29bf7",
         "license_policy": {
