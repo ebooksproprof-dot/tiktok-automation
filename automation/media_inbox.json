@@ -1864,7 +1864,7 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794497332,
+    "at": 1794508152,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -1876,56 +1876,56 @@
         "category": "livros",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "livros",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "maos",
         "status": "search_ok",
         "eligible_candidates": 1,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "maos",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "panos",
         "status": "search_ok",
         "eligible_candidates": 1,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "panos",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "roupas",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "roupas",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
