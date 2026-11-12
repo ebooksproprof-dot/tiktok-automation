@@ -1719,6 +1719,54 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-13-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-12T00:57:30Z",
+      "sha256": "386fa38cf54ac1bb5f1635e2ad52654e1af7c89c6457e4fa46f3c2c7b6bae9cd",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-13-2-386fa38cf54ac1bb.mp4",
+      "concept": "auto-handwashing-e228d793ac23",
+      "script_sha256": "e228d793ac23d2efde801e509018f6ff68d2e15a0ed013c6da0d8d33ae3d4e23",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Use um produto indicado para a higiene das mãos.",
+        "Mantenha a área da pia livre para utilizar com segurança.",
+        "Confira se há sabonete disponível antes de começar.",
+        "Siga o modo de uso e a quantidade indicados no rótulo.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/03/31/34659-402634333_large.mp4",
+        "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/03/31/34659-402634333_large.mp4",
+          "sha256": "8bb079c36ce00187e564b8b147d055b759e30f646df6e2ae662b0464d71de435",
+          "dhash": [
+            "c54e70352d310939",
+            "c54e703934090919",
+            "64363036340e0939",
+            "c9f0e498130f0919",
+            "b9cc84343c0c0919"
+          ]
+        },
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4",
+          "sha256": "b8db82308ccf821d57f66909d19d0f0c1edfdf32461b6c4e3501ecf8c7576693",
+          "dhash": [
+            "06e7c7cf6f9bda65",
+            "1fe5ceec79f3f270",
+            "07e7c7cf77f4f070",
+            "07e7c7ef7cf9f271",
+            "c7e7c6c465b1fa71"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-13T18:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -1993,7 +2041,9 @@
     "2026-11-11T19:30:59.516056Z",
     "2026-11-11T19:31:03.515725Z",
     "2026-11-11T19:31:06.247951Z",
-    "2026-11-11T22:42:55.834536Z"
+    "2026-11-11T22:42:55.834536Z",
+    "2026-11-12T00:57:27.562744Z",
+    "2026-11-12T00:57:27.833076Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2001,25 +2051,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-11-11T22:57:56.057215Z",
-        "observed_at": "2026-11-11T22:42:56.057215Z"
+        "remaining": 148,
+        "reset_at": "2026-11-12T01:12:28.003126Z",
+        "observed_at": "2026-11-12T00:57:28.003126Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 599,
-        "reset_at": "2026-11-12T22:42:56.057215Z",
-        "observed_at": "2026-11-11T22:42:56.057215Z"
+        "remaining": 597,
+        "reset_at": "2026-11-12T22:42:57.003126Z",
+        "observed_at": "2026-11-12T00:57:28.003126Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 726,
-        "reset_at": "2026-11-16T22:01:05.057215Z",
-        "observed_at": "2026-11-11T22:42:56.057215Z"
+        "remaining": 724,
+        "reset_at": "2026-11-16T22:01:05.003126Z",
+        "observed_at": "2026-11-12T00:57:28.003126Z"
       }
     },
     "consecutive_errors": 0,
