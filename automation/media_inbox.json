@@ -1864,7 +1864,7 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794530080,
+    "at": 1794553804,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -1876,56 +1876,56 @@
         "category": "tarefas",
         "status": "search_ok",
         "eligible_candidates": 5,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "tarefas",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 13,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 1,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "vassoura2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "vassoura2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
