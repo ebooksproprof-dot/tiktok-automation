@@ -4770,6 +4770,12 @@
       "at": "2026-11-12T22:20:19.778535Z",
       "trigger": "CONFIRMED_CONSUMPTION",
       "target_workflow": "acquire-media.yml"
+    },
+    "casasem-2026-11-13-1": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-13T14:43:20.454377Z",
+      "trigger": "CONFIRMED_CONSUMPTION",
+      "target_workflow": "acquire-media.yml"
     }
   },
   "maintenance_refills": {
