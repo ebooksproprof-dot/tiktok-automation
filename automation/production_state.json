@@ -4652,15 +4652,17 @@
     },
     "casasem-2026-11-13-1": {
       "sha256": "71a7b3bf84781093977cba276f6e458aaaec457e8845607314eee6ff043da668",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-13T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/26/34326-402333158_large.mp4",
         "https://cdn.pixabay.com/video/2020/03/29/34536-402679302_large.mp4"
       ],
       "provider_id": "6af4c278cf36c484ae92166b",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707640902847679751"
+      ]
     },
     "casasem-2026-11-13-2": {
       "sha256": "386fa38cf54ac1bb5f1635e2ad52654e1af7c89c6457e4fa46f3c2c7b6bae9cd",
@@ -4678,8 +4680,8 @@
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 2,
-    "ready_after": 2,
+    "ready_before": 1,
+    "ready_after": 1,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
