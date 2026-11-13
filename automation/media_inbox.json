@@ -1864,7 +1864,7 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794581193,
+    "at": 1794592638,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -1918,7 +1918,7 @@
         "category": "roupas2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
