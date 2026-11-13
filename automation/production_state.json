@@ -4639,14 +4639,16 @@
     },
     "casasem-2026-11-12-2": {
       "sha256": "fa16092211d1d5dbbe7133c63876c9ac656c4302390367f9801d41a908cd3998",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-12T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/26/34324-402333127_large.mp4"
       ],
       "provider_id": "6af3b8947b2f1abd659caedd",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707393144328899860"
+      ]
     },
     "casasem-2026-11-13-1": {
       "sha256": "71a7b3bf84781093977cba276f6e458aaaec457e8845607314eee6ff043da668",
@@ -4676,8 +4678,8 @@
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 3,
-    "ready_after": 3,
+    "ready_before": 2,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
