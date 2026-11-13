@@ -1864,76 +1864,76 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794527231,
+    "at": 1794530080,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 2,
+    "skipped_known": 8,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "livros",
+        "category": "tarefas",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "eligible_candidates": 5,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "livros",
+        "category": "tarefas",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "maos",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 13,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 1,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "maos",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "panos",
+        "category": "vassoura2",
         "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "cache"
+        "eligible_candidates": 0,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "panos",
+        "category": "vassoura2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "roupas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "roupas",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "books shelf",
-      "handwashing",
-      "wiping",
-      "folding clothes"
+      "housework",
+      "cleaning",
+      "wardrobe",
+      "sweeping floor"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
