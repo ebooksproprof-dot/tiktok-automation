@@ -10,23 +10,27 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-13T20:38:39.084285Z",
+    "at": "2026-11-13T22:06:07.394930Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
-      "publication_ids": [],
-      "status": "MAINTENANCE_ALREADY_RESERVED_THIS_WINDOW"
+      "publication_ids": [
+        "casasem-2026-11-13-2"
+      ],
+      "status": "DISPATCHED",
+      "target_workflow": "acquire-media.yml",
+      "trigger": "CONFIRMED_CONSUMPTION"
     },
     "stock": {
       "held_ids": [],
       "held_uncertain": 0,
       "low_stock": true,
       "publication_confirmation_is_separate": true,
-      "ready": 1,
-      "refill_needed": 3,
+      "ready": 0,
+      "refill_needed": 4,
       "target_max": 4
     },
     "this_monitor_generates_or_publishes": false
