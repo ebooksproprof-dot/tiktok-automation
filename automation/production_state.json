@@ -4676,6 +4676,30 @@
       "error_stage": "license",
       "http_status": null,
       "retry_after": 1794685237.394812
+    },
+    "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794696389.393649
+    },
+    "https://cdn.pixabay.com/video/2026/01/21/329307_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794696420.153295
+    },
+    "https://cdn.pixabay.com/video/2026/05/02/350124_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794696447.0748947
     }
   },
   "outputs": {
