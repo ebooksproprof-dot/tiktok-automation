@@ -1860,22 +1860,20 @@
       "automatic_review_status": "QUEUED"
     }
   ],
-  "rejected_until": {
-    "pixabay:163116": 1794632609
-  },
+  "rejected_until": {},
   "last_run": {
-    "at": 1794616251,
+    "at": 1794639467,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 4,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "ferro3",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
@@ -1883,27 +1881,27 @@
         "category": "ferro3",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "louca3",
         "status": "search_ok",
         "eligible_candidates": 1,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "louca3",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "armario2",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
@@ -1911,13 +1909,13 @@
         "category": "armario2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 2,
+        "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
@@ -1925,7 +1923,7 @@
         "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
