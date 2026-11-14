@@ -1986,15 +1986,49 @@
       "duration": 18.026667,
       "bytes": 9697890,
       "acquired_at": 1794674465
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "38916",
+      "url": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-38916/",
+      "author": "AlexKopeykin",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: AlexKopeykin / Pixabay — https://pixabay.com/videos/id-38916/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: books, library, to read, image",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+      "sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+      "dhash": [
+        "776e5e2ec6346727",
+        "560e7f7e7dcd3fe3",
+        "5c1d7ced4fcfaf6e",
+        "5d0dfc6d1f5f5edf",
+        "5d2c6c7f1b3b7fe6"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 10.76,
+      "bytes": 28454140,
+      "acquired_at": 1794680860
     }
   ],
-  "rejected_until": {},
+  "rejected_until": {
+    "pixabay:38919": 1795285657
+  },
   "last_run": {
-    "at": 1794674460,
-    "acquired": 2,
-    "rejected": 0,
+    "at": 1794680857,
+    "acquired": 1,
+    "rejected": 1,
     "download_attempts": 2,
-    "skipped_known": 2,
+    "skipped_known": 10,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -2003,6 +2037,60 @@
         "status": "search_ok",
         "eligible_candidates": 8,
         "response_source": "cache"
+      },
+      {
+        "provider": "pixabay",
+        "provider_id": "38919",
+        "status": "CANDIDATE_VALIDATION_REJECTED"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "livros2",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "maos3",
+        "status": "search_ok",
+        "eligible_candidates": 5,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "maos3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "panos3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "panos3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "roupas3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "roupas3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
@@ -2014,7 +2102,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 51,
+    "unreviewed_media_count": 52,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
