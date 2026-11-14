@@ -1864,76 +1864,76 @@
     "pixabay:163116": 1794632609
   },
   "last_run": {
-    "at": 1794613564,
+    "at": 1794616251,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 3,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "estante",
+        "category": "ferro3",
         "status": "search_ok",
-        "eligible_candidates": 3,
-        "response_source": "cache"
+        "eligible_candidates": 1,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "estante",
+        "category": "ferro3",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "maos2",
+        "category": "louca3",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "eligible_candidates": 1,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "maos2",
+        "category": "louca3",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "mesa",
+        "category": "armario2",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "eligible_candidates": 1,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "mesa",
+        "category": "armario2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "roupas2",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
+        "eligible_candidates": 2,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "roupas2",
+        "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "bookshelf",
-      "washing hands soap",
-      "cleaning table",
-      "laundry folding"
+      "ironing clothes",
+      "dishwashing",
+      "closet clothes",
+      "cleaning kitchen"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
