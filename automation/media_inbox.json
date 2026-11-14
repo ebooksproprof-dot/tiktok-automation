@@ -2018,18 +2018,83 @@
       "duration": 10.76,
       "bytes": 28454140,
       "acquired_at": 1794680860
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "37236",
+      "url": "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-37236/",
+      "author": "analogicus",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: analogicus / Pixabay — https://pixabay.com/videos/id-37236/",
+      "category": "maos3",
+      "query": "hand washing",
+      "selection_reason": "Provider tags: disinfection, hand washing, hands, protection, hygiene, covid-19, corona, health, skin, skin protection, virus, virus protection, pension, skin care, alcohol, ethanol",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4",
+      "sha256": "8231452e3002756d3b6a9f12fa0fdb497bb8057e8fef68ba57d1b35ef3298f6c",
+      "dhash": [
+        "d2d3f33f3e386c6c",
+        "6656723b0711796c",
+        "6466663607136b6b",
+        "645656371333696d",
+        "645656361e06626a"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 58.495,
+      "bytes": 38615017,
+      "acquired_at": 1794695951
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "37274",
+      "url": "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-37274/",
+      "author": "analogicus",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: analogicus / Pixabay — https://pixabay.com/videos/id-37274/",
+      "category": "maos3",
+      "query": "hand washing",
+      "selection_reason": "Provider tags: disinfection, hand washing, hands, protection, hygiene, covid-19, corona, health, skin, skin protection, virus, virus protection, pension, skin care, alcohol, ethanol",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4",
+      "sha256": "42532f45901e11598b30b52bb53f384f369d59743b91d1b3715d6d26309daeaa",
+      "dhash": [
+        "4565730f06363616",
+        "3b0f171b1e0e3616",
+        "3323331a0626361e",
+        "2b2327170e262616",
+        "2b29292b060e2636"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 58.645,
+      "bytes": 36726940,
+      "acquired_at": 1794695953
     }
   ],
   "rejected_until": {
-    "pixabay:38919": 1795285657
+    "pixabay:38919": 1795285657,
+    "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794680857,
-    "acquired": 1,
+    "at": 1794695945,
+    "acquired": 2,
     "rejected": 1,
-    "download_attempts": 2,
-    "skipped_known": 10,
-    "skipped_cooldown": 0,
+    "download_attempts": 3,
+    "skipped_known": 8,
+    "skipped_cooldown": 1,
     "diagnostics": [
       {
         "provider": "pixabay",
@@ -2040,7 +2105,7 @@
       },
       {
         "provider": "pixabay",
-        "provider_id": "38919",
+        "provider_id": "38917",
         "status": "CANDIDATE_VALIDATION_REJECTED"
       },
       {
@@ -2048,48 +2113,13 @@
         "category": "livros2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "maos3",
         "status": "search_ok",
-        "eligible_candidates": 5,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "maos3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "panos3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "panos3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "pixabay",
-        "category": "roupas3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "roupas3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 4,
         "response_source": "live_api"
       }
     ],
@@ -2102,7 +2132,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 52,
+    "unreviewed_media_count": 54,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
