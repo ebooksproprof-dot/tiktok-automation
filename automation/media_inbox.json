@@ -1922,15 +1922,79 @@
       "duration": 23.456667,
       "bytes": 46931677,
       "acquired_at": 1794663251
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "38918",
+      "url": "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-38918/",
+      "author": "AlexKopeykin",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: AlexKopeykin / Pixabay — https://pixabay.com/videos/id-38918/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: library, books, reading, read, literature",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4",
+      "sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
+      "dhash": [
+        "3392b6b6b3795cde",
+        "aeb6c4b472797c7e",
+        "93b3d371535b583c",
+        "090811416249484c",
+        "3a23d7c6e6e6898c"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 6.92,
+      "bytes": 19074759,
+      "acquired_at": 1794674463
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "35453",
+      "url": "https://cdn.pixabay.com/video/2020/04/08/35453-407130965_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-35453/",
+      "author": "ninosouza",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: ninosouza / Pixabay — https://pixabay.com/videos/id-35453/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: education, school, library, books, student, children, study, knowledge, book, research, reading, learning, science, studying, read, ink, design, brush",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/08/35453-407130965_large.mp4",
+      "sha256": "8802a7337c4bb13b5ddc59a532d7fa45bc26063bd38a2b4484113bb83e6c9a97",
+      "dhash": [
+        "ffa6f69f9b87a6ae",
+        "ffa4ed9a9e8cacac",
+        "ffbef4961687a7a7",
+        "fda7f48f1787a7a1",
+        "f5affd8c9ca4a4a9"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 18.026667,
+      "bytes": 9697890,
+      "acquired_at": 1794674465
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1794663235,
+    "at": 1794674460,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -1938,7 +2002,7 @@
         "category": "livros2",
         "status": "search_ok",
         "eligible_candidates": 8,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -1950,7 +2014,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 49,
+    "unreviewed_media_count": 51,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
