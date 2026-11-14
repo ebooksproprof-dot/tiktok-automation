@@ -1858,84 +1858,99 @@
       "bytes": 13040400,
       "acquired_at": 1794353867,
       "automatic_review_status": "QUEUED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "329307",
+      "url": "https://cdn.pixabay.com/video/2026/01/21/329307_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-329307/",
+      "author": "u_8gsy6544ad",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: u_8gsy6544ad / Pixabay — https://pixabay.com/videos/id-329307/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: library, books, study",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2026/01/21/329307_large.mp4",
+      "sha256": "27aa51d3b3a3cd3d50e0b0af2d094bc95c6670dbf4e3e4e675ab7ebf714a0385",
+      "dhash": [
+        "96cc4e0e161a5404",
+        "96cf4f0e1b0b5c04",
+        "8ed64c8e8c9ec814",
+        "9e9ccc8e8c9ed014",
+        "964f4f0f0e0fcc1c"
+      ],
+      "width": 4096,
+      "height": 2160,
+      "duration": 24.44,
+      "bytes": 30560497,
+      "acquired_at": 1794663243
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "140595",
+      "url": "https://cdn.pixabay.com/video/2022/11/26/140595-775389299_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-140595/",
+      "author": "jadeallencook",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: jadeallencook / Pixabay — https://pixabay.com/videos/id-140595/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: woman, vynils, records, albums, books, library, book store, record store, vinyl store, berkley",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/11/26/140595-775389299_large.mp4",
+      "sha256": "754a23b5f014d718c2351e8f611cb6040694060cfdcfcc4940c5006b3e041dd5",
+      "dhash": [
+        "353372634062b270",
+        "6d6f6a4b4c526a68",
+        "6d6f6a6b64626268",
+        "6d6f6a6b64626268",
+        "2d27626b64626268"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 23.456667,
+      "bytes": 46931677,
+      "acquired_at": 1794663251
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1794639467,
-    "acquired": 0,
+    "at": 1794663235,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 1,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "ferro3",
+        "category": "livros2",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 8,
         "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "ferro3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "louca3",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "cache"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "louca3",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "ironing clothes",
-      "dishwashing",
-      "closet clothes",
-      "cleaning kitchen"
+      "library books",
+      "hand washing",
+      "microfiber",
+      "clothes folding"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 47,
+    "unreviewed_media_count": 49,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
