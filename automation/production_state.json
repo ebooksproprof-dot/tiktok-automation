@@ -4457,6 +4457,201 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/06/21/10174-223148987_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "1c046acaa57feb0698ee630bdf5361a9f9a21af7b8bb9580b4e496fd04ed524a",
+      "license": {
+        "source_sha256": "1c046acaa57feb0698ee630bdf5361a9f9a21af7b8bb9580b4e496fd04ed524a",
+        "source_url": "https://cdn.pixabay.com/video/2017/06/21/10174-223148987_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-10174/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "176bf90a1ff2b4ad91111330c3fb67c1a80dd636994549a3f1b2bbe35d9ad867",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-14T00:24:49.480902+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "176bf90a1ff2b4ad91111330c3fb67c1a80dd636994549a3f1b2bbe35d9ad867",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "laundry",
+        "captions": [
+          "The image shows a blue, rectangular object that appears to be a piece of furniture or a part of a larger structure. The object is held together by two metal rings, which are attached to a central rod. The rings are connected to the",
+          "Clothespin.",
+          "The image shows a blue background with a close-up view of a blue metal hook or clamp. The hook appears to be attached to a series of blue metal rods or poles, which are hanging or attached to the hook. The rods are"
+        ],
+        "frame_sha256": [
+          "7533926e1394003b1333ff439f13a92c6262f44cb2ffc992dadb3501436e2ac7",
+          "9f3f9c13dfa0a68b2994d36379b8b85ef5daab9343c4d77a308ae2d74db0d0b1",
+          "d7e1f78e6c95b1384455639bc83e73a38b859dfbf327210ead9f5fc3cda9e07f"
+        ],
+        "source_sha256": "1c046acaa57feb0698ee630bdf5361a9f9a21af7b8bb9580b4e496fd04ed524a",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 68.309,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2025/04/27/275071_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "74d8bfff637bd5fec3219e45a089ea9eacd83d685ec0e04bb1a647eea7259ae6",
+      "license": {
+        "source_sha256": "74d8bfff637bd5fec3219e45a089ea9eacd83d685ec0e04bb1a647eea7259ae6",
+        "source_url": "https://cdn.pixabay.com/video/2025/04/27/275071_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-275071/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "ed36aef5aa0972224929d5f3c6d17e691142b8ccd1c97cc8ee818d0eea440d6d",
+        "author": "JoshuaWoroniecki",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-14T00:26:11.789848+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "ed36aef5aa0972224929d5f3c6d17e691142b8ccd1c97cc8ee818d0eea440d6d",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image depicts a narrow alleyway between two tall buildings. The alleyway is paved with cobblestones and appears to be in a state of disrepair, with some of the cobblestones missing or worn away. The buildings on either",
+          "The image features a narrow alleyway with buildings on both sides. The buildings are constructed with stone or brick and have a rustic appearance. The walls are adorned with various decorations, including some plants and small windows. The alleyway is relatively narrow",
+          "The image features a narrow alleyway between two tall buildings. The alleyway is flanked by two buildings, each with a distinct architectural style. The building on the left has a flat roof and a few windows, while the building on the"
+        ],
+        "frame_sha256": [
+          "8574329ed33c0fb762a2067e3c6f2d44385167b30b758b85883078d98c0e2b6c",
+          "33d2023a934008214cc3a9cad5dbe36efabeb6171d730a916826cb1f090d01db",
+          "b01db1a1e9058366cec96725ff712b79561f1605b1742a2ef24f864a0f88f59a"
+        ],
+        "source_sha256": "74d8bfff637bd5fec3219e45a089ea9eacd83d685ec0e04bb1a647eea7259ae6",
+        "frame_mode": "reviewed_portrait",
+        "accepted": false,
+        "review_seconds": 75.917,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2016/05/12/3142-166335943_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "b1179f848e83646e2c6b851659b02a6747ec092ac6e171819484c533028d1013",
+      "license": {
+        "source_sha256": "b1179f848e83646e2c6b851659b02a6747ec092ac6e171819484c533028d1013",
+        "source_url": "https://cdn.pixabay.com/video/2016/05/12/3142-166335943_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-3142/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "d6e407693dce654b05253c2113cc08534be1d339dda1e26e55af6b5f2c721535",
+        "author": "Life-Of-Vids",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-14T00:27:35.685707+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "d6e407693dce654b05253c2113cc08534be1d339dda1e26e55af6b5f2c721535",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "surfaces",
+        "captions": [
+          "The image shows a close-up of a faucet with a metallic, shiny, circular spout. The faucet appears to be made of metal, likely brass or chrome, given the reflective surface and the presence of a shiny, reflective ring",
+          "The image shows a close-up view of a faucet. The faucet is mounted on a dark surface, which could be a sink or a countertop. The faucet has a round, metallic base with a shiny, reflective surface. The base",
+          "The image shows a close-up view of a sink faucet. The faucet is mounted on a countertop, and the surrounding area appears to be a bathroom or kitchen setting. The faucet is made of metal and has a shiny, polished finish"
+        ],
+        "frame_sha256": [
+          "ba2cb4a3ff5f2d8d1810dcf0889e6362e733b96257fc653de2b1c239e2ec7454",
+          "70d0d750a47ab965f2199d497b39f33b28748cbb2ec1dac572268fe9ed1733d1",
+          "50e5586fda3c40bb05aef4e50f77deb380438bd8b5ade092f83b1212c9701c75"
+        ],
+        "source_sha256": "b1179f848e83646e2c6b851659b02a6747ec092ac6e171819484c533028d1013",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 71.972,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -4666,22 +4861,24 @@
     },
     "casasem-2026-11-13-2": {
       "sha256": "386fa38cf54ac1bb5f1635e2ad52654e1af7c89c6457e4fa46f3c2c7b6bae9cd",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-13T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/03/31/34659-402634333_large.mp4",
         "https://cdn.pixabay.com/video/2020/04/14/35947-409042422_large.mp4"
       ],
       "provider_id": "6af50efcbc9f3773a1af1a1e",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707764157134703879"
+      ]
     }
   },
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 1,
-    "ready_after": 1,
+    "ready_before": 0,
+    "ready_after": 0,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
