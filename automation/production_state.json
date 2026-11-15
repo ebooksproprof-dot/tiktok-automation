@@ -4732,6 +4732,38 @@
       "error_stage": "license",
       "http_status": null,
       "retry_after": 1794732478.6687274
+    },
+    "https://cdn.pixabay.com/video/2022/02/02/106481-673008202_medium.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794773000.9205813
+    },
+    "https://cdn.pixabay.com/video/2022/03/08/110155-686125616_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794773027.8293176
+    },
+    "https://cdn.pixabay.com/video/2022/04/02/112651-695204705_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794773057.1805487
+    },
+    "https://cdn.pixabay.com/video/2022/07/12/123941-729425669_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1794773086.3261507
     }
   },
   "outputs": {
