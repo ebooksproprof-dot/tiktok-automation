@@ -2146,6 +2146,70 @@
       "duration": 9.96,
       "bytes": 5578301,
       "acquired_at": 1794704651
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9374",
+      "url": "https://cdn.pixabay.com/video/2017/05/28/9374-219285219_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9374/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9374/",
+      "category": "janelas",
+      "query": "cleaning window",
+      "selection_reason": "Provider tags: cleaning of the apartment, cleaning, woman, cleaner, young woman, the maid, cleansing, a damp cloth, to remove, dust, window, glass, frame, plastic windows, detergents, apartment, room, clean",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/28/9374-219285219_large.mp4",
+      "sha256": "72ad95b178475b1fe5d961ba0c6e646452a77ef5db3464fccaf9aa5e43ed8211",
+      "dhash": [
+        "b0b090b0b0bc3894",
+        "5a1a9a3a7a5ada9a",
+        "5a5a5859d9d999b9",
+        "6262626242626363",
+        "4a484343c3c98989"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.88,
+      "bytes": 5464677,
+      "acquired_at": 1794726379
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9376",
+      "url": "https://cdn.pixabay.com/video/2017/05/28/9376-219285225_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9376/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9376/",
+      "category": "janelas",
+      "query": "cleaning window",
+      "selection_reason": "Provider tags: cleaning of the apartment, cleaning, woman, cleaner, young woman, the maid, cleansing, a damp cloth, to remove, dust, window, glass, frame, plastic windows, detergents, apartment, room, clean",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/28/9376-219285225_large.mp4",
+      "sha256": "432897eeaff7df117b62a8abd8e9b874b8d630218cbb708b8f119a561b15cf1d",
+      "dhash": [
+        "b0b0b2a898989c86",
+        "b0a0a0a0a898aca4",
+        "2420a0a02838b8ac",
+        "20202020283088a4",
+        "202020282838383c"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.72,
+      "bytes": 3737792,
+      "acquired_at": 1794726380
     }
   ],
   "rejected_until": {
@@ -2153,11 +2217,11 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794704646,
+    "at": 1794726377,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -2172,7 +2236,7 @@
         "category": "ferro",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
@@ -2186,7 +2250,7 @@
         "category": "louca",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
@@ -2200,14 +2264,14 @@
         "category": "cabides",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "janelas",
         "status": "search_ok",
         "eligible_candidates": 4,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
@@ -2219,7 +2283,7 @@
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 56,
+    "unreviewed_media_count": 58,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
