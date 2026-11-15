@@ -2082,6 +2082,70 @@
       "duration": 58.645,
       "bytes": 36726940,
       "acquired_at": 1794695953
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9375",
+      "url": "https://cdn.pixabay.com/video/2017/05/28/9375-219285223_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9375/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9375/",
+      "category": "janelas",
+      "query": "cleaning window",
+      "selection_reason": "Provider tags: cleaning of the apartment, cleaning, woman, cleaner, young woman, the maid, cleansing, a damp cloth, to remove, dust, window, glass, frame, plastic windows, detergents, apartment, room, clean",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/28/9375-219285223_large.mp4",
+      "sha256": "6359ca4b055ca55351dba31ecd8c0dbd6ab64ba465e9c68a526264e7e7a8ae13",
+      "dhash": [
+        "6569691d5971a131",
+        "6161614969614969",
+        "3535b525656565d9",
+        "f222b6b6b25254d4",
+        "f9d1d9d9d999a94b"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.96,
+      "bytes": 5511743,
+      "acquired_at": 1794704649
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9373",
+      "url": "https://cdn.pixabay.com/video/2017/05/28/9373-219285216_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9373/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9373/",
+      "category": "janelas",
+      "query": "cleaning window",
+      "selection_reason": "Provider tags: cleaning of the apartment, cleaning, woman, cleaner, young woman, the maid, cleansing, a damp cloth, to remove, dust, window, glass, frame, plastic windows, detergents, apartment, room, clean",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/28/9373-219285216_large.mp4",
+      "sha256": "ab72bae12089b5085a1833ac87aef7d14dd61cdd79aafc98fa7b4edd145869e6",
+      "dhash": [
+        "a7e7f7f1f9bbbbbb",
+        "a3f7f3f9fbbbb3b3",
+        "a7e7f3fbb3bbbbb3",
+        "a3f7f3f3b3b3b3b3",
+        "a7e7f7f7b3b9bdbc"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.96,
+      "bytes": 5578301,
+      "acquired_at": 1794704651
     }
   ],
   "rejected_until": {
@@ -2089,35 +2153,58 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794695945,
+    "at": 1794704646,
     "acquired": 2,
-    "rejected": 1,
-    "download_attempts": 3,
-    "skipped_known": 8,
-    "skipped_cooldown": 1,
+    "rejected": 0,
+    "download_attempts": 2,
+    "skipped_known": 0,
+    "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "livros2",
+        "category": "ferro",
         "status": "search_ok",
-        "eligible_candidates": 8,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "provider_id": "38917",
-        "status": "CANDIDATE_VALIDATION_REJECTED"
+        "eligible_candidates": 0,
+        "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "livros2",
+        "category": "ferro",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "maos3",
+        "category": "louca",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "louca",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "cabides",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cabides",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "janelas",
         "status": "search_ok",
         "eligible_candidates": 4,
         "response_source": "live_api"
@@ -2125,14 +2212,14 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "library books",
-      "hand washing",
-      "microfiber",
-      "clothes folding"
+      "ironing",
+      "washing dishes",
+      "clothes hangers",
+      "cleaning window"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 54,
+    "unreviewed_media_count": 56,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
