@@ -2217,69 +2217,76 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794726377,
-    "acquired": 2,
+    "at": 1794763174,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
+    "download_attempts": 0,
     "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "ferro",
+        "category": "livros",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "ferro",
+        "category": "livros",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache"
+        "response_source": "live_api"
       },
       {
         "provider": "pixabay",
-        "category": "louca",
+        "category": "maos",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "maos",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "panos",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "wikimedia",
+        "category": "panos",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api"
+      },
+      {
+        "provider": "pixabay",
+        "category": "roupas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
       },
       {
         "provider": "wikimedia",
-        "category": "louca",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "cabides",
+        "category": "roupas",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api"
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cabides",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache"
-      },
-      {
-        "provider": "pixabay",
-        "category": "janelas",
-        "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "ironing",
-      "washing dishes",
-      "clothes hangers",
-      "cleaning window"
+      "books shelf",
+      "handwashing",
+      "wiping",
+      "folding clothes"
     ],
     "query_bank_size": 24,
     "query_budget_per_provider": 4,
