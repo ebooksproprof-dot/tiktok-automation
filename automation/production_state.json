@@ -5236,6 +5236,12 @@
       "at": "2026-11-15T18:46:51.908103Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "acquire-media.yml"
+    },
+    "2026-11-16T00:00:00+00:00|acquire-media.yml": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-16T01:01:17.286009Z",
+      "trigger": "LOW_STOCK_MAINTENANCE",
+      "target_workflow": "acquire-media.yml"
     }
   }
 }
