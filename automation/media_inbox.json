@@ -2217,7 +2217,7 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794843918,
+    "at": 1794861431,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -2229,56 +2229,56 @@
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 3,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "estante",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "maos2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "maos2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "mesa",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "mesa",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "pixabay",
         "category": "roupas2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       },
       {
         "provider": "wikimedia",
         "category": "roupas2",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api"
+        "response_source": "cache"
       }
     ],
     "editorial_approved": 0,
