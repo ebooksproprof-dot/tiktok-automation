@@ -5684,7 +5684,7 @@
         "author": "AlexKopeykin",
         "commercial_use": true,
         "reviewed_at": "2026-11-17T02:42:17.953422+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "6f950c6d7b478bda6f0d155b545f31a570e0e63927c9c03730307e8930a3bd0a",
         "license_policy": {
@@ -5865,6 +5865,113 @@
       "error_stage": "release_and_queue",
       "http_status": null,
       "retry_after": 1794905250.5765254
+    },
+    "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "3b822350b605daf173f233cd8cdd4d7ccabf08ad4b0de02bf7a920d4145ad715",
+      "license": {
+        "source_sha256": "3b822350b605daf173f233cd8cdd4d7ccabf08ad4b0de02bf7a920d4145ad715",
+        "source_url": "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-2348/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "0748b7c5ff0ea2c6d60f881cfdc24c23a750cbe72668cf971b4bb3b78375e218",
+        "author": "Life-Of-Vids",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-17T16:02:50.052611+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "0748b7c5ff0ea2c6d60f881cfdc24c23a750cbe72668cf971b4bb3b78375e218",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "drain",
+        "captions": [
+          "The image shows a close-up view of a faucet. The faucet is made of metal and has a shiny, reflective surface. The faucet has a round, metallic base with a round, metallic cap. The faucet is installed in a wooden",
+          "The image shows a close-up view of a faucet with a metallic, round spout. The faucet is positioned in the center of the image, and the spout is open, revealing a stream of water. The water appears to be",
+          "The image shows a close-up view of a metallic screw or bolt. The screw is positioned centrally within the frame and appears to be made of a shiny, reflective material, likely brass or silver. The screw is attached to a surface that"
+        ],
+        "frame_sha256": [
+          "952cf5a95e806a99fb99256a16eb64eab76c5809aec666b5e181a89c7d1ce2cb",
+          "d699ea13f509f05a70ab0f1eb1e5b9b2948fd29d789575ca8f5738825100ff71",
+          "3c878a5275f323dcec2086a61a0bcf9ea357b2e8520f35c6873bf82ca43bf188"
+        ],
+        "source_sha256": "3b822350b605daf173f233cd8cdd4d7ccabf08ad4b0de02bf7a920d4145ad715",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 120.618,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2016/08/10/4344-178324620_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "d480b8f91290afacf5de7b928090478e5bdf6c421283448dd5825c80a790fa51",
+      "license": {
+        "source_sha256": "d480b8f91290afacf5de7b928090478e5bdf6c421283448dd5825c80a790fa51",
+        "source_url": "https://cdn.pixabay.com/video/2016/08/10/4344-178324620_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-4344/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "8410e9eb104fdcbffe9944e3af12a62ef7c001324e2dd0e1dd081b205622f904",
+        "author": "2427999",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-17T16:05:55.419226+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "8410e9eb104fdcbffe9944e3af12a62ef7c001324e2dd0e1dd081b205622f904",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -6090,12 +6197,14 @@
       "post_id": "casasem-2026-11-17-1",
       "sha256": "652b304252c66dc8694cad253df5aa3695b8cabaa140a9d0ec61a0f62cb9be18",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-1-652b304252c66dc8.mp4",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-17T10:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "provider_id": "6afbb82f4b26315855b516cc",
-      "public_urls": []
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709125498495847686"
+      ]
     },
     "casasem-2026-11-17-2": {
       "post_id": "casasem-2026-11-17-2",
@@ -6144,8 +6253,8 @@
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 2,
-    "ready_after": 2,
+    "ready_before": 1,
+    "ready_after": 1,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
