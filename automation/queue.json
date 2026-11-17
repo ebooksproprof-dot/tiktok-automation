@@ -6453,6 +6453,167 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-18-2",
+      "concept": "auto-handwashing-2a2b58d334c8",
+      "title": "Vai lavar as mãos? Siga o modo de uso e a quantidade indicados no rótulo. Confira se há sabonete disponível antes de começar. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — analogicus; https://pixabay.com/videos/id-37236/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-17T02:33:17.488994+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-18T18:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
+        "duration": 18.571,
+        "size": 4582976,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.5,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.004984,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4",
+            "sha256": "8231452e3002756d3b6a9f12fa0fdb497bb8057e8fef68ba57d1b35ef3298f6c",
+            "dhash": [
+              "d6d3f32f3e3c6c6c",
+              "6656523b0711797c",
+              "6466663607136b6b",
+              "645656371333696d",
+              "645656361e06626a"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          58.495
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 7,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "auto-handwashing-2a2b58d334c8",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — analogicus; https://pixabay.com/videos/id-37236/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "8231452e3002756d3b6a9f12fa0fdb497bb8057e8fef68ba57d1b35ef3298f6c",
+            "source_url": "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-37236/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "8e43bedb7012623467886d5230ca5be4308c176b99be9b2b475efdffc407c48b",
+            "author": "analogicus",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-17T02:30:39.387767+00:00",
+            "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "8e43bedb7012623467886d5230ca5be4308c176b99be9b2b475efdffc407c48b",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "handwashing",
+            "captions": [
+              "The image shows a person wearing a red top and white pants. The person is holding hands with another person, but only the hands are visible in the image. The background is blurred, and the focus is on the person holding hands.",
+              "The image features a person in the center. The person is wearing a red top and white pants. The person's hands are slightly apart, with the right hand slightly higher than the left. The background is blurred, and the focus is on",
+              "The image shows a person wearing a red top and white pants. The person is holding their hands together in front of their body. The background is blurred, and the focus is on the person and their hands. The person's hands are positioned"
+            ],
+            "frame_sha256": [
+              "eb8380884a20a677de7cd57d044190c6349afcec4eb6b101685fa2cfc26ac3a9",
+              "b94035617f091080854fc020e7923908d6d84b86c197e2303d84a909a06bd27a",
+              "7473814578ff65e1cccbf933cf667dbd2f5ec0cdf6927c04b465955a125d527e"
+            ],
+            "source_sha256": "8231452e3002756d3b6a9f12fa0fdb497bb8057e8fef68ba57d1b35ef3298f6c",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 107.536,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-2-9aa36f436d8eff1b.mp4",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Siga o modo de uso e a quantidade indicados no rótulo.",
+        "Confira se há sabonete disponível antes de começar.",
+        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
+        "Mantenha a área da pia livre para utilizar com segurança.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "2a2b58d334c89a733d91bb25b953194963343c47cf7fadb803a7de1077a6aad0",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }
