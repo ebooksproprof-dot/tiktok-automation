@@ -182,3 +182,53 @@ class ContinuitySimulationTests(unittest.TestCase):
         self.assertGreater(len(consumed), 12)
         self.assertEqual(len(queue['posts']), len({p['id'] for p in queue['posts']}))
         self.assertEqual(len(queue['posts']), len(slots))
+
+
+class WanRecoveryBoundsTests(unittest.TestCase):
+    def test_neutral_second_look_never_erases_unsafe_context_or_accepts_books(self):
+        from semantic_review import needs_textile_disambiguation, assess_generated_organization
+        self.assertTrue(needs_textile_disambiguation(1, ['white books on shelves']*3))
+        self.assertFalse(needs_textile_disambiguation(1, ['a child holding white books']*3))
+        self.assertFalse(needs_textile_disambiguation(0, ['white books on shelves']*3))
+        self.assertFalse(needs_textile_disambiguation(1, ['folded towels']*3))
+        self.assertFalse(assess_generated_organization(1, ['stacked books with paper pages']*3))
+
+    def test_replacement_targets_missing_slot_with_new_request_and_bounded_attempts(self):
+        from experimental81 import wan104 as wan
+        profile = json.loads(wan.PROFILE.read_text())
+        inventory = {'episode': 3, 'clips': [{'slot': 0}, {'slot': 2}], 'rejected_clips': []}
+        slot, first = wan.next_scene(inventory, profile)
+        self.assertEqual(slot, 1)
+        inventory['rejected_clips'].append({'episode': 3, 'slot': 1, 'sha256': 'a'*64})
+        slot, second = wan.next_scene(inventory, profile)
+        self.assertEqual(slot, 1)
+        self.assertNotEqual(first['seed'], second['seed'])
+        self.assertNotEqual(first['prompt'], second['prompt'])
+        self.assertEqual(inventory['clips'], [{'slot': 0}, {'slot': 2}])
+        inventory['rejected_clips'].append({'episode': 3, 'slot': 1, 'sha256': 'b'*64})
+        with self.assertRaisesRegex(ValueError, 'REPLACEMENT_LIMIT'):
+            wan.next_scene(inventory, profile)
+        inventory['episode'] = 4  # Earlier episode's rejected clips stay archived.
+        self.assertEqual(wan.next_scene(inventory, profile)[1]['seed'], wan.request_spec(profile, 4, 1)['seed'])
+
+    def test_failed_scene_preserves_previous_review_without_starting_narration(self):
+        import tempfile
+        from experimental81 import wan104_finish as finish
+        from test_wan104_policy import quality_fixture
+        q = quality_fixture(); reviewed, rejected = [], []
+        def moving(path):
+            if str(path) == 'b'*64: raise ValueError('SOURCE_FROZEN_OR_UNDECODABLE')
+            return {}
+        proof = {r['source_sha256']: r for r in q['semantic_reviews']}
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(finish, 'download', side_effect=lambda clip, folder: clip['sha256']), \
+             patch.object(finish.render, 'sha', side_effect=lambda path: str(path)), \
+             patch.object(finish, 'motion', side_effect=moving), \
+             patch.object(finish, 'fingerprint', return_value={}), \
+             patch.object(finish.render, 'synthesize') as speech:
+            with self.assertRaisesRegex(ValueError, 'FROZEN'):
+                finish.compose({'clips': q['licensed_sources']}, tmp, proof,
+                    on_review=lambda clip, review: reviewed.append(clip['slot']),
+                    on_reject=lambda clip, reason, review: rejected.append(clip['slot']))
+        self.assertEqual(reviewed, [0]); self.assertEqual(rejected, [1])
+        speech.assert_not_called()

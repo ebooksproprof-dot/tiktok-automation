@@ -58,7 +58,7 @@ jobs:
   create-videos:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
     concurrency:
-      group: casasemesforco-state
+      group: ${{ github.event_name == 'push' && 'casasemesforco-production-smoke' || 'casasemesforco-state' }}
       cancel-in-progress: false
     # Standard public runner only. Never use larger/paid runners.
     runs-on: ubuntu-latest
@@ -139,11 +139,11 @@ jobs:
           if [ "$FIRST_LIVE_TEST_SOON" = 'true' ]; then args+=(--soon); fi
           python automation/autonomous_production.py --stage --limit "$PRODUCTION_LIMIT" "${args[@]}"
       - name: Render explicitly requested quality proofs (at most three)
-        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.tests.outcome == 'success' }}
+        if: ${{ github.event_name != 'push' && !cancelled() && steps.install.outcome == 'success' && steps.tests.outcome == 'success' }}
         run: python automation/review_requested.py
       - name: Find explicitly approved cloud proof batch
         id: staging
-        if: ${{ !cancelled() && steps.tests.outcome == 'success' }}
+        if: ${{ github.event_name != 'push' && !cancelled() && steps.tests.outcome == 'success' }}
         run: |
           python - <<'PYCODE'
           import json, os
@@ -170,11 +170,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python automation/stage_requested_proofs.py
       - name: Refresh read-only approval preview
-        if: always()
+        if: always() && github.event_name != 'push'
         continue-on-error: true # Preview failure must never prevent durable media/state.
         run: python automation/refresh_review44.py
       - name: Persist validated outputs even if a later composition fails
-        if: always()
+        if: always() && github.event_name != 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

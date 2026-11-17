@@ -57,7 +57,8 @@ class ProviderTests(unittest.TestCase):
         acquisition = (root/'acquire-media.yml').read_text()
         production = (root/'casasemesforco-daily.yml').read_text()
         self.assertIn('group: casasemesforco-media-acquisition', acquisition)
-        self.assertIn('group: casasemesforco-state', production)
+        self.assertIn("|| 'casasemesforco-state'", production)
+        self.assertIn("github.event_name == 'push' && 'casasemesforco-production-smoke'", production)
         self.assertNotIn('group: casasemesforco-state', acquisition)
 
     def test_pixabay_context_and_credits(self):

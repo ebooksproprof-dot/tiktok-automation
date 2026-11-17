@@ -218,6 +218,21 @@ def inspect_clip(path):
     return info
 
 
+
+def next_scene(inventory, profile):
+    missing = next((n for n in range(3) if n not in {c['slot'] for c in inventory['clips']}), None)
+    if missing is None:
+        return None
+    attempts = sum(c.get('episode') == inventory['episode'] and c.get('slot') == missing
+                   for c in inventory.get('rejected_clips', []))
+    if attempts >= 2:
+        raise ValueError('WAN_SCENE_REPLACEMENT_LIMIT_REACHED')
+    spec = request_spec(profile, inventory['episode'], missing)
+    if attempts:
+        spec.update(scene_attempt=attempts, seed=spec['seed']+100000*attempts,
+                    prompt=spec['prompt']+' Clear natural object textures, fixed shelving and a wider camera view.')
+    return missing, spec
+
 def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     profile = json.loads(PROFILE.read_text())
     if not trial and not profile['activated_after_public_trial']:
@@ -244,7 +259,7 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     profile_check(profile)
     tier, token = legacy.free_hf_identity()
     ledger, _ = budget_store.load()
-    waiting = quota_wait(ledger, request_spec(profile, inventory['episode'], len(inventory['clips'])), tier)
+    waiting = quota_wait(ledger, next_scene(inventory, profile)[1], tier)
     if waiting:
         inventory['last_wait'] = dict(waiting, at=now().isoformat())
         inventory_store.save(inventory, revision)
@@ -262,10 +277,10 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
         if [x['parameter_name'] for x in api.get('named_endpoints', {}).get('/generate_video', {}).get('parameters', [])] != profile['order']:
             raise ValueError('PINNED_WAN_API_SCHEMA_CHANGED')
         for _ in range(profile['max_clips_per_run']):
-            slot = len(inventory['clips'])
-            if slot >= 3:
+            planned = next_scene(inventory, profile)
+            if planned is None:
                 break
-            spec = request_spec(profile, inventory['episode'], slot)
+            slot, spec = planned
             estimate = profile['quota_estimate_per_clip_seconds']
             digest, revision = reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimate)
             entry = inventory['requests'][digest]

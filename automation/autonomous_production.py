@@ -358,7 +358,11 @@ def run(stage=False, soon=False, limit=2):
     render.OUT.mkdir(parents=True, exist_ok=True)
     reviewer = None
     pools, outputs, examined = {}, [], 0
-    for candidate in candidate_records(inbox, cache):
+    records = candidate_records(inbox, cache)
+    # Previously unavailable old sources must not consume every review position
+    # ahead of fresh discoveries. Preserve all retry/backoff history.
+    records.sort(key=lambda r: 1 if ledger['candidates'].get(r['url'], {}).get('status') == 'RETRYABLE' else 0)
+    for candidate in records:
         if len(outputs) >= min(limit, TARGET-occupied) or examined >= MAX_CANDIDATES:
             break
         key = candidate['url']

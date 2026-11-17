@@ -103,6 +103,15 @@ def assess_generated_organization(slot, captions):
             and sum(bool(t & expected[slot]) for t in tokens) >= 2)
 
 
+
+def needs_textile_disambiguation(slot, captions):
+    # A single neutral second look is allowed only for the demonstrated textile
+    # ambiguity. Unsafe context can never be erased by a replacement caption.
+    unsafe = FORBIDDEN | {'person', 'people', 'child', 'children'}
+    return (slot == 1 and len(captions) == 3
+            and not assess_generated_organization(slot, captions)
+            and not any(words(c) & unsafe for c in captions))
+
 def motion(path):
     result = subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-i', str(path),
         '-vf', 'freezedetect=n=-50dB:d=1', '-an', '-threads', '2', '-f', 'null', '-'],
@@ -165,6 +174,22 @@ class Reviewer:
             captions.append(caption)
             hashes.append(hashlib.sha256(frame.read_bytes()).hexdigest())
             print('SEMANTIC_FRAME_COMPLETE='+record['provider_id']+'; SAMPLE='+str(index+1), flush=True)
+        primary_captions = list(captions)
+        disambiguated = generated_profile and needs_textile_disambiguation(record.get('generated_slot'), captions)
+        if disambiguated:
+            captions = []
+            for index in range(3):
+                image = Image.open(folder/f'frame-{index}.jpg').convert('RGB')
+                prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
+                    {'type': 'image'}, {'type': 'text', 'text':
+                     'Describe the material, texture, folds, and edges of the stacked objects. '
+                     'Are there paper pages, fabric folds, or neither? Report only visible evidence.'}]}],
+                    add_generation_prompt=True)
+                inputs = self.processor(text=prompt, images=[image], return_tensors='pt')
+                with self.torch.inference_mode():
+                    generated = self.model.generate(**inputs, max_new_tokens=48, do_sample=False)
+                captions.append(self.processor.batch_decode(generated[:, inputs['input_ids'].shape[1]:],
+                    skip_special_tokens=True)[0].strip())
         result = {'method': 'automated_cpu_portrait_frame_semantics', 'model': MODEL,
                   'revision': REVISION, 'model_license': LICENSE, 'model_license_id': 'Apache-2.0',
                   'family': family, 'captions': captions, 'frame_sha256': hashes,
@@ -172,6 +197,8 @@ class Reviewer:
                   'accepted': assess_generated_organization(record.get('generated_slot'), captions) if generated_profile else assess(family, captions),
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
+        if disambiguated:
+            result.update(primary_captions=primary_captions, bounded_textile_disambiguation=True)
         result.update(motion_result)
         (folder/'review.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
         if not result['accepted']:

@@ -47,7 +47,7 @@ def cached_review(clip, proof):
             and assess_generated_organization(clip['slot'], review.get('captions', [])) else None)
 
 
-def compose(inventory, folder, proof=None, source_folder=None, lines=None):
+def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_review=None, on_reject=None):
     profile = require_sources(inventory['clips'])
     folder = Path(folder); folder.mkdir(parents=True, exist_ok=True)
     clips, visuals, reviews = [], [], []
@@ -56,14 +56,23 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None):
         path = Path(source_folder)/('new-clip-'+str(clip['slot'])+'.mp4') if source_folder else download(clip, folder)
         if render.sha(path) != clip['sha256']:
             raise ValueError('WAN_SOURCE_BYTES_DO_NOT_MATCH')
-        motion(path)
-        review = cached_review(clip, proof or {})
-        if not review:
-            reviewer = reviewer or Reviewer(os.getenv('SEMANTIC_MODEL_CACHE'))
-            review = reviewer.review(path, {'provider': 'wan104_generated', 'provider_id': clip['sha256'][:12],
-                'model': profile['model'], 'sha256': clip['sha256'], 'generated_slot': clip['slot'],
-                'frame_mode': 'reviewed_portrait'}, folder/('review-'+str(clip['slot'])))
-            review.update(policy='wan104_objects_v1', generated_slot=clip['slot'])
+        try:
+            motion(path)
+            review = cached_review(clip, proof or {})
+            if not review:
+                reviewer = reviewer or Reviewer(os.getenv('SEMANTIC_MODEL_CACHE'))
+                review = reviewer.review(path, {'provider': 'wan104_generated', 'provider_id': clip['sha256'][:12],
+                    'model': profile['model'], 'sha256': clip['sha256'], 'generated_slot': clip['slot'],
+                    'frame_mode': 'reviewed_portrait'}, folder/('review-'+str(clip['slot'])))
+                review.update(policy='wan104_objects_v1', generated_slot=clip['slot'])
+        except ValueError as exc:
+            if on_reject and str(exc) in ('PORTRAIT_VISUAL_CONTEXT_REJECTED', 'SOURCE_FROZEN_OR_UNDECODABLE'):
+                review_path = folder/('review-'+str(clip['slot']))/'review.json'
+                rejected_review = json.loads(review_path.read_text()) if review_path.exists() else {}
+                on_reject(clip, str(exc), rejected_review)
+            raise
+        if on_review:
+            on_review(clip, review)
         reviews.append(review)
         visuals.append(fingerprint(path, clip['url']))
         clips.append({'path': str(path), 'sha256': clip['sha256'], 'kind': 'ai', 'model': clip['model'],
@@ -159,8 +168,23 @@ def stage(trial=False):
     lines = ideas[0][2]
     proof_path = Path(__file__).with_name('wan104_source_reviews.json')
     proof = json.loads(proof_path.read_text()) if proof_path.exists() else {}
+    proof.update(inventory.get('source_reviews', {}))
     folder = ROOT.parent/'tmp'/'wan104-finish'/str(inventory['episode'])
-    output, quality = compose(inventory, folder, proof, lines=lines)
+    def checkpoint_review(clip, review):
+        nonlocal revision
+        reviews = inventory.setdefault('source_reviews', {})
+        if reviews.get(clip['sha256']) != review:
+            reviews[clip['sha256']] = review
+            revision = store.save(inventory, revision)
+    def reject_source(clip, reason, review):
+        nonlocal revision
+        inventory.setdefault('rejected_clips', []).append(dict(clip, rejection_reason=reason,
+            rejected_at=wan104.now().isoformat(), rejected_review=review))
+        inventory['clips'] = [c for c in inventory['clips'] if c['sha256'] != clip['sha256']]
+        inventory['status'] = 'REPLACING_REJECTED_SCENE'
+        revision = store.save(inventory, revision)
+    output, quality = compose(inventory, folder, proof, lines=lines,
+                              on_review=checkpoint_review, on_reject=reject_source)
     previous = history(queue, state)
     archive = ROOT/'visual_history.json'
     if archive.exists(): previous.append(json.loads(archive.read_text()))
