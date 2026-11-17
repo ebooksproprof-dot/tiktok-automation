@@ -971,5 +971,36 @@
     "publicly_verified": false,
     "not_before": "2026-11-08T13:06:35.806020+00:00",
     "at": "2026-11-08T01:24:48.597782+00:00"
+  },
+  "source_reviews": {
+    "cd524f3a92c90a754227041ea3254f5ec4dcd9cdcb86c3140b6bfc6bb548d28c": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "The image shows two glass jars with metal lids placed on a wooden shelf. The jars are identical in size and shape, with a cylindrical body and a slightly wider neck. The lids are attached securely with a metal clamp, which is visible at",
+        "The image shows two glass jars placed side by side on a wooden shelf. The jars have silver metal lids with a latch mechanism. The jars are identical in size and shape, with a rectangular glass body and a slightly wider diameter. The",
+        "The image shows two glass jars with silver lids on a wooden shelf. The jars are identical in size and shape, with a cylindrical body and a slightly wider neck. The lids are made of glass and have a metal ring around the top,"
+      ],
+      "frame_sha256": [
+        "2369ff522c5ebd7fa7307848279522c59e0c6515ffdc3d3dc6f61fdf092e850f",
+        "c4d867ebc8653afda625753c6292e7d21ef57f326a106d567019be6b012274e1",
+        "74c27f09ca2cfb10f6ecaa4839ad7f0fa65936a7e4c6f4555e1ba3d3c120b4c8"
+      ],
+      "source_sha256": "cd524f3a92c90a754227041ea3254f5ec4dcd9cdcb86c3140b6bfc6bb548d28c",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 118.181,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 0
+    }
   }
 }
