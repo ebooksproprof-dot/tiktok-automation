@@ -1,4 +1,9 @@
 {
+  "license_https_probe": {
+    "status": "AUTOMATIC_HTTPS_REFRESH_NOT_PROVEN",
+    "error_type": "HTTPError",
+    "http_status": 403
+  },
   "channel": {
     "id": "6ad14dc2778b240e2f1f7c2f",
     "name": ".casasemesforo",
@@ -13,31 +18,36 @@
     }
   },
   "pending": {
-    "edges": [],
+    "edges": [
+      {
+        "node": {
+          "id": "6afbb8564b26315855b51cc0",
+          "channelId": "6ad14dc2778b240e2f1f7c2f",
+          "status": "scheduled",
+          "schedulingType": "automatic",
+          "dueAt": "2026-11-17T21:00:00.000Z",
+          "sentAt": null,
+          "externalLink": null
+        }
+      },
+      {
+        "node": {
+          "id": "6afbb82f4b26315855b516cc",
+          "channelId": "6ad14dc2778b240e2f1f7c2f",
+          "status": "scheduled",
+          "schedulingType": "automatic",
+          "dueAt": "2026-11-17T13:00:00.000Z",
+          "sentAt": null,
+          "externalLink": null
+        }
+      }
+    ],
     "pageInfo": {
       "hasNextPage": false
     }
   },
   "latest_provider_posts": {
     "p0": {
-      "id": "6af3b1b0850477b0c27dc7a6",
-      "channelId": "6ad14dc2778b240e2f1f7c2f",
-      "status": "sent",
-      "schedulingType": "automatic",
-      "dueAt": "2026-11-12T13:00:00.000Z",
-      "sentAt": "2026-11-12T13:05:59.355Z",
-      "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707270175451581702?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
-    },
-    "p1": {
-      "id": "6af3b8947b2f1abd659caedd",
-      "channelId": "6ad14dc2778b240e2f1f7c2f",
-      "status": "sent",
-      "schedulingType": "automatic",
-      "dueAt": "2026-11-12T21:00:00.000Z",
-      "sentAt": "2026-11-12T21:02:27.691Z",
-      "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707393144328899860?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
-    },
-    "p2": {
       "id": "6af4c278cf36c484ae92166b",
       "channelId": "6ad14dc2778b240e2f1f7c2f",
       "status": "sent",
@@ -46,7 +56,7 @@
       "sentAt": "2026-11-13T13:03:58.000Z",
       "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707640902847679751?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
     },
-    "p3": {
+    "p1": {
       "id": "6af50efcbc9f3773a1af1a1e",
       "channelId": "6ad14dc2778b240e2f1f7c2f",
       "status": "sent",
@@ -54,9 +64,27 @@
       "dueAt": "2026-11-13T21:00:00.000Z",
       "sentAt": "2026-11-13T21:03:20.015Z",
       "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707764157134703879?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
+    },
+    "p2": {
+      "id": "6afbb82f4b26315855b516cc",
+      "channelId": "6ad14dc2778b240e2f1f7c2f",
+      "status": "scheduled",
+      "schedulingType": "automatic",
+      "dueAt": "2026-11-17T13:00:00.000Z",
+      "sentAt": null,
+      "externalLink": null
+    },
+    "p3": {
+      "id": "6afbb8564b26315855b51cc0",
+      "channelId": "6ad14dc2778b240e2f1f7c2f",
+      "status": "scheduled",
+      "schedulingType": "automatic",
+      "dueAt": "2026-11-17T21:00:00.000Z",
+      "sentAt": null,
+      "externalLink": null
     }
   },
   "read_only": true,
   "publication_attempted": false,
-  "at": "2026-11-17T01:33:43Z"
+  "at": "2026-11-17T02:33:42Z"
 }
