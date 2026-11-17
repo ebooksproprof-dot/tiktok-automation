@@ -2241,7 +2241,8 @@
       "height": 1080,
       "duration": 29.070708,
       "bytes": 14467993,
-      "acquired_at": 1794879305
+      "acquired_at": 1794879305,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2273,7 +2274,8 @@
       "height": 1080,
       "duration": 15.018333,
       "bytes": 8253215,
-      "acquired_at": 1794879308
+      "acquired_at": 1794879308,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2338,6 +2340,70 @@
       "duration": 7.68,
       "bytes": 4327813,
       "acquired_at": 1794879680
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "24881",
+      "url": "https://cdn.pixabay.com/video/2019/07/01/24881-346036437_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-24881/",
+      "author": "alya_ivanchenko",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: alya_ivanchenko / Pixabay — https://pixabay.com/videos/id-24881/",
+      "category": "limpeza",
+      "query": "cleaning mirror",
+      "selection_reason": "Provider tags: mirror, cleaning, clean, bathroom, divorces, to shine, fresh",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/07/01/24881-346036437_large.mp4",
+      "sha256": "4dcdcb5767f8bb363c8cacbd9ee97604afe3772142303e27c277c20dea0f60ae",
+      "dhash": [
+        "17133333313470f0",
+        "37373327333074f0",
+        "0f0b0b1b3b2b73c3",
+        "0f0f0b0b0b1b33e3",
+        "cfcf4b47636b6970"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 39.806667,
+      "bytes": 26814356,
+      "acquired_at": 1794880918
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "113878",
+      "url": "https://cdn.pixabay.com/video/2022/04/14/113878-699653931_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-113878/",
+      "author": "yensdickmans",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: yensdickmans / Pixabay — https://pixabay.com/videos/id-113878/",
+      "category": "limpeza",
+      "query": "cleaning mirror",
+      "selection_reason": "Provider tags: self care, bath, bathroom, water, skin, cosmetics, mirror, chill, relax, relaxation, clean, face, product",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/04/14/113878-699653931_large.mp4",
+      "sha256": "b469dc2d1124ceb8b0e08cc8871c705668baea41151cf928bee3bc468b323768",
+      "dhash": [
+        "7171f252b8b9db5f",
+        "7470f8f1e4e8e489",
+        "7070f0587ebcdc5c",
+        "7151f4743cdadc5c",
+        "7173d4743c9adc5c"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 17.086667,
+      "bytes": 10754986,
+      "acquired_at": 1794880920
     }
   ],
   "rejected_until": {
@@ -2345,116 +2411,39 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794879872,
-    "acquired": 0,
+    "at": 1794880916,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 11,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 9,
+        "eligible_candidates": 7,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 28,
-          "context_rejected": 6,
+          "total_hits": 500,
+          "context_rejected": 8,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 10,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 487,
-          "context_rejected": 5,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 9,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 34,
-          "context_rejected": 6,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 4,
-          "total_hits": 4,
-          "context_rejected": 0,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "sponge",
-      "cleaning sponge",
-      "wiping sponge",
-      "countertop"
+      "cleaning mirror",
+      "wiping mirror",
+      "closet",
+      "dishes"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 62,
+    "unreviewed_media_count": 64,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
