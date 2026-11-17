@@ -1984,6 +1984,42 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-18-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-17T02:35:03Z",
+      "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-1-3c600fb2e78bbc66.mp4",
+      "concept": "auto-handwashing-cdabb855fa15",
+      "script_sha256": "cdabb855fa15cb3cbc4c534884638422e7bdabbb997dd299612976ca94d582ae",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Use um produto indicado para a higiene das mãos.",
+        "Ao terminar, feche a torneira sem deixar água correndo.",
+        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
+        "Enxágue e use material limpo para a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4",
+          "sha256": "42532f45901e11598b30b52bb53f384f369d59743b91d1b3715d6d26309daeaa",
+          "dhash": [
+            "4545730706363616",
+            "3b0f171b1e0e3616",
+            "332b3b1b0626361e",
+            "2b2327170e262616",
+            "2b29292b060e2636"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-18T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -2268,7 +2304,9 @@
     "2026-11-17T02:13:43.521839Z",
     "2026-11-17T02:33:41.534181Z",
     "2026-11-17T02:33:41.739152Z",
-    "2026-11-17T02:33:41.815589Z"
+    "2026-11-17T02:33:41.815589Z",
+    "2026-11-17T02:35:01.831949Z",
+    "2026-11-17T02:35:02.070717Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2276,25 +2314,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 147,
-        "reset_at": "2026-11-17T02:48:41.938992Z",
-        "observed_at": "2026-11-17T02:33:41.938992Z"
+        "remaining": 145,
+        "reset_at": "2026-11-17T02:48:42.278002Z",
+        "observed_at": "2026-11-17T02:35:02.278002Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 582,
-        "reset_at": "2026-11-18T01:30:14.938992Z",
-        "observed_at": "2026-11-17T02:33:41.938992Z"
+        "remaining": 580,
+        "reset_at": "2026-11-18T01:30:14.278002Z",
+        "observed_at": "2026-11-17T02:35:02.278002Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 982,
-        "reset_at": "2026-12-17T01:30:14.938992Z",
-        "observed_at": "2026-11-17T02:33:41.938992Z"
+        "remaining": 980,
+        "reset_at": "2026-12-17T01:30:14.278002Z",
+        "observed_at": "2026-11-17T02:35:02.278002Z"
       }
     },
     "consecutive_errors": 0,
