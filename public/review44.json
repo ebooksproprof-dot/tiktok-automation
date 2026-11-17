@@ -1,17 +1,45 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-17T02:13:45.022246+00:00",
-  "expires_at": "2026-11-17T02:13:45.022246+00:00",
-  "queue_snapshot_sha256": "58e622f6ba82bafdd51cda73e01a9b97cf3ce46014b463e37a230cf76e8b3135",
+  "generated_at": "2026-11-17T02:29:01.198985+00:00",
+  "expires_at": "2026-11-17T02:29:01.198985+00:00",
+  "queue_snapshot_sha256": "2ee53b28d425a50a80ca2a5647ded1104910e3c0194549a7190b3561e2ea8210",
   "state_snapshot_sha256": "8d8b9c961aef4024063abf0f5a9e2e0504a41f75f73f9a943037e6042219d0cc",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-18-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-1-3c600fb2e78bbc66.mp4",
+      "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
+      "script_hash": "cdabb855fa15cb3cbc4c534884638422e7bdabbb997dd299612976ca94d582ae",
+      "post_snapshot_sha256": "029ed4e3a1917b3db5baad3a862607f631c9ae28042ea1630873c7ed14f50d69",
+      "title": "Vai lavar as mãos? Use um produto indicado para a higiene das mãos. Ao terminar, feche a torneira sem deixar água correndo. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Enxágue e use material limpo para a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — analogicus; https://pixabay.com/videos/id-37274/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai lavar as mãos?",
+        "Use um produto indicado para a higiene das mãos.",
+        "Ao terminar, feche a torneira sem deixar água correndo.",
+        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
+        "Enxágue e use material limpo para a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-18T10:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "ffcf0b250f3ea08e2de7aa76a1265f1c005d35e4cf425c39e0bc318d2af4eadc"
+  "manifest_sha256": "592ebc5f5d5196e0852ade27ee58dd36298790be2250f4b3a4a5a08a9cde4c6d"
 }
