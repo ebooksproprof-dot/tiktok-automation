@@ -2345,24 +2345,24 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794879677,
-    "acquired": 2,
+    "at": 1794879872,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 13,
+    "download_attempts": 0,
+    "skipped_known": 11,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 9,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 500,
-          "context_rejected": 7,
+          "total_hits": 28,
+          "context_rejected": 6,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2379,24 +2379,78 @@
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 10,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 73,
-          "context_rejected": 7,
+          "total_hits": 487,
+          "context_rejected": 5,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 9,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 34,
+          "context_rejected": 6,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 4,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 4,
+          "total_hits": 4,
+          "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning cloth",
-      "wiping cloth",
       "sponge",
-      "cleaning sponge"
+      "cleaning sponge",
+      "wiping sponge",
+      "countertop"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
