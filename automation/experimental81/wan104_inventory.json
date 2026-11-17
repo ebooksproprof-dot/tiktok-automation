@@ -792,7 +792,11 @@
             }
           }
         }
-      ]
+      ],
+      "publication_status": "SCHEDULED",
+      "provider_id": "6afbb82f4b26315855b516cc",
+      "public_urls": [],
+      "last_provider_check": "2026-11-17T02:13:05Z"
     },
     {
       "post_id": "casasem-2026-11-17-2",
@@ -1003,7 +1007,11 @@
             }
           }
         }
-      ]
+      ],
+      "publication_status": "SCHEDULED",
+      "provider_id": "6afbb8564b26315855b51cc0",
+      "public_urls": [],
+      "last_provider_check": "2026-11-17T02:13:43Z"
     }
   ],
   "status": "COLLECTING",
