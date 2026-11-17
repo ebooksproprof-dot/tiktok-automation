@@ -406,7 +406,8 @@ def run(stage=False, soon=False, limit=2):
             if (cached_review.get('source_sha256') == measured['sha256']
                     and cached_review.get('frame_mode', 'reviewed_portrait') == measured['frame_mode']
                     and cached_review.get('family') == nominate(measured)
-                    and cached_review.get('revision') == REVISION and cached_review.get('accepted') is True):
+                    and cached_review.get('revision') == REVISION and cached_review.get('accepted') is True
+                    and assess(cached_review.get('family'), cached_review.get('captions', []))):
                 review = cached_review
             else:
                 if reviewer is None:

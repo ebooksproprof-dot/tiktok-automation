@@ -6454,23 +6454,23 @@
       "first_test_outside_recurring_slots": false,
       "publishing_status": "EDITORIALLY_REJECTED_HANDWASH_CONTEXT_NOT_ESTABLISHED",
       "editorial_rejection": {
-        "at": "2026-11-17T02:36:13.281865+00:00",
-        "reason": "Visual review captions establish hands/rubbing only, not washing with soap/water. Narration references faucet and rinsing. Source does not demonstrate that context.",
-        "scope": "only new mission11 licensed output; preserve asset and prior reviews"
+        "at": "2026-11-17T02:37:28.641838+00:00",
+        "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
+        "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
       }
     },
     {
       "id": "casasem-2026-11-18-2",
       "concept": "auto-handwashing-2a2b58d334c8",
       "title": "Vai lavar as mãos? Siga o modo de uso e a quantidade indicados no rótulo. Confira se há sabonete disponível antes de começar. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — analogicus; https://pixabay.com/videos/id-37236/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "approved": true,
-      "consented_at": "2026-11-17T02:33:17.488994+00:00",
+      "approved": false,
+      "consented_at": null,
       "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
       "publication_provider": "buffer",
       "scheduled_at": "2026-11-18T18:00:00-03:00",
       "quality": {
         "technical_pass": true,
-        "editorial_approved": true,
+        "editorial_approved": false,
         "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
         "duration": 18.571,
         "size": 4582976,
@@ -6618,7 +6618,12 @@
       "render_version": 2,
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
-      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+      "publishing_status": "EDITORIALLY_REJECTED_HANDWASH_CONTEXT_NOT_ESTABLISHED",
+      "editorial_rejection": {
+        "at": "2026-11-17T02:37:28.641863+00:00",
+        "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
+        "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
+      }
     }
   ]
 }

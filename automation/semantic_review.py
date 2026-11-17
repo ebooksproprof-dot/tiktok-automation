@@ -87,6 +87,12 @@ def assess(family, captions):
     tokens = [words(caption) for caption in captions]
     if family == 'products' and any(t & {'child', 'children', 'baby', 'toddler'} for t in tokens):
         return False
+    if family == 'handwashing':
+        # Hands alone also describe sanitizer rubbing, posing or handshakes.
+        # Water/soap washing advice requires both the action and its context.
+        return (not any(t & FORBIDDEN for t in tokens)
+                and sum(bool(t & {'washing', 'wash', 'rinsing', 'rinses'})
+                        and bool(t & {'soap', 'water', 'sink', 'faucet', 'tap', 'basin'}) for t in tokens) >= 2)
     if family == 'surfaces':
         if any(t & {'car', 'vehicle', 'truck', 'windshield', 'solar', 'factory'} for t in tokens):
             return False

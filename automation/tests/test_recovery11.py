@@ -286,3 +286,13 @@ class GeneratedCaptionFocusTests(unittest.TestCase):
         self.assertTrue(needs_generated_disambiguation(2, captions))
         self.assertFalse(needs_generated_disambiguation(2, ['A child by a tiled wall.', *captions[1:]]))
         self.assertFalse(needs_generated_disambiguation(3, captions))
+
+
+class HandwashingEvidenceTests(unittest.TestCase):
+    def test_hands_or_sanitizer_alone_cannot_support_soap_water_washing_script(self):
+        from semantic_review import assess
+        for captions in [['A person holds hands in front of a red shirt.']*3,
+                         ['Hands rubbing sanitizer.']*3, ['Washing hands.']*3]:
+            self.assertFalse(assess('handwashing', captions))
+        self.assertTrue(assess('handwashing', ['A person washing hands with soap under a faucet.']*3))
+        self.assertFalse(assess('handwashing', ['Washing hands under water.']*2+['A child with a gun.']))
