@@ -315,3 +315,18 @@ class CancelledSlotRecoveryTests(unittest.TestCase):
         self.assertNotEqual(ident, bad['id'])
         state['posts'][bad['id']]['status'] = 'UNKNOWN'
         self.assertNotEqual(choose_slot(queue, state, now)[1].date(), now.date())
+
+    def test_buffer_accepts_new_media_after_verified_deletion_but_holds_uncertain_reservation(self):
+        import buffer_runner as buffer
+        from test_wan104_policy import post_fixture
+        post = post_fixture(); post.update(id='casasem-2026-11-18-1-r1', scheduled_at='2026-11-18T10:00:00-03:00')
+        state = {'posts': {'old1': {'provider': 'buffer', 'status': 'CANCELLED_EDITORIAL',
+            'buffer_status': 'deleted', 'scheduled_at': post['scheduled_at'], 'sha256': 'e'*64},
+            'old2': {'provider': 'buffer', 'status': 'CANCELLED_EDITORIAL', 'buffer_status': 'deleted',
+                     'scheduled_at': '2026-11-18T18:00:00-03:00', 'sha256': 'f'*64}}}
+        now = dt.datetime(2026, 11, 18, 6, tzinfo=dt.timezone.utc)
+        with patch.object(buffer.common, 'utc_now', return_value=now), patch.object(buffer, 'require_evidence'):
+            self.assertEqual(buffer.prepare(post, state, 'channel')['channelId'], 'channel')
+            state['posts']['old1']['status'] = 'UNKNOWN'
+            with self.assertRaisesRegex(ValueError, 'slot already reserved'):
+                buffer.prepare(post, state, 'channel')
