@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-17T02:47:12.148424+00:00",
-  "repository_head": "00c1033168203dd5e6ad06c319f8c76d0367179e",
+  "checked_at": "2026-11-17T02:49:14.564801+00:00",
+  "repository_head": "72aad0e1ca1a42def674dcfc5f3c88e4b5d15b15",
   "stock": {
     "ready": 2,
     "held_uncertain": 0,
@@ -159,7 +159,7 @@
     },
     "read_only": true,
     "publication_attempted": false,
-    "at": "2026-11-17T02:33:42Z"
+    "at": "2026-11-17T02:47:46Z"
   },
   "wan": {
     "episode": 4,
@@ -177,7 +177,9 @@
   },
   "final_read_only_audit": {
     "run_id": 44004824483,
-    "status_last_observed": "pending behind serialized production",
-    "prior_completed_read_only_audit_run": 44003840863
+    "status": "completed",
+    "conclusion": "success",
+    "pending_provider_posts": 2,
+    "rejected_reservations_absent_from_pending_queue": true
   }
 }
