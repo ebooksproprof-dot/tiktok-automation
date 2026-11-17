@@ -643,15 +643,65 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-cesto-separar-destino",
+      "topic": "cesto-separar-destino",
+      "family": "cestos",
+      "hook": "O cesto mistura roupas com destinos diferentes?",
+      "steps": "Antes de levar as peças para lavar, confira as etiquetas e separe os cuidados necessários. Reserve um lugar para as roupas que precisam de tratamento diferente. Evite devolver peças úmidas ao armário e mantenha o cesto em uma área acessível.",
+      "cta": "Use as etiquetas para orientar a separação.",
+      "body_sha256": "56f364a77c980d570827e28b129e9da204ac5de1acf9d00b57045cfddf7bb118",
+      "script_sha256": "4e78f246fefdf57eae397427eb4f0a80715d1e500fc34a206fa7a3fd94e466f9",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "37972",
+        "url": "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-37972/",
+        "author": "Ambient_Nature_Atmosphere",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: Ambient_Nature_Atmosphere / Pixabay — https://pixabay.com/videos/id-37972/",
+        "category": "lavanderia",
+        "query": "laundry",
+        "selection_reason": "Provider tags: washing machine, laundry, water, cleaning, italy",
+        "requires_crop_review": true,
+        "frame_mode": "preserve_full",
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4",
+        "sha256": "43f26d224c0f602d69f1198d157f618ad861c5b6e4d58e8966971da0bc0ff324",
+        "dhash": [
+          "24266465a1464809",
+          "60346475b5244209",
+          "6034646595244209",
+          "60346465b5244209",
+          "60346665b5244209"
+        ],
+        "width": 1920,
+        "height": 1080,
+        "duration": 17.851167,
+        "bytes": 10675084,
+        "acquired_at": 1794881698
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 11,
-    "pending_review": 12,
+    "unused_templates": 10,
+    "pending_review": 13,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }

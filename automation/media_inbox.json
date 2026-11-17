@@ -2371,7 +2371,8 @@
       "height": 1080,
       "duration": 39.806667,
       "bytes": 26814356,
-      "acquired_at": 1794880918
+      "acquired_at": 1794880918,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2403,7 +2404,72 @@
       "height": 1080,
       "duration": 17.086667,
       "bytes": 10754986,
-      "acquired_at": 1794880920
+      "acquired_at": 1794880920,
+      "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "37972",
+      "url": "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-37972/",
+      "author": "Ambient_Nature_Atmosphere",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Ambient_Nature_Atmosphere / Pixabay — https://pixabay.com/videos/id-37972/",
+      "category": "lavanderia",
+      "query": "laundry",
+      "selection_reason": "Provider tags: washing machine, laundry, water, cleaning, italy",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4",
+      "sha256": "43f26d224c0f602d69f1198d157f618ad861c5b6e4d58e8966971da0bc0ff324",
+      "dhash": [
+        "24266465a1464809",
+        "60346475b5244209",
+        "6034646595244209",
+        "60346465b5244209",
+        "60346665b5244209"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 17.851167,
+      "bytes": 10675084,
+      "acquired_at": 1794881698
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "31933",
+      "url": "https://cdn.pixabay.com/video/2020/02/04/31933-389248759_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-31933/",
+      "author": "MabelAmber",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: MabelAmber / Pixabay — https://pixabay.com/videos/id-31933/",
+      "category": "lavanderia",
+      "query": "laundry",
+      "selection_reason": "Provider tags: laundry, clothesline, clothes line, drying, wind, village, rural, field",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/02/04/31933-389248759_large.mp4",
+      "sha256": "ba7a1a8bfa718becda0e7d8b4caff469b365378ad91684785ed5e8e1914337da",
+      "dhash": [
+        "789c8fe72811333b",
+        "789c8fa72811333b",
+        "789e8fe728113333",
+        "789c8fe72811333b",
+        "789e8fe728913333"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 12.8,
+      "bytes": 9466020,
+      "acquired_at": 1794881700
     }
   ],
   "rejected_until": {
@@ -2411,24 +2477,93 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794880916,
+    "at": 1794881695,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 11,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 7,
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 500,
-          "context_rejected": 8,
+          "total_hits": 100,
+          "context_rejected": 1,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 2,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 2,
+          "total_hits": 2,
+          "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 5,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 209,
+          "context_rejected": 10,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 15,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 15,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2436,14 +2571,14 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning mirror",
       "wiping mirror",
       "closet",
-      "dishes"
+      "dishes",
+      "laundry"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 64,
+    "unreviewed_media_count": 66,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
