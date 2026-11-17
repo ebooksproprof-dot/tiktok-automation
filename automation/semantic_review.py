@@ -66,6 +66,10 @@ def nominate(record):
     score, family = matches[0]
     if not score:
         return None
+    if family == 'clothes' and 'iron' in tags and not tags & {
+            'ironing', 'clothes', 'clothing', 'shirt', 'shirts', 'garment', 'garments',
+            'laundry', 'hanger', 'hangers', 'wardrobe', 'closet'}:
+        return None  # Metal gates, soldering irons and factories are not garment care.
     if family == 'laundry' and not (tags & {'laundry', 'clothes', 'clothing', 'garment', 'garments', 'clothesline'}
                                     or {'washing', 'machine'} <= tags):
         return None

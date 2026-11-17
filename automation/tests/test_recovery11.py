@@ -260,3 +260,12 @@ class CaptionCompatibilityTests(unittest.TestCase):
             text = (Path(tmp)/'caption-v51-0.txt').read_text()
             self.assertIn('\n', text)
             self.assertIn('Armário', text)
+
+
+class HouseholdContextTests(unittest.TestCase):
+    def test_industrial_iron_does_not_consume_household_review_capacity(self):
+        from semantic_review import nominate
+        for text in ['soldering iron electrical circuit wire', 'gate iron metal cemetery entrance',
+                     'iron cast iron craft product', 'building factory iron chimney']:
+            self.assertIsNone(nominate({'selection_reason': text}))
+        self.assertEqual(nominate({'selection_reason': 'iron ironing shirt clothes'}), 'clothes')
