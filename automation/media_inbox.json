@@ -1985,7 +1985,8 @@
       "height": 1080,
       "duration": 18.026667,
       "bytes": 9697890,
-      "acquired_at": 1794674465
+      "acquired_at": 1794674465,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2049,7 +2050,8 @@
       "height": 1080,
       "duration": 58.495,
       "bytes": 38615017,
-      "acquired_at": 1794695951
+      "acquired_at": 1794695951,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2081,7 +2083,8 @@
       "height": 1080,
       "duration": 58.645,
       "bytes": 36726940,
-      "acquired_at": 1794695953
+      "acquired_at": 1794695953,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2113,7 +2116,8 @@
       "height": 1080,
       "duration": 9.96,
       "bytes": 5511743,
-      "acquired_at": 1794704649
+      "acquired_at": 1794704649,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2145,7 +2149,8 @@
       "height": 1080,
       "duration": 9.96,
       "bytes": 5578301,
-      "acquired_at": 1794704651
+      "acquired_at": 1794704651,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2177,7 +2182,8 @@
       "height": 1080,
       "duration": 9.88,
       "bytes": 5464677,
-      "acquired_at": 1794726379
+      "acquired_at": 1794726379,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2209,7 +2215,8 @@
       "height": 1080,
       "duration": 6.72,
       "bytes": 3737792,
-      "acquired_at": 1794726380
+      "acquired_at": 1794726380,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2470,6 +2477,70 @@
       "duration": 12.8,
       "bytes": 9466020,
       "acquired_at": 1794881700
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "4344",
+      "url": "https://cdn.pixabay.com/video/2016/08/10/4344-178324620_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-4344/",
+      "author": "2427999",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: 2427999 / Pixabay — https://pixabay.com/videos/id-4344/",
+      "category": "banheiro",
+      "query": "bathroom",
+      "selection_reason": "Provider tags: water, basin, drain, bathroom, flow, stream, vortex, washbasin, liquid, flowing, splashing, fluid",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/08/10/4344-178324620_large.mp4",
+      "sha256": "d480b8f91290afacf5de7b928090478e5bdf6c421283448dd5825c80a790fa51",
+      "dhash": [
+        "8f47c7c7cfcf870f",
+        "0f47cf8f87c74f07",
+        "0d4fc787878f0f0f",
+        "4f67cf8fc7c78f0f",
+        "cf47cfcfcf870f0f"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 41.685,
+      "bytes": 24539350,
+      "acquired_at": 1794903975
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "2348",
+      "url": "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-2348/",
+      "author": "Life-Of-Vids",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Life-Of-Vids / Pixabay — https://pixabay.com/videos/id-2348/",
+      "category": "manutencao",
+      "query": "drain",
+      "selection_reason": "Provider tags: drain, basin, sink, plug hole, tap, water, fresh, liquid, flow",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4",
+      "sha256": "3b822350b605daf173f233cd8cdd4d7ccabf08ad4b0de02bf7a920d4145ad715",
+      "dhash": [
+        "3e27395416161d1f",
+        "2c393335b6b6177f",
+        "3c39333d3636346f",
+        "1e0f391c14141d1f",
+        "1e0b191c14141d1f"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 40.573867,
+      "bytes": 22647131,
+      "acquired_at": 1794903979
     }
   ],
   "rejected_until": {
@@ -2477,93 +2548,70 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794881695,
+    "at": 1794903974,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 11,
+    "skipped_known": 9,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 14,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 100,
-          "context_rejected": 1,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 2,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 2,
-          "total_hits": 2,
-          "context_rejected": 0,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 5,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 209,
-          "context_rejected": 10,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "lavanderia",
+        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 15,
+          "total_hits": 34,
           "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 27,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 5,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 42,
+          "context_rejected": 10,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2571,14 +2619,14 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "wiping mirror",
-      "closet",
-      "dishes",
-      "laundry"
+      "bathroom",
+      "spoons",
+      "drain",
+      "books"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 66,
+    "unreviewed_media_count": 68,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
