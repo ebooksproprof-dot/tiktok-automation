@@ -1,6 +1,7 @@
 """Bind a stock file digest to current official page and license evidence."""
 import datetime as dt
 import hashlib
+import html
 import json
 import re
 from pathlib import Path
@@ -39,6 +40,26 @@ def known_evidence(record):
     return None
 
 
+
+def refreshed_policy(policy, terms, docs, now=None):
+    """Accept only positive evidence from both official terms and API docs."""
+    def text(body):
+        return ' '.join(html.unescape(re.sub('<[^>]+>', ' ', body.decode('utf-8', errors='replace'))).split())
+    terms_text, docs_text = text(terms), text(docs)
+    phrase = 'commercial or non-commercial purposes'
+    api_phrase = 'images and videos released by Pixabay under the Content License'
+    if phrase not in terms_text or 'royalty-free' not in terms_text or api_phrase not in docs_text:
+        raise ValueError('CURRENT_OFFICIAL_API_LICENSE_POLICY_REQUIRED')
+    at, api_at = terms_text.index(phrase), docs_text.index(api_phrase)
+    return dict(policy, retrieved_at=(now or dt.datetime.now(dt.timezone.utc)).isoformat(),
+        terms_sha256=hashlib.sha256(terms_text.encode()).hexdigest(),
+        terms_response_sha256=hashlib.sha256(terms).hexdigest(),
+        commercial_grant_excerpt=terms_text[max(0, at-450):at+220],
+        api_docs_url='https://pixabay.com/api/docs/',
+        api_license_excerpt=docs_text[max(0, api_at-130):api_at+180],
+        api_docs_text_sha256=hashlib.sha256(docs_text.encode()).hexdigest(),
+        verification_method='current_official_public_HTTPS_terms_and_API_documentation')
+
 def policy_evidence():
     policy = json.loads(POLICY.read_text()) if POLICY.exists() else {}
     try:
@@ -47,6 +68,17 @@ def policy_evidence():
         current = checked.tzinfo and dt.timedelta(0) <= age <= dt.timedelta(days=7)
     except (KeyError, ValueError, TypeError):
         current = False
+    if not current:
+        # Prefer simple official HTTPS documents; browser challenges must not be
+        # the only path to retrieving a publicly accessible license. No bypass.
+        try:
+            policy = refreshed_policy(policy, fetch('https://pixabay.com/service/terms/'),
+                                      fetch('https://pixabay.com/api/docs/'))
+        except (OSError, ValueError):
+            pass  # The ordinary public browser remains a separate fallback.
+        else:
+            POLICY.write_text(json.dumps(policy, ensure_ascii=False, indent=2)+'\n')
+            current = True
     if not current:
         # Normal public browsing, never CAPTCHA solving or login. A failure
         # holds new assets; previously documented perpetual grants remain valid.

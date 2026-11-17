@@ -232,3 +232,19 @@ class WanRecoveryBoundsTests(unittest.TestCase):
                     on_reject=lambda clip, reason, review: rejected.append(clip['slot']))
         self.assertEqual(reviewed, [0]); self.assertEqual(rejected, [1])
         speech.assert_not_called()
+
+
+class LicenseRefreshTests(unittest.TestCase):
+    def test_current_official_positive_grant_required_not_just_http_200(self):
+        import source_license
+        policy = {'terms_url': 'https://pixabay.com/service/terms/'}
+        terms = b'<p>royalty-free commercial or non-commercial purposes</p>'
+        docs = b'images and videos released by Pixabay under the Content License'
+        at = dt.datetime(2026, 11, 17, tzinfo=dt.timezone.utc)
+        refreshed = source_license.refreshed_policy(policy, terms, docs, at)
+        self.assertEqual(refreshed['retrieved_at'], at.isoformat())
+        self.assertEqual(len(refreshed['terms_sha256']), 64)
+        for changed_terms, changed_docs in [(b'Just a moment', docs), (terms, b'Access denied'),
+                                             (b'Non-commercial only', docs)]:
+            with self.assertRaisesRegex(ValueError, 'CURRENT_OFFICIAL'):
+                source_license.refreshed_policy(policy, changed_terms, changed_docs, at)
