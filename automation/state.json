@@ -1922,6 +1922,63 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-17-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-17T02:13:40Z",
+      "sha256": "96cf5740307de3f3a7a9e3e4771fa4b5a38b853f10babb2dcdd7cf38817c751e",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-2-96cf5740307de3f3.mp4",
+      "concept": "licensed-wan104-episode-3",
+      "script_sha256": "ab8fe6fa5fafba6fd3835435fabd1390e1b762931974385c98fa56e2b8b2a625",
+      "script_lines": [
+        "Armário sem espaço? Separe os itens por categoria antes de organizar.",
+        "Guarde somente os tecidos que já estão completamente secos e limpos.",
+        "Escolha um suporte firme para os utensílios e respeite a capacidade indicada."
+      ],
+      "source_urls": [
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-cd524f3a92c90a754227041e.mp4",
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-37aa9d06447233fa378e1e78.mp4",
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-8ba89302366fd48423a40cd9.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-cd524f3a92c90a754227041e.mp4",
+          "sha256": "cd524f3a92c90a754227041ea3254f5ec4dcd9cdcb86c3140b6bfc6bb548d28c",
+          "dhash": [
+            "1f0d39393939394d",
+            "1d1939393939395d",
+            "1d1939293939795f",
+            "1e1939393938794f",
+            "1a1938383838384f"
+          ]
+        },
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-37aa9d06447233fa378e1e78.mp4",
+          "sha256": "37aa9d06447233fa378e1e78ea9e3b6053df1083e5e747475864c956f0543199",
+          "dhash": [
+            "80e0e0c1c1a0e0e0",
+            "83e0e0c1c1a0e0e0",
+            "c0e0e0c0c040e0e0",
+            "ece0e1c3c280f0e0",
+            "e0e098878000f0e0"
+          ]
+        },
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-8ba89302366fd48423a40cd9.mp4",
+          "sha256": "8ba89302366fd48423a40cd9eea4ad4b538d97bf2fe8990e9b9f80fd12c6ef5e",
+          "dhash": [
+            "326a68a8ad653161",
+            "264248688d682347",
+            "6e94d0494bc963c0",
+            "4c84d0d15bdb6703",
+            "4ca494931b996703"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-17T18:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -2199,7 +2256,9 @@
     "2026-11-17T02:12:59.718333Z",
     "2026-11-17T02:12:59.959055Z",
     "2026-11-17T02:13:03.158992Z",
-    "2026-11-17T02:13:05.223276Z"
+    "2026-11-17T02:13:05.223276Z",
+    "2026-11-17T02:13:38.995319Z",
+    "2026-11-17T02:13:39.164320Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2207,25 +2266,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 146,
-        "reset_at": "2026-11-17T02:28:00.565052Z",
-        "observed_at": "2026-11-17T02:13:05.565052Z"
+        "remaining": 144,
+        "reset_at": "2026-11-17T02:28:00.321640Z",
+        "observed_at": "2026-11-17T02:13:39.321640Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 589,
-        "reset_at": "2026-11-18T01:30:14.565052Z",
-        "observed_at": "2026-11-17T02:13:05.565052Z"
+        "remaining": 587,
+        "reset_at": "2026-11-18T01:30:14.321640Z",
+        "observed_at": "2026-11-17T02:13:39.321640Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 989,
-        "reset_at": "2026-12-17T01:30:14.565052Z",
-        "observed_at": "2026-11-17T02:13:05.565052Z"
+        "remaining": 987,
+        "reset_at": "2026-12-17T01:30:14.321640Z",
+        "observed_at": "2026-11-17T02:13:39.321640Z"
       }
     },
     "consecutive_errors": 0,
