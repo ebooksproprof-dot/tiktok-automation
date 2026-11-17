@@ -254,7 +254,8 @@ class CaptionCompatibilityTests(unittest.TestCase):
     def test_portuguese_multiline_text_disables_newline_glyph_shaping(self):
         import tempfile
         from caption_layout import filters
-        with tempfile.TemporaryDirectory() as tmp:
+        with tempfile.TemporaryDirectory() as tmp, patch('caption_layout.layout', return_value=(
+                'Armário sem espaço? Separe os\nitens por categoria antes de', 46)):
             result = filters(Path(tmp), [[0, 5, 'Armário sem espaço? Separe os itens por categoria antes de']])
             self.assertIn('text_shaping=0', result[0])
             text = (Path(tmp)/'caption-v51-0.txt').read_text()
