@@ -5543,7 +5543,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4": {
-      "status": "QUEUED",
+      "status": "REJECTED",
       "source_sha256": "42532f45901e11598b30b52bb53f384f369d59743b91d1b3715d6d26309daeaa",
       "license": {
         "source_sha256": "42532f45901e11598b30b52bb53f384f369d59743b91d1b3715d6d26309daeaa",
@@ -5602,7 +5602,9 @@
         "decoder_pass": true,
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
-      }
+      },
+      "error": "HANDWASH_CONTEXT_NOT_ESTABLISHED",
+      "rejected_post_id": "casasem-2026-11-18-1"
     },
     "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4": {
       "status": "QUEUED",
@@ -5910,11 +5912,16 @@
     },
     "casasem-2026-11-18-1": {
       "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
-      "status": "QUEUED",
+      "status": "EDITORIALLY_REJECTED",
       "scheduled_at": "2026-11-18T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4"
-      ]
+      ],
+      "editorial_rejection": {
+        "at": "2026-11-17T02:36:13.281865+00:00",
+        "reason": "Visual review captions establish hands/rubbing only, not washing with soap/water. Narration references faucet and rinsing. Source does not demonstrate that context.",
+        "scope": "only new mission11 licensed output; preserve asset and prior reviews"
+      }
     },
     "casasem-2026-11-18-2": {
       "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
