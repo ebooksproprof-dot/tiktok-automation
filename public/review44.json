@@ -1,9 +1,9 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-17T02:09:22.428352+00:00",
-  "expires_at": "2026-11-17T02:09:22.428352+00:00",
-  "queue_snapshot_sha256": "2811bfde67888f0118251ed1797a78cbef8de20c6eb45e4a26c9990cea00991a",
-  "state_snapshot_sha256": "71cc981ca5fd5248063299bafe332f3e0d38c641df698a6c0f7c1f776d6bd4b4",
+  "generated_at": "2026-11-17T02:13:07.499428+00:00",
+  "expires_at": "2026-11-17T02:13:07.499428+00:00",
+  "queue_snapshot_sha256": "58e622f6ba82bafdd51cda73e01a9b97cf3ce46014b463e37a230cf76e8b3135",
+  "state_snapshot_sha256": "0bafb1837b6613147fb1ff0fe46e469ec09d91cca82b443ebd538bcbc88d1084",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
@@ -13,19 +13,19 @@
   "selectable_count": 0,
   "items": [
     {
-      "id": "casasem-2026-11-17-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-1-652b304252c66dc8.mp4",
-      "sha256": "652b304252c66dc8694cad253df5aa3695b8cabaa140a9d0ec61a0f62cb9be18",
-      "script_hash": "dbef2b971405d457ad773bb08127f6bda59421fcdf19bc39cf7a5c5749454958",
-      "post_snapshot_sha256": "fd4ec10ebe15f823160eef7cd5d8919c95df3d0fd1f93da78df14d3a5adcfdd4",
-      "title": "Armário sem espaço? Separe os itens por categoria antes de organizar. Ajuste a dobra das peças ao espaço disponível, sem prender nas portas. Antes de guardar os utensílios, confira se estão limpos e completamente secos. Cenas ilustrativas geradas por inteligência artificial. Orientações ilustrativas; siga as instruções dos fabricantes. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial",
+      "id": "casasem-2026-11-17-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-2-96cf5740307de3f3.mp4",
+      "sha256": "96cf5740307de3f3a7a9e3e4771fa4b5a38b853f10babb2dcdd7cf38817c751e",
+      "script_hash": "ab8fe6fa5fafba6fd3835435fabd1390e1b762931974385c98fa56e2b8b2a625",
+      "post_snapshot_sha256": "7758774a689a82949938ffababce1cece48caa24bbd515d469106828b8852607",
+      "title": "Armário sem espaço? Separe os itens por categoria antes de organizar. Guarde somente os tecidos que já estão completamente secos e limpos. Escolha um suporte firme para os utensílios e respeite a capacidade indicada. Cenas ilustrativas geradas por inteligência artificial. Orientações ilustrativas; siga as instruções dos fabricantes. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial",
       "script_lines": [
         "Armário sem espaço? Separe os itens por categoria antes de organizar.",
-        "Ajuste a dobra das peças ao espaço disponível, sem prender nas portas.",
-        "Antes de guardar os utensílios, confira se estão limpos e completamente secos."
+        "Guarde somente os tecidos que já estão completamente secos e limpos.",
+        "Escolha um suporte firme para os utensílios e respeite a capacidade indicada."
       ],
       "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-17T10:00:00-03:00",
+      "original_scheduled_at": "2026-11-17T18:00:00-03:00",
       "proposed_scheduled_at": null,
       "schedule_changed": false,
       "selectable": false,
@@ -254,5 +254,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "bd15343379783d1730b1ea183e10a69fa9797cca14a253edb75d1c089da92c91"
+  "manifest_sha256": "20b2ea2d3464715ff10254293a06f87d12752a73b5b2925e6e9b2da90a5b7a30"
 }
