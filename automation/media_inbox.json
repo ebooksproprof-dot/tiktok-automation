@@ -2274,6 +2274,70 @@
       "duration": 15.018333,
       "bytes": 8253215,
       "acquired_at": 1794879308
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9398",
+      "url": "https://cdn.pixabay.com/video/2017/05/29/9398-219552669_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9398/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9398/",
+      "category": "limpeza",
+      "query": "wiping cloth",
+      "selection_reason": "Provider tags: sewing machine, seamstress, dressmaker, female hands, thread, needle, fabric, cloth, canvas, craft, the ability, material, matter, tailor, sew, stitch, the seam",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/29/9398-219552669_large.mp4",
+      "sha256": "de366bddb26c2169198e7afd4f34654897777275c0b6a916d9e2a30b906869e5",
+      "dhash": [
+        "4f5d595707078703",
+        "4f1d2913170f4733",
+        "4f9dbb13070f8783",
+        "c75c5f9313074763",
+        "77757933938b8383"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 10.92,
+      "bytes": 6157670,
+      "acquired_at": 1794879679
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9397",
+      "url": "https://cdn.pixabay.com/video/2017/05/29/9397-219552666_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9397/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9397/",
+      "category": "limpeza",
+      "query": "wiping cloth",
+      "selection_reason": "Provider tags: sewing machine, seamstress, dressmaker, female hands, thread, needle, fabric, cloth, canvas, craft, the ability, material, matter, tailor, sew, stitch, the seam",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/05/29/9397-219552666_large.mp4",
+      "sha256": "97e7f9f59b8ee552589828380c348f275ab3f6c9ac7f4f246fdd7f29de5d5134",
+      "dhash": [
+        "43e32c3c2c131313",
+        "43e32c3c2c131123",
+        "43e3ee2c4c93130f",
+        "43c36e3c6893130f",
+        "43c36e2c69131307"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 7.68,
+      "bytes": 4327813,
+      "acquired_at": 1794879680
     }
   ],
   "rejected_until": {
@@ -2281,70 +2345,47 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794879302,
+    "at": 1794879677,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 0,
+    "skipped_known": 13,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 7,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 381,
-          "context_rejected": 8,
+          "total_hits": 500,
+          "context_rejected": 7,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 13,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 67,
-          "context_rejected": 2,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 6,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 66,
-          "context_rejected": 9,
+          "total_hits": 73,
+          "context_rejected": 7,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2352,14 +2393,14 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing basket",
-      "arranging basket",
-      "cloth",
-      "cleaning cloth"
+      "cleaning cloth",
+      "wiping cloth",
+      "sponge",
+      "cleaning sponge"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 60,
+    "unreviewed_media_count": 62,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
