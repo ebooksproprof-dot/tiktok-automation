@@ -2508,7 +2508,8 @@
       "height": 1080,
       "duration": 41.685,
       "bytes": 24539350,
-      "acquired_at": 1794903975
+      "acquired_at": 1794903975,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2540,7 +2541,8 @@
       "height": 1080,
       "duration": 40.573867,
       "bytes": 22647131,
-      "acquired_at": 1794903979
+      "acquired_at": 1794903979,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2612,54 +2614,31 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794931139,
-    "acquired": 2,
+    "at": 1794931701,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 13,
+    "download_attempts": 0,
+    "skipped_known": 14,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "banheiro",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 274,
-          "context_rejected": 12,
+          "total_hits": 483,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 2,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 334,
-          "context_rejected": 13,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
+        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -2667,7 +2646,53 @@
       },
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 137,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 4,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 500,
+          "context_rejected": 11,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 2,
         "response_source": "live_api",
@@ -2682,34 +2707,19 @@
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
         "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 10,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 119,
-          "context_rejected": 5,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "books",
-      "organizing closet",
-      "cleaning dishes",
-      "washing laundry"
+      "cleaning bathroom",
+      "washing spoons",
+      "cleaning drain",
+      "organizing books"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
