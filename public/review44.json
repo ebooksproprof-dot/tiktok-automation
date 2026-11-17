@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-17T02:35:08.771916+00:00",
-  "expires_at": "2026-11-17T02:35:08.771916+00:00",
-  "queue_snapshot_sha256": "0bd3c495f9002736987a489b957587665110751aed29cd59a17ad9e493b0691e",
-  "state_snapshot_sha256": "8b5a4849f83b531cba5f3558be2b42c8c6c0dc5cb98a1f908009dbbe426a2db9",
+  "generated_at": "2026-11-17T02:37:42.316069+00:00",
+  "expires_at": "2026-11-17T02:37:42.316069+00:00",
+  "queue_snapshot_sha256": "ded266e2e3f40177233b0d8c10cbc1f2b10e6b0caef8a01b275714fa1f136ed9",
+  "state_snapshot_sha256": "2c955535085080c8633372abcaf6bb4f119f53888516bafe9c850135023c0552",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-18-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-2-9aa36f436d8eff1b.mp4",
-      "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
-      "script_hash": "2a2b58d334c89a733d91bb25b953194963343c47cf7fadb803a7de1077a6aad0",
-      "post_snapshot_sha256": "79f7cfa38a63f2ae656657eef1bab0cbe440e83641133cc6e602a58d06191f78",
-      "title": "Vai lavar as mãos? Siga o modo de uso e a quantidade indicados no rótulo. Confira se há sabonete disponível antes de começar. Espalhe o sabonete pelas mãos sem deixar áreas esquecidas. Mantenha a área da pia livre para utilizar com segurança. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — analogicus; https://pixabay.com/videos/id-37236/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Vai lavar as mãos?",
-        "Siga o modo de uso e a quantidade indicados no rótulo.",
-        "Confira se há sabonete disponível antes de começar.",
-        "Espalhe o sabonete pelas mãos sem deixar áreas esquecidas.",
-        "Mantenha a área da pia livre para utilizar com segurança.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-18T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "ac6d080232850b70424f8e853df1f6edc68ed6c67c5c7737a46244d3ffe1851b"
+  "manifest_sha256": "b65e7f969bdbbc2ab8e63b90d463294720bdac0aa7cc483c672420df3fe3d46f"
 }
