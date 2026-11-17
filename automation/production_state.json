@@ -100,7 +100,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2022/03/19/111280-690770681_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "RETRYABLE",
       "source_sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
       "license": {
         "source_sha256": "05d7e7a3e662d6f5719ba1d37786b5fa26cf4b9d1d055449a4cf413a8ebf7a8a",
@@ -156,7 +156,12 @@
         "decoder_pass": true,
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
-      }
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "release_and_queue",
+      "http_status": null,
+      "retry_after": 1794964709.308609
     },
     "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4": {
       "status": "REJECTED",
