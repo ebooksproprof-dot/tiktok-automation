@@ -296,3 +296,22 @@ class HandwashingEvidenceTests(unittest.TestCase):
             self.assertFalse(assess('handwashing', captions))
         self.assertTrue(assess('handwashing', ['A person washing hands with soap under a faucet.']*3))
         self.assertFalse(assess('handwashing', ['Washing hands under water.']*2+['A child with a gun.']))
+
+
+class CancelledSlotRecoveryTests(unittest.TestCase):
+    def test_rejected_slots_release_only_after_conclusive_cancellation_and_keep_unique_id(self):
+        from autonomous_production import choose_slot
+        now = dt.datetime(2026, 11, 18, 6, tzinfo=dt.timezone.utc)
+        bad = {'id': 'casasem-2026-11-18-1', 'scheduled_at': '2026-11-18T10:00:00-03:00',
+               'approved': False, 'publishing_status': 'EDITORIALLY_REJECTED_CONTEXT'}
+        evening = {'id': 'casasem-2026-11-18-2', 'scheduled_at': '2026-11-18T18:00:00-03:00', 'approved': True}
+        queue = {'posts': [bad, evening]}
+        state = {'posts': {bad['id']: {'status': 'SCHEDULED', 'scheduled_at': bad['scheduled_at']}}}
+        self.assertNotEqual(choose_slot(queue, state, now)[1].date(), now.date())
+        state['posts'][bad['id']].update(status='CANCELLED_EDITORIAL', buffer_status='deleted')
+        ident, when = choose_slot(queue, state, now)
+        self.assertEqual(when.hour, 10); self.assertEqual(when.date(), now.date())
+        self.assertEqual(ident, 'casasem-2026-11-18-1-r1')
+        self.assertNotEqual(ident, bad['id'])
+        state['posts'][bad['id']]['status'] = 'UNKNOWN'
+        self.assertNotEqual(choose_slot(queue, state, now)[1].date(), now.date())

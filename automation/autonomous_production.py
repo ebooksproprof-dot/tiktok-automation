@@ -229,8 +229,14 @@ def stock_status(queue, state, now):
 def choose_slot(queue, state, now, soon=False):
     entries = {p['id']: p for p in queue['posts']}
     entries.update({key: dict(value, id=key) for key, value in state['posts'].items()})
+    rejected = {p['id'] for p in queue['posts']
+                if p.get('approved') is False
+                and str(p.get('publishing_status', '')).startswith('EDITORIALLY_REJECTED')
+                and (p['id'] not in state['posts']
+                     or (state['posts'][p['id']].get('status') == 'CANCELLED_EDITORIAL'
+                         and state['posts'][p['id']].get('buffer_status') == 'deleted'))}
     reservations = {key: stamp(p['scheduled_at']).astimezone(BRT)
-                    for key, p in entries.items() if p.get('scheduled_at')}
+                    for key, p in entries.items() if p.get('scheduled_at') and key not in rejected}
     local = now.astimezone(BRT)
     for day in range(8):
         for hour in (10, 18):
@@ -245,6 +251,12 @@ def choose_slot(queue, state, now, soon=False):
             numbers = (1, 2, 3) if completed_tests else (1, 2)
             post_id = next((f'casasem-{when.date()}-{n}' for n in numbers
                             if f'casasem-{when.date()}-{n}' not in occupied), None)
+            if post_id is None and rejected:
+                # Never reuse an attempted ID or media. Only a conclusively
+                # cancelled (or never submitted) rejection releases its slot.
+                base = f'casasem-{when.date()}-{1 if when.hour == 10 else 2}'
+                post_id = next((base+'-r'+str(n) for n in range(1, 10)
+                                if base+'-r'+str(n) not in occupied), None)
             if post_id:
                 return post_id, when
     raise ValueError('NO_UNRESERVED_SLOT')

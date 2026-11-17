@@ -159,6 +159,8 @@ def prepare(post, state, channel_id):
     day = when.astimezone(ZoneInfo('America/Sao_Paulo')).date()
     reserved = set()
     for key, previous in state['posts'].items():
+        if previous.get('status') == 'CANCELLED_EDITORIAL' and previous.get('buffer_status') == 'deleted':
+            continue  # Exact future cancellation was verified by the existing API route.
         prior = previous.get('scheduled_at')
         if isinstance(prior, dict):
             raw = prior.get('dateTime')
