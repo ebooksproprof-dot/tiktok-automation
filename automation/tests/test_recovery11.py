@@ -248,3 +248,15 @@ class LicenseRefreshTests(unittest.TestCase):
                                              (b'Non-commercial only', docs)]:
             with self.assertRaisesRegex(ValueError, 'CURRENT_OFFICIAL'):
                 source_license.refreshed_policy(policy, changed_terms, changed_docs, at)
+
+
+class CaptionCompatibilityTests(unittest.TestCase):
+    def test_portuguese_multiline_text_disables_newline_glyph_shaping(self):
+        import tempfile
+        from caption_layout import filters
+        with tempfile.TemporaryDirectory() as tmp:
+            result = filters(Path(tmp), [[0, 5, 'Armário sem espaço? Separe os itens por categoria antes de']])
+            self.assertIn('text_shaping=0', result[0])
+            text = (Path(tmp)/'caption-v51-0.txt').read_text()
+            self.assertIn('\n', text)
+            self.assertIn('Armário', text)

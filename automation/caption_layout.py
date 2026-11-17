@@ -41,7 +41,7 @@ def filters(folder, timings):
         path = folder / f'caption-v51-{index}.txt'
         path.write_text(rendered, encoding='utf8')
         result.append(
-            f"drawtext=fontfile={FONT}:textfile={path}:expansion=none:fontsize={size}:"
+            f"drawtext=fontfile={FONT}:textfile={path}:expansion=none:text_shaping=0:fontsize={size}:"
             "fontcolor=white:box=1:boxcolor=black@0.78:boxborderw=18:"
             "x=(w-text_w)/2:y=1320:"
             f"alpha='min(1,max(0,(t-{start:.6f})/0.08))':"
