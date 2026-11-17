@@ -1001,6 +1001,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 0
+    },
+    "37aa9d06447233fa378e1e78ea9e3b6053df1083e5e747475864c956f0543199": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "The image shows a neatly organized storage unit with three shelves. The shelves are made of a light-colored material, likely wood or laminate, and are arranged vertically. Each shelf has a white, textured surface, which appears to be a",
+        "The image shows a storage area within a room. The storage space is enclosed by a light-colored, wooden shelf. On the shelf, there are three white folded towels stacked vertically, neatly placed. The towels are of similar size and appear",
+        "A hand is above a stack of folded white towels in a brown shelving unit."
+      ],
+      "frame_sha256": [
+        "e1dac1ab7b92f9503ac15a5bc3df80ab7282d576013a0194fc0b6d1d78f324e7",
+        "816853deb370ebf6e1189c47e13e216ffc8d5815c26e2c0eba9fd004fb04687d",
+        "ef60eefb927d22f7cc108da7cedd8f3217f24c32e27c767559367bd3e44276c6"
+      ],
+      "source_sha256": "37aa9d06447233fa378e1e78ea9e3b6053df1083e5e747475864c956f0543199",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 116.57,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 1
     }
   }
 }
