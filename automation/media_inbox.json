@@ -2541,6 +2541,70 @@
       "duration": 40.573867,
       "bytes": 22647131,
       "acquired_at": 1794903979
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "325397",
+      "url": "https://cdn.pixabay.com/video/2026/01/01/325397_small.mp4",
+      "source_page": "https://pixabay.com/videos/id-325397/",
+      "author": "EjazAhmed47",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: EjazAhmed47 / Pixabay — https://pixabay.com/videos/id-325397/",
+      "category": "lavanderia",
+      "query": "washing laundry",
+      "selection_reason": "Provider tags: farmer lifestyle, stream, clothes, washing, farmer, nature, hardwork, lake, laundry, rural life, washing clothes, irrigation canal, village scene, manual labor, traditional living, countryside, agriculture, outdoor washing, south asia, pakistan, daily routine, simple living",
+      "requires_crop_review": false,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2026/01/01/325397_small.mp4",
+      "sha256": "341ac3765f43e7dc7f17b6067833a4619d98642a2c1860bb57bc0286e67206a2",
+      "dhash": [
+        "ceb1333b32bdbf7b",
+        "1b6339333edfbd3d",
+        "9372e9bb191e5bd9",
+        "4759a9b9999e5fdf",
+        "fbdbfbf98dcc8f6d"
+      ],
+      "width": 1080,
+      "height": 1920,
+      "duration": 12.1,
+      "bytes": 36072282,
+      "acquired_at": 1794931143
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "325398",
+      "url": "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4",
+      "source_page": "https://pixabay.com/videos/id-325398/",
+      "author": "EjazAhmed47",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: EjazAhmed47 / Pixabay — https://pixabay.com/videos/id-325398/",
+      "category": "lavanderia",
+      "query": "washing laundry",
+      "selection_reason": "Provider tags: stream, clothes, washing, farmer, nature, hardwork, lake, laundry, rural life, washing clothes, farmer lifestyle, irrigation canal, village scene, manual labor, traditional living, countryside, agriculture, outdoor washing, south asia, pakistan, daily routine, simple living",
+      "requires_crop_review": false,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4",
+      "sha256": "ae15ddffeb6a7366a4a61e05ede8e6dea53b36de6d83ba787b864f01b742eb58",
+      "dhash": [
+        "001898db040c08c7",
+        "002058965459580f",
+        "002048db244c5883",
+        "0919598f25595b1e",
+        "000859498f20482c"
+      ],
+      "width": 1080,
+      "height": 1920,
+      "duration": 22.8,
+      "bytes": 81722831,
+      "acquired_at": 1794931152
     }
   ],
   "rejected_until": {
@@ -2548,31 +2612,31 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794903974,
+    "at": 1794931139,
     "acquired": 2,
     "rejected": 0,
     "download_attempts": 2,
-    "skipped_known": 9,
+    "skipped_known": 13,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "banheiro",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 3,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 34,
-          "context_rejected": 0,
+          "total_hits": 274,
+          "context_rejected": 12,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "banheiro",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2580,38 +2644,61 @@
       },
       {
         "provider": "pixabay",
-        "category": "utensilios",
+        "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 2,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 27,
-          "context_rejected": 15,
+          "total_hits": 334,
+          "context_rejected": 13,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "utensilios",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 2,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 42,
-          "context_rejected": 10,
+          "total_hits": 500,
+          "context_rejected": 13,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 10,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 119,
+          "context_rejected": 5,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2619,14 +2706,14 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "bathroom",
-      "spoons",
-      "drain",
-      "books"
+      "books",
+      "organizing closet",
+      "cleaning dishes",
+      "washing laundry"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 68,
+    "unreviewed_media_count": 70,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
