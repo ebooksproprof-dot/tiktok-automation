@@ -1,0 +1,74 @@
+[
+  {
+    "commit": "00c1033",
+    "message": "Test replacement submission only after verified editorial deletion"
+  },
+  {
+    "commit": "db89ba8",
+    "message": "Exclude conclusively deleted reservations from read-only post lookups"
+  },
+  {
+    "commit": "7a8e270",
+    "message": "Recover conclusively cancelled editorial slots with new unique post identities"
+  },
+  {
+    "commit": "6b55531",
+    "message": "Require visible soap-water washing context and hold mismatched new renders"
+  },
+  {
+    "commit": "c9536a5",
+    "message": "Audit automatic Pixabay HTTPS license refresh from the production runner"
+  },
+  {
+    "commit": "cd7a0ed",
+    "message": "Render caption lines separately to prevent runner newline glyph artifacts"
+  },
+  {
+    "commit": "c55cce6",
+    "message": "Focus generated scene review on objects and prioritize freshly acquired footage"
+  },
+  {
+    "commit": "a2cc8eb",
+    "message": "Keep caption contract regression compatible with acquisition dependencies"
+  },
+  {
+    "commit": "24b3888",
+    "message": "Interleave discovery themes and reject sewing footage before CPU review"
+  },
+  {
+    "commit": "23e49c2",
+    "message": "Exclude industrial iron results from household production reviews"
+  },
+  {
+    "commit": "2f87961",
+    "message": "Keep Portuguese multiline captions independent of newline shaping"
+  },
+  {
+    "commit": "0a5f369",
+    "message": "Refresh current Pixabay license over official HTTPS before browser fallback"
+  },
+  {
+    "commit": "c3e12f7",
+    "message": "Checkpoint scene reviews, bound replacements and isolate production smoke jobs"
+  },
+  {
+    "commit": "90b90d3",
+    "message": "Connect licensed Commons fallback and test ten-day cloud recovery"
+  },
+  {
+    "commit": "e1300cd",
+    "message": "Repair exact-source Wan towel review and prevent fallback stock starvation"
+  },
+  {
+    "commit": "b52ba13",
+    "message": "Preserve manual discovery pagination and test household nomination"
+  },
+  {
+    "commit": "4bc705f",
+    "message": "Diversify household discovery and advance exhausted API pages within budget"
+  },
+  {
+    "commit": "c78e8e4",
+    "message": "Add bounded read-only Buffer and visual evidence audit"
+  }
+]

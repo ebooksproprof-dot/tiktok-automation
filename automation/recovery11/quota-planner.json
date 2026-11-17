@@ -1,0 +1,15 @@
+{
+  "scope": "read-only evaluation of existing conservative planner; not a live provider balance",
+  "checked_at": "2026-11-17T02:22:21.185116+00:00",
+  "tier": "free",
+  "window_start": "2026-11-17T01:49:56.127176+00:00",
+  "window_claim_count": 4,
+  "reserved_estimated_seconds": 240.0,
+  "next_generation_planner_result": {
+    "status": "WAIT_FREE_QUOTA",
+    "new_gpu_calls": 0,
+    "publicly_verified": false,
+    "not_before": "2026-11-18T01:49:56.127176+00:00"
+  },
+  "new_gpu_calls": 0
+}

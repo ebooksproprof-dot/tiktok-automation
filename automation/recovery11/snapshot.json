@@ -1,0 +1,183 @@
+{
+  "checked_at": "2026-11-17T02:47:12.148424+00:00",
+  "repository_head": "00c1033168203dd5e6ad06c319f8c76d0367179e",
+  "stock": {
+    "ready": 2,
+    "held_uncertain": 0,
+    "target_max": 4,
+    "low_stock": false,
+    "refill_needed": 2,
+    "held_ids": [],
+    "publication_confirmation_is_separate": true
+  },
+  "mission_outputs": [
+    {
+      "id": "casasem-2026-11-17-1",
+      "approved": true,
+      "origin": "ai_only30",
+      "scheduled_at": "2026-11-17T10:00:00-03:00",
+      "sha256": "652b304252c66dc8694cad253df5aa3695b8cabaa140a9d0ec61a0f62cb9be18",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-1-652b304252c66dc8.mp4",
+      "provider_status": "SCHEDULED",
+      "buffer_status": "scheduled",
+      "buffer_post_id": "6afbb82f4b26315855b516cc",
+      "publicly_verified": false
+    },
+    {
+      "id": "casasem-2026-11-17-2",
+      "approved": true,
+      "origin": "ai_only30",
+      "scheduled_at": "2026-11-17T18:00:00-03:00",
+      "sha256": "96cf5740307de3f3a7a9e3e4771fa4b5a38b853f10babb2dcdd7cf38817c751e",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-2-96cf5740307de3f3.mp4",
+      "provider_status": "SCHEDULED",
+      "buffer_status": "scheduled",
+      "buffer_post_id": "6afbb8564b26315855b51cc0",
+      "publicly_verified": false
+    },
+    {
+      "id": "casasem-2026-11-18-1",
+      "approved": false,
+      "origin": "licensed_stock_cpu_review",
+      "scheduled_at": "2026-11-18T10:00:00-03:00",
+      "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-1-3c600fb2e78bbc66.mp4",
+      "provider_status": "CANCELLED_EDITORIAL",
+      "buffer_status": "deleted",
+      "buffer_post_id": "6afbbd594b26315855b6a0dc",
+      "publicly_verified": false,
+      "editorial_rejection": {
+        "at": "2026-11-17T02:37:28.641838+00:00",
+        "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
+        "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
+      }
+    },
+    {
+      "id": "casasem-2026-11-18-2",
+      "approved": false,
+      "origin": "licensed_stock_cpu_review",
+      "scheduled_at": "2026-11-18T18:00:00-03:00",
+      "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-2-9aa36f436d8eff1b.mp4",
+      "provider_status": "CANCELLED_EDITORIAL",
+      "buffer_status": "deleted",
+      "buffer_post_id": "6afbbdf2df36f4d825627b29",
+      "publicly_verified": false,
+      "editorial_rejection": {
+        "at": "2026-11-17T02:37:28.641863+00:00",
+        "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
+        "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
+      }
+    }
+  ],
+  "new_publications_confirmed": [],
+  "last_provider_audit": {
+    "license_https_probe": {
+      "status": "AUTOMATIC_HTTPS_REFRESH_NOT_PROVEN",
+      "error_type": "HTTPError",
+      "http_status": 403
+    },
+    "channel": {
+      "id": "6ad14dc2778b240e2f1f7c2f",
+      "name": ".casasemesforo",
+      "service": "tiktok",
+      "organizationId": "6ad14d9b639306669557f3fc",
+      "externalLink": "https://tiktok.com/@.casasemesforo",
+      "isDisconnected": false,
+      "isLocked": false,
+      "isQueuePaused": false,
+      "metadata": {
+        "defaultToReminders": false
+      }
+    },
+    "pending": {
+      "edges": [
+        {
+          "node": {
+            "id": "6afbb8564b26315855b51cc0",
+            "channelId": "6ad14dc2778b240e2f1f7c2f",
+            "status": "scheduled",
+            "schedulingType": "automatic",
+            "dueAt": "2026-11-17T21:00:00.000Z",
+            "sentAt": null,
+            "externalLink": null
+          }
+        },
+        {
+          "node": {
+            "id": "6afbb82f4b26315855b516cc",
+            "channelId": "6ad14dc2778b240e2f1f7c2f",
+            "status": "scheduled",
+            "schedulingType": "automatic",
+            "dueAt": "2026-11-17T13:00:00.000Z",
+            "sentAt": null,
+            "externalLink": null
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    },
+    "latest_provider_posts": {
+      "p0": {
+        "id": "6af4c278cf36c484ae92166b",
+        "channelId": "6ad14dc2778b240e2f1f7c2f",
+        "status": "sent",
+        "schedulingType": "automatic",
+        "dueAt": "2026-11-13T13:00:00.000Z",
+        "sentAt": "2026-11-13T13:03:58.000Z",
+        "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707640902847679751?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
+      },
+      "p1": {
+        "id": "6af50efcbc9f3773a1af1a1e",
+        "channelId": "6ad14dc2778b240e2f1f7c2f",
+        "status": "sent",
+        "schedulingType": "automatic",
+        "dueAt": "2026-11-13T21:00:00.000Z",
+        "sentAt": "2026-11-13T21:03:20.015Z",
+        "externalLink": "https://www.tiktok.com/@.casasemesforo/video/7707764157134703879?utm_campaign=tt4d_open_api&utm_source=7103819247981182978"
+      },
+      "p2": {
+        "id": "6afbb82f4b26315855b516cc",
+        "channelId": "6ad14dc2778b240e2f1f7c2f",
+        "status": "scheduled",
+        "schedulingType": "automatic",
+        "dueAt": "2026-11-17T13:00:00.000Z",
+        "sentAt": null,
+        "externalLink": null
+      },
+      "p3": {
+        "id": "6afbb8564b26315855b51cc0",
+        "channelId": "6ad14dc2778b240e2f1f7c2f",
+        "status": "scheduled",
+        "schedulingType": "automatic",
+        "dueAt": "2026-11-17T21:00:00.000Z",
+        "sentAt": null,
+        "externalLink": null
+      }
+    },
+    "read_only": true,
+    "publication_attempted": false,
+    "at": "2026-11-17T02:33:42Z"
+  },
+  "wan": {
+    "episode": 4,
+    "status": "COLLECTING",
+    "preserved_clips": 0,
+    "archived_rejections": 1
+  },
+  "additional_paid_services_enabled": false,
+  "two_videos_daily_sustained_proven": false,
+  "states": {
+    "software": "CORRIGIDO E TESTADO",
+    "buffer_historical_publication": "OPERACIONAL COM PUBLICAÇÃO CONFIRMADA",
+    "new_publications_and_sustained_frequency": "IMPLEMENTADO MAS AINDA NÃO COMPROVADO",
+    "pexels_missing_key_and_actions_license_https_403": "BLOQUEADO POR DEPENDÊNCIA EXTERNA"
+  },
+  "final_read_only_audit": {
+    "run_id": 44004824483,
+    "status_last_observed": "pending behind serialized production",
+    "prior_completed_read_only_audit_run": 44003840863
+  }
+}

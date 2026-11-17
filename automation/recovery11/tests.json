@@ -1,0 +1,8 @@
+{
+  "command": "python -m unittest discover -s automation/tests -v",
+  "tests": 423,
+  "seconds": 5.424,
+  "skipped": 0,
+  "exit_code": 0,
+  "scope": "local regression suite; mock publications do not count as operational evidence"
+}

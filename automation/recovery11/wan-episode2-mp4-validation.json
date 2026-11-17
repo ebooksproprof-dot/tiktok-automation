@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-17T01:59:27.662990+00:00",
+  "post_id": "casasem-2026-11-17-1",
+  "media_validation": {
+    "technical_pass": true,
+    "editorial_approved": false,
+    "sha256": "652b304252c66dc8694cad253df5aa3695b8cabaa140a9d0ec61a0f62cb9be18",
+    "duration": 15.0,
+    "size": 4938895,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -15.2,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.022,
+    "lip_sync_verified": false
+  },
+  "motion": {
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50
+  },
+  "scope": "independent technical recheck of immutable Release bytes; editorial acceptance is separate in queue quality"
+}

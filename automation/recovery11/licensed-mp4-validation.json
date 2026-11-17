@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-17T02:33:54.274920+00:00",
+  "post_id": "casasem-2026-11-18-1",
+  "media_validation": {
+    "technical_pass": true,
+    "editorial_approved": false,
+    "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
+    "duration": 17.679,
+    "size": 4370798,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -15.2,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.012984,
+    "lip_sync_verified": false
+  },
+  "motion": {
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50
+  },
+  "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+  "source_rights": [
+    {
+      "source_sha256": "42532f45901e11598b30b52bb53f384f369d59743b91d1b3715d6d26309daeaa",
+      "source_url": "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-37274/",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "binding_terms": "https://pixabay.com/service/terms/",
+      "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+      "page_sha256": "c1d5ce2e60d4baa63332def94742975d16b658e48eb88238eb69cce095760e25",
+      "author": "analogicus",
+      "commercial_use": true,
+      "reviewed_at": "2026-11-17T02:26:31.949232+00:00",
+      "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+      "api_endpoint": "https://pixabay.com/api/videos/",
+      "api_response_sha256": "c1d5ce2e60d4baa63332def94742975d16b658e48eb88238eb69cce095760e25",
+      "license_policy": {
+        "version": 1,
+        "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+        "terms_url": "https://pixabay.com/service/terms/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+        "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+        "max_policy_age_days": 7,
+        "api_docs_url": "https://pixabay.com/api/docs/",
+        "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+        "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+        "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+        "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+      },
+      "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+    }
+  ],
+  "scope": "technical recheck and preserved exact-source rights; editorial acceptance is separate in queue",
+  "editorial_followup": {
+    "accepted": false,
+    "reason": "Hands/rubbing without visible washing context; misleading washing-specific narration. Hold and cancel through existing Buffer route."
+  }
+}
