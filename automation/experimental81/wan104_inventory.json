@@ -1064,6 +1064,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 1
+    },
+    "8ba89302366fd48423a40cd9eea4ad4b538d97bf2fe8990e9b9f80fd12c6ef5e": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Four plastic spoons hanging from a black metal rod.",
+        "Three white and black ladles and one white ladle hanging from a black rod.",
+        "White spoon with black handle and black spoon."
+      ],
+      "frame_sha256": [
+        "132b770beb4a677b0ab8dbb8319f18abfc60c0a95a408086d19351d275c3bfc9",
+        "07d1a8e96083addc75ed4eab91d491644328ef77ecf994b9a53fe138f4d90e9a",
+        "4d8505478f38f415947bf0341a6212d0fc1d3f91d9e987d90579990670743606"
+      ],
+      "source_sha256": "8ba89302366fd48423a40cd9eea4ad4b538d97bf2fe8990e9b9f80fd12c6ef5e",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 79.253,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 2
     }
   },
   "rejected_clips": [
