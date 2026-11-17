@@ -275,3 +275,13 @@ class HouseholdContextTests(unittest.TestCase):
         from semantic_review import nominate
         self.assertIsNone(nominate({'selection_reason': 'sewing machine fabric cloth tailor sew stitch'}))
         self.assertEqual(nominate({'selection_reason': 'cleaning cloth microfiber wiping kitchen'}), 'wiping')
+
+
+class GeneratedCaptionFocusTests(unittest.TestCase):
+    def test_background_truncation_gets_one_second_look_without_weakening_gate(self):
+        from semantic_review import needs_generated_disambiguation, assess_generated_organization
+        captions = ['White tiled wall.', 'Kitchen utensils hanging from a rod.', 'A white tile wall.']
+        self.assertFalse(assess_generated_organization(2, captions))
+        self.assertTrue(needs_generated_disambiguation(2, captions))
+        self.assertFalse(needs_generated_disambiguation(2, ['A child by a tiled wall.', *captions[1:]]))
+        self.assertFalse(needs_generated_disambiguation(3, captions))

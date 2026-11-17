@@ -361,7 +361,8 @@ def run(stage=False, soon=False, limit=2):
     records = candidate_records(inbox, cache)
     # Previously unavailable old sources must not consume every review position
     # ahead of fresh discoveries. Preserve all retry/backoff history.
-    records.sort(key=lambda r: 1 if ledger['candidates'].get(r['url'], {}).get('status') == 'RETRYABLE' else 0)
+    records.sort(key=lambda r: (ledger['candidates'].get(r['url'], {}).get('status') == 'RETRYABLE',
+                                -float(r.get('acquired_at', 0))))
     for candidate in records:
         if len(outputs) >= min(limit, TARGET-occupied) or examined >= MAX_CANDIDATES:
             break

@@ -110,13 +110,17 @@ def assess_generated_organization(slot, captions):
 
 
 
-def needs_textile_disambiguation(slot, captions):
-    # A single neutral second look is allowed only for the demonstrated textile
-    # ambiguity. Unsafe context can never be erased by a replacement caption.
+def needs_generated_disambiguation(slot, captions):
+    # A single neutral object-focused second look handles texture ambiguity
+    # and background-only captions truncated before the foreground description. Unsafe context can never be erased by a replacement caption.
     unsafe = FORBIDDEN | {'person', 'people', 'child', 'children'}
-    return (slot == 1 and len(captions) == 3
+    return (type(slot) is int and 0 <= slot < 3 and len(captions) == 3
             and not assess_generated_organization(slot, captions)
             and not any(words(c) & unsafe for c in captions))
+
+
+def needs_textile_disambiguation(slot, captions):
+    return slot == 1 and needs_generated_disambiguation(slot, captions)
 
 def motion(path):
     result = subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-i', str(path),
@@ -169,7 +173,7 @@ class Reviewer:
             image = Image.open(frame).convert('RGB')
             prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
                 {'type': 'image'}, {'type': 'text', 'text':
-                 ('Describe the visible objects, room, and camera view. Only describe what you can see.' if generated_profile else
+                 ('Briefly name the main foreground objects and describe their physical appearance. Focus on objects, not background walls. Only describe what you can see.' if generated_profile else
                   'Describe the visible objects and what the hands or people are doing. Only describe what you can see.')}]}],
                 add_generation_prompt=True)
             inputs = self.processor(text=prompt, images=[image], return_tensors='pt')
@@ -181,15 +185,19 @@ class Reviewer:
             hashes.append(hashlib.sha256(frame.read_bytes()).hexdigest())
             print('SEMANTIC_FRAME_COMPLETE='+record['provider_id']+'; SAMPLE='+str(index+1), flush=True)
         primary_captions = list(captions)
-        disambiguated = generated_profile and needs_textile_disambiguation(record.get('generated_slot'), captions)
+        disambiguated = generated_profile and needs_generated_disambiguation(record.get('generated_slot'), captions)
         if disambiguated:
             captions = []
+            focus = (
+                'Describe the main objects on the shelf: their shape, material and arrangement. Focus on the objects, not the cabinet walls.',
+                'Describe the material, texture, folds, and edges of the stacked objects. Are there paper pages, fabric folds, or neither? Report only visible evidence.',
+                'Describe the objects hanging from any rail or hooks: their shapes, materials and arrangement. Focus on the objects, not background tiles.'
+            )[record['generated_slot']]
             for index in range(3):
                 image = Image.open(folder/f'frame-{index}.jpg').convert('RGB')
                 prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
                     {'type': 'image'}, {'type': 'text', 'text':
-                     'Describe the material, texture, folds, and edges of the stacked objects. '
-                     'Are there paper pages, fabric folds, or neither? Report only visible evidence.'}]}],
+                     focus}]}],
                     add_generation_prompt=True)
                 inputs = self.processor(text=prompt, images=[image], return_tensors='pt')
                 with self.torch.inference_mode():
@@ -204,7 +212,8 @@ class Reviewer:
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
         if disambiguated:
-            result.update(primary_captions=primary_captions, bounded_textile_disambiguation=True)
+            result.update(primary_captions=primary_captions, bounded_generated_disambiguation=True,
+                          bounded_textile_disambiguation=record.get('generated_slot') == 1)
         result.update(motion_result)
         (folder/'review.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
         if not result['accepted']:
