@@ -147,8 +147,11 @@ def stage(trial=False):
         return {'status': 'QUEUED_ALREADY_DO_NOT_REPEAT', 'post_id': existing['id'], 'publicly_verified': False}
     if len(inventory.get('clips', [])) != 3:
         return {'status': 'COLLECTING_NO_READY_AI_VIDEO', 'clips': len(inventory.get('clips', [])), 'publicly_verified': False}
-    if not trial and not stock_status(queue, state, wan104.now())['refill_needed']:
-        return {'status': 'LICENSED_AI_READY_HELD_STOCK_FULL', 'clips': 3, 'publicly_verified': False}
+    # One bounded AI overflow position prevents the fallback's four ready
+    # reservations from starving completed Wan scenes. Existing slots stay intact.
+    demand = stock_status(queue, state, wan104.now())
+    if not trial and demand['ready']+demand['held_uncertain'] >= demand['target_max']+1:
+        return {'status': 'LICENSED_AI_OVERFLOW_RESERVED', 'clips': 3, 'publicly_verified': False}
     require_sources(inventory['clips'])
     ideas = wan104.script_choices(inventory['episode'], queue, state)
     if not ideas:

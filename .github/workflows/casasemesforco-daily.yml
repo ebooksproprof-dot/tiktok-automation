@@ -56,7 +56,7 @@ permissions:
 
 jobs:
   create-videos:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
     concurrency:
       group: casasemesforco-state
       cancel-in-progress: false
@@ -81,7 +81,8 @@ jobs:
           status = stock_status(json.load(open('automation/queue.json')), json.load(open('automation/state.json')), dt.datetime.now(dt.timezone.utc))
           print(json.dumps(status))
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-              out.write('needed='+str(bool(status['refill_needed'])).lower()+'\n')
+              wan = json.load(open('automation/experimental81/wan104_inventory.json'))
+              out.write('needed='+str(bool(status['refill_needed']) or len(wan.get('clips', [])) == 3).lower()+'\n')
           PYCODE
       - name: Install free video and speech tools
         id: install

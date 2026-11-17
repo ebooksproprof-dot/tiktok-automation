@@ -175,5 +175,6 @@ class Reviewer:
         result.update(motion_result)
         (folder/'review.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
         if not result['accepted']:
+            print('SEMANTIC_REJECTION_EVIDENCE='+json.dumps(result, ensure_ascii=False), flush=True)
             raise ValueError('PORTRAIT_VISUAL_CONTEXT_REJECTED')
         return result

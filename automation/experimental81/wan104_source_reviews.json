@@ -85,5 +85,105 @@
     "freeze_threshold_db": -50,
     "policy": "wan104_objects_v1",
     "generated_slot": 2
+  },
+  "1a80e7d453c12e1208056f72c672b6b7b812c18bef1d540654f2dd0d57746cf9": {
+    "method": "automated_cpu_portrait_frame_semantics",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+    "model_license_id": "Apache-2.0",
+    "family": "wan104_organization",
+    "captions": [
+      "The image shows a wooden shelf with two glass jars placed on it. The jars are cylindrical and have transparent lids. The glass jars have a slightly ribbed surface, which gives them a reflective appearance. The lids are silver-colored and have",
+      "The image shows a wooden shelf with two glass jars placed side by side. The jars are cylindrical and transparent, allowing a clear view of their contents. The glass jars have silver lids with a metallic finish, which suggests they might be made of",
+      "The image shows a wooden shelf with two glass jars placed on it. The shelf appears to be made of light-colored wood, possibly pine or oak, and has a natural finish. The jars are identical in size and shape, both being"
+    ],
+    "frame_sha256": [
+      "ad2d5e00a769f8e4c9d6bee91a82f4cfa42c11db3c9c37eed2b490d515e3c68d",
+      "fba1d41e5d28e8a95913598008eaef09b585228031178b70348dd57a79995b56",
+      "9f843c0523136fb2c79c52643dd5c13df73c0a9f0edd743e63ff6712a832b6eb"
+    ],
+    "source_sha256": "1a80e7d453c12e1208056f72c672b6b7b812c18bef1d540654f2dd0d57746cf9",
+    "frame_mode": "reviewed_portrait",
+    "accepted": true,
+    "review_seconds": 119.423,
+    "human_review": false,
+    "hosted_inference_calls": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "policy": "wan104_objects_v1",
+    "generated_slot": 0
+  },
+  "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc": {
+    "method": "multimodal_agent_correction_of_pinned_cpu_caption_error",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+    "model_license_id": "Apache-2.0",
+    "family": "wan104_organization",
+    "captions": [
+      "White folded terry towels enter an open wooden cupboard; the shelf and metal hinges are visible.",
+      "Four white folded terry towels are stacked on a wooden cupboard shelf. Their rounded folds and looped fabric texture are visible.",
+      "The same four folded white towels remain on the shelf, with soft fabric texture and no book spines or pages."
+    ],
+    "frame_sha256": [
+      "d65ea2482afa8a491a81e454c1da69d396d14012fd12e3e3d236366108095949",
+      "c0e4c66a281ea3a6d81500fe1fb61e3915a7704d05097de06a68d43a3890dc5c",
+      "4792cd165a2d5d2bebbbda346b7c8e56b7c1c63c926b0097ec6bd5e2637af555"
+    ],
+    "source_sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+    "frame_mode": "reviewed_portrait",
+    "accepted": true,
+    "review_seconds": 116.671,
+    "human_review": false,
+    "hosted_inference_calls": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "policy": "wan104_objects_v1",
+    "generated_slot": 1,
+    "original_automated_review": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "The image shows a wooden cabinet with a light brown finish. The cabinet has a slightly recessed panel design, with visible metal hardware, including screws and hinges. The cabinet doors are open, revealing a glimpse of the interior. The interior appears",
+        "The image shows a wooden cabinet with a closed door. The cabinet has a light brown color and appears to be made of wood. Inside the cabinet, there are four stacked white books. The books are neatly arranged, with the top book slightly",
+        "The image shows a wooden shelf with a stack of four white, textured, rolled-up books. The books are stacked vertically, with the top book slightly overlapping the middle book, and the middle book slightly overlapping the bottom book. The books"
+      ],
+      "frame_sha256": [
+        "d65ea2482afa8a491a81e454c1da69d396d14012fd12e3e3d236366108095949",
+        "c0e4c66a281ea3a6d81500fe1fb61e3915a7704d05097de06a68d43a3890dc5c",
+        "4792cd165a2d5d2bebbbda346b7c8e56b7c1c63c926b0097ec6bd5e2637af555"
+      ],
+      "source_sha256": "c270d7a327a0f994b06da1401e695a3c53d1e56f863d58475a63b5a1e8e661cc",
+      "frame_mode": "reviewed_portrait",
+      "accepted": false,
+      "review_seconds": 116.671,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 1
+    },
+    "correction": {
+      "reason": "CPU model misidentified folded terry towels as books; reinspection of exact decoded samples confirms towels.",
+      "scope": "exact source digest only; no global book-to-towel exception",
+      "reviewer": "Codex multimodal visual inspection; not a human review",
+      "reviewed_at": "2026-11-17T01:35:39.753457+00:00",
+      "sample_fractions": [
+        0.15,
+        0.5,
+        0.85
+      ],
+      "evidence_path": "automation/experimental81/reviews/wan104-episode2-slot1.jpg",
+      "evidence_sha256": "05fda812c230ada7fb799d2d460d772d690880a088cc300afda3950c801b7791"
+    }
   }
 }
