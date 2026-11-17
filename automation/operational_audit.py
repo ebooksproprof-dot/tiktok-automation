@@ -16,7 +16,8 @@ def run():
     } }''', {'input': {'organizationId': channel['organizationId'],
                       'filter': {'status': ['scheduled', 'sending']}}})['posts']
     # Independently fetch the last known posts, even when local state is complete.
-    latest = sorted((e for e in state['posts'].values() if e.get('buffer_post_id')),
+    latest = sorted((e for e in state['posts'].values() if e.get('buffer_post_id')
+                     and e.get('status') != 'CANCELLED_EDITORIAL'),
                     key=lambda e: str(e.get('scheduled_at', '')))[-4:]
     selections = [f'p{i}: post(input: {{id: {json.dumps(e["buffer_post_id"])}}}) {{ {buffer.POST_FIELDS} }}'
                   for i, e in enumerate(latest)]
