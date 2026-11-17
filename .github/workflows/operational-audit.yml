@@ -1,0 +1,61 @@
+name: CasaSemEsforco Read-only Operational Audit
+on:
+  workflow_dispatch:
+    inputs:
+      review_artifact_id:
+        description: 'Optional existing review artifact: print bounded JSON evidence only'
+        type: string
+        default: ''
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: casasemesforco-state
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify channel, pending queue and recent provider posts without submission
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
+        run: python automation/operational_audit.py
+      - name: Read existing visual evidence
+        if: inputs.review_artifact_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ inputs.review_artifact_id }}
+        run: |
+          python - <<'PY'
+          import io,json,os,urllib.request,zipfile
+          ident = str(int(os.environ['ARTIFACT_ID']))
+          url = 'https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/actions/artifacts/'+ident+'/zip'
+          req = urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})
+          with urllib.request.urlopen(req,timeout=45) as f:
+              body = f.read(20_000_001)
+          if len(body)>20_000_000: raise ValueError('REVIEW_ARTIFACT_TOO_LARGE')
+          with zipfile.ZipFile(io.BytesIO(body)) as z:
+              for item in z.infolist():
+                  if item.filename.endswith('review.json') and item.file_size<100_000:
+                      print(item.filename, json.dumps(json.loads(z.read(item)), ensure_ascii=False))
+          PY
+      - name: Preserve provider audit and quota attempts
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add automation/state.json
+          if test -f automation/operational_audit.json; then git add automation/operational_audit.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record read-only provider audit and API quota'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
