@@ -97,3 +97,88 @@ class WanSourceCorrectionTests(unittest.TestCase):
         workflow = (acquisition.ROOT.parent/'.github/workflows/casasemesforco-daily.yml').read_text()
         self.assertIn("github.event.workflow_run.conclusion == 'failure'", workflow)
         self.assertIn("len(wan.get('clips', [])) == 3", workflow)
+
+
+class CommonsRecoveryTests(unittest.TestCase):
+    def test_commons_hd_can_be_reviewed_without_crop_or_license_relaxation(self):
+        from test_media_providers import commons
+        page = commons(); page['imageinfo'][0].update(width=1920, height=1080)
+        self.assertIsNone(providers.commons_record(page, 'kitchen', 'cleaning', ['cleaning']))
+        record = providers.commons_record(page, 'kitchen', 'cleaning', ['cleaning'], allow_full_frame=True)
+        self.assertEqual(record['frame_mode'], 'preserve_full')
+        page['imageinfo'][0]['extmetadata']['LicenseUrl']['value'] = 'https://creativecommons.org/licenses/by-nc/4.0/'
+        self.assertIsNone(providers.commons_record(page, 'kitchen', 'cleaning', ['cleaning'], allow_full_frame=True))
+
+    def test_commons_rights_require_exact_asset_author_and_commercial_license(self):
+        from test_media_providers import commons
+        import source_license
+        page = commons()
+        record = providers.commons_record(page, 'kitchen', 'cleaning', ['cleaning'])
+        record['sha256'] = 'f'*64
+        def fetch(url):
+            return json.dumps({'query': {'pages': {'42': page}}}).encode() if 'w/api.php' in url else b'official terms'
+        proof = source_license.verify_commons(record, fetch)
+        self.assertTrue(proof['commercial_use'])
+        page['imageinfo'][0]['extmetadata']['Artist']['value'] = 'Different author'
+        with self.assertRaisesRegex(ValueError, 'EXACT_ASSET'):
+            source_license.verify_commons(record, fetch)
+
+    def test_commons_candidates_reach_producer_not_just_inbox(self):
+        from autonomous_production import candidate_records
+        from test_media_providers import commons
+        record = providers.commons_record(commons(), 'kitchen', 'cleaning', ['cleaning'])
+        record['selection_reason'] = 'washing dishes in a kitchen sink'
+        self.assertEqual(candidate_records({'items': [record]}, {}), [record])
+
+
+class ContinuitySimulationTests(unittest.TestCase):
+    def test_ten_days_refill_consumption_quota_outage_and_restart(self):
+        import autonomous_production as production
+        from experimental81 import daily_budget
+        queue, state, budget = {'posts': []}, {'posts': {}}, daily_budget.fresh()
+        begin = dt.datetime(2026, 11, 17, 7, tzinfo=dt.timezone.utc)
+        partial, origins, consumed, slots = [], [], set(), set()
+        for day in range(10):
+            now = begin+dt.timedelta(days=day)
+            # Recover JSON checkpoints as a new workflow process would.
+            queue, state, budget, partial = json.loads(json.dumps([queue, state, budget, partial]))
+            for p in queue['posts']:
+                due = dt.datetime.fromisoformat(p['scheduled_at'])
+                if due <= now and p['id'] not in consumed:
+                    self.assertNotIn(p['quality']['sha256'], {state['posts'][i]['sha256'] for i in consumed})
+                    state['posts'][p['id']] = {'status': 'PUBLISH_COMPLETE', 'sha256': p['quality']['sha256']}
+                    consumed.add(p['id'])
+            # A temporary free provider outage preserves partial source claims.
+            if day != 2:
+                for attempt in range(4):
+                    ident = __import__('hashlib').sha256(f'{day}-{attempt}'.encode()).hexdigest()
+                    try:
+                        budget = daily_budget.reserve(budget, ident, now, tier='free', estimated_seconds=60)
+                    except daily_budget.QuotaError:
+                        break
+                    partial.append(ident)
+            def append(origin):
+                ident, when = production.choose_slot(queue, state, now)
+                self.assertEqual(when.minute, 0)
+                self.assertIn(when.hour, (10, 18))
+                self.assertGreater(when, now)
+                self.assertNotIn(when.isoformat(), slots)
+                slots.add(when.isoformat())
+                digest = __import__('hashlib').sha256(ident.encode()).hexdigest()
+                queue['posts'].append({'id': ident, 'scheduled_at': when.isoformat(), 'approved': True,
+                    'consented_at': now.isoformat(), 'quality': {'technical_pass': True, 'sha256': digest}, 'origin': origin})
+                origins.append(origin)
+            # Existing AI gets the first production position, including overflow.
+            if len(partial) >= 3 and production.stock_status(queue, state, now)['ready'] < 5:
+                append('wan'); partial = partial[3:]
+            # Two days of conventional unavailability do not fabricate outputs.
+            if day not in (2, 3):
+                for _ in range(2):
+                    if not production.stock_status(queue, state, now)['refill_needed']: break
+                    append('licensed')
+            self.assertLessEqual(production.stock_status(queue, state, now)['ready'], 5)
+            self.assertLessEqual(len(budget['window_claim_ids']), 4)
+        self.assertIn('wan', origins); self.assertIn('licensed', origins)
+        self.assertGreater(len(consumed), 12)
+        self.assertEqual(len(queue['posts']), len({p['id'] for p in queue['posts']}))
+        self.assertEqual(len(queue['posts']), len(slots))

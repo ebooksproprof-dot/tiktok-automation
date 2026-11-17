@@ -22,7 +22,7 @@ from zoneinfo import ZoneInfo
 import render_daily as render
 from content_catalog import fingerprint as script_sha, novel_scripts
 from daily_coverage import stamp, confirmed_live_tests
-from media_acquisition import download_and_measure, read_json, save_json
+from media_acquisition import download_and_measure, read_json, save_json, media_name
 from media_providers import crop_capable, native_full_frame, plain
 from media_rights import caption_with_credits
 from semantic_review import Reviewer, nominate, assess, motion, REVISION
@@ -251,7 +251,7 @@ def choose_slot(queue, state, now, soon=False):
 
 
 def candidate_records(inbox, cache):
-    records = {r['url']: r.copy() for r in inbox['items'] if r.get('provider') == 'pixabay'}
+    records = {r['url']: r.copy() for r in inbox['items'] if r.get('provider') in ('pixabay', 'wikimedia')}
     # Reuse official API discoveries rather than spending new calls for the same
     # files. Current item-page license is still checked before each acceptance.
     for key, entry in cache.items():
@@ -279,7 +279,7 @@ def candidate_records(inbox, cache):
                 r['provider_id'])
     selected = {}
     for record in records.values():
-        identity = record['provider_id']
+        identity = record['provider']+':'+record['provider_id']
         old = selected.get(identity)
         if old is None or (old.get('frame_mode') == 'preserve_full' and record.get('frame_mode') != 'preserve_full'):
             selected[identity] = record
@@ -379,7 +379,7 @@ def run(stage=False, soon=False, limit=2):
             measured = download_and_measure(candidate, render.ASSETS, previous)
             if candidate.get('sha256') and candidate['sha256'] != measured['sha256']:
                 raise ValueError('PREVIOUS_SOURCE_BYTES_CHANGED')
-            measured.update(id='auto-pixabay-'+measured['provider_id']+'-'+measured['sha256'][:12],
+            measured.update(id='auto-'+measured['provider']+'-'+measured['provider_id']+'-'+measured['sha256'][:12],
                             frame_mode='reviewed_portrait' if crop_capable(measured['width'], measured['height']) else 'preserve_full',
                             context='Illustrative real household footage, accepted by local CPU frame review.')
             phase = 'license'
@@ -408,7 +408,7 @@ def run(stage=False, soon=False, limit=2):
                     phase = 'semantic_model_load'
                     reviewer = Reviewer(os.getenv('SEMANTIC_MODEL_CACHE'))
                 phase = 'semantic_review'
-                review = reviewer.review(render.ASSETS/('pixabay-'+measured['provider_id']+'.mp4'),
+                review = reviewer.review(render.ASSETS/media_name(measured),
                     measured, render.ASSETS/('review-'+measured['provider_id']))
             entry.update(status='ACCEPTED', source_sha256=measured['sha256'],
                          license=license_proof, visual_review=review)
@@ -425,7 +425,7 @@ def run(stage=False, soon=False, limit=2):
                 record = x['record']
                 render.SOURCE[record['id']] = record['url']
                 render.PROVENANCE[record['id']] = record
-                src = render.ASSETS/('pixabay-'+record['provider_id']+'.mp4')
+                src = render.ASSETS/media_name(record)
                 dest = render.ASSETS/(record['id']+'.mp4')
                 if not dest.exists():
                     shutil.copyfile(src, dest)

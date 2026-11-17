@@ -281,7 +281,7 @@ def download_and_measure(record, folder, previous):
         w, h = int(stream['width']), int(stream['height'])
         duration = float(probe['format']['duration'])
         max_ratio = 2.0 if record.get('provider') == 'pixabay' else .6
-        full_frame = record.get('provider') == 'pixabay' and record.get('frame_mode') == 'preserve_full'
+        full_frame = record.get('provider') in ('pixabay', 'wikimedia') and record.get('frame_mode') == 'preserve_full'
         if full_frame:
             from media_providers import native_full_frame
             geometry_ok = native_full_frame(w, h)
@@ -395,6 +395,8 @@ def run():
     acquired, attempts = 0, 0
     skipped_known, skipped_cooldown = 0, 0
     known = {x['provider'] + ':' + x['provider_id'] for x in inbox['items']}
+    if automatic and 'wikimedia' in providers:
+        providers['wikimedia'].allow_full_frame = True
     if automatic and 'pixabay' in providers:
         providers['pixabay'].allow_full_frame = True
         providers['pixabay'].known_urls = {x['url'] for x in inbox['items']}

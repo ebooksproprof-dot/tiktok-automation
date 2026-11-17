@@ -39,7 +39,7 @@ permissions:
 
 jobs:
   run:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.event != 'push' && (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'))
     # Evaluate the trigger guard before joining the state lock. Skipped children
     # of canceled runs must not evict a legitimate pending production job.
     concurrency:

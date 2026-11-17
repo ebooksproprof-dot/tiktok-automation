@@ -112,13 +112,37 @@ def fetch(url):
     return body
 
 
+
+def verify_commons(record, fetcher=fetch):
+    from media_providers import commons_record
+    params = {'action': 'query', 'format': 'json', 'pageids': int(record['provider_id']),
+              'prop': 'imageinfo', 'iiprop': 'url|size|mime|extmetadata', 'iiextmetadatalanguage': 'en', 'maxlag': 5}
+    body = fetcher('https://commons.wikimedia.org/w/api.php?'+urlencode(params))
+    data = json.loads(body)
+    if 'error' in data:
+        raise RuntimeError('COMMONS_LICENSE_API_TEMPORARILY_UNAVAILABLE')
+    page = data.get('query', {}).get('pages', {}).get(str(record['provider_id']))
+    checked = commons_record(page or {}, 'rights', 'exact ID', [], allow_full_frame=True)
+    if not checked or any(checked.get(k) != record.get(k) for k in ('url', 'source_page', 'author', 'license_url')):
+        raise ValueError('COMMONS_EXACT_ASSET_COMMERCIAL_LICENSE_REQUIRED')
+    terms = fetcher(record['license_url'])
+    return {'source_sha256': record['sha256'], 'source_url': record['url'],
+            'source_page': record['source_page'], 'author': record['author'],
+            'license_url': record['license_url'], 'commercial_use': True,
+            'page_sha256': hashlib.sha256(body).hexdigest(), 'terms_sha256': hashlib.sha256(terms).hexdigest(),
+            'reviewed_at': dt.datetime.now(dt.timezone.utc).isoformat(),
+            'verification_method': 'official_Commons_exact_file_metadata_and_allowlisted_commercial_license',
+            'use_scope': 'adapted illustrative educational video with full attribution and changes notice'}
+
 def verify(record, fetcher=fetch):
-    if (record.get('provider') != 'pixabay' or not valid_source(record)
+    if (record.get('provider') not in ('pixabay', 'wikimedia') or not valid_source(record)
             or not re.fullmatch(r'[a-f0-9]{64}', record.get('sha256', ''))):
         raise ValueError('UNVERIFIED_SOURCE_RIGHTS')
     cached = known_evidence(record)
     if cached:
         return cached
+    if record.get('provider') == 'wikimedia':
+        return verify_commons(record, fetcher)
     if os.getenv('PIXABAY_API_KEY'):
         return verify_api(record, os.environ['PIXABAY_API_KEY'])
     page = fetcher(record['source_page'])

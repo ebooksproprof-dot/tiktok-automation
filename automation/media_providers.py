@@ -149,7 +149,7 @@ class PixabayProvider(CachedProvider):
 
 
 # Explicit allowlist; ShareAlike/NC/ND/custom/unknown terms need a separate workflow.
-def commons_record(page, category, query, words):
+def commons_record(page, category, query, words, allow_full_frame=False):
     try:
         info = page['imageinfo'][0]
         meta = info['extmetadata']
@@ -162,7 +162,8 @@ def commons_record(page, category, query, words):
         if license_url not in COMMONS_LICENSES or not author or value('Restrictions'):
             return None
         context = page['title'] + ' ' + value('ImageDescription')
-        if not contextual(context, words) or not vertical(info['width'], info['height']):
+        if not contextual(context, words) or not (vertical(info['width'], info['height'])
+                or allow_full_frame and native_full_frame(info['width'], info['height'])):
             return None
         if info['mime'] not in ('video/webm', 'video/ogg', 'video/mp4'):
             return None
@@ -179,6 +180,7 @@ def commons_record(page, category, query, words):
             title=plain(page['title']), license=license_name, license_url=license_url,
             attribution=f"{plain(page['title'])} — {author}; {license_name} ({license_url}); {source}",
             attribution_required=license_name != 'CC0 1.0',
+            frame_mode='reviewed_portrait' if vertical(info['width'], info['height']) else 'preserve_full',
             changes_notice='Adapted: vertical framing, cuts, narration and captions.',
             category=category, query=query, selection_reason='Title/description: ' + plain(context),
             semantic_verified=False, editorial_approved=False, status='pending_visual_review')
@@ -195,7 +197,7 @@ class WikimediaProvider(CachedProvider):
             prop='imageinfo', iiprop='url|size|mime|extmetadata',
             iiextmetadatalanguage='en', maxlag=5)
         data = self.json('keywords:' + ','.join(words), 'https://commons.wikimedia.org/w/api.php?' + urlencode(params))
-        records = [commons_record(p, category, query, words)
+        records = [commons_record(p, category, query, words, getattr(self, 'allow_full_frame', False))
                    for p in data.get('query', {}).get('pages', {}).values()]
         return [record for record in records if record]
 
