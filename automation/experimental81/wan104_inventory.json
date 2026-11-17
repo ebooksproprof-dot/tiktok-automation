@@ -464,6 +464,27 @@
       },
       "sha256": "c767a2c3e30baa7dbcc9cf7cb64fdcf1536c4bbbb3ff172b07f5b6c082c97aa0",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-c767a2c3e30baa7dbcc9cf7c.mp4"
+    },
+    "dc2b60aa3e7436582a7748262e46e84325f349aaaa8e6f79efd372279543c5b5": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-17T02:06:46.834559+00:00",
+      "spec": {
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic clean domestic kitchen, simple unbranded utensils hanging separately from a secure wall rail above an empty counter. A gentle continuous camera slide shows the easy access and organized space. Stable geometry and natural daylight. No people, no hands, no text, no logos. Setting detail: pale beech. Clear natural object textures, fixed shelving and a wider camera view.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 204305,
+        "randomize_seed": false,
+        "scene_attempt": 1
+      }
     }
   },
   "outputs": [
