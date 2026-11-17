@@ -6248,7 +6248,7 @@
       "target_workflow": "acquire-media.yml"
     },
     "casasem-2026-11-17-1": {
-      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "status": "DISPATCHED",
       "at": "2026-11-17T15:58:29.173733Z",
       "trigger": "CONFIRMED_CONSUMPTION",
       "target_workflow": "acquire-media.yml"
