@@ -76,6 +76,48 @@ HOUSEHOLD_TOPICS = [
 ]
 
 
+# Compose noun/action variations within supported household contexts. Tags only
+# nominate footage: exact rights, source fingerprints and visual review still gate it.
+DISCOVERY_CONTEXTS = {
+    'limpeza': ('cleaning wiping', ('cloth', 'sponge', 'countertop', 'table', 'floor', 'window', 'mirror')),
+    'armario': ('organizing storage', ('closet', 'wardrobe', 'hangers', 'clothes', 'drawers')),
+    'cozinha': ('washing cleaning', ('dishes', 'plates', 'cutlery', 'sink', 'utensils')),
+    'lavanderia': ('washing drying', ('laundry', 'washing machine', 'clothesline', 'clothes')),
+    'banheiro': ('cleaning washing', ('bathroom', 'washbasin', 'soap', 'hands')),
+    'utensilios': ('washing organizing', ('spoons', 'utensils', 'dishwasher', 'plates')),
+    'manutencao': ('cleaning wiping', ('drain', 'faucet', 'filter', 'shelf')),
+    'organizacao': ('organizing arranging', ('books', 'shelves', 'towels', 'basket')),
+}
+
+
+def discovery_bank():
+    result = list(HOUSEHOLD_TOPICS)
+    seen = {query for _, query, _ in result}
+    for category, (actions, objects) in DISCOVERY_CONTEXTS.items():
+        for obj in objects:
+            for query in (obj, *(action+' '+obj for action in actions.split())):
+                if query not in seen:
+                    seen.add(query)
+                    # The noun establishes search relevance; the CPU reviewer
+                    # must still confirm the household action/context on frames.
+                    result.append((category, query, obj.split()))
+    return result
+
+
+def discovery_topics(now, cache):
+    bank = discovery_bank()
+    rotation = (int(now//43200)*QUERIES_PER_PROVIDER) % len(bank)
+    rotated = bank[rotation:]+bank[:rotation]
+    def last_search(topic):
+        query = topic[1]
+        return max((entry.get('at', 0) for key, entry in cache.items()
+                    if key == query or key.startswith('pixabay:'+query+'|')
+                    or key == 'pixabay:'+query), default=0)
+    # Unexplored variations precede exhausted searches. Successful API cache is
+    # retained; repeated runs reuse responses for 24h instead of resetting budget.
+    return sorted(rotated, key=last_search)[:QUERIES_PER_PROVIDER]
+
+
 def daily_topics(now):
     """Four stable queries per UTC day; retries do not expand API exploration.
 
@@ -362,7 +404,7 @@ def run():
         providers['pixabay'].known_urls.update(record['source_id'] for entry in previous
             for record in entry.get('visual_sources', []) if record.get('source_id'))
     # At most four queries/provider and four downloads total per run.
-    selected_topics = daily_topics(now)
+    selected_topics = discovery_topics(now, cache) if automatic else daily_topics(now)
     errors = []
     diagnostics = []
     try:
@@ -383,7 +425,8 @@ def run():
                 print('PROVIDER_SEARCH_OK=' + name + '; CANDIDATES=' + str(len(records)))
                 diagnostics.append(dict(provider=name, category=category, status='search_ok',
                                         eligible_candidates=len(records),
-                                        response_source=getattr(provider, 'last_response_source', 'not_recorded')))
+                                        response_source=getattr(provider, 'last_response_source', 'not_recorded'),
+                                        filters=vars(provider).get('last_diagnostics', {})))
                 provider_attempts = 0
                 for record in records:
                     if automatic and name == 'pixabay':
@@ -435,7 +478,7 @@ def run():
                                 skipped_cooldown=skipped_cooldown,
                                 diagnostics=diagnostics, editorial_approved=0,
                                 query_plan=[query for _, query, _ in selected_topics],
-                                query_bank_size=len(HOUSEHOLD_TOPICS if automatic else TOPICS),
+                                query_bank_size=len(discovery_bank() if automatic else TOPICS),
                                 query_budget_per_provider=QUERIES_PER_PROVIDER,
                                 unreviewed_media_count=sum(
                                     r.get('status') == 'pending_visual_review' for r in inbox['items']),

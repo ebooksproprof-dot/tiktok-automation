@@ -85,30 +85,41 @@ class PixabayProvider(CachedProvider):
         if known is not None:
             from visual_library import source_identity
             known_ids = {source_identity(url) for url in known}
-            for number in (1, 2):
+            # Walk cached exhausted pages, including pages with zero relevant
+            # hits. Do not issue a crawl: only the selected next page uses HTTP.
+            for number in range(1, 34):  # Pixabay exposes at most 500 hits.
                 key = self.name+':'+base+('' if number == 1 else '|page='+str(number))
                 prior = self.cache.get(key, {}).get('data', {})
                 hits = prior.get('hits', [])
-                urls = [f.get('url') for hit in hits for f in hit.get('videos', {}).values()
-                        if crop_capable(f.get('width', 0), f.get('height', 0))
-                        or full_frame and native_full_frame(f.get('width', 0), f.get('height', 0))]
-                relevant = hits
+                if not hits or int(prior.get('totalHits', 0)) <= number*15:
+                    break
+                relevant = [h for h in hits if contextual(h.get('tags', ''), words)
+                            and MIN_SCENE_SECONDS <= float(h.get('duration', 0)) <= MAX_SCENE_SECONDS
+                            and any(crop_capable(f.get('width', 0), f.get('height', 0))
+                                    or full_frame and native_full_frame(f.get('width', 0), f.get('height', 0))
+                                    for f in h.get('videos', {}).values())]
                 if full_frame:
                     from semantic_review import nominate
-                    relevant = [hit for hit in hits if contextual(hit.get('tags', ''), words)
-                                and nominate({'selection_reason': hit.get('tags', '')})]
-                if (page == number and len(hits) == 15 and urls
-                        and all(any(source_identity(f.get('url', '')) in known_ids for f in hit.get('videos', {}).values()) for hit in relevant)
-                        and int(prior.get('totalHits', 0)) > number*15):
-                    page += 1
+                    relevant = [h for h in relevant if nominate({'selection_reason': h.get('tags', '')})]
+                if any(not any(source_identity(f.get('url', '')) in known_ids
+                               for f in hit.get('videos', {}).values()) for hit in relevant):
+                    break
+                page = number+1
         params = dict(key=self.key, q=query[:100], video_type='film', safesearch='true',
                       min_width=1080, min_height=1080 if full_frame else 1920, per_page=15, page=page)
         cache_key = base+('' if page == 1 else '|page='+str(page))
         data = self.json(cache_key, 'https://pixabay.com/api/videos/?' + urlencode(params))
+        self.last_diagnostics = {'page': page, 'raw_hits': len(data.get('hits', [])),
+                                 'total_hits': data.get('totalHits', 0),
+                                 'context_rejected': 0, 'duration_rejected': 0, 'geometry_or_origin_rejected': 0}
         result = []
         for hit in data.get('hits', [])[:15]:
             try:
-                if not contextual(hit['tags'], words) or not MIN_SCENE_SECONDS <= float(hit['duration']) <= MAX_SCENE_SECONDS:
+                if not contextual(hit['tags'], words):
+                    self.last_diagnostics['context_rejected'] += 1
+                    continue
+                if not MIN_SCENE_SECONDS <= float(hit['duration']) <= MAX_SCENE_SECONDS:
+                    self.last_diagnostics['duration_rejected'] += 1
                     continue
                 page = hit['pageURL']
                 if not safe_url(page, 'pixabay.com') or not hit['user'].strip():
@@ -119,6 +130,7 @@ class PixabayProvider(CachedProvider):
                          and safe_url(f['url'], 'cdn.pixabay.com')
                          and f['url'].endswith('.mp4') and 0 < f.get('size', 0) <= 250*1024*1024]
                 if not files:
+                    self.last_diagnostics['geometry_or_origin_rejected'] += 1
                     continue
                 file = min(files, key=lambda f: (not crop_capable(f['width'], f['height']), f['width']*f['height']))
                 result.append(dict(provider=self.name, provider_id=str(int(hit['id'])),
