@@ -42,7 +42,7 @@ class DiscoveryRecoveryTests(unittest.TestCase):
         self.assertEqual(p.requests, 1)
 
     def test_new_reviewable_candidate_prevents_skipping_a_page(self):
-        hit = pixabay()
+        hit = pixabay(); hit['tags'] = 'cleaning window cloth'
         cache = {'pixabay:cleaning|native-full-v1': {'at': 100, 'data': {'hits': [hit]*15, 'totalHits': 150}}}
         p = providers.PixabayProvider('test-key', cache, now=101)
         p.allow_full_frame = True; p.known_urls = set()

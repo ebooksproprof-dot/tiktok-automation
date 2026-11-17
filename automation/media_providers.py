@@ -101,6 +101,8 @@ class PixabayProvider(CachedProvider):
                 if full_frame:
                     from semantic_review import nominate
                     relevant = [h for h in relevant if nominate({'selection_reason': h.get('tags', '')})]
+                else:
+                    relevant = hits  # Preserve manual-discovery page semantics.
                 if any(not any(source_identity(f.get('url', '')) in known_ids
                                for f in hit.get('videos', {}).values()) for hit in relevant):
                     break
