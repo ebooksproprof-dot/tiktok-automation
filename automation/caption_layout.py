@@ -38,13 +38,17 @@ def filters(folder, timings):
         if not all(math.isfinite(t) for t in (start, end)) or start < previous - 1e-6 or end <= start:
             raise ValueError('Invalid or overlapping caption timings')
         rendered, size = layout(text)
-        path = folder / f'caption-v51-{index}.txt'
-        path.write_text(rendered, encoding='utf8')
-        result.append(
-            f"drawtext=fontfile={FONT}:textfile={path}:expansion=none:text_shaping=0:fontsize={size}:"
-            "fontcolor=white:box=1:boxcolor=black@0.78:boxborderw=18:"
-            "x=(w-text_w)/2:y=1320:"
-            f"alpha='min(1,max(0,(t-{start:.6f})/0.08))':"
-            f"enable='gte(t,{start:.6f})*lt(t,{end:.6f})'")
+        # Render lines independently: some runner FFmpeg builds draw the
+        # newline itself as a missing-glyph box even with text_shaping disabled.
+        for line_index, line in enumerate(rendered.split('\n')):
+            suffix = '' if line_index == 0 else f'-line-{line_index}'
+            path = folder / f'caption-v51-{index}{suffix}.txt'
+            path.write_text(line, encoding='utf8')
+            result.append(
+                f"drawtext=fontfile={FONT}:textfile={path}:expansion=none:text_shaping=0:fontsize={size}:"
+                "fontcolor=white:box=1:boxcolor=black@0.78:boxborderw=18:"
+                f"x=(w-text_w)/2:y={1320+line_index*(size+12)}:"
+                f"alpha='min(1,max(0,(t-{start:.6f})/0.08))':"
+                f"enable='gte(t,{start:.6f})*lt(t,{end:.6f})'")
         previous = end
     return result

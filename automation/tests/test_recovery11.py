@@ -251,16 +251,17 @@ class LicenseRefreshTests(unittest.TestCase):
 
 
 class CaptionCompatibilityTests(unittest.TestCase):
-    def test_portuguese_multiline_text_disables_newline_glyph_shaping(self):
+    def test_portuguese_multiline_text_never_sends_newline_glyphs_to_ffmpeg(self):
         import tempfile
         from caption_layout import filters
         with tempfile.TemporaryDirectory() as tmp, patch('caption_layout.layout', return_value=(
                 'Armário sem espaço? Separe os\nitens por categoria antes de', 46)):
             result = filters(Path(tmp), [[0, 5, 'Armário sem espaço? Separe os itens por categoria antes de']])
             self.assertIn('text_shaping=0', result[0])
-            text = (Path(tmp)/'caption-v51-0.txt').read_text()
-            self.assertIn('\n', text)
-            self.assertIn('Armário', text)
+            texts = [p.read_text() for p in sorted(Path(tmp).glob('caption-v51-*.txt'))]
+            self.assertEqual(len(result), 2)
+            self.assertTrue(all('\n' not in text for text in texts))
+            self.assertIn('Armário', ' '.join(texts))
 
 
 class HouseholdContextTests(unittest.TestCase):
