@@ -230,6 +230,26 @@
       },
       "sha256": "42697725172b8a7c61bc412a74321ae0e871db4d0a5dc4b7b4e419bbc38e4d7f",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W45/ai30-42697725172b8a7c61bc412a.mp4"
+    },
+    "73e96390cb40d6702b7af58a826ab8ff4c87b4a1648236dda0d5b422507408b7": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-17T01:49:57.298014+00:00",
+      "spec": {
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic kitchen pantry, three clear unlabelled glass storage jars on a clean wooden shelf. Gentle continuous camera slide reveals the organized shelf, realistic reflections and stable geometry. No people, no hands, no logos, no text. One calm uninterrupted shot. Setting detail: pale beech.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 104303,
+        "randomize_seed": false
+      }
     }
   },
   "outputs": [
