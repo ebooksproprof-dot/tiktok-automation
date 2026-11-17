@@ -5669,6 +5669,202 @@
       },
       "error": "HANDWASH_CONTEXT_NOT_ESTABLISHED",
       "rejected_post_id": "casasem-2026-11-18-2"
+    },
+    "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4": {
+      "status": "ACCEPTED",
+      "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+      "license": {
+        "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38916/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "6f950c6d7b478bda6f0d155b545f31a570e0e63927c9c03730307e8930a3bd0a",
+        "author": "AlexKopeykin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-17T02:42:17.953422+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6f950c6d7b478bda6f0d155b545f31a570e0e63927c9c03730307e8930a3bd0a",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a book with colorful illustrations on the cover. The illustrations include cartoon-like characters and a tree with green leaves and a brown trunk. The characters are depicted in a simplistic, child-like style with round eyes, a small",
+          "The image shows a book with a colorful illustration of a child on the cover. The illustration depicts a child standing next to a tree, holding a stick. The child has a cheerful expression and is wearing a red shirt with white polka dots",
+          "The image shows a book cover with a colorful illustration of a tree with branches and leaves. The illustration includes two children, one with brown hair and the other with blonde hair, both looking upward towards the tree. The tree has green leaves"
+        ],
+        "frame_sha256": [
+          "e7e5a81cc0c0992da5ef18636617fe03efdaa574afd3c27ed39a0b24427ed5aa",
+          "8b98e9030b6baf67f45c70db54b8fc3295846757f364e90242f59f8622f664ed",
+          "826165486ae7442c7ba2ded2fe7ffaa691461dcbd8588ae042cb810861366b35"
+        ],
+        "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 70.363,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
+    },
+    "https://cdn.pixabay.com/video/2020/04/08/35453-407130965_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "8802a7337c4bb13b5ddc59a532d7fa45bc26063bd38a2b4484113bb83e6c9a97",
+      "license": {
+        "source_sha256": "8802a7337c4bb13b5ddc59a532d7fa45bc26063bd38a2b4484113bb83e6c9a97",
+        "source_url": "https://cdn.pixabay.com/video/2020/04/08/35453-407130965_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-35453/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "2ae91b641905f8c7456de38a9c4f0206c391ecfad4dfab367c0af086f9843aef",
+        "author": "ninosouza",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-17T02:43:35.337700+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "2ae91b641905f8c7456de38a9c4f0206c391ecfad4dfab367c0af086f9843aef",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a group of art supplies and a person's hands. The central focus is on a yellow basket filled with various art supplies, including pencils, markers, and a few small objects. The items in the basket are neatly organized,",
+          "The image shows a scene in what appears to be a classroom or a school setting. In the foreground, there is a yellow basket containing various art supplies. The basket is filled with different colored pencils, including blue, green, red, and",
+          "The image shows a kitchen counter with various items on it. In the foreground, there is a yellow basket containing multiple items. The basket appears to be made of plastic and has a rectangular shape with a handle on one side. Inside the basket"
+        ],
+        "frame_sha256": [
+          "ef93799ccfdf315d036a02bf5d12cf0d8c9426f0ca196ec1d94e787a63467e16",
+          "72f54dfde687b1c217eb0c11b459ee378137c31adc49a32576d33df4ff562bca",
+          "91bd04838ec1f1c82f2c3c15035f9405fadf08074c2b75d8727e98a90e222f67"
+        ],
+        "source_sha256": "8802a7337c4bb13b5ddc59a532d7fa45bc26063bd38a2b4484113bb83e6c9a97",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 69.191,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4": {
+      "status": "RETRYABLE",
+      "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
+      "license": {
+        "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38918/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "e18e0aaf2e29c1c68bfa0216bf72de0fe6ffb7be5e88cadde5301b99c94efa80",
+        "author": "AlexKopeykin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-17T02:44:47.954403+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "e18e0aaf2e29c1c68bfa0216bf72de0fe6ffb7be5e88cadde5301b99c94efa80",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a shelf containing various items. The shelf appears to be metallic and has a rectangular shape. On the shelf, there are several blue binders. The binders are of different sizes and shapes, suggesting they might be used for",
+          "The image shows a store shelf with a blue sign with a white circle and the letter \"O\" inside it. The sign is positioned at the top of the shelf, and the shelf appears to be part of a larger display area. The",
+          "The image shows a shelf containing various books. The books are arranged in a way that suggests they are neatly stacked. The topmost books are predominantly black with white text, which might be the title or author of the book. Below these,"
+        ],
+        "frame_sha256": [
+          "f146c3c7b3c58291e050bf8b6bc6f8ded785f00e733d6ea7f39e8d2e83bf6241",
+          "6d23860c15abe6fede7ac92d43dc74147344969af0854f02c1179171116c6864",
+          "5d7a677140aab470965eb40c5e8d98de9fb6df43d2bfd71ecfea9bd8b1b013ba"
+        ],
+        "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 70.352,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "release_and_queue",
+      "http_status": null,
+      "retry_after": 1794905250.5765254
     }
   },
   "outputs": {
@@ -5914,7 +6110,7 @@
     },
     "casasem-2026-11-18-1": {
       "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
-      "status": "EDITORIALLY_REJECTED",
+      "status": "CANCELLED_EDITORIAL",
       "scheduled_at": "2026-11-18T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/04/26/37274-413256778_large.mp4"
@@ -5923,11 +6119,14 @@
         "at": "2026-11-17T02:37:28.641838+00:00",
         "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
         "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
-      }
+      },
+      "provider_id": "6afbbd594b26315855b6a0dc",
+      "publicly_verified": false,
+      "public_urls": []
     },
     "casasem-2026-11-18-2": {
       "sha256": "9aa36f436d8eff1bddd0535961914be6e7c4e0dc17c2c38cc410a3358feaf3a6",
-      "status": "EDITORIALLY_REJECTED",
+      "status": "CANCELLED_EDITORIAL",
       "scheduled_at": "2026-11-18T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2020/04/26/37236-413256744_large.mp4"
@@ -5936,14 +6135,17 @@
         "at": "2026-11-17T02:37:28.641863+00:00",
         "reason": "Hand rubbing alone does not establish soap/water washing; narration references soap/sink/rinsing.",
         "scope": "only new mission11 licensed output; preserve asset and previous automated reviews"
-      }
+      },
+      "provider_id": "6afbbdf2df36f4d825627b29",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
-    "ready_before": 3,
-    "ready_after": 4,
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
+    "ready_before": 2,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
