@@ -10,7 +10,7 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-17T02:40:32.712641Z",
+    "at": "2026-11-17T08:25:26.528140Z",
     "channel_verified": null,
     "cloud_probe": null,
     "generation_enabled": true,
@@ -19,7 +19,7 @@
     "refill": {
       "publication_ids": [],
       "status": "DISPATCHED",
-      "target_workflow": "casasemesforco-daily.yml",
+      "target_workflow": "acquire-media.yml",
       "trigger": "LOW_STOCK_MAINTENANCE"
     },
     "stock": {
