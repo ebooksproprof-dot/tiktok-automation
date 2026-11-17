@@ -269,3 +269,8 @@ class HouseholdContextTests(unittest.TestCase):
                      'iron cast iron craft product', 'building factory iron chimney']:
             self.assertIsNone(nominate({'selection_reason': text}))
         self.assertEqual(nominate({'selection_reason': 'iron ironing shirt clothes'}), 'clothes')
+
+    def test_sewing_fabric_is_not_a_wiping_demonstration(self):
+        from semantic_review import nominate
+        self.assertIsNone(nominate({'selection_reason': 'sewing machine fabric cloth tailor sew stitch'}))
+        self.assertEqual(nominate({'selection_reason': 'cleaning cloth microfiber wiping kitchen'}), 'wiping')

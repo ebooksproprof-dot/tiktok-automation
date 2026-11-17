@@ -66,6 +66,8 @@ def nominate(record):
     score, family = matches[0]
     if not score:
         return None
+    if family == 'wiping' and not tags & {'wiping', 'wipe', 'cleaning', 'clean', 'microfiber', 'sponge'}:
+        return None  # Sewing cloth and recycling waste do not demonstrate cleaning.
     if family == 'clothes' and 'iron' in tags and not tags & {
             'ironing', 'clothes', 'clothing', 'shirt', 'shirts', 'garment', 'garments',
             'laundry', 'hanger', 'hangers', 'wardrobe', 'closet'}:

@@ -93,14 +93,19 @@ DISCOVERY_CONTEXTS = {
 def discovery_bank():
     result = list(HOUSEHOLD_TOPICS)
     seen = {query for _, query, _ in result}
+    groups = []
     for category, (actions, objects) in DISCOVERY_CONTEXTS.items():
+        group = []
         for obj in objects:
             for query in (obj, *(action+' '+obj for action in actions.split())):
                 if query not in seen:
                     seen.add(query)
-                    # The noun establishes search relevance; the CPU reviewer
-                    # must still confirm the household action/context on frames.
-                    result.append((category, query, obj.split()))
+                    group.append((category, query, obj.split()))
+        groups.append(group)
+    # Round-robin themes so unexplored terms cannot spend days in one category.
+    from itertools import zip_longest
+    for row in zip_longest(*groups):
+        result.extend(topic for topic in row if topic is not None)
     return result
 
 
