@@ -1,17 +1,42 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-17T01:43:21.180181+00:00",
-  "expires_at": "2026-11-17T01:43:21.180181+00:00",
-  "queue_snapshot_sha256": "a71e7c04e75662c2ccf55928a55db2ca19fddcf8213de1537d769df652400247",
+  "generated_at": "2026-11-17T01:55:57.368347+00:00",
+  "expires_at": "2026-11-17T01:55:57.368347+00:00",
+  "queue_snapshot_sha256": "2811bfde67888f0118251ed1797a78cbef8de20c6eb45e4a26c9990cea00991a",
   "state_snapshot_sha256": "71cc981ca5fd5248063299bafe332f3e0d38c641df698a6c0f7c1f776d6bd4b4",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-17-1",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-1-652b304252c66dc8.mp4",
+      "sha256": "652b304252c66dc8694cad253df5aa3695b8cabaa140a9d0ec61a0f62cb9be18",
+      "script_hash": "dbef2b971405d457ad773bb08127f6bda59421fcdf19bc39cf7a5c5749454958",
+      "post_snapshot_sha256": "fd4ec10ebe15f823160eef7cd5d8919c95df3d0fd1f93da78df14d3a5adcfdd4",
+      "title": "Armário sem espaço? Separe os itens por categoria antes de organizar. Ajuste a dobra das peças ao espaço disponível, sem prender nas portas. Antes de guardar os utensílios, confira se estão limpos e completamente secos. Cenas ilustrativas geradas por inteligência artificial. Orientações ilustrativas; siga as instruções dos fabricantes. #CasaSemEsforco #OrganizacaoDaCasa #InteligenciaArtificial",
+      "script_lines": [
+        "Armário sem espaço? Separe os itens por categoria antes de organizar.",
+        "Ajuste a dobra das peças ao espaço disponível, sem prender nas portas.",
+        "Antes de guardar os utensílios, confira se estão limpos e completamente secos."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-17T10:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +254,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "6a48135f06a91083e8d5473d50bc9754f0b1444a97ac550fad02861123151371"
+  "manifest_sha256": "142bc6e6861bdcead223d804361e83acf835aeacee2eda399787d6bf77ce12c3"
 }
