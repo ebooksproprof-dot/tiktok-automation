@@ -2678,58 +2678,112 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794988417,
-    "acquired": 2,
+    "at": 1795018332,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
+    "download_attempts": 0,
     "skipped_known": 7,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 98,
-          "context_rejected": 0,
+          "total_hits": 24,
+          "context_rejected": 14,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "manutencao",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 11,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 17,
-          "context_rejected": 3,
+          "total_hits": 500,
+          "context_rejected": 15,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 1
+          "geometry_or_origin_rejected": 0
         }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 6,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 486,
+          "context_rejected": 9,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 2,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 470,
+          "context_rejected": 13,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "faucet",
-      "shelves",
       "storage wardrobe",
-      "cleaning plates"
+      "cleaning plates",
+      "washing washing machine",
+      "cleaning washbasin"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
