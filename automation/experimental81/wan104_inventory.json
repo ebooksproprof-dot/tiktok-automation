@@ -1507,6 +1507,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 1
+    },
+    "2c68171397c3fa39087f63067d8234e57c344e9794b3a330b18a27305f01d4e2": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Four utensils hanging from a metal rod.",
+        "A metal rod with 4 objects hanging from it. 1st object is a black spoon. 2nd object is a white spoon. 3rd object is a black ladle. 4th object is a white ladle",
+        "1. A black spoon. 2. A white spoon. 3. A black ladle. 4. A white ladle. 5. A black ladle."
+      ],
+      "frame_sha256": [
+        "182112f7538846fffae467eda92ffa1eed6f914e5e149a7bce00df17ce5dfad5",
+        "7df0837f5d117b7b42710045927844d7982e81c01c6028361eee3cd2399ebf35",
+        "a6d9032775be66a5d9ddce9b1c6543be4f7717a298a2d86493c48e1db69235b4"
+      ],
+      "source_sha256": "2c68171397c3fa39087f63067d8234e57c344e9794b3a330b18a27305f01d4e2",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 103.141,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 2
     }
   },
   "rejected_clips": [
