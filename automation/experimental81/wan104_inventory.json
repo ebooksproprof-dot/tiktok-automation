@@ -1444,6 +1444,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 0
+    },
+    "5371d5c8b713bf02871c19e4d4028bed2dcd5bc28adf0b35b27e4fa0ded908e6": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Folded white linen in a white wooden shelf.",
+        "Folded, white, cotton, towels in a wooden, vertical shelf.",
+        "Folded white blankets on white shelf."
+      ],
+      "frame_sha256": [
+        "35333f5997b67bb5f3fc115722e903cd38b4e347788cd71a14402656f64916e0",
+        "53d3b4e50f41dafa2141f45e395a55ab19180a8c2703b8a3b509b4c8a6256434",
+        "1cc842257872d9871ed1f144ba595c8ab590e114ad8c0547110a66b2a60165a5"
+      ],
+      "source_sha256": "5371d5c8b713bf02871c19e4d4028bed2dcd5bc28adf0b35b27e4fa0ded908e6",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 119.071,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 1
     }
   },
   "rejected_clips": [
