@@ -1415,6 +1415,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 2
+    },
+    "26fafc65c95726e0340d20cc65ff654b5d88c13fb0575d829b669d8707737ad4": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Glass jars.",
+        "Glass jars.",
+        "Glass jars with metal lids."
+      ],
+      "frame_sha256": [
+        "9c55edf1ff687c613826eac4594b91f174e34d72bf4a57d2d428552fc98e7bac",
+        "4dc20a5688c012dbc2dbed07c04e36e3acca6693140a7c862caa5252bce84e35",
+        "358eb1ff6322005144f0984410b322f24e58a384916894232a2e0e17e223bfc0"
+      ],
+      "source_sha256": "26fafc65c95726e0340d20cc65ff654b5d88c13fb0575d829b669d8707737ad4",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 117.392,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 0
     }
   },
   "rejected_clips": [
