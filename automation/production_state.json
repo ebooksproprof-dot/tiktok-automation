@@ -6064,7 +6064,7 @@
         "author": "Sang_Soi",
         "commercial_use": true,
         "reviewed_at": "2026-11-18T15:48:38.134949+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "8698951c6c110669081173c8b76098db23da342abef47526920460891cea625d",
         "license_policy": {
@@ -6178,6 +6178,73 @@
       "error_stage": "release_and_queue",
       "http_status": null,
       "retry_after": 1795038818.4828122
+    },
+    "https://cdn.pixabay.com/video/2022/08/06/126966-737736581_medium.mp4": {
+      "status": "RETRYABLE",
+      "source_sha256": "6704dc5ae42fc3e767db1c2411e327bc2c33da5cdb59de1c7f378f48f28cce2b",
+      "license": {
+        "source_sha256": "6704dc5ae42fc3e767db1c2411e327bc2c33da5cdb59de1c7f378f48f28cce2b",
+        "source_url": "https://cdn.pixabay.com/video/2022/08/06/126966-737736581_medium.mp4",
+        "source_page": "https://pixabay.com/videos/id-126966/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "d1ae6e1281f8a0e3e641021f900dc02fe7fef98442aa61e74be4de9fe5a28790",
+        "author": "u_jb4pypurdq",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-18T18:59:10.858262+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "d1ae6e1281f8a0e3e641021f900dc02fe7fef98442aa61e74be4de9fe5a28790",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a long, indoor library setting. The library appears to be well-lit, with a warm, inviting atmosphere. The floor is polished and reflective, suggesting it is made of a smooth material like polished concrete or polished stone.",
+          "The image depicts a modern library or bookstore with a clean and organized layout. The focal point of the image is a long, wide hallway that runs through the center of the building. The hallway is flanked by two rows of books",
+          "The image shows a view of a library or book store. The central focus is on the interior of the building, which appears to be a spacious and well-lit area. The walls are painted in a neutral color, possibly white or light"
+        ],
+        "frame_sha256": [
+          "95ca3dd48fed5e065e0bc604832a56595d827567b723a322d3a9e7cc49e2cef0",
+          "8416d9b41b7d6c28fe90679b7620f0b98fd267979efd04e90811869b3e41dc5e",
+          "e10907ef826dd65975bd8715c525b5f4ce8a913c297ff427b615b0dce8f0684b"
+        ],
+        "source_sha256": "6704dc5ae42fc3e767db1c2411e327bc2c33da5cdb59de1c7f378f48f28cce2b",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 124.294,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "release_and_queue",
+      "http_status": null,
+      "retry_after": 1795050135.6829207
     }
   },
   "outputs": {
