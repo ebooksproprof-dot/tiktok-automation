@@ -5977,6 +5977,73 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/05/12/38917-418897621_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "7506c12c39b9ef298aff4cfb6e30504c1341a931f9d041c00015abb57a96459e",
+      "license": {
+        "source_sha256": "7506c12c39b9ef298aff4cfb6e30504c1341a931f9d041c00015abb57a96459e",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/12/38917-418897621_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38917/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "6da2ddba915ba1dd2baacc72dcb556928551f40cb88491d8914434c8206fb142",
+        "author": "AlexKopeykin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-18T01:39:09.759750+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6da2ddba915ba1dd2baacc72dcb556928551f40cb88491d8914434c8206fb142",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a shelf containing a variety of books. The shelf is divided into two sections, with the top section containing a blue sign with the number \"5\" on it. The bottom section is filled with books, some of which are",
+          "The image shows a shelf filled with books. The shelf is divided into two sections. The top section is divided into two parts. The left part is blue and contains a few books, while the right part is white and contains more books.",
+          "The image shows a shelf containing books arranged in a manner that suggests a library or bookstore setting. The shelf is divided into two sections, with the top section containing a blue-colored sign with the number \"5\" written in white. This"
+        ],
+        "frame_sha256": [
+          "ba3fec757ece56c8946f1dcb55bf7c77b334574080b6ac09d16b425e191f2e40",
+          "cdf9be601e010071a08cdd5f542a9208d808e483b1f104062e494d6648c97e5e",
+          "142062a04f3b26aba6ee47a659ea22be3473264acab6bade9d903d1d691d5c34"
+        ],
+        "source_sha256": "7506c12c39b9ef298aff4cfb6e30504c1341a931f9d041c00015abb57a96459e",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 89.269,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_FROZEN_OR_UNDECODABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -6215,12 +6282,14 @@
       "post_id": "casasem-2026-11-17-2",
       "sha256": "96cf5740307de3f3a7a9e3e4771fa4b5a38b853f10babb2dcdd7cf38817c751e",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-2-96cf5740307de3f3.mp4",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-17T18:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "provider_id": "6afbb8564b26315855b51cc0",
-      "public_urls": []
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709248589691768085"
+      ]
     },
     "casasem-2026-11-18-1": {
       "sha256": "3c600fb2e78bbc6629985b06d7877ff99e7f9823e2ed4a8b25bb0b431cb27760",
@@ -6258,8 +6327,8 @@
   "last_run": {
     "status": "NO_VALID_OUTPUT",
     "created": 0,
-    "ready_before": 1,
-    "ready_after": 1,
+    "ready_before": 0,
+    "ready_after": 0,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
