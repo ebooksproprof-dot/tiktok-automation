@@ -2607,6 +2607,70 @@
       "duration": 22.8,
       "bytes": 81722831,
       "acquired_at": 1794931152
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "1311",
+      "url": "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+      "source_page": "https://pixabay.com/videos/id-1311/",
+      "author": "klimkin",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: klimkin / Pixabay — https://pixabay.com/videos/id-1311/",
+      "category": "organizacao",
+      "query": "shelves",
+      "selection_reason": "Provider tags: computer, library, hall, the internet, table, public, education, monitor, books, carousel, shelves, the culture, programmer, technology, screen, communication, development, information, server, addiction",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+      "sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
+      "dhash": [
+        "555dd95f69682b2e",
+        "1b3f390db1311196",
+        "6165e52999999882",
+        "cc4c78cf989898b2",
+        "0c01074eeca4e429"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 17.045,
+      "bytes": 10093587,
+      "acquired_at": 1794988419
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "139798",
+      "url": "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-139798/",
+      "author": "Sang_Soi",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-139798/",
+      "category": "organizacao",
+      "query": "shelves",
+      "selection_reason": "Provider tags: library, books, shelves, study, read",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+      "sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
+      "dhash": [
+        "5b57160633232737",
+        "5756170617262726",
+        "575f170617263736",
+        "575e170617263736",
+        "0756170717263736"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "duration": 8.511667,
+      "bytes": 23463750,
+      "acquired_at": 1794988426
     }
   ],
   "rejected_until": {
@@ -2614,69 +2678,23 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1794952042,
-    "acquired": 0,
+    "at": 1794988417,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 6,
+    "download_attempts": 2,
+    "skipped_known": 7,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 240,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 6,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 486,
-          "context_rejected": 9,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 2,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 2,
-          "total_hits": 2,
+          "total_hits": 98,
           "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2684,7 +2702,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "banheiro",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2692,38 +2710,30 @@
       },
       {
         "provider": "pixabay",
-        "category": "utensilios",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 11,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 342,
-          "context_rejected": 14,
+          "total_hits": 17,
+          "context_rejected": 3,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 1
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "washing plates",
-      "washing machine",
-      "washbasin",
-      "organizing utensils"
+      "faucet",
+      "shelves",
+      "storage wardrobe",
+      "cleaning plates"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 70,
+    "unreviewed_media_count": 72,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
