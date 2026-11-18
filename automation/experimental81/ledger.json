@@ -151,13 +151,22 @@
       "status": "RESERVED_NO_AUTO_RETRY",
       "profile": "wan104_licensed_fastwan5b",
       "space": "Upsampler/wan-2-2-5b-video"
+    },
+    {
+      "request_sha256": "e90bdebaa1ff1b5059f342c4457cec22ffaaefbd4af2cf3d0e8237a53ec649e0",
+      "claimed_at": "2026-11-18T15:36:46.858927+00:00",
+      "estimated_seconds": 60.0,
+      "status": "RESERVED_NO_AUTO_RETRY",
+      "profile": "wan104_licensed_fastwan5b",
+      "space": "Upsampler/wan-2-2-5b-video"
     }
   ],
   "schema_version": 1,
   "tier": "free",
   "window_claim_ids": [
     "bca3a43e6f2cce89dcc3d16bd438bd3e137271d7f1af1d9f4fa0a571adbe0846",
-    "b5ed04ecf4d26ad67661a23597b66e6c5ff8dba77c111de7f62772bb19b624f6"
+    "b5ed04ecf4d26ad67661a23597b66e6c5ff8dba77c111de7f62772bb19b624f6",
+    "e90bdebaa1ff1b5059f342c4457cec22ffaaefbd4af2cf3d0e8237a53ec649e0"
   ],
   "window_start": "2026-11-18T15:35:05.129875+00:00"
 }
