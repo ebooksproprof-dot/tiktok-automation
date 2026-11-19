@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-19T19:26:22.041583+00:00",
-  "expires_at": "2026-11-19T19:26:22.041583+00:00",
+  "generated_at": "2026-11-19T20:28:50.394197+00:00",
+  "expires_at": "2026-11-19T20:28:50.394197+00:00",
   "queue_snapshot_sha256": "5486d6e10aede1a0f6815ed55293c28c3fa519625b0510dd7cc2b173f325dff8",
-  "state_snapshot_sha256": "91f88269e9b8e5b8ffe82a2cc1cd02228aa538a044e6e52bff65c7037f1b06d1",
+  "state_snapshot_sha256": "fc4d4b7e56d828eb18a25f8f48fa5d8a34fc549a3bdb1759cd2111ae2fc8cb30",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-21-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-1-22b4d28d3169a085.mp4",
-      "sha256": "22b4d28d3169a0857ef9c5ca5ddbaf0950e30aab31f02ed1b49d71a297646b75",
-      "script_hash": "6f755284af8a92995a35917a67cd5c1bd0fcb8f720afbb54460605928f96c9a3",
-      "post_snapshot_sha256": "6dbbefc1c82bca301a319321f9e9ac7e6f509bdd331f349f5809790e4855cdcd",
-      "title": "Roupas esperando para guardar? Não comprima a pilha além da altura do móvel. Deixe as peças de uso frequente visíveis. Separe uma pequena categoria para começar. Confira se cada peça está completamente seca. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — chayka1270; https://pixabay.com/videos/id-9396/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — EjazAhmed47; https://pixabay.com/videos/id-325398/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Roupas esperando para guardar?",
-        "Não comprima a pilha além da altura do móvel.",
-        "Deixe as peças de uso frequente visíveis.",
-        "Separe uma pequena categoria para começar.",
-        "Confira se cada peça está completamente seca.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-21T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "cb613d5e5f6777f8430e6739fa61bd8456d802661a8c1cc5ab7f126cf2029158"
+  "manifest_sha256": "370e7ce6f486daaa5bde692404b6063438993942a16fee6a8b9eb131aefb0fce"
 }
