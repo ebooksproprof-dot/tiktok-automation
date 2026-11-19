@@ -1850,6 +1850,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 2
+    },
+    "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "3 glass jars with silver lids on wooden shelves.",
+        "3 empty glass jars with silver lids on glass shelves.",
+        "Three empty glass jars with silver lids on two wooden shelves."
+      ],
+      "frame_sha256": [
+        "63e94730b6973a00519cba4ff93167a7326266362b1c8f793e7bcb895cf32164",
+        "1a687d3caee73f2c3b99b80add035a18dd32dfea02ec8c1812a7ac0f674d5766",
+        "d51371a18dedffdaa60c24f35430981655bd303787fdb1bb39017b0cea46c409"
+      ],
+      "source_sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 84.349,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 0
     }
   },
   "rejected_clips": [
