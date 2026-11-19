@@ -7090,6 +7090,12 @@
       "at": "2026-11-19T01:20:16.868899Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "casasemesforco-daily.yml"
+    },
+    "2026-11-19T00:00:00+00:00|acquire-media.yml": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-19T02:46:29.851520Z",
+      "trigger": "LOW_STOCK_MAINTENANCE",
+      "target_workflow": "acquire-media.yml"
     }
   }
 }
