@@ -2679,23 +2679,23 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795056417,
+    "at": 1795075134,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 5,
+    "skipped_known": 7,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 4,
-          "total_hits": 4,
+          "raw_hits": 15,
+          "total_hits": 108,
           "context_rejected": 1,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2703,7 +2703,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2711,60 +2711,37 @@
       },
       {
         "provider": "pixabay",
-        "category": "lavanderia",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 7,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 500,
-          "context_rejected": 12,
+          "total_hits": 37,
+          "context_rejected": 7,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 1
         }
       },
       {
         "provider": "wikimedia",
-        "category": "lavanderia",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 2,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 115,
-          "context_rejected": 13,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "utensilios",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 114,
+          "total_hits": 334,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2772,7 +2749,30 @@
       },
       {
         "provider": "wikimedia",
-        "category": "utensilios",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 118,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -2781,10 +2781,10 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cutlery",
-      "drying washing machine",
-      "washing washbasin",
-      "washing dishwasher"
+      "wiping faucet",
+      "arranging shelves",
+      "organizing hangers",
+      "washing cutlery"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
