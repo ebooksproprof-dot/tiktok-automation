@@ -1079,7 +1079,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "QUEUED",
       "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
       "license": {
         "source_sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
@@ -4667,20 +4667,151 @@
       "retry_after": 1794717925.0340817
     },
     "https://cdn.pixabay.com/video/2020/02/04/31933-389248759_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "TimeoutError",
-      "error_stage": "license",
+      "status": "REJECTED",
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "TimeoutError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794717953.8066666
+        }
+      ],
+      "source_sha256": "ba7a1a8bfa718becda0e7d8b4caff469b365378ad91684785ed5e8e1914337da",
+      "license": {
+        "source_sha256": "ba7a1a8bfa718becda0e7d8b4caff469b365378ad91684785ed5e8e1914337da",
+        "source_url": "https://cdn.pixabay.com/video/2020/02/04/31933-389248759_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-31933/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "d12438d33eb6df2b5b71edd0aca3ec9a2788fbf6abbfdec287be0937f20d2f77",
+        "author": "MabelAmber",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T21:35:08.034587+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "d12438d33eb6df2b5b71edd0aca3ec9a2788fbf6abbfdec287be0937f20d2f77",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "laundry",
+        "captions": [
+          "The image is a photograph of a house. The house is white with a black roof. There are several windows visible on the house. The house is surrounded by grass. There are several people standing outside the house. The people are wearing clothes",
+          "The image is a photograph of a rural scene. The sky is clear and blue, indicating a sunny day. The foreground features a grassy field with a few scattered objects, possibly small items or toys, scattered across the grass. There is a",
+          "The image depicts a rural scene with a house in the background. The house is white with a dark roof and has multiple windows. The house is surrounded by a green lawn, and there are several other structures visible in the background, including what"
+        ],
+        "frame_sha256": [
+          "71c662c1de41c1cf0cde6d2c56d5208372d74d41ea9395b98e31e02e2c7d9867",
+          "e5246a0a6f93918c338b7a487a1dfffec2eeed004ce4fd32527fcd4a5ecc6e8d",
+          "bc882470ddc66d43d8f17a3e1653a922325448eaa2a8b1194d15416f15ae6261"
+        ],
+        "source_sha256": "ba7a1a8bfa718becda0e7d8b4caff469b365378ad91684785ed5e8e1914337da",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 121.806,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
       "http_status": null,
-      "retry_after": 1794717953.8066666
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2026/01/01/325397_small.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "TimeoutError",
-      "error_stage": "license",
-      "http_status": null,
-      "retry_after": 1794717983.4306617
+      "status": "ACCEPTED",
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "TimeoutError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794717983.4306617
+        }
+      ],
+      "source_sha256": "341ac3765f43e7dc7f17b6067833a4619d98642a2c1860bb57bc0286e67206a2",
+      "license": {
+        "source_sha256": "341ac3765f43e7dc7f17b6067833a4619d98642a2c1860bb57bc0286e67206a2",
+        "source_url": "https://cdn.pixabay.com/video/2026/01/01/325397_small.mp4",
+        "source_page": "https://pixabay.com/videos/id-325397/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "b84885a8760dbd92d56a23d9f76bfa1119219509ea1ec4090ff6384ceb453866",
+        "author": "EjazAhmed47",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T21:32:57.959316+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "b84885a8760dbd92d56a23d9f76bfa1119219509ea1ec4090ff6384ceb453866",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "clothes",
+        "captions": [
+          "The image features a person sitting on the ground in a natural setting. The person is wearing a light-colored, possibly beige or tan, garment that appears to be made of a lightweight material, possibly cotton or a similar fabric. The",
+          "The man is standing on the grass. He is wearing a light brown shirt and white pants. He is bending down and reaching his hand into the water.",
+          "The man is standing on the grass. He is wearing a long beige shirt and white pants. He has a beard and is holding a bottle in his right hand."
+        ],
+        "frame_sha256": [
+          "4793443d551606add3143ba2ebd38b02a926eb4ff8ec8ef4dc28793d0df29935",
+          "69cdb630845c683f497ce83cf50d5d9492091302ef8c0547331973524d19fd01",
+          "02ef73d298b696bb7d3636229abe94d57c2d751550a873aee321fe41285e73aa"
+        ],
+        "source_sha256": "341ac3765f43e7dc7f17b6067833a4619d98642a2c1860bb57bc0286e67206a2",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 120.53,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     },
     "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4": {
       "status": "QUEUED",
@@ -5276,7 +5407,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4": {
-      "status": "RETRYABLE",
+      "status": "QUEUED",
       "source_sha256": "43f26d224c0f602d69f1198d157f618ad861c5b6e4d58e8966971da0bc0ff324",
       "license": {
         "source_sha256": "43f26d224c0f602d69f1198d157f618ad861c5b6e4d58e8966971da0bc0ff324",
@@ -5289,7 +5420,7 @@
         "author": "Ambient_Nature_Atmosphere",
         "commercial_use": true,
         "reviewed_at": "2026-11-17T02:16:25.618959+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "8004d890e477e949f846b92bc2d716b4b857e8501d9f5dd38025d6ceee7ceaec",
         "license_policy": {
@@ -5336,11 +5467,15 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "ValueError",
-      "error_stage": "render",
-      "http_status": null,
-      "retry_after": 1794903557.3926067
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1794903557.3926067
+        }
+      ]
     },
     "https://cdn.pixabay.com/video/2017/05/28/9376-219285225_large.mp4": {
       "status": "REJECTED",
@@ -7070,15 +7205,17 @@
     },
     "casasem-2026-11-19-2": {
       "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-19T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
         "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4"
       ],
       "provider_id": "6afe4ea8b450eb4c021a0520",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709990757989469461"
+      ]
     },
     "casasem-2026-11-20-1": {
       "post_id": "casasem-2026-11-20-1",
@@ -7104,11 +7241,23 @@
     },
     "casasem-2026-11-21-1": {
       "sha256": "22b4d28d3169a0857ef9c5ca5ddbaf0950e30aab31f02ed1b49d71a297646b75",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-21T10:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
         "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4"
+      ],
+      "provider_id": "6aff5bfe1f6cb90e69ebc411",
+      "publicly_verified": false,
+      "public_urls": []
+    },
+    "casasem-2026-11-21-2": {
+      "sha256": "4bf9c119cfb3a37d38ff7c815cf0503975971bdf2a3e481a4db9ae9ae124845a",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-21T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+        "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4"
       ]
     }
   },

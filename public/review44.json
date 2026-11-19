@@ -1,17 +1,45 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-19T21:30:46.673978+00:00",
-  "expires_at": "2026-11-19T21:30:46.673978+00:00",
-  "queue_snapshot_sha256": "5486d6e10aede1a0f6815ed55293c28c3fa519625b0510dd7cc2b173f325dff8",
+  "generated_at": "2026-11-19T21:38:01.892544+00:00",
+  "expires_at": "2026-11-19T21:38:01.892544+00:00",
+  "queue_snapshot_sha256": "a1c64ea7c76a4a76cd7a55c6c2834e9272c6a7ea32afa0f8a023eeb05cfd6c89",
   "state_snapshot_sha256": "e95e99b19868e3cc073b751a821e6e7a4d4492eea93b4ff0e2b3f84981b500af",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 6,
+  "pending_count": 7,
   "selectable_count": 0,
   "items": [
+    {
+      "id": "casasem-2026-11-21-2",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-2-4bf9c119cfb3a37d.mp4",
+      "sha256": "4bf9c119cfb3a37d38ff7c815cf0503975971bdf2a3e481a4db9ae9ae124845a",
+      "script_hash": "5a6aa819a358b5e25703cce08dc74ff777d602528ae754db129f90bda3665072",
+      "post_snapshot_sha256": "7a61afd9f82d0adb0e761ee556edfda195b4a725188f0e89965f395a8bb4a43e",
+      "title": "Vai colocar roupa para lavar? Use o produto e a quantidade recomendados no rótulo. Confira as instruções de limpeza do filtro no manual. Mantenha os produtos na embalagem original e longe de crianças. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — iha31; https://pixabay.com/videos/id-30704/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — Ambient_Nature_Atmosphere; https://pixabay.com/videos/id-37972/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Use o produto e a quantidade recomendados no rótulo.",
+        "Confira as instruções de limpeza do filtro no manual.",
+        "Mantenha os produtos na embalagem original e longe de crianças.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+      "original_scheduled_at": "2026-11-21T18:00:00-03:00",
+      "proposed_scheduled_at": null,
+      "schedule_changed": false,
+      "selectable": false,
+      "blockers": [
+        "Já aprovado; requer tratamento separado, não reautorizar."
+      ],
+      "editorial_review": "PENDING",
+      "audit_notes": null,
+      "approved": false,
+      "consented_at": null
+    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -229,5 +257,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "833e5e2b4c2cea2723439aa4951ded405b7f0c934439ff686cb5aedd21120242"
+  "manifest_sha256": "36222b74e072a26ae780766eef505d8314a134b2bb0146d00eafec2afb22c105"
 }
