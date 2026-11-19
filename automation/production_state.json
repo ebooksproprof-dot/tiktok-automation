@@ -7004,6 +7004,12 @@
       "at": "2026-11-17T21:46:49.559878Z",
       "trigger": "CONFIRMED_CONSUMPTION",
       "target_workflow": "acquire-media.yml"
+    },
+    "casasem-2026-11-19-1": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-19T16:01:09.995743Z",
+      "trigger": "CONFIRMED_CONSUMPTION",
+      "target_workflow": "acquire-media.yml"
     }
   },
   "maintenance_refills": {
