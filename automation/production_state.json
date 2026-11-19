@@ -6949,7 +6949,7 @@
       "target_workflow": "acquire-media.yml"
     },
     "2026-11-19T00:00:00+00:00|casasemesforco-daily.yml": {
-      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "status": "DISPATCHED",
       "at": "2026-11-19T01:20:16.868899Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "casasemesforco-daily.yml"
