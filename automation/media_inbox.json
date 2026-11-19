@@ -2743,35 +2743,112 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795104127,
-    "acquired": 2,
+    "at": 1795104186,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 3,
+    "download_attempts": 0,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "lavanderia",
+        "category": "banheiro",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 8,
-          "total_hits": 8,
+          "raw_hits": 15,
+          "total_hits": 100,
           "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "banheiro",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 334,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 11,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 11,
+          "total_hits": 11,
+          "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 4,
+          "total_hits": 4,
+          "context_rejected": 3,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "clothesline",
       "soap",
       "organizing dishwasher",
-      "filter"
+      "filter",
+      "towels"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
