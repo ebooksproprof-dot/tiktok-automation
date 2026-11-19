@@ -1908,6 +1908,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 1
+    },
+    "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "6 spoons of different sizes and colors.",
+        "6 spatulas.",
+        "6 spoons hanging from a metal rod. 1 black spoon, 1 grey spoon, 1 white spoon, 1 black spoon, 1 grey spoon, 1 white spoon."
+      ],
+      "frame_sha256": [
+        "a62c5bed65559cd6d38a9d9784901ffa621364adb26f0bc2bd31716b68368b7c",
+        "e4cf03376ba49edffca5beeb45db4f8a019a7b30bc2f68d70e6d66ea519cff22",
+        "32bb4ff5dffbfc3ec70cb77b3c0be9a1db0c2f72419cf3dd9ce2112c70149e48"
+      ],
+      "source_sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 85.911,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 2
     }
   },
   "rejected_clips": [
