@@ -7802,6 +7802,235 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-21-1",
+      "concept": "auto-folding-6f755284af8a",
+      "title": "Roupas esperando para guardar? Não comprima a pilha além da altura do móvel. Deixe as peças de uso frequente visíveis. Separe uma pequena categoria para começar. Confira se cada peça está completamente seca. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — chayka1270; https://pixabay.com/videos/id-9396/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — EjazAhmed47; https://pixabay.com/videos/id-325398/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-19T19:26:18.807479+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-21T10:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "22b4d28d3169a0857ef9c5ca5ddbaf0950e30aab31f02ed1b49d71a297646b75",
+        "duration": 16.306,
+        "size": 14860089,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.3,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.006,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+            "sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+            "dhash": [
+              "5b4b43a363636145",
+              "4b4b434363233115",
+              "4b43436363614111",
+              "5343437373312111",
+              "5959515161634515"
+            ]
+          },
+          {
+            "source_id": "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4",
+            "sha256": "ae15ddffeb6a7366a4a61e05ede8e6dea53b36de6d83ba787b864f01b742eb58",
+            "dhash": [
+              "001898db040c08c7",
+              "002058965459580f",
+              "002048db244c5883",
+              "0919598f25595b1e",
+              "000859498f20482c"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          8.52,
+          22.8
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait"
+        ],
+        "concept": "auto-folding-6f755284af8a",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+          "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — chayka1270; https://pixabay.com/videos/id-9396/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+          "Video — EjazAhmed47; https://pixabay.com/videos/id-325398/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+            "source_url": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-9396/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+            "page_sha256": "e207bc8579f69f675908d70f74ba8e51cecd789d2cf9fe6b71f4bf78bf28dfa9",
+            "author": "chayka1270",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-09T02:45:03.670876+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "e207bc8579f69f675908d70f74ba8e51cecd789d2cf9fe6b71f4bf78bf28dfa9",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+              "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          },
+          {
+            "source_sha256": "ae15ddffeb6a7366a4a61e05ede8e6dea53b36de6d83ba787b864f01b742eb58",
+            "source_url": "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4",
+            "source_page": "https://pixabay.com/videos/id-325398/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "206bc949d9f2f61e9d17760b90998942610c8305d8f1d21f1ac48f47380e01da",
+            "author": "EjazAhmed47",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-19T19:23:15.072055+00:00",
+            "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "206bc949d9f2f61e9d17760b90998942610c8305d8f1d21f1ac48f47380e01da",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "clothes",
+            "captions": [
+              "The image shows a woman standing in front of a window. She is holding a white cloth with a black and yellow pattern. The woman is wearing a black and yellow patterned shirt. She is bending slightly, and her hands are holding the cloth",
+              "The image shows a woman standing in front of a table. She is holding a blue and white object, possibly a cup or a container, and appears to be arranging or putting something on the table. The table is covered with a white cloth",
+              "The image shows a woman standing at a table covered with a white cloth. She is wearing a black and white patterned shirt with black pants. The woman is holding a white object, possibly a book or a piece of paper, in her right"
+            ],
+            "frame_sha256": [
+              "40b6fd00c111553f2003f7a15efa3c05f64564277cddd3892a79cf9f1496e3bf",
+              "47f09774be996477186b686697c98882a7efec85f9858003963a421c22419144",
+              "b61f24cce74ddcd2fc3c6897abfa02806b05307291a30e7d15e81e4266cbcdfb"
+            ],
+            "source_sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 106.422,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "clothes",
+            "captions": [
+              "The image features a man bending over, holding a piece of cloth in his hands. He is positioned in a field, surrounded by tall grass and crops. The man is wearing a light-colored, long-sleeved shirt and white",
+              "The image shows a person bending over and gently scooping water from a body of water. The person is wearing a light-colored, long-sleeved shirt and khaki pants. The person's hands are positioned over the water,",
+              "The image features a person engaged in agricultural activities. The individual is bending down, holding a small object, possibly a fruit or vegetable, in their hands. The person is wearing traditional clothing, which appears to be a light-colored, loose"
+            ],
+            "frame_sha256": [
+              "eadf482378db942c53fd84550220b61eaf981a59a8af1c487de2bb67937042b6",
+              "43d92435382d5d39f0de470305ffa405b8d1f00b29913b1fa95afbd73b4348bd",
+              "2f0020b4e51645d1f9a1ebbe964e68e2682fb0e4f776c78c7662e94d357e5546"
+            ],
+            "source_sha256": "ae15ddffeb6a7366a4a61e05ede8e6dea53b36de6d83ba787b864f01b742eb58",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 121.074,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-1-22b4d28d3169a085.mp4",
+      "script_lines": [
+        "Roupas esperando para guardar?",
+        "Não comprima a pilha além da altura do móvel.",
+        "Deixe as peças de uso frequente visíveis.",
+        "Separe uma pequena categoria para começar.",
+        "Confira se cada peça está completamente seca.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "6f755284af8a92995a35917a67cd5c1bd0fcb8f720afbb54460605928f96c9a3",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }
