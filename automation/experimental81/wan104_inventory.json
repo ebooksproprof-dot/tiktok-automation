@@ -1254,7 +1254,7 @@
       "sha256": "5b21944484cadad401d7535a1709946efc6395132c1f99e1a65b0f027caaad9c",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4",
       "status": "QUEUED_UNDER_EXISTING_BUFFER_CONTROLS",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "scheduled_at": "2026-11-19T10:00:00-03:00",
       "clips": [
         {
@@ -1459,10 +1459,12 @@
           }
         }
       ],
-      "publication_status": "SCHEDULED",
+      "publication_status": "PUBLISH_COMPLETE",
       "provider_id": "6afe2e6aa588bd6687a23ec7",
-      "public_urls": [],
-      "last_provider_check": "2026-11-18T23:02:04Z"
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709867497545092373"
+      ],
+      "last_provider_check": "2026-11-19T15:59:26Z"
     },
     {
       "post_id": "casasem-2026-11-20-1",
@@ -1673,7 +1675,11 @@
             }
           }
         }
-      ]
+      ],
+      "publication_status": "SCHEDULED",
+      "provider_id": "6aff1cefd74f4ff9ae952c3a",
+      "public_urls": [],
+      "last_provider_check": "2026-11-19T15:59:45Z"
     }
   ],
   "status": "COLLECTING",
