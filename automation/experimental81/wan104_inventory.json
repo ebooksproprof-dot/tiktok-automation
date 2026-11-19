@@ -1359,7 +1359,11 @@
             }
           }
         }
-      ]
+      ],
+      "publication_status": "SCHEDULED",
+      "provider_id": "6afe2e6aa588bd6687a23ec7",
+      "public_urls": [],
+      "last_provider_check": "2026-11-18T23:02:04Z"
     }
   ],
   "status": "COLLECTING",
