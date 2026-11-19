@@ -2113,7 +2113,7 @@
     },
     "casasem-2026-11-19-1": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-11-18T23:02:00Z",
       "sha256": "5b21944484cadad401d7535a1709946efc6395132c1f99e1a65b0f027caaad9c",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4",
@@ -2165,13 +2165,35 @@
         }
       ],
       "scheduled_at": "2026-11-19T10:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6afe2e6aa588bd6687a23ec7",
-      "last_checked_at": "2026-11-18T23:02:04Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-11-19T15:59:26Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7709867497545092373",
+      "buffer_sent_at_present": true,
+      "last_reconcile_attempt_at": "2026-11-19T15:59:25Z",
+      "buffer_sent_at": "2026-11-19T13:04:54.995000+00:00",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709867497545092373"
+      ],
+      "publicly_available_post_id": [
+        "7709867497545092373"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink + unauthenticated public TikTok playback",
+      "public_visibility_evidence": {
+        "checked_at": "2026-11-19T15:59:38.484059+00:00",
+        "url": "https://www.tiktok.com/@.casasemesforo/video/7709867497545092373",
+        "video_id": "7709867497545092373",
+        "public_playback_verified": true,
+        "caption_hook_matches": true,
+        "playback_progressed": true,
+        "media_duration": 15.15848,
+        "width": 576,
+        "height": 1024,
+        "authenticated": false,
+        "method": "public browser video + matching caption + playback progression"
+      }
     },
     "casasem-2026-11-19-2": {
       "provider": "buffer",
@@ -2225,39 +2247,66 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-20-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-19T15:59:41Z",
+      "sha256": "b1ea0f908e41de8f20874a8b95e5411d6a657d21f70d5bdf5830ea3e73e8a681",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-1-b1ea0f908e41de8f.mp4",
+      "concept": "licensed-wan104-episode-5",
+      "script_sha256": "3536c6f33c066eecbee8632b99746e3d4b71d1c0f84d5b4b1485371bdbd6e42b",
+      "script_lines": [
+        "Vai mexer no armário? Confira a estabilidade da prateleira antes de organizar.",
+        "Ajuste a dobra das peças ao espaço disponível, sem prender nas portas.",
+        "Mantenha os utensílios de uso diário ao alcance sem formar uma pilha instável."
+      ],
+      "source_urls": [
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+        "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+          "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+          "dhash": [
+            "0616e6aaaeae0e06",
+            "061666a6aea60606",
+            "0616e6a6aaae0606",
+            "0616e6a6a2a6a406",
+            "0616e6a62aee2c06"
+          ]
+        },
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+          "sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+          "dhash": [
+            "c6c258f8ec871f1f",
+            "828078f8cc07173f",
+            "0458787808074f7f",
+            "f8787878ed07673f",
+            "f8f87881dfc30f5f"
+          ]
+        },
+        {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+          "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+          "dhash": [
+            "ff3df1f599c17ffb",
+            "db7df5fd99c1fffb",
+            "fb79f1f9a9c1fffb",
+            "ff79f1f989c1fffb",
+            "fb7bf1f9a9c3fff3"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-20T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
-    "2026-10-20T01:21:51Z",
-    "2026-10-20T01:24:26Z",
-    "2026-10-20T01:31:39Z",
-    "2026-10-20T01:34:15Z",
-    "2026-10-20T01:34:16Z",
-    "2026-10-20T01:34:20Z",
-    "2026-10-20T01:34:22Z",
-    "2026-10-20T01:35:19Z",
-    "2026-10-20T01:35:19Z",
-    "2026-10-20T01:39:25Z",
-    "2026-10-20T01:39:26Z",
-    "2026-10-20T01:46:49Z",
-    "2026-10-20T01:46:50Z",
-    "2026-10-20T01:48:59Z",
-    "2026-10-20T01:48:59Z",
-    "2026-10-20T01:50:20Z",
-    "2026-10-20T01:50:20Z",
-    "2026-10-20T01:50:20Z",
-    "2026-10-20T01:50:23Z",
-    "2026-10-20T01:50:25Z",
-    "2026-10-20T01:51:48Z",
-    "2026-10-20T01:51:48Z",
-    "2026-10-20T11:59:50Z",
-    "2026-10-20T11:59:50Z",
-    "2026-10-20T12:43:07Z",
-    "2026-10-20T12:43:07Z",
-    "2026-10-20T13:50:13Z",
-    "2026-10-20T13:50:13Z",
-    "2026-10-20T14:44:16Z",
-    "2026-10-20T14:44:17Z",
     "2026-10-20T17:00:16Z",
     "2026-10-20T17:00:16Z",
     "2026-10-20T17:01:15Z",
@@ -2497,7 +2546,10 @@
     "2026-11-19T01:19:31.841560Z",
     "2026-11-19T01:19:32.034208Z",
     "2026-11-19T01:19:35.499845Z",
-    "2026-11-19T01:19:37.476876Z"
+    "2026-11-19T01:19:37.476876Z",
+    "2026-11-19T15:59:25.467829Z",
+    "2026-11-19T15:59:25.803933Z",
+    "2026-11-19T15:59:39.308342Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2505,25 +2557,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 146,
-        "reset_at": "2026-11-19T01:34:32.556254Z",
-        "observed_at": "2026-11-19T01:19:37.556254Z"
+        "remaining": 147,
+        "reset_at": "2026-11-19T16:14:26.488605Z",
+        "observed_at": "2026-11-19T15:59:39.488605Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 592,
-        "reset_at": "2026-11-19T23:01:59.556254Z",
-        "observed_at": "2026-11-19T01:19:37.556254Z"
+        "remaining": 589,
+        "reset_at": "2026-11-19T23:01:59.488605Z",
+        "observed_at": "2026-11-19T15:59:39.488605Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 957,
-        "reset_at": "2026-12-17T01:30:14.556254Z",
-        "observed_at": "2026-11-19T01:19:37.556254Z"
+        "remaining": 954,
+        "reset_at": "2026-12-17T01:30:14.488605Z",
+        "observed_at": "2026-11-19T15:59:39.488605Z"
       }
     },
     "consecutive_errors": 0,
