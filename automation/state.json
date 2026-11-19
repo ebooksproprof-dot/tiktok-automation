@@ -2350,6 +2350,54 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-21-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-19T20:28:43Z",
+      "sha256": "22b4d28d3169a0857ef9c5ca5ddbaf0950e30aab31f02ed1b49d71a297646b75",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-1-22b4d28d3169a085.mp4",
+      "concept": "auto-folding-6f755284af8a",
+      "script_sha256": "6f755284af8a92995a35917a67cd5c1bd0fcb8f720afbb54460605928f96c9a3",
+      "script_lines": [
+        "Roupas esperando para guardar?",
+        "Não comprima a pilha além da altura do móvel.",
+        "Deixe as peças de uso frequente visíveis.",
+        "Separe uma pequena categoria para começar.",
+        "Confira se cada peça está completamente seca.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+        "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2017/05/29/9396-219552662_large.mp4",
+          "sha256": "0616e35c2081416f00c585d74ac2cd0f949ba4eeb995a78773d265470583404e",
+          "dhash": [
+            "5b4b43a363636145",
+            "4b4b434363233115",
+            "4b43436363614111",
+            "5343437373312111",
+            "5959515161634515"
+          ]
+        },
+        {
+          "source_id": "https://cdn.pixabay.com/video/2026/01/01/325398_small.mp4",
+          "sha256": "ae15ddffeb6a7366a4a61e05ede8e6dea53b36de6d83ba787b864f01b742eb58",
+          "dhash": [
+            "001898db040c08c7",
+            "002058965459580f",
+            "002048db244c5883",
+            "0919598f25595b1e",
+            "000859498f20482c"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-21T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -2572,7 +2620,9 @@
     "2026-11-19T19:18:55.171782Z",
     "2026-11-19T19:18:55.444851Z",
     "2026-11-19T19:19:00.670825Z",
-    "2026-11-19T19:19:03.402772Z"
+    "2026-11-19T19:19:03.402772Z",
+    "2026-11-19T20:28:40.633393Z",
+    "2026-11-19T20:28:40.862704Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2580,25 +2630,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 146,
-        "reset_at": "2026-11-19T19:33:55.530759Z",
-        "observed_at": "2026-11-19T19:19:03.530759Z"
+        "remaining": 148,
+        "reset_at": "2026-11-19T20:43:41.006652Z",
+        "observed_at": "2026-11-19T20:28:41.006652Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 583,
-        "reset_at": "2026-11-19T23:01:59.530759Z",
-        "observed_at": "2026-11-19T19:19:03.530759Z"
+        "remaining": 581,
+        "reset_at": "2026-11-19T23:02:00.006652Z",
+        "observed_at": "2026-11-19T20:28:41.006652Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 948,
-        "reset_at": "2026-12-17T01:30:14.530759Z",
-        "observed_at": "2026-11-19T19:19:03.530759Z"
+        "remaining": 946,
+        "reset_at": "2026-12-17T01:30:15.006652Z",
+        "observed_at": "2026-11-19T20:28:41.006652Z"
       }
     },
     "consecutive_errors": 0,
