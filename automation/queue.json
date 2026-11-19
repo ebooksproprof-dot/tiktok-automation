@@ -7643,6 +7643,165 @@
       "script_sha256": "3536c6f33c066eecbee8632b99746e3d4b71d1c0f84d5b4b1485371bdbd6e42b",
       "publishing_status": "VALIDATED_LICENSED_WAN_READY_FOR_EXISTING_BUFFER",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-1-b1ea0f908e41de8f.mp4"
+    },
+    {
+      "id": "casasem-2026-11-20-2",
+      "concept": "auto-drying-cc8a5c5b0f6b",
+      "title": "Roupa pronta para secar? Use um apoio adequado ao peso das roupas. Prenda as peças sem deformar o tecido. Deixe espaço entre as peças para o ar circular. Separe as peças que exigem cuidados especiais. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — bea73; https://pixabay.com/videos/id-125961/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-19T19:18:05.757735+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-20T18:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
+        "duration": 16.104,
+        "size": 6205136,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.004,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+            "sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+            "dhash": [
+              "684ba4ad29a8b367",
+              "694be4ed29e8f367",
+              "694be42d696cf7c7",
+              "694be4a5696cd7c7",
+              "694be4a5696cd7c7"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          22.0
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "preserve_full"
+        ],
+        "concept": "auto-drying-cc8a5c5b0f6b",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — bea73; https://pixabay.com/videos/id-125961/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+            "source_url": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-125961/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "cc481c5189d6767e2c9ebeaaf7ccbe8c795c21be1714baecead9ad323e608927",
+            "author": "bea73",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-19T19:16:25.622321+00:00",
+            "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "cc481c5189d6767e2c9ebeaaf7ccbe8c795c21be1714baecead9ad323e608927",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "laundry",
+            "captions": [
+              "The image shows a collection of colorful flags placed on a grassy area. The flags are of various shapes and sizes, with some being rectangular, others being square, and others being more abstract. The colors of the flags include blue, red,",
+              "There are five fabric pieces hanging on a clothesline. The fabric pieces are of different colors and patterns. One of the fabric pieces is red and white striped. Another fabric piece is blue and white striped. The third fabric piece is blue and",
+              "There are four fabric pieces hanging on a clothesline. The fabric pieces are blue, red, and white. The clothesline is in a grassy area. There are trees behind the clothesline."
+            ],
+            "frame_sha256": [
+              "fb9d4f0431fe802d4e8697af98e6a31db16582fb1aadc8e339a783304553a49a",
+              "5a743009590a01dd52641307595cdc2b1d2a4647a0a649f7f5444c944da68047",
+              "35a0d6f6c050252098976b4b0c01e2af53edf0018aa54b7b71690fea2944c3b2"
+            ],
+            "source_sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 68.025,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-2-99572e3d5ea33fab.mp4",
+      "script_lines": [
+        "Roupa pronta para secar?",
+        "Use um apoio adequado ao peso das roupas.",
+        "Prenda as peças sem deformar o tecido.",
+        "Deixe espaço entre as peças para o ar circular.",
+        "Separe as peças que exigem cuidados especiais.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "cc8a5c5b0f6ba467ea2b2520b566ea57081b53ab7d057e9953a6b7a61f003325",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }

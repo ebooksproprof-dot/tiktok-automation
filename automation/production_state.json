@@ -6575,6 +6575,135 @@
       "error_stage": "render",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2017/06/02/9503-220204062_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "a8544f284d3b39d4000d2a51fc71be942d145d2e5cbde8d512d77faf126474d7",
+      "license": {
+        "source_sha256": "a8544f284d3b39d4000d2a51fc71be942d145d2e5cbde8d512d77faf126474d7",
+        "source_url": "https://cdn.pixabay.com/video/2017/06/02/9503-220204062_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-9503/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "644771bc03ab17a2c0f9ee06e43309e3815e747271d9572d118eaf381cecb9a7",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T19:15:11.383240+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "644771bc03ab17a2c0f9ee06e43309e3815e747271d9572d118eaf381cecb9a7",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "laundry",
+        "captions": [
+          "The image shows a collection of colorful plastic objects, likely used for decoration or as part of a craft project. The objects are arranged in a somewhat random manner, with some appearing to be stacked on top of each other, while others are scattered",
+          "The image shows a collection of colorful scissors. The scissors are primarily red and yellow, with some orange and blue components. They are positioned in a somewhat diagonal manner, with the red and yellow parts closer to the bottom and the orange and blue",
+          "The image shows a collection of colorful objects. These objects appear to be some form of construction equipment or a similar industrial tool. The primary object in the image is a large, multi-colored umbrella-like structure. This umbrella-like structure"
+        ],
+        "frame_sha256": [
+          "fd8db832187a5454eece1c93443f86337345bd54ae6545377d3aeee844dbbff1",
+          "270c18e5da8df05651176f2c81ed67175eecf05e51341d29ece6c76c997b922b",
+          "d54943484b20cd57881acb2a1a4bbf0b2547060e2138a13208e21fead7792c0a"
+        ],
+        "source_sha256": "a8544f284d3b39d4000d2a51fc71be942d145d2e5cbde8d512d77faf126474d7",
+        "frame_mode": "preserve_full",
+        "accepted": false,
+        "review_seconds": 68.717,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+      "license": {
+        "source_sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+        "source_url": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-125961/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "cc481c5189d6767e2c9ebeaaf7ccbe8c795c21be1714baecead9ad323e608927",
+        "author": "bea73",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T19:16:25.622321+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "cc481c5189d6767e2c9ebeaaf7ccbe8c795c21be1714baecead9ad323e608927",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "laundry",
+        "captions": [
+          "The image shows a collection of colorful flags placed on a grassy area. The flags are of various shapes and sizes, with some being rectangular, others being square, and others being more abstract. The colors of the flags include blue, red,",
+          "There are five fabric pieces hanging on a clothesline. The fabric pieces are of different colors and patterns. One of the fabric pieces is red and white striped. Another fabric piece is blue and white striped. The third fabric piece is blue and",
+          "There are four fabric pieces hanging on a clothesline. The fabric pieces are blue, red, and white. The clothesline is in a grassy area. There are trees behind the clothesline."
+        ],
+        "frame_sha256": [
+          "fb9d4f0431fe802d4e8697af98e6a31db16582fb1aadc8e339a783304553a49a",
+          "5a743009590a01dd52641307595cdc2b1d2a4647a0a649f7f5444c944da68047",
+          "35a0d6f6c050252098976b4b0c01e2af53edf0018aa54b7b71690fea2944c3b2"
+        ],
+        "source_sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+        "frame_mode": "preserve_full",
+        "accepted": true,
+        "review_seconds": 68.025,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     }
   },
   "outputs": {
@@ -6858,12 +6987,14 @@
       "post_id": "casasem-2026-11-19-1",
       "sha256": "5b21944484cadad401d7535a1709946efc6395132c1f99e1a65b0f027caaad9c",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-19T10:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "provider_id": "6afe2e6aa588bd6687a23ec7",
-      "public_urls": []
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709867497545092373"
+      ]
     },
     "casasem-2026-11-19-2": {
       "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
@@ -6881,17 +7012,27 @@
       "post_id": "casasem-2026-11-20-1",
       "sha256": "b1ea0f908e41de8f20874a8b95e5411d6a657d21f70d5bdf5830ea3e73e8a681",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-1-b1ea0f908e41de8f.mp4",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-20T10:00:00-03:00",
-      "publicly_verified": false
+      "publicly_verified": false,
+      "provider_id": "6aff1cefd74f4ff9ae952c3a",
+      "public_urls": []
+    },
+    "casasem-2026-11-20-2": {
+      "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-20T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
+    "status": "QUEUED",
+    "created": 1,
     "ready_before": 2,
-    "ready_after": 2,
+    "ready_after": 3,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
