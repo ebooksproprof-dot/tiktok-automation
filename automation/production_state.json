@@ -6307,6 +6307,140 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       }
+    },
+    "https://cdn.pixabay.com/video/2022/11/20/139800-773444477_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "e89595c7b897b155f5fa9a3757cb1b6b7f0f0a14f6b2238a9015cb62004d6377",
+      "license": {
+        "source_sha256": "e89595c7b897b155f5fa9a3757cb1b6b7f0f0a14f6b2238a9015cb62004d6377",
+        "source_url": "https://cdn.pixabay.com/video/2022/11/20/139800-773444477_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-139800/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "c67b411f0ceb9a0da3eb7ca152d24a0b79afc38a15fd8f43e61ab76ee3b3db14",
+        "author": "Sang_Soi",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T01:22:00.753834+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "c67b411f0ceb9a0da3eb7ca152d24a0b79afc38a15fd8f43e61ab76ee3b3db14",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "A person is looking at a cell phone. The person is wearing a gray shirt. There is a cup and a plant on the table.",
+          "A man is standing in front of a table with a cup and a plant on it.",
+          "A man is standing in front of a table with a cup and a plant on it."
+        ],
+        "frame_sha256": [
+          "14b34a94b06db379cc410b880df48498ab1875a6bb0d6e78261f00c1e3cee8a7",
+          "0fd32a7410063cc9a0a05223ad51c553a19c055dd2bc2d8a88228f2fbd15e837",
+          "c33aab9c67172cb5b1e8b590f8b85dd86d95fd1acbedddfd3115d641a4036517"
+        ],
+        "source_sha256": "e89595c7b897b155f5fa9a3757cb1b6b7f0f0a14f6b2238a9015cb62004d6377",
+        "frame_mode": "reviewed_portrait",
+        "accepted": false,
+        "review_seconds": 113.348,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/05/12/38919-418897639_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "e16e92e78e0e6825c85639868af761d09bf6ef94c810f4bdbea68b56e7243670",
+      "license": {
+        "source_sha256": "e16e92e78e0e6825c85639868af761d09bf6ef94c810f4bdbea68b56e7243670",
+        "source_url": "https://cdn.pixabay.com/video/2020/05/12/38919-418897639_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-38919/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "137c2e56e5a07c0786d8b1465437449ad88916ea095200c64d7c7d62e411eecc",
+        "author": "AlexKopeykin",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T01:24:05.990842+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "137c2e56e5a07c0786d8b1465437449ad88916ea095200c64d7c7d62e411eecc",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "Two people are working on laptops. One person is typing on the laptop while the other is pointing at the screen.",
+          "Two people are sitting at a desk. One person is typing on a laptop. The other person is typing on a keyboard.",
+          "There are laptops on desks. People are working on laptops."
+        ],
+        "frame_sha256": [
+          "ead37cf4d0f45d84c78aa11cdfccbd46dc0f25dd2895225c356830ca33424117",
+          "e30cf94f4218a8b83e43bd6e2c4b446c4f2ba88869c2e314b1eb7c41fce48f53",
+          "a15912ada56a955b354d604facd7706720aec31914abfe7b52c394c4bac2facf"
+        ],
+        "source_sha256": "e16e92e78e0e6825c85639868af761d09bf6ef94c810f4bdbea68b56e7243670",
+        "frame_mode": "reviewed_portrait",
+        "accepted": false,
+        "review_seconds": 111.968,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
     }
   },
   "outputs": {
@@ -6599,18 +6733,21 @@
     },
     "casasem-2026-11-19-2": {
       "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-19T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
         "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4"
-      ]
+      ],
+      "provider_id": "6afe4ea8b450eb4c021a0520",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
-    "ready_before": 1,
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
+    "ready_before": 2,
     "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
