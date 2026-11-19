@@ -7018,6 +7018,237 @@
       "script_sha256": "937c47fcb0bd6432c58019d16fef44f5c6b382b172c1e98bca9e6a93f6accec3",
       "publishing_status": "VALIDATED_LICENSED_WAN_READY_FOR_EXISTING_BUFFER",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4"
+    },
+    {
+      "id": "casasem-2026-11-19-2",
+      "concept": "auto-books-075b26b2f29f",
+      "title": "Sua estante está confusa? Deixe as leituras atuais fáceis de alcançar. Escolha uma pequena prateleira para começar. Mantenha as lombadas visíveis para encontrar os títulos. Agrupe os livros por uma regra simples. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Sang_Soi; https://pixabay.com/videos/id-139798/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — Sang_Soi; https://pixabay.com/videos/id-139799/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-19T01:18:45.784568+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-19T18:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
+        "duration": 16.5,
+        "size": 5652749,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.001,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+            "sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
+            "dhash": [
+              "5b57160633232737",
+              "5756170617262726",
+              "575f170617263736",
+              "575e170617263736",
+              "0756170717263736"
+            ]
+          },
+          {
+            "source_id": "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4",
+            "sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+            "dhash": [
+              "06998d9d5e0e384c",
+              "079c8c8e57453d4e",
+              "071c868e5746554f",
+              "4f1c868e5746524e",
+              "4f1e460e5346724e"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          8.511667,
+          13.14
+        ],
+        "graphics_style": "casasem-v4",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait"
+        ],
+        "concept": "auto-books-075b26b2f29f",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+          "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — Sang_Soi; https://pixabay.com/videos/id-139798/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+          "Video — Sang_Soi; https://pixabay.com/videos/id-139799/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
+            "source_url": "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-139798/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "8698951c6c110669081173c8b76098db23da342abef47526920460891cea625d",
+            "author": "Sang_Soi",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-18T15:48:38.134949+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "8698951c6c110669081173c8b76098db23da342abef47526920460891cea625d",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          },
+          {
+            "source_sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+            "source_url": "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-139799/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "e470fb83f00417866c4464f2a6309f8a20fa96e0d3018de7a775f86785797dcd",
+            "author": "Sang_Soi",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-19T01:15:21.066220+00:00",
+            "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "e470fb83f00417866c4464f2a6309f8a20fa96e0d3018de7a775f86785797dcd",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "books",
+            "captions": [
+              "The image shows a well-organized shelf filled with various books. The books are arranged in a neat and orderly fashion, with each book occupying its designated space. The shelf is made of wood and has a light brown color. The books are",
+              "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more",
+              "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more"
+            ],
+            "frame_sha256": [
+              "f443c4680ce18c9edf2c1cb588bc649d076933f953414695cb0fcdc18a7cc124",
+              "1b15fde19d3d60514ed584feac05471ed2f0faec04a34c6e3e34799a49fcbf4b",
+              "f833a522ff5db2da426c967a94e83c29b05cf6c82d02278f5f2ecdf6ab0cc077"
+            ],
+            "source_sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 121.475,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "books",
+            "captions": [
+              "The image shows a book shelf filled with various books. The books are arranged in a way that suggests they are neatly organized. The shelf is divided into multiple sections, each containing a different type of book. The books are mostly standard books,",
+              "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more",
+              "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more"
+            ],
+            "frame_sha256": [
+              "380f629514f28f933e55a0c61b34050345d7f2c5b3ca6e62fafe7862983d6759",
+              "132c63b6fc340bc70103df0f5cc5ac44f8e700269a76a734a3cf529fcb334098",
+              "3e69d27b3feee3aa1c1520bafeaab26bd5b743c0139bbd1ce4e111e988c4ad60"
+            ],
+            "source_sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 135.284,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-2-c2379f06bd0bbef7.mp4",
+      "script_lines": [
+        "Sua estante está confusa?",
+        "Deixe as leituras atuais fáceis de alcançar.",
+        "Escolha uma pequena prateleira para começar.",
+        "Mantenha as lombadas visíveis para encontrar os títulos.",
+        "Agrupe os livros por uma regra simples.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "075b26b2f29fdbb9e5dde66027379e35c746059bc8cf337057b17121c94faeac",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }

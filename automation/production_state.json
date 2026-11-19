@@ -6051,7 +6051,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "QUEUED",
       "source_sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
       "license": {
         "source_sha256": "e86533c46a172fe8c14cb4234e4008a48b040349a6f673e3e133f0c1047cac98",
@@ -6245,6 +6245,68 @@
       "error_stage": "release_and_queue",
       "http_status": null,
       "retry_after": 1795050135.6829207
+    },
+    "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4": {
+      "status": "QUEUED",
+      "source_sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+      "license": {
+        "source_sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+        "source_url": "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-139799/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "e470fb83f00417866c4464f2a6309f8a20fa96e0d3018de7a775f86785797dcd",
+        "author": "Sang_Soi",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-19T01:15:21.066220+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "e470fb83f00417866c4464f2a6309f8a20fa96e0d3018de7a775f86785797dcd",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a book shelf filled with various books. The books are arranged in a way that suggests they are neatly organized. The shelf is divided into multiple sections, each containing a different type of book. The books are mostly standard books,",
+          "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more",
+          "The image shows a book shelf filled with various books. The books are arranged in a grid-like pattern, with each book occupying a rectangular space within the shelf. The books are of different colors and sizes, with some being larger and more"
+        ],
+        "frame_sha256": [
+          "380f629514f28f933e55a0c61b34050345d7f2c5b3ca6e62fafe7862983d6759",
+          "132c63b6fc340bc70103df0f5cc5ac44f8e700269a76a734a3cf529fcb334098",
+          "3e69d27b3feee3aa1c1520bafeaab26bd5b743c0139bbd1ce4e111e988c4ad60"
+        ],
+        "source_sha256": "a2796842761c9c182c0767805e1bc3105c98ba1d0a704db6053190c853e70128",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 135.284,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      }
     }
   },
   "outputs": {
@@ -6528,17 +6590,28 @@
       "post_id": "casasem-2026-11-19-1",
       "sha256": "5b21944484cadad401d7535a1709946efc6395132c1f99e1a65b0f027caaad9c",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-19T10:00:00-03:00",
-      "publicly_verified": false
+      "publicly_verified": false,
+      "provider_id": "6afe2e6aa588bd6687a23ec7",
+      "public_urls": []
+    },
+    "casasem-2026-11-19-2": {
+      "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-19T18:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2022/11/20/139798-773444464_large.mp4",
+        "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
-    "created": 0,
-    "ready_before": 0,
-    "ready_after": 0,
+    "status": "QUEUED",
+    "created": 1,
+    "ready_before": 1,
+    "ready_after": 2,
     "target": 4,
     "source": "licensed_stock_fallback",
     "new_generative_ai_calls": 0,
