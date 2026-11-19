@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-19T01:18:48.249434+00:00",
-  "expires_at": "2026-11-19T01:18:48.249434+00:00",
+  "generated_at": "2026-11-19T01:19:38.910842+00:00",
+  "expires_at": "2026-11-19T01:19:38.910842+00:00",
   "queue_snapshot_sha256": "ba2ee726ac44bc1631db606eb408d87304422cd934ad0125d6a094af5b535455",
-  "state_snapshot_sha256": "4f2ae840c3d5d0795c752b8e58798e2cb01c273c961cf7666f2c2df3df27c1b4",
+  "state_snapshot_sha256": "67f85c6cb00fd26ca3d446bdb07251f296df9dde183d5291365459fe378c4c73",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-19-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-2-c2379f06bd0bbef7.mp4",
-      "sha256": "c2379f06bd0bbef7094ca3ae7545b052d4a7f0e2ee65a79f4b3e5c96cd73055f",
-      "script_hash": "075b26b2f29fdbb9e5dde66027379e35c746059bc8cf337057b17121c94faeac",
-      "post_snapshot_sha256": "0e79361616da71a69effdbd55ae0e363cfc57a6d4338d25ceb34f98fa919a183",
-      "title": "Sua estante está confusa? Deixe as leituras atuais fáceis de alcançar. Escolha uma pequena prateleira para começar. Mantenha as lombadas visíveis para encontrar os títulos. Agrupe os livros por uma regra simples. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — Sang_Soi; https://pixabay.com/videos/id-139798/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — Sang_Soi; https://pixabay.com/videos/id-139799/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Sua estante está confusa?",
-        "Deixe as leituras atuais fáceis de alcançar.",
-        "Escolha uma pequena prateleira para começar.",
-        "Mantenha as lombadas visíveis para encontrar os títulos.",
-        "Agrupe os livros por uma regra simples.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-19T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "70445b69d3ef7eef2676644444b15cf8e70ba172c16b8c76149688ea79d388c0"
+  "manifest_sha256": "7332ce7d94337c21fba56209de40e097af52667f6bf1b726ca0ebddb1d473e31"
 }
