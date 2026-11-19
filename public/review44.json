@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-19T19:18:12.587055+00:00",
-  "expires_at": "2026-11-19T19:18:12.587055+00:00",
+  "generated_at": "2026-11-19T19:19:04.981137+00:00",
+  "expires_at": "2026-11-19T19:19:04.981137+00:00",
   "queue_snapshot_sha256": "c38a89bc8b87f68e66d19f1a005e7c688a8d37e7d608f5a4396f7362a60b5cd3",
-  "state_snapshot_sha256": "27d26f27c7f3d18564de02abb7c8fcb3fa2373a024e14535a15cb3e41dd9baa8",
+  "state_snapshot_sha256": "91f88269e9b8e5b8ffe82a2cc1cd02228aa538a044e6e52bff65c7037f1b06d1",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-20-2",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-2-99572e3d5ea33fab.mp4",
-      "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
-      "script_hash": "cc8a5c5b0f6ba467ea2b2520b566ea57081b53ab7d057e9953a6b7a61f003325",
-      "post_snapshot_sha256": "8228e223e01ec0f91f49c875884628a130e0e2125c9300dca39335b53d7a54e1",
-      "title": "Roupa pronta para secar? Use um apoio adequado ao peso das roupas. Prenda as peças sem deformar o tecido. Deixe espaço entre as peças para o ar circular. Separe as peças que exigem cuidados especiais. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — bea73; https://pixabay.com/videos/id-125961/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Roupa pronta para secar?",
-        "Use um apoio adequado ao peso das roupas.",
-        "Prenda as peças sem deformar o tecido.",
-        "Deixe espaço entre as peças para o ar circular.",
-        "Separe as peças que exigem cuidados especiais.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-20T18:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "294cf8b31c895eb2a8278113bdc5b954b6a5dc26f8c9db4e21cab9a41877e6f2"
+  "manifest_sha256": "cd2b3d5cdc9c914af403b6e7524be563d45da99ef6008e75d4f65162756b9c82"
 }
