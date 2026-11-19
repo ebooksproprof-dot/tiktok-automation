@@ -135,6 +135,73 @@
           "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
         }
       }
+    },
+    {
+      "slot": 2,
+      "episode": 5,
+      "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "bytes": 257097
+      },
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "prompt": "Photorealistic clean domestic kitchen, simple unbranded utensils hanging separately from a secure wall rail above an empty counter. A gentle continuous camera slide shows the easy access and organized space. Stable geometry and natural daylight. No people, no hands, no text, no logos. Setting detail: light oak.",
+      "reference_kind": "authored_text_only",
+      "generation_evidence": {
+        "request_sha256": "d23f7698d0d3e6b055be0fc10668c65c375c3b3891a9e41ca55569599b720032",
+        "provider_job_id": "7adc97cb51d04f5cbabc8e3e8c053104",
+        "gpu_seconds_consumed": null,
+        "estimated_reserved_seconds": 60,
+        "tier": "free",
+        "paid_endpoint_used": false
+      },
+      "visual_source": {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+        "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "dhash": [
+          "ff3df1f599c17ffb",
+          "db7df5fd99c1fffb",
+          "fb79f1f9a9c1fffb",
+          "ff79f1f989c1fffb",
+          "fb7bf1f9a9c3fff3"
+        ]
+      },
+      "commercial_license_clearance": true,
+      "commercial_license_evidence": {
+        "source_sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "reviewed_at": "2026-11-19T15:52:09.829932+00:00",
+        "model": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "derivative": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "voice": {
+          "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+        },
+        "reference": {
+          "revision": "d23f7698d0d3e6b055be0fc10668c65c375c3b3891a9e41ca55569599b720032",
+          "commercial_use": true,
+          "basis": "original authored text; no third-party image",
+          "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+        }
+      }
     }
   ],
   "requests": {
@@ -699,7 +766,7 @@
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4"
     },
     "d23f7698d0d3e6b055be0fc10668c65c375c3b3891a9e41ca55569599b720032": {
-      "status": "GENERATED_AWAITING_STORAGE",
+      "status": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW",
       "at": "2026-11-19T15:51:22.350423+00:00",
       "spec": {
         "space": "Upsampler/wan-2-2-5b-video",
@@ -727,7 +794,9 @@
         "has_audio": false,
         "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
         "bytes": 257097
-      }
+      },
+      "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4"
     }
   },
   "outputs": [
@@ -1598,7 +1667,7 @@
       "last_provider_check": "2026-11-18T23:02:04Z"
     }
   ],
-  "status": "COLLECTING",
+  "status": "READY_FOR_REVIEW",
   "legacy_inventory_preserved_at": "feature/ai-video-hybrid-30s:automation/experimental81/auto_inventory.json",
   "last_wait": {
     "status": "WAIT_FREE_QUOTA",
