@@ -693,15 +693,65 @@
         "Lexical context only; inspect footage and final crop.",
         "Finite factual template; not evidence of monthly capacity."
       ]
+    },
+    {
+      "id": "draft-toalhas-altura-prateleira",
+      "topic": "toalhas-altura-prateleira",
+      "family": "toalhas",
+      "hook": "A pilha de toalhas cai quando você pega uma?",
+      "steps": "Confira a altura disponível na prateleira. Faça pilhas menores, sem comprimir as peças contra o móvel. Guarde apenas toalhas completamente secas e deixe as de uso frequente em uma posição fácil de alcançar. Ajuste a dobra ao espaço.",
+      "cta": "Teste uma pilha menor no seu armário.",
+      "body_sha256": "80f74923a7b2ece8cd2f80e3df297155049a07d1e7a44df8b92b28eb67756b9c",
+      "script_sha256": "7b67ae253cb49c5631bde62ba2d15e5687fe777b58d2cb10ce4a8b8f1729d40e",
+      "media": {
+        "provider": "pixabay",
+        "provider_id": "125961",
+        "url": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-125961/",
+        "author": "bea73",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Video: bea73 / Pixabay — https://pixabay.com/videos/id-125961/",
+        "category": "lavanderia",
+        "query": "clothesline",
+        "selection_reason": "Provider tags: beach towels, towels, clothesline, lake, cottage life, nature, nova scotia, canada, summer",
+        "requires_crop_review": true,
+        "frame_mode": "preserve_full",
+        "semantic_verified": false,
+        "editorial_approved": false,
+        "status": "pending_visual_review",
+        "source_id": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+        "sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+        "dhash": [
+          "684ba4ad29a8b367",
+          "694be4ed29e8f367",
+          "694be42d696cf7c7",
+          "694be4a5696cd7c7",
+          "694be4a5696cd7c7"
+        ],
+        "width": 1920,
+        "height": 1080,
+        "duration": 22.0,
+        "bytes": 15794042,
+        "acquired_at": 1795104130
+      },
+      "status": "pending_editorial_review",
+      "editorial_approved": false,
+      "approved": false,
+      "published": false,
+      "limitations": [
+        "Lexical context only; inspect footage and final crop.",
+        "Finite factual template; not evidence of monthly capacity."
+      ]
     }
   ],
   "last_run": {
-    "created": 0,
-    "status": "exhausted_or_no_eligible_media",
+    "created": 1,
+    "status": "drafted",
     "automatic_approval": false,
     "template_capacity": 24,
-    "unused_templates": 10,
-    "pending_review": 13,
+    "unused_templates": 9,
+    "pending_review": 14,
     "approved_reserve_days": null,
     "reserve_note": "Drafts are not approved videos; no daily publishing capacity inferred."
   }

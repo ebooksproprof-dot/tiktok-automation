@@ -2672,6 +2672,70 @@
       "bytes": 23463750,
       "acquired_at": 1794988426,
       "automatic_review_status": "QUEUED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "125961",
+      "url": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-125961/",
+      "author": "bea73",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: bea73 / Pixabay — https://pixabay.com/videos/id-125961/",
+      "category": "lavanderia",
+      "query": "clothesline",
+      "selection_reason": "Provider tags: beach towels, towels, clothesline, lake, cottage life, nature, nova scotia, canada, summer",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4",
+      "sha256": "f8727880bae8d140a7a820865eb0d448822b0e85e291999b80ce05771b510370",
+      "dhash": [
+        "684ba4ad29a8b367",
+        "694be4ed29e8f367",
+        "694be42d696cf7c7",
+        "694be4a5696cd7c7",
+        "694be4a5696cd7c7"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 22.0,
+      "bytes": 15794042,
+      "acquired_at": 1795104130
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "9503",
+      "url": "https://cdn.pixabay.com/video/2017/06/02/9503-220204062_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-9503/",
+      "author": "chayka1270",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: chayka1270 / Pixabay — https://pixabay.com/videos/id-9503/",
+      "category": "lavanderia",
+      "query": "clothesline",
+      "selection_reason": "Provider tags: clothespins, clothesline, rope, linen, to dry, drying, wind, sway",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/06/02/9503-220204062_large.mp4",
+      "sha256": "a8544f284d3b39d4000d2a51fc71be942d145d2e5cbde8d512d77faf126474d7",
+      "dhash": [
+        "19792c6839293931",
+        "593c2c79b9393931",
+        "9b795c7071716362",
+        "337959d072735343",
+        "3373d9d173f37362"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 10.4,
+      "bytes": 5816963,
+      "acquired_at": 1795104132
     }
   ],
   "rejected_until": {
@@ -2679,116 +2743,39 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795075134,
-    "acquired": 0,
+    "at": 1795104127,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 7,
+    "download_attempts": 2,
+    "skipped_known": 3,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "lavanderia",
         "status": "search_ok",
-        "eligible_candidates": 14,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 15,
-          "total_hits": 108,
-          "context_rejected": 1,
+          "raw_hits": 8,
+          "total_hits": 8,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 7,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 37,
-          "context_rejected": 7,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 1
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 334,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 118,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "wiping faucet",
-      "arranging shelves",
-      "organizing hangers",
-      "washing cutlery"
+      "clothesline",
+      "soap",
+      "organizing dishwasher",
+      "filter"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 72,
+    "unreviewed_media_count": 74,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
