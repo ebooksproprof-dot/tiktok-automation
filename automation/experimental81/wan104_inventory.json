@@ -1879,6 +1879,35 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 0
+    },
+    "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Three white towels folded neatly on a shelf.",
+        "Three white towels stacked on a shelf.",
+        "Three white blankets folded together on a wooden shelf."
+      ],
+      "frame_sha256": [
+        "780494f33d130f75aaa6121763fe1f734bfc925dfda74e781c4ad3d2df8e38ab",
+        "f4c344d91e063132515f9259a286cb6e9fe68ffb4a30ef86e5ee5623cdca05b4",
+        "4d687fd53e254a83dbcd3c34a56ee13a976a2e771552b2646acbb7c5425e6a53"
+      ],
+      "source_sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+      "frame_mode": "reviewed_portrait",
+      "accepted": true,
+      "review_seconds": 84.178,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 1
     }
   },
   "rejected_clips": [
