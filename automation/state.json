@@ -2425,10 +2425,57 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-21-2": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-19T23:03:49Z",
+      "sha256": "4bf9c119cfb3a37d38ff7c815cf0503975971bdf2a3e481a4db9ae9ae124845a",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-2-4bf9c119cfb3a37d.mp4",
+      "concept": "auto-laundry-5a6aa819a358",
+      "script_sha256": "5a6aa819a358b5e25703cce08dc74ff777d602528ae754db129f90bda3665072",
+      "script_lines": [
+        "Vai colocar roupa para lavar?",
+        "Use o produto e a quantidade recomendados no rótulo.",
+        "Confira as instruções de limpeza do filtro no manual.",
+        "Mantenha os produtos na embalagem original e longe de crianças.",
+        "Retire as roupas ao terminar e organize a secagem.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+        "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+          "sha256": "9b99d2199a12ef4d45905925eeb4e0c84cb59517d884a58073a92442f461b5d0",
+          "dhash": [
+            "71f8eccccce8f069",
+            "71f0ece0e4e4f069",
+            "7178fce4e8e0f069",
+            "7178ece4ececec69",
+            "7078e4e0e4e07069"
+          ]
+        },
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4",
+          "sha256": "43f26d224c0f602d69f1198d157f618ad861c5b6e4d58e8966971da0bc0ff324",
+          "dhash": [
+            "24266465a1464809",
+            "60346475b5244209",
+            "6034646595244209",
+            "60346465b5244209",
+            "60346665b5244209"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-21T18:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
-    "2026-10-20T21:41:29.640954Z",
     "2026-10-21T12:01:26.076909Z",
     "2026-10-21T12:01:26.284765Z",
     "2026-10-21T12:01:30.765715Z",
@@ -2648,7 +2695,9 @@
     "2026-11-19T20:28:40.862704Z",
     "2026-11-19T20:28:45.987814Z",
     "2026-11-19T20:28:48.142816Z",
-    "2026-11-19T21:30:28.196559Z"
+    "2026-11-19T21:30:28.196559Z",
+    "2026-11-19T23:03:48.104368Z",
+    "2026-11-19T23:03:48.330103Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2656,25 +2705,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-11-19T21:45:28.361764Z",
-        "observed_at": "2026-11-19T21:30:28.361764Z"
+        "remaining": 148,
+        "reset_at": "2026-11-19T23:18:48.426424Z",
+        "observed_at": "2026-11-19T23:03:48.426424Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 578,
-        "reset_at": "2026-11-19T23:01:59.361764Z",
-        "observed_at": "2026-11-19T21:30:28.361764Z"
+        "remaining": 598,
+        "reset_at": "2026-11-20T23:03:48.426424Z",
+        "observed_at": "2026-11-19T23:03:48.426424Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 943,
-        "reset_at": "2026-12-17T01:30:14.361764Z",
-        "observed_at": "2026-11-19T21:30:28.361764Z"
+        "remaining": 941,
+        "reset_at": "2026-12-17T01:30:14.426424Z",
+        "observed_at": "2026-11-19T23:03:48.426424Z"
       }
     },
     "consecutive_errors": 0,
