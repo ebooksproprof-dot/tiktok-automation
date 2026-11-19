@@ -498,7 +498,7 @@
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-2c68171397c3fa39087f6306.mp4"
     },
     "5b5e1e2ea2b9ccd8f7e7c76f407bad7322674677f92d6c1b2edc031f96f3c246": {
-      "status": "INTENT_RECORDED_NO_RETRY",
+      "status": "GENERATED_AWAITING_STORAGE",
       "at": "2026-11-19T15:49:35.617358+00:00",
       "spec": {
         "space": "Upsampler/wan-2-2-5b-video",
@@ -516,7 +516,17 @@
         "seed": 104505,
         "randomize_seed": false
       },
-      "provider_job_id": "936427b63c5f4c9db737618b1388794f"
+      "provider_job_id": "936427b63c5f4c9db737618b1388794f",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+        "bytes": 365733
+      }
     }
   },
   "outputs": [
