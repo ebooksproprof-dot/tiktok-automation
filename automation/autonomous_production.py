@@ -53,19 +53,12 @@ class CheckedVoice:
 
 def render_with_voice_fallback(idea, post_id):
     from narration import load_engine
-    reason = None
     try:
         voice = CheckedVoice(load_engine(render.ASSETS, 'kokoro-female'))
-    except (OSError, ImportError, RuntimeError) as exc:
-        reason = 'PRIMARY_LOAD_'+type(exc).__name__
-        voice = load_engine(render.ASSETS, 'piper')
-    try:
         output, quality = render.render(idea, voice, post_id)
-    except PrimaryVoiceFailure as exc:
-        # Restart the entire narration, never mix sample rates/voices midway.
-        reason = 'PRIMARY_SYNTHESIS_'+str(exc)
-        output, quality = render.render(idea, load_engine(render.ASSETS, 'piper'), post_id)
-    quality.update(requested_voice='pf_dora', voice_fallback_reason=reason)
+    except (PrimaryVoiceFailure, ImportError) as exc:
+        raise ValueError('REQUESTED_PF_DORA_UNAVAILABLE') from None
+    quality.update(requested_voice='pf_dora', voice_fallback_reason=None)
     return output, quality
 
 # Reviewed factual sentences. New combinations are checked against the complete
@@ -197,7 +190,8 @@ def ready(queue, state, now):
             and p.get('consented_at')
             and p.get('quality', {}).get('technical_pass') is True
             and p.get('scheduled_at') and (stamp(p['scheduled_at']) > now
-                 or state['posts'].get(p['id'], {}).get('status') in ('SCHEDULED', 'SENDING'))]
+                 or (state['posts'].get(p['id'], {}).get('status') in ('SCHEDULED', 'SENDING')
+                     and stamp(p['scheduled_at']) > now-dt.timedelta(hours=2)))]
 
 
 def reconcile_outputs(ledger, state):
@@ -222,7 +216,7 @@ def stock_status(queue, state, now):
     available = len(ready(queue, state, now))
     held = held_reservations(queue, state)
     return {'ready': available, 'held_uncertain': len(held), 'target_max': TARGET,
-            'low_stock': available < 2, 'refill_needed': max(0, TARGET-available-len(held)),
+            'low_stock': available < 2, 'refill_needed': max(0, TARGET-available),
             'held_ids': held, 'publication_confirmation_is_separate': True}
 
 
@@ -299,33 +293,11 @@ def candidate_records(inbox, cache):
 
 
 def scripts(pool, queue, state):
+    from editorial_topics import ideas
     family = pool[0]['visual_review']['family']
-    tags = ' '.join(x['record']['selection_reason'] for x in pool).lower()
-    descriptions = ' '.join(' '.join(x['visual_review']['captions']) for x in pool).lower()
-    iron_seen = bool(re.search(r'\biron(?:ing)?\b', descriptions))
-    key = ('iron' if 'ironing' in tags and iron_seen else 'hangers' if any(w in descriptions for w in ('hanger', 'closet', 'clothing rack'))
-           else 'folding') if family == 'clothes' else family
-    if family == 'laundry' and not re.search(r'\b(machine|washer|drum)\b', descriptions):
-        key = 'drying'
-    hook, sentences = BANK[key]
-    seed = int(hashlib.sha256(''.join(x['record']['sha256'] for x in pool).encode()).hexdigest(), 16)
-    rng = random.Random(seed)
-    choices = []
-    for _ in range(24):
-        tips = rng.sample(sentences, 4)
-        if key == 'iron' and any('closet' in x['record']['selection_reason'].lower() for x in pool):
-            storage = next(s for s in sentences if s.startswith('Guarde'))
-            tips = rng.sample([s for s in sentences if s != storage], 3)+[storage]
-        if key == 'laundry' and 'clothesline' in tags:
-            drying_tip = next(s for s in sentences if s.startswith('Retire as roupas'))
-            tips = rng.sample([s for s in sentences if s != drying_tip], 3)+[drying_tip]
-        # Ironing demonstrator first, storage footage last: keep storage advice
-        # at the end instead of claiming that a hanger is an iron demonstration.
-        tips.sort(key=lambda s: 'Guarde' in s or 'Retire as roupas' in s)
-        lines = [hook, *tips, 'Salve este cuidado para a sua rotina.']
-        concept = 'auto-'+key+'-'+script_sha(lines)[:12]
-        choices.append((concept, [x['record']['id'] for x in pool], lines))
-    return novel_scripts(choices, queue, state)
+    captions = [c for x in pool for c in x['visual_review']['captions']]
+    return [(concept, [x['record']['id'] for x in pool], lines)
+            for concept, _, lines in ideas(queue, state, family, captions)]
 
 
 def repaired_context(prior, record):
@@ -355,7 +327,7 @@ def run(stage=False, soon=False, limit=2):
     reconcile_outputs(ledger, state)
     now = dt.datetime.now(dt.timezone.utc)
     before = len(ready(queue, state, now))
-    occupied = before+len(held_reservations(queue, state))
+    occupied = before
     if occupied >= TARGET:
         result = {'status': 'STOCK_TARGET_MET' if before >= TARGET else 'STOCK_RESERVED_UNCERTAIN',
                   'ready': before, 'held_uncertain': occupied-before, 'created': 0}
@@ -450,7 +422,9 @@ def run(stage=False, soon=False, limit=2):
                 if hashlib.sha256(dest.read_bytes()).hexdigest() != record['sha256']:
                     raise ValueError('RENDER_SOURCE_COPY_HASH_MISMATCH')
             if not scripts(pool, queue, state):
-                raise ValueError('NO_NEW_SCRIPT_COMBINATION')
+                entry.update(status='ACCEPTED_AWAITING_NEW_EDITORIAL', editorial_hold='NO_COHERENT_NOVEL_TIP')
+                pools[review['family']] = []
+                continue
             failure = None
             phase = 'render'
             for idea in scripts(pool, queue, state)[:3]:
@@ -479,6 +453,8 @@ def run(stage=False, soon=False, limit=2):
                 media_storage='release', render_version=2, video_origin='licensed_stock_cpu_review',
                 first_test_outside_recurring_slots=bool(soon and not outputs),
                 publishing_status='READY_FOR_EXISTING_BUFFER_RUNNER')
+            from editorial_policy import require as require_editorial
+            post['editorial'] = require_editorial(post, queue, state)
             visuals.require_evidence(post, previous)
             if stage:
                 phase = 'release_and_queue'

@@ -23,6 +23,8 @@ on:
     paths:
       - '.github/workflows/ai30-free-collector.yml'
       - 'automation/experimental81/wan104*.py'
+      - 'automation/editorial_*.py'
+      - 'automation/editorial_*.json'
       - 'automation/experimental81/wan104_components.json'
       - 'automation/experimental81/wan104_source_reviews.json'
       - 'automation/tests/test_wan104*.py'
@@ -30,6 +32,7 @@ on:
 permissions:
   contents: write
   actions: read
+  issues: write
 
 concurrency:
   group: casasemesforco-ai30-collector
@@ -100,7 +103,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wan104-generated-source-proof
-          path: tmp/wan104/
+          path: |
+            tmp/wan104/
+            tmp/operational-errors/
           retention-days: 3
           if-no-files-found: ignore
       - name: Accurate final run summary
@@ -147,7 +152,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wan104-generated-source-proof
-          path: tmp/wan104/
+          path: |
+            tmp/wan104/
+            tmp/operational-errors/
           retention-days: 3
           if-no-files-found: ignore
   licensed-stage-trial:
@@ -202,8 +209,14 @@ jobs:
           # Sources/final MP4 live in Releases. Do not archive the 140MB voice
           # weights or duplicate full videos on every automatic run.
           path: |
+            tmp/operational-errors/
             tmp/wan104-finish/**/*.json
             tmp/wan104-finish/**/*.jpg
             tmp/wan104-finish/**/*.srt
           retention-days: 3
           if-no-files-found: ignore
+      - name: Keep one actionable failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/notify_failure.py

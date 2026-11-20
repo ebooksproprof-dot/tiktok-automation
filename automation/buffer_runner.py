@@ -139,6 +139,8 @@ def prepare(post, state, channel_id):
                         and quality.get('owner_waived_preview') is True)
     if quality.get("technical_pass") is not True or (quality.get("editorial_approved") is not True and not waived_ai_preview):
         raise ValueError("Technical and editorial review required")
+    from editorial_policy import require as require_editorial
+    require_editorial(post, {}, state, exclude_id=post.get('id'))
     from visual_library import history
     previous_visuals = history({}, state)
     legacy = Path(__file__).with_name('visual_history.json')
@@ -278,6 +280,7 @@ def submit(client, post, state, channel_id):
                  sha256=post["quality"]["sha256"], video_url=post["video_url"],
                  concept=post.get("concept"), script_sha256=post.get("script_sha256"),
                  script_lines=post.get('script_lines', []),
+                 editorial=post.get('editorial') or __import__('editorial_policy').describe(post),
                  source_urls=post['quality'].get('source_urls', []),
                  visual_sources=post['quality'].get('visual_sources', []),
                  scheduled_at=post["scheduled_at"], publicly_verified=False,

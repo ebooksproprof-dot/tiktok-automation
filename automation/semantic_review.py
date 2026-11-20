@@ -34,7 +34,9 @@ FORBIDDEN = {'porn', 'nude', 'naked', 'weapon', 'gun', 'blood', 'injury', 'water
 
 
 def words(text):
-    return set(re.findall(r'[a-z]+', str(text).lower()))
+    result = set(re.findall(r'[a-z]+', str(text).lower()))
+    # Keep original tokens while matching ordinary English object plurals.
+    return result | {w[:-1] for w in result if len(w)>3 and w.endswith('s') and not w.endswith('ss')} | {w[:-2] for w in result if w.endswith(('shes','ches','xes'))}
 
 
 def nominate(record):
@@ -103,13 +105,17 @@ def assess(family, captions):
             and sum(bool(t & allowed) for t in tokens) >= 2)
 
 
-def assess_generated_organization(slot, captions):
+def assess_generated_organization(slot, captions, editorial_id=None):
     """Separate scope for the licensed Wan profile; stock gates stay unchanged."""
     expected = ({'jar', 'jars', 'container', 'containers', 'pantry', 'shelf', 'shelves'},
                 {'towel', 'towels', 'linen', 'linens', 'cloth', 'cloths', 'fabric'},
-                {'utensil', 'utensils', 'spoon', 'spoons', 'ladle', 'ladles', 'spatula', 'spatulas'})
+                {'utensil', 'utensils', 'spoon', 'spoons', 'ladle', 'ladles', 'spatula', 'spatulas', 'pan', 'pans', 'wok', 'woks', 'pot', 'pots'})
     if type(slot) is not int or not 0 <= slot < 3 or len(captions) != 3:
         return False
+    if editorial_id:
+        from editorial_topics import BY_ID
+        if editorial_id not in BY_ID: return False
+        expected = (set(BY_ID[editorial_id]['visual_terms']),)*3
     tokens = [words(caption) for caption in captions]
     return (not any(t & (FORBIDDEN | {'person', 'people', 'child', 'children'}) for t in tokens)
             and sum(bool(t & expected[slot]) for t in tokens) >= 2)
@@ -199,6 +205,8 @@ class Reviewer:
                 'Describe the material, texture, folds, and edges of the stacked objects. Are there paper pages, fabric folds, or neither? Report only visible evidence.',
                 'Describe the objects hanging from any rail or hooks: their shapes, materials and arrangement. Focus on the objects, not background tiles.'
             )[record['generated_slot']]
+            if record.get('editorial_id'):
+                focus = 'Describe the main foreground household objects, their material, physical arrangement and visible condition. Only report visible evidence.'
             for index in range(3):
                 image = Image.open(folder/f'frame-{index}.jpg').convert('RGB')
                 prompt = self.processor.apply_chat_template([{'role': 'user', 'content': [
@@ -213,8 +221,8 @@ class Reviewer:
         result = {'method': 'automated_cpu_portrait_frame_semantics', 'model': MODEL,
                   'revision': REVISION, 'model_license': LICENSE, 'model_license_id': 'Apache-2.0',
                   'family': family, 'captions': captions, 'frame_sha256': hashes,
-                  'source_sha256': record['sha256'], 'frame_mode': frame_mode,
-                  'accepted': assess_generated_organization(record.get('generated_slot'), captions) if generated_profile else assess(family, captions),
+                  'source_sha256': record['sha256'], 'frame_mode': frame_mode, 'editorial_id': record.get('editorial_id'),
+                  'accepted': assess_generated_organization(record.get('generated_slot'), captions, record.get('editorial_id')) if generated_profile else assess(family, captions),
                   'review_seconds': round(time.monotonic()-started, 3),
                   'human_review': False, 'hosted_inference_calls': 0}
         if disambiguated:

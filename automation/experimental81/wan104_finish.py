@@ -44,10 +44,11 @@ def cached_review(clip, proof):
     return (review if review.get('accepted') is True and review.get('source_sha256') == clip['sha256']
             and review.get('revision') == REVISION and review.get('policy') == 'wan104_objects_v1'
             and review.get('generated_slot') == clip['slot']
-            and assess_generated_organization(clip['slot'], review.get('captions', [])) else None)
+            and review.get('editorial_id') == clip.get('editorial_id')
+            and assess_generated_organization(clip['slot'], review.get('captions', []), clip.get('editorial_id')) else None)
 
 
-def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_review=None, on_reject=None):
+def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_review=None, on_reject=None, previous=None):
     profile = require_sources(inventory['clips'])
     folder = Path(folder); folder.mkdir(parents=True, exist_ok=True)
     clips, visuals, reviews = [], [], []
@@ -57,16 +58,19 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
         if render.sha(path) != clip['sha256']:
             raise ValueError('WAN_SOURCE_BYTES_DO_NOT_MATCH')
         try:
+            source_visual = fingerprint(path, clip['url'])
+            check_sources([source_visual], list(previous or [])+[{'visual_sources': visuals}])
             motion(path)
             review = cached_review(clip, proof or {})
             if not review:
                 reviewer = reviewer or Reviewer(os.getenv('SEMANTIC_MODEL_CACHE'))
                 review = reviewer.review(path, {'provider': 'wan104_generated', 'provider_id': clip['sha256'][:12],
                     'model': profile['model'], 'sha256': clip['sha256'], 'generated_slot': clip['slot'],
+                    'editorial_id': clip.get('editorial_id'),
                     'frame_mode': 'reviewed_portrait'}, folder/('review-'+str(clip['slot'])))
                 review.update(policy='wan104_objects_v1', generated_slot=clip['slot'])
         except ValueError as exc:
-            if on_reject and str(exc) in ('PORTRAIT_VISUAL_CONTEXT_REJECTED', 'SOURCE_FROZEN_OR_UNDECODABLE'):
+            if on_reject and (str(exc) in ('PORTRAIT_VISUAL_CONTEXT_REJECTED', 'SOURCE_FROZEN_OR_UNDECODABLE') or str(exc).startswith('VISUAL_')):
                 review_path = folder/('review-'+str(clip['slot']))/'review.json'
                 rejected_review = json.loads(review_path.read_text()) if review_path.exists() else {}
                 on_reject(clip, str(exc), rejected_review)
@@ -74,7 +78,9 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
         if on_review:
             on_review(clip, review)
         reviews.append(review)
-        visuals.append(fingerprint(path, clip['url']))
+        source_visual.update(semantic_context={'captions':review['captions'], 'editorial_id':clip.get('editorial_id'),
+                                                   'motion':'camera_or_object_motion_checked'})
+        visuals.append(source_visual)
         clips.append({'path': str(path), 'sha256': clip['sha256'], 'kind': 'ai', 'model': clip['model'],
             'source_url': clip['url'], 'license_url': profile['model_license_url'],
             'generation_evidence': clip['generation_evidence']['request_sha256'], 'visual_review_passed': True})
@@ -123,6 +129,10 @@ def complete_handoff(store, inventory, revision, post, producer_store):
         'scheduled_at': post['scheduled_at'], 'clips': inventory['clips']}
     if not any(o.get('post_id') == post['id'] for o in inventory.setdefault('outputs', [])):
         inventory['outputs'].append(receipt)
+    for c in inventory.get('scene_bank', []):
+        if c['sha256'] in source_hashes: c['consumed_by'] = post['id']
+    inventory.pop('editorial_id', None)
+    inventory.pop('script_lines', None)
     inventory.update(episode=inventory['episode']+1, clips=[], status='COLLECTING')
     store.save(inventory, revision)
     return receipt
@@ -142,6 +152,24 @@ def stage(trial=False):
     producer_store = GitHubStore(token, path='automation/production_state.json', validate=False)
     queue, queue_revision = queue_store.load()
     state, _ = state_store.load()
+    # Recover a queue write acknowledged before a later checkpoint failed.
+    hashes = {c['sha256'] for c in inventory['clips']}
+    for prior in queue['posts']:
+        if hashes and hashes == {c.get('sha256') for c in prior.get('quality', {}).get('licensed_sources', [])}:
+            complete_handoff(store, inventory, revision, prior, producer_store)
+            return {'status': 'QUEUED_ALREADY_DO_NOT_REPEAT', 'post_id': prior['id'], 'publicly_verified': False}
+    from editorial_topics import BY_ID
+    if inventory.get('editorial_id'):
+        tip = BY_ID[inventory['editorial_id']]
+        choices = novel_scripts([('tip12-'+tip['id'], [], tip['script_lines'])], queue, state)
+    else:
+        choices = wan104.script_choices(inventory['episode'], queue, state)
+    if not choices:
+        return {'status': 'EDITORIAL_HOLD_PRESERVED_CLIPS', 'clips': len(inventory['clips']),
+                'reason': 'LEGACY_TOPIC_REPEATED_REPLAN_ON_NEXT_COLLECTION', 'publicly_verified': False}
+    concept, _, lines = choices[0]
+    if len(inventory['clips']) != 3:
+        return {'status': 'COLLECTING_NO_READY_AI_VIDEO', 'clips': len(inventory['clips']), 'publicly_verified': False}
     # The first public trial may have been staged by an earlier tested revision.
     # Import only its exact existing queue entry; never create a replacement.
     for receipt in inventory.get('outputs', []):
@@ -149,23 +177,11 @@ def stage(trial=False):
         if not old or old['quality']['sha256'] != receipt['sha256']:
             raise ValueError('DURABLE_WAN_OUTPUT_HISTORY_MISSING_OR_CHANGED')
         register_production_output(producer_store, old)
-    concept = 'licensed-wan104-episode-'+str(inventory['episode'])
-    existing = next((p for p in queue['posts'] if p.get('concept') == concept), None)
-    if existing:
-        complete_handoff(store, inventory, revision, existing, producer_store)
-        return {'status': 'QUEUED_ALREADY_DO_NOT_REPEAT', 'post_id': existing['id'], 'publicly_verified': False}
-    if len(inventory.get('clips', [])) != 3:
-        return {'status': 'COLLECTING_NO_READY_AI_VIDEO', 'clips': len(inventory.get('clips', [])), 'publicly_verified': False}
-    # One bounded AI overflow position prevents the fallback's four ready
-    # reservations from starving completed Wan scenes. Existing slots stay intact.
+    # One overflow position gives completed AI priority without cancelling slots.
     demand = stock_status(queue, state, wan104.now())
     if not trial and demand['ready']+demand['held_uncertain'] >= demand['target_max']+1:
         return {'status': 'LICENSED_AI_OVERFLOW_RESERVED', 'clips': 3, 'publicly_verified': False}
     require_sources(inventory['clips'])
-    ideas = wan104.script_choices(inventory['episode'], queue, state)
-    if not ideas:
-        raise ValueError('WAN_SCRIPT_REPEATS_EXISTING_CONTENT')
-    lines = ideas[0][2]
     proof_path = Path(__file__).with_name('wan104_source_reviews.json')
     proof = json.loads(proof_path.read_text()) if proof_path.exists() else {}
     proof.update(inventory.get('source_reviews', {}))
@@ -181,15 +197,15 @@ def stage(trial=False):
         inventory.setdefault('rejected_clips', []).append(dict(clip, rejection_reason=reason,
             rejected_at=wan104.now().isoformat(), rejected_review=review))
         inventory['clips'] = [c for c in inventory['clips'] if c['sha256'] != clip['sha256']]
+        for source in inventory.get('scene_bank', []):
+            if source['sha256'] == clip['sha256']: source['consumed_by'] = 'REJECTED'
         inventory['status'] = 'REPLACING_REJECTED_SCENE'
         revision = store.save(inventory, revision)
-    output, quality = compose(inventory, folder, proof, lines=lines,
-                              on_review=checkpoint_review, on_reject=reject_source)
     previous = history(queue, state)
     archive = ROOT/'visual_history.json'
     if archive.exists(): previous.append(json.loads(archive.read_text()))
-    legacy, _ = GitHubStore(token, branch='feature/ai-video-hybrid-30s', path=legacy_inventory_path(), validate=False).load()
-    previous.append({'visual_sources': [c['visual_source'] for c in legacy.get('clips', [])]})
+    output, quality = compose(inventory, folder, proof, lines=lines,
+                              on_review=checkpoint_review, on_reject=reject_source, previous=previous)
     check_sources(quality['visual_sources'], previous)
     current = wan104.now()
     if trial:
@@ -207,6 +223,8 @@ def stage(trial=False):
         'publication_provider': 'buffer', 'media_storage': 'release', 'render_version': 3,
         'script_lines': lines, 'script_sha256': script_sha(lines),
         'publishing_status': 'VALIDATED_LICENSED_WAN_READY_FOR_EXISTING_BUFFER', 'video_url': ''}
+    from editorial_policy import require as require_editorial
+    post['editorial'] = require_editorial(post, queue, state)
     if trial: require_trial_available(post, queue, state)
     post['video_url'] = publish(output['video_path'], post_id, quality)
     queue['posts'].append(post)
@@ -235,11 +253,14 @@ def main():
     try:
         return stage(args.trial)
     except Exception as exc:
+        from operational_errors import evidence
+        diagnostic = evidence(exc, 'wan_assembly')
+        print('WAN_ASSEMBLY_CAUSE='+json.dumps(diagnostic), flush=True)
         if not args.optional_ai:
             raise
         # The following conventional production is still mandatory. This is
         # not an AI success or a claim that any video was published.
-        return {'status': 'AI_HELD_CONVENTIONAL_FALLBACK_REQUIRED', 'error_type': type(exc).__name__, 'publicly_verified': False}
+        return {'status': 'AI_HELD_CONVENTIONAL_FALLBACK_REQUIRED', 'error_type': type(exc).__name__, 'cause': diagnostic, 'publicly_verified': False}
 
 
 if __name__ == '__main__':

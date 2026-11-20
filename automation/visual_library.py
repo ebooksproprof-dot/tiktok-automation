@@ -22,32 +22,51 @@ def fingerprint(path, source_id):
     path = Path(path)
     duration = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries',
         'format=duration', '-of', 'default=nw=1:nk=1', str(path)], text=True, timeout=30))
-    frames = []
-    for fraction in (.1, .3, .5, .7, .9):
-        pixels = subprocess.check_output(['ffmpeg', '-v', 'error', '-ss', str(duration*fraction),
-            '-i', str(path), '-frames:v', '1', '-vf', 'scale=9:8,format=gray',
-            '-f', 'rawvideo', '-threads', '1', '-'], timeout=30)
-        if len(pixels) != 72:
-            raise ValueError('VISUAL_FINGERPRINT_INCOMPLETE')
-        bits = 0
-        for row in range(8):
-            for col in range(8):
-                bits = (bits << 1) | (pixels[row*9+col] > pixels[row*9+col+1])
-        frames.append(f'{bits:016x}')
+    variants = {}
+    # Multiple inner crops survive modest zoom/crop and overlay captions.
+    # Grayscale gradients are invariant to ordinary brightness/color changes.
+    for name, crop in [('full', ''), ('inner90', 'crop=iw*.9:ih*.9,'),
+                       ('inner80', 'crop=iw*.8:ih*.8,')]:
+        frames = []
+        for fraction in (.1, .3, .5, .7, .9):
+            pixels = subprocess.check_output(['ffmpeg', '-v', 'error', '-ss', str(duration*fraction),
+                '-i', str(path), '-frames:v', '1', '-vf', crop+'scale=9:8,format=gray',
+                '-f', 'rawvideo', '-threads', '1', '-'], timeout=30)
+            if len(pixels) != 72:
+                raise ValueError('VISUAL_FINGERPRINT_INCOMPLETE')
+            bits = 0
+            for row in range(8):
+                for col in range(8):
+                    bits = (bits << 1) | (pixels[row*9+col] > pixels[row*9+col+1])
+            frames.append(f'{bits:016x}')
+        variants[name] = frames
     digest = hashlib.sha256()
     with path.open('rb') as stream:
         for chunk in iter(lambda: stream.read(1024*1024), b''):
             digest.update(chunk)
-    return dict(source_id=source_id, sha256=digest.hexdigest(), dhash=frames)
+    return dict(source_id=source_id, sha256=digest.hexdigest(), dhash=variants['full'],
+                crop_dhash=variants, sampling_fractions=[.1,.3,.5,.7,.9],
+                fingerprint_method='grayscale-gradient-multicrop-v2')
 
 
 def similar(a, b):
     """Reject when >=60% of sampled frames have a close perceptual match."""
-    left, right = a.get('dhash', []), b.get('dhash', [])
-    if not left or not right:
-        return False
-    matches = sum(any((int(x, 16) ^ int(y, 16)).bit_count() <= 8 for y in right) for x in left)
-    return matches / len(left) >= .6
+    left = [a.get('dhash', [])]+list(a.get('crop_dhash', {}).values())
+    right = [b.get('dhash', [])]+list(b.get('crop_dhash', {}).values())
+    for xs in left:
+        for ys in right:
+            if not xs or not ys: continue
+            # A single coincident frame must not stand in for the whole clip.
+            remaining = list(ys)
+            matches = 0
+            for x in xs:
+                if not remaining: break
+                y = min(remaining, key=lambda z: (int(x,16)^int(z,16)).bit_count())
+                if (int(x,16)^int(y,16)).bit_count() <= 8:
+                    matches += 1
+                    remaining.remove(y)
+            if matches / max(len(xs), len(ys)) >= .6: return True
+    return False
 
 
 def history(queue, state, exclude_id=None):

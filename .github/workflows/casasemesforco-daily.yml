@@ -10,6 +10,9 @@ on:
     paths:
       - "automation/render_daily.py"
       - "automation/content_catalog.py"
+      - "automation/editorial_*.py"
+      - "automation/editorial_*.json"
+      - "automation/operational_*.py"
       - "automation/catalog_extension.py"
       - "automation/catalog_extension.json"
       - "automation/release_media.py"
@@ -169,6 +172,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python automation/stage_requested_proofs.py
+      - name: Record specific operational incidents
+        if: always() && github.event_name != 'push'
+        continue-on-error: true
+        run: python automation/operational_health.py
+
       - name: Refresh read-only approval preview
         if: always() && github.event_name != 'push'
         continue-on-error: true # Preview failure must never prevent durable media/state.
@@ -180,7 +188,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python - <<'PYCODE'
           import json, pathlib, subprocess
-          paths = ['automation/queue.json', 'automation/review_requests.json']
+          paths = ['automation/operational_health.json', 'automation/queue.json', 'automation/review_requests.json']
           if pathlib.Path('automation/production_state.json').exists():
               paths.append('automation/production_state.json')
           if pathlib.Path('automation/pixabay_license_policy.json').exists():

@@ -49,7 +49,8 @@ def require_quality(quality):
             or any(r.get('accepted') is not True or r.get('policy') != 'wan104_objects_v1'
                    or r.get('revision') != REVISION or r.get('model') != MODEL
                    or r.get('generated_slot') != sources[r['source_sha256']]['slot']
-                   or not assess_generated_organization(r.get('generated_slot'), r.get('captions', [])) for r in reviews)):
+                   or r.get('editorial_id') != sources[r['source_sha256']].get('editorial_id')
+                   or not assess_generated_organization(r.get('generated_slot'), r.get('captions', []), r.get('editorial_id')) for r in reviews)):
         raise ValueError('WAN104_PER_SOURCE_CONTEXT_REVIEW_REQUIRED')
     return profile
 

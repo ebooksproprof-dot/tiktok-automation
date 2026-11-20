@@ -1,0 +1,9 @@
+{
+  "suite": "python -m unittest discover -s automation/tests",
+  "tests": 436,
+  "seconds": 12.513,
+  "result": "OK",
+  "continuity_days": 14,
+  "continuity_is_simulated": true,
+  "live_publication_implied": false
+}

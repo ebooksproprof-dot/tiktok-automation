@@ -1,0 +1,626 @@
+[
+  {
+    "id": "potes-borda",
+    "topic_id": "potes-borda",
+    "problem_id": "potes-borda",
+    "solution_id": "intact-matching-lids",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "pote"
+    ],
+    "visual_terms": [
+      "jar",
+      "container",
+      "pot"
+    ],
+    "script_lines": [
+      "Pote fecha torto?",
+      "Observe a borda e a tampa antes de guardar. Separe peças rachadas ou que não encaixam.",
+      "Use somente pares íntegros e compatíveis. Salve esta inspeção."
+    ]
+  },
+  {
+    "id": "escorredor-estavel",
+    "topic_id": "escorredor-estavel",
+    "problem_id": "escorredor-estavel",
+    "solution_id": "individual-dish-support",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "prato"
+    ],
+    "visual_terms": [
+      "dish",
+      "plate",
+      "rack"
+    ],
+    "script_lines": [
+      "Pratos escorregando no escorredor?",
+      "Apoie cada prato no encaixe previsto. Evite peças equilibradas umas sobre as outras.",
+      "Respeite a capacidade do suporte. Salve para a próxima lavagem."
+    ]
+  },
+  {
+    "id": "ralo-coletor",
+    "topic_id": "ralo-coletor",
+    "problem_id": "ralo-coletor",
+    "solution_id": "solid-waste-strainer",
+    "environment": "kitchen",
+    "family": "drain",
+    "objects": [
+      "ralo"
+    ],
+    "visual_terms": [
+      "drain",
+      "sink",
+      "strainer"
+    ],
+    "script_lines": [
+      "Restos somem pelo ralo?",
+      "Um coletor retém resíduos sólidos antes do escoamento. Retire os restos para o descarte adequado.",
+      "Não despeje óleo na pia. Salve este cuidado."
+    ]
+  },
+  {
+    "id": "bancada-area-preparo",
+    "topic_id": "bancada-area-preparo",
+    "problem_id": "bancada-area-preparo",
+    "solution_id": "continuous-prep-zone",
+    "environment": "kitchen",
+    "family": "surfaces",
+    "objects": [
+      "bancada"
+    ],
+    "visual_terms": [
+      "countertop",
+      "counter",
+      "kitchen"
+    ],
+    "script_lines": [
+      "Falta apoio para preparar comida?",
+      "Reserve uma faixa contínua da bancada. Guarde aparelhos que não participam da tarefa.",
+      "Deixe apenas o necessário nessa faixa. Salve para testar."
+    ]
+  },
+  {
+    "id": "puxador-laterais",
+    "topic_id": "puxador-laterais",
+    "problem_id": "puxador-laterais",
+    "solution_id": "handle-side-wipe",
+    "environment": "kitchen",
+    "family": "wiping",
+    "objects": [
+      "puxador"
+    ],
+    "visual_terms": [
+      "handle",
+      "refrigerator"
+    ],
+    "script_lines": [
+      "O puxador parece limpo só de frente?",
+      "As laterais também recebem contato. Passe um pano adequado ao acabamento, conforme o fabricante.",
+      "Use uma parte limpa do pano. Salve este detalhe."
+    ]
+  },
+  {
+    "id": "utensilios-peso",
+    "topic_id": "utensilios-peso",
+    "problem_id": "utensilios-peso",
+    "solution_id": "rated-hook-load",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "utensilio"
+    ],
+    "visual_terms": [
+      "utensil",
+      "rail",
+      "hook",
+      "ladle"
+    ],
+    "script_lines": [
+      "O suporte aguenta seus utensílios?",
+      "Confira a carga indicada no manual. Um gancho pequeno não serve para qualquer peso.",
+      "Distribua somente peças compatíveis. Salve antes de pendurar."
+    ]
+  },
+  {
+    "id": "copos-secos",
+    "topic_id": "copos-secos",
+    "problem_id": "copos-secos",
+    "solution_id": "cup-drying-check",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "copo"
+    ],
+    "visual_terms": [
+      "glass",
+      "cup",
+      "rack"
+    ],
+    "script_lines": [
+      "Copo guardado com água dentro?",
+      "Observe o fundo e a borda antes de guardar. Escorra no suporte adequado ao material.",
+      "Espere secar completamente. Salve para cuidar dos copos."
+    ]
+  },
+  {
+    "id": "esponja-arejada",
+    "topic_id": "esponja-arejada",
+    "problem_id": "esponja-arejada",
+    "solution_id": "drained-sponge-rest",
+    "environment": "kitchen",
+    "family": "wiping",
+    "objects": [
+      "esponja"
+    ],
+    "visual_terms": [
+      "sponge",
+      "sink"
+    ],
+    "script_lines": [
+      "Sua esponja fica numa poça?",
+      "Após o uso, siga a orientação de lavagem. Um suporte drenado evita deixá-la mergulhada em água.",
+      "Mantenha o apoio limpo. Salve este ajuste."
+    ]
+  },
+  {
+    "id": "espelho-fiapos",
+    "topic_id": "espelho-fiapos",
+    "problem_id": "espelho-fiapos",
+    "solution_id": "lint-free-mirror-cloth",
+    "environment": "bathroom",
+    "family": "surfaces",
+    "objects": [
+      "espelho"
+    ],
+    "visual_terms": [
+      "mirror",
+      "cloth"
+    ],
+    "script_lines": [
+      "Seu pano espalha fiapos no espelho?",
+      "Escolha um pano macio que não solte fibras. Verifique o resultado com luz lateral.",
+      "Troque a parte suja do pano. Salve esta checagem."
+    ]
+  },
+  {
+    "id": "torneira-base",
+    "topic_id": "torneira-base",
+    "problem_id": "torneira-base",
+    "solution_id": "dry-faucet-base",
+    "environment": "bathroom",
+    "family": "drain",
+    "objects": [
+      "torneira"
+    ],
+    "visual_terms": [
+      "faucet",
+      "tap",
+      "basin"
+    ],
+    "script_lines": [
+      "Água acumulada na base da torneira?",
+      "Depois da limpeza permitida pelo fabricante, observe a junção com a bancada.",
+      "Seque com pano macio e limpo. Salve este acabamento."
+    ]
+  },
+  {
+    "id": "panos-separados",
+    "topic_id": "panos-separados",
+    "problem_id": "panos-separados",
+    "solution_id": "room-specific-cloths",
+    "environment": "bathroom",
+    "family": "wiping",
+    "objects": [
+      "pano"
+    ],
+    "visual_terms": [
+      "cloth",
+      "bathroom"
+    ],
+    "script_lines": [
+      "O mesmo pano vai para todo lugar?",
+      "Separe os materiais do banheiro dos usados na cozinha. Guarde os limpos longe dos usados.",
+      "Defina um lugar para cada grupo. Salve esta separação."
+    ]
+  },
+  {
+    "id": "embalagem-original",
+    "topic_id": "embalagem-original",
+    "problem_id": "embalagem-original",
+    "solution_id": "original-product-container",
+    "environment": "bathroom",
+    "family": "products",
+    "objects": [
+      "embalagem"
+    ],
+    "visual_terms": [
+      "bottle",
+      "container",
+      "cleaning"
+    ],
+    "script_lines": [
+      "Produto de limpeza em garrafa de bebida?",
+      "Isso pode causar confusão. Preserve a embalagem original com rótulo legível e tampa fechada.",
+      "Guarde longe de crianças. Salve este cuidado."
+    ]
+  },
+  {
+    "id": "bolsos-vazios",
+    "topic_id": "bolsos-vazios",
+    "problem_id": "bolsos-vazios",
+    "solution_id": "empty-pocket-check",
+    "environment": "laundry",
+    "family": "laundry",
+    "objects": [
+      "roupa"
+    ],
+    "visual_terms": [
+      "washer",
+      "machine",
+      "drum"
+    ],
+    "script_lines": [
+      "O que ficou dentro do bolso?",
+      "Antes de colocar a roupa no tambor, esvazie os bolsos. Moedas e papéis precisam sair.",
+      "Confira também a etiqueta. Salve esta etapa."
+    ]
+  },
+  {
+    "id": "varal-espaco",
+    "topic_id": "varal-espaco",
+    "problem_id": "varal-espaco",
+    "solution_id": "air-gap-drying",
+    "environment": "laundry",
+    "family": "laundry",
+    "objects": [
+      "varal"
+    ],
+    "visual_terms": [
+      "clothesline",
+      "drying",
+      "laundry"
+    ],
+    "script_lines": [
+      "As peças se encostam no varal?",
+      "Deixe intervalo entre os tecidos. A circulação de ar depende do espaço disponível.",
+      "Siga a etiqueta para escolher a secagem. Salve esta distância."
+    ]
+  },
+  {
+    "id": "ferro-etiqueta",
+    "topic_id": "ferro-etiqueta",
+    "problem_id": "ferro-etiqueta",
+    "solution_id": "fabric-temperature-sort",
+    "environment": "laundry",
+    "family": "clothes",
+    "objects": [
+      "ferro"
+    ],
+    "visual_terms": [
+      "iron",
+      "ironing"
+    ],
+    "script_lines": [
+      "Uma temperatura serve para toda roupa?",
+      "A etiqueta orienta o cuidado de cada tecido. Separe as peças antes de ajustar o ferro.",
+      "Respeite também o manual do aparelho. Salve esta ordem."
+    ]
+  },
+  {
+    "id": "toalhas-revezamento",
+    "topic_id": "toalhas-revezamento",
+    "problem_id": "toalhas-revezamento",
+    "solution_id": "linen-first-in-first-out",
+    "environment": "laundry",
+    "family": "clothes",
+    "objects": [
+      "toalha"
+    ],
+    "visual_terms": [
+      "towel",
+      "linen"
+    ],
+    "script_lines": [
+      "Só a toalha de cima sai da pilha?",
+      "Coloque as peças recém-lavadas atrás das que já estavam prontas. Mantenha todas totalmente secas.",
+      "Assim o acesso segue uma ordem. Salve o revezamento."
+    ]
+  },
+  {
+    "id": "cabides-formato",
+    "topic_id": "cabides-formato",
+    "problem_id": "cabides-formato",
+    "solution_id": "garment-shaped-hanger",
+    "environment": "closet",
+    "family": "clothes",
+    "objects": [
+      "cabide"
+    ],
+    "visual_terms": [
+      "hanger",
+      "closet",
+      "wardrobe"
+    ],
+    "script_lines": [
+      "O cabide marca o ombro da peça?",
+      "Compare o apoio com o formato da roupa. Cabides inadequados podem deformar tecidos.",
+      "Siga a orientação da peça. Salve antes de pendurar."
+    ]
+  },
+  {
+    "id": "porta-sem-prender",
+    "topic_id": "porta-sem-prender",
+    "problem_id": "porta-sem-prender",
+    "solution_id": "door-clearance",
+    "environment": "closet",
+    "family": "clothes",
+    "objects": [
+      "roupa"
+    ],
+    "visual_terms": [
+      "closet",
+      "wardrobe",
+      "door"
+    ],
+    "script_lines": [
+      "A porta prende tecido ao fechar?",
+      "Observe a borda da roupa perto da dobradiça. Reposicione a peça para deixar o movimento livre.",
+      "Feche sem forçar. Salve esta verificação."
+    ]
+  },
+  {
+    "id": "meias-pares",
+    "topic_id": "meias-pares",
+    "problem_id": "meias-pares",
+    "solution_id": "sock-pair-station",
+    "environment": "drawer",
+    "family": "clothes",
+    "objects": [
+      "meia"
+    ],
+    "visual_terms": [
+      "sock",
+      "socks",
+      "drawer"
+    ],
+    "script_lines": [
+      "Meia sem par ocupa a gaveta?",
+      "Reúna os pares antes de guardar. Deixe os itens ainda sem par em um espaço separado.",
+      "Revise esse espaço na próxima lavagem. Salve este método."
+    ]
+  },
+  {
+    "id": "gaveta-limite",
+    "topic_id": "gaveta-limite",
+    "problem_id": "gaveta-limite",
+    "solution_id": "drawer-clearance",
+    "environment": "drawer",
+    "family": "clothes",
+    "objects": [
+      "gaveta"
+    ],
+    "visual_terms": [
+      "drawer",
+      "clothes",
+      "fold"
+    ],
+    "script_lines": [
+      "A gaveta precisa de força para fechar?",
+      "Reduza a altura das pilhas até o curso ficar livre. Não pressione tecidos contra o móvel.",
+      "Teste a abertura antes de terminar. Salve esse limite."
+    ]
+  },
+  {
+    "id": "livros-colecao",
+    "topic_id": "livros-colecao",
+    "problem_id": "livros-colecao",
+    "solution_id": "series-order",
+    "environment": "living",
+    "family": "books",
+    "objects": [
+      "livro"
+    ],
+    "visual_terms": [
+      "book",
+      "books",
+      "shelf"
+    ],
+    "script_lines": [
+      "Uma coleção ficou espalhada pela estante?",
+      "Reúna os volumes da mesma série. Coloque as lombadas visíveis e preserve a ordem dos volumes.",
+      "Devolva cada livro ao seu grupo. Salve esta regra."
+    ]
+  },
+  {
+    "id": "livros-apoio",
+    "topic_id": "livros-apoio",
+    "problem_id": "livros-apoio",
+    "solution_id": "bookend-support",
+    "environment": "living",
+    "family": "books",
+    "objects": [
+      "livro"
+    ],
+    "visual_terms": [
+      "book",
+      "books",
+      "shelf"
+    ],
+    "script_lines": [
+      "Livros tombando na ponta da prateleira?",
+      "Um apoio adequado mantém os volumes estáveis. Confira a carga permitida pelo móvel.",
+      "Não comprima as capas. Salve este cuidado."
+    ]
+  },
+  {
+    "id": "piso-saida",
+    "topic_id": "piso-saida",
+    "problem_id": "piso-saida",
+    "solution_id": "exit-route",
+    "environment": "floor",
+    "family": "sweeping",
+    "objects": [
+      "vassoura"
+    ],
+    "visual_terms": [
+      "broom",
+      "sweeping",
+      "floor"
+    ],
+    "script_lines": [
+      "Você atravessa o piso recém-limpo?",
+      "Planeje uma rota do fundo até a saída. Mantenha uma passagem livre durante a tarefa.",
+      "Espere secar antes de circular. Salve este caminho."
+    ]
+  },
+  {
+    "id": "pa-proxima",
+    "topic_id": "pa-proxima",
+    "problem_id": "pa-proxima",
+    "solution_id": "short-sweep-distance",
+    "environment": "floor",
+    "family": "sweeping",
+    "objects": [
+      "pa"
+    ],
+    "visual_terms": [
+      "broom",
+      "dustpan",
+      "sweeping"
+    ],
+    "script_lines": [
+      "A sujeira escapa antes de chegar à pá?",
+      "Aproxime a pá do pequeno monte. Recolha aos poucos em vez de empurrar pela casa.",
+      "Termine essa área antes de avançar. Salve a sequência."
+    ]
+  },
+  {
+    "id": "superficie-rotulo",
+    "topic_id": "superficie-rotulo",
+    "problem_id": "superficie-rotulo",
+    "solution_id": "surface-compatibility",
+    "environment": "surfaces",
+    "family": "products",
+    "objects": [
+      "produto"
+    ],
+    "visual_terms": [
+      "spray",
+      "bottle",
+      "cleaning"
+    ],
+    "script_lines": [
+      "Esse produto combina com o acabamento?",
+      "Confira no rótulo as superfícies permitidas. A aparência do móvel não identifica seu material.",
+      "Consulte o fabricante quando houver dúvida. Salve a checagem."
+    ]
+  },
+  {
+    "id": "pano-particulas",
+    "topic_id": "pano-particulas",
+    "problem_id": "pano-particulas",
+    "solution_id": "particle-free-cloth",
+    "environment": "surfaces",
+    "family": "wiping",
+    "objects": [
+      "pano"
+    ],
+    "visual_terms": [
+      "cloth",
+      "wiping",
+      "countertop"
+    ],
+    "script_lines": [
+      "Um grão no pano pode riscar?",
+      "Antes de passar, observe se há partículas presas. Troque o pano sujo por um limpo e adequado.",
+      "Evite materiais ásperos. Salve a inspeção."
+    ]
+  },
+  {
+    "id": "tampas-sem-empilhar",
+    "topic_id": "tampas-sem-empilhar",
+    "problem_id": "tampas-sem-empilhar",
+    "solution_id": "visible-lid-shapes",
+    "environment": "drawer",
+    "family": "dishes",
+    "objects": [
+      "tampa"
+    ],
+    "visual_terms": [
+      "lid",
+      "container",
+      "drawer"
+    ],
+    "script_lines": [
+      "A tampa certa some na pilha?",
+      "Agrupe tampas compatíveis em um apoio estável. Deixe visível o formato que identifica cada uma.",
+      "Guarde apenas peças íntegras. Salve essa disposição."
+    ]
+  },
+  {
+    "id": "cestos-passagem",
+    "topic_id": "cestos-passagem",
+    "problem_id": "cestos-passagem",
+    "solution_id": "clear-basket-route",
+    "environment": "routine",
+    "family": "clothes",
+    "objects": [
+      "cesto"
+    ],
+    "visual_terms": [
+      "basket",
+      "laundry"
+    ],
+    "script_lines": [
+      "O cesto bloqueia sua passagem?",
+      "Reserve um apoio fora da circulação. Não deixe roupa ou alças avançando sobre o caminho.",
+      "Mantenha a rota livre. Salve este ajuste."
+    ]
+  },
+  {
+    "id": "utensilios-cortantes",
+    "topic_id": "utensilios-cortantes",
+    "problem_id": "utensilios-cortantes",
+    "solution_id": "visible-sharp-tools",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "talher"
+    ],
+    "visual_terms": [
+      "knife",
+      "cutlery",
+      "utensil"
+    ],
+    "script_lines": [
+      "Talheres cortantes escondidos na louça?",
+      "Mantenha as peças cortantes separadas e visíveis. Use apoio seguro, adequado a cada objeto.",
+      "Evite alcançar uma pilha às cegas. Salve esse cuidado."
+    ]
+  },
+  {
+    "id": "prateleira-carga",
+    "topic_id": "prateleira-carga",
+    "problem_id": "prateleira-carga",
+    "solution_id": "shelf-load-check",
+    "environment": "closet",
+    "family": "books",
+    "objects": [
+      "prateleira"
+    ],
+    "visual_terms": [
+      "shelf",
+      "shelves",
+      "cabinet"
+    ],
+    "script_lines": [
+      "A prateleira está cedendo no meio?",
+      "Retire a carga com segurança e consulte a capacidade do móvel. Não acrescente mais peso.",
+      "Siga a orientação do fabricante. Salve o sinal de alerta."
+    ]
+  }
+]

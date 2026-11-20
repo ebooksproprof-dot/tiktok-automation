@@ -224,7 +224,7 @@ class WanRecoveryBoundsTests(unittest.TestCase):
              patch.object(finish, 'download', side_effect=lambda clip, folder: clip['sha256']), \
              patch.object(finish.render, 'sha', side_effect=lambda path: str(path)), \
              patch.object(finish, 'motion', side_effect=moving), \
-             patch.object(finish, 'fingerprint', return_value={}), \
+             patch.object(finish, 'fingerprint', side_effect=lambda path, source: {'source_id':source, 'sha256':str(path), 'dhash':['0'*16 if str(path).startswith('a') else 'f'*16]*5}), \
              patch.object(finish.render, 'synthesize') as speech:
             with self.assertRaisesRegex(ValueError, 'FROZEN'):
                 finish.compose({'clips': q['licensed_sources']}, tmp, proof,

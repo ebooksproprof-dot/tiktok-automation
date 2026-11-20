@@ -98,9 +98,10 @@ class PolicyTests(unittest.TestCase):
         line = item('b', 'clothesline, laundry', 'Clothes hanging on a clothesline.')
         choices = production.scripts([washer, line], {'posts': []}, {'posts': {}})
         self.assertTrue(choices)
-        self.assertTrue(all('secagem' in idea[2][-2] for idea in choices))
+        self.assertTrue(any('bolsos' in ' '.join(idea[2]) for idea in choices))
         only_line = production.scripts([line], {'posts': []}, {'posts': {}})
-        self.assertTrue(all(idea[2][0] == 'Roupa pronta para secar?' for idea in only_line))
+        self.assertTrue(only_line)
+        self.assertTrue(all(idea[0] == 'tip12-varal-espaco' for idea in only_line))
         self.assertTrue(all('máquina' not in ' '.join(idea[2]) for idea in only_line))
 
     def test_pixabay_resolution_change_does_not_create_a_new_original_source(self):
@@ -283,7 +284,7 @@ class PolicyTests(unittest.TestCase):
             self.assertEqual(load.call_count, 1)
             self.assertEqual(load.call_args.args[1], 'kokoro-female')
 
-    def test_real_primary_synthesis_failure_restarts_whole_narration_with_piper(self):
+    def test_real_primary_synthesis_failure_holds_instead_of_changing_requested_voice(self):
         primary, fallback = Mock(), Mock()
         primary.name, fallback.name = 'kokoro-pf_dora', 'piper-faber'
         primary.speak.side_effect = RuntimeError('CPU runtime failed')
@@ -292,11 +293,11 @@ class PolicyTests(unittest.TestCase):
             return 'video.mp4', {'voice': voice.name}
         with patch('narration.load_engine', side_effect=[primary, fallback]) as load, \
              patch.object(production.render, 'render', side_effect=render) as renderer:
-            _, quality = production.render_with_voice_fallback(('idea', [], []), 'post')
-            self.assertEqual(quality['voice'], 'piper-faber')
-            self.assertIn('PRIMARY_SYNTHESIS', quality['voice_fallback_reason'])
-            self.assertEqual(renderer.call_count, 2)
-            self.assertEqual(load.call_args.args[1], 'piper')
+            with self.assertRaisesRegex(ValueError, 'REQUESTED_PF_DORA_UNAVAILABLE'):
+                production.render_with_voice_fallback(('idea', [], []), 'post')
+            self.assertEqual(renderer.call_count, 1)
+            self.assertEqual(load.call_count, 1)
+
 
 
 if __name__ == '__main__':

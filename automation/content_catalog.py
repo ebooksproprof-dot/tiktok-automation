@@ -80,10 +80,9 @@ def near_duplicate(left, right):
 
 
 def novel_scripts(ideas, queue, state, exclude_id=None):
-    historical = [p for p in queue.get('posts', []) if exclude_id is None or p.get('id') != exclude_id]
-    historical += [p for key, p in state.get('posts', {}).items() if key != exclude_id]
-    return [i for i in ideas if not any(near_duplicate(i[2], p['script_lines'])
-            for p in historical if p.get('script_lines'))]
+    from editorial_policy import reason
+    return [i for i in ideas if not reason({'concept': i[0], 'script_lines': i[2]},
+                                           queue, state, exclude_id)]
 
 
 def validate_ids(ideas):

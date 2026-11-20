@@ -111,6 +111,11 @@ jobs:
             exit 2
           fi
 
+      - name: Record specific operational incidents
+        if: always() && github.event_name != 'push'
+        continue-on-error: true
+        run: python automation/operational_health.py
+
       - name: Refresh read-only approval preview
         if: always()
         continue-on-error: true # Preserve state even if preview generation fails.
@@ -130,7 +135,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/state.json
-          for path in public/review44.html public/review44.json; do
+          for path in automation/operational_health.json public/review44.html public/review44.json; do
             if test -f "$path"; then git add "$path"; fi
           done
           if git diff --cached --quiet; then

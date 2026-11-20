@@ -109,8 +109,15 @@ def discovery_bank():
     return result
 
 
-def discovery_topics(now, cache):
+def discovery_topics(now, cache, editorial_ids=None):
     bank = discovery_bank()
+    if editorial_ids is not None:
+        from editorial_topics import BY_ID
+        desired = {w for key in editorial_ids for w in BY_ID[key]['visual_terms']}
+        # Do not spend bounded API calls on exhausted editorial families.
+        relevant = [topic for topic in bank if set(topic[1].split()) & desired
+                    and not set(topic[1].split()) & {'handwashing','hands','hand'}]
+        bank = relevant or bank
     rotation = (int(now//43200)*QUERIES_PER_PROVIDER) % len(bank)
     rotated = bank[rotation:]+bank[:rotation]
     def last_search(topic):
@@ -411,7 +418,15 @@ def run():
         providers['pixabay'].known_urls.update(record['source_id'] for entry in previous
             for record in entry.get('visual_sources', []) if record.get('source_id'))
     # At most four queries/provider and four downloads total per run.
-    selected_topics = discovery_topics(now, cache) if automatic else daily_topics(now)
+    if automatic:
+        from editorial_topics import ideas
+        editorial_ids = [idea[0][6:] for idea in ideas(read_json(ROOT/'queue.json', {}), read_json(ROOT/'state.json', {}))]
+        if not editorial_ids:
+            print('NO_NOVEL_EDITORIAL_IDEAS; NO_PROVIDER_QUOTA_SPENT')
+            return
+        selected_topics = discovery_topics(now, cache, editorial_ids)
+    else:
+        selected_topics = daily_topics(now)
     errors = []
     diagnostics = []
     try:

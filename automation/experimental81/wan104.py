@@ -150,12 +150,15 @@ def stores():
             GitHubStore(token, branch='feature/ai-video-hybrid-30s', path=LEDGER, validate=False))
 
 
-def request_spec(profile, episode, slot):
+def request_spec(profile, episode, slot, editorial_id=None):
     # The episode changes the actual seed and an explicitly described scene.
     # Source and final perceptual comparisons still reject similar results.
     surfaces = ['light oak', 'warm walnut', 'pale beech', 'white painted wood']
     prompt = SCENES[slot]+' Setting detail: '+surfaces[(episode-1) % len(surfaces)]+'.'
-    return {'space': profile['space'], 'space_revision': profile['space_revision'],
+    if editorial_id:
+        from editorial_topics import BY_ID, prompt as scene_prompt
+        prompt = scene_prompt(BY_ID[editorial_id], slot)
+    return {'editorial_id': editorial_id, 'space': profile['space'], 'space_revision': profile['space_revision'],
             'model': profile['model'], 'model_revision': profile['model_revision'],
             'prompt': prompt, 'reference_kind': 'authored_text_only',
             'height': profile['height'], 'width': profile['width'],
@@ -227,11 +230,76 @@ def next_scene(inventory, profile):
                    for c in inventory.get('rejected_clips', []))
     if attempts >= 2:
         raise ValueError('WAN_SCENE_REPLACEMENT_LIMIT_REACHED')
-    spec = request_spec(profile, inventory['episode'], missing)
+    spec = request_spec(profile, inventory['episode'], missing, inventory.get('editorial_id'))
     if attempts:
         spec.update(scene_attempt=attempts, seed=spec['seed']+100000*attempts,
                     prompt=spec['prompt']+' Clear natural object textures, fixed shelving and a wider camera view.')
     return missing, spec
+
+def plan_episode(inventory, queue, state):
+    from editorial_topics import ideas, BY_ID
+    from semantic_review import words
+    if inventory.get('editorial_id'):
+        candidate = BY_ID[inventory['editorial_id']]
+        from editorial_policy import reason
+        if not reason({'concept': 'tip12-'+candidate['id'], 'script_lines': candidate['script_lines']}, queue, state):
+            return False
+    elif script_choices(inventory['episode'], queue, state):
+        return False  # Compatible first/legacy episode remains usable.
+    available = ideas(queue, state)
+    if not available:
+        raise ValueError('NO_NOVEL_EDITORIAL_PLAN')
+    bank = inventory.setdefault('scene_bank', [])
+    known = {c['sha256'] for c in bank}
+    for clip in inventory['clips']:
+        if clip['sha256'] not in known:
+            bank.append(dict(clip)); known.add(clip['sha256'])
+    # Recover only a demonstrated vocabulary false positive, retaining the
+    # rejected record and requiring fresh tip-specific review before use.
+    from semantic_review import assess_generated_organization
+    for clip in inventory.get('rejected_clips', []):
+        review = clip.get('rejected_review', {})
+        if (clip['sha256'] not in known and clip.get('rejection_reason') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED'
+                and review.get('decoder_pass') is True and review.get('freeze_intervals_over_1s') == 0
+                and assess_generated_organization(clip['slot'], review.get('captions', []))):
+            bank.append(dict(clip, recovered_for_new_review=True)); known.add(clip['sha256'])
+    used = {c.get('sha256') for p in queue.get('posts', []) for c in p.get('quality', {}).get('visual_sources', [])}
+    from visual_library import check_sources, history
+    previous = history(queue, state)
+    archive = ROOT/'visual_history.json'
+    if archive.exists(): previous.append(json.loads(archive.read_text()))
+    usable = []
+    for c in bank:
+        if c['sha256'] in used or c.get('consumed_by'): continue
+        if c.get('visual_source'):
+            try: check_sources([c['visual_source']], previous)
+            except ValueError:
+                c['visual_hold'] = 'VISUALLY_SIMILAR_TO_HISTORY'
+                continue
+        usable.append(c)
+    # Reuse an unused source only for a compatible visual subject. Current CPU
+    # review against the new tip is still mandatory; prompt words aren't approval.
+    def matches(tip, clip):
+        # Require the specific subject; shared words like shelf alone cannot
+        # turn pantry/towel scenes into a new generic cupboard episode.
+        cues = set(tip['visual_terms'])-{'shelf','shelves','cabinet','container','clothes','laundry','kitchen'}
+        return bool(cues & words(clip.get('prompt', '')))
+    chosen = max(available, key=lambda idea: sum(matches(BY_ID[idea[0][6:]], c) for c in usable))
+    tip = BY_ID[chosen[0][6:]]
+    clips = []
+    for c in usable:
+        if not matches(tip, c): continue
+        if c.get('visual_source'):
+            try: check_sources([c['visual_source']], [{'visual_sources':[x['visual_source'] for x in clips if x.get('visual_source')]}])
+            except ValueError: continue
+        clips.append(c)
+        if len(clips)==3: break
+    inventory['clips'] = [dict(c, original_slot=c.get('original_slot', c['slot']),
+                               slot=n, editorial_id=tip['id']) for n,c in enumerate(clips)]
+    inventory.update(editorial_id=tip['id'], script_lines=tip['script_lines'],
+                     status='READY_FOR_REVIEW' if len(clips)==3 else 'COLLECTING')
+    return True
+
 
 def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     profile = json.loads(PROFILE.read_text())
@@ -252,9 +320,12 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
         revision = inventory_store.save(inventory, revision)
     if any(r['status'] in ('INTENT_RECORDED_NO_RETRY', 'UNKNOWN_NO_RETRY') for r in inventory['requests'].values()):
         raise ValueError('UNCERTAIN_WAN_GENERATION_REQUIRES_RECONCILIATION')
+    if not trial:
+        if plan_episode(inventory, queue, state):
+            revision = inventory_store.save(inventory, revision)
     if len(inventory['clips']) >= 3:
         return {'status': 'READY_PRESERVED_NO_GPU_CALL', 'clips': len(inventory['clips'])}
-    if not trial and not script_choices(inventory['episode'], queue, state):
+    if not trial and not inventory.get('editorial_id') and not script_choices(inventory['episode'], queue, state):
         return {'status': 'SCRIPT_BANK_EXHAUSTED_CONVENTIONAL_FALLBACK_REQUIRED', 'new_gpu_calls': 0, 'publicly_verified': False}
     profile_check(profile)
     tier, token = legacy.free_hf_identity()
@@ -281,6 +352,12 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
             if planned is None:
                 break
             slot, spec = planned
+            current_budget, _ = budget_store.load()
+            waiting = quota_wait(current_budget, spec, tier)
+            if waiting:
+                inventory['last_wait'] = dict(waiting, at=now().isoformat())
+                inventory_store.save(inventory, revision)
+                return waiting
             estimate = profile['quota_estimate_per_clip_seconds']
             digest, revision = reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimate)
             entry = inventory['requests'][digest]
@@ -303,6 +380,7 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
                 clip = {'slot': slot, 'episode': inventory['episode'], 'sha256': media['sha256'],
                     'url': url, 'media': media, 'model': profile['model'], 'model_revision': profile['model_revision'],
                     'space': profile['space'], 'space_revision': profile['space_revision'], 'prompt': spec['prompt'],
+                    'editorial_id': inventory.get('editorial_id'),
                     'reference_kind': 'authored_text_only', 'generation_evidence': {'request_sha256': digest,
                     'provider_job_id': entry['provider_job_id'], 'gpu_seconds_consumed': None,
                     'estimated_reserved_seconds': estimate, 'tier': tier, 'paid_endpoint_used': False},
@@ -350,6 +428,8 @@ if __name__ == '__main__':
                 out.write('collection_status='+result['status']+'\n')
                 out.write('ready='+str(result['status'] in ('READY_FOR_REVIEW', 'READY_PRESERVED_NO_GPU_CALL')).lower()+'\n')
     except Exception as exc:
+        from operational_errors import evidence
+        print('WAN_COLLECTION_CAUSE='+json.dumps(evidence(exc, 'wan_collection')), flush=True)
         print(json.dumps({'status': 'WAN104_BLOCKED', 'error_type': type(exc).__name__,
                           'reason': str(exc) if isinstance(exc, (ValueError, daily_budget.QuotaError)) else 'SAFE_ERROR_BODY_OMITTED'}))
         raise SystemExit(2)

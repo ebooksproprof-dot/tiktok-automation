@@ -1,0 +1,735 @@
+{
+  "policy": {
+    "version": 12,
+    "days": 14,
+    "last_publications": 30,
+    "instruction_overlap": 0.84,
+    "semantic_jaccard": 0.72,
+    "window_operator": "union",
+    "cost_brl": 0
+  },
+  "entries": [
+    {
+      "id": "casasem-2026-10-18-1",
+      "scheduled_at": null,
+      "editorial": {
+        "topic_id": "piso-rota-saida",
+        "problem_id": "piso-rota-saida",
+        "solution_id": "piso-rota-saida",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "voce pisa onde acabou de limpar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "exit-route"
+        ]
+      },
+      "script_sha256": "3ea9d838527d30a62463b376fc36e50ed9141e59ff592c63d617c58f3baaab6c"
+    },
+    {
+      "id": "casasem-2026-10-18-2",
+      "scheduled_at": null,
+      "editorial": {
+        "topic_id": "torneira-final-seco",
+        "problem_id": "torneira-final-seco",
+        "solution_id": "torneira-final-seco",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "terminou de limpar a torneira",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "abf09cfb7be99729d49c700c8f92ff0e66cbb25000982fd039e7d2e5a982a07b"
+    },
+    {
+      "id": "casasem-2026-10-19-1",
+      "scheduled_at": "2026-10-19T13:00:00+00:00",
+      "editorial": {
+        "topic_id": "espelho-pano-sem-fiapos",
+        "problem_id": "espelho-pano-sem-fiapos",
+        "solution_id": "espelho-pano-sem-fiapos",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "seu pano deixa fiapos no espelho",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "e8cabb9b7e52e0f1ca85614f59d8e80b115fae1dea1143399a1d58439e3795ab"
+    },
+    {
+      "id": "casasem-2026-10-19-2",
+      "scheduled_at": "2026-10-19T21:00:00+00:00",
+      "editorial": {
+        "topic_id": "retirar-tapetes",
+        "problem_id": "retirar-tapetes",
+        "solution_id": "retirar-tapetes",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai aspirar o tapete",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "fd62bee93c492abfc74a882b3e533b225cf4f5826af909e7d4dd4a4565c4fb63"
+    },
+    {
+      "id": "casasem-2026-10-20-1",
+      "scheduled_at": "2026-10-20T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "bancada-tirar-objetos",
+        "problem_id": "bancada-tirar-objetos",
+        "solution_id": "bancada-tirar-objetos",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "voce limpa so ao redor dos objetos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "270c7a7f1f2c6661a13be090ebbdb61dd7770ee244570bc478467b2257847b30"
+    },
+    {
+      "id": "casasem-2026-10-20-2",
+      "scheduled_at": "2026-10-20T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "livros-por-assunto",
+        "problem_id": "livros-por-assunto",
+        "solution_id": "livros-por-assunto",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "voce demora para encontrar um livro",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "627594e800af347ccb37c1ba53b1290450183bf8a18cfa8b9d9b25d55ef6b2f8"
+    },
+    {
+      "id": "casasem-2026-10-21-1",
+      "scheduled_at": "2026-10-21T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "pia-acesso-facil",
+        "problem_id": "pia-acesso-facil",
+        "solution_id": "pia-acesso-facil",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "a pia precisa estar facil de usar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "1d3a4b4b34f542f5ea4fd36c6a9323814ae178955a619d50695f414289f835cc"
+    },
+    {
+      "id": "casasem-2026-10-21-2",
+      "scheduled_at": "2026-10-21T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "louca-por-etapas",
+        "problem_id": "louca-por-etapas",
+        "solution_id": "louca-por-etapas",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "a louca acumulou de novo",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "ea4d72278c8351933d1a20fef1ae06b1bdaa0fd9b26be57ce6039a03ba734a0b"
+    },
+    {
+      "id": "casasem-2026-10-22-1",
+      "scheduled_at": "2026-10-22T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "cantinho-de-leitura",
+        "problem_id": "cantinho-de-leitura",
+        "solution_id": "cantinho-de-leitura",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "seu canto de leitura virou deposito",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "5573ad19b5fa8e8d020549925ec39e9109b4651984b083cf0303d6866ae0da20"
+    },
+    {
+      "id": "casasem-2026-10-22-2",
+      "scheduled_at": {
+        "dateTime": "2026-10-29T18:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "editorial": {
+        "topic_id": "pontos-de-toque",
+        "problem_id": "pontos-de-toque",
+        "solution_id": "pontos-de-toque",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "esqueceu os pontos de toque",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "surface-compatibility"
+        ]
+      },
+      "script_sha256": "90e9376a73881753f82c5fd83911c5b08624e2023b086affda5705e181b91535"
+    },
+    {
+      "id": "casasem-2026-10-23-1",
+      "scheduled_at": {
+        "dateTime": "2026-10-29T10:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "editorial": {
+        "topic_id": "gaveta-uma-categoria",
+        "problem_id": "gaveta-uma-categoria",
+        "solution_id": "gaveta-uma-categoria",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sua gaveta mistura tudo",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "06ce14a19056f31d6c996a1fd79c44feafa80ecdb93a00fef54286add64a7d9a"
+    },
+    {
+      "id": "casasem-2026-10-23-2",
+      "scheduled_at": null,
+      "editorial": {
+        "topic_id": "secador-visivel",
+        "problem_id": "secador-visivel",
+        "solution_id": "secador-visivel",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "aqui o secador aparece em uso",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "31015ddbbb406a3d65d37bf5e1b20ab72383c045ede0d682c7f59534ea817090"
+    },
+    {
+      "id": "casasem-2026-10-24-1",
+      "scheduled_at": "2026-10-30T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sua proxima cuba cabe na pia",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "5cf434620cd7c4a090d36c89e6f98c7a373621c1d0dd6d32b54b7178341d9b2b"
+    },
+    {
+      "id": "casasem-2026-10-24-2",
+      "scheduled_at": {
+        "dateTime": "2026-10-30T18:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "editorial": {
+        "topic_id": "livros-escolha-consciente",
+        "problem_id": "livros-escolha-consciente",
+        "solution_id": "livros-escolha-consciente",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai levar outro livro para casa",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "205ca66ca4daa5ec9b8c0a94b85de6071b2bc924fe2e86ca9841e5352c37894a"
+    },
+    {
+      "id": "casasem-2026-10-25-1",
+      "scheduled_at": "2026-10-31T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "tecidos-secar-antes-guardar",
+        "problem_id": "tecidos-secar-antes-guardar",
+        "solution_id": "tecidos-secar-antes-guardar",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "voce guarda o tecido ainda umido",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "9782a65cbaed36b9cdb410c916cc7cdb613451bcfe86c0f4f95187926af2e316"
+    },
+    {
+      "id": "casasem-2026-10-25-2",
+      "scheduled_at": null,
+      "editorial": {
+        "topic_id": "pia-secar-respingos",
+        "problem_id": "pia-secar-respingos",
+        "solution_id": "pia-secar-respingos",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "terminou de usar a pia",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "4ba4ca84a93eeffca37c3bd27e01ba281c667f98d84c815330596f8d6e20cd8d"
+    },
+    {
+      "id": "casasem-2026-10-26-1",
+      "scheduled_at": null,
+      "editorial": {
+        "topic_id": "mesa-caneca-afastada",
+        "problem_id": "mesa-caneca-afastada",
+        "solution_id": "mesa-caneca-afastada",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "bebida tao perto do celular",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "8205e4a24b3b4fba91c0a7f642bb527c241d89cba94e7e59b2e8f96e27b65b52"
+    },
+    {
+      "id": "casasem-2026-10-28-1",
+      "scheduled_at": {
+        "dateTime": "2026-10-28T18:00:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "editorial": {
+        "topic_id": "roupas-caixa-guardar",
+        "problem_id": "roupas-caixa-guardar",
+        "solution_id": "roupas-caixa-guardar",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai guardar roupas em uma caixa",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "a0b1cf74ac0d4c379bc3a41d9922c1c893c439529edf9d79ae749939ed3182ae"
+    },
+    {
+      "id": "casasem-2026-11-06-1",
+      "scheduled_at": "2026-11-06T01:46:29-03:00",
+      "editorial": {
+        "topic_id": "vassoura-pa-residuos-91",
+        "problem_id": "vassoura-pa-residuos-91",
+        "solution_id": "vassoura-pa-residuos-91",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sujeira espalhada no piso",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "27318ec5e82193983e22566cb4481eab8737602f8d460792075469c6f67aa5ec"
+    },
+    {
+      "id": "casasem-2026-11-07-1",
+      "scheduled_at": "2026-11-07T02:03:51-03:00",
+      "editorial": {
+        "topic_id": "iron",
+        "problem_id": "iron",
+        "solution_id": "iron",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai passar roupa",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "fabric-temperature-sort"
+        ]
+      },
+      "script_sha256": "81170f204aba27a629d829ce7303dded586e6a989609d306efa40f22c2ca6950"
+    },
+    {
+      "id": "casasem-2026-11-07-2",
+      "scheduled_at": "2026-11-07T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "1011b93d533efec766634a585a8df20c4ba3f9fd7901abaef99ea19a4bd3cf93"
+    },
+    {
+      "id": "casasem-2026-11-08-1",
+      "scheduled_at": "2026-11-08T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "laundry",
+        "problem_id": "laundry",
+        "solution_id": "laundry",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai colocar roupa para lavar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "original-product-container",
+          "empty-pocket-check"
+        ]
+      },
+      "script_sha256": "2f888a5ddf49edc01ea9e8d4137580680506b27676d87b33bdc8ace8b49d974d"
+    },
+    {
+      "id": "casasem-2026-11-07-3",
+      "scheduled_at": "2026-11-07T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "6fd96a6728958180677ac8ccf8660bb723cecfb2de8b947eb73ae569b3de0d7d"
+    },
+    {
+      "id": "casasem-2026-11-08-2",
+      "scheduled_at": "2026-11-08T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "9443d6e7322b9757fa2640ae02e18365e2628a77c54dc68856b387e89a6208b3"
+    },
+    {
+      "id": "casasem-2026-11-07-wan104",
+      "scheduled_at": "2026-11-07T10:48:30-03:00",
+      "editorial": {
+        "topic_id": "legacy-mixed-cupboard",
+        "problem_id": "legacy-mixed-cupboard",
+        "solution_id": "legacy-mixed-cupboard",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "armario sem espaco separe os itens por categoria antes de organizar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "25c0adec353877aa233dcd95fa19dd0aa63f038226504407558cdf5b011c3478"
+    },
+    {
+      "id": "casasem-2026-11-09-1",
+      "scheduled_at": "2026-11-09T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "88edda41563ed7b591c00296901ffe7cec1871b35dc09391a253d1d423b8b3d1"
+    },
+    {
+      "id": "casasem-2026-11-09-2",
+      "scheduled_at": "2026-11-09T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "05236ca7033a0584aea819c47e63e0b356967768b4eeca4aff1361ea4f4370c5"
+    },
+    {
+      "id": "casasem-2026-11-10-1",
+      "scheduled_at": "2026-11-10T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "b730f5d9b926ef7a134bca2c2fcacf1430d7a959b5a62b639bc2d7e875b4c7b5"
+    },
+    {
+      "id": "casasem-2026-11-10-2",
+      "scheduled_at": "2026-11-10T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "dishes",
+        "problem_id": "dishes",
+        "solution_id": "dishes",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "a louca acumulou",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "solid-waste-strainer",
+          "visible-sharp-tools"
+        ]
+      },
+      "script_sha256": "769a8119292d1968951488650d64a5b805740a84ac3529f9e8a2187122f865ed"
+    },
+    {
+      "id": "casasem-2026-11-11-1",
+      "scheduled_at": "2026-11-11T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "laundry",
+        "problem_id": "laundry",
+        "solution_id": "laundry",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai colocar roupa para lavar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "99cd0195f71caab893be62a7c5e64ebfe112bf96333261e43370bc764b56df64"
+    },
+    {
+      "id": "casasem-2026-11-11-2",
+      "scheduled_at": "2026-11-11T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "12b8686d09fd461f452f67f181bd4deeda1cca907b1d05db5c2fe8cedf845763"
+    },
+    {
+      "id": "casasem-2026-11-12-1",
+      "scheduled_at": "2026-11-12T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "ea0387d66f88bc158d96db173decdc16eb1727cbef1aac7fcf32a58034c0493b"
+    },
+    {
+      "id": "casasem-2026-11-12-2",
+      "scheduled_at": "2026-11-12T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "274056a3886cabf39f24fad8c6eabfae04313054ebd17a88c0d4bfb204796591"
+    },
+    {
+      "id": "casasem-2026-11-13-1",
+      "scheduled_at": "2026-11-13T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "9e96e87d1c514cb30196aca751966de6172a444c900b119f96bd163ffe19a3be"
+    },
+    {
+      "id": "casasem-2026-11-13-2",
+      "scheduled_at": "2026-11-13T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "5cb2b0220ec67a39251c0e0c67ed6b184c43b7d0af908e80631f44d6dbe035b8"
+    },
+    {
+      "id": "casasem-2026-11-17-1",
+      "scheduled_at": "2026-11-17T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "legacy-mixed-cupboard",
+        "problem_id": "legacy-mixed-cupboard",
+        "solution_id": "legacy-mixed-cupboard",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "armario sem espaco separe os itens por categoria antes de organizar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "2a83e49716e1e82190cc9d0c3c97aca096cbff25da721aaad1525e5de178e11f"
+    },
+    {
+      "id": "casasem-2026-11-17-2",
+      "scheduled_at": "2026-11-17T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "legacy-mixed-cupboard",
+        "problem_id": "legacy-mixed-cupboard",
+        "solution_id": "legacy-mixed-cupboard",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "armario sem espaco separe os itens por categoria antes de organizar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "d5f790bb665a9dd88b32535d70e6241bba27acf8d39c65d7877e97a3be311066"
+    },
+    {
+      "id": "casasem-2026-11-18-1",
+      "scheduled_at": "2026-11-18T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "acbec0d60aab606db9fcf0c2746dcb5a2c8769da8ed12c121c07a36a98c71327"
+    },
+    {
+      "id": "casasem-2026-11-18-2",
+      "scheduled_at": "2026-11-18T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "handwashing",
+        "problem_id": "handwashing",
+        "solution_id": "handwashing",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai lavar as maos",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "7ffc6e4ced730fbfaed2fa0f7a790505406235e2dc2f756641af34614fbae6c5"
+    },
+    {
+      "id": "casasem-2026-11-19-1",
+      "scheduled_at": "2026-11-19T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "legacy-mixed-cupboard",
+        "problem_id": "legacy-mixed-cupboard",
+        "solution_id": "legacy-mixed-cupboard",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sua prateleira vive cheia organize uma categoria pequena antes de comecar outra",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "08a4652a82545b165beed0ffeeceeaa1322ef154ebb9d066e662a6fd29960be6"
+    },
+    {
+      "id": "casasem-2026-11-19-2",
+      "scheduled_at": "2026-11-19T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "books",
+        "problem_id": "books",
+        "solution_id": "books",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sua estante esta confusa",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "9c18720e60f9913e795d518ad0945dd03ef3553a6bdf345d3747cba4924a5a7f"
+    },
+    {
+      "id": "casasem-2026-11-20-1",
+      "scheduled_at": "2026-11-20T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "legacy-mixed-cupboard",
+        "problem_id": "legacy-mixed-cupboard",
+        "solution_id": "legacy-mixed-cupboard",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai mexer no armario confira a estabilidade da prateleira antes de organizar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": []
+      },
+      "script_sha256": "c3afb98ac06d34e63ac5adead2fa26b6e4e6daf0c68e410c9d468fd9f53a3b59"
+    },
+    {
+      "id": "casasem-2026-11-20-2",
+      "scheduled_at": "2026-11-20T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "drying",
+        "problem_id": "drying",
+        "solution_id": "drying",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "roupa pronta para secar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "air-gap-drying"
+        ]
+      },
+      "script_sha256": "a2c486bd2b63f63380cd4fc45bbf9e6365935a955f0121a954f7eff4a735e950"
+    },
+    {
+      "id": "casasem-2026-11-21-1",
+      "scheduled_at": "2026-11-21T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "folding",
+        "problem_id": "folding",
+        "solution_id": "folding",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "roupas esperando para guardar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "drawer-clearance"
+        ]
+      },
+      "script_sha256": "c91052e24a778ee55eb329944b00f9ec54e4731ec5b3582c9103a81d8312e9b3"
+    },
+    {
+      "id": "casasem-2026-11-21-2",
+      "scheduled_at": "2026-11-21T18:00:00-03:00",
+      "editorial": {
+        "topic_id": "laundry",
+        "problem_id": "laundry",
+        "solution_id": "laundry",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "vai colocar roupa para lavar",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "original-product-container"
+        ]
+      },
+      "script_sha256": "845fa5bb3cca25d05a4b74148776234643d7833cf3fa0fe0714f68ba78d6cd86"
+    },
+    {
+      "id": "casasem-2026-11-22-1",
+      "scheduled_at": "2026-11-22T10:00:00-03:00",
+      "editorial": {
+        "topic_id": "books",
+        "problem_id": "books",
+        "solution_id": "books",
+        "narrative_id": "hook-problem-demonstration-solution-cta",
+        "hook_id": "sua estante esta confusa",
+        "environment": "unknown",
+        "objects": [],
+        "instruction_ids": [
+          "series-order"
+        ]
+      },
+      "script_sha256": "ad496efe6feb37d5253b4c7b52d4a3176191380fcfe069718288b8f606eda5d3"
+    }
+  ]
+}

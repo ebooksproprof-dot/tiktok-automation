@@ -1,0 +1,9 @@
+{
+  "version": 12,
+  "days": 14,
+  "last_publications": 30,
+  "instruction_overlap": 0.84,
+  "semantic_jaccard": 0.72,
+  "window_operator": "union",
+  "cost_brl": 0
+}
