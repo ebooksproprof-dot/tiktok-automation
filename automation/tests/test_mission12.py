@@ -192,3 +192,18 @@ class Lease12(unittest.TestCase):
         import cloud_lease
         store=unittest.mock.Mock();store.load.return_value=({'owner':'other'},'r')
         cloud_lease.release(store,'mine');store.save.assert_not_called()
+
+class FileCas12(unittest.TestCase):
+    def test_other_file_branch_race_retries_only_unchanged_cas(self):
+        from video_stock import GitHubStore, Conflict
+        store=GitHubStore('mock',validate=False)
+        with patch.object(store,'request',side_effect=[Conflict('branch race'),{'content':{'sha':'new'}}]) as req, patch.object(store,'load',return_value=({},'same')):
+            self.assertEqual(store.save({},'same'),'new')
+        self.assertEqual(req.call_count,2)
+
+    def test_changed_file_is_never_overwritten(self):
+        from video_stock import GitHubStore, Conflict
+        store=GitHubStore('mock',validate=False)
+        with patch.object(store,'request',side_effect=Conflict('stale')) as req, patch.object(store,'load',return_value=({},'changed')):
+            with self.assertRaises(Conflict):store.save({},'same')
+        self.assertEqual(req.call_count,1)

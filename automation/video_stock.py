@@ -166,7 +166,16 @@ class GitHubStore:
                        (json.dumps(state, ensure_ascii=False, indent=2) + '\n').encode()).decode()}
         if expected_revision:
             payload['sha'] = expected_revision
-        result = self.request('PUT', payload)
+        for attempt in range(3):
+            try:
+                result = self.request('PUT', payload)
+                break
+            except Conflict:
+                # A different file may have advanced the branch during PUT.
+                # Retry only after proving this exact file's CAS is unchanged.
+                _, current = self.load()
+                if current != expected_revision or attempt == 2:
+                    raise
         revision = result.get('content', {}).get('sha')
         if not revision:
             raise RuntimeError('Inventory checkpoint unconfirmed; do not publish')
