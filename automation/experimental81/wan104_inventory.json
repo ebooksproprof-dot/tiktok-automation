@@ -872,7 +872,7 @@
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-7f841fdf6b7f1f8d1a1ffc13.mp4"
     },
     "2454bfda070251dc4e35a12f17d608e20e6f2ba14f7b6d29e20a7a4b550511c9": {
-      "status": "INTENT_RECORDED_NO_RETRY",
+      "status": "GENERATED_AWAITING_STORAGE",
       "at": "2026-11-20T23:42:45.196015+00:00",
       "spec": {
         "editorial_id": "bancada-area-preparo",
@@ -891,7 +891,17 @@
         "seed": 104608,
         "randomize_seed": false
       },
-      "provider_job_id": "e9d62bcab1d947a18a67d4e6dd7204dc"
+      "provider_job_id": "e9d62bcab1d947a18a67d4e6dd7204dc",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "f1e372172feedff3ed98cd48f08d63e780b499c082ea32722516a80de5ea116b",
+        "bytes": 330138
+      }
     }
   },
   "outputs": [
