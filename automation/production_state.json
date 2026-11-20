@@ -4765,7 +4765,7 @@
         "author": "EjazAhmed47",
         "commercial_use": true,
         "reviewed_at": "2026-11-19T21:32:57.959316+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "b84885a8760dbd92d56a23d9f76bfa1119219509ea1ec4090ff6384ceb453866",
         "license_policy": {
@@ -5874,7 +5874,7 @@
       "rejected_post_id": "casasem-2026-11-18-2"
     },
     "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4": {
-      "status": "RETRYABLE",
+      "status": "QUEUED",
       "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
       "license": {
         "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
@@ -5934,11 +5934,15 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "ValueError",
-      "error_stage": "release_and_queue",
-      "http_status": null,
-      "retry_after": 1795038875.372858
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "release_and_queue",
+          "http_status": null,
+          "retry_after": 1795038875.372858
+        }
+      ]
     },
     "https://cdn.pixabay.com/video/2020/04/08/35453-407130965_large.mp4": {
       "status": "REJECTED",
@@ -6311,7 +6315,7 @@
       }
     },
     "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4": {
-      "status": "RETRYABLE",
+      "status": "QUEUED",
       "source_sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
       "license": {
         "source_sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
@@ -6378,13 +6382,20 @@
           "error_stage": "release_and_queue",
           "http_status": null,
           "retry_after": 1795038818.4828122
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795137788.858644
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795137788.858644
+      "retry_after": 1795210180.4292705
     },
     "https://cdn.pixabay.com/video/2022/08/06/126966-737736581_medium.mp4": {
       "status": "RETRYABLE",
@@ -7221,12 +7232,14 @@
       "post_id": "casasem-2026-11-20-1",
       "sha256": "b1ea0f908e41de8f20874a8b95e5411d6a657d21f70d5bdf5830ea3e73e8a681",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-1-b1ea0f908e41de8f.mp4",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "origin": "licensed_wan104",
       "scheduled_at": "2026-11-20T10:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "provider_id": "6aff1cefd74f4ff9ae952c3a",
-      "public_urls": []
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710238571839622408"
+      ]
     },
     "casasem-2026-11-20-2": {
       "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
@@ -7262,13 +7275,27 @@
       "provider_id": "6aff8057b3e65522f837f4f3",
       "publicly_verified": false,
       "public_urls": []
+    },
+    "casasem-2026-11-22-1": {
+      "sha256": "3e7253c462ae826e85538ccf53171adc986d085ffb155a19224cd16770f8ab7b",
+      "status": "QUEUED",
+      "scheduled_at": "2026-11-22T10:00:00-03:00",
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+        "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4"
+      ]
     }
   },
   "last_run": {
-    "status": "STOCK_TARGET_MET",
-    "ready": 4,
-    "held_uncertain": 0,
-    "created": 0
+    "status": "QUEUED",
+    "created": 1,
+    "ready_before": 3,
+    "ready_after": 4,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
   },
   "refill_events": {
     "casasem-2026-11-07-1": {

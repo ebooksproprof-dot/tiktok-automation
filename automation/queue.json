@@ -8264,6 +8264,237 @@
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
       "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+    },
+    {
+      "id": "casasem-2026-11-22-1",
+      "concept": "auto-books-5a28db08bb29",
+      "title": "Sua estante está confusa? Separe os volumes de uma coleção antes de organizar. Devolva cada título ao grupo correspondente depois do uso. Evite comprimir os livros contra o móvel. Deixe as leituras atuais fáceis de alcançar. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — klimkin; https://pixabay.com/videos/id-1311/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — AlexKopeykin; https://pixabay.com/videos/id-38916/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+      "approved": true,
+      "consented_at": "2026-11-20T15:30:26.243271+00:00",
+      "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
+      "publication_provider": "buffer",
+      "scheduled_at": "2026-11-22T10:00:00-03:00",
+      "quality": {
+        "technical_pass": true,
+        "editorial_approved": true,
+        "sha256": "3e7253c462ae826e85538ccf53171adc986d085ffb155a19224cd16770f8ab7b",
+        "duration": 17.645,
+        "size": 6408418,
+        "width": 1080,
+        "height": 1920,
+        "audio_mean_db": -15.4,
+        "black_intervals_over_300ms": 0,
+        "silence_intervals_over_800ms": 0,
+        "av_start_delta_seconds": 0.0,
+        "av_end_delta_seconds": 0.011992,
+        "lip_sync_verified": false,
+        "visual_policy_version": 1,
+        "visual_distinct": true,
+        "visual_sources": [
+          {
+            "source_id": "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+            "sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
+            "dhash": [
+              "555dd95f69682b2e",
+              "1b3f390db1311196",
+              "6165e52999999882",
+              "cc4c78cf989898b2",
+              "0c01074eeca4e429"
+            ]
+          },
+          {
+            "source_id": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+            "sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+            "dhash": [
+              "776e5e2ece346727",
+              "560e7f7e7dcd3fe7",
+              "5c1d6ced4fcfaf7e",
+              "5d0dec6d1f5f5edf",
+              "5d2c6c5f1b3f7fa6"
+            ]
+          }
+        ],
+        "caption_style": "measured-v51",
+        "scene_reuse_policy": "sequential_no_loop",
+        "source_durations": [
+          17.045,
+          10.76
+        ],
+        "graphics_style": "casasem-v43-preserve-full",
+        "crop_shifts_pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rendered_shots": 6,
+        "frame_modes": [
+          "preserve_full",
+          "preserve_full",
+          "preserve_full",
+          "reviewed_portrait",
+          "reviewed_portrait",
+          "reviewed_portrait"
+        ],
+        "concept": "auto-books-5a28db08bb29",
+        "source_urls": [
+          "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+          "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4"
+        ],
+        "source_license": "https://pixabay.com/service/license-summary/",
+        "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+        "render_version": 2,
+        "composition_revision": 6,
+        "required_public_credits": [
+          "Video — klimkin; https://pixabay.com/videos/id-1311/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
+          "Video — AlexKopeykin; https://pixabay.com/videos/id-38916/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas."
+        ],
+        "source_licenses": [
+          "https://pixabay.com/service/license-summary/"
+        ],
+        "requested_voice": "pf_dora",
+        "voice_fallback_reason": null,
+        "automated_review": true,
+        "review_policy": "mission102_cpu_semantics_motion_licensed_source",
+        "source_rights": [
+          {
+            "source_sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
+            "source_url": "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+            "source_page": "https://pixabay.com/videos/id-1311/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "44f11173dd8008ffe0c53e9555f86480d0b4bd3521652dde9eecbaf48f85050a",
+            "author": "klimkin",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-18T15:50:48.575775+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "44f11173dd8008ffe0c53e9555f86480d0b4bd3521652dde9eecbaf48f85050a",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          },
+          {
+            "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+            "source_url": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+            "source_page": "https://pixabay.com/videos/id-38916/",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "binding_terms": "https://pixabay.com/service/terms/",
+            "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+            "page_sha256": "6f950c6d7b478bda6f0d155b545f31a570e0e63927c9c03730307e8930a3bd0a",
+            "author": "AlexKopeykin",
+            "commercial_use": true,
+            "reviewed_at": "2026-11-17T02:42:17.953422+00:00",
+            "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+            "api_endpoint": "https://pixabay.com/api/videos/",
+            "api_response_sha256": "6f950c6d7b478bda6f0d155b545f31a570e0e63927c9c03730307e8930a3bd0a",
+            "license_policy": {
+              "version": 1,
+              "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+              "terms_url": "https://pixabay.com/service/terms/",
+              "license_url": "https://pixabay.com/service/license-summary/",
+              "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+              "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+              "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+              "max_policy_age_days": 7,
+              "api_docs_url": "https://pixabay.com/api/docs/",
+              "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+              "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+              "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+              "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+            },
+            "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+          }
+        ],
+        "semantic_reviews": [
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "books",
+            "captions": [
+              "The image depicts an indoor library setting. The library is well-lit with bright, even lighting, indicating that it is likely a well-equipped and modern space. The walls are painted in a neutral color, possibly white or light gray,",
+              "There are computers on desks.",
+              "The image depicts a library setting with several computers and bookshelves. The central focus is on a group of computers arranged in a row on a wooden table. Each computer has a monitor, keyboard, and mouse, suggesting they are used for"
+            ],
+            "frame_sha256": [
+              "cc3e44e5989d1e363860b7208c0988341c19659493a53a0f152ba014ac0ca5ca",
+              "f2f58d31d912a9bede0cfd0bcdef90c028326398499efaaea08b152276f6e3cb",
+              "1bb6af6c9a7ecf8d428e8f436a6516faf81368f438d7e9a6256b728f07a18067"
+            ],
+            "source_sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
+            "frame_mode": "preserve_full",
+            "accepted": true,
+            "review_seconds": 114.871,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          },
+          {
+            "method": "automated_cpu_portrait_frame_semantics",
+            "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+            "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+            "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+            "model_license_id": "Apache-2.0",
+            "family": "books",
+            "captions": [
+              "The image shows a book with colorful illustrations on the cover. The illustrations include cartoon-like characters and a tree with green leaves and a brown trunk. The characters are depicted in a simplistic, child-like style with round eyes, a small",
+              "The image shows a book with a colorful illustration of a child on the cover. The illustration depicts a child standing next to a tree, holding a stick. The child has a cheerful expression and is wearing a red shirt with white polka dots",
+              "The image shows a book cover with a colorful illustration of a tree with branches and leaves. The illustration includes two children, one with brown hair and the other with blonde hair, both looking upward towards the tree. The tree has green leaves"
+            ],
+            "frame_sha256": [
+              "e7e5a81cc0c0992da5ef18636617fe03efdaa574afd3c27ed39a0b24427ed5aa",
+              "8b98e9030b6baf67f45c70db54b8fc3295846757f364e90242f59f8622f664ed",
+              "826165486ae7442c7ba2ded2fe7ffaa691461dcbd8588ae042cb810861366b35"
+            ],
+            "source_sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+            "frame_mode": "reviewed_portrait",
+            "accepted": true,
+            "review_seconds": 70.363,
+            "human_review": false,
+            "hosted_inference_calls": 0,
+            "decoder_pass": true,
+            "freeze_intervals_over_1s": 0,
+            "freeze_threshold_db": -50
+          }
+        ],
+        "human_perceptual_review": false
+      },
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-22-1-3e7253c462ae826e.mp4",
+      "script_lines": [
+        "Sua estante está confusa?",
+        "Separe os volumes de uma coleção antes de organizar.",
+        "Devolva cada título ao grupo correspondente depois do uso.",
+        "Evite comprimir os livros contra o móvel.",
+        "Deixe as leituras atuais fáceis de alcançar.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "script_sha256": "5a28db08bb29074446321c795d4dccb5352f82c3d84dc2f6a00564fb832c0102",
+      "media_storage": "release",
+      "render_version": 2,
+      "video_origin": "licensed_stock_cpu_review",
+      "first_test_outside_recurring_slots": false,
+      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
     }
   ]
 }
