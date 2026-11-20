@@ -238,3 +238,10 @@ class Replan12(unittest.TestCase):
             queue,state=json.loads(json.dumps([queue,state]))
         self.assertEqual(len(published),28)
         self.assertEqual(len(set(published)),28)
+
+class SubjectEvidence12(unittest.TestCase):
+    def test_wooden_shelf_does_not_establish_wooden_spoons(self):
+        from semantic_review import assess_generated_organization
+        self.assertFalse(assess_generated_organization(0,['Metal spoons hang above a wooden shelf.']*3,'madeira-molho'))
+        self.assertTrue(assess_generated_organization(0,['Three wooden cooking spoons hang separately.']*3,'madeira-molho'))
+        self.assertFalse(tips.matches_visual(tips.BY_ID['livros-apoio'],['Books on a shelf.']*3))

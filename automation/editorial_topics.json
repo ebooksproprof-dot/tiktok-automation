@@ -452,7 +452,9 @@
       "Livros tombando na ponta da prateleira?",
       "Um apoio adequado mantém os volumes estáveis. Confira a carga permitida pelo móvel.",
       "Não comprima as capas. Salve este cuidado."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:bookends?|book\\s+supports?)\\b",
+    "visual_subject": "books held upright by visible bookends on a shelf"
   },
   {
     "id": "piso-saida",
@@ -672,7 +674,6 @@
       "colher"
     ],
     "visual_terms": [
-      "wooden",
       "spoon",
       "utensil"
     ],
@@ -680,7 +681,9 @@
       "Colher de madeira esquecida no molho?",
       "Confira as instruções do utensílio. Madeira pode exigir lavagem rápida e secagem cuidadosa.",
       "Não deixe submersa sem orientação. Salve esse cuidado."
-    ]
+    ],
+    "visual_subject": "wooden cooking spoons",
+    "required_visual_pattern": "\\b(?:wooden|wood|bamboo)\\s+(?:cooking\\s+)?(?:spoons?|utensils?)\\b"
   },
   {
     "id": "cabo-panela",

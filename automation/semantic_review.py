@@ -115,6 +115,8 @@ def assess_generated_organization(slot, captions, editorial_id=None):
     if editorial_id:
         from editorial_topics import BY_ID
         if editorial_id not in BY_ID: return False
+        from editorial_topics import matches_visual
+        if not matches_visual(BY_ID[editorial_id], captions): return False
         expected = (set(BY_ID[editorial_id]['visual_terms']),)*3
     tokens = [words(caption) for caption in captions]
     return (not any(t & (FORBIDDEN | {'person', 'people', 'child', 'children'}) for t in tokens)

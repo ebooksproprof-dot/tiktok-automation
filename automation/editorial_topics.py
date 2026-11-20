@@ -1,5 +1,6 @@
 """Authored, bounded tips and evidence requirements shared by stock and Wan."""
 import json
+import re
 from pathlib import Path
 from editorial_policy import reason
 
@@ -13,7 +14,7 @@ def ideas(queue, state, family=None, captions=None):
     result = []
     for tip in TOPICS:
         if family and family != tip['family']: continue
-        if captions is not None and sum(bool(set(tip['visual_terms']) & c) for c in seen) < 2: continue
+        if captions is not None and not matches_visual(tip, captions): continue
         concept = 'tip12-'+tip['id']
         if not reason({'concept': concept, 'script_lines': tip['script_lines']}, queue, state):
             result.append((concept, [], tip['script_lines']))
@@ -30,6 +31,13 @@ def prompt(tip, slot):
               'Close view clearly revealing the relevant arrangement and physical details.',
               'Wider view of the safe practical arrangement, with clear access.']
     return ('Photorealistic domestic '+tip['environment']+'. Main objects: '+', '.join(tip['visual_terms'])+'. '
-            'Visual explanation of '+tip['solution_id'].replace('-', ' ')+'. '+stages[slot]+
+            'Subject: '+tip.get('visual_subject', ', '.join(tip['visual_terms']))+'. Visual explanation of '+tip['solution_id'].replace('-', ' ')+'. '+stages[slot]+
             ' Realistic materials, stable geometry. Gentle continuous camera slide, visible parallax. '
             'No people, hands, text, logos, labels or watermarks. One uninterrupted shot.')
+
+
+def matches_visual(tip, captions):
+    from semantic_review import words
+    if tip.get('required_visual_pattern'):
+        return sum(bool(re.search(tip['required_visual_pattern'],c.lower())) for c in captions)>=2
+    return sum(bool(set(tip['visual_terms']) & words(c)) for c in captions)>=2
