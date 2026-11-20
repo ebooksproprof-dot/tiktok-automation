@@ -2500,6 +2500,54 @@
       "buffer_status": "scheduled",
       "buffer_external_link": null,
       "buffer_sent_at_present": false
+    },
+    "casasem-2026-11-22-1": {
+      "provider": "buffer",
+      "status": "SUBMISSION_UNKNOWN",
+      "submitted_at": "2026-11-20T15:33:18Z",
+      "sha256": "3e7253c462ae826e85538ccf53171adc986d085ffb155a19224cd16770f8ab7b",
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-22-1-3e7253c462ae826e.mp4",
+      "concept": "auto-books-5a28db08bb29",
+      "script_sha256": "5a28db08bb29074446321c795d4dccb5352f82c3d84dc2f6a00564fb832c0102",
+      "script_lines": [
+        "Sua estante está confusa?",
+        "Separe os volumes de uma coleção antes de organizar.",
+        "Devolva cada título ao grupo correspondente depois do uso.",
+        "Evite comprimir os livros contra o móvel.",
+        "Deixe as leituras atuais fáceis de alcançar.",
+        "Salve este cuidado para a sua rotina."
+      ],
+      "source_urls": [
+        "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+        "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4"
+      ],
+      "visual_sources": [
+        {
+          "source_id": "https://cdn.pixabay.com/video/2015/11/11/1311-145406167_medium.mp4",
+          "sha256": "68c49774a1074f3fd70c8890f78b0ce3d4b308ce3411d27e52d2a6c9fd72853c",
+          "dhash": [
+            "555dd95f69682b2e",
+            "1b3f390db1311196",
+            "6165e52999999882",
+            "cc4c78cf989898b2",
+            "0c01074eeca4e429"
+          ]
+        },
+        {
+          "source_id": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_large.mp4",
+          "sha256": "013c4495d8309c2b0cf1bdbe8a61fbd126920d5bca8761c16ea4bce4b8bedc0d",
+          "dhash": [
+            "776e5e2ece346727",
+            "560e7f7e7dcd3fe7",
+            "5c1d6ced4fcfaf7e",
+            "5d0dec6d1f5f5edf",
+            "5d2c6c5f1b3f7fa6"
+          ]
+        }
+      ],
+      "scheduled_at": "2026-11-22T10:00:00-03:00",
+      "publicly_verified": false,
+      "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying"
     }
   },
   "buffer_api_usage": [
@@ -2722,7 +2770,9 @@
     "2026-11-19T23:03:48.330103Z",
     "2026-11-19T23:03:51.255075Z",
     "2026-11-19T23:03:53.081912Z",
-    "2026-11-20T15:24:59.538396Z"
+    "2026-11-20T15:24:59.538396Z",
+    "2026-11-20T15:33:16.863513Z",
+    "2026-11-20T15:33:17.099508Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2730,25 +2780,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 149,
-        "reset_at": "2026-11-20T15:39:59.797650Z",
-        "observed_at": "2026-11-20T15:24:59.797650Z"
+        "remaining": 147,
+        "reset_at": "2026-11-20T15:40:00.265338Z",
+        "observed_at": "2026-11-20T15:33:17.265338Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 595,
-        "reset_at": "2026-11-20T23:03:48.797650Z",
-        "observed_at": "2026-11-20T15:24:59.797650Z"
+        "remaining": 593,
+        "reset_at": "2026-11-20T23:03:49.265338Z",
+        "observed_at": "2026-11-20T15:33:17.265338Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 938,
-        "reset_at": "2026-12-17T01:30:14.797650Z",
-        "observed_at": "2026-11-20T15:24:59.797650Z"
+        "remaining": 936,
+        "reset_at": "2026-12-17T01:30:14.265338Z",
+        "observed_at": "2026-11-20T15:33:17.265338Z"
       }
     },
     "consecutive_errors": 0,
