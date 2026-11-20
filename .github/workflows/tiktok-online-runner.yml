@@ -53,13 +53,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Serialize shared state without cancelling other workflows
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python automation/cloud_lease.py
-          git pull --ff-only origin main
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -89,6 +82,13 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID || '6ad14dc2778b240e2f1f7c2f' }}
         run: python automation/readiness.py
+
+      - name: Serialize shared state without cancelling other workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python automation/cloud_lease.py
+          git pull --ff-only origin main
 
       - name: Run existing publication queue
         env:
