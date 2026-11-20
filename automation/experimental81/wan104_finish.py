@@ -198,7 +198,10 @@ def stage(trial=False):
             rejected_at=wan104.now().isoformat(), rejected_review=review))
         inventory['clips'] = [c for c in inventory['clips'] if c['sha256'] != clip['sha256']]
         for source in inventory.get('scene_bank', []):
-            if source['sha256'] == clip['sha256']: source['consumed_by'] = 'REJECTED'
+            if source['sha256'] == clip['sha256']:
+                if reason == 'PORTRAIT_VISUAL_CONTEXT_REJECTED':
+                    source.setdefault('editorial_holds', []).append(clip.get('editorial_id'))
+                else: source['consumed_by'] = 'REJECTED'
         inventory['status'] = 'REPLACING_REJECTED_SCENE'
         revision = store.save(inventory, revision)
     previous = history(queue, state)

@@ -122,12 +122,12 @@ def assess_generated_organization(slot, captions, editorial_id=None):
 
 
 
-def needs_generated_disambiguation(slot, captions):
+def needs_generated_disambiguation(slot, captions, editorial_id=None):
     # A single neutral object-focused second look handles texture ambiguity
     # and background-only captions truncated before the foreground description. Unsafe context can never be erased by a replacement caption.
     unsafe = FORBIDDEN | {'person', 'people', 'child', 'children'}
     return (type(slot) is int and 0 <= slot < 3 and len(captions) == 3
-            and not assess_generated_organization(slot, captions)
+            and not assess_generated_organization(slot, captions, editorial_id)
             and not any(words(c) & unsafe for c in captions))
 
 
@@ -197,7 +197,7 @@ class Reviewer:
             hashes.append(hashlib.sha256(frame.read_bytes()).hexdigest())
             print('SEMANTIC_FRAME_COMPLETE='+record['provider_id']+'; SAMPLE='+str(index+1), flush=True)
         primary_captions = list(captions)
-        disambiguated = generated_profile and needs_generated_disambiguation(record.get('generated_slot'), captions)
+        disambiguated = generated_profile and needs_generated_disambiguation(record.get('generated_slot'), captions, record.get('editorial_id'))
         if disambiguated:
             captions = []
             focus = (

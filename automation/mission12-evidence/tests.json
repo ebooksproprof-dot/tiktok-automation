@@ -1,9 +1,12 @@
 {
   "suite": "python -m unittest discover -s automation/tests",
-  "tests": 442,
-  "seconds": 9.229,
+  "tests": 444,
+  "seconds": 13.65,
   "result": "OK",
   "continuity_days": 14,
   "continuity_is_simulated": true,
-  "live_publication_implied": false
+  "live_publication_implied": false,
+  "authored_tips": 50,
+  "simulation_resource_available_publications": 28,
+  "simulation_resource_available_days": 14
 }

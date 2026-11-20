@@ -22,6 +22,9 @@ def inspect(queue, state, producer, wan, now):
         previous['posts'].append(p)
     future_repeated = [p for p in repeated if any(q['id']==p['id'] and date(q) and date(q)>now for q in queue['posts'])]
     if future_repeated: add('SIMILAR_FUTURE_CONTENT', future_repeated)
+    from editorial_topics import ideas
+    available_ideas = len(ideas(queue, state))
+    if available_ideas < 4: add('EDITORIAL_CATALOG_LOW', {'eligible_tips':available_ideas, 'not_approved_videos':True})
     failures = Counter(c.get('error') for c in producer.get('candidates', {}).values() if c.get('error'))
     if failures: add('PRODUCTION_SOURCE_HOLDS', dict(failures))
     if producer.get('last_run', {}).get('status') == 'NO_VALID_OUTPUT':

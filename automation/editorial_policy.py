@@ -72,6 +72,8 @@ def describe(post):
         'drawer-clearance': ('pilha', 'altura'),
         'visible-sharp-tools': ('cortantes', 'separad'),
         'empty-pocket-check': ('bolso', 'tambor'),
+        'rated-hook-load': ('suporte', 'capacidade'),
+        'door-clearance': ('prender', 'porta'),
     }
     stable['instruction_ids'] = [key for key, terms in patterns.items() if all(t in text for t in terms)]
     if concept.startswith('tip12-'): stable['instruction_ids'].append(stable['solution_id'])

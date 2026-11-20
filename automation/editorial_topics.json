@@ -620,5 +620,415 @@
       "Retire a carga com segurança e consulte a capacidade do móvel. Não acrescente mais peso.",
       "Siga a orientação do fabricante. Salve o sinal de alerta."
     ]
+  },
+  {
+    "id": "louca-sem-atrito",
+    "topic_id": "louca-sem-atrito",
+    "problem_id": "louca-sem-atrito",
+    "solution_id": "fragile-dish-separation",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "prato"
+    ],
+    "visual_terms": [
+      "plate",
+      "dish"
+    ],
+    "script_lines": [
+      "Prato delicado raspando em outra peça?",
+      "Separe as peças frágeis durante a lavagem. O contato entre bordas pode danificar o acabamento.",
+      "Use apoios adequados ao material. Salve este cuidado."
+    ]
+  },
+  {
+    "id": "panela-resfriar",
+    "topic_id": "panela-resfriar",
+    "problem_id": "panela-resfriar",
+    "solution_id": "avoid-thermal-shock",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "panela"
+    ],
+    "visual_terms": [
+      "pan",
+      "pot"
+    ],
+    "script_lines": [
+      "Panela quente direto na água fria?",
+      "A mudança brusca de temperatura pode danificar alguns materiais. Espere esfriar e consulte o manual.",
+      "Siga a orientação de lavagem da peça. Salve antes de lavar."
+    ]
+  },
+  {
+    "id": "madeira-molho",
+    "topic_id": "madeira-molho",
+    "problem_id": "madeira-molho",
+    "solution_id": "wooden-tool-soaking",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "colher"
+    ],
+    "visual_terms": [
+      "wooden",
+      "spoon",
+      "utensil"
+    ],
+    "script_lines": [
+      "Colher de madeira esquecida no molho?",
+      "Confira as instruções do utensílio. Madeira pode exigir lavagem rápida e secagem cuidadosa.",
+      "Não deixe submersa sem orientação. Salve esse cuidado."
+    ]
+  },
+  {
+    "id": "cabo-panela",
+    "topic_id": "cabo-panela",
+    "problem_id": "cabo-panela",
+    "solution_id": "loose-handle-check",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "panela"
+    ],
+    "visual_terms": [
+      "pan",
+      "handle"
+    ],
+    "script_lines": [
+      "O cabo da panela está frouxo?",
+      "Observe a fixação antes de usar. Separe a peça se houver folga ou dano.",
+      "Procure a manutenção indicada pelo fabricante. Salve a inspeção."
+    ]
+  },
+  {
+    "id": "vidro-trinca",
+    "topic_id": "vidro-trinca",
+    "problem_id": "vidro-trinca",
+    "solution_id": "cracked-glass-isolation",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "copo"
+    ],
+    "visual_terms": [
+      "glass",
+      "cup"
+    ],
+    "script_lines": [
+      "Essa linha no copo é uma trinca?",
+      "Examine a peça com boa iluminação. Separe vidros trincados ou com lascas para evitar acidentes.",
+      "Faça o descarte adequado e protegido. Salve esta checagem."
+    ]
+  },
+  {
+    "id": "escorredor-bandeja",
+    "topic_id": "escorredor-bandeja",
+    "problem_id": "escorredor-bandeja",
+    "solution_id": "drainer-tray-maintenance",
+    "environment": "kitchen",
+    "family": "dishes",
+    "objects": [
+      "escorredor"
+    ],
+    "visual_terms": [
+      "rack",
+      "drainer",
+      "dish"
+    ],
+    "script_lines": [
+      "A bandeja do escorredor fica esquecida?",
+      "Confira se o modelo tem bandeja removível. Esvazie a água acumulada e siga a limpeza do fabricante.",
+      "Monte tudo novamente antes do uso. Salve essa etapa."
+    ]
+  },
+  {
+    "id": "fogao-frio",
+    "topic_id": "fogao-frio",
+    "problem_id": "fogao-frio",
+    "solution_id": "cool-cooktop-cleaning",
+    "environment": "kitchen",
+    "family": "surfaces",
+    "objects": [
+      "fogao"
+    ],
+    "visual_terms": [
+      "stove",
+      "cooktop"
+    ],
+    "script_lines": [
+      "Vai limpar o fogão ainda quente?",
+      "Desligue e espere o resfriamento indicado pelo fabricante. O produto deve ser compatível com o acabamento.",
+      "Consulte o manual antes de começar. Salve essa pausa."
+    ]
+  },
+  {
+    "id": "borrifador-direcao",
+    "topic_id": "borrifador-direcao",
+    "problem_id": "borrifador-direcao",
+    "solution_id": "spray-direction",
+    "environment": "surfaces",
+    "family": "products",
+    "objects": [
+      "borrifador"
+    ],
+    "visual_terms": [
+      "sprayer",
+      "spray",
+      "bottle"
+    ],
+    "script_lines": [
+      "Para onde aponta seu borrifador?",
+      "Leia o modo de aplicação do rótulo. Afaste o jato do rosto e evite a névoa nos olhos.",
+      "Mantenha crianças fora da aplicação. Salve este cuidado."
+    ]
+  },
+  {
+    "id": "produto-diluir",
+    "topic_id": "produto-diluir",
+    "problem_id": "produto-diluir",
+    "solution_id": "label-dosage",
+    "environment": "surfaces",
+    "family": "products",
+    "objects": [
+      "produto"
+    ],
+    "visual_terms": [
+      "bottle",
+      "measuring",
+      "container"
+    ],
+    "script_lines": [
+      "Mais produto significa limpeza melhor?",
+      "A dosagem correta é a do rótulo. Use o medidor indicado, sem adivinhar a diluição.",
+      "Não misture produtos. Salve a medida certa."
+    ]
+  },
+  {
+    "id": "espelho-bordas",
+    "topic_id": "espelho-bordas",
+    "problem_id": "espelho-bordas",
+    "solution_id": "mirror-edge-moisture",
+    "environment": "bathroom",
+    "family": "surfaces",
+    "objects": [
+      "espelho"
+    ],
+    "visual_terms": [
+      "mirror",
+      "edge"
+    ],
+    "script_lines": [
+      "A borda do espelho fica encharcada?",
+      "Excesso de líquido pode atingir partes sensíveis da peça. Consulte as instruções antes de aplicar o produto.",
+      "Evite acúmulo nas bordas. Salve este detalhe."
+    ]
+  },
+  {
+    "id": "janela-trilho",
+    "topic_id": "janela-trilho",
+    "problem_id": "janela-trilho",
+    "solution_id": "window-track-debris",
+    "environment": "surfaces",
+    "family": "surfaces",
+    "objects": [
+      "janela"
+    ],
+    "visual_terms": [
+      "window",
+      "track"
+    ],
+    "script_lines": [
+      "O trilho da janela junta resíduos?",
+      "Com a janela segura, retire sujeira solta usando o acessório permitido pelo fabricante.",
+      "Não force a folha para vencer obstáculos. Salve esse cuidado."
+    ]
+  },
+  {
+    "id": "pano-lavagem",
+    "topic_id": "pano-lavagem",
+    "problem_id": "pano-lavagem",
+    "solution_id": "cloth-rinse-residue",
+    "environment": "laundry",
+    "family": "wiping",
+    "objects": [
+      "pano"
+    ],
+    "visual_terms": [
+      "cloth",
+      "washing"
+    ],
+    "script_lines": [
+      "O pano limpo ainda tem resíduos?",
+      "Lave conforme a etiqueta e enxágue como orientado. Restos de produto podem passar para outra superfície.",
+      "Deixe secar antes de guardar. Salve essa rotina."
+    ]
+  },
+  {
+    "id": "roupa-reparo",
+    "topic_id": "roupa-reparo",
+    "problem_id": "roupa-reparo",
+    "solution_id": "repair-station",
+    "environment": "closet",
+    "family": "clothes",
+    "objects": [
+      "roupa"
+    ],
+    "visual_terms": [
+      "clothes",
+      "shirt",
+      "garment"
+    ],
+    "script_lines": [
+      "O botão solto voltou para o armário?",
+      "Separe a peça que precisa de reparo. Use um local identificado para ela não voltar ao uso por engano.",
+      "Guarde depois de resolver o defeito. Salve esta triagem."
+    ]
+  },
+  {
+    "id": "ziper-etiqueta",
+    "topic_id": "ziper-etiqueta",
+    "problem_id": "ziper-etiqueta",
+    "solution_id": "fastener-prewash-check",
+    "environment": "laundry",
+    "family": "clothes",
+    "objects": [
+      "ziper"
+    ],
+    "visual_terms": [
+      "zipper",
+      "clothing",
+      "shirt"
+    ],
+    "script_lines": [
+      "O zíper pode prender outra roupa?",
+      "Confira na etiqueta como preparar a peça para lavar. Fechos e partes soltas exigem cuidados próprios.",
+      "Siga a orientação antes de juntar tecidos. Salve essa preparação."
+    ]
+  },
+  {
+    "id": "varal-peso",
+    "topic_id": "varal-peso",
+    "problem_id": "varal-peso",
+    "solution_id": "drying-rack-load",
+    "environment": "laundry",
+    "family": "laundry",
+    "objects": [
+      "varal"
+    ],
+    "visual_terms": [
+      "clothesline",
+      "rack"
+    ],
+    "script_lines": [
+      "Seu varal está cedendo com o peso?",
+      "Verifique a capacidade e o estado das fixações. Distribua somente a carga permitida pelo fabricante.",
+      "Não use um apoio danificado. Salve esta inspeção."
+    ]
+  },
+  {
+    "id": "varal-sol",
+    "topic_id": "varal-sol",
+    "problem_id": "varal-sol",
+    "solution_id": "fabric-sun-exposure",
+    "environment": "laundry",
+    "family": "laundry",
+    "objects": [
+      "roupa"
+    ],
+    "visual_terms": [
+      "clothesline",
+      "drying",
+      "fabric"
+    ],
+    "script_lines": [
+      "Toda roupa pode secar ao sol?",
+      "A etiqueta indica os cuidados do tecido. Algumas peças precisam secar à sombra.",
+      "Escolha o local conforme essa indicação. Salve antes de estender."
+    ]
+  },
+  {
+    "id": "ferro-fio",
+    "topic_id": "ferro-fio",
+    "problem_id": "ferro-fio",
+    "solution_id": "iron-cable-route",
+    "environment": "laundry",
+    "family": "clothes",
+    "objects": [
+      "ferro"
+    ],
+    "visual_terms": [
+      "iron",
+      "ironing",
+      "cord"
+    ],
+    "script_lines": [
+      "O fio do ferro cruza sua passagem?",
+      "Prepare o apoio para trabalhar sem puxar o cabo. Confira se o fio e a tomada estão íntegros.",
+      "Siga o manual e pare se houver dano. Salve este preparo."
+    ]
+  },
+  {
+    "id": "cabide-malha",
+    "topic_id": "cabide-malha",
+    "problem_id": "cabide-malha",
+    "solution_id": "heavy-knit-storage",
+    "environment": "closet",
+    "family": "clothes",
+    "objects": [
+      "malha"
+    ],
+    "visual_terms": [
+      "hanger",
+      "sweater",
+      "knit"
+    ],
+    "script_lines": [
+      "A malha pesada estica no cabide?",
+      "O peso pode deformar algumas peças penduradas. Consulte a etiqueta para escolher a forma de guardar.",
+      "Use uma disposição que respeite o tecido. Salve essa decisão."
+    ]
+  },
+  {
+    "id": "livro-retirar",
+    "topic_id": "livro-retirar",
+    "problem_id": "livro-retirar",
+    "solution_id": "book-removal-grip",
+    "environment": "living",
+    "family": "books",
+    "objects": [
+      "livro"
+    ],
+    "visual_terms": [
+      "book",
+      "spine",
+      "shelf"
+    ],
+    "script_lines": [
+      "Você puxa o livro só pelo alto da lombada?",
+      "Abra espaço ao lado do volume e segure o corpo do livro com cuidado.",
+      "Retire sem forçar a encadernação. Salve este gesto."
+    ]
+  },
+  {
+    "id": "vassoura-cerdas",
+    "topic_id": "vassoura-cerdas",
+    "problem_id": "vassoura-cerdas",
+    "solution_id": "broom-bristle-storage",
+    "environment": "floor",
+    "family": "sweeping",
+    "objects": [
+      "vassoura"
+    ],
+    "visual_terms": [
+      "broom",
+      "bristle"
+    ],
+    "script_lines": [
+      "As cerdas ficam dobradas ao guardar?",
+      "Escolha um apoio que não pressione as pontas da vassoura. Respeite o formato e o modo de guardar indicado.",
+      "Verifique as cerdas antes do próximo uso. Salve esse cuidado."
+    ]
   }
 ]

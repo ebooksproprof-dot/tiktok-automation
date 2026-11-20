@@ -59,9 +59,9 @@ class Originality12(unittest.TestCase):
         self.assertEqual(len(posts),2)
         self.assertTrue(policy.reason(posts[1],{'posts':[posts[0]]},{}))
 
-    def test_thirty_authored_concepts_have_stable_non_hash_ids(self):
-        self.assertEqual(len(tips.TOPICS),30)
-        self.assertEqual(len(tips.BY_ID),30)
+    def test_fifty_authored_concepts_have_stable_non_hash_ids(self):
+        self.assertEqual(len(tips.TOPICS),50)
+        self.assertEqual(len(tips.BY_ID),50)
         for tip in tips.TOPICS:
             self.assertTrue(tip['problem_id']);self.assertTrue(tip['solution_id'])
             self.assertEqual(len(tip['script_lines']),3)
@@ -207,3 +207,34 @@ class FileCas12(unittest.TestCase):
         with patch.object(store,'request',side_effect=Conflict('stale')) as req, patch.object(store,'load',return_value=({},'changed')):
             with self.assertRaises(Conflict):store.save({},'same')
         self.assertEqual(req.call_count,1)
+
+class Replan12(unittest.TestCase):
+    def test_context_rejection_preserves_scene_for_the_correct_subject(self):
+        inv={'episode':6,'editorial_id':'bancada-area-preparo','requests':{},'clips':[],
+             'scene_bank':[{'slot':2,'sha256':'a'*64,'prompt':'Utensils hanging from a rail above an empty counter','consumed_by':'REJECTED'}],
+             'rejected_clips':[{'slot':0,'sha256':'a'*64,'editorial_id':'bancada-area-preparo',
+                               'rejection_reason':'PORTRAIT_VISUAL_CONTEXT_REJECTED'}]}
+        wan104.plan_episode(inv,{'posts':[]},{'posts':{}})
+        self.assertEqual(inv['editorial_id'],'utensilios-peso')
+        self.assertNotIn('consumed_by',inv['scene_bank'][0])
+        self.assertIn('bancada-area-preparo',inv['scene_bank'][0]['editorial_holds'])
+        self.assertEqual(len(inv['clips']),1)
+
+    def test_14_days_with_resources_can_keep_four_ahead_in_simulation(self):
+        queue={'posts':[]};state={'posts':{}};start=dt.datetime(2026,11,21,tzinfo=dt.timezone.utc)
+        published=[]
+        for day in range(14):
+            now=start+dt.timedelta(days=day)
+            while production.stock_status(queue,state,now)['refill_needed']:
+                concept,_,lines=tips.ideas(queue,state)[0]
+                post_id,when=production.choose_slot(queue,state,now)
+                queue['posts'].append({'id':post_id,'concept':concept,'script_lines':lines,'scheduled_at':when.isoformat(),
+                 'approved':True,'consented_at':now.isoformat(),'quality':{'technical_pass':True}})
+            self.assertEqual(production.stock_status(queue,state,now)['ready'],4)
+            for p in queue['posts']:
+                if now <= policy.date(p) < now+dt.timedelta(days=1):
+                    self.assertNotIn(p['id'],state['posts']);published.append(p['id'])
+                    state['posts'][p['id']]=dict(p,status='PUBLISH_COMPLETE',simulation=True)
+            queue,state=json.loads(json.dumps([queue,state]))
+        self.assertEqual(len(published),28)
+        self.assertEqual(len(set(published)),28)

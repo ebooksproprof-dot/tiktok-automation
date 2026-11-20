@@ -101,7 +101,7 @@ class PolicyTests(unittest.TestCase):
         self.assertTrue(any('bolsos' in ' '.join(idea[2]) for idea in choices))
         only_line = production.scripts([line], {'posts': []}, {'posts': {}})
         self.assertTrue(only_line)
-        self.assertTrue(all(idea[0] == 'tip12-varal-espaco' for idea in only_line))
+        self.assertTrue(all(idea[0].startswith('tip12-varal-') for idea in only_line))
         self.assertTrue(all('máquina' not in ' '.join(idea[2]) for idea in only_line))
 
     def test_pixabay_resolution_change_does_not_create_a_new_original_source(self):

@@ -345,11 +345,15 @@ def run(stage=False, soon=False, limit=2):
     wan_plan = read_json(ROOT/'experimental81/wan104_inventory.json', {})
     reserved_topics = {wan_plan['editorial_id']} if wan_plan.get('editorial_id') else set()
     records = candidate_records(inbox, cache)
+    from editorial_topics import ideas, BY_ID
+    available_families = {BY_ID[c[6:]]['family'] for c, _, _ in ideas(queue, state) if c[6:] not in reserved_topics}
     # Previously unavailable old sources must not consume every review position
     # ahead of fresh discoveries. Preserve all retry/backoff history.
     records.sort(key=lambda r: (ledger['candidates'].get(r['url'], {}).get('status') == 'RETRYABLE',
                                 -float(r.get('acquired_at', 0))))
     for candidate in records:
+        if nominate(candidate) not in available_families:
+            continue  # Don't spend review positions on an exhausted editorial family.
         if len(outputs) >= min(limit, TARGET-occupied) or examined >= MAX_CANDIDATES:
             break
         key = candidate['url']

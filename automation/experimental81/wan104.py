@@ -242,7 +242,8 @@ def plan_episode(inventory, queue, state):
     if inventory.get('editorial_id'):
         candidate = BY_ID[inventory['editorial_id']]
         from editorial_policy import reason
-        if not reason({'concept': 'tip12-'+candidate['id'], 'script_lines': candidate['script_lines']}, queue, state):
+        context_rejected = any(c.get('editorial_id') == candidate['id'] and c.get('rejection_reason') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED' for c in inventory.get('rejected_clips', []))
+        if not context_rejected and not reason({'concept': 'tip12-'+candidate['id'], 'script_lines': candidate['script_lines']}, queue, state):
             return False
     elif script_choices(inventory['episode'], queue, state):
         return False  # Compatible first/legacy episode remains usable.
@@ -263,6 +264,12 @@ def plan_episode(inventory, queue, state):
                 and review.get('decoder_pass') is True and review.get('freeze_intervals_over_1s') == 0
                 and assess_generated_organization(clip['slot'], review.get('captions', []))):
             bank.append(dict(clip, recovered_for_new_review=True)); known.add(clip['sha256'])
+    for source in bank:
+        context_holds = [c.get('editorial_id') for c in inventory.get('rejected_clips', [])
+                         if c['sha256'] == source['sha256'] and c.get('rejection_reason') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED']
+        if context_holds:
+            source['editorial_holds'] = list(set(source.get('editorial_holds', [])+context_holds))
+            if source.get('consumed_by') == 'REJECTED': source.pop('consumed_by')
     used = {c.get('sha256') for p in queue.get('posts', []) for c in p.get('quality', {}).get('visual_sources', [])}
     from visual_library import check_sources, history
     previous = history(queue, state)
@@ -283,7 +290,13 @@ def plan_episode(inventory, queue, state):
         # Require the specific subject; shared words like shelf alone cannot
         # turn pantry/towel scenes into a new generic cupboard episode.
         cues = set(tip['visual_terms'])-{'shelf','shelves','cabinet','container','clothes','laundry','kitchen'}
-        return bool(cues & words(clip.get('prompt', '')))
+        if tip['id'] in clip.get('editorial_holds', []): return False
+        # Background mentions are not foreground demonstration evidence.
+        subject = clip.get('prompt', '').replace('above an empty counter', '')
+        # Preserve observed foreground object names from a context rejection.
+        # They are nominations only; exact-source CPU review is still required.
+        observed = ' '.join(clip.get('rejected_review', {}).get('captions', []))
+        return bool(cues & words(subject+' '+observed))
     chosen = max(available, key=lambda idea: sum(matches(BY_ID[idea[0][6:]], c) for c in usable))
     tip = BY_ID[chosen[0][6:]]
     clips = []
