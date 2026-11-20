@@ -7253,24 +7253,22 @@
     },
     "casasem-2026-11-21-2": {
       "sha256": "4bf9c119cfb3a37d38ff7c815cf0503975971bdf2a3e481a4db9ae9ae124845a",
-      "status": "QUEUED",
+      "status": "SCHEDULED",
       "scheduled_at": "2026-11-21T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
         "https://cdn.pixabay.com/video/2020/05/03/37972-415950594_large.mp4"
-      ]
+      ],
+      "provider_id": "6aff8057b3e65522f837f4f3",
+      "publicly_verified": false,
+      "public_urls": []
     }
   },
   "last_run": {
-    "status": "QUEUED",
-    "created": 1,
-    "ready_before": 3,
-    "ready_after": 4,
-    "target": 4,
-    "source": "licensed_stock_fallback",
-    "new_generative_ai_calls": 0,
-    "paid_services_enabled": false,
-    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+    "status": "STOCK_TARGET_MET",
+    "ready": 4,
+    "held_uncertain": 0,
+    "created": 0
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
