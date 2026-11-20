@@ -62,8 +62,7 @@ jobs:
           done
           if ! git diff --cached --quiet; then
             git commit -m 'Persist official media acquisition evidence'
-            git pull --rebase origin main
-            git push origin HEAD:main
+            python automation/persist_main.py
           fi
       - name: Retain pending review footage (not publication assets)
         if: always()

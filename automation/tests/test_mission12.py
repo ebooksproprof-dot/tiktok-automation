@@ -151,3 +151,44 @@ class PerceptualMedia12(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'VISUAL_NEAR_DUPLICATE'):visual.check_sources([two],[{'visual_sources':[one]}])
             with self.assertRaisesRegex(ValueError,'VISUAL_DUPLICATE_SOURCE'):visual.check_sources([dict(one,source_id='renamed')],[{'visual_sources':[one]}])
             self.assertTrue(visual.check_sources([three],[{'visual_sources':[one]}]))
+
+class Persistence12(unittest.TestCase):
+    def test_concurrent_main_advance_rebases_without_force(self):
+        import persist_main
+        from types import SimpleNamespace
+        calls=[]; pushes=[]
+        def fake(*args,check=True):
+            calls.append(args)
+            if args[0]=='merge-base':return SimpleNamespace(returncode=1,stdout='')
+            if args[0]=='push':
+                pushes.append(args);return SimpleNamespace(returncode=1 if len(pushes)==1 else 0,stdout='')
+            return SimpleNamespace(returncode=0,stdout='')
+        with patch.object(persist_main,'git',side_effect=fake):self.assertEqual(persist_main.push(),'PUSHED')
+        self.assertEqual(len(pushes),2)
+        self.assertFalse(any('--force' in a or '--force-with-lease' in a for a in calls))
+
+    def test_lost_push_ack_reconciles_remote_ancestry(self):
+        import persist_main
+        from types import SimpleNamespace
+        calls=[];ancestries=[]
+        def fake(*args,check=True):
+            calls.append(args)
+            if args[0]=='merge-base':
+                ancestries.append(args);return SimpleNamespace(returncode=1 if len(ancestries)==1 else 0,stdout='')
+            return SimpleNamespace(returncode=1 if args[0]=='push' else 0,stdout='')
+        with patch.object(persist_main,'git',side_effect=fake):self.assertEqual(persist_main.push(),'ALREADY_DURABLE')
+        self.assertEqual(sum(a[0]=='push' for a in calls),1)
+
+class Lease12(unittest.TestCase):
+    def test_active_owner_is_not_stolen_and_expired_lease_recovers(self):
+        import cloud_lease
+        now=dt.datetime.now(dt.timezone.utc)
+        first=cloud_lease.claim({},'one',now)
+        self.assertIsNone(cloud_lease.claim(first,'two',now))
+        self.assertEqual(cloud_lease.claim(first,'two',now+dt.timedelta(minutes=91))['owner'],'two')
+        self.assertEqual(cloud_lease.claim(first,'one',now)['owner'],'one')
+
+    def test_release_never_unlocks_another_workflow(self):
+        import cloud_lease
+        store=unittest.mock.Mock();store.load.return_value=({'owner':'other'},'r')
+        cloud_lease.release(store,'mine');store.save.assert_not_called()

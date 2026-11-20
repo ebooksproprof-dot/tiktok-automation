@@ -292,12 +292,12 @@ def candidate_records(inbox, cache):
     return sorted((r for r in selected.values() if nominate(r)), key=priority)
 
 
-def scripts(pool, queue, state):
+def scripts(pool, queue, state, reserved_topics=()):
     from editorial_topics import ideas
     family = pool[0]['visual_review']['family']
     captions = [c for x in pool for c in x['visual_review']['captions']]
     return [(concept, [x['record']['id'] for x in pool], lines)
-            for concept, _, lines in ideas(queue, state, family, captions)]
+            for concept, _, lines in ideas(queue, state, family, captions) if concept[6:] not in reserved_topics]
 
 
 def repaired_context(prior, record):
@@ -342,6 +342,8 @@ def run(stage=False, soon=False, limit=2):
     render.OUT.mkdir(parents=True, exist_ok=True)
     reviewer = None
     pools, outputs, examined = {}, [], 0
+    wan_plan = read_json(ROOT/'experimental81/wan104_inventory.json', {})
+    reserved_topics = {wan_plan['editorial_id']} if wan_plan.get('editorial_id') else set()
     records = candidate_records(inbox, cache)
     # Previously unavailable old sources must not consume every review position
     # ahead of fresh discoveries. Preserve all retry/backoff history.
@@ -421,13 +423,13 @@ def run(stage=False, soon=False, limit=2):
                     shutil.copyfile(src, dest)
                 if hashlib.sha256(dest.read_bytes()).hexdigest() != record['sha256']:
                     raise ValueError('RENDER_SOURCE_COPY_HASH_MISMATCH')
-            if not scripts(pool, queue, state):
+            if not scripts(pool, queue, state, reserved_topics):
                 entry.update(status='ACCEPTED_AWAITING_NEW_EDITORIAL', editorial_hold='NO_COHERENT_NOVEL_TIP')
                 pools[review['family']] = []
                 continue
             failure = None
             phase = 'render'
-            for idea in scripts(pool, queue, state)[:3]:
+            for idea in scripts(pool, queue, state, reserved_topics)[:3]:
                 post_id, when = choose_slot(queue, state, dt.datetime.now(dt.timezone.utc), soon and not outputs)
                 try:
                     video, quality = render_with_voice_fallback(idea, post_id)

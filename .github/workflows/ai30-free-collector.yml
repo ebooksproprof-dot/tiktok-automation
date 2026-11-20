@@ -161,7 +161,7 @@ jobs:
     needs: [collect-and-stage]
     if: always() && github.ref == 'refs/heads/main' && ((github.event_name == 'workflow_dispatch' && inputs.licensed_wan_stage_trial == true) || (needs.collect-and-stage.result == 'success' && needs.collect-and-stage.outputs.ready == 'true'))
     concurrency:
-      group: casasemesforco-state
+      group: casasemesforco-wan-assembly
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -173,6 +173,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Serialize shared state without cancelling other workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python automation/cloud_lease.py
+          git pull --ff-only origin main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -220,3 +226,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python automation/notify_failure.py
+      - name: Release shared state lease
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/cloud_lease.py --release

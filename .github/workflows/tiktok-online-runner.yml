@@ -43,7 +43,7 @@ jobs:
     # Evaluate the trigger guard before joining the state lock. Skipped children
     # of canceled runs must not evict a legitimate pending production job.
     concurrency:
-      group: casasemesforco-state
+      group: casasemesforco-state-${{ github.workflow }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 35 # Includes only the first authorized near-term proof wait.
@@ -53,6 +53,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+      - name: Serialize shared state without cancelling other workflows
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python automation/cloud_lease.py
+          git pull --ff-only origin main
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -143,8 +150,7 @@ jobs:
             exit 0
           fi
           git commit -m "Update TikTok automation state"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          python automation/persist_main.py
       - name: Preserve public playback evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -163,3 +169,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python automation/notify_failure.py
+      - name: Release shared state lease
+        if: always() && github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/cloud_lease.py --release
