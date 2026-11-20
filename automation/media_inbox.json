@@ -1101,7 +1101,7 @@
       "duration": 6.25,
       "bytes": 4106145,
       "acquired_at": 1794031621,
-      "automatic_review_status": "REJECTED"
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -1528,7 +1528,8 @@
       "height": 1080,
       "duration": 8.52,
       "bytes": 4735679,
-      "acquired_at": 1794185693
+      "acquired_at": 1794185693,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -1889,7 +1890,8 @@
       "height": 2160,
       "duration": 24.44,
       "bytes": 30560497,
-      "acquired_at": 1794663243
+      "acquired_at": 1794663243,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -1921,7 +1923,8 @@
       "height": 2160,
       "duration": 23.456667,
       "bytes": 46931677,
-      "acquired_at": 1794663251
+      "acquired_at": 1794663251,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2018,7 +2021,8 @@
       "height": 2160,
       "duration": 10.76,
       "bytes": 28454140,
-      "acquired_at": 1794680860
+      "acquired_at": 1794680860,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -2444,7 +2448,8 @@
       "height": 1080,
       "duration": 17.851167,
       "bytes": 10675084,
-      "acquired_at": 1794881698
+      "acquired_at": 1794881698,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -2476,7 +2481,8 @@
       "height": 1080,
       "duration": 12.8,
       "bytes": 9466020,
-      "acquired_at": 1794881700
+      "acquired_at": 1794881700,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2606,7 +2612,8 @@
       "height": 1920,
       "duration": 22.8,
       "bytes": 81722831,
-      "acquired_at": 1794931152
+      "acquired_at": 1794931152,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -2638,7 +2645,8 @@
       "height": 1080,
       "duration": 17.045,
       "bytes": 10093587,
-      "acquired_at": 1794988419
+      "acquired_at": 1794988419,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -2703,7 +2711,8 @@
       "height": 1080,
       "duration": 22.0,
       "bytes": 15794042,
-      "acquired_at": 1795104130
+      "acquired_at": 1795104130,
+      "automatic_review_status": "QUEUED"
     },
     {
       "provider": "pixabay",
@@ -2735,7 +2744,8 @@
       "height": 1080,
       "duration": 10.4,
       "bytes": 5816963,
-      "acquired_at": 1795104132
+      "acquired_at": 1795104132,
+      "automatic_review_status": "REJECTED"
     }
   ],
   "rejected_until": {
@@ -2743,31 +2753,31 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795115141,
+    "at": 1795210182,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 2,
+    "skipped_known": 11,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "banheiro",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 481,
-          "context_rejected": 15,
+          "total_hits": 500,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2775,14 +2785,14 @@
       },
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 25,
+          "total_hits": 457,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2790,7 +2800,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "armario",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2798,14 +2808,14 @@
       },
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 481,
+          "total_hits": 488,
           "context_rejected": 14,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2813,30 +2823,30 @@
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "lavanderia",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 119,
-          "context_rejected": 10,
+          "total_hits": 337,
+          "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "lavanderia",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2845,10 +2855,10 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning countertop",
-      "storage hangers",
-      "cleaning cutlery",
-      "washing clothesline"
+      "cleaning soap",
+      "organizing plates",
+      "cleaning filter",
+      "organizing towels"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
