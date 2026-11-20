@@ -2753,54 +2753,54 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795210182,
+    "at": 1795218187,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 11,
+    "skipped_known": 21,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "banheiro",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 4,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 14,
+          "total_hits": 14,
+          "context_rejected": 10,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 500,
+          "total_hits": 23,
           "context_rejected": 0,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 1
         }
       },
       {
         "provider": "wikimedia",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 457,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "utensilios",
+        "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2810,13 +2810,13 @@
         "provider": "pixabay",
         "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 7,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 488,
-          "context_rejected": 14,
+          "total_hits": 21,
+          "context_rejected": 8,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2826,39 +2826,39 @@
         "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 12,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 337,
-          "context_rejected": 15,
+          "total_hits": 124,
+          "context_rejected": 2,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 1
         }
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning soap",
-      "organizing plates",
-      "cleaning filter",
-      "organizing towels"
+      "wiping countertop",
+      "sink",
+      "wiping filter",
+      "washing sink"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
