@@ -870,6 +870,27 @@
       },
       "sha256": "7f841fdf6b7f1f8d1a1ffc130fb9cfd90801ce2ac886b9ba9400a81defc8ea78",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-7f841fdf6b7f1f8d1a1ffc13.mp4"
+    },
+    "2454bfda070251dc4e35a12f17d608e20e6f2ba14f7b6d29e20a7a4b550511c9": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-20T23:42:45.196015+00:00",
+      "spec": {
+        "editorial_id": "bancada-area-preparo",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic domestic kitchen. Main objects: countertop, counter, kitchen. Visual explanation of continuous prep zone. Wider view of the safe practical arrangement, with clear access. Realistic materials, stable geometry. Gentle continuous camera slide, visible parallax. No people, hands, text, logos, labels or watermarks. One uninterrupted shot.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 104608,
+        "randomize_seed": false
+      }
     }
   },
   "outputs": [
