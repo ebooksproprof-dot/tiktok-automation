@@ -1,0 +1,10 @@
+{
+  "source_sha256": "f18306e237f39d83ef9dfbb4344ab0ec32b16441d02c1cc69aa2b58bb0f4597a",
+  "source_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-f18306e237f39d83ef9dfbb4.mp4",
+  "original_rejection": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+  "cause": "The object vocabulary omitted pan/pans/wok even though foreground pans are visible.",
+  "frame_time_seconds": 2,
+  "frame_sha256": "20c8371b0a98d07f88086bbc0161113e97054291eda6ae8bca7961152aa39e14",
+  "correction": "Expanded household cooking-tool vocabulary. Fresh tip-specific semantics, motion and novelty checks remain mandatory.",
+  "approval_for_publication_implied": false
+}

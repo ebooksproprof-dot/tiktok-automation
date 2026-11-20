@@ -8036,14 +8036,14 @@
       "id": "casasem-2026-11-21-2",
       "concept": "auto-laundry-5a6aa819a358",
       "title": "Vai colocar roupa para lavar? Use o produto e a quantidade recomendados no rótulo. Confira as instruções de limpeza do filtro no manual. Mantenha os produtos na embalagem original e longe de crianças. Retire as roupas ao terminar e organize a secagem. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — iha31; https://pixabay.com/videos/id-30704/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — Ambient_Nature_Atmosphere; https://pixabay.com/videos/id-37972/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "approved": true,
-      "consented_at": "2026-11-19T21:37:59.141151+00:00",
+      "approved": false,
+      "consented_at": null,
       "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
       "publication_provider": "buffer",
       "scheduled_at": "2026-11-21T18:00:00-03:00",
       "quality": {
         "technical_pass": true,
-        "editorial_approved": true,
+        "editorial_approved": false,
         "sha256": "4bf9c119cfb3a37d38ff7c815cf0503975971bdf2a3e481a4db9ae9ae124845a",
         "duration": 19.048,
         "size": 3930543,
@@ -8263,20 +8263,33 @@
       "render_version": 2,
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
-      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+      "publishing_status": "EDITORIALLY_REJECTED_MISSION12_REPEATED_CONCEPT",
+      "editorial_rejection12": {
+        "mission": 12,
+        "reviewed_at": "2026-11-20T23:57:59.499497+00:00",
+        "reason": "Same editorial problem, opening hook and recombined instructions; different MP4 is insufficient.",
+        "duplicates": [
+          "casasem-2026-11-08-1"
+        ],
+        "previous_approved": true,
+        "previous_consented_at": "2026-11-19T21:37:59.141151+00:00",
+        "previous_editorial_approved": true,
+        "media_preserved": true,
+        "cancellation_confirmed": false
+      }
     },
     {
       "id": "casasem-2026-11-22-1",
       "concept": "auto-books-5a28db08bb29",
       "title": "Sua estante está confusa? Separe os volumes de uma coleção antes de organizar. Devolva cada título ao grupo correspondente depois do uso. Evite comprimir os livros contra o móvel. Deixe as leituras atuais fáceis de alcançar. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — klimkin; https://pixabay.com/videos/id-1311/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — AlexKopeykin; https://pixabay.com/videos/id-38916/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "approved": true,
-      "consented_at": "2026-11-20T15:30:26.243271+00:00",
+      "approved": false,
+      "consented_at": null,
       "approval_scope": "mission102_owner_authorized_automated_quality_and_license_checks",
       "publication_provider": "buffer",
       "scheduled_at": "2026-11-22T10:00:00-03:00",
       "quality": {
         "technical_pass": true,
-        "editorial_approved": true,
+        "editorial_approved": false,
         "sha256": "3e7253c462ae826e85538ccf53171adc986d085ffb155a19224cd16770f8ab7b",
         "duration": 17.645,
         "size": 6408418,
@@ -8494,7 +8507,20 @@
       "render_version": 2,
       "video_origin": "licensed_stock_cpu_review",
       "first_test_outside_recurring_slots": false,
-      "publishing_status": "READY_FOR_EXISTING_BUFFER_RUNNER"
+      "publishing_status": "EDITORIALLY_REJECTED_MISSION12_REPEATED_CONCEPT",
+      "editorial_rejection12": {
+        "mission": 12,
+        "reviewed_at": "2026-11-20T23:57:59.499539+00:00",
+        "reason": "Same editorial problem, opening hook and recombined instructions; different MP4 is insufficient.",
+        "duplicates": [
+          "casasem-2026-11-19-2"
+        ],
+        "previous_approved": true,
+        "previous_consented_at": "2026-11-20T15:30:26.243271+00:00",
+        "previous_editorial_approved": true,
+        "media_preserved": true,
+        "cancellation_confirmed": false
+      }
     }
   ]
 }

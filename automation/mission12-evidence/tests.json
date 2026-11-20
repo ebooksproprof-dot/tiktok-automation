@@ -8,5 +8,19 @@
   "live_publication_implied": false,
   "authored_tips": 50,
   "simulation_resource_available_publications": 28,
-  "simulation_resource_available_days": 14
+  "simulation_resource_available_days": 14,
+  "continuity_scenarios": [
+    {
+      "days": 14,
+      "providers": "available",
+      "simulated_publications": 28,
+      "ready_target_before_consumption": 4
+    },
+    {
+      "days": 14,
+      "providers": "unavailable days 4 and 5; recovery afterwards",
+      "simulated_publications": 24
+    }
+  ],
+  "continuous_live_capacity_proven": false
 }
