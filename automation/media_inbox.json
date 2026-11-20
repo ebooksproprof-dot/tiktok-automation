@@ -2746,6 +2746,132 @@
       "bytes": 5816963,
       "acquired_at": 1795104132,
       "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "26865",
+      "url": "https://cdn.pixabay.com/video/2019/09/15/26865-361107766_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-26865/",
+      "author": "kdv888",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: kdv888 / Pixabay — https://pixabay.com/videos/id-26865/",
+      "category": "manutencao",
+      "query": "shelf",
+      "selection_reason": "Provider tags: pastries, dessert, glass shelf, rotates",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/09/15/26865-361107766_large.mp4",
+      "sha256": "c47dc15ef12142c8fe3ddb14d1e50c5404afc4b8c86823ebe6a13b2b82edfb5c",
+      "dhash": [
+        "c899899896776476",
+        "ca8acab8b4b67676",
+        "8a9a99d171675e36",
+        "ba999bd1e747169e",
+        "8a9a9b8bc7c7cfe6"
+      ],
+      "crop_dhash": {
+        "full": [
+          "c899899896776476",
+          "ca8acab8b4b67676",
+          "8a9a99d171675e36",
+          "ba999bd1e747169e",
+          "8a9a9b8bc7c7cfe6"
+        ],
+        "inner90": [
+          "8899899a965774e2",
+          "8a9a9ab8b2b6b272",
+          "8a9b99d1f0675e32",
+          "ba999b91e7c7379e",
+          "9a9b9b8b87c7cdc7"
+        ],
+        "inner80": [
+          "1918081a9a93f2c2",
+          "5a1a1a3a7233b3f3",
+          "1a1b1a50f2635b3b",
+          "1a181990f3c7133f",
+          "1b191a0587c78dcd"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 11.0,
+      "bytes": 6993181,
+      "acquired_at": 1795218399
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "350124",
+      "url": "https://cdn.pixabay.com/video/2026/05/02/350124_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-350124/",
+      "author": "haruudu",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: haruudu / Pixabay — https://pixabay.com/videos/id-350124/",
+      "category": "cozinha",
+      "query": "cleaning sink",
+      "selection_reason": "Provider tags: water, tap, pot, filling, sink, kitchen, faucet, plumbing, fresh, clear, flow, liquid, hydration, preparation, cooking, household, utility, stainless, steel, metal, pouring, domestic, home, clean, volume",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2026/05/02/350124_large.mp4",
+      "sha256": "b4c1937ef80c23f50b6eb9081db75cecb3a3aef56ce30202c539d0b54ee95c80",
+      "dhash": [
+        "07c4d9bbb2e0c23e",
+        "07ccd9bbb2e0c23e",
+        "06dcd9bbb2e0e23e",
+        "18e6c5b3b2e2e23e",
+        "06c6c5bbb6f0e23e"
+      ],
+      "crop_dhash": {
+        "full": [
+          "07c4d9bbb2e0c23e",
+          "07ccd9bbb2e0c23e",
+          "06dcd9bbb2e0e23e",
+          "18e6c5b3b2e2e23e",
+          "06c6c5bbb6f0e23e"
+        ],
+        "inner90": [
+          "07dc98bb7262c2fe",
+          "07dc99b97262c2fe",
+          "06dc98b97a72c2fe",
+          "32e686a97272c2fe",
+          "869695bb7272c2de"
+        ],
+        "inner80": [
+          "179c98797a52c2c7",
+          "069c986d7a5ac2c3",
+          "169898697a52c2c3",
+          "63e692697252c2c3",
+          "978694697272c2c3"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.733333,
+      "bytes": 1551783,
+      "acquired_at": 1795218404
     }
   ],
   "rejected_until": {
@@ -2753,71 +2879,25 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795218187,
-    "acquired": 0,
+    "at": 1795218396,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 21,
+    "download_attempts": 2,
+    "skipped_known": 15,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 4,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 14,
-          "total_hits": 14,
-          "context_rejected": 10,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 14,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 23,
+          "raw_hits": 8,
+          "total_hits": 8,
           "context_rejected": 0,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 1
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 7,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 21,
-          "context_rejected": 8,
-          "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
@@ -2826,43 +2906,81 @@
         "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "cozinha",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 12,
+        "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 124,
-          "context_rejected": 2,
+          "total_hits": 49,
+          "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 13,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 383,
+          "context_rejected": 1,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 1
         }
       },
       {
         "provider": "wikimedia",
-        "category": "cozinha",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 10,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 491,
+          "context_rejected": 4,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 1
+        }
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "wiping countertop",
-      "sink",
-      "wiping filter",
-      "washing sink"
+      "shelf",
+      "basket",
+      "wiping table",
+      "cleaning sink"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 74,
+    "unreviewed_media_count": 76,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
