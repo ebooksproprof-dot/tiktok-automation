@@ -237,6 +237,24 @@ def stage(trial=False):
             'sha256': quality['sha256'], 'scheduled_at': when.isoformat(), 'publicly_verified': False}
 
 
+def verify_existing(post_id):
+    """Recompose one approved historical input set; no queue/Release/Buffer write."""
+    queue, _ = GitHubStore(os.environ['GH_TOKEN'], path='automation/queue.json', validate=False).load()
+    post = next((p for p in queue['posts'] if p.get('id') == post_id), None)
+    if not post or post.get('approved') is not True:
+        raise ValueError('EXISTING_APPROVED_WAN_REQUIRED')
+    quality = post.get('quality', {})
+    require_quality(quality)
+    proof = {r['source_sha256']: r for r in quality['semantic_reviews']}
+    output, measured = compose({'clips':quality['licensed_sources']},
+        ROOT.parent/'tmp'/'wan104-finish'/'assembly-verification', proof, lines=post['script_lines'])
+    result = {'status':'EXISTING_WAN_RECOMPOSED_VALIDATED_NO_PUBLICATION', 'post_id':post_id,
+              'quality':measured, 'video_path':output['video_path'],
+              'new_gpu_calls':0, 'queue_mutated':False, 'publication_attempted':False}
+    (ROOT.parent/'tmp'/'wan104-finish'/'assembly-verification'/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+    return result
+
+
 def legacy_inventory_path():
     return 'automation/experimental81/auto_inventory.json'
 
@@ -244,6 +262,7 @@ def legacy_inventory_path():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--trial', action='store_true')
+    parser.add_argument('--verify-existing', default='')
     parser.add_argument('--optional-ai', action='store_true', help='Ordinary producer may use existing licensed-stock fallback; never applies to public trial')
     args = parser.parse_args()
     allowed_workflow = (os.getenv('GITHUB_WORKFLOW') == 'CasaSemEsforco AI30 Free Collector'
@@ -254,6 +273,9 @@ def main():
     if args.optional_ai and args.trial:
         raise ValueError('PUBLIC_TRIAL_MUST_NOT_BE_OPTIONAL')
     try:
+        if args.verify_existing:
+            if args.trial or args.optional_ai: raise ValueError('VERIFICATION_MUST_NOT_STAGE')
+            return verify_existing(args.verify_existing)
         return stage(args.trial)
     except Exception as exc:
         from operational_errors import evidence

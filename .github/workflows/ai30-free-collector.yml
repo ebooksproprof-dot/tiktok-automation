@@ -6,6 +6,10 @@ on:
     - cron: '10 6,12,16,22 * * *'
   workflow_dispatch:
     inputs:
+      verify_existing_output:
+        description: 'Recompose one existing approved Wan post without generation, queue writes or publication'
+        type: string
+        default: ''
       licensed_wan_trial:
         description: 'Collect at most three new explicitly licensed Wan 2.2 5B clips; no publishing in this collection test'
         type: boolean
@@ -61,7 +65,7 @@ jobs:
           python -m unittest discover -s automation/tests -p 'test_wan104*.py' -v
           python automation/experimental81/wan104.py --dry-run
   collect-and-stage:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'push' && inputs.licensed_wan_trial != true && inputs.licensed_wan_stage_trial != true
+    if: github.ref == 'refs/heads/main' && github.event_name != 'push' && inputs.licensed_wan_trial != true && inputs.licensed_wan_stage_trial != true && inputs.verify_existing_output == ''
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
@@ -159,7 +163,7 @@ jobs:
           if-no-files-found: ignore
   licensed-stage-trial:
     needs: [collect-and-stage]
-    if: always() && github.ref == 'refs/heads/main' && ((github.event_name == 'workflow_dispatch' && inputs.licensed_wan_stage_trial == true) || (needs.collect-and-stage.result == 'success' && needs.collect-and-stage.outputs.ready == 'true'))
+    if: always() && github.ref == 'refs/heads/main' && ((github.event_name == 'workflow_dispatch' && (inputs.licensed_wan_stage_trial == true || inputs.verify_existing_output != '')) || (needs.collect-and-stage.result == 'success' && needs.collect-and-stage.outputs.ready == 'true'))
     concurrency:
       group: casasemesforco-wan-assembly
       cancel-in-progress: false
@@ -203,9 +207,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TRIAL: ${{ inputs.licensed_wan_stage_trial }}
+          VERIFY_EXISTING: ${{ inputs.verify_existing_output }}
         run: |
           args=()
           if [ "$TRIAL" = 'true' ]; then args+=(--trial); fi
+          if [ -n "$VERIFY_EXISTING" ]; then args+=(--verify-existing "$VERIFY_EXISTING"); fi
           python automation/experimental81/wan104_finish.py "${args[@]}"
       - name: Keep rendering and review evidence independently of publication
         if: always()
