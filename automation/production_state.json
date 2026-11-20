@@ -4659,12 +4659,80 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2022/11/26/140595-775389299_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "TimeoutError",
-      "error_stage": "license",
+      "status": "REJECTED",
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "TimeoutError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794717925.0340817
+        }
+      ],
+      "source_sha256": "754a23b5f014d718c2351e8f611cb6040694060cfdcfcc4940c5006b3e041dd5",
+      "license": {
+        "source_sha256": "754a23b5f014d718c2351e8f611cb6040694060cfdcfcc4940c5006b3e041dd5",
+        "source_url": "https://cdn.pixabay.com/video/2022/11/26/140595-775389299_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-140595/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "e7be12fbea58a7da9fdeb1e0c6cdad2141cb5edd45c3ddb63b402ceca8e6f0dd",
+        "author": "jadeallencook",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-20T21:16:49.908314+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "e7be12fbea58a7da9fdeb1e0c6cdad2141cb5edd45c3ddb63b402ceca8e6f0dd",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a woman standing in a store. She has long, straight, dark hair and is wearing glasses. She is wearing a gray jacket with a quilted pattern. The jacket has a zipper on the front and a hood.",
+          "The image shows a woman standing in front of a display in a store. She is wearing glasses and a black jacket. The woman is looking at a display of records or albums. The display has several records on display, some of which are",
+          "The image shows a woman standing in front of a display case. She is wearing a grey jacket and glasses. Her hair is long and straight, and she is looking at a piece of furniture or a display item. \n\nThe display case"
+        ],
+        "frame_sha256": [
+          "21322dc6f72bd8b63f7bde287ef46b8cb78a38eecdcaff279a40d54181f883e6",
+          "0ef4cb43d47271ed4d8a077612e41acbeb1f3ed1597a6fce5905d437039f2e88",
+          "d1db98026c12788e6672e591b2c0b723795ceb30e7c8ba570b9ba0a80c6a22d0"
+        ],
+        "source_sha256": "754a23b5f014d718c2351e8f611cb6040694060cfdcfcc4940c5006b3e041dd5",
+        "frame_mode": "reviewed_portrait",
+        "accepted": false,
+        "review_seconds": 135.086,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
       "http_status": null,
-      "retry_after": 1794717925.0340817
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/02/04/31933-389248759_large.mp4": {
       "status": "REJECTED",
@@ -4885,12 +4953,80 @@
       }
     },
     "https://cdn.pixabay.com/video/2026/01/21/329307_large.mp4": {
-      "status": "RETRYABLE",
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "TimeoutError",
-      "error_stage": "license",
+      "status": "REJECTED",
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "TimeoutError",
+          "error_stage": "license",
+          "http_status": null,
+          "retry_after": 1794719058.234413
+        }
+      ],
+      "source_sha256": "27aa51d3b3a3cd3d50e0b0af2d094bc95c6670dbf4e3e4e675ab7ebf714a0385",
+      "license": {
+        "source_sha256": "27aa51d3b3a3cd3d50e0b0af2d094bc95c6670dbf4e3e4e675ab7ebf714a0385",
+        "source_url": "https://cdn.pixabay.com/video/2026/01/21/329307_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-329307/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "10d7158891807d937fd23e57e1250b14a61db2ddd76457d09e351dc44d8a0d01",
+        "author": "u_8gsy6544ad",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-20T21:19:25.016588+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "10d7158891807d937fd23e57e1250b14a61db2ddd76457d09e351dc44d8a0d01",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a person standing in a narrow corridor or passageway. The person is facing away from the camera, towards the right side of the image. They are wearing a white shirt and dark pants, and their hair is short and neatly",
+          "A man is holding a box with both hands. He is looking inside the box.",
+          "The image shows a man standing in a room with shelves filled with books. The man is facing away from the camera, so his face is not visible. He is wearing a white shirt with suspenders and has a beard. The shelves are"
+        ],
+        "frame_sha256": [
+          "3a7ef74b8014b8f58cdf065d8c55a1949c85ebe117b19ad3f8d30d530adcad2b",
+          "fbd5b31fcf5dc53c9a89bf48a28dab7f425e18f5b05fc5ffe2a04fb362967fb7",
+          "78ff85755dc3b1523688d217d7bf65365041879032c9c31c7192d2d02ebe01da"
+        ],
+        "source_sha256": "27aa51d3b3a3cd3d50e0b0af2d094bc95c6670dbf4e3e4e675ab7ebf714a0385",
+        "frame_mode": "reviewed_portrait",
+        "accepted": false,
+        "review_seconds": 130.623,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
       "http_status": null,
-      "retry_after": 1794719058.234413
+      "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2026/05/02/350124_large.mp4": {
       "status": "RETRYABLE",
@@ -6012,7 +6148,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4": {
-      "status": "RETRYABLE",
+      "status": "ACCEPTED",
       "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
       "license": {
         "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
@@ -6025,7 +6161,7 @@
         "author": "AlexKopeykin",
         "commercial_use": true,
         "reviewed_at": "2026-11-17T02:44:47.954403+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "e18e0aaf2e29c1c68bfa0216bf72de0fe6ffb7be5e88cadde5301b99c94efa80",
         "license_policy": {
@@ -6072,11 +6208,15 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
-      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
-      "error_type": "ValueError",
-      "error_stage": "release_and_queue",
-      "http_status": null,
-      "retry_after": 1794905250.5765254
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "release_and_queue",
+          "http_status": null,
+          "retry_after": 1794905250.5765254
+        }
+      ]
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -7243,14 +7383,16 @@
     },
     "casasem-2026-11-20-2": {
       "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "scheduled_at": "2026-11-20T18:00:00-03:00",
       "source_urls": [
         "https://cdn.pixabay.com/video/2022/07/29/125961-735666694_large.mp4"
       ],
       "provider_id": "6aff4ba5567ee294f72489ca",
-      "publicly_verified": false,
-      "public_urls": []
+      "publicly_verified": true,
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429"
+      ]
     },
     "casasem-2026-11-21-1": {
       "sha256": "22b4d28d3169a0857ef9c5ca5ddbaf0950e30aab31f02ed1b49d71a297646b75",
@@ -7290,10 +7432,15 @@
     }
   },
   "last_run": {
-    "status": "STOCK_TARGET_MET",
-    "ready": 4,
-    "held_uncertain": 0,
-    "created": 0
+    "status": "NO_VALID_OUTPUT",
+    "created": 0,
+    "ready_before": 3,
+    "ready_after": 3,
+    "target": 4,
+    "source": "licensed_stock_fallback",
+    "new_generative_ai_calls": 0,
+    "paid_services_enabled": false,
+    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
