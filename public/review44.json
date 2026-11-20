@@ -1,45 +1,17 @@
 {
   "schema": "casasem-review-preview-4.4",
-  "generated_at": "2026-11-20T15:32:05.838287+00:00",
-  "expires_at": "2026-11-20T15:32:05.838287+00:00",
+  "generated_at": "2026-11-20T15:33:25.762433+00:00",
+  "expires_at": "2026-11-20T15:33:25.762433+00:00",
   "queue_snapshot_sha256": "f43569fe4e7d2ac528d5caa7fa092b0a90539c91cab56aeb1502f8245958b5bf",
-  "state_snapshot_sha256": "ec681e1b86cdf679b2d4634082a9dd847a6e25050dca9e90ff71269c8ed916a3",
+  "state_snapshot_sha256": "673aba3516ad4c1330329267983020001dce93b422b5df4d00032c18a5e54703",
   "archived_history_sha256": "9404ed84ea61217ba3a1513c8c5ce427343f17512351d623f4db5a59c04b31da",
   "route": "buffer",
   "approved": false,
   "consented_at": null,
   "submitted": false,
-  "pending_count": 7,
+  "pending_count": 6,
   "selectable_count": 0,
   "items": [
-    {
-      "id": "casasem-2026-11-22-1",
-      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-22-1-3e7253c462ae826e.mp4",
-      "sha256": "3e7253c462ae826e85538ccf53171adc986d085ffb155a19224cd16770f8ab7b",
-      "script_hash": "5a28db08bb29074446321c795d4dccb5352f82c3d84dc2f6a00564fb832c0102",
-      "post_snapshot_sha256": "795412189e264a6e59090a62c3336a8d936ca59f4311caea077babb8e234168e",
-      "title": "Sua estante está confusa? Separe os volumes de uma coleção antes de organizar. Devolva cada título ao grupo correspondente depois do uso. Evite comprimir os livros contra o móvel. Deixe as leituras atuais fáceis de alcançar. Salve este cuidado para a sua rotina. #CasaSemEsforco #OrganizacaoDaCasa\n\nVideo — klimkin; https://pixabay.com/videos/id-1311/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.\nVideo — AlexKopeykin; https://pixabay.com/videos/id-38916/; https://pixabay.com/service/license-summary/. Adaptacoes: enquadramento, cortes, narracao e legendas.",
-      "script_lines": [
-        "Sua estante está confusa?",
-        "Separe os volumes de uma coleção antes de organizar.",
-        "Devolva cada título ao grupo correspondente depois do uso.",
-        "Evite comprimir os livros contra o móvel.",
-        "Deixe as leituras atuais fáceis de alcançar.",
-        "Salve este cuidado para a sua rotina."
-      ],
-      "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
-      "original_scheduled_at": "2026-11-22T10:00:00-03:00",
-      "proposed_scheduled_at": null,
-      "schedule_changed": false,
-      "selectable": false,
-      "blockers": [
-        "Já aprovado; requer tratamento separado, não reautorizar."
-      ],
-      "editorial_review": "PENDING",
-      "audit_notes": null,
-      "approved": false,
-      "consented_at": null
-    },
     {
       "id": "casasem-2026-10-23-2",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-2-d38426bebc1ffff2.mp4",
@@ -257,5 +229,5 @@
     }
   ],
   "notice": "Proposta somente. Selecionar/copiar não aprova nem agenda. Envie consentimento explícito no chat após assistir; hashes, revisão editorial e horários serão revalidados.",
-  "manifest_sha256": "9ef441f996fd00fdd41b9004f2786fab199fa716c8d2dae8ceffac1323cadcec"
+  "manifest_sha256": "b6531f39c8c3d334e0c6fc50d9e5497b53809850a59deb3dc4dcab3d23b5b9a9"
 }
