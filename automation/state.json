@@ -2356,7 +2356,7 @@
     },
     "casasem-2026-11-20-2": {
       "provider": "buffer",
-      "status": "SCHEDULED",
+      "status": "PUBLISH_COMPLETE",
       "submitted_at": "2026-11-19T19:18:58Z",
       "sha256": "99572e3d5ea33fab62d5c32b141fab19bacb2dc83192852b061ed889aaa16070",
       "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-2-99572e3d5ea33fab.mp4",
@@ -2387,13 +2387,35 @@
         }
       ],
       "scheduled_at": "2026-11-20T18:00:00-03:00",
-      "publicly_verified": false,
+      "publicly_verified": true,
       "recovery": "Reconcile Buffer planner by timestamp, media and caption before retrying",
       "buffer_post_id": "6aff4ba5567ee294f72489ca",
-      "last_checked_at": "2026-11-19T19:19:03Z",
-      "buffer_status": "scheduled",
-      "buffer_external_link": null,
-      "buffer_sent_at_present": false
+      "last_checked_at": "2026-11-20T21:04:08Z",
+      "buffer_status": "sent",
+      "buffer_external_link": "https://tiktok.com/@.casasemesforo/video/7710361869432753429",
+      "buffer_sent_at_present": true,
+      "last_reconcile_attempt_at": "2026-11-20T21:04:08Z",
+      "buffer_sent_at": "2026-11-20T21:03:47.234000+00:00",
+      "public_urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429"
+      ],
+      "publicly_available_post_id": [
+        "7710361869432753429"
+      ],
+      "verification_source": "Buffer API sent + automatic + exact-account externalLink + unauthenticated public TikTok playback",
+      "public_visibility_evidence": {
+        "checked_at": "2026-11-20T21:05:10.882523+00:00",
+        "url": "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429",
+        "video_id": "7710361869432753429",
+        "public_playback_verified": true,
+        "caption_hook_matches": true,
+        "playback_progressed": true,
+        "media_duration": 16.267822,
+        "width": 576,
+        "height": 1024,
+        "authenticated": false,
+        "method": "public browser video + matching caption + playback progression"
+      }
     },
     "casasem-2026-11-21-1": {
       "provider": "buffer",
@@ -2779,7 +2801,8 @@
     "2026-11-20T15:33:16.863513Z",
     "2026-11-20T15:33:17.099508Z",
     "2026-11-20T15:33:21.041327Z",
-    "2026-11-20T15:33:23.415043Z"
+    "2026-11-20T15:33:23.415043Z",
+    "2026-11-20T21:04:08.335163Z"
   ],
   "buffer_quota": {
     "windows": {
@@ -2787,25 +2810,25 @@
         "policy": "15m",
         "window_seconds": 900,
         "quota": 150,
-        "remaining": 145,
-        "reset_at": "2026-11-20T15:40:00.589891Z",
-        "observed_at": "2026-11-20T15:33:23.589891Z"
+        "remaining": 149,
+        "reset_at": "2026-11-20T21:19:08.565379Z",
+        "observed_at": "2026-11-20T21:04:08.565379Z"
       },
       "86400": {
         "policy": "24h",
         "window_seconds": 86400,
         "quota": 600,
-        "remaining": 591,
-        "reset_at": "2026-11-20T23:03:48.589891Z",
-        "observed_at": "2026-11-20T15:33:23.589891Z"
+        "remaining": 590,
+        "reset_at": "2026-11-20T23:03:48.565379Z",
+        "observed_at": "2026-11-20T21:04:08.565379Z"
       },
       "2592000": {
         "policy": "30d",
         "window_seconds": 2592000,
         "quota": 1000,
-        "remaining": 934,
-        "reset_at": "2026-12-17T01:30:14.589891Z",
-        "observed_at": "2026-11-20T15:33:23.589891Z"
+        "remaining": 933,
+        "reset_at": "2026-12-17T01:30:14.565379Z",
+        "observed_at": "2026-11-20T21:04:08.565379Z"
       }
     },
     "consecutive_errors": 0,
