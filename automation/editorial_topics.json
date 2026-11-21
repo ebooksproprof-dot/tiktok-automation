@@ -11,8 +11,9 @@
     ],
     "visual_terms": [
       "jar",
+      "jars",
       "container",
-      "pot"
+      "containers"
     ],
     "script_lines": [
       "Pote fecha torto?",
@@ -31,15 +32,17 @@
       "prato"
     ],
     "visual_terms": [
-      "dish",
       "plate",
-      "rack"
+      "plates",
+      "dish",
+      "dishes"
     ],
     "script_lines": [
       "Pratos escorregando no escorredor?",
       "Apoie cada prato no encaixe previsto. Evite peças equilibradas umas sobre as outras.",
       "Respeite a capacidade do suporte. Salve para a próxima lavagem."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:plates?|dishes|dish\\s*racks?|drainers?)\\b"
   },
   {
     "id": "ralo-coletor",
@@ -53,7 +56,6 @@
     ],
     "visual_terms": [
       "drain",
-      "sink",
       "strainer"
     ],
     "script_lines": [
@@ -73,8 +75,8 @@
       "bancada"
     ],
     "visual_terms": [
-      "countertop",
-      "counter"
+      "counter",
+      "countertop"
     ],
     "script_lines": [
       "Falta apoio para preparar comida?",
@@ -94,7 +96,7 @@
     ],
     "visual_terms": [
       "handle",
-      "refrigerator"
+      "handles"
     ],
     "script_lines": [
       "O puxador parece limpo só de frente?",
@@ -114,9 +116,12 @@
     ],
     "visual_terms": [
       "utensil",
-      "rail",
-      "hook",
-      "ladle"
+      "utensils",
+      "spoon",
+      "ladle",
+      "spatula",
+      "pan",
+      "pans"
     ],
     "script_lines": [
       "O suporte aguenta seus utensílios?",
@@ -135,15 +140,18 @@
       "copo"
     ],
     "visual_terms": [
-      "glass",
       "cup",
-      "rack"
+      "cups",
+      "glasses",
+      "tumbler",
+      "tumblers"
     ],
     "script_lines": [
       "Copo guardado com água dentro?",
       "Observe o fundo e a borda antes de guardar. Escorra no suporte adequado ao material.",
       "Espere secar completamente. Salve para cuidar dos copos."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:cups?|tumblers?|glasses)\\b"
   },
   {
     "id": "esponja-arejada",
@@ -156,8 +164,7 @@
       "esponja"
     ],
     "visual_terms": [
-      "sponge",
-      "sink"
+      "sponge"
     ],
     "script_lines": [
       "Sua esponja fica numa poça?",
@@ -176,8 +183,7 @@
       "espelho"
     ],
     "visual_terms": [
-      "mirror",
-      "cloth"
+      "mirror"
     ],
     "script_lines": [
       "Seu pano espalha fiapos no espelho?",
@@ -197,8 +203,7 @@
     ],
     "visual_terms": [
       "faucet",
-      "tap",
-      "basin"
+      "tap"
     ],
     "script_lines": [
       "Água acumulada na base da torneira?",
@@ -218,7 +223,7 @@
     ],
     "visual_terms": [
       "cloth",
-      "bathroom"
+      "microfiber"
     ],
     "script_lines": [
       "O mesmo pano vai para todo lugar?",
@@ -238,14 +243,14 @@
     ],
     "visual_terms": [
       "bottle",
-      "container",
-      "cleaning"
+      "sprayer"
     ],
     "script_lines": [
       "Produto de limpeza em garrafa de bebida?",
       "Isso pode causar confusão. Preserve a embalagem original com rótulo legível e tampa fechada.",
       "Guarde longe de crianças. Salve este cuidado."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:spray(?:er)?|cleaning|detergent)\\b"
   },
   {
     "id": "bolsos-vazios",
@@ -258,15 +263,18 @@
       "roupa"
     ],
     "visual_terms": [
-      "washer",
-      "machine",
-      "drum"
+      "clothes",
+      "clothing",
+      "shirt",
+      "garment"
     ],
     "script_lines": [
       "O que ficou dentro do bolso?",
       "Antes de colocar a roupa no tambor, esvazie os bolsos. Moedas e papéis precisam sair.",
       "Confira também a etiqueta. Salve esta etapa."
-    ]
+    ],
+    "required_visual_pattern": "\\bpockets?\\b",
+    "visual_subject": "shirt with clearly visible empty pockets beside a washing machine"
   },
   {
     "id": "varal-espaco",
@@ -280,13 +288,14 @@
     ],
     "visual_terms": [
       "clothesline",
-      "drying"
+      "rack"
     ],
     "script_lines": [
       "As peças se encostam no varal?",
       "Deixe intervalo entre os tecidos. A circulação de ar depende do espaço disponível.",
       "Siga a etiqueta para escolher a secagem. Salve esta distância."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:clotheslines?|drying\\s+racks?)\\b"
   },
   {
     "id": "ferro-etiqueta",
@@ -320,6 +329,7 @@
     ],
     "visual_terms": [
       "towel",
+      "towels",
       "linen"
     ],
     "script_lines": [
@@ -340,8 +350,7 @@
     ],
     "visual_terms": [
       "hanger",
-      "closet",
-      "wardrobe"
+      "hangers"
     ],
     "script_lines": [
       "O cabide marca o ombro da peça?",
@@ -360,9 +369,10 @@
       "roupa"
     ],
     "visual_terms": [
-      "closet",
-      "wardrobe",
-      "door"
+      "clothes",
+      "clothing",
+      "shirt",
+      "garment"
     ],
     "script_lines": [
       "A porta prende tecido ao fechar?",
@@ -382,8 +392,7 @@
     ],
     "visual_terms": [
       "sock",
-      "socks",
-      "drawer"
+      "socks"
     ],
     "script_lines": [
       "Meia sem par ocupa a gaveta?",
@@ -403,8 +412,7 @@
     ],
     "visual_terms": [
       "drawer",
-      "clothes",
-      "fold"
+      "drawers"
     ],
     "script_lines": [
       "A gaveta precisa de força para fechar?",
@@ -424,8 +432,7 @@
     ],
     "visual_terms": [
       "book",
-      "books",
-      "shelf"
+      "books"
     ],
     "script_lines": [
       "Uma coleção ficou espalhada pela estante?",
@@ -445,8 +452,7 @@
     ],
     "visual_terms": [
       "book",
-      "books",
-      "shelf"
+      "books"
     ],
     "script_lines": [
       "Livros tombando na ponta da prateleira?",
@@ -467,9 +473,7 @@
       "vassoura"
     ],
     "visual_terms": [
-      "broom",
-      "sweeping",
-      "floor"
+      "broom"
     ],
     "script_lines": [
       "Você atravessa o piso recém-limpo?",
@@ -488,9 +492,7 @@
       "pa"
     ],
     "visual_terms": [
-      "broom",
-      "dustpan",
-      "sweeping"
+      "dustpan"
     ],
     "script_lines": [
       "A sujeira escapa antes de chegar à pá?",
@@ -509,15 +511,15 @@
       "produto"
     ],
     "visual_terms": [
-      "spray",
       "bottle",
-      "cleaning"
+      "sprayer"
     ],
     "script_lines": [
       "Esse produto combina com o acabamento?",
       "Confira no rótulo as superfícies permitidas. A aparência do móvel não identifica seu material.",
       "Consulte o fabricante quando houver dúvida. Salve a checagem."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:spray(?:er)?|cleaning|detergent)\\b"
   },
   {
     "id": "pano-particulas",
@@ -531,8 +533,7 @@
     ],
     "visual_terms": [
       "cloth",
-      "wiping",
-      "countertop"
+      "microfiber"
     ],
     "script_lines": [
       "Um grão no pano pode riscar?",
@@ -552,8 +553,7 @@
     ],
     "visual_terms": [
       "lid",
-      "container",
-      "drawer"
+      "lids"
     ],
     "script_lines": [
       "A tampa certa some na pilha?",
@@ -573,7 +573,7 @@
     ],
     "visual_terms": [
       "basket",
-      "laundry"
+      "baskets"
     ],
     "script_lines": [
       "O cesto bloqueia sua passagem?",
@@ -592,9 +592,9 @@
       "talher"
     ],
     "visual_terms": [
-      "knife",
       "cutlery",
-      "utensil"
+      "knife",
+      "knives"
     ],
     "script_lines": [
       "Talheres cortantes escondidos na louça?",
@@ -614,8 +614,7 @@
     ],
     "visual_terms": [
       "shelf",
-      "shelves",
-      "cabinet"
+      "shelves"
     ],
     "script_lines": [
       "A prateleira está cedendo no meio?",
@@ -635,13 +634,16 @@
     ],
     "visual_terms": [
       "plate",
-      "dish"
+      "plates",
+      "dish",
+      "dishes"
     ],
     "script_lines": [
       "Prato delicado raspando em outra peça?",
       "Separe as peças frágeis durante a lavagem. O contato entre bordas pode danificar o acabamento.",
       "Use apoios adequados ao material. Salve este cuidado."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:plates?|dishes|dish\\s*racks?|drainers?)\\b"
   },
   {
     "id": "panela-resfriar",
@@ -655,7 +657,9 @@
     ],
     "visual_terms": [
       "pan",
-      "pot"
+      "pans",
+      "pot",
+      "pots"
     ],
     "script_lines": [
       "Panela quente direto na água fria?",
@@ -675,7 +679,7 @@
     ],
     "visual_terms": [
       "spoon",
-      "utensil"
+      "spoons"
     ],
     "script_lines": [
       "Colher de madeira esquecida no molho?",
@@ -697,7 +701,9 @@
     ],
     "visual_terms": [
       "pan",
-      "handle"
+      "pans",
+      "pot",
+      "pots"
     ],
     "script_lines": [
       "O cabo da panela está frouxo?",
@@ -716,14 +722,18 @@
       "copo"
     ],
     "visual_terms": [
-      "glass",
-      "cup"
+      "cup",
+      "cups",
+      "glasses",
+      "tumbler",
+      "tumblers"
     ],
     "script_lines": [
       "Essa linha no copo é uma trinca?",
       "Examine a peça com boa iluminação. Separe vidros trincados ou com lascas para evitar acidentes.",
       "Faça o descarte adequado e protegido. Salve esta checagem."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:cups?|tumblers?|glasses)\\b"
   },
   {
     "id": "escorredor-bandeja",
@@ -736,15 +746,15 @@
       "escorredor"
     ],
     "visual_terms": [
-      "rack",
       "drainer",
-      "dish"
+      "rack"
     ],
     "script_lines": [
       "A bandeja do escorredor fica esquecida?",
       "Confira se o modelo tem bandeja removível. Esvazie a água acumulada e siga a limpeza do fabricante.",
       "Monte tudo novamente antes do uso. Salve essa etapa."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:plates?|dishes|dish\\s*racks?|drainers?)\\b"
   },
   {
     "id": "fogao-frio",
@@ -799,14 +809,14 @@
     ],
     "visual_terms": [
       "bottle",
-      "measuring",
-      "container"
+      "sprayer"
     ],
     "script_lines": [
       "Mais produto significa limpeza melhor?",
       "A dosagem correta é a do rótulo. Use o medidor indicado, sem adivinhar a diluição.",
       "Não misture produtos. Salve a medida certa."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:spray(?:er)?|cleaning|detergent)\\b"
   },
   {
     "id": "espelho-bordas",
@@ -819,8 +829,7 @@
       "espelho"
     ],
     "visual_terms": [
-      "mirror",
-      "edge"
+      "mirror"
     ],
     "script_lines": [
       "A borda do espelho fica encharcada?",
@@ -840,7 +849,7 @@
     ],
     "visual_terms": [
       "window",
-      "track"
+      "windows"
     ],
     "script_lines": [
       "O trilho da janela junta resíduos?",
@@ -860,7 +869,7 @@
     ],
     "visual_terms": [
       "cloth",
-      "washing"
+      "microfiber"
     ],
     "script_lines": [
       "O pano limpo ainda tem resíduos?",
@@ -880,6 +889,7 @@
     ],
     "visual_terms": [
       "clothes",
+      "clothing",
       "shirt",
       "garment"
     ],
@@ -900,9 +910,7 @@
       "ziper"
     ],
     "visual_terms": [
-      "zipper",
-      "clothing",
-      "shirt"
+      "zipper"
     ],
     "script_lines": [
       "O zíper pode prender outra roupa?",
@@ -928,7 +936,8 @@
       "Seu varal está cedendo com o peso?",
       "Verifique a capacidade e o estado das fixações. Distribua somente a carga permitida pelo fabricante.",
       "Não use um apoio danificado. Salve esta inspeção."
-    ]
+    ],
+    "required_visual_pattern": "\\b(?:clotheslines?|drying\\s+racks?)\\b"
   },
   {
     "id": "varal-sol",
@@ -941,9 +950,10 @@
       "roupa"
     ],
     "visual_terms": [
-      "clothesline",
-      "drying",
-      "fabric"
+      "clothes",
+      "clothing",
+      "shirt",
+      "garment"
     ],
     "script_lines": [
       "Toda roupa pode secar ao sol?",
@@ -963,8 +973,7 @@
     ],
     "visual_terms": [
       "iron",
-      "ironing",
-      "cord"
+      "ironing"
     ],
     "script_lines": [
       "O fio do ferro cruza sua passagem?",
@@ -983,7 +992,6 @@
       "malha"
     ],
     "visual_terms": [
-      "hanger",
       "sweater",
       "knit"
     ],
@@ -1005,8 +1013,7 @@
     ],
     "visual_terms": [
       "book",
-      "spine",
-      "shelf"
+      "books"
     ],
     "script_lines": [
       "Você puxa o livro só pelo alto da lombada?",
@@ -1025,8 +1032,7 @@
       "vassoura"
     ],
     "visual_terms": [
-      "broom",
-      "bristle"
+      "broom"
     ],
     "script_lines": [
       "As cerdas ficam dobradas ao guardar?",

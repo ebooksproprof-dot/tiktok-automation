@@ -98,7 +98,7 @@ class PolicyTests(unittest.TestCase):
         line = item('b', 'clothesline, laundry', 'Clothes hanging on a clothesline.')
         choices = production.scripts([washer, line], {'posts': []}, {'posts': {}})
         self.assertTrue(choices)
-        self.assertTrue(any('bolsos' in ' '.join(idea[2]) for idea in choices))
+        self.assertTrue(any(idea[0].startswith('tip12-varal-') for idea in choices))
         only_line = production.scripts([line], {'posts': []}, {'posts': {}})
         self.assertTrue(only_line)
         self.assertTrue(all(idea[0].startswith('tip12-varal-') for idea in only_line))
