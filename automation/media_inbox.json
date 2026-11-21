@@ -2808,7 +2808,8 @@
       "height": 1080,
       "duration": 11.0,
       "bytes": 6993181,
-      "acquired_at": 1795218399
+      "acquired_at": 1795218399,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -2879,31 +2880,31 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795218396,
-    "acquired": 2,
+    "at": 1795219467,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 15,
+    "download_attempts": 0,
+    "skipped_known": 26,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 11,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 8,
-          "total_hits": 8,
-          "context_rejected": 0,
+          "raw_hits": 15,
+          "total_hits": 96,
+          "context_rejected": 4,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "manutencao",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -2911,14 +2912,37 @@
       },
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 6,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 198,
+          "context_rejected": 9,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 15,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 49,
+          "total_hits": 177,
           "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2926,57 +2950,42 @@
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 13,
+        "eligible_candidates": 9,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 383,
-          "context_rejected": 1,
+          "total_hits": 428,
+          "context_rejected": 6,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 1
+          "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 10,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 491,
-          "context_rejected": 4,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 1
-        }
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "shelf",
-      "basket",
-      "wiping table",
-      "cleaning sink"
+      "clothes",
+      "drying clothesline",
+      "washing soap",
+      "organizing clothes"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
