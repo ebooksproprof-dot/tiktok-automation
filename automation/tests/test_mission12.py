@@ -270,3 +270,11 @@ class ExactObjects12(unittest.TestCase):
     def test_room_or_shared_background_is_not_object_evidence(self):
         self.assertFalse(tips.matches_visual(tips.BY_ID['espelho-fiapos'],['A window in a bathroom.']*3))
         self.assertFalse(tips.matches_visual(tips.BY_ID['varal-espaco'],['A washing machine with laundry.']*3))
+
+class SceneSelection12(unittest.TestCase):
+    def test_shared_laundry_family_does_not_include_machine_in_a_clothesline_tip(self):
+        def scene(key,text):return {'record':{'id':key},'visual_review':{'family':'laundry','captions':[text]*3}}
+        ideas=production.scripts([scene('machine','A washing machine.'),scene('line','Clothes drying on a clothesline.')],{'posts':[]},{'posts':{}})
+        self.assertTrue(ideas)
+        self.assertTrue(all('machine' not in idea[1] for idea in ideas))
+        self.assertTrue(all(idea[1]==['line'] for idea in ideas))

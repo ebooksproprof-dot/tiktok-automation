@@ -293,11 +293,19 @@ def candidate_records(inbox, cache):
 
 
 def scripts(pool, queue, state, reserved_topics=()):
-    from editorial_topics import ideas
+    from editorial_topics import ideas, BY_ID, matches_visual
     family = pool[0]['visual_review']['family']
     captions = [c for x in pool for c in x['visual_review']['captions']]
-    return [(concept, [x['record']['id'] for x in pool], lines)
-            for concept, _, lines in ideas(queue, state, family, captions) if concept[6:] not in reserved_topics]
+    result = []
+    for concept, _, lines in ideas(queue, state, family, captions):
+        if concept[6:] in reserved_topics: continue
+        tip = BY_ID[concept[6:]]
+        # A shared family is insufficient: use only sources that support this
+        # exact tip, preserving the other approved sources for future work.
+        sources = [x['record'] for x in pool if matches_visual(tip, x['visual_review']['captions'])]
+        if sources:
+            result.append((concept, [r['id'] for r in sources], lines))
+    return result
 
 
 def repaired_context(prior, record):
@@ -445,11 +453,12 @@ def run(stage=False, soon=False, limit=2):
             else:
                 raise failure or ValueError('NO_VALID_NARRATION_PLAN')
             motion(video)
-            records = [x['record'] for x in pool]
+            used_pool = [x for x in pool if x['record']['id'] in idea[1]]
+            records = [x['record'] for x in used_pool]
             title, credits = caption_with_credits(' '.join(idea[2])+' #CasaSemEsforco #OrganizacaoDaCasa', records)
             quality.update(editorial_approved=True, required_public_credits=credits,
                 automated_review=True, review_policy='mission102_cpu_semantics_motion_licensed_source',
-                source_rights=[x['license'] for x in pool], semantic_reviews=[x['visual_review'] for x in pool],
+                source_rights=[x['license'] for x in used_pool], semantic_reviews=[x['visual_review'] for x in used_pool],
                 human_perceptual_review=False)
             post = dict(id=post_id, concept=idea[0], title=title, approved=True,
                 consented_at=dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -468,14 +477,14 @@ def run(stage=False, soon=False, limit=2):
                 post['video_url'] = publish(video, post_id, quality)
                 queue['posts'].append(post)
                 save_json(ROOT/'queue.json', queue)
-                for x in pool:
+                for x in used_pool:
                     ledger['candidates'][x['record']['url']]['status'] = 'QUEUED'
                 ledger['outputs'][post_id] = {'sha256': quality['sha256'], 'status': 'QUEUED',
                     'scheduled_at': when.isoformat(), 'source_urls': quality['source_urls']}
             outputs.append({'post_id': post_id, 'video': str(video), 'quality': quality,
                             'scheduled_at': when.isoformat(), 'video_url': post['video_url']})
             previous.append(quality)
-            pools[review['family']] = []
+            pools[review['family']] = [x for x in pool if x not in used_pool]
         except Exception as exc:
             controlled = isinstance(exc, ValueError) and bool(re.fullmatch(r'[A-Z][A-Z0-9_]{2,100}', str(exc)))
             local_cap = isinstance(exc, SourceLicenseBudgetExceeded)
