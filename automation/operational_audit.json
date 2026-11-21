@@ -21,28 +21,6 @@
     "edges": [
       {
         "node": {
-          "id": "6b0068417efc64d5e42eee8d",
-          "channelId": "6ad14dc2778b240e2f1f7c2f",
-          "status": "scheduled",
-          "schedulingType": "automatic",
-          "dueAt": "2026-11-22T13:00:00.000Z",
-          "sentAt": null,
-          "externalLink": null
-        }
-      },
-      {
-        "node": {
-          "id": "6aff8057b3e65522f837f4f3",
-          "channelId": "6ad14dc2778b240e2f1f7c2f",
-          "status": "scheduled",
-          "schedulingType": "automatic",
-          "dueAt": "2026-11-21T21:00:00.000Z",
-          "sentAt": null,
-          "externalLink": null
-        }
-      },
-      {
-        "node": {
           "id": "6aff5bfe1f6cb90e69ebc411",
           "channelId": "6ad14dc2778b240e2f1f7c2f",
           "status": "scheduled",
@@ -59,6 +37,24 @@
   },
   "latest_provider_posts": {
     "p0": {
+      "id": "6afe4ea8b450eb4c021a0520",
+      "channelId": "6ad14dc2778b240e2f1f7c2f",
+      "status": "sent",
+      "schedulingType": "automatic",
+      "dueAt": "2026-11-19T21:00:00.000Z",
+      "sentAt": "2026-11-19T21:03:02.693Z",
+      "externalLink": "https://tiktok.com/@.casasemesforo/video/7709990757989469461"
+    },
+    "p1": {
+      "id": "6aff1cefd74f4ff9ae952c3a",
+      "channelId": "6ad14dc2778b240e2f1f7c2f",
+      "status": "sent",
+      "schedulingType": "automatic",
+      "dueAt": "2026-11-20T13:00:00.000Z",
+      "sentAt": "2026-11-20T13:05:24.063Z",
+      "externalLink": "https://tiktok.com/@.casasemesforo/video/7710238571839622408"
+    },
+    "p2": {
       "id": "6aff4ba5567ee294f72489ca",
       "channelId": "6ad14dc2778b240e2f1f7c2f",
       "status": "sent",
@@ -67,7 +63,7 @@
       "sentAt": "2026-11-20T21:03:47.234Z",
       "externalLink": "https://tiktok.com/@.casasemesforo/video/7710361869432753429"
     },
-    "p1": {
+    "p3": {
       "id": "6aff5bfe1f6cb90e69ebc411",
       "channelId": "6ad14dc2778b240e2f1f7c2f",
       "status": "scheduled",
@@ -75,27 +71,9 @@
       "dueAt": "2026-11-21T13:00:00.000Z",
       "sentAt": null,
       "externalLink": null
-    },
-    "p2": {
-      "id": "6aff8057b3e65522f837f4f3",
-      "channelId": "6ad14dc2778b240e2f1f7c2f",
-      "status": "scheduled",
-      "schedulingType": "automatic",
-      "dueAt": "2026-11-21T21:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
-    },
-    "p3": {
-      "id": "6b0068417efc64d5e42eee8d",
-      "channelId": "6ad14dc2778b240e2f1f7c2f",
-      "status": "scheduled",
-      "schedulingType": "automatic",
-      "dueAt": "2026-11-22T13:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
     }
   },
   "read_only": true,
   "publication_attempted": false,
-  "at": "2026-11-20T23:57:07Z"
+  "at": "2026-11-21T00:04:24Z"
 }
