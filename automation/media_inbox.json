@@ -2873,6 +2873,132 @@
       "duration": 5.733333,
       "bytes": 1551783,
       "acquired_at": 1795218404
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "159029",
+      "url": "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-159029/",
+      "author": "eloguers",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: eloguers / Pixabay — https://pixabay.com/videos/id-159029/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: students, books, papers, text, study, studying, library, research, academic, college, university, desk, teamwork, collaboration, group project, young, essay",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4",
+      "sha256": "b0e496db006ad4f03b87a93d6dc30421eb7da6f198385109441d1dfd5e8b97ba",
+      "dhash": [
+        "13335d5d071343c1",
+        "16335d5d271343c1",
+        "92374d5f031b43c3",
+        "12334d5f271b43c3",
+        "1237555f261b43c3"
+      ],
+      "crop_dhash": {
+        "full": [
+          "13335d5d071343c1",
+          "16335d5d271343c1",
+          "92374d5f031b43c3",
+          "12334d5f271b43c3",
+          "1237555f261b43c3"
+        ],
+        "inner90": [
+          "13335d5f43135bc7",
+          "13335d5d27135bc7",
+          "13355d5f03195bc7",
+          "13335d5f231f5bc7",
+          "13355d5f231b5bc7"
+        ],
+        "inner80": [
+          "1355dc5e431359c7",
+          "1353dd5f431359c7",
+          "1355de5b431559c3",
+          "1355dc5f639719c3",
+          "1355de5b639739c1"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 60.286667,
+      "bytes": 22762769,
+      "acquired_at": 1795272687
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "35449",
+      "url": "https://cdn.pixabay.com/video/2020/04/08/35449-407130915_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-35449/",
+      "author": "ninosouza",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: ninosouza / Pixabay — https://pixabay.com/videos/id-35449/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: education, school, kid, study, library, books, literature, student, children, research, write, science, play, math, teacher, class",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2020/04/08/35449-407130915_large.mp4",
+      "sha256": "ead0bb1e76ddb7e15a2806633c3ba39ec339f301b1f8f519b44c9da34d0a4e64",
+      "dhash": [
+        "6b6e6636365f6f7f",
+        "6b6b29383c3e7d6d",
+        "b6b6969e1ebf3e36",
+        "dcd9ce8f8f0f1f1b",
+        "0e061cb8ba9e9e1e"
+      ],
+      "crop_dhash": {
+        "full": [
+          "6b6e6636365f6f7f",
+          "6b6b29383c3e7d6d",
+          "b6b6969e1ebf3e36",
+          "dcd9ce8f8f0f1f1b",
+          "0e061cb8ba9e9e1e"
+        ],
+        "inner90": [
+          "ed666737375f6bff",
+          "e9696d3c3c7f7dfd",
+          "32b2161e1fbfbf76",
+          "dddd8f8f8f4f1f1b",
+          "0f073cb8ba9a9e1e"
+        ],
+        "inner80": [
+          "ede763b3735b5b7b",
+          "e9686c7c7c5f7cfc",
+          "73321e1f1faf3f77",
+          "5dcd8d8f8f4b5f3d",
+          "83073c39ba9a1e1e"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.880533,
+      "bytes": 6902945,
+      "acquired_at": 1795272690
     }
   ],
   "rejected_until": {
@@ -2880,61 +3006,15 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795271870,
-    "acquired": 0,
+    "at": 1795272681,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 13,
+    "download_attempts": 2,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 486,
-          "context_rejected": 14,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 8,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 18,
-          "context_rejected": 7,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 15,
@@ -2942,7 +3022,7 @@
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 320,
+          "total_hits": 90,
           "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -2958,38 +3038,30 @@
       },
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "livros2",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 10,
         "response_source": "live_api",
         "filters": {
-          "page": 1,
+          "page": 3,
           "raw_hits": 15,
-          "total_hits": 329,
-          "context_rejected": 0,
+          "total_hits": 303,
+          "context_rejected": 5,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning shelf",
-      "wiping shelf",
-      "window",
-      "wiping window"
+      "mirror",
+      "library books",
+      "microfiber",
+      "clothes folding"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 76,
+    "unreviewed_media_count": 78,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
