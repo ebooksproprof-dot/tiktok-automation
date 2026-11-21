@@ -1,6 +1,6 @@
 {
   "version": 12,
-  "at": "2026-11-21T21:39:18.747519+00:00",
+  "at": "2026-11-21T23:38:58.486166+00:00",
   "stock": {
     "ready": 0,
     "held_uncertain": 0,
@@ -32,7 +32,7 @@
       "details": {
         "SOURCE_FROZEN_OR_UNDECODABLE": 24,
         "SOURCE_OR_RENDER_UNAVAILABLE": 17,
-        "PORTRAIT_VISUAL_CONTEXT_REJECTED": 55,
+        "PORTRAIT_VISUAL_CONTEXT_REJECTED": 57,
         "HANDWASH_CONTEXT_NOT_ESTABLISHED": 2
       }
     },
@@ -50,10 +50,12 @@
         "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
       }
     },
-    "WAN_FREE_QUOTA_WAIT": {
-      "code": "WAN_FREE_QUOTA_WAIT",
+    "EXPECTED_PUBLICATION_NOT_VERIFIED": {
+      "code": "EXPECTED_PUBLICATION_NOT_VERIFIED",
       "details": {
-        "not_before": "2026-11-21T22:39:45.590665+00:00"
+        "slots": [
+          "2026-11-21T18:00:00-03:00"
+        ]
       }
     }
   },
@@ -62,7 +64,7 @@
   "incidents": {
     "STOCK_BELOW_TARGET": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 37,
+      "occurrences": 38,
       "code": "STOCK_BELOW_TARGET",
       "details": {
         "ready": 0,
@@ -70,7 +72,7 @@
         "held_uncertain": 0
       },
       "active": true,
-      "last_seen": "2026-11-21T21:39:18.747519+00:00"
+      "last_seen": "2026-11-21T23:38:58.486166+00:00"
     },
     "SIMILAR_FUTURE_CONTENT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
@@ -92,20 +94,20 @@
     },
     "PRODUCTION_SOURCE_HOLDS": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 37,
+      "occurrences": 38,
       "code": "PRODUCTION_SOURCE_HOLDS",
       "details": {
         "SOURCE_FROZEN_OR_UNDECODABLE": 24,
         "SOURCE_OR_RENDER_UNAVAILABLE": 17,
-        "PORTRAIT_VISUAL_CONTEXT_REJECTED": 55,
+        "PORTRAIT_VISUAL_CONTEXT_REJECTED": 57,
         "HANDWASH_CONTEXT_NOT_ESTABLISHED": 2
       },
       "active": true,
-      "last_seen": "2026-11-21T21:39:18.747519+00:00"
+      "last_seen": "2026-11-21T23:38:58.486166+00:00"
     },
     "NO_APPROVED_PRODUCTION_OUTPUT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 37,
+      "occurrences": 38,
       "code": "NO_APPROVED_PRODUCTION_OUTPUT",
       "details": {
         "status": "NO_VALID_OUTPUT",
@@ -119,7 +121,7 @@
         "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
       },
       "active": true,
-      "last_seen": "2026-11-21T21:39:18.747519+00:00"
+      "last_seen": "2026-11-21T23:38:58.486166+00:00"
     },
     "WAN_FREE_QUOTA_WAIT": {
       "first_seen": "2026-11-21T00:12:06.881495+00:00",
@@ -128,8 +130,21 @@
       "details": {
         "not_before": "2026-11-21T22:39:45.590665+00:00"
       },
+      "active": false,
+      "last_seen": "2026-11-21T21:39:18.747519+00:00",
+      "resolved_at": "2026-11-21T23:38:58.486166+00:00"
+    },
+    "EXPECTED_PUBLICATION_NOT_VERIFIED": {
+      "first_seen": "2026-11-21T23:38:58.486166+00:00",
+      "occurrences": 1,
+      "code": "EXPECTED_PUBLICATION_NOT_VERIFIED",
+      "details": {
+        "slots": [
+          "2026-11-21T18:00:00-03:00"
+        ]
+      },
       "active": true,
-      "last_seen": "2026-11-21T21:39:18.747519+00:00"
+      "last_seen": "2026-11-21T23:38:58.486166+00:00"
     }
   }
 }
