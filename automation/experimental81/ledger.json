@@ -223,6 +223,14 @@
       "status": "RESERVED_NO_AUTO_RETRY",
       "profile": "wan104_licensed_fastwan5b",
       "space": "Upsampler/wan-2-2-5b-video"
+    },
+    {
+      "request_sha256": "422322aca7d654260feacdb6876c92f649fff08179810857880e43c8c322ea75",
+      "claimed_at": "2026-11-21T00:04:14.019471+00:00",
+      "estimated_seconds": 60.0,
+      "status": "RESERVED_NO_AUTO_RETRY",
+      "profile": "wan104_licensed_fastwan5b",
+      "space": "Upsampler/wan-2-2-5b-video"
     }
   ],
   "schema_version": 1,
@@ -230,7 +238,8 @@
   "window_claim_ids": [
     "a1cfe40d8bbb8f2bfdef7b5dcade183df0286b2c5d855d437453764ec8cf7ea8",
     "0c4e745e366c2b978c3275054c7b17a6d844a242edc17154d1563ec4df09af86",
-    "2454bfda070251dc4e35a12f17d608e20e6f2ba14f7b6d29e20a7a4b550511c9"
+    "2454bfda070251dc4e35a12f17d608e20e6f2ba14f7b6d29e20a7a4b550511c9",
+    "422322aca7d654260feacdb6876c92f649fff08179810857880e43c8c322ea75"
   ],
   "window_start": "2026-11-20T22:39:45.590665+00:00"
 }
