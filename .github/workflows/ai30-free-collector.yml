@@ -3,7 +3,7 @@ name: CasaSemEsforco AI30 Free Collector
 on:
   schedule:
     # More than one renewal check after the rolling 24h boundary; never resets quota.
-    - cron: '10 6,12,16,22 * * *'
+    - cron: '10 6,12,16,22,23 * * *'
   workflow_dispatch:
     inputs:
       verify_existing_output:

@@ -1,7 +1,7 @@
 {
   "suite": "python -m unittest discover -s automation/tests",
-  "tests": 447,
-  "seconds": 14.407,
+  "tests": 451,
+  "seconds": 13.301,
   "result": "OK",
   "continuity_days": 14,
   "continuity_is_simulated": true,
@@ -22,5 +22,7 @@
       "simulated_publications": 24
     }
   ],
-  "continuous_live_capacity_proven": false
+  "continuous_live_capacity_proven": false,
+  "ci_verified_run": 44841860166,
+  "ci_verified_tests": 450
 }
