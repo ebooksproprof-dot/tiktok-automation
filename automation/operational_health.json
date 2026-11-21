@@ -1,12 +1,12 @@
 {
   "version": 12,
-  "at": "2026-11-21T07:39:09.716938+00:00",
+  "at": "2026-11-21T14:35:56.290154+00:00",
   "stock": {
-    "ready": 1,
+    "ready": 0,
     "held_uncertain": 0,
     "target_max": 4,
     "low_stock": true,
-    "refill_needed": 3,
+    "refill_needed": 4,
     "held_ids": [],
     "publication_confirmation_is_separate": true
   },
@@ -15,16 +15,15 @@
     "scenes_preserved_unused": 6,
     "scenes_rejected": 4,
     "sent_unverified": 1,
-    "published_verified": 39,
-    "videos_rejected": 12,
-    "scheduled": 1
+    "published_verified": 40,
+    "videos_rejected": 12
   },
   "active_incidents": {
     "STOCK_BELOW_TARGET": {
       "code": "STOCK_BELOW_TARGET",
       "details": {
-        "ready": 1,
-        "refill_needed": 3,
+        "ready": 0,
+        "refill_needed": 4,
         "held_uncertain": 0
       }
     },
@@ -63,15 +62,15 @@
   "incidents": {
     "STOCK_BELOW_TARGET": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 21,
+      "occurrences": 22,
       "code": "STOCK_BELOW_TARGET",
       "details": {
-        "ready": 1,
-        "refill_needed": 3,
+        "ready": 0,
+        "refill_needed": 4,
         "held_uncertain": 0
       },
       "active": true,
-      "last_seen": "2026-11-21T07:39:09.716938+00:00"
+      "last_seen": "2026-11-21T14:35:56.290154+00:00"
     },
     "SIMILAR_FUTURE_CONTENT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
@@ -93,7 +92,7 @@
     },
     "PRODUCTION_SOURCE_HOLDS": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 21,
+      "occurrences": 22,
       "code": "PRODUCTION_SOURCE_HOLDS",
       "details": {
         "SOURCE_FROZEN_OR_UNDECODABLE": 24,
@@ -102,11 +101,11 @@
         "HANDWASH_CONTEXT_NOT_ESTABLISHED": 2
       },
       "active": true,
-      "last_seen": "2026-11-21T07:39:09.716938+00:00"
+      "last_seen": "2026-11-21T14:35:56.290154+00:00"
     },
     "NO_APPROVED_PRODUCTION_OUTPUT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 21,
+      "occurrences": 22,
       "code": "NO_APPROVED_PRODUCTION_OUTPUT",
       "details": {
         "status": "NO_VALID_OUTPUT",
@@ -120,17 +119,17 @@
         "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
       },
       "active": true,
-      "last_seen": "2026-11-21T07:39:09.716938+00:00"
+      "last_seen": "2026-11-21T14:35:56.290154+00:00"
     },
     "WAN_FREE_QUOTA_WAIT": {
       "first_seen": "2026-11-21T00:12:06.881495+00:00",
-      "occurrences": 11,
+      "occurrences": 12,
       "code": "WAN_FREE_QUOTA_WAIT",
       "details": {
         "not_before": "2026-11-21T22:39:45.590665+00:00"
       },
       "active": true,
-      "last_seen": "2026-11-21T07:39:09.716938+00:00"
+      "last_seen": "2026-11-21T14:35:56.290154+00:00"
     }
   }
 }
