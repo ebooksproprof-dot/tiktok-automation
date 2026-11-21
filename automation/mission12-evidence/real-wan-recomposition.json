@@ -1,0 +1,497 @@
+{
+  "status": "EXISTING_WAN_RECOMPOSED_VALIDATED_NO_PUBLICATION",
+  "post_id": "casasem-2026-11-20-1",
+  "quality": {
+    "profile": "hybrid30",
+    "technical_pass": true,
+    "editorial_approved": true,
+    "publication_enabled": false,
+    "sha256": "9e90817f484a7a8138c6e849992d9a8270432f66c7e8135f22a295379835e0e0",
+    "duration": 15.0,
+    "duration_tolerance_seconds": 0.15,
+    "size": 5108427,
+    "width": 1080,
+    "height": 1920,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_mean_db": -14.8,
+    "av_start_delta_seconds": 0.0,
+    "av_end_delta_seconds": 0.023,
+    "lip_sync_verified": false,
+    "black_intervals_over_300ms": 0,
+    "silence_intervals_over_800ms": 0,
+    "decoder_pass": true,
+    "freeze_intervals_over_1s": 0,
+    "freeze_threshold_db": -50,
+    "wan104_licensed_profile": true,
+    "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+    "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+    "ai_generated_seconds": 15,
+    "real_video_seconds": 0,
+    "voice": "kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br",
+    "machine_checks_only": true,
+    "human_perceptual_review": false,
+    "commercial_license_clearance": true,
+    "licensed_sources": [
+      {
+        "slot": 0,
+        "episode": 5,
+        "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+        "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+        "media": {
+          "duration_seconds": 5.041667,
+          "width": 480,
+          "height": 832,
+          "video_codec": "h264",
+          "fps": "24/1",
+          "has_audio": false,
+          "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+          "bytes": 365733
+        },
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "prompt": "Photorealistic kitchen pantry, three clear unlabelled glass storage jars on a clean wooden shelf. Gentle continuous camera slide reveals the organized shelf, realistic reflections and stable geometry. No people, no hands, no logos, no text. One calm uninterrupted shot. Setting detail: light oak.",
+        "reference_kind": "authored_text_only",
+        "generation_evidence": {
+          "request_sha256": "5b5e1e2ea2b9ccd8f7e7c76f407bad7322674677f92d6c1b2edc031f96f3c246",
+          "provider_job_id": "936427b63c5f4c9db737618b1388794f",
+          "gpu_seconds_consumed": null,
+          "estimated_reserved_seconds": 60,
+          "tier": "free",
+          "paid_endpoint_used": false
+        },
+        "visual_source": {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+          "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+          "dhash": [
+            "0616e6aaaeae0e06",
+            "061666a6aea60606",
+            "0616e6a6aaae0606",
+            "0616e6a6a2a6a406",
+            "0616e6a62aee2c06"
+          ]
+        },
+        "commercial_license_clearance": true,
+        "commercial_license_evidence": {
+          "source_sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+          "reviewed_at": "2026-11-19T15:50:27.042453+00:00",
+          "model": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "derivative": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "voice": {
+            "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+          },
+          "reference": {
+            "revision": "5b5e1e2ea2b9ccd8f7e7c76f407bad7322674677f92d6c1b2edc031f96f3c246",
+            "commercial_use": true,
+            "basis": "original authored text; no third-party image",
+            "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+          }
+        }
+      },
+      {
+        "slot": 1,
+        "episode": 5,
+        "sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+        "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+        "media": {
+          "duration_seconds": 5.041667,
+          "width": 480,
+          "height": 832,
+          "video_codec": "h264",
+          "fps": "24/1",
+          "has_audio": false,
+          "sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+          "bytes": 441477
+        },
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "prompt": "Photorealistic linen cupboard with neatly folded cotton towels on an open shelf, soft window light. Slow continuous camera push toward the towels, realistic fabric texture, stable objects and natural shadows. No people, no hands, no logos, no text. One uninterrupted shot. Setting detail: light oak.",
+        "reference_kind": "authored_text_only",
+        "generation_evidence": {
+          "request_sha256": "7af2f52ef2adc84ffe894524fb57533750e2534b49d07dab13194ba0a4d860e7",
+          "provider_job_id": "035e5dabe49442b897466c9e00d4e5d2",
+          "gpu_seconds_consumed": null,
+          "estimated_reserved_seconds": 60,
+          "tier": "free",
+          "paid_endpoint_used": false
+        },
+        "visual_source": {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+          "sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+          "dhash": [
+            "c6c258f8ec871f1f",
+            "828078f8cc07173f",
+            "0458787808074f7f",
+            "f8787878ed07673f",
+            "f8f87881dfc30f5f"
+          ]
+        },
+        "commercial_license_clearance": true,
+        "commercial_license_evidence": {
+          "source_sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+          "reviewed_at": "2026-11-19T15:51:19.272527+00:00",
+          "model": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "derivative": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "voice": {
+            "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+          },
+          "reference": {
+            "revision": "7af2f52ef2adc84ffe894524fb57533750e2534b49d07dab13194ba0a4d860e7",
+            "commercial_use": true,
+            "basis": "original authored text; no third-party image",
+            "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+          }
+        }
+      },
+      {
+        "slot": 2,
+        "episode": 5,
+        "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+        "media": {
+          "duration_seconds": 5.041667,
+          "width": 480,
+          "height": 832,
+          "video_codec": "h264",
+          "fps": "24/1",
+          "has_audio": false,
+          "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+          "bytes": 257097
+        },
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "prompt": "Photorealistic clean domestic kitchen, simple unbranded utensils hanging separately from a secure wall rail above an empty counter. A gentle continuous camera slide shows the easy access and organized space. Stable geometry and natural daylight. No people, no hands, no text, no logos. Setting detail: light oak.",
+        "reference_kind": "authored_text_only",
+        "generation_evidence": {
+          "request_sha256": "d23f7698d0d3e6b055be0fc10668c65c375c3b3891a9e41ca55569599b720032",
+          "provider_job_id": "7adc97cb51d04f5cbabc8e3e8c053104",
+          "gpu_seconds_consumed": null,
+          "estimated_reserved_seconds": 60,
+          "tier": "free",
+          "paid_endpoint_used": false
+        },
+        "visual_source": {
+          "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+          "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+          "dhash": [
+            "ff3df1f599c17ffb",
+            "db7df5fd99c1fffb",
+            "fb79f1f9a9c1fffb",
+            "ff79f1f989c1fffb",
+            "fb7bf1f9a9c3fff3"
+          ]
+        },
+        "commercial_license_clearance": true,
+        "commercial_license_evidence": {
+          "source_sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+          "reviewed_at": "2026-11-19T15:52:09.829932+00:00",
+          "model": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "derivative": {
+            "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+          },
+          "voice": {
+            "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+            "commercial_use": true,
+            "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+          },
+          "reference": {
+            "revision": "d23f7698d0d3e6b055be0fc10668c65c375c3b3891a9e41ca55569599b720032",
+            "commercial_use": true,
+            "basis": "original authored text; no third-party image",
+            "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+          }
+        }
+      }
+    ],
+    "semantic_reviews": [
+      {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wan104_organization",
+        "captions": [
+          "3 glass jars with silver lids on wooden shelves.",
+          "3 empty glass jars with silver lids on glass shelves.",
+          "Three empty glass jars with silver lids on two wooden shelves."
+        ],
+        "frame_sha256": [
+          "63e94730b6973a00519cba4ff93167a7326266362b1c8f793e7bcb895cf32164",
+          "1a687d3caee73f2c3b99b80add035a18dd32dfea02ec8c1812a7ac0f674d5766",
+          "d51371a18dedffdaa60c24f35430981655bd303787fdb1bb39017b0cea46c409"
+        ],
+        "source_sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 84.349,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50,
+        "policy": "wan104_objects_v1",
+        "generated_slot": 0
+      },
+      {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wan104_organization",
+        "captions": [
+          "Three white towels folded neatly on a shelf.",
+          "Three white towels stacked on a shelf.",
+          "Three white blankets folded together on a wooden shelf."
+        ],
+        "frame_sha256": [
+          "780494f33d130f75aaa6121763fe1f734bfc925dfda74e781c4ad3d2df8e38ab",
+          "f4c344d91e063132515f9259a286cb6e9fe68ffb4a30ef86e5ee5623cdca05b4",
+          "4d687fd53e254a83dbcd3c34a56ee13a976a2e771552b2646acbb7c5425e6a53"
+        ],
+        "source_sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 84.178,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50,
+        "policy": "wan104_objects_v1",
+        "generated_slot": 1
+      },
+      {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "wan104_organization",
+        "captions": [
+          "6 spoons of different sizes and colors.",
+          "6 spatulas.",
+          "6 spoons hanging from a metal rod. 1 black spoon, 1 grey spoon, 1 white spoon, 1 black spoon, 1 grey spoon, 1 white spoon."
+        ],
+        "frame_sha256": [
+          "a62c5bed65559cd6d38a9d9784901ffa621364adb26f0bc2bd31716b68368b7c",
+          "e4cf03376ba49edffca5beeb45db4f8a019a7b30bc2f68d70e6d66ea519cff22",
+          "32bb4ff5dffbfc3ec70cb77b3c0be9a1db0c2f72419cf3dd9ce2112c70149e48"
+        ],
+        "source_sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "frame_mode": "reviewed_portrait",
+        "accepted": true,
+        "review_seconds": 85.911,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50,
+        "policy": "wan104_objects_v1",
+        "generated_slot": 2
+      }
+    ],
+    "visual_sources": [
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+        "sha256": "03a369f93ddcc056bbe5faa9b51f3d6ea8d84a8f98a861f34244ad868cd315ad",
+        "dhash": [
+          "0616e6aaaeae0e06",
+          "061666a6aea60606",
+          "0616e6a6aaae0606",
+          "0616e6a6a2a6a406",
+          "0616e6a62aee2c06"
+        ],
+        "crop_dhash": {
+          "full": [
+            "0616e6aaaeae0e06",
+            "061666a6aea60606",
+            "0616e6a6aaae0606",
+            "0616e6a6a2a6a406",
+            "0616e6a62aee2c06"
+          ],
+          "inner90": [
+            "1686e62a6a6e0606",
+            "1616e6236a662606",
+            "1616e6266a6e6606",
+            "1616e76763666607",
+            "0616e66a6a6e6e0e"
+          ],
+          "inner80": [
+            "16e7e76b6b6f2607",
+            "13e7e76767666707",
+            "1212e7676b6e6707",
+            "1212e76767666706",
+            "0606e76b6a6a6f0e"
+          ]
+        },
+        "sampling_fractions": [
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9
+        ],
+        "fingerprint_method": "grayscale-gradient-multicrop-v2",
+        "semantic_context": {
+          "captions": [
+            "3 glass jars with silver lids on wooden shelves.",
+            "3 empty glass jars with silver lids on glass shelves.",
+            "Three empty glass jars with silver lids on two wooden shelves."
+          ],
+          "editorial_id": null,
+          "motion": "camera_or_object_motion_checked"
+        }
+      },
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+        "sha256": "66fc1c6f22c695e134497605ded24702ba8e1d7d5b13fa874deeb5741d0b2d91",
+        "dhash": [
+          "c6c258f8ec871f1f",
+          "828078f8cc07173f",
+          "0458787808074f7f",
+          "f8787878ed07673f",
+          "f8f87881dfc30f5f"
+        ],
+        "crop_dhash": {
+          "full": [
+            "c6c258f8ec871f1f",
+            "828078f8cc07173f",
+            "0458787808074f7f",
+            "f8787878ed07673f",
+            "f8f87881dfc30f5f"
+          ],
+          "inner90": [
+            "868278f8ec070707",
+            "861078f8cc033f2f",
+            "00f8f8f818075f4f",
+            "f8d8f878ed073f47",
+            "f8d8f881dfc10fa3"
+          ],
+          "inner80": [
+            "8a00fcfcec86031f",
+            "0278f878cc070f37",
+            "00f8f8f81c031f6f",
+            "f8f87878ee035f6f",
+            "f8d8f8809fc10f37"
+          ]
+        },
+        "sampling_fractions": [
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9
+        ],
+        "fingerprint_method": "grayscale-gradient-multicrop-v2",
+        "semantic_context": {
+          "captions": [
+            "Three white towels folded neatly on a shelf.",
+            "Three white towels stacked on a shelf.",
+            "Three white blankets folded together on a wooden shelf."
+          ],
+          "editorial_id": null,
+          "motion": "camera_or_object_motion_checked"
+        }
+      },
+      {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4",
+        "sha256": "b75c5f71b7146694d37334b579b690e7d67d7bef8fa8af2743882718b55b2590",
+        "dhash": [
+          "ff3df1f599c17ffb",
+          "db7df5fd99c1fffb",
+          "fb79f1f9a9c1fffb",
+          "ff79f1f989c1fffb",
+          "fb7bf1f9a9c3fff3"
+        ],
+        "crop_dhash": {
+          "full": [
+            "ff3df1f599c17ffb",
+            "db7df5fd99c1fffb",
+            "fb79f1f9a9c1fffb",
+            "ff79f1f989c1fffb",
+            "fb7bf1f9a9c3fff3"
+          ],
+          "inner90": [
+            "af75b5b5bcc0fffb",
+            "af75b5b5bcc0fffb",
+            "2bf5b5b5acc1ffff",
+            "aff5b5b5a8c1ffff",
+            "bb79b1b9a9c1ffff"
+          ],
+          "inner80": [
+            "2fb4b4b4ac80e7fb",
+            "6fb4b4b4ac80e7fb",
+            "6ff4b4b42c80effb",
+            "6ff5b5b52c80effb",
+            "6ef5b5b52880effb"
+          ]
+        },
+        "sampling_fractions": [
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9
+        ],
+        "fingerprint_method": "grayscale-gradient-multicrop-v2",
+        "semantic_context": {
+          "captions": [
+            "6 spoons of different sizes and colors.",
+            "6 spatulas.",
+            "6 spoons hanging from a metal rod. 1 black spoon, 1 grey spoon, 1 white spoon, 1 black spoon, 1 grey spoon, 1 white spoon."
+          ],
+          "editorial_id": null,
+          "motion": "camera_or_object_motion_checked"
+        }
+      }
+    ],
+    "visual_policy_version": 1,
+    "visual_distinct": true,
+    "source_urls": [
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-03a369f93ddcc056bbe5faa9.mp4",
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-66fc1c6f22c695e134497605.mp4",
+      "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-b75c5f71b7146694d37334b5.mp4"
+    ],
+    "scene_reuse_policy": "sequential_distinct_AI_clips_no_loop",
+    "required_public_credits": [],
+    "caption_style": "measured-v51"
+  },
+  "video_path": "/home/runner/work/tiktok-automation/tiktok-automation/tmp/wan104-finish/assembly-verification/render/experimental81-bc3c1d37a850aee9.mp4",
+  "new_gpu_calls": 0,
+  "queue_mutated": false,
+  "publication_attempted": false
+}
