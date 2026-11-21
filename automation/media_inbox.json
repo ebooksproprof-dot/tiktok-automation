@@ -2880,47 +2880,47 @@
     "pixabay:38917": 1795300745
   },
   "last_run": {
-    "at": 1795219467,
+    "at": 1795246810,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 26,
+    "skipped_known": 17,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 11,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 96,
-          "context_rejected": 4,
+          "total_hits": 24,
+          "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "armario",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
         "category": "lavanderia",
         "status": "search_ok",
-        "eligible_candidates": 6,
+        "eligible_candidates": 10,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 198,
-          "context_rejected": 9,
+          "total_hits": 199,
+          "context_rejected": 5,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2928,29 +2928,6 @@
       {
         "provider": "wikimedia",
         "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "banheiro",
-        "status": "search_ok",
-        "eligible_candidates": 15,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 15,
-          "total_hits": 177,
-          "context_rejected": 0,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "banheiro",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -2960,13 +2937,13 @@
         "provider": "pixabay",
         "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 9,
+        "eligible_candidates": 6,
         "response_source": "live_api",
         "filters": {
           "page": 1,
           "raw_hits": 15,
-          "total_hits": 428,
-          "context_rejected": 6,
+          "total_hits": 119,
+          "context_rejected": 9,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -2974,6 +2951,29 @@
       {
         "provider": "wikimedia",
         "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "lavanderia",
+        "status": "search_ok",
+        "eligible_candidates": 9,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 15,
+          "total_hits": 283,
+          "context_rejected": 6,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "lavanderia",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -2982,10 +2982,10 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "clothes",
-      "drying clothesline",
-      "washing soap",
-      "organizing clothes"
+      "arranging towels",
+      "washing clothes",
+      "storage clothes",
+      "drying clothes"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
