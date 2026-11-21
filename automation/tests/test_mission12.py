@@ -245,3 +245,19 @@ class SubjectEvidence12(unittest.TestCase):
         self.assertFalse(assess_generated_organization(0,['Metal spoons hang above a wooden shelf.']*3,'madeira-molho'))
         self.assertTrue(assess_generated_organization(0,['Three wooden cooking spoons hang separately.']*3,'madeira-molho'))
         self.assertFalse(tips.matches_visual(tips.BY_ID['livros-apoio'],['Books on a shelf.']*3))
+
+class LeaseRecovery12(unittest.TestCase):
+    def test_only_confirmed_completed_run_releases_abandoned_lease(self):
+        import cloud_lease
+        from types import SimpleNamespace
+        now=dt.datetime.now(dt.timezone.utc)
+        store=unittest.mock.Mock();store.token='mock'
+        store.load.return_value=({'owner':'123:job','expires_at':(now+dt.timedelta(minutes=60)).isoformat()},'old')
+        with patch.object(cloud_lease,'owner_completed',return_value=True),patch.object(cloud_lease.time,'sleep') as delay:
+            self.assertEqual(cloud_lease.acquire(store,'456:job'),'LEASE_ACQUIRED')
+        self.assertEqual(store.save.call_args.args[0]['owner'],'456:job');delay.assert_not_called()
+
+    def test_unknown_owner_api_result_does_not_grant_access(self):
+        import cloud_lease
+        with patch.object(cloud_lease.urllib.request,'urlopen',side_effect=TimeoutError):
+            self.assertFalse(cloud_lease.owner_completed('123:job','mock'))

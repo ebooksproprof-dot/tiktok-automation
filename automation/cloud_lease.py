@@ -5,11 +5,27 @@ An interrupted owner expires after 90 minutes, beyond every workflow time limit.
 """
 import datetime as dt
 import os
+import json
+import urllib.request
 import sys
 import time
 from video_stock import GitHubStore, Conflict
 
 PATH='automation/cloud_lease.json'
+
+
+def owner_completed(owner, token):
+    ident=str(owner).split(':',1)[0]
+    if not ident.isdigit(): return False
+    from video_stock import REPO
+    req=urllib.request.Request('https://api.github.com/repos/'+REPO+'/actions/runs/'+ident,
+        headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json'})
+    try:
+        with urllib.request.urlopen(req,timeout=20) as response:
+            result=json.load(response)
+        return str(result.get('id'))==ident and result.get('status')=='completed'
+    except Exception:
+        return False  # Unknown owner state never grants access.
 
 
 def claim(state, owner, now):
@@ -27,7 +43,10 @@ def acquire(store, owner, max_wait=900):
     deadline=time.monotonic()+max_wait
     while True:
         state,revision=store.load()
-        updated=claim(state,owner,dt.datetime.now(dt.timezone.utc))
+        clock=dt.datetime.now(dt.timezone.utc)
+        if state.get('owner') and state['owner']!=owner and owner_completed(state['owner'],store.token):
+            state=dict(state,expires_at=(clock-dt.timedelta(seconds=1)).isoformat(),recovered_completed_owner=state['owner'])
+        updated=claim(state,owner,clock)
         if updated:
             try:
                 store.save(updated,revision)
