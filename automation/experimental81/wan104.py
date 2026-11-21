@@ -242,7 +242,10 @@ def plan_episode(inventory, queue, state):
     if inventory.get('editorial_id'):
         candidate = BY_ID[inventory['editorial_id']]
         from editorial_policy import reason
-        context_rejected = any(c.get('editorial_id') == candidate['id'] and c.get('rejection_reason') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED' for c in inventory.get('rejected_clips', []))
+        import re
+        required_pattern = candidate.get('required_visual_pattern')
+        unsupported_material = bool(required_pattern and any(not re.search(required_pattern, c.get('prompt', '').lower()) for c in inventory.get('clips', [])))
+        context_rejected = unsupported_material or any(c.get('editorial_id') == candidate['id'] and c.get('rejection_reason') == 'PORTRAIT_VISUAL_CONTEXT_REJECTED' for c in inventory.get('rejected_clips', []))
         if not context_rejected and not reason({'concept': 'tip12-'+candidate['id'], 'script_lines': candidate['script_lines']}, queue, state):
             return False
     elif script_choices(inventory['episode'], queue, state):
