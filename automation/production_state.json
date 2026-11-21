@@ -6148,7 +6148,7 @@
       "retry_after": 0
     },
     "https://cdn.pixabay.com/video/2020/05/12/38918-418897629_large.mp4": {
-      "status": "ACCEPTED",
+      "status": "RETRYABLE",
       "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
       "license": {
         "source_sha256": "c19bf95e25725385654f7154951f1a882679c201005ad2e5085335216c655832",
@@ -6216,7 +6216,12 @@
           "http_status": null,
           "retry_after": 1794905250.5765254
         }
-      ]
+      ],
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 1795304876.9955325
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -7606,6 +7611,210 @@
       "error_stage": "semantic_review",
       "http_status": null,
       "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2020/04/08/35449-407130915_large.mp4": {
+      "status": "REJECTED",
+      "source_sha256": "ead0bb1e76ddb7e15a2806633c3ba39ec339f301b1f8f519b44c9da34d0a4e64",
+      "license": {
+        "source_sha256": "ead0bb1e76ddb7e15a2806633c3ba39ec339f301b1f8f519b44c9da34d0a4e64",
+        "source_url": "https://cdn.pixabay.com/video/2020/04/08/35449-407130915_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-35449/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "781c910e61ff8d752134cce497ef74e5bf8ab7e4cf0499277625c81a9542c12e",
+        "author": "ninosouza",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-21T17:43:45.827358+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "781c910e61ff8d752134cce497ef74e5bf8ab7e4cf0499277625c81a9542c12e",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a blurred background with a focus on a child. The child is wearing a blue shirt and has curly brown hair. They are wearing two blue bows on their head, which are tied in a traditional style. The child is sitting",
+          "The image shows a child sitting at a table. The child is wearing a blue shirt and has curly hair tied back with a blue ribbon. The child is engaged in a task, possibly playing with a toy or engaging in a craft activity.",
+          "The image shows a scene with multiple objects and a person's hands. The background is blurred, but it appears to be a room with yellow and green furniture. There are several objects on the table, which includes:\n\n1. **Wood"
+        ],
+        "frame_sha256": [
+          "204de9c3f5187122ee9e9ca1acbfff848de7b1f20906a238b63cff6b47dd4447",
+          "9dc55eb770516757ae0a273b7a96f3d6c5c71b7f0fb4372d68514a44893394f3",
+          "472dc327cfa6067e914a93c1a0e6aca51dfb8c546b79086d753a50e040f43403"
+        ],
+        "source_sha256": "ead0bb1e76ddb7e15a2806633c3ba39ec339f301b1f8f519b44c9da34d0a4e64",
+        "frame_mode": "preserve_full",
+        "editorial_id": null,
+        "accepted": false,
+        "review_seconds": 85.075,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "error_type": "ValueError",
+      "error_stage": "semantic_review",
+      "http_status": null,
+      "retry_after": 0
+    },
+    "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4": {
+      "status": "RETRYABLE",
+      "source_sha256": "b0e496db006ad4f03b87a93d6dc30421eb7da6f198385109441d1dfd5e8b97ba",
+      "license": {
+        "source_sha256": "b0e496db006ad4f03b87a93d6dc30421eb7da6f198385109441d1dfd5e8b97ba",
+        "source_url": "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-159029/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "7970ead9eb4b1f629b5d947987d50276f6b36275ad55a4cd305c0391ad2dbb83",
+        "author": "eloguers",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-21T17:45:21.015872+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "7970ead9eb4b1f629b5d947987d50276f6b36275ad55a4cd305c0391ad2dbb83",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image shows a group of people gathered around a table. The table is made of wood and has a dark finish. On the table, there are several items:\n\n1. **Book**: The person in the foreground is holding a book",
+          "The image shows a group of people gathered around a table. The table is covered with a book, which is open and filled with pages. The people are engaged in reading the book, with some of them holding pens or pencils. One person",
+          "The image shows a group of people gathered around a table. The table is made of wood and appears to be of medium size. On the table, there are several items. \n\nStarting from the left side of the image, there is"
+        ],
+        "frame_sha256": [
+          "72897a2fc32c4125c6047ac73a9f7e841ca8b47f7b379b901185c925c8132464",
+          "db7d3518826815f2deca2c7142fabff9b41f9a9cbe1ce239a0d4bf054040b76d",
+          "aca60d9d417cec76873c42f12fa9f6340d84eee90658476b376bb52d3235c8f2"
+        ],
+        "source_sha256": "b0e496db006ad4f03b87a93d6dc30421eb7da6f198385109441d1dfd5e8b97ba",
+        "frame_mode": "preserve_full",
+        "editorial_id": null,
+        "accepted": true,
+        "review_seconds": 85.655,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 1795304830.825203
+    },
+    "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4": {
+      "status": "RETRYABLE",
+      "source_sha256": "dd02d030d4be37942af3855c13979708ea2c424d19f805067b84ecd913932d4d",
+      "license": {
+        "source_sha256": "dd02d030d4be37942af3855c13979708ea2c424d19f805067b84ecd913932d4d",
+        "source_url": "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-21710/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+        "page_sha256": "67ce411d7612e4acc821301f35e36d176ac70a0eaa9ac373df43cd289c46fc31",
+        "author": "SAHN_VIT",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-21T17:48:04.822412+00:00",
+        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "67ce411d7612e4acc821301f35e36d176ac70a0eaa9ac373df43cd289c46fc31",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-17T01:45:47.245316+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "503ef86ff4bec166b72cacd50896b875be04432ca1160ab799bf461fb10daa41",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( 'Content License' ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you do not ob",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "rt Pixabay API Welcome to the Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever search resu",
+          "api_docs_text_sha256": "7a47982ea69f609d172cfd2c60a8913e91186b3fcad0030e615b1218305ee709",
+          "terms_response_sha256": "9e9763df383e269189c7988ef38b796a838dc8ecea1ace17628e730ab2e349ec",
+          "verification_method": "current_official_public_HTTPS_terms_and_API_documentation"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "visual_review": {
+        "method": "automated_cpu_portrait_frame_semantics",
+        "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+        "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+        "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+        "model_license_id": "Apache-2.0",
+        "family": "books",
+        "captions": [
+          "The image is blurry. In the middle of the image, there are books in a bookshelf.",
+          "The image shows a book shelf filled with various books. The books are arranged in a way that suggests they are neatly organized. The shelf appears to be made of wood, and the books are of different colors and sizes. Some books are placed",
+          "The image shows a book shelf with books arranged in a manner that suggests a structured and organized collection. The books are placed on wooden shelves, which are likely part of a larger room or area with a wooden floor. The books are of various"
+        ],
+        "frame_sha256": [
+          "03ffdb6807179a7267dfb5036e8a083b6178b398341089133420bfabe6f3b3c3",
+          "f0b85bafe27b68419c8f51823f4376e23ab871b6e5238ba058040962a2fe5416",
+          "307fe708c9f573f9acd2e9abe9287054f35c4607ea91418735eb7d2dc74ce289"
+        ],
+        "source_sha256": "dd02d030d4be37942af3855c13979708ea2c424d19f805067b84ecd913932d4d",
+        "frame_mode": "preserve_full",
+        "editorial_id": null,
+        "accepted": true,
+        "review_seconds": 83.722,
+        "human_review": false,
+        "hosted_inference_calls": 0,
+        "decoder_pass": true,
+        "freeze_intervals_over_1s": 0,
+        "freeze_threshold_db": -50
+      },
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "ValueError",
+      "error_stage": "render",
+      "http_status": null,
+      "retry_after": 1795305017.8302145
     }
   },
   "outputs": {
