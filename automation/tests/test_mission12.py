@@ -261,3 +261,12 @@ class LeaseRecovery12(unittest.TestCase):
         import cloud_lease
         with patch.object(cloud_lease.urllib.request,'urlopen',side_effect=TimeoutError):
             self.assertFalse(cloud_lease.owner_completed('123:job','mock'))
+
+class ExactObjects12(unittest.TestCase):
+    def test_glass_material_does_not_turn_a_jar_into_a_drinking_cup(self):
+        self.assertFalse(tips.matches_visual(tips.BY_ID['copos-secos'],['Glass jars on a shelf.']*3))
+        self.assertTrue(tips.matches_visual(tips.BY_ID['copos-secos'],['Empty drinking cups in a kitchen.']*3))
+
+    def test_room_or_shared_background_is_not_object_evidence(self):
+        self.assertFalse(tips.matches_visual(tips.BY_ID['espelho-fiapos'],['A window in a bathroom.']*3))
+        self.assertFalse(tips.matches_visual(tips.BY_ID['varal-espaco'],['A washing machine with laundry.']*3))
