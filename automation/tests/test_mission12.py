@@ -278,3 +278,11 @@ class SceneSelection12(unittest.TestCase):
         self.assertTrue(ideas)
         self.assertTrue(all('machine' not in idea[1] for idea in ideas))
         self.assertTrue(all(idea[1]==['line'] for idea in ideas))
+
+class ResolvedAlerts12(unittest.TestCase):
+    def test_cancelled_future_duplicate_is_not_reported_as_pending_content(self):
+        now=dt.datetime(2026,11,21,tzinfo=dt.timezone.utc)
+        old={'id':'old','concept':'auto-books-aaaaaaaaaaaa','script_lines':['Sua estante está confusa?','Separe os livros.'],'scheduled_at':(now-dt.timedelta(days=1)).isoformat()}
+        new=dict(old,id='future',approved=False,scheduled_at=(now+dt.timedelta(days=1)).isoformat())
+        result=health.inspect({'posts':[old,new]},{'posts':{'future':{'status':'CANCELLED_EDITORIAL','buffer_status':'deleted'}}},{'candidates':{}},{'clips':[]},now)
+        self.assertNotIn('SIMILAR_FUTURE_CONTENT',result['active_incidents'])

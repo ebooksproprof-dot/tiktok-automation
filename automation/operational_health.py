@@ -20,7 +20,7 @@ def inspect(queue, state, producer, wan, now):
         why = reason(p, previous, {'posts': {}}, now=date(p) or now)
         if why: repeated.append({'id': p['id'], 'reason': why})
         previous['posts'].append(p)
-    future_repeated = [p for p in repeated if any(q['id']==p['id'] and date(q) and date(q)>now for q in queue['posts'])]
+    future_repeated = [p for p in repeated if any(q['id']==p['id'] and date(q) and date(q)>now and (q.get('approved') is True or state.get('posts', {}).get(q['id'], {}).get('status') in ('SCHEDULED','SENDING')) for q in queue['posts'])]
     if future_repeated: add('SIMILAR_FUTURE_CONTENT', future_repeated)
     from editorial_topics import ideas
     available_ideas = len(ideas(queue, state))
