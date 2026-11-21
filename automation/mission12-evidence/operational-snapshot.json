@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-21T00:13:23.981311+00:00",
+  "stock": {
+    "ready": 1,
+    "held_uncertain": 0,
+    "target_max": 4,
+    "low_stock": true,
+    "refill_needed": 3,
+    "held_ids": [],
+    "publication_confirmation_is_separate": true
+  },
+  "future_scheduled": [
+    {
+      "id": "casasem-2026-11-21-1",
+      "scheduled_at": "2026-11-21T10:00:00-03:00",
+      "buffer_id": "6aff5bfe1f6cb90e69ebc411",
+      "provider_status": "scheduled"
+    }
+  ],
+  "cancelled_duplicates": [
+    {
+      "id": "casasem-2026-11-21-2",
+      "buffer_id": "6aff8057b3e65522f837f4f3",
+      "status": "CANCELLED_EDITORIAL",
+      "buffer_status": "deleted",
+      "checked_at": "2026-11-21T00:03:32Z"
+    },
+    {
+      "id": "casasem-2026-11-22-1",
+      "buffer_id": "6b0068417efc64d5e42eee8d",
+      "status": "CANCELLED_EDITORIAL",
+      "buffer_status": "deleted",
+      "checked_at": "2026-11-21T00:03:32Z"
+    }
+  ],
+  "wan": {
+    "status": "COLLECTING",
+    "editorial_id": "copos-secos",
+    "active_clips": 2,
+    "scene_bank_entries": 6,
+    "last_wait": {
+      "status": "WAIT_FREE_QUOTA",
+      "new_gpu_calls": 0,
+      "publicly_verified": false,
+      "not_before": "2026-11-21T22:39:45.590665+00:00",
+      "at": "2026-11-21T00:10:48.336833+00:00"
+    },
+    "new_original_video_approved_this_mission": false
+  },
+  "pixabay": {
+    "status": "AUTOMATIC_HTTPS_REFRESH_NOT_PROVEN",
+    "error_type": "HTTPError",
+    "http_status": 403
+  },
+  "provider_audit_at": "2026-11-21T00:04:24Z",
+  "provider_pending": {
+    "edges": [
+      {
+        "node": {
+          "id": "6aff5bfe1f6cb90e69ebc411",
+          "channelId": "6ad14dc2778b240e2f1f7c2f",
+          "status": "scheduled",
+          "schedulingType": "automatic",
+          "dueAt": "2026-11-21T13:00:00.000Z",
+          "sentAt": null,
+          "externalLink": null
+        }
+      }
+    ],
+    "pageInfo": {
+      "hasNextPage": false
+    }
+  },
+  "publication_reconfirmed": {
+    "id": "casasem-2026-11-20-2",
+    "status": "PUBLISH_COMPLETE",
+    "public_urls": [
+      "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429"
+    ],
+    "evidence": {
+      "checked_at": "2026-11-20T23:43:23.730617+00:00",
+      "url": "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429",
+      "video_id": "7710361869432753429",
+      "public_playback_verified": true,
+      "caption_hook_matches": true,
+      "playback_progressed": true,
+      "media_duration": 16.267822,
+      "width": 576,
+      "height": 1024,
+      "authenticated": false,
+      "method": "public browser video + matching caption + playback progression"
+    },
+    "was_published_before_these_corrections": true
+  },
+  "additional_paid_services_enabled": false,
+  "two_original_videos_per_day_proven": false
+}

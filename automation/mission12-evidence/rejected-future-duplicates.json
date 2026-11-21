@@ -11,7 +11,9 @@
     "previous_consented_at": "2026-11-19T21:37:59.141151+00:00",
     "previous_editorial_approved": true,
     "media_preserved": true,
-    "cancellation_confirmed": false
+    "cancellation_confirmed": true,
+    "buffer_status": "deleted",
+    "provider_checked_at": "2026-11-21T00:03:32Z"
   },
   {
     "post_id": "casasem-2026-11-22-1",
@@ -25,6 +27,8 @@
     "previous_consented_at": "2026-11-20T15:30:26.243271+00:00",
     "previous_editorial_approved": true,
     "media_preserved": true,
-    "cancellation_confirmed": false
+    "cancellation_confirmed": true,
+    "buffer_status": "deleted",
+    "provider_checked_at": "2026-11-21T00:03:32Z"
   }
 ]
