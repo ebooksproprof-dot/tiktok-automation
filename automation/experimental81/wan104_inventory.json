@@ -2402,6 +2402,36 @@
       "freeze_threshold_db": -50,
       "policy": "wan104_objects_v1",
       "generated_slot": 2
+    },
+    "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7": {
+      "method": "automated_cpu_portrait_frame_semantics",
+      "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+      "model_license": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct/blob/a7da5b986cb59b408707209984f360a5f4ad7e47/README.md",
+      "model_license_id": "Apache-2.0",
+      "family": "wan104_organization",
+      "captions": [
+        "Glass jars.",
+        "Glass jars.",
+        "Two glass jars with white lids."
+      ],
+      "frame_sha256": [
+        "1eea52388174403ddb8170f7cc633c967b3a4ad5cef237886eb05e7a431b7b8a",
+        "40945c4c1d53ad88efeea15ffe3542bdfd50cae060be623063d1f3eb77f54355",
+        "0ba4e05391164baf645dba137b2423cc3c46adaa426fd268a2c5c805d8cf75d9"
+      ],
+      "source_sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
+      "frame_mode": "reviewed_portrait",
+      "editorial_id": "copos-secos",
+      "accepted": true,
+      "review_seconds": 106.163,
+      "human_review": false,
+      "hosted_inference_calls": 0,
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50,
+      "policy": "wan104_objects_v1",
+      "generated_slot": 0
     }
   },
   "rejected_clips": [
