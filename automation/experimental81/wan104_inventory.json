@@ -4,78 +4,6 @@
   "clips": [
     {
       "slot": 0,
-      "episode": 6,
-      "sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
-      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-3c154e8b0618cd8565855093.mp4",
-      "media": {
-        "duration_seconds": 5.041667,
-        "width": 480,
-        "height": 832,
-        "video_codec": "h264",
-        "fps": "24/1",
-        "has_audio": false,
-        "sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
-        "bytes": 429387
-      },
-      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
-      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
-      "space": "Upsampler/wan-2-2-5b-video",
-      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
-      "prompt": "Photorealistic kitchen pantry, three clear unlabelled glass storage jars on a clean wooden shelf. Gentle continuous camera slide reveals the organized shelf, realistic reflections and stable geometry. No people, no hands, no logos, no text. One calm uninterrupted shot. Setting detail: warm walnut.",
-      "reference_kind": "authored_text_only",
-      "generation_evidence": {
-        "request_sha256": "810435edd32473488583646b20ff6fc6f4ad4e2beffcf416d5c81fac8c7de316",
-        "provider_job_id": "a36fe289c054451fa5dd239cea306c7a",
-        "gpu_seconds_consumed": null,
-        "estimated_reserved_seconds": 60,
-        "tier": "free",
-        "paid_endpoint_used": false
-      },
-      "visual_source": {
-        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-3c154e8b0618cd8565855093.mp4",
-        "sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
-        "dhash": [
-          "7637716b6b6bf7f6",
-          "6677736b6b6bf7f6",
-          "2677736b6b6bf7f6",
-          "6677736b7b6bf7f6",
-          "667773735373e7f6"
-        ]
-      },
-      "commercial_license_clearance": true,
-      "commercial_license_evidence": {
-        "source_sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
-        "reviewed_at": "2026-11-19T23:02:52.535072+00:00",
-        "model": {
-          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
-          "commercial_use": true,
-          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
-        },
-        "derivative": {
-          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
-          "commercial_use": true,
-          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
-        },
-        "voice": {
-          "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
-          "commercial_use": true,
-          "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
-        },
-        "reference": {
-          "revision": "810435edd32473488583646b20ff6fc6f4ad4e2beffcf416d5c81fac8c7de316",
-          "commercial_use": true,
-          "basis": "original authored text; no third-party image",
-          "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
-        }
-      },
-      "editorial_holds": [
-        "madeira-molho"
-      ],
-      "original_slot": 0,
-      "editorial_id": "copos-secos"
-    },
-    {
-      "slot": 1,
       "episode": 4,
       "sha256": "f18306e237f39d83ef9dfbb4344ab0ec32b16441d02c1cc69aa2b58bb0f4597a",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-f18306e237f39d83ef9dfbb4.mp4",
@@ -184,7 +112,7 @@
       "editorial_id": "copos-secos"
     },
     {
-      "slot": 2,
+      "slot": 1,
       "episode": 6,
       "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4",
@@ -280,7 +208,8 @@
           "basis": "original authored text; no third-party image",
           "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
         }
-      }
+      },
+      "original_slot": 2
     }
   ],
   "requests": {
@@ -2132,7 +2061,7 @@
       "last_provider_check": "2026-11-20T15:24:59Z"
     }
   ],
-  "status": "READY_FOR_REVIEW",
+  "status": "COLLECTING",
   "legacy_inventory_preserved_at": "feature/ai-video-hybrid-30s:automation/experimental81/auto_inventory.json",
   "last_wait": {
     "status": "WAIT_FREE_QUOTA",
@@ -3255,6 +3184,105 @@
         },
         "reference": {
           "revision": "2454bfda070251dc4e35a12f17d608e20e6f2ba14f7b6d29e20a7a4b550511c9",
+          "commercial_use": true,
+          "basis": "original authored text; no third-party image",
+          "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
+        }
+      }
+    },
+    {
+      "slot": 2,
+      "episode": 6,
+      "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+        "bytes": 717430
+      },
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "prompt": "Photorealistic domestic kitchen. Main objects: glass, cup, rack. Subject: glass, cup, rack. Visual explanation of cup drying check. Wider view of the safe practical arrangement, with clear access. Realistic materials, stable geometry. Gentle continuous camera slide, visible parallax. No people, hands, text, logos, labels or watermarks. One uninterrupted shot.",
+      "editorial_id": "copos-secos",
+      "reference_kind": "authored_text_only",
+      "generation_evidence": {
+        "request_sha256": "422322aca7d654260feacdb6876c92f649fff08179810857880e43c8c322ea75",
+        "provider_job_id": "7166f2fa298448758be0d6085db92659",
+        "gpu_seconds_consumed": null,
+        "estimated_reserved_seconds": 60,
+        "tier": "free",
+        "paid_endpoint_used": false
+      },
+      "visual_source": {
+        "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4",
+        "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+        "dhash": [
+          "a5242ab0b42d2141",
+          "be2028b0ac2d2149",
+          "222224acbd7d195b",
+          "26222024f5bd1970",
+          "62202ce5c5c119cb"
+        ],
+        "crop_dhash": {
+          "full": [
+            "a5242ab0b42d2141",
+            "be2028b0ac2d2149",
+            "222224acbd7d195b",
+            "26222024f5bd1970",
+            "62202ce5c5c119cb"
+          ],
+          "inner90": [
+            "25252aa2b62c6911",
+            "25202cb2ac6c6909",
+            "4b6524ae3c7d7d09",
+            "456222a0b4bd9908",
+            "566260e4c5c51989"
+          ],
+          "inner80": [
+            "652021a0a66e6a88",
+            "456822a8ae6a6ac0",
+            "51654e6e2e7c7c41",
+            "554a406ab2ac1c29",
+            "555a42724cc41d61"
+          ]
+        },
+        "sampling_fractions": [
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9
+        ],
+        "fingerprint_method": "grayscale-gradient-multicrop-v2"
+      },
+      "commercial_license_clearance": true,
+      "commercial_license_evidence": {
+        "source_sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+        "reviewed_at": "2026-11-21T00:05:03.049050+00:00",
+        "model": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "derivative": {
+          "revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md"
+        },
+        "voice": {
+          "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+          "commercial_use": true,
+          "license_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md"
+        },
+        "reference": {
+          "revision": "422322aca7d654260feacdb6876c92f649fff08179810857880e43c8c322ea75",
           "commercial_use": true,
           "basis": "original authored text; no third-party image",
           "license_url": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md"
