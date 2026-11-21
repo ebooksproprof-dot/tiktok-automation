@@ -6293,13 +6293,20 @@
           "error_stage": "release_and_queue",
           "http_status": null,
           "retry_after": 1794905250.5765254
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795304876.9955325
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795304876.9955325
+      "retry_after": 1795326687.2431242
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -6634,7 +6641,7 @@
         "author": "u_jb4pypurdq",
         "commercial_use": true,
         "reviewed_at": "2026-11-18T18:59:10.858262+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "d1ae6e1281f8a0e3e641021f900dc02fe7fef98442aa61e74be4de9fe5a28790",
         "license_policy": {
@@ -6681,11 +6688,20 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "release_and_queue",
+          "http_status": null,
+          "retry_after": 1795050135.6829207
+        }
+      ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
-      "error_stage": "release_and_queue",
+      "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795050135.6829207
+      "retry_after": 1795326714.1540086
     },
     "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4": {
       "status": "QUEUED",
@@ -7772,7 +7788,7 @@
         "author": "eloguers",
         "commercial_use": true,
         "reviewed_at": "2026-11-21T17:45:21.015872+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "7970ead9eb4b1f629b5d947987d50276f6b36275ad55a4cd305c0391ad2dbb83",
         "license_policy": {
@@ -7820,11 +7836,20 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795304830.825203
+        }
+      ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795304830.825203
+      "retry_after": 1795326659.6747935
     },
     "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4": {
       "status": "RETRYABLE",
@@ -7840,7 +7865,7 @@
         "author": "SAHN_VIT",
         "commercial_use": true,
         "reviewed_at": "2026-11-21T17:48:04.822412+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "67ce411d7612e4acc821301f35e36d176ac70a0eaa9ac373df43cd289c46fc31",
         "license_policy": {
@@ -7888,11 +7913,20 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795305017.8302145
+        }
+      ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795305017.8302145
+      "retry_after": 1795326756.8083067
     },
     "https://cdn.pixabay.com/video/2020/04/09/35511-405897880_large.mp4": {
       "status": "REJECTED",
