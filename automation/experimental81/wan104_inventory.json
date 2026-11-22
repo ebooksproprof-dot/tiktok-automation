@@ -972,6 +972,27 @@
       },
       "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4"
+    },
+    "0706f3a45bc6f9bb3fabe46adc98b68e1674897982501ba3628bcb3cbdc41d28": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-22T02:09:57.488652+00:00",
+      "spec": {
+        "editorial_id": "copos-secos",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Photorealistic domestic kitchen. Main objects: cup, cups, glasses, tumbler, tumblers. Subject: cup, cups, glasses, tumbler, tumblers. Visual explanation of cup drying check. Wider view of the safe practical arrangement, with clear access. Realistic materials, stable geometry. Gentle continuous camera slide, visible parallax. No people, hands, text, logos, labels or watermarks. One uninterrupted shot.",
+        "reference_kind": "authored_text_only",
+        "height": 832,
+        "width": 480,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 4,
+        "guidance_scale": 0,
+        "seed": 104608,
+        "randomize_seed": false
+      }
     }
   },
   "outputs": [
