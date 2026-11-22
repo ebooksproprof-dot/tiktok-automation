@@ -974,7 +974,7 @@
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4"
     },
     "0706f3a45bc6f9bb3fabe46adc98b68e1674897982501ba3628bcb3cbdc41d28": {
-      "status": "INTENT_RECORDED_NO_RETRY",
+      "status": "GENERATED_AWAITING_STORAGE",
       "at": "2026-11-22T02:09:57.488652+00:00",
       "spec": {
         "editorial_id": "copos-secos",
@@ -993,7 +993,17 @@
         "seed": 104608,
         "randomize_seed": false
       },
-      "provider_job_id": "8d0175b22c294ecab3563523b4ac2cc9"
+      "provider_job_id": "8d0175b22c294ecab3563523b4ac2cc9",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 480,
+        "height": 832,
+        "video_codec": "h264",
+        "fps": "24/1",
+        "has_audio": false,
+        "sha256": "acafc1efa51501322a63cdb6210bbcd36297ff9b0dafe9092a00152a19a80ede",
+        "bytes": 703938
+      }
     }
   },
   "outputs": [
