@@ -2872,7 +2872,8 @@
       "height": 1080,
       "duration": 5.733333,
       "bytes": 1551783,
-      "acquired_at": 1795218404
+      "acquired_at": 1795218404,
+      "automatic_review_status": "REJECTED"
     },
     {
       "provider": "pixabay",
@@ -3004,31 +3005,31 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795303856,
+    "at": 1795306748,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 0,
+    "skipped_known": 6,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "ferro3",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 13,
         "response_source": "live_api",
         "filters": {
-          "page": 4,
+          "page": 2,
           "raw_hits": 15,
-          "total_hits": 156,
-          "context_rejected": 15,
+          "total_hits": 66,
+          "context_rejected": 2,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "ferro3",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3036,37 +3037,14 @@
       },
       {
         "provider": "pixabay",
-        "category": "armario2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 4,
-          "raw_hits": 15,
-          "total_hits": 97,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario2",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 2,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 382,
+          "total_hits": 500,
           "context_rejected": 13,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3074,7 +3052,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3082,34 +3060,57 @@
       },
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 6,
+        "eligible_candidates": 11,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 69,
-          "context_rejected": 9,
+          "total_hits": 73,
+          "context_rejected": 4,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 8,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 13,
+          "total_hits": 28,
+          "context_rejected": 5,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "ironing clothes",
-      "closet clothes",
-      "organizing basket",
-      "arranging basket"
+      "cloth",
+      "cleaning cloth",
+      "wiping cloth",
+      "sponge"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
