@@ -3001,53 +3001,156 @@
       "bytes": 6902945,
       "acquired_at": 1795272690,
       "automatic_review_status": "REJECTED"
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "126966",
+      "url": "https://cdn.pixabay.com/video/2022/08/06/126966-737736581_medium.mp4",
+      "source_page": "https://pixabay.com/videos/id-126966/",
+      "author": "u_jb4pypurdq",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: u_jb4pypurdq / Pixabay — https://pixabay.com/videos/id-126966/",
+      "category": "organizacao",
+      "query": "shelves",
+      "selection_reason": "Provider tags: alley, shelves, books, library",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/08/06/126966-737736581_medium.mp4",
+      "sha256": "6704dc5ae42fc3e767db1c2411e327bc2c33da5cdb59de1c7f378f48f28cce2b",
+      "dhash": [
+        "4f4f4d4d4f4f4f6f",
+        "0e0e0f0f1f1f0f0f",
+        "4f8e4f4e5bdecfcf",
+        "6f2e2d293b3f6d6d",
+        "6f2c2d2d292d2d2d"
+      ],
+      "crop_dhash": {
+        "full": [
+          "4f4f4d4d4f4f4f6f",
+          "0e0e0f0f1f1f0f0f",
+          "4f8e4f4e5bdecfcf",
+          "6f2e2d293b3f6d6d",
+          "6f2c2d2d292d2d2d"
+        ],
+        "inner90": [
+          "cdcfcd4e4f4f4fef",
+          "0e0e0f0f1f1f0f0f",
+          "4f4e4f4e5a5e4fce",
+          "6e6e4d4d5b5e6d4d",
+          "4d0c4d2d2d2d6d2d"
+        ],
+        "inner80": [
+          "cfcecdce4fcecfcf",
+          "0b0e0f0f1f1f0f0f",
+          "4e4f4d4c5b5f5fcf",
+          "6f4e4d4d595e4d4c",
+          "4e4c4d6d6d6d6d6d"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 12.48,
+      "bytes": 9423698,
+      "acquired_at": 1795390996
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "2234",
+      "url": "https://cdn.pixabay.com/video/2016/02/24/2234-156683544_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-2234/",
+      "author": "Maria_Briones",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Maria_Briones / Pixabay — https://pixabay.com/videos/id-2234/",
+      "category": "manutencao",
+      "query": "cleaning faucet",
+      "selection_reason": "Provider tags: hands, hygiene, soap, water, cleansed, cleaning, faucet, dirt, clean up, flow, ecology",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2016/02/24/2234-156683544_large.mp4",
+      "sha256": "d638e028a656e604704d41e3674f5933198b464317c2fbaa8e73c240e0ef7e03",
+      "dhash": [
+        "63635171f3c3c303",
+        "cb8e8e461599991d",
+        "0f0d0e0701191931",
+        "1a0e4630b86074e4",
+        "a0664686868787ce"
+      ],
+      "crop_dhash": {
+        "full": [
+          "63635171f3c3c303",
+          "cb8e8e461599991d",
+          "0f0d0e0701191931",
+          "1a0e4630b86074e4",
+          "a0664686868787ce"
+        ],
+        "inner90": [
+          "6351d1f1f3c3c343",
+          "cb0e8e4614193d5c",
+          "0b0e0e0611193938",
+          "1b0f4632b86c74e4",
+          "a0464606838783ce"
+        ],
+        "inner80": [
+          "c1d1f9f9f1c38343",
+          "090e8f4712383c3c",
+          "090e0e0210193838",
+          "0b8bc27238ec7466",
+          "c44f460603a303cb"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 15.3153,
+      "bytes": 8857689,
+      "acquired_at": 1795391001
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795370547,
-    "acquired": 0,
+    "at": 1795390992,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 6,
+    "download_attempts": 2,
+    "skipped_known": 12,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 15,
-          "total_hits": 360,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 11,
         "response_source": "live_api",
         "filters": {
-          "page": 2,
+          "page": 1,
           "raw_hits": 15,
-          "total_hits": 294,
-          "context_rejected": 10,
+          "total_hits": 17,
+          "context_rejected": 3,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 1
         }
       },
       {
@@ -3055,7 +3158,7 @@
         "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
@@ -3067,7 +3170,7 @@
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 240,
+          "total_hits": 500,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3085,36 +3188,28 @@
         "provider": "pixabay",
         "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 6,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 98,
-          "context_rejected": 9,
+          "total_hits": 500,
+          "context_rejected": 7,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing spoons",
-      "arranging books",
-      "washing plates",
-      "faucet"
+      "shelves",
+      "cleaning plates",
+      "cleaning faucet",
+      "organizing shelves"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 78,
+    "unreviewed_media_count": 80,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
