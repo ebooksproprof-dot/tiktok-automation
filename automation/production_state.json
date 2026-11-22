@@ -164,13 +164,20 @@
           "error_stage": "release_and_queue",
           "http_status": null,
           "retry_after": 1794964709.308609
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795325937.2318807
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795325937.2318807
+      "retry_after": 1795379958.0743735
     },
     "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4": {
       "status": "REJECTED",
@@ -6300,13 +6307,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795304876.9955325
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795326687.2431242
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795326687.2431242
+      "retry_after": 1795379923.7462955
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -6695,13 +6709,20 @@
           "error_stage": "release_and_queue",
           "http_status": null,
           "retry_after": 1795050135.6829207
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795326714.1540086
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795326714.1540086
+      "retry_after": 1795379991.6864717
     },
     "https://cdn.pixabay.com/video/2022/11/20/139799-773444470_large.mp4": {
       "status": "QUEUED",
@@ -7843,13 +7864,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795304830.825203
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795326659.6747935
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795326659.6747935
+      "retry_after": 1795379896.5467587
     },
     "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4": {
       "status": "RETRYABLE",
