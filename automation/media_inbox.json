@@ -3005,23 +3005,46 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795332163,
+    "at": 1795358139,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 0,
+    "skipped_known": 4,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
+        "eligible_candidates": 8,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 100,
+          "context_rejected": 7,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "cozinha",
+        "status": "search_ok",
         "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 496,
+          "total_hits": 209,
           "context_rejected": 14,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3029,53 +3052,30 @@
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "cozinha",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
-        "eligible_candidates": 6,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 2,
-          "raw_hits": 15,
-          "total_hits": 34,
-          "context_rejected": 9,
+          "raw_hits": 12,
+          "total_hits": 27,
+          "context_rejected": 12,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 4,
-          "total_hits": 4,
-          "context_rejected": 0,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3083,14 +3083,14 @@
       },
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 4,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 500,
+          "total_hits": 274,
           "context_rejected": 11,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3098,19 +3098,19 @@
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning sponge",
-      "wiping sponge",
-      "countertop",
-      "cleaning mirror"
+      "wiping mirror",
+      "dishes",
+      "spoons",
+      "books"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
