@@ -3005,7 +3005,7 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795358139,
+    "at": 1795370216,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -3014,22 +3014,68 @@
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 100,
-          "context_rejected": 7,
+          "total_hits": 500,
+          "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 137,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "utensilios",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 5,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 500,
+          "context_rejected": 10,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3039,13 +3085,13 @@
         "provider": "pixabay",
         "category": "cozinha",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 209,
-          "context_rejected": 14,
+          "total_hits": 130,
+          "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3057,60 +3103,14 @@
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 12,
-          "total_hits": 27,
-          "context_rejected": 12,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 4,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 15,
-          "total_hits": 274,
-          "context_rejected": 11,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "wiping mirror",
-      "dishes",
-      "spoons",
-      "books"
+      "cleaning dishes",
+      "washing spoons",
+      "organizing books",
+      "plates"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
