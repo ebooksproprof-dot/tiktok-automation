@@ -7948,13 +7948,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795305017.8302145
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795326756.8083067
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795326756.8083067
+      "retry_after": 1795391965.596821
     },
     "https://cdn.pixabay.com/video/2020/04/09/35511-405897880_large.mp4": {
       "status": "REJECTED",
@@ -8038,7 +8045,7 @@
         "author": "krzys16",
         "commercial_use": true,
         "reviewed_at": "2026-11-21T23:35:09.038323+00:00",
-        "verification_method": "authenticated_official_API_exact_asset_and_current_global_Content_License",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
         "api_endpoint": "https://pixabay.com/api/videos/",
         "api_response_sha256": "15bd3b35d61abc0dd1c107b91f3ab5cd70274007a601cce5e7e0c54a50efc7f0",
         "license_policy": {
@@ -8086,11 +8093,20 @@
         "freeze_intervals_over_1s": 0,
         "freeze_threshold_db": -50
       },
+      "hold_history": [
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795325812.0749881
+        }
+      ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795325812.0749881
+      "retry_after": 1795392004.5302055
     }
   },
   "outputs": {
