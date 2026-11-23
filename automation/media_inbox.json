@@ -3131,7 +3131,7 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795393454,
+    "at": 1795421233,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -3140,14 +3140,14 @@
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 350,
+          "total_hits": 334,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3155,7 +3155,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "organizacao",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3163,61 +3163,38 @@
       },
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "lavanderia",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 1,
-          "raw_hits": 2,
-          "total_hits": 2,
-          "context_rejected": 2,
+          "raw_hits": 8,
+          "total_hits": 8,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "armario",
+        "category": "lavanderia",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 7,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 15,
-          "total_hits": 108,
-          "context_rejected": 8,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
         "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
-          "page": 2,
-          "raw_hits": 15,
-          "total_hits": 37,
-          "context_rejected": 12,
+          "page": 1,
+          "raw_hits": 4,
+          "total_hits": 4,
+          "context_rejected": 3,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3227,16 +3204,39 @@
         "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 483,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing shelves",
-      "hangers",
-      "wiping faucet",
-      "arranging shelves"
+      "organizing hangers",
+      "clothesline",
+      "towels",
+      "cleaning countertop"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
