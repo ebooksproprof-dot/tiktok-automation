@@ -1,6 +1,6 @@
 {
   "version": 12,
-  "at": "2026-11-23T18:14:50.407097+00:00",
+  "at": "2026-11-23T18:15:38.993859+00:00",
   "stock": {
     "ready": 0,
     "held_uncertain": 0,
@@ -66,7 +66,7 @@
   "incidents": {
     "STOCK_BELOW_TARGET": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 84,
+      "occurrences": 85,
       "code": "STOCK_BELOW_TARGET",
       "details": {
         "ready": 0,
@@ -74,7 +74,7 @@
         "held_uncertain": 0
       },
       "active": true,
-      "last_seen": "2026-11-23T18:14:50.407097+00:00"
+      "last_seen": "2026-11-23T18:15:38.993859+00:00"
     },
     "SIMILAR_FUTURE_CONTENT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
@@ -96,7 +96,7 @@
     },
     "PRODUCTION_SOURCE_HOLDS": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 84,
+      "occurrences": 85,
       "code": "PRODUCTION_SOURCE_HOLDS",
       "details": {
         "SOURCE_FROZEN_OR_UNDECODABLE": 24,
@@ -105,11 +105,11 @@
         "HANDWASH_CONTEXT_NOT_ESTABLISHED": 2
       },
       "active": true,
-      "last_seen": "2026-11-23T18:14:50.407097+00:00"
+      "last_seen": "2026-11-23T18:15:38.993859+00:00"
     },
     "NO_APPROVED_PRODUCTION_OUTPUT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 84,
+      "occurrences": 85,
       "code": "NO_APPROVED_PRODUCTION_OUTPUT",
       "details": {
         "status": "NO_VALID_OUTPUT",
@@ -123,7 +123,7 @@
         "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
       },
       "active": true,
-      "last_seen": "2026-11-23T18:14:50.407097+00:00"
+      "last_seen": "2026-11-23T18:15:38.993859+00:00"
     },
     "WAN_FREE_QUOTA_WAIT": {
       "first_seen": "2026-11-21T00:12:06.881495+00:00",
@@ -138,7 +138,7 @@
     },
     "EXPECTED_PUBLICATION_NOT_VERIFIED": {
       "first_seen": "2026-11-21T23:38:58.486166+00:00",
-      "occurrences": 47,
+      "occurrences": 48,
       "code": "EXPECTED_PUBLICATION_NOT_VERIFIED",
       "details": {
         "slots": [
@@ -148,7 +148,7 @@
         ]
       },
       "active": true,
-      "last_seen": "2026-11-23T18:14:50.407097+00:00"
+      "last_seen": "2026-11-23T18:15:38.993859+00:00"
     }
   }
 }
