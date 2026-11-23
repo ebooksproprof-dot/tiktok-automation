@@ -3131,11 +3131,11 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795421233,
+    "at": 1795456806,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 6,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
@@ -3146,9 +3146,9 @@
         "response_source": "live_api",
         "filters": {
           "page": 2,
-          "raw_hits": 15,
-          "total_hits": 334,
-          "context_rejected": 15,
+          "raw_hits": 10,
+          "total_hits": 25,
+          "context_rejected": 10,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3165,13 +3165,13 @@
         "provider": "pixabay",
         "category": "lavanderia",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
-          "page": 1,
-          "raw_hits": 8,
-          "total_hits": 8,
-          "context_rejected": 0,
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 120,
+          "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3181,42 +3181,19 @@
         "category": "lavanderia",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 4,
-          "total_hits": 4,
-          "context_rejected": 3,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 483,
+          "total_hits": 457,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3224,19 +3201,42 @@
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 15,
+          "total_hits": 337,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing hangers",
-      "clothesline",
-      "towels",
-      "cleaning countertop"
+      "storage hangers",
+      "washing clothesline",
+      "organizing plates",
+      "organizing towels"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
