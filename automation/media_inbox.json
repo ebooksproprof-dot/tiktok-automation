@@ -3131,13 +3131,36 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795471700,
+    "at": 1795479478,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
     "skipped_known": 3,
     "skipped_cooldown": 0,
     "diagnostics": [
+      {
+        "provider": "pixabay",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 1,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 9,
+          "total_hits": 24,
+          "context_rejected": 8,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
       {
         "provider": "pixabay",
         "category": "lavanderia",
@@ -3147,7 +3170,7 @@
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 198,
+          "total_hits": 200,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3163,22 +3186,22 @@
       },
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "manutencao",
         "status": "search_ok",
-        "eligible_candidates": 5,
+        "eligible_candidates": 2,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 428,
-          "context_rejected": 10,
+          "total_hits": 487,
+          "context_rejected": 13,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "armario",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3186,45 +3209,22 @@
       },
       {
         "provider": "pixabay",
-        "category": "armario",
-        "status": "search_ok",
-        "eligible_candidates": 11,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 15,
-          "total_hits": 119,
-          "context_rejected": 4,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "armario",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 4,
         "response_source": "live_api",
         "filters": {
           "page": 2,
-          "raw_hits": 15,
-          "total_hits": 283,
-          "context_rejected": 11,
+          "raw_hits": 3,
+          "total_hits": 18,
+          "context_rejected": 3,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "lavanderia",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3233,10 +3233,10 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "drying clothesline",
-      "organizing clothes",
-      "storage clothes",
-      "drying clothes"
+      "arranging towels",
+      "washing clothes",
+      "cleaning shelf",
+      "wiping shelf"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
