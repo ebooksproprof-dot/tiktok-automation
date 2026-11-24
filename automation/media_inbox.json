@@ -3257,7 +3257,7 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795553113,
+    "at": 1795553472,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
@@ -3266,14 +3266,14 @@
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "louca",
+        "category": "ferro3",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 5,
           "raw_hits": 15,
-          "total_hits": 319,
+          "total_hits": 156,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3281,7 +3281,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "louca",
+        "category": "ferro3",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3289,14 +3289,14 @@
       },
       {
         "provider": "pixabay",
-        "category": "cabides",
+        "category": "armario2",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
-          "page": 4,
+          "page": 5,
           "raw_hits": 15,
-          "total_hits": 96,
+          "total_hits": 97,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3304,7 +3304,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "cabides",
+        "category": "armario2",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3312,22 +3312,22 @@
       },
       {
         "provider": "pixabay",
-        "category": "livros",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
-          "page": 5,
+          "page": 3,
           "raw_hits": 15,
-          "total_hits": 276,
-          "context_rejected": 15,
+          "total_hits": 382,
+          "context_rejected": 14,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "livros",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3335,34 +3335,34 @@
       },
       {
         "provider": "pixabay",
-        "category": "roupas",
+        "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 7,
         "response_source": "live_api",
         "filters": {
-          "page": 5,
+          "page": 3,
           "raw_hits": 15,
-          "total_hits": 105,
-          "context_rejected": 15,
+          "total_hits": 69,
+          "context_rejected": 8,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "roupas",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "washing dishes",
-      "clothes hangers",
-      "books shelf",
-      "folding clothes"
+      "ironing clothes",
+      "closet clothes",
+      "organizing basket",
+      "arranging basket"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
