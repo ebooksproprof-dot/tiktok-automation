@@ -185,13 +185,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795412825.7928607
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795479289.6219993
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795479289.6219993
+      "retry_after": 1795515699.0262632
     },
     "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_large.mp4": {
       "status": "REJECTED",
@@ -6342,13 +6349,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795412788.822577
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795479240.6609528
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795479240.6609528
+      "retry_after": 1795515650.5445094
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -7915,13 +7929,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795412758.625043
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795479201.7858617
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795479201.7858617
+      "retry_after": 1795515611.968898
     },
     "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4": {
       "status": "RETRYABLE",
