@@ -3127,81 +3127,184 @@
       "duration": 15.3153,
       "bytes": 8857689,
       "acquired_at": 1795391001
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "21710",
+      "url": "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-21710/",
+      "author": "SAHN_VIT",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: SAHN_VIT / Pixabay — https://pixabay.com/videos/id-21710/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: bookcase, bookshelves, library, reading room, books",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4",
+      "sha256": "dd02d030d4be37942af3855c13979708ea2c424d19f805067b84ecd913932d4d",
+      "dhash": [
+        "607d3555551595cd",
+        "20565252521a9a66",
+        "3a59595949098923",
+        "1d2c2c6c6c8c86b0",
+        "8bb7b73737d3c3d8"
+      ],
+      "crop_dhash": {
+        "full": [
+          "607d3555551595cd",
+          "20565252521a9a66",
+          "3a59595949098923",
+          "1d2c2c6c6c8c86b0",
+          "8bb7b73737d3c3d8"
+        ],
+        "inner90": [
+          "61a4b4b4b4941494",
+          "745252d2d25a1aca",
+          "3b595d5d5d4d8de5",
+          "5c6e6a6a6e2e86b2",
+          "2ba7b7373393c3d8"
+        ],
+        "inner80": [
+          "eca4b4b4b4b43414",
+          "52929a9a9ada1a5a",
+          "d95dd5d5d54d0d4d",
+          "4e4a6a6a6a2606b2",
+          "2a22a222229383d8"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 15.188333,
+      "bytes": 5800269,
+      "acquired_at": 1795500774
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "8852",
+      "url": "https://cdn.pixabay.com/video/2017/04/25/8852-215589122_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-8852/",
+      "author": "krzys16",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: krzys16 / Pixabay — https://pixabay.com/videos/id-8852/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: book, to read, education, books, reading, knowledge, library, reading room, school, science, font, old book, writing, words, teach, culture",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2017/04/25/8852-215589122_large.mp4",
+      "sha256": "a339f9a054ba752111f092ef3d312d524ce1793280258c1516e296bdbda63918",
+      "dhash": [
+        "39189b9b0f8d4d2d",
+        "3416938f35b54d2e",
+        "381c979f171f4d2d",
+        "391c9686b3b3552d",
+        "3114969633b65e2f"
+      ],
+      "crop_dhash": {
+        "full": [
+          "39189b9b0f8d4d2d",
+          "3416938f35b54d2e",
+          "381c979f171f4d2d",
+          "391c9686b3b3552d",
+          "3114969633b65e2f"
+        ],
+        "inner90": [
+          "383c999d0d8d4d2d",
+          "1c16938d25b5562e",
+          "1c12939f95954d2c",
+          "1c169697bbb3552d",
+          "1c16969333b3562f"
+        ],
+        "inner80": [
+          "3c4d991d0585854c",
+          "1e13930d25b6964e",
+          "1c1393153595874e",
+          "1c16a7173bbbb554",
+          "1c1697133bb3974f"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 20.735,
+      "bytes": 11845632,
+      "acquired_at": 1795500777
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795479478,
-    "acquired": 0,
+    "at": 1795500769,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 3,
+    "download_attempts": 2,
+    "skipped_known": 9,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "organizacao",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 9,
-          "total_hits": 24,
-          "context_rejected": 8,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "lavanderia",
-        "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 200,
-          "context_rejected": 15,
+          "total_hits": 320,
+          "context_rejected": 1,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "lavanderia",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 2,
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 2,
           "raw_hits": 15,
-          "total_hits": 487,
-          "context_rejected": 13,
+          "total_hits": 329,
+          "context_rejected": 1,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "manutencao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3209,38 +3312,53 @@
       },
       {
         "provider": "pixabay",
-        "category": "manutencao",
+        "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 8,
         "response_source": "live_api",
         "filters": {
           "page": 2,
-          "raw_hits": 3,
-          "total_hits": 18,
-          "context_rejected": 3,
+          "raw_hits": 15,
+          "total_hits": 90,
+          "context_rejected": 7,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "manutencao",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "livros2",
+        "status": "search_ok",
+        "eligible_candidates": 10,
+        "response_source": "live_api",
+        "filters": {
+          "page": 3,
+          "raw_hits": 15,
+          "total_hits": 303,
+          "context_rejected": 5,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "arranging towels",
-      "washing clothes",
-      "cleaning shelf",
-      "wiping shelf"
+      "window",
+      "wiping window",
+      "mirror",
+      "library books"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 80,
+    "unreviewed_media_count": 82,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
