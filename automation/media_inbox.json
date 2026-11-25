@@ -3257,38 +3257,15 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795636906,
+    "at": 1795637320,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 0,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 500,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
@@ -3296,7 +3273,7 @@
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 138,
+          "total_hits": 360,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3319,7 +3296,7 @@
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 500,
+          "total_hits": 294,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3342,7 +3319,7 @@
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 130,
+          "total_hits": 241,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3351,6 +3328,29 @@
       {
         "provider": "wikimedia",
         "category": "cozinha",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "manutencao",
+        "status": "search_ok",
+        "eligible_candidates": 6,
+        "response_source": "live_api",
+        "filters": {
+          "page": 3,
+          "raw_hits": 15,
+          "total_hits": 98,
+          "context_rejected": 9,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "manutencao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3359,10 +3359,10 @@
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning dishes",
-      "washing spoons",
-      "organizing books",
-      "plates"
+      "organizing spoons",
+      "arranging books",
+      "washing plates",
+      "faucet"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
