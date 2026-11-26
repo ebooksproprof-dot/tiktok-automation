@@ -3383,47 +3383,24 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795711831,
+    "at": 1795722248,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 8,
+    "skipped_known": 2,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 5,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 108,
-          "context_rejected": 10,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 3,
+        "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
-          "page": 3,
-          "raw_hits": 7,
-          "total_hits": 37,
-          "context_rejected": 4,
+          "page": 1,
+          "raw_hits": 4,
+          "total_hits": 4,
+          "context_rejected": 3,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3433,19 +3410,19 @@
         "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 334,
+          "total_hits": 483,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3453,6 +3430,29 @@
       },
       {
         "provider": "wikimedia",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "armario",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 2,
+          "raw_hits": 10,
+          "total_hits": 25,
+          "context_rejected": 10,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
         "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
@@ -3463,13 +3463,13 @@
         "provider": "pixabay",
         "category": "lavanderia",
         "status": "search_ok",
-        "eligible_candidates": 8,
+        "eligible_candidates": 1,
         "response_source": "live_api",
         "filters": {
-          "page": 1,
-          "raw_hits": 8,
-          "total_hits": 8,
-          "context_rejected": 0,
+          "page": 3,
+          "raw_hits": 15,
+          "total_hits": 120,
+          "context_rejected": 14,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3479,16 +3479,16 @@
         "category": "lavanderia",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "wiping faucet",
-      "arranging shelves",
-      "organizing hangers",
-      "clothesline"
+      "towels",
+      "cleaning countertop",
+      "storage hangers",
+      "washing clothesline"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
