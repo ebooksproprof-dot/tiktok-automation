@@ -8305,13 +8305,36 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795648649.045747
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795680862.039626
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795680862.039626
+      "retry_after": 1795733947.3176026
+    },
+    "https://cdn.pixabay.com/video/2022/11/20/139803-773444496_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1795733864.0970485
+    },
+    "https://cdn.pixabay.com/video/2022/11/20/139801-773444486_large.mp4": {
+      "status": "RETRYABLE",
+      "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+      "error_type": "TimeoutError",
+      "error_stage": "license",
+      "http_status": null,
+      "retry_after": 1795733904.26178
     }
   },
   "outputs": {
