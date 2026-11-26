@@ -3253,120 +3253,169 @@
       "duration": 20.735,
       "bytes": 11845632,
       "acquired_at": 1795500777
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "139801",
+      "url": "https://cdn.pixabay.com/video/2022/11/20/139801-773444486_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-139801/",
+      "author": "Sang_Soi",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-139801/",
+      "category": "organizacao",
+      "query": "shelves",
+      "selection_reason": "Provider tags: man, student, library, books, shelves, study, read",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/11/20/139801-773444486_large.mp4",
+      "sha256": "9041d8441827617946612ef21bfe0f7195c05a3d3d70f9822668f1d42dfdd690",
+      "dhash": [
+        "b5b5f1710c8cdd91",
+        "b1b5f1790eccddb9",
+        "b5b1f1330ccccda9",
+        "b5b9f9390ccceca8",
+        "b5b1f11f0ccccca8"
+      ],
+      "crop_dhash": {
+        "full": [
+          "b5b5f1710c8cdd91",
+          "b1b5f1790eccddb9",
+          "b5b1f1330ccccda9",
+          "b5b9f9390ccceca8",
+          "b5b1f11f0ccccca8"
+        ],
+        "inner90": [
+          "b4b5f1311f8c95d1",
+          "b4b5f1390e8c9d99",
+          "b4b5f1194e8ccde8",
+          "75b9f91d4eaecea8",
+          "7531f15d4e8ec6ac"
+        ],
+        "inner80": [
+          "7434f1751e2e965d",
+          "7434f17d1e2f9c5e",
+          "7430f15d1e2e964e",
+          "7478f95d1e2fce6e",
+          "74f0f1551e2ed64c"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 3840,
+      "height": 2160,
+      "duration": 15.018333,
+      "bytes": 48746323,
+      "acquired_at": 1795659465
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "139803",
+      "url": "https://cdn.pixabay.com/video/2022/11/20/139803-773444496_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-139803/",
+      "author": "Sang_Soi",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-139803/",
+      "category": "organizacao",
+      "query": "shelves",
+      "selection_reason": "Provider tags: man, student, library, books, shelves, study, read",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/11/20/139803-773444496_large.mp4",
+      "sha256": "d30779459250db57caddb05aff5af6903bb33e3ad1b74db2dba1a02c79adf1f4",
+      "dhash": [
+        "b5b1b21a0c8ccdd9",
+        "7571f31f0c8ccdd9",
+        "75f1b11d0c8ccc48",
+        "71f1b11d0e8cce4a",
+        "75f1711d0c8c8e5a"
+      ],
+      "crop_dhash": {
+        "full": [
+          "b5b1b21a0c8ccdd9",
+          "7571f31f0c8ccdd9",
+          "75f1b11d0c8ccc48",
+          "71f1b11d0e8cce4a",
+          "75f1711d0c8c8e5a"
+        ],
+        "inner90": [
+          "6571f11b1c8ccdd9",
+          "7571711d1c8c8c4a",
+          "74f0711d0e8c8e4a",
+          "70f1711f0e8c8e48",
+          "70f171171e0c8e49"
+        ],
+        "inner80": [
+          "65f1711d1d0c8d48",
+          "7470711d9e0c8e4a",
+          "b07071161e0d8ecd",
+          "b07171960e0d0ecd",
+          "b07171961e0d2e8d"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 3840,
+      "height": 2160,
+      "duration": 17.535,
+      "bytes": 56479342,
+      "acquired_at": 1795659483
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795637320,
-    "acquired": 0,
+    "at": 1795659450,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 1,
+    "download_attempts": 2,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 360,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "utensilios",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "organizacao",
         "status": "search_ok",
-        "eligible_candidates": 0,
+        "eligible_candidates": 2,
         "response_source": "live_api",
         "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 294,
-          "context_rejected": 15,
+          "page": 2,
+          "raw_hits": 2,
+          "total_hits": 17,
+          "context_rejected": 0,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 241,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "cozinha",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 6,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 98,
-          "context_rejected": 9,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "organizing spoons",
-      "arranging books",
-      "washing plates",
-      "faucet"
+      "shelves",
+      "cleaning plates",
+      "cleaning faucet",
+      "organizing shelves"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 82,
+    "unreviewed_media_count": 84,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
