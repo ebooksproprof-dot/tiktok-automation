@@ -6384,13 +6384,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795574866.691022
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795658646.753782
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795658646.753782
+      "retry_after": 1795744051.5444367
     },
     "https://cdn.pixabay.com/video/2016/02/29/2348-157269986_large.mp4": {
       "status": "REJECTED",
@@ -7992,13 +7999,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795648723.7102675
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795680916.56894
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795680916.56894
+      "retry_after": 1795744008.488543
     },
     "https://cdn.pixabay.com/video/2019/02/28/21710-320725493_large.mp4": {
       "status": "RETRYABLE",
@@ -8118,13 +8132,20 @@
           "error_stage": "render",
           "http_status": null,
           "retry_after": 1795648684.3867998
+        },
+        {
+          "error": "SOURCE_OR_RENDER_UNAVAILABLE",
+          "error_type": "ValueError",
+          "error_stage": "render",
+          "http_status": null,
+          "retry_after": 1795680887.747527
         }
       ],
       "error": "SOURCE_OR_RENDER_UNAVAILABLE",
       "error_type": "ValueError",
       "error_stage": "render",
       "http_status": null,
-      "retry_after": 1795680887.747527
+      "retry_after": 1795743974.5121875
     },
     "https://cdn.pixabay.com/video/2020/04/09/35511-405897880_large.mp4": {
       "status": "REJECTED",
