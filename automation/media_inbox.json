@@ -3383,46 +3383,23 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795722248,
+    "at": 1795722578,
     "acquired": 0,
     "rejected": 0,
     "download_attempts": 0,
-    "skipped_known": 2,
+    "skipped_known": 3,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 1,
-        "response_source": "live_api",
-        "filters": {
-          "page": 1,
-          "raw_hits": 4,
-          "total_hits": 4,
-          "context_rejected": 3,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "organizacao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 483,
+          "total_hits": 457,
           "context_rejected": 15,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3430,22 +3407,45 @@
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "utensilios",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "live_api",
+        "response_source": "cache",
         "filters": {}
       },
       {
         "provider": "pixabay",
-        "category": "armario",
+        "category": "organizacao",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
-          "page": 2,
-          "raw_hits": 10,
-          "total_hits": 25,
+          "page": 3,
+          "raw_hits": 15,
+          "total_hits": 337,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "organizacao",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "cache",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "limpeza",
+        "status": "search_ok",
+        "eligible_candidates": 4,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 14,
+          "total_hits": 14,
           "context_rejected": 10,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
@@ -3453,7 +3453,7 @@
       },
       {
         "provider": "wikimedia",
-        "category": "armario",
+        "category": "limpeza",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "cache",
@@ -3461,34 +3461,34 @@
       },
       {
         "provider": "pixabay",
-        "category": "lavanderia",
+        "category": "armario",
         "status": "search_ok",
-        "eligible_candidates": 1,
+        "eligible_candidates": 10,
         "response_source": "live_api",
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 120,
-          "context_rejected": 14,
+          "total_hits": 96,
+          "context_rejected": 5,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "lavanderia",
+        "category": "armario",
         "status": "search_ok",
         "eligible_candidates": 0,
-        "response_source": "cache",
+        "response_source": "live_api",
         "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "towels",
-      "cleaning countertop",
-      "storage hangers",
-      "washing clothesline"
+      "organizing plates",
+      "organizing towels",
+      "wiping countertop",
+      "clothes"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
