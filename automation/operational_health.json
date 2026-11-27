@@ -1,6 +1,6 @@
 {
   "version": 12,
-  "at": "2026-11-27T21:47:31.836643+00:00",
+  "at": "2026-11-27T21:48:19.621522+00:00",
   "stock": {
     "ready": 0,
     "held_uncertain": 0,
@@ -50,7 +50,7 @@
   "incidents": {
     "STOCK_BELOW_TARGET": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 181,
+      "occurrences": 182,
       "code": "STOCK_BELOW_TARGET",
       "details": {
         "ready": 0,
@@ -58,7 +58,7 @@
         "held_uncertain": 0
       },
       "active": true,
-      "last_seen": "2026-11-27T21:47:31.836643+00:00"
+      "last_seen": "2026-11-27T21:48:19.621522+00:00"
     },
     "SIMILAR_FUTURE_CONTENT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
@@ -80,7 +80,7 @@
     },
     "PRODUCTION_SOURCE_HOLDS": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
-      "occurrences": 181,
+      "occurrences": 182,
       "code": "PRODUCTION_SOURCE_HOLDS",
       "details": {
         "SOURCE_FROZEN_OR_UNDECODABLE": 24,
@@ -89,7 +89,7 @@
         "HANDWASH_CONTEXT_NOT_ESTABLISHED": 2
       },
       "active": true,
-      "last_seen": "2026-11-27T21:47:31.836643+00:00"
+      "last_seen": "2026-11-27T21:48:19.621522+00:00"
     },
     "NO_APPROVED_PRODUCTION_OUTPUT": {
       "first_seen": "2026-11-20T23:41:31.788320+00:00",
@@ -138,7 +138,7 @@
     },
     "PUBLICATION_RECONCILIATION_REQUIRED": {
       "first_seen": "2026-11-27T18:50:25.105207+00:00",
-      "occurrences": 8,
+      "occurrences": 9,
       "code": "PUBLICATION_RECONCILIATION_REQUIRED",
       "details": {
         "ids": [
@@ -146,7 +146,7 @@
         ]
       },
       "active": true,
-      "last_seen": "2026-11-27T21:47:31.836643+00:00"
+      "last_seen": "2026-11-27T21:48:19.621522+00:00"
     }
   }
 }
