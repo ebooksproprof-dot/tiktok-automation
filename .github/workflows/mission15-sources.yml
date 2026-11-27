@@ -1,0 +1,28 @@
+name: CasaSemEsforco Mission15 source review
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
+      - name: Bounded official intake; sources are not approved stock
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python automation/mission15_sources.py
+      - name: Preserve annotated review evidence without raw source redistribution
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view mission15-review >/dev/null 2>&1 || gh release create mission15-review --target main --title 'Mission15 review package — approval pending' --notes 'Annotated visual review evidence and generated voice samples only. No reference recordings. No publication approval.' --prerelease
+          gh release upload mission15-review tmp/mission15/sources/*-review.jpg tmp/mission15/sources/*manifest.json tmp/mission15/sources/candidates.json

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_repository": "kyutai/tts-voices",
+  "source_revision": "323332d33f997de8394f24a193e1a76df720e01a",
+  "license": "CC0-1.0",
+  "rights_evidence": [
+    "https://huggingface.co/kyutai/tts-voices/blob/323332d33f997de8394f24a193e1a76df720e01a/README.md#voice-donations",
+    "https://kyutai.org/next/legal/Terms%20of%20Use%20-%20Unmute%20Voice%20Donation%20Project%20v1.pdf"
+  ],
+  "consent_scope": "Donated for TTS; terms section 5 explicitly permits transformation, commercial use and derivative open-source projects; no endorsement implied.",
+  "candidates": [
+    {"id":"unmute-hannah", "path":"voice-donations/Hannah.wav", "sha256":"439585cc5c981882a87f1b32f95dbc2c1225d145a4cf861ca36483decbc4c2a8", "commercial_synthesis_authorized":true, "perceptual_review_approved":false, "reference_locale":"not_verified", "gender":"requires_auditory_confirmation"},
+    {"id":"unmute-lara", "path":"voice-donations/Lara.wav", "sha256":"8fea595097a2281149a9bbc1287d2b387bab562442afb9a537cafdf11c902fbf", "commercial_synthesis_authorized":true, "perceptual_review_approved":false, "reference_locale":"not_verified", "gender":"requires_auditory_confirmation"}
+  ]
+}
