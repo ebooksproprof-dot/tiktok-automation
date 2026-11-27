@@ -167,13 +167,14 @@ def request_spec(profile, episode, slot, editorial_id=None):
             'randomize_seed': False}
 
 
-def reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimated_seconds=75):
+def reserve(inventory_store, budget_store, inventory, revision, spec, tier, estimated_seconds=75,
+            claim_profile='wan104_licensed_fastwan5b'):
     digest = hf_probe.fingerprint(spec)
     if digest in inventory['requests']:
         raise ValueError('KNOWN_OR_UNCERTAIN_WAN_REQUEST_NO_RETRY')
     ledger, budget_revision = budget_store.load()
     updated = daily_budget.reserve(ledger, digest, now(), tier=tier, estimated_seconds=estimated_seconds)
-    updated['claims'][-1].update(profile='wan104_licensed_fastwan5b', space=spec['space'])
+    updated['claims'][-1].update(profile=claim_profile, space=spec['space'])
     budget_store.save(updated, budget_revision)  # Includes old A14B claims; never reset or replace.
     inventory['requests'][digest] = {'status': 'INTENT_RECORDED_NO_RETRY', 'at': now().isoformat(), 'spec': spec}
     revision = inventory_store.save(inventory, revision)

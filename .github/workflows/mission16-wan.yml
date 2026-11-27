@@ -1,0 +1,41 @@
+name: CasaSemEsforco Mission16 photoreal Wan trial
+on:
+  workflow_dispatch:
+    inputs:
+      slot:
+        type: choice
+        options: ['0', '1']
+        default: '0'
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-ai30-collector
+  cancel-in-progress: false
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+          python -m pip install 'gradio_client==2.7.2' 'socksio>=1.0,<2'
+      - name: Attempt one pinned free shot with shared durable quota and no publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
+          SHOT_SLOT: ${{ inputs.slot }}
+        run: PYTHONPATH=automation python automation/experimental81/wan16.py --slot "$SHOT_SLOT"
+      - name: Preserve result even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission16-wan-trial
+          path: tmp/mission16/
+          retention-days: 7
+          if-no-files-found: warn

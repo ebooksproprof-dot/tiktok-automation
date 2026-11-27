@@ -29,3 +29,23 @@ class RejectedIllustration16(unittest.TestCase):
         q=self.quality()
         for check in (lambda:require_output(q),lambda:require_evidence({'quality':q})):
             with self.assertRaisesRegex(ValueError,'VISUAL_STYLE_NOT_PHOTOREALISTIC'):check()
+
+
+class WanQualityTrial16(unittest.TestCase):
+    def test_trial_stays_inside_documented_controls_and_preserves_legacy_profile(self):
+        from experimental81 import wan16,wan104
+        profile=json.loads(wan104.PROFILE.read_text());before=copy.deepcopy(profile)
+        request=wan16.spec(profile,0)
+        self.assertEqual((request['width'],request['height'],request['steps']),(576,1024,8))
+        self.assertEqual(profile,before)
+        self.assertEqual(request['reference_kind'],'authored_text_only')
+        self.assertEqual(request['space_revision'],profile['space_revision'])
+
+    def test_known_request_is_not_submitted_again(self):
+        from experimental81 import wan16,wan104,hf_probe
+        from unittest.mock import Mock
+        profile=json.loads(wan104.PROFILE.read_text());fingerprint=hf_probe.fingerprint(wan16.spec(profile,0))
+        store=Mock();store.load.return_value=({'requests':{fingerprint:{'status':'UNKNOWN_NO_RETRY'}}},'v1')
+        with patch.dict('os.environ',{'GH_TOKEN':'fixture-only'}),patch.object(wan16,'GitHubStore',return_value=store),patch.object(wan104,'profile_check'),patch.object(wan16.auto_collect,'free_hf_identity',return_value=('anonymous',None)):
+            self.assertEqual(wan16.run()['new_gpu_calls'],0)
+        store.save.assert_not_called()
