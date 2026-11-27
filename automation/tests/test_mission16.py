@@ -25,6 +25,11 @@ class RejectedIllustration16(unittest.TestCase):
         q=self.quality();q.pop('video_origin',None);q.update(visual_style='photorealistic')
         with self.assertRaisesRegex(ValueError,'VISUAL_STYLE_NOT_PHOTOREALISTIC'):policy.reject_incompatible(q)
 
+    def test_reexporting_or_relabeling_the_rejected_episode_requires_a_new_version_id(self):
+        from visual_library import require_evidence
+        post={'origin_draft_id':'mission15-copos-secos','quality':{'sha256':'d'*64,'visual_style':'photorealistic'}}
+        with self.assertRaisesRegex(ValueError,'VISUAL_STYLE_NOT_PHOTOREALISTIC'):require_evidence(post)
+
     def test_visual_rejection_precedes_voice_and_fingerprint_approval(self):
         from mission14_policy import require_output
         from visual_library import require_evidence
@@ -77,6 +82,28 @@ class WanQualityTrial16(unittest.TestCase):
 
 
 class SourceDefinition16(unittest.TestCase):
+    def test_4k_portrait_crop_needs_source_bound_review_and_keeps_proportions(self):
+        from framing import full_frame_filter
+        receipt={'native_dimensions':[3840,2160],'portrait_crop':[1200,0,1206,2144]}
+        with self.assertRaisesRegex(ValueError,'RECOMPOSITION'):full_frame_filter(3840,2160)
+        with patch.object(policy,'require_source',return_value=receipt):
+            ff=full_frame_filter(3840,2160,source_sha256='a'*64)
+        self.assertTrue(ff.startswith('crop=1206:2144:1200:0'))
+        self.assertIn('force_original_aspect_ratio=increase',ff)
+        with tempfile.TemporaryDirectory() as folder:
+            output=Path(folder)/'synthetic-crop-check.mp4'
+            subprocess.run(['ffmpeg','-v','error','-y','-f','lavfi','-i','testsrc2=size=3840x2160:rate=1',
+                '-vf',ff,'-frames:v','1','-c:v','libx264','-threads','1','-preset','ultrafast',str(output)],check=True,timeout=30)
+            actual=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries',
+                'stream=width,height,sample_aspect_ratio','-of','json',str(output)]))['streams'][0]
+            self.assertEqual((actual['width'],actual['height'],actual['sample_aspect_ratio']),(1080,1920,'1:1'))
+
+    def test_reviewed_crop_cannot_be_applied_to_a_different_native_file_shape(self):
+        from framing import full_frame_filter
+        receipt={'native_dimensions':[3840,2160],'portrait_crop':[1200,0,1206,2144]}
+        with patch.object(policy,'require_source',return_value=receipt),self.assertRaisesRegex(ValueError,'NATIVE_SOURCE_MISMATCH'):
+            full_frame_filter(1920,1080,source_sha256='a'*64)
+
     def test_upscaling_low_resolution_does_not_approve_original_definition(self):
         from visual_source_probe import probe
         with tempfile.TemporaryDirectory() as folder:

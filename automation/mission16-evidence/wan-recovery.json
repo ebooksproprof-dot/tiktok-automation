@@ -1,0 +1,85 @@
+{
+  "unique_sources": 8,
+  "sources": [
+    {
+      "sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-df5643850d84cbe933180bc8.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "copos-secos",
+      "previous_rejection_reason": null
+    },
+    {
+      "sha256": "acafc1efa51501322a63cdb6210bbcd36297ff9b0dafe9092a00152a19a80ede",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-acafc1efa51501322a63cdb6.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "copos-secos",
+      "previous_rejection_reason": null
+    },
+    {
+      "sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-3c154e8b0618cd8565855093.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "madeira-molho",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED"
+    },
+    {
+      "sha256": "323769af5af1da6bb37c3a06aa32f944b16c3897a0eaa48ed6d0847f130feaad",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-323769af5af1da6bb37c3a06.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": null,
+      "previous_rejection_reason": null
+    },
+    {
+      "sha256": "7f841fdf6b7f1f8d1a1ffc130fb9cfd90801ce2ac886b9ba9400a81defc8ea78",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-7f841fdf6b7f1f8d1a1ffc13.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "bancada-area-preparo",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED"
+    },
+    {
+      "sha256": "f18306e237f39d83ef9dfbb4344ab0ec32b16441d02c1cc69aa2b58bb0f4597a",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-f18306e237f39d83ef9dfbb4.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "vidro-trinca",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED"
+    },
+    {
+      "sha256": "f1e372172feedff3ed98cd48f08d63e780b499c082ea32722516a80de5ea116b",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-f1e372172feedff3ed98cd48.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": "bancada-area-preparo",
+      "previous_rejection_reason": null
+    },
+    {
+      "sha256": "c767a2c3e30baa7dbcc9cf7cb64fdcf1536c4bbbb3ff172b07f5b6c082c97aa0",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W47/ai30-c767a2c3e30baa7dbcc9cf7c.mp4",
+      "recovered": true,
+      "width": 480,
+      "height": 832,
+      "duration": 5.041667,
+      "editorial_id": null,
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED"
+    }
+  ]
+}

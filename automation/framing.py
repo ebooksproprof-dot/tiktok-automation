@@ -18,7 +18,7 @@ def product_frame_filter(width, height):
         f"[blur][full]overlay={box['x']}:{box['y']},setsar=1,fps=30")
 
 
-def full_frame_filter(width, height):
+def full_frame_filter(width, height, *, source_sha256=None):
     """Reject destructive crops and excessive enlargement before rendering.
 
     A compatible aspect ratio alone is not proof the action survives cropping;
@@ -26,6 +26,16 @@ def full_frame_filter(width, height):
     """
     if any(type(x) is not int or x < 2 for x in (width, height)):
         raise ValueError('INVALID_SOURCE_DIMENSIONS')
+    if source_sha256:
+        from photoreal_policy import require_source
+        receipt=require_source(source_sha256)
+        if receipt['native_dimensions'] != [width,height]:
+            raise ValueError('REVIEWED_CROP_NATIVE_SOURCE_MISMATCH')
+        x,y,w,h=receipt['portrait_crop']
+        # Keep proportional scaling. Cropping a 4K wide shot is permitted only
+        # for this exact, reviewed source and action region, never by its tags.
+        return (f'crop={w}:{h}:{x}:{y},scale=1080:1920:flags=lanczos:force_original_aspect_ratio=increase,'
+                'crop=1080:1920,setsar=1,fps=30')
     factor = max(1080/width, 1920/height)
     retained = (1080*1920)/(width*height*factor*factor)
     if retained < .80:

@@ -1,0 +1,26 @@
+{
+  "total_historical_claims_preserved": 34,
+  "tier": "free",
+  "window_start": "2026-11-27T21:42:21.579949+00:00",
+  "window_claims": [
+    {
+      "request_sha256": "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f",
+      "claimed_at": "2026-11-27T21:42:21.579949+00:00",
+      "estimated_seconds": 110.0,
+      "status": "RESERVED_NO_AUTO_RETRY",
+      "profile": "wan16_576x1024_8steps_quality_trial",
+      "space": "Upsampler/wan-2-2-5b-video"
+    },
+    {
+      "request_sha256": "af739389696fe18b50605a547d0b1e15c5f3a1326433a4757d67bf36a68335d6",
+      "claimed_at": "2026-11-27T21:46:28.172327+00:00",
+      "estimated_seconds": 110.0,
+      "status": "RESERVED_NO_AUTO_RETRY",
+      "profile": "wan16_576x1024_8steps_quality_trial",
+      "space": "Upsampler/wan-2-2-5b-video"
+    }
+  ],
+  "reserved_estimate_seconds": 220.0,
+  "balance_is_provider_observed": false,
+  "note": "Conservative shared planning ledger, never a provider balance or measured GPU debit."
+}

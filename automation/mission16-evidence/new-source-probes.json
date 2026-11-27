@@ -1,0 +1,50 @@
+[
+  {
+    "source_sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+    "native_dimensions": [
+      576,
+      1024
+    ],
+    "portrait_crop": [
+      0,
+      0,
+      576,
+      1024
+    ],
+    "duration": 5.041667,
+    "sample_aspect_ratio": null,
+    "rotation": [],
+    "method": "FFprobe on original downloaded bytes; geometry only, not visual approval",
+    "photorealism_approved": false,
+    "publication_approved": false,
+    "motion": {
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50
+    }
+  },
+  {
+    "source_sha256": "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb",
+    "native_dimensions": [
+      576,
+      1024
+    ],
+    "portrait_crop": [
+      0,
+      0,
+      576,
+      1024
+    ],
+    "duration": 5.041667,
+    "sample_aspect_ratio": null,
+    "rotation": [],
+    "method": "FFprobe on original downloaded bytes; geometry only, not visual approval",
+    "photorealism_approved": false,
+    "publication_approved": false,
+    "motion": {
+      "decoder_pass": true,
+      "freeze_intervals_over_1s": 0,
+      "freeze_threshold_db": -50
+    }
+  }
+]

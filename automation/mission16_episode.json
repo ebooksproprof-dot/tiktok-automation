@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "episode_id": "mission16-copos-secos-photoreal-v1",
+  "replaces_rejected_episode": "mission15-copos-secos",
+  "status": "WAITING_QUALIFIED_PHOTOREALISTIC_SCENES",
+  "visual_status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
+  "original_illustration_rejection_preserved": true,
+  "target_seconds": 30,
+  "script": [
+    "Copo guardado com água no fundo? Confira antes de fechar o armário.",
+    "Depois de lavar, apoie cada copo em um escorredor adequado ao material.",
+    "Deixe espaço entre as peças, sem equilibrar uma sobre a outra.",
+    "Observe a borda e o fundo. Se houver gotas, espere secar completamente.",
+    "Só então guarde os copos estáveis e fáceis de retirar. Salve para lembrar."
+  ],
+  "narration_path": "automation/mission15-evidence/episode/voice.wav",
+  "narration_sha256": "83a107391bcc687185ee63ad03bdfc663f31d3dbff4d7f14bc1f3cffb5bb7186",
+  "voice_perceptual_review_approved": false,
+  "narration_reuse_allowed_for_final_render": false,
+  "narration_note": "Reuse only after explicit voice approval; no resynthesis performed in Mission16.",
+  "generated_source_ids": [
+    "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+    "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb"
+  ],
+  "generated_seconds": 10.083334,
+  "qualified_visual_seconds": 0,
+  "final_mp4": null,
+  "approved_stock_added": 0,
+  "publication_approved": false,
+  "continuation_workflow": "mission16-wan.yml",
+  "scene_inventory": "automation/experimental81/wan16_inventory.json",
+  "visual_reviews": "automation/photoreal_reviews.json",
+  "publication_gates": [
+    "approved female voice",
+    "approved actual source and portrait crop",
+    "approved full visual/narrative review",
+    "30s technical/ASR/captions",
+    "persistent originality",
+    "cadence and Buffer idempotence"
+  ]
+}

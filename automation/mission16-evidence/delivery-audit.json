@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-11-27T22:10:19.265129+00:00",
+  "baseline_head": "3e6ccac",
+  "checkpoint": "checkpoint/mission16-before-3e6ccac",
+  "additional_cost_brl": 0,
+  "new_voice_syntheses": 0,
+  "voice_approval_still_pending": true,
+  "new_final_video": null,
+  "owner_visual_rejection_active": true,
+  "new_generated_sources": 2,
+  "new_native_dimensions": [
+    576,
+    1024
+  ],
+  "original_unique_wan_sources_recovered": 8,
+  "new_source_seconds": 10.083334,
+  "qualified_final_visual_seconds": 0,
+  "approved_stock": 0,
+  "new_buffer_posts": 0,
+  "new_publications_confirmed": 0,
+  "narration_sha256": "83a107391bcc687185ee63ad03bdfc663f31d3dbff4d7f14bc1f3cffb5bb7186",
+  "original_rejected_mp4_sha256": "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
+  "tests": {
+    "local_full_suite": 504,
+    "local_seconds": 13.119,
+    "focused_after_final_ffmpeg_crop_test": 20,
+    "actions_prior_run": 46073511876,
+    "actions_prior_passed": 501,
+    "actions_final_run": null
+  },
+  "real_runs": {
+    "wan_shot0": 46071967988,
+    "wan_shot1": 46072402686,
+    "quota_resume_no_gpu": 46073515860,
+    "sources_initial": 46072398451,
+    "sources_corrected": 46073519314,
+    "buffer_read_only": 46073522683
+  },
+  "quota_claims_preserved": 34,
+  "new_estimated_reservations_seconds": 220,
+  "observed_provider_gpu_debit": null,
+  "simulations": [
+    "28 days shared quota, provider failures and restarts; zero fabricated stock or public receipts",
+    "source and final review fixtures only"
+  ],
+  "pending": [
+    "qualified sources covering the complete narrative",
+    "perceptual owner voice approval",
+    "full photorealistic assembly and final review",
+    "new stock/scheduling/public playback evidence"
+  ]
+}

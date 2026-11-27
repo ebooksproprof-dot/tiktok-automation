@@ -1,0 +1,88 @@
+[
+  {
+    "id": "Upsampler/wan-2-2-5b-video",
+    "sha": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+    "runtime": {
+      "stage": "RUNNING",
+      "hardware": {
+        "current": "zero-a10g",
+        "requested": "zero-a10g"
+      },
+      "gcTimeout": 172800,
+      "replicas": {
+        "current": 1,
+        "requested": 1
+      },
+      "devMode": false,
+      "domains": [
+        {
+          "domain": "upsampler-wan-2-2-5b-video.hf.space",
+          "stage": "READY"
+        }
+      ],
+      "sha": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "pySpacesVersion": "0.51.1"
+    },
+    "license": null
+  },
+  {
+    "id": "prithivMLmods/Wan2.2-Fast",
+    "sha": "6b9a3444d2aa8dd2d1e130370bbd22471114759b",
+    "runtime": {
+      "stage": "RUNNING",
+      "hardware": {
+        "current": "zero-a10g",
+        "requested": "zero-a10g"
+      },
+      "gcTimeout": 172800,
+      "replicas": {
+        "current": 1,
+        "requested": 1
+      },
+      "devMode": false,
+      "domains": [
+        {
+          "domain": "prithivmlmods-wan2-2-fast.hf.space",
+          "stage": "READY"
+        }
+      ],
+      "sha": "6b9a3444d2aa8dd2d1e130370bbd22471114759b",
+      "pySpacesVersion": "0.51.3"
+    },
+    "license": "apache-2.0"
+  },
+  {
+    "id": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+    "sha": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+    "runtime": {
+      "stage": "RUNNING",
+      "hardware": {
+        "current": "zero-a10g",
+        "requested": "zero-a10g"
+      },
+      "gcTimeout": 172800,
+      "replicas": {
+        "current": 4,
+        "requested": "auto"
+      },
+      "devMode": false,
+      "domains": [
+        {
+          "domain": "zero-gpu-aot-wan2-2-fp8da-aoti-faster.hf.space",
+          "stage": "READY"
+        },
+        {
+          "domain": "zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space",
+          "stage": "READY"
+        }
+      ],
+      "sha": "1ff7432a88d7827eb787ef10c15cbc5c85c841a2",
+      "pySpacesVersion": "0.51.1"
+    },
+    "license": null
+  },
+  {
+    "id": "Wan-AI/Wan2.2-5B",
+    "error": "HTTPError"
+  }
+]

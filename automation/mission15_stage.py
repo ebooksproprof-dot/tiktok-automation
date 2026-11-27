@@ -43,6 +43,8 @@ def finalized_quality(voice,quality,audio,manifest,video_sha,wav_sha):
 
 
 def stage():
+    from photoreal_policy import reject_incompatible
+    reject_incompatible({'episode_id':DRAFT_ID})
     from media_quality import validate
     from chatterbox_v3 import digest,IDENTITY
     from audio_review import compare
@@ -87,6 +89,7 @@ def stage():
 
 def register_output(post,token):
     from photoreal_policy import reject_incompatible
+    reject_incompatible(post)
     reject_incompatible(post.get('quality',{}))
     from video_stock import GitHubStore
     store=GitHubStore(token,path='automation/production_state.json',validate=False)

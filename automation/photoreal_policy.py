@@ -15,7 +15,8 @@ def reject_incompatible(quality):
             or quality.get('visual_rejection_reason')=='VISUAL_STYLE_NOT_PHOTOREALISTIC'):
         raise ValueError('VISUAL_STYLE_NOT_PHOTOREALISTIC')
     decisions = json.loads(DECISIONS.read_text())
-    if any(quality.get('sha256') in item.get('media_sha256', [])
+    if any((quality.get('sha256') in item.get('media_sha256', [])
+            or item.get('episode_id') in (quality.get('episode_id'),quality.get('origin_draft_id')))
            for item in decisions['decisions'] if item['status'] == 'REJECTED'):
         raise ValueError('VISUAL_STYLE_NOT_PHOTOREALISTIC')
 
@@ -57,6 +58,13 @@ def require_source(source_sha256,registry=None):
         raise ValueError('PHOTOREAL_SOURCE_REVIEW_REQUIRED')
     definition(*receipt['native_dimensions'],receipt['portrait_crop'],receipt.get('upscale_review'))
     return receipt
+
+
+def approved_crop_id(source_sha256):
+    """Only an existing approved source may opt into its reviewed portrait crop."""
+    if not source_sha256:return None
+    data=json.loads(REVIEWS.read_text())
+    return source_sha256 if data.get('sources',{}).get(source_sha256,{}).get('status')=='APPROVED' else None
 
 
 def require_photoreal(quality,registry=None):

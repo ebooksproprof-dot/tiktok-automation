@@ -90,7 +90,7 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
         require_source(source['sha256'])
     from framing import full_frame_filter
     for clip in inventory['clips']:
-        full_frame_filter(clip['media']['width'], clip['media']['height'])
+        full_frame_filter(clip['media']['width'], clip['media']['height'],source_sha256=clip['sha256'])
     lines = lines or wan104.SCRIPT
     reviewer = None
     import gc

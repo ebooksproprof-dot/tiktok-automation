@@ -1,3 +1,5 @@
+> Atualização da Missão 16: o proprietário REPROVOU o visual ilustrado. A aprovação de Lara não libera o episódio A. O áudio e este histórico foram preservados; veja [a decisão e a recuperação fotorrealista](../MISSION-16.md).
+
 # Aprovação da identidade vocal — missão 15
 
 Candidata preferida para escuta: **unmute-lara**, pelo conteúdo integral reconhecido

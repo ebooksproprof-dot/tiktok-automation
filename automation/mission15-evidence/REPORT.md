@@ -1,3 +1,5 @@
+> Atualização da Missão 16: o proprietário REPROVOU o visual ilustrado. A aprovação de Lara não libera o episódio A. O áudio e este histórico foram preservados; veja [a decisão e a recuperação fotorrealista](../MISSION-16.md).
+
 # VOZ
 
 - **Origem e identidade selecionada:** candidata `unmute-lara`, doação voluntária do projeto Kyutai Unmute. Não é voz da demonstração Chatterbox. A identidade definitiva depende de escuta; gênero e sotaque da referência não constam de metadados suficientes.

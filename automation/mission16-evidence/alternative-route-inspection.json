@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "id": "chopperblu/ltx-2-5-demo",
+      "revision": "0bc4ac8cb4d398b035b5f3ae9d5dbd6074918bd6",
+      "license": null,
+      "gated": false,
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "zero-a10g",
+          "requested": "zero-a10g"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 1,
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "chopperblu-ltx-2-5-demo.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "0bc4ac8cb4d398b035b5f3ae9d5dbd6074918bd6",
+        "pySpacesVersion": "0.51.3"
+      }
+    },
+    {
+      "id": "Lightricks/LTX-2.5-Diffusers",
+      "revision": "b5a5b838599e6eee1fa310b3282705fe1fe79cc4",
+      "license": "other",
+      "gated": "auto",
+      "runtime": null
+    },
+    {
+      "id": "Lightricks/LTX-2.5-Diffusers",
+      "error_type": "HTTPError",
+      "http_status": 401
+    }
+  ],
+  "inference_attempted": false,
+  "reason": "Shared local free quota plan cannot fit another reviewed inference reservation; no change of identity or quota reset.",
+  "additional_hold": "LTX model license is other, access is gated auto, model card retrieval returned HTTP 401. No gated access attempted and no commercial permission assumed."
+}

@@ -1,3 +1,5 @@
+> Atualização da Missão 16: o proprietário REPROVOU o visual ilustrado. A aprovação de Lara não libera o episódio A. O áudio e este histórico foram preservados; veja [a decisão e a recuperação fotorrealista](MISSION-16.md).
+
 # CasaSemEsforço 15 — episódio completo, revisão e continuação
 
 Partida real: main `ee11e9b`, não ffd63f4. Os commits posteriores alteravam

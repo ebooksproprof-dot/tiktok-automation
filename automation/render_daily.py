@@ -145,7 +145,9 @@ def render(idea, voice, post_id):
         # Moving footage only; no still zoom, no fabricated before/after.
         mode = PROVENANCE.get(keys[source_index], {}).get('frame_mode', 'legacy')
         from framing import full_frame_filter
-        frame_filter, shift, filter_arg = full_frame_filter(*source_shapes[source_index]), 0, '-vf'
+        from photoreal_policy import approved_crop_id
+        source_sha=PROVENANCE.get(keys[source_index],{}).get('sha256')
+        frame_filter, shift, filter_arg = full_frame_filter(*source_shapes[source_index],source_sha256=approved_crop_id(source_sha)), 0, '-vf'
         frame_modes.append(mode)
         crop_shifts.append(shift)
         run(['ffmpeg','-v','error','-y','-ss',str(offset),

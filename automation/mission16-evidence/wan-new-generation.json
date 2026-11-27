@@ -1,0 +1,76 @@
+{
+  "runs": [
+    46071967988,
+    46072402686
+  ],
+  "sources": [
+    {
+      "slot": 0,
+      "episode_id": "mission16-copos-secos-photoreal-v1",
+      "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W48/ai30-0d159c0147eaa1eb127abc5b.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 576,
+        "height": 1024,
+        "video_codec": "h264",
+        "audio_codecs": [],
+        "bytes": 967825,
+        "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa"
+      },
+      "prompt": "Professional photorealistic home kitchen close-up, a single clean transparent drinking tumbler standing upright on a real wooden countertop, a few tiny water droplets on its inner wall and base, soft daylight, detailed glass refraction. Slow continuous lateral camera slide, stable glass shape and base in contact with the counter. No people, no hands, no appearing or disappearing objects. No text or logos. One uninterrupted five-second shot.",
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "reference_kind": "authored_text_only",
+      "visual_status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
+      "publication_approved": false,
+      "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+      "commercial_license_clearance": true,
+      "generation_evidence": {
+        "request_sha256": "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f",
+        "provider_job_id": "b2055e34d7414f49a4a4b2f017dfe92a",
+        "estimated_reserved_seconds": 110,
+        "observed_gpu_seconds": null,
+        "tier": "free",
+        "paid_endpoint_used": false
+      }
+    },
+    {
+      "slot": 1,
+      "episode_id": "mission16-copos-secos-photoreal-v1",
+      "sha256": "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W48/ai30-a86417f1ae148dc834c0d407.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 576,
+        "height": 1024,
+        "video_codec": "h264",
+        "audio_codecs": [],
+        "bytes": 1235140,
+        "sha256": "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb"
+      },
+      "prompt": "Professional photorealistic home kitchen close-up, three clean clear drinking tumblers inverted on the flat supported wire grid of a stainless steel dish drying rack, each glass separated by ample space, realistic glass and metal textures, stable geometry and natural daylight. Slow continuous lateral camera slide. No people, hands, wine glasses, stacking, floating objects, text or logos. One uninterrupted five-second shot.",
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "reference_kind": "authored_text_only",
+      "visual_status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
+      "publication_approved": false,
+      "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+      "commercial_license_clearance": true,
+      "generation_evidence": {
+        "request_sha256": "af739389696fe18b50605a547d0b1e15c5f3a1326433a4757d67bf36a68335d6",
+        "provider_job_id": "15abd8afa90c420898e034a81f79858a",
+        "estimated_reserved_seconds": 110,
+        "observed_gpu_seconds": null,
+        "tier": "free",
+        "paid_endpoint_used": false
+      }
+    }
+  ],
+  "new_generated_seconds": 10.083334,
+  "publication_approved": false
+}

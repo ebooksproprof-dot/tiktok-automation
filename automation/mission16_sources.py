@@ -5,6 +5,7 @@ never persisted. A 401/403/429 stops that source; no alternate identity or proxy
 """
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import time
@@ -75,9 +76,11 @@ def run(folder):
             draw.text((12,696),'PENDING NARRATIVE / PHYSICAL / CROP REVIEW. NO PUBLICATION APPROVAL.',font=font,fill='white')
             sheet.save(folder/(record['provider']+'-'+record['provider_id']+'-review.jpg'),quality=92)
         except Exception as exc:
+            code=str(exc).split(':',1)[0]
+            if not re.fullmatch(r'[A-Z][A-Z0-9_]{0,99}',code):code='REVIEW_NOT_COMPLETED'
             manifest['failures'].append({'provider':record['provider'],'provider_id':record['provider_id'],'stage':'download_or_rights_review',
-                'error_type':type(exc).__name__,'code':str(exc) if isinstance(exc,AcquisitionError) else 'REVIEW_NOT_COMPLETED',
-                'http_status':getattr(exc,'http_status',None)})
+                'error_type':type(exc).__name__,'code':code,
+                'http_status':getattr(exc,'http_status',getattr(exc,'code',None))})
         save_json(folder/'manifest.json',manifest)
     manifest['status']='GENERATION_COMPLETED_AWAITING_REVIEW' if manifest['downloaded'] else 'NO_REVIEWABLE_FOOTAGE_OBTAINED'
     save_json(folder/'manifest.json',manifest)

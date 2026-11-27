@@ -1,7 +1,318 @@
 {
   "schema_version": 1,
   "policy_version": 16,
-  "note": "Technical tests and ASR are not perceptual visual approval. No sources or full photorealistic episode approved yet.",
-  "sources": {},
+  "note": "Mission16: original illustration rejected; source generation is separate from source, narrative and final approval. No full photorealistic video approved.",
+  "sources": {
+    "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59": {
+      "source_sha256": "df5643850d84cbe933180bc8bed2b206f4fba84cee461fcc76e2066075491d59",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": null,
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "acafc1efa51501322a63cdb6210bbcd36297ff9b0dafe9092a00152a19a80ede": {
+      "source_sha256": "acafc1efa51501322a63cdb6210bbcd36297ff9b0dafe9092a00152a19a80ede",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": null,
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7": {
+      "source_sha256": "3c154e8b0618cd856585509343fb3df0591bcfd720452367b7923f50d2f63cf7",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "323769af5af1da6bb37c3a06aa32f944b16c3897a0eaa48ed6d0847f130feaad": {
+      "source_sha256": "323769af5af1da6bb37c3a06aa32f944b16c3897a0eaa48ed6d0847f130feaad",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": null,
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "7f841fdf6b7f1f8d1a1ffc130fb9cfd90801ce2ac886b9ba9400a81defc8ea78": {
+      "source_sha256": "7f841fdf6b7f1f8d1a1ffc130fb9cfd90801ce2ac886b9ba9400a81defc8ea78",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "f18306e237f39d83ef9dfbb4344ab0ec32b16441d02c1cc69aa2b58bb0f4597a": {
+      "source_sha256": "f18306e237f39d83ef9dfbb4344ab0ec32b16441d02c1cc69aa2b58bb0f4597a",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "f1e372172feedff3ed98cd48f08d63e780b499c082ea32722516a80de5ea116b": {
+      "source_sha256": "f1e372172feedff3ed98cd48f08d63e780b499c082ea32722516a80de5ea116b",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": null,
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "c767a2c3e30baa7dbcc9cf7cb64fdcf1536c4bbbb3ff172b07f5b6c082c97aa0": {
+      "source_sha256": "c767a2c3e30baa7dbcc9cf7cb64fdcf1536c4bbbb3ff172b07f5b6c082c97aa0",
+      "status": "REJECTED",
+      "style": "photorealistic_candidate",
+      "native_dimensions": [
+        480,
+        832
+      ],
+      "duration": 5.041667,
+      "reason": "SOURCE_NATIVE_DEFINITION_INSUFFICIENT",
+      "reviewer": "assistant frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/wan-recovered-sequences-1.jpg and -2.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/wan-recovery.json",
+      "previous_rejection_reason": "PORTRAIT_VISUAL_CONTEXT_REJECTED",
+      "note": "Preserved for audit; 480x832 is not made Full HD by export. Prior content holds retained."
+    },
+    "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa": {
+      "source_sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+      "status": "PENDING_NARRATIVE_REASSIGNMENT",
+      "visual_status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
+      "style": "photorealistic",
+      "native_dimensions": [
+        576,
+        1024
+      ],
+      "portrait_crop": [
+        0,
+        0,
+        576,
+        1024
+      ],
+      "duration": 5.041667,
+      "commercial_rights_verified": true,
+      "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+      "reviewer": "assistant frame-sequence review with decoded motion",
+      "human_review": false,
+      "reviewed_at": "2026-11-27T21:57:49.140572+00:00",
+      "sequence_artifact": "automation/mission16-evidence/wan-new-shot0-sequence.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/new-source-probes.json",
+      "criteria": {
+        "photorealism": true,
+        "clarity": null,
+        "physical_coherence": true,
+        "motion": true,
+        "narrative": false
+      },
+      "reason": "DROPLETS_NOT_CLEARLY_DEMONSTRATED",
+      "note": "Could be reconsidered only as a dry-glass result detail, with source definition and new narrative review.",
+      "publication_approved": false
+    },
+    "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb": {
+      "source_sha256": "a86417f1ae148dc834c0d407a3ffa13b8e2c8a4a49681b42ed6217ba045997bb",
+      "status": "REJECTED",
+      "visual_status": "QUALIDADE VISUAL REPROVADA",
+      "style": "photorealistic",
+      "native_dimensions": [
+        576,
+        1024
+      ],
+      "portrait_crop": [
+        0,
+        0,
+        576,
+        1024
+      ],
+      "duration": 5.041667,
+      "commercial_rights_verified": true,
+      "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+      "reviewer": "assistant frame-sequence review with decoded motion",
+      "human_review": false,
+      "reviewed_at": "2026-11-27T21:57:49.140572+00:00",
+      "sequence_artifact": "automation/mission16-evidence/wan-new-shot1-sequence.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/new-source-probes.json",
+      "criteria": {
+        "photorealism": true,
+        "clarity": null,
+        "physical_coherence": false,
+        "motion": true,
+        "narrative": false
+      },
+      "reason": "UNSAFE_TILTED_GLASS_AND_DRYING_ORIENTATION_NOT_ESTABLISHED",
+      "note": "One glass is tilted on its side; the arrangement contradicts the narrated safe support.",
+      "publication_approved": false
+    },
+    "064fa2b913b591e61c3cec05ccb0562fb501ce3b11cf0151f3a086a732cb8503": {
+      "source_sha256": "064fa2b913b591e61c3cec05ccb0562fb501ce3b11cf0151f3a086a732cb8503",
+      "status": "PENDING_FRAMING_AND_DEFINITION_REVIEW",
+      "style": "real_camera_footage",
+      "commercial_rights_verified": true,
+      "rights_evidence": {
+        "source_sha256": "064fa2b913b591e61c3cec05ccb0562fb501ce3b11cf0151f3a086a732cb8503",
+        "source_url": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-5629/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "6bd2c6d6981c4e6c5f6c0bf97cac0ddcd6448e63dfb7e7102f23123c39364181",
+        "author": "Coverr-Free-Footage",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-07T05:45:43.679513+00:00",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "6bd2c6d6981c4e6c5f6c0bf97cac0ddcd6448e63dfb7e7102f23123c39364181",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "duration": 17.6,
+      "reviewer": "assistant annotated frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/licensed-footage-5629-review.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/licensed-footage-corrected.json",
+      "criteria": {
+        "photorealism": true,
+        "clarity": null,
+        "physical_coherence": null,
+        "motion": null,
+        "narrative": false
+      },
+      "reason": "CENTRAL_CROP_LOSES_MAIN_ACTION",
+      "publication_approved": false
+    },
+    "6afed17a4ea5a4fa739dbe283d1c6ca7c4a64477008095d8b46b25724e2d0edb": {
+      "source_sha256": "6afed17a4ea5a4fa739dbe283d1c6ca7c4a64477008095d8b46b25724e2d0edb",
+      "status": "PENDING_FRAMING_AND_DEFINITION_REVIEW",
+      "style": "real_camera_footage",
+      "commercial_rights_verified": true,
+      "rights_evidence": {
+        "source_sha256": "6afed17a4ea5a4fa739dbe283d1c6ca7c4a64477008095d8b46b25724e2d0edb",
+        "source_url": "https://cdn.pixabay.com/video/2017/06/03/9520-220204067_large.mp4",
+        "source_page": "https://pixabay.com/videos/id-9520/",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "binding_terms": "https://pixabay.com/service/terms/",
+        "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+        "page_sha256": "076658617c1c437c06aadef93f53e3137ce39556e905a09604d5d7ffffa29bf7",
+        "author": "chayka1270",
+        "commercial_use": true,
+        "reviewed_at": "2026-11-09T16:27:47.808252+00:00",
+        "verification_method": "previously_retrieved_official_evidence_exact_bytes",
+        "api_endpoint": "https://pixabay.com/api/videos/",
+        "api_response_sha256": "076658617c1c437c06aadef93f53e3137ce39556e905a09604d5d7ffffa29bf7",
+        "license_policy": {
+          "version": 1,
+          "retrieved_at": "2026-11-07T04:47:06.078902+00:00",
+          "terms_url": "https://pixabay.com/service/terms/",
+          "license_url": "https://pixabay.com/service/license-summary/",
+          "terms_sha256": "b557d954f9c8ea5e588a442443bf53fbd3986e8bc90999807f84854e8f6022d6",
+          "commercial_grant_excerpt": "nt or Pixabay. 5. Content License granted to you for Content (other than CC0 Content). Subject to the Prohibited Uses described below (which you agree and acknowledge you are not entitled to engage in), when you download any Content that is not CC0 Content from the Service, we grant you an irrevocable, worldwide, perpetual (or as long as allowed by law), non-exclusive and royalty-free right to download, use, copy, modify or adapt the Content for commercial or non-commercial purposes ( &#x27;Content License&#x27; ). The rights granted are non-exclusive, meaning that we may also grant other users the same rights in the same Content. For the avoidance of doubt, you",
+          "grant_scope": "Pixabay Content other than CC0, subject to prohibited uses; authenticated official API identifies the exact asset",
+          "max_policy_age_days": 7,
+          "api_docs_url": "https://pixabay.com/api/docs/",
+          "api_license_excerpt": "e Pixabay API documentation. Our API is a RESTful interface for searching and retrieving royalty-free images and videos released by Pixabay under the Content License . Free Images If you make use of the API, show your users where the images and videos are from, whenever",
+          "api_docs_text_sha256": "0488cb2e78fc70203faa6a57d8af8fb0c5729149022a6729bc7c2849d5ae011a"
+        },
+        "use_scope": "adapted illustrative educational video; no endorsement or standalone redistribution"
+      },
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "duration": 9.44,
+      "reviewer": "assistant annotated frame-sequence review",
+      "human_review": false,
+      "sequence_artifact": "automation/mission16-evidence/licensed-footage-9520-review.jpg",
+      "native_probe_artifact": "automation/mission16-evidence/licensed-footage-corrected.json",
+      "criteria": {
+        "photorealism": true,
+        "clarity": null,
+        "physical_coherence": null,
+        "motion": null,
+        "narrative": false
+      },
+      "reason": "PROFESSIONAL_DEFINITION_AND_COMPLETE_DRYING_NARRATIVE_NOT_ESTABLISHED",
+      "publication_approved": false
+    }
+  },
   "videos": {}
 }

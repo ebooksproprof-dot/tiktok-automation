@@ -274,7 +274,8 @@ def _compose_locked(manifest, folder, requested='auto', target_seconds=30):
         clip = clips[shot['source_index']]
         inputs.extend(['-ss',str(shot['start']),'-t',str(shot['duration']),'-i',clip['path']])
         from framing import full_frame_filter
-        frame = full_frame_filter(clip['width'], clip['height'])
+        from photoreal_policy import approved_crop_id
+        frame = full_frame_filter(clip['width'], clip['height'],source_sha256=approved_crop_id(clip.get('sha256')))
         graph.append(f'[{number}:v]'+frame+f',setpts=PTS-STARTPTS[v{number}]')
     graph.append(''.join(f'[v{i}]' for i in range(len(shots))) + f'concat=n={len(shots)}:v=1:a=0[sequence]')
     caption_filters = filters(folder, timings)

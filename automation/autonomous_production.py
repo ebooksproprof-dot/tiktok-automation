@@ -407,7 +407,8 @@ def run(stage=False, soon=False, limit=2):
             if candidate.get('sha256') and candidate['sha256'] != measured['sha256']:
                 raise ValueError('PREVIOUS_SOURCE_BYTES_CHANGED')
             from framing import full_frame_filter
-            full_frame_filter(measured['width'], measured['height'])
+            from photoreal_policy import approved_crop_id
+            full_frame_filter(measured['width'], measured['height'],source_sha256=approved_crop_id(measured['sha256']))
             measured.update(id='auto-'+measured['provider']+'-'+measured['provider_id']+'-'+measured['sha256'][:12],
                             frame_mode='reviewed_portrait',
                             context='Illustrative real household footage, accepted by local CPU frame review.')
