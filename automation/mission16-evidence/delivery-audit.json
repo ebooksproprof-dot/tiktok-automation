@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-11-27T22:10:19.265129+00:00",
+  "recorded_at": "2026-11-27T22:13:05.079566+00:00",
   "baseline_head": "3e6ccac",
   "checkpoint": "checkpoint/mission16-before-3e6ccac",
   "additional_cost_brl": 0,
@@ -26,7 +26,9 @@
     "focused_after_final_ffmpeg_crop_test": 20,
     "actions_prior_run": 46073511876,
     "actions_prior_passed": 501,
-    "actions_final_run": null
+    "actions_final_run": 46075004300,
+    "actions_final_passed": 504,
+    "actions_final_seconds": 11.141
   },
   "real_runs": {
     "wan_shot0": 46071967988,
@@ -48,5 +50,12 @@
     "perceptual owner voice approval",
     "full photorealistic assembly and final review",
     "new stock/scheduling/public playback evidence"
-  ]
+  ],
+  "implementation_head": "32f9263c20e4b46b13b46d93a7393e0085bc41cd",
+  "live_asset_readback": {
+    "review_page_http": 200,
+    "wan0_http": 200,
+    "wan1_http": 200,
+    "generated_clip_sha256_match": true
+  }
 }
