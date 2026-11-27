@@ -3379,74 +3379,154 @@
       "duration": 17.535,
       "bytes": 56479342,
       "acquired_at": 1795659483
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "128877",
+      "url": "https://cdn.pixabay.com/video/2022/08/23/128877-742397548_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-128877/",
+      "author": "Sang_Soi",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: Sang_Soi / Pixabay — https://pixabay.com/videos/id-128877/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: books, library, read a book, read, records, study, write, learn",
+      "requires_crop_review": true,
+      "frame_mode": "reviewed_portrait",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2022/08/23/128877-742397548_large.mp4",
+      "sha256": "f0a04f08538310834e7543c4a008ac07b92b34492280bce2bf2a25ba944938b8",
+      "dhash": [
+        "2e2baf84af063627",
+        "2ea3af85af262627",
+        "2ea78f8d2fa62e27",
+        "2c878f8daf252e27",
+        "0d878d8daf052c27"
+      ],
+      "crop_dhash": {
+        "full": [
+          "2e2baf84af063627",
+          "2ea3af85af262627",
+          "2ea78f8d2fa62e27",
+          "2c878f8daf252e27",
+          "0d878d8daf052c27"
+        ],
+        "inner90": [
+          "1e0b0e064e465647",
+          "0e2bae86ae463647",
+          "1e0fad85ae463e47",
+          "1a0fad8dbe063e27",
+          "1a0fad8d9e463c07"
+        ],
+        "inner80": [
+          "5b4f56465f535357",
+          "5b4f56065f535657",
+          "520f56065e565657",
+          "120f160e5e575647",
+          "520f468e5e565657"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 3840,
+      "height": 2160,
+      "duration": 12.351667,
+      "bytes": 36965497,
+      "acquired_at": 1795808068
+    },
+    {
+      "provider": "pixabay",
+      "provider_id": "16356",
+      "url": "https://cdn.pixabay.com/video/2018/05/22/16356-271607298_large.mp4",
+      "source_page": "https://pixabay.com/videos/id-16356/",
+      "author": "StefWithAnF",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "attribution": "Video: StefWithAnF / Pixabay — https://pixabay.com/videos/id-16356/",
+      "category": "livros2",
+      "query": "library books",
+      "selection_reason": "Provider tags: boy, reading, library, books, book, education, lifestyle, story",
+      "requires_crop_review": true,
+      "frame_mode": "preserve_full",
+      "semantic_verified": false,
+      "editorial_approved": false,
+      "status": "pending_visual_review",
+      "source_id": "https://cdn.pixabay.com/video/2018/05/22/16356-271607298_large.mp4",
+      "sha256": "bb57401e48906a527c37a1637339af36c628d9d8f88e3c2dbf58176a8c321f85",
+      "dhash": [
+        "a4c1c484a4c5c988",
+        "a4c1c484a4c5c988",
+        "a4414484c4c58988",
+        "a4c14484a4c58988",
+        "a4c1c48484c5c988"
+      ],
+      "crop_dhash": {
+        "full": [
+          "a4c1c484a4c5c988",
+          "a4c1c484a4c5c988",
+          "a4414484c4c58988",
+          "a4c14484a4c58988",
+          "a4c1c48484c5c988"
+        ],
+        "inner90": [
+          "45c5064626c58d8a",
+          "45c5064626c58d8a",
+          "4545464646858d8a",
+          "47c5464646878d8a",
+          "45c5064606c58d8a"
+        ],
+        "inner80": [
+          "c585064646858c8c",
+          "c585064646858c8c",
+          "c5c5464646858c8c",
+          "c5c5464646878c8c",
+          "c585064646858c8c"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2",
+      "width": 1920,
+      "height": 1080,
+      "duration": 8.0,
+      "bytes": 5018456,
+      "acquired_at": 1795808074
     }
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795797344,
-    "acquired": 0,
+    "at": 1795808056,
+    "acquired": 2,
     "rejected": 0,
-    "download_attempts": 0,
-    "skipped_known": 0,
+    "download_attempts": 2,
+    "skipped_known": 1,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 487,
-          "context_rejected": 15,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "live_api",
-        "filters": {
-          "page": 2,
-          "raw_hits": 3,
-          "total_hits": 18,
-          "context_rejected": 3,
-          "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
-        }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "manutencao",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
-      },
-      {
-        "provider": "pixabay",
         "category": "limpeza",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 14,
         "response_source": "live_api",
         "filters": {
           "page": 3,
           "raw_hits": 15,
-          "total_hits": 324,
-          "context_rejected": 0,
+          "total_hits": 90,
+          "context_rejected": 1,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
@@ -3461,38 +3541,30 @@
       },
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "livros2",
         "status": "search_ok",
-        "eligible_candidates": 15,
+        "eligible_candidates": 11,
         "response_source": "live_api",
         "filters": {
-          "page": 3,
+          "page": 4,
           "raw_hits": 15,
-          "total_hits": 331,
-          "context_rejected": 0,
+          "total_hits": 303,
+          "context_rejected": 4,
           "duration_rejected": 0,
           "geometry_or_origin_rejected": 0
         }
-      },
-      {
-        "provider": "wikimedia",
-        "category": "limpeza",
-        "status": "search_ok",
-        "eligible_candidates": 0,
-        "response_source": "cache",
-        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "cleaning shelf",
-      "wiping shelf",
-      "window",
-      "wiping window"
+      "mirror",
+      "library books",
+      "ironing",
+      "cleaning window"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
-    "unreviewed_media_count": 84,
+    "unreviewed_media_count": 86,
     "approved_reserve_days": null,
     "reserve_note": "Pending media is not approved stock; rights, visual CPU review and final quality gates remain required."
   }
