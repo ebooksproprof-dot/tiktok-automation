@@ -25,4 +25,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release view mission15-review >/dev/null 2>&1 || gh release create mission15-review --target main --title 'Mission15 review package — approval pending' --notes 'Annotated visual review evidence and generated voice samples only. No reference recordings. No publication approval.' --prerelease
-          gh release upload mission15-review tmp/mission15/sources/*-review.jpg tmp/mission15/sources/*manifest.json tmp/mission15/sources/candidates.json
+          gh release upload mission15-review tmp/mission15/sources/*manifest.json tmp/mission15/sources/candidates.json --clobber
+          shopt -s nullglob
+          frames=(tmp/mission15/sources/*-review.jpg)
+          if [ "${#frames[@]}" -gt 0 ]; then gh release upload mission15-review "${frames[@]}" --clobber; fi
+      - name: Always retain metadata and transformed contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission15-source-review
+          path: |
+            tmp/mission15/sources/*.json
+            tmp/mission15/sources/*-review.jpg
+          retention-days: 7
+          if-no-files-found: warn

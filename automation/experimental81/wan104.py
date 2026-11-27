@@ -339,7 +339,7 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
     if not trial:
         if plan_episode(inventory, queue, state):
             revision = inventory_store.save(inventory, revision)
-    if len(inventory['clips']) >= 3:
+    if len(inventory['clips']) >= 6:
         return {'status': 'READY_PRESERVED_NO_GPU_CALL', 'clips': len(inventory['clips'])}
     if not trial and not inventory.get('editorial_id') and not script_choices(inventory['episode'], queue, state):
         return {'status': 'SCRIPT_BANK_EXHAUSTED_CONVENTIONAL_FALLBACK_REQUIRED', 'new_gpu_calls': 0, 'publicly_verified': False}

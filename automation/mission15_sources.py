@@ -63,6 +63,7 @@ def run(folder):
         finally:
             # Raw footage stays only on this private runner disk. No artifact upload.
             pass
+    print('SOURCE_REVIEW_COUNTS='+json.dumps({'api_calls':calls,'candidates':len(items),'selected':len(selected),'downloaded':len(manifest)}),flush=True)
     (folder/'review-manifest.json').write_text(json.dumps({'requests':calls,'sources':manifest},ensure_ascii=False,indent=2)+'\n')
 
 if __name__=='__main__':run('tmp/mission15/sources')

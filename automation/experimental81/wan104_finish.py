@@ -190,7 +190,7 @@ def stage(trial=False):
     # One overflow position gives completed AI priority without cancelling slots.
     demand = stock_status(queue, state, wan104.now())
     if not trial and demand['ready']+demand['held_uncertain'] >= demand['target_max']+1:
-        return {'status': 'LICENSED_AI_OVERFLOW_RESERVED', 'clips': 3, 'publicly_verified': False}
+        return {'status': 'LICENSED_AI_OVERFLOW_RESERVED', 'clips': len(inventory['clips']), 'publicly_verified': False}
     require_sources(inventory['clips'])
     proof_path = Path(__file__).with_name('wan104_source_reviews.json')
     proof = json.loads(proof_path.read_text()) if proof_path.exists() else {}
