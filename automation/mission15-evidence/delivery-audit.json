@@ -1,9 +1,9 @@
 {
-  "recorded_at": "2026-11-27T18:43:10.824874+00:00",
+  "recorded_at": "2026-11-27T18:51:26.897459+00:00",
   "mission": "15.0",
   "baseline_head": "ee11e9b",
   "checkpoint_branch": "checkpoint/mission15-before-ee11e9b",
-  "implementation_head": "23c8d463a13ead25cee51530227722e65ce26f39",
+  "implementation_head": "434b2836f3c1b9c7ef91977218d5f9a17e182f58",
   "additional_paid_services_enabled": false,
   "reference_original_publicly_committed": false,
   "voice_perceptual_review_approved": false,
@@ -40,10 +40,10 @@
       "reference_artifact_uploaded": false
     },
     "buffer_read_only": {
-      "run": 46049201786,
+      "run": 46052298387,
       "conclusion": "success",
       "channel_verified": true,
-      "observed_at": "2026-11-27T18:25:38Z",
+      "observed_at": "2026-11-27T18:50:24Z",
       "new_publication_ids": []
     },
     "official_stock_intake": {
@@ -51,6 +51,18 @@
       "conclusion": "success",
       "authenticated_queries": 4,
       "downloaded_visual_sources": 0
+    },
+    "regression484": {
+      "run": 46052287166,
+      "conclusion": "success",
+      "tests": 484,
+      "seconds": 13.361,
+      "new_tts_benchmark": false
+    },
+    "push_checks_only": {
+      "run": 46052273757,
+      "conclusion": "success",
+      "scope": "push regression checks; production steps skipped; no claim of a new synthesis from this run"
     }
   },
   "pending_external_approval": "User listening confirmation of feminine Brazilian natural clear identity. ASR does not supply this approval. Owner approval workflow not executed.",
@@ -61,8 +73,16 @@
     "mismatches": [],
     "timestamp_correction": "Caption start bounded by the matching preserved utterance audio interval; raw ASR timestamps unchanged"
   },
-  "local_tests_final": {
-    "passed": 482,
-    "simulated_services_separate": true
-  }
+  "operational_checkpoint_after_verification": "38c5b36",
+  "local_tests": {
+    "full_suite_before_final_health_fix": 482,
+    "focused_mission15_after_final_fix": 22
+  },
+  "active_incidents_after_fix": [
+    "STOCK_BELOW_TARGET",
+    "PRODUCTION_SOURCE_HOLDS",
+    "PUBLICATION_RECONCILIATION_REQUIRED"
+  ],
+  "reference_file_mode_rechecked": "600",
+  "reference_directory_mode_rechecked": "700"
 }
