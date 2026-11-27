@@ -2,7 +2,30 @@
   "version": 1,
   "episode_id": "mission16-copos-secos-photoreal-v1",
   "status": "WAITING_HIGHER_DEFINITION_TRIAL",
-  "requests": {},
+  "requests": {
+    "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-27T21:42:22.545475+00:00",
+      "spec": {
+        "editorial_id": "copos-secos",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Professional photorealistic home kitchen close-up, a single clean transparent drinking tumbler standing upright on a real wooden countertop, a few tiny water droplets on its inner wall and base, soft daylight, detailed glass refraction. Slow continuous lateral camera slide, stable glass shape and base in contact with the counter. No people, no hands, no appearing or disappearing objects. No text or logos. One uninterrupted five-second shot.",
+        "reference_kind": "authored_text_only",
+        "height": 1024,
+        "width": 576,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 8,
+        "guidance_scale": 0,
+        "seed": 160001,
+        "randomize_seed": false,
+        "episode_id": "mission16-copos-secos-photoreal-v1"
+      }
+    }
+  },
   "clips": [],
   "legacy_inventory_preserved": "automation/experimental81/wan104_inventory.json",
   "publication_approved": false
