@@ -442,6 +442,10 @@ def run(stage=False, soon=False, limit=2):
                     measured, render.ASSETS/('review-'+measured['provider_id']))
             entry.update(status='ACCEPTED', source_sha256=measured['sha256'],
                          license=license_proof, visual_review=review)
+            # Content captions and a commercial license do not approve material
+            # realism, physical continuity or the actual portrait crop.
+            from photoreal_policy import require_source
+            require_source(measured['sha256'])
             pool = pools.setdefault(review['family'], [])
             pool.append({'record': measured, 'visual_review': review, 'license': license_proof})
             capacity = sum(x['record']['duration']-.05 for x in pool)

@@ -31,7 +31,9 @@ def require_output(quality):
         profile_hash=profile_digest(identity.get('inference',{}))
         if receipt.get('engine_name')!=NAME or receipt.get('inference_sha256')!=profile_hash or quality.get('voice_profile_sha256')!=profile_hash:
             raise ValueError('APPROVED_VOICE_MODEL_OR_PARAMETERS_CHANGED')
-    if (quality.get('mission') not in ('14.0','15.0') or quality.get('voice') != NAME
+    from photoreal_policy import require_photoreal
+    require_photoreal(quality)
+    if (quality.get('mission') not in ('14.0','15.0','16.0') or quality.get('voice') != NAME
             or quality.get('voice_reference_sha256') != identity.get('reference_sha256')
             or quality.get('audio_content_verified') is not True
             or quality.get('full_frame_reviewed') is not True

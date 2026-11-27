@@ -16,7 +16,10 @@ jobs:
           python-version: '3.12'
       - run: |
           sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
-          python -m pip install 'Pillow==12.3.0'
+          python -m pip install 'Pillow==12.3.0' 'playwright==1.51.0'
+          if ! command -v google-chrome >/dev/null && ! command -v chromium >/dev/null; then
+            python -m playwright install --with-deps chromium
+          fi
       - name: Query official APIs and download with the existing identified application client
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}

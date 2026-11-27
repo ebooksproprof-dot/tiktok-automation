@@ -433,6 +433,13 @@ def main():
     if (os.getenv('GITHUB_ACTIONS') != 'true' or os.getenv('GITHUB_WORKFLOW') != 'CasaSemEsforco AI30 Free Collector'
             or os.getenv('GITHUB_REF_NAME') != 'main'):
         raise ValueError('AUTHORIZED_EXISTING_CLOUD_WORKFLOW_REQUIRED')
+    # Preserve the legacy profile/proofs without spending new quota on 480p
+    # material below the production definition floor. Mission16's bounded
+    # collector shares this same quota ledger and keeps its own reviewed plan.
+    profile=json.loads(PROFILE.read_text())
+    if profile['width']<576 or profile['height']<1024:
+        return {'status':'WAIT_PHOTOREALISTIC_SOURCE_DEFINITION','new_gpu_calls':0,
+                'continuation':'mission16-wan.yml','published':False}
     return collect(args.trial, reconcile_app_failure=args.reconcile_app_failure)
 
 

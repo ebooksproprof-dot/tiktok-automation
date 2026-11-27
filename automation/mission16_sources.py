@@ -12,8 +12,8 @@ from media_acquisition import download_and_measure,AcquisitionError,save_json
 from media_providers import PixabayProvider,WikimediaProvider
 from visual_library import history,source_identity
 
-QUERIES=[('copos','washing glass',['glass']),('copos','dish drying rack',['rack']),
-         ('copos','kitchen glasses cabinet',['glasses']),('copos','washing dishes',['dishes'])]
+QUERIES=[('copos','washing glass',['glass','kitchen']),('copos','dish drying rack',['dish','rack']),
+         ('copos','kitchen glasses cabinet',['glasses','kitchen']),('copos','washing dishes',['dishes','washing'])]
 
 
 def run(folder):

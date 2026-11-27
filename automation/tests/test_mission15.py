@@ -188,7 +188,7 @@ class ApprovedTransition15(unittest.TestCase):
         voice,q,a,m=self.fixture()
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'identity.json';path.write_text(json.dumps(voice))
-            with patch.object(cb,'IDENTITY',path):
+            with patch.object(cb,'IDENTITY',path),patch('photoreal_policy.require_photoreal'):
                 result=finalized_quality(voice,q,a,m,q['sha256'],m['wav_sha256'])
                 self.assertTrue(result['editorial_approved'])
                 for mutation in ('wrong_wav','missing_content','unreviewed_visual'):

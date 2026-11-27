@@ -213,7 +213,7 @@ def verify_hosted(post):
             from experimental81.quality import validate as validate_ai, Policy
             actual = validate_ai(target, policy=Policy(target_seconds=post['quality']['ai_generated_seconds']))
         else:
-            actual = validate(target, ai_only30=True) if post['quality'].get('mission') in ('14.0','15.0') else validate(target)
+            actual = validate(target, ai_only30=True) if post['quality'].get('mission') in ('14.0','15.0','16.0') else validate(target)
         if actual["sha256"] != post["quality"]["sha256"]:
             raise ValueError("Hosted media differs from reviewed video")
 

@@ -85,6 +85,9 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
             'source_url': clip['url'], 'license_url': profile['model_license_url'],
             'generation_evidence': clip['generation_evidence']['request_sha256'], 'visual_review_passed': True})
     check_sources(visuals, [])
+    from photoreal_policy import require_source
+    for source in inventory['clips']:
+        require_source(source['sha256'])
     from framing import full_frame_filter
     for clip in inventory['clips']:
         full_frame_filter(clip['media']['width'], clip['media']['height'])

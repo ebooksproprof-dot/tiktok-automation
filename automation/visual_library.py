@@ -118,3 +118,6 @@ def require_evidence(post, previous=None):
             raise ValueError('VISUAL_FINGERPRINTS_INVALID')
     if previous is not None:
         check_sources(records, previous)
+    if quality.get('mission')=='16.0':
+        from photoreal_policy import require_photoreal
+        require_photoreal(quality)

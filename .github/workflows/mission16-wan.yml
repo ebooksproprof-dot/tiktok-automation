@@ -1,11 +1,13 @@
 name: CasaSemEsforco Mission16 photoreal Wan trial
 on:
+  schedule:
+    - cron: '55 9,21 * * *'
   workflow_dispatch:
     inputs:
       slot:
         type: choice
-        options: ['0', '1']
-        default: '0'
+        options: ['auto', '0', '1', '2', '3', '4', '5', '6', '7']
+        default: 'auto'
 permissions:
   contents: write
 concurrency:
@@ -29,7 +31,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           HF_FREE_TOKEN: ${{ secrets.HF_FREE_TOKEN }}
-          SHOT_SLOT: ${{ inputs.slot }}
+          SHOT_SLOT: ${{ inputs.slot || 'auto' }}
         run: PYTHONPATH=automation python automation/experimental81/wan16.py --slot "$SHOT_SLOT"
       - name: Preserve result even on failure
         if: always()
