@@ -9305,6 +9305,12 @@
       "at": "2026-11-27T16:43:29.973338Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "casasemesforco-daily.yml"
+    },
+    "2026-11-27T18:00:00+00:00|casasemesforco-daily.yml": {
+      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "at": "2026-11-27T18:39:41.356839Z",
+      "trigger": "LOW_STOCK_MAINTENANCE",
+      "target_workflow": "casasemesforco-daily.yml"
     }
   }
 }
