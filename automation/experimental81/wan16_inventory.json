@@ -141,5 +141,11 @@
     }
   ],
   "legacy_inventory_preserved": "automation/experimental81/wan104_inventory.json",
-  "publication_approved": false
+  "publication_approved": false,
+  "last_wait": {
+    "status": "BLOQUEADO POR LIMITAÇÃO GRATUITA",
+    "reason": "DAILY_QUOTA_ESTIMATE_EXCEEDED",
+    "new_gpu_calls": 0,
+    "not_before": "2026-11-28T21:42:21.579949+00:00"
+  }
 }
