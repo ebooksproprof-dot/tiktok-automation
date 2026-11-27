@@ -145,6 +145,9 @@ def daily_topics(now):
 
 class AcquisitionError(Exception):
     """Only fixed, credential-free error codes cross the network boundary."""
+    def __init__(self, code, http_status=None):
+        super().__init__(code)
+        self.http_status=http_status
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -169,7 +172,9 @@ def request(url, key=None):
         code = ('PROVIDER_AUTH_REJECTED' if error.code in (401, 403) else
                 'PROVIDER_RATE_LIMITED' if error.code == 429 else
                 'PROVIDER_SERVER_ERROR' if error.code >= 500 else 'PROVIDER_REQUEST_FAILED')
-        raise AcquisitionError(code) from None
+        raise AcquisitionError(code,http_status=error.code) from None
+    except AcquisitionError:
+        raise
     except Exception:
         raise AcquisitionError('PROVIDER_REQUEST_FAILED') from None
 

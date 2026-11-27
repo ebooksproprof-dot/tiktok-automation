@@ -1,0 +1,33 @@
+name: CasaSemEsforco Mission16 licensed footage review
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
+      - name: Query official APIs and download with the existing identified application client
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python automation/mission16_sources.py
+      - name: Preserve metadata and transformed review sheets only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission16-licensed-footage
+          path: |
+            tmp/mission16/sources/manifest.json
+            tmp/mission16/sources/*-review.jpg
+          retention-days: 7
+          if-no-files-found: warn

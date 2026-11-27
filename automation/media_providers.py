@@ -113,10 +113,14 @@ class PixabayProvider(CachedProvider):
         data = self.json(cache_key, 'https://pixabay.com/api/videos/?' + urlencode(params))
         self.last_diagnostics = {'page': page, 'raw_hits': len(data.get('hits', [])),
                                  'total_hits': data.get('totalHits', 0),
-                                 'context_rejected': 0, 'duration_rejected': 0, 'geometry_or_origin_rejected': 0}
+                                 'context_rejected': 0, 'duration_rejected': 0, 'geometry_or_origin_rejected': 0,
+                                 'incompatible_style_rejected': 0}
         result = []
         for hit in data.get('hits', [])[:15]:
             try:
+                if re.search(r'\b(cartoon|animation|illustration|vector|slideshow|ai generated|3d render(?:ing)?)\b',plain(hit['tags']),re.I):
+                    self.last_diagnostics['incompatible_style_rejected'] += 1
+                    continue
                 if not contextual(hit['tags'], words):
                     self.last_diagnostics['context_rejected'] += 1
                     continue
