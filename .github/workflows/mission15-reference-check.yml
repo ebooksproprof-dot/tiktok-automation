@@ -1,0 +1,30 @@
+name: CasaSemEsforco Mission15 private reference check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover licensed candidate twice on private runner disk; no artifact upload
+        run: |
+          python - <<'PY'
+          import os,stat,sys
+          sys.path.insert(0,'automation')
+          from voice_candidate_review import reference
+          from chatterbox_v3 import digest
+          folder=os.environ['RUNNER_TEMP']+'/voice-private'
+          cfg,candidate,path=reference('unmute-lara',folder)
+          before=digest(path)
+          _,_,again=reference('unmute-lara',folder)
+          assert before==digest(again)==candidate['sha256']
+          assert stat.S_IMODE(path.stat().st_mode)==0o600
+          print('REFERENCE_HASH_MATCH=true; PRIVATE_MODE=600; RECOVERY_STABLE=true; PERCEPTUAL_APPROVAL=false')
+          path.unlink()
+          PY

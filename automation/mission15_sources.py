@@ -40,7 +40,7 @@ def run(folder):
     selected=[x for x in items.values() if x['file']['url'] not in used][:8]
     from PIL import Image,ImageDraw,ImageFont
     font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',18)
-    manifest=[]
+    manifest=[];failures=[]
     for item in selected:
         path=folder/(item['provider_id']+'.mp4')
         try:
@@ -59,11 +59,11 @@ def run(folder):
             row.save(folder/(item['provider_id']+'-review.jpg'))
             manifest.append(item)
         except Exception as exc:
-            item['held_error_type']=type(exc).__name__
+            failures.append({'provider_id':item['provider_id'],'error_type':type(exc).__name__,'http_status':getattr(exc,'code',None)})
         finally:
             # Raw footage stays only on this private runner disk. No artifact upload.
             pass
     print('SOURCE_REVIEW_COUNTS='+json.dumps({'api_calls':calls,'candidates':len(items),'selected':len(selected),'downloaded':len(manifest)}),flush=True)
-    (folder/'review-manifest.json').write_text(json.dumps({'requests':calls,'sources':manifest},ensure_ascii=False,indent=2)+'\n')
+    (folder/'review-manifest.json').write_text(json.dumps({'requests':calls,'sources':manifest,'download_failures':failures},ensure_ascii=False,indent=2)+'\n')
 
 if __name__=='__main__':run('tmp/mission15/sources')

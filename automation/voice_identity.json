@@ -1,14 +1,29 @@
 {
   "schema_version": 1,
-  "status": "PENDING_LICENSED_FEMALE_REFERENCE",
+  "status": "PENDING_PERCEPTUAL_REVIEW",
   "locale": "pt-BR",
-  "gender": "female",
+  "gender": "unverified",
   "model": "ResembleAI/Chatterbox-Multilingual-pt-br",
-  "reference_sha256": null,
-  "holder": null,
-  "rights_evidence": null,
-  "commercial_synthesis_authorized": false,
+  "reference_sha256": "8fea595097a2281149a9bbc1287d2b387bab562442afb9a537cafdf11c902fbf",
+  "holder": "Lara, voluntary Unmute donor; released by Kyutai",
+  "rights_evidence": [
+    "https://huggingface.co/kyutai/tts-voices/blob/323332d33f997de8394f24a193e1a76df720e01a/README.md#voice-donations",
+    "https://kyutai.org/next/legal/Terms%20of%20Use%20-%20Unmute%20Voice%20Donation%20Project%20v1.pdf"
+  ],
+  "commercial_synthesis_authorized": true,
   "perceptual_review_approved": false,
   "storage": "Private persistent storage only; inject verified WAV via CHATTERBOX_REFERENCE_PATH. Never public Git or Actions artifacts.",
-  "note": "No license for cloning the demo samples has been established. No new identity activated."
+  "note": "Commercial transformation rights documented under CC0 and donor terms. Generated pt-BR sample matches all 22 scripted words. Feminine identity, Brazilian accent and naturalness await user listening approval. No publication activation.",
+  "selected_candidate_id": "unmute-lara",
+  "requested_gender": "female",
+  "reference_source": {
+    "kind": "kyutai_donation",
+    "candidate_id": "unmute-lara"
+  },
+  "inference": {
+    "seed": 15,
+    "temperature": 0.65,
+    "cfg_weight": 0.5,
+    "exaggeration": 0.5
+  }
 }

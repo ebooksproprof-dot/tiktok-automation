@@ -92,6 +92,7 @@ class ChatterboxBrazilEngine:
         self.model = acquire(self.cache)
         self.model.prepare_conditionals(str(reference), exaggeration=.5)
         self.voice_id = self.identity['reference_sha256']
+        self.profile = self.identity.get('inference', {'seed':14,'temperature':.8,'cfg_weight':.5,'exaggeration':.5})
 
     def speak(self, text, path):
         if not isinstance(text, str) or not text.strip() or len(text) > 300:
@@ -100,16 +101,16 @@ class ChatterboxBrazilEngine:
         import torch
         import soundfile as sf
         # Stable settings + reference. Cache key includes exact text, model and voice.
-        key = hashlib.sha256((self.name+self.voice_id+text+'seed14-cfg.5-temp.8-exp.5').encode()).hexdigest()
+        key = hashlib.sha256((self.name+self.voice_id+text+json.dumps(self.profile,sort_keys=True)).encode()).hexdigest()
         cached = self.cache/'utterances'/(key+'.wav')
         cached.parent.mkdir(parents=True, exist_ok=True)
         from narration_store import restore, persist
         if not cached.exists():
             restore(key, cached)
         if not cached.exists():
-            random.seed(14); np.random.seed(14); torch.manual_seed(14)
+            random.seed(self.profile['seed']); np.random.seed(self.profile['seed']); torch.manual_seed(self.profile['seed'])
             with torch.inference_mode():
-                wav = self.model.generate(text, language_id='pt', exaggeration=.5, cfg_weight=.5, temperature=.8)
+                wav = self.model.generate(text, language_id='pt', exaggeration=self.profile['exaggeration'], cfg_weight=self.profile['cfg_weight'], temperature=self.profile['temperature'])
             temp = cached.with_suffix('.partial.wav')
             sf.write(temp, wav.squeeze().cpu().numpy(), self.model.sr, subtype='PCM_16')
             temp.replace(cached)

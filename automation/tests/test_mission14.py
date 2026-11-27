@@ -16,6 +16,12 @@ import autonomous_production as producer
 
 
 class VoiceAndPublishing14(unittest.TestCase):
+    def setUp(self):
+        self.pending=tempfile.TemporaryDirectory();self.addCleanup(self.pending.cleanup)
+        identity=Path(self.pending.name)/'identity.json'
+        identity.write_text(json.dumps({'status':'PENDING_LICENSED_FEMALE_REFERENCE'}))
+        gate=patch.object(cb,'IDENTITY',identity);gate.start();self.addCleanup(gate.stop)
+
     def test_missing_reference_blocks_before_model_download(self):
         with patch.object(cb,'acquire') as load:
             with self.assertRaisesRegex(ValueError,'REFERENCE_AND_REVIEW_PENDING'):
@@ -127,6 +133,11 @@ class FutureCadence14(unittest.TestCase):
 
 
 class LegacyDirectRoute14(unittest.TestCase):
+    def setUp(self):
+        self.pending=tempfile.TemporaryDirectory();self.addCleanup(self.pending.cleanup)
+        identity=Path(self.pending.name)/'identity.json';identity.write_text('{"status":"PENDING_LICENSED_FEMALE_REFERENCE"}')
+        gate=patch.object(cb,'IDENTITY',identity);gate.start();self.addCleanup(gate.stop)
+
     def test_direct_tiktok_api_cannot_bypass_the_new_voice_gate(self):
         import tiktok_runner as direct
         with patch.object(direct,'validate_post'), patch.object(direct,'api_post') as send, self.assertRaisesRegex(ValueError,'VOICE_IDENTITY_PENDING'):

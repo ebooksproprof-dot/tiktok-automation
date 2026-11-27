@@ -5,10 +5,15 @@ if ! python -c 'import json; d=json.load(open("automation/voice_identity.json"))
   echo '::warning::CHATTERBOX_FEMALE_REFERENCE_AND_REVIEW_PENDING; no fallback voice enabled'
   exit 0
 fi
-: "${CHATTERBOX_REFERENCE_WAV_B64:?Approved voice requires encrypted reference secret}"
-reference_path="$RUNNER_TEMP/casasem-voice-reference.wav"
 umask 077
-printf '%s' "$CHATTERBOX_REFERENCE_WAV_B64" | base64 --decode > "$reference_path"
+source_kind=$(python -c 'import json;print(json.load(open("automation/voice_identity.json")).get("reference_source",{}).get("kind","secret"))')
+if [ "$source_kind" = 'kyutai_donation' ]; then
+  reference_path=$(python -c 'import os,sys;sys.path.insert(0,"automation");from voice_candidate_review import reference;print(reference("unmute-lara",os.environ["RUNNER_TEMP"]+"/voice-private")[2])')
+else
+  : "${CHATTERBOX_REFERENCE_WAV_B64:?Approved voice requires encrypted reference secret}"
+  reference_path="$RUNNER_TEMP/casasem-voice-reference.wav"
+  printf '%s' "$CHATTERBOX_REFERENCE_WAV_B64" | base64 --decode > "$reference_path"
+fi
 export CHATTERBOX_REFERENCE_PATH="$reference_path"
 python -c 'import sys;sys.path.insert(0,"automation");from chatterbox_v3 import identity;identity()'
 python -m venv "$RUNNER_TEMP/chatterbox-v3"
