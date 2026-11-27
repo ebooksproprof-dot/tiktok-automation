@@ -1,0 +1,152 @@
+{
+  "expected_words": 22,
+  "recognized_words": 21,
+  "word_coverage": 0.9090909090909091,
+  "word_precision": 0.9523809523809523,
+  "mismatches": [
+    {
+      "operation": "replace",
+      "expected": [
+        "por",
+        "uso"
+      ],
+      "recognized": [
+        "furosos"
+      ]
+    }
+  ],
+  "audio_content_verified": false,
+  "transcript": "Uma rotina simples ajuda a cuidar da casa. Separe os utensílios furosos e deixe espaço para retirar cada peça com facilidade.",
+  "language": "pt",
+  "asr_model": "Systran/faster-whisper-small",
+  "naturalness_verified": false,
+  "method": "automatic ASR agreement; not a perceptual pronunciation rating",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.74,
+      "word": " Uma",
+      "probability": 0.8787009119987488
+    },
+    {
+      "start": 0.74,
+      "end": 1.2,
+      "word": " rotina",
+      "probability": 0.9912748336791992
+    },
+    {
+      "start": 1.2,
+      "end": 1.64,
+      "word": " simples",
+      "probability": 0.9928262233734131
+    },
+    {
+      "start": 1.64,
+      "end": 2.06,
+      "word": " ajuda",
+      "probability": 0.9878473281860352
+    },
+    {
+      "start": 2.06,
+      "end": 2.28,
+      "word": " a",
+      "probability": 0.9784624576568604
+    },
+    {
+      "start": 2.28,
+      "end": 2.56,
+      "word": " cuidar",
+      "probability": 0.9984583258628845
+    },
+    {
+      "start": 2.56,
+      "end": 2.7,
+      "word": " da",
+      "probability": 0.9893797039985657
+    },
+    {
+      "start": 2.7,
+      "end": 3.14,
+      "word": " casa.",
+      "probability": 0.9987435936927795
+    },
+    {
+      "start": 3.4,
+      "end": 3.8,
+      "word": " Separe",
+      "probability": 0.9022308588027954
+    },
+    {
+      "start": 3.8,
+      "end": 3.92,
+      "word": " os",
+      "probability": 0.5979046821594238
+    },
+    {
+      "start": 3.92,
+      "end": 4.56,
+      "word": " utensílios",
+      "probability": 0.9571501761674881
+    },
+    {
+      "start": 4.56,
+      "end": 4.94,
+      "word": " furosos",
+      "probability": 0.5132905542850494
+    },
+    {
+      "start": 4.94,
+      "end": 5.14,
+      "word": " e",
+      "probability": 0.9670060276985168
+    },
+    {
+      "start": 5.14,
+      "end": 5.3,
+      "word": " deixe",
+      "probability": 0.9911310076713562
+    },
+    {
+      "start": 5.3,
+      "end": 5.62,
+      "word": " espaço",
+      "probability": 0.8111372590065002
+    },
+    {
+      "start": 5.62,
+      "end": 5.86,
+      "word": " para",
+      "probability": 0.9442902207374573
+    },
+    {
+      "start": 5.86,
+      "end": 6.3,
+      "word": " retirar",
+      "probability": 0.9922229647636414
+    },
+    {
+      "start": 6.3,
+      "end": 6.44,
+      "word": " cada",
+      "probability": 0.9985039234161377
+    },
+    {
+      "start": 6.44,
+      "end": 6.8,
+      "word": " peça",
+      "probability": 0.9483548402786255
+    },
+    {
+      "start": 6.8,
+      "end": 6.96,
+      "word": " com",
+      "probability": 0.9713472127914429
+    },
+    {
+      "start": 6.96,
+      "end": 7.56,
+      "word": " facilidade.",
+      "probability": 0.9699303805828094
+    }
+  ]
+}

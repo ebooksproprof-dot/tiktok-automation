@@ -1,0 +1,18 @@
+{
+  "candidate_id": "unmute-lara",
+  "reference_sha256": "8fea595097a2281149a9bbc1287d2b387bab562442afb9a537cafdf11c902fbf",
+  "audio_sha256": "e3ffa68a4cc185b60c02f3083d33a5d5277f04ebb40adb98c0e4529ebac55559",
+  "engine": "chatterbox-multilingual-v3-pt-br@b3952f18bc2e",
+  "text": "Uma rotina simples ajuda a cuidar da casa. Separe os utensílios por uso e deixe espaço para retirar cada peça com facilidade.",
+  "seconds": 10.8,
+  "inference_seconds": 105.70058008100023,
+  "temperature": 0.65,
+  "cfg_weight": 0.5,
+  "seed": 15,
+  "perceptual_review_approved": false,
+  "publication_approved": false,
+  "rights_evidence": [
+    "https://huggingface.co/kyutai/tts-voices/blob/323332d33f997de8394f24a193e1a76df720e01a/README.md#voice-donations",
+    "https://kyutai.org/next/legal/Terms%20of%20Use%20-%20Unmute%20Voice%20Donation%20Project%20v1.pdf"
+  ]
+}

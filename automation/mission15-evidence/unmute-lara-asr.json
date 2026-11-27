@@ -1,0 +1,147 @@
+{
+  "expected_words": 22,
+  "recognized_words": 22,
+  "word_coverage": 1.0,
+  "word_precision": 1.0,
+  "mismatches": [],
+  "audio_content_verified": true,
+  "transcript": "Uma rotina simples ajuda a cuidar da casa. Separe os utensílios por uso e deixe espaço para retirar cada peça com facilidade.",
+  "language": "pt",
+  "asr_model": "Systran/faster-whisper-small",
+  "naturalness_verified": false,
+  "method": "automatic ASR agreement; not a perceptual pronunciation rating",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.32,
+      "word": " Uma",
+      "probability": 0.8807453513145447
+    },
+    {
+      "start": 0.32,
+      "end": 0.82,
+      "word": " rotina",
+      "probability": 0.9896756112575531
+    },
+    {
+      "start": 0.82,
+      "end": 1.32,
+      "word": " simples",
+      "probability": 0.997038722038269
+    },
+    {
+      "start": 1.32,
+      "end": 1.82,
+      "word": " ajuda",
+      "probability": 0.9829989075660706
+    },
+    {
+      "start": 1.82,
+      "end": 2.06,
+      "word": " a",
+      "probability": 0.9615388512611389
+    },
+    {
+      "start": 2.06,
+      "end": 2.46,
+      "word": " cuidar",
+      "probability": 0.9987786710262299
+    },
+    {
+      "start": 2.46,
+      "end": 2.58,
+      "word": " da",
+      "probability": 0.9902044534683228
+    },
+    {
+      "start": 2.58,
+      "end": 3.14,
+      "word": " casa.",
+      "probability": 0.998197615146637
+    },
+    {
+      "start": 3.8,
+      "end": 4.4,
+      "word": " Separe",
+      "probability": 0.8247784078121185
+    },
+    {
+      "start": 4.4,
+      "end": 4.54,
+      "word": " os",
+      "probability": 0.9709346294403076
+    },
+    {
+      "start": 4.54,
+      "end": 5.4,
+      "word": " utensílios",
+      "probability": 0.9689966589212418
+    },
+    {
+      "start": 5.4,
+      "end": 5.68,
+      "word": " por",
+      "probability": 0.9398406744003296
+    },
+    {
+      "start": 5.68,
+      "end": 6.08,
+      "word": " uso",
+      "probability": 0.9847539663314819
+    },
+    {
+      "start": 6.08,
+      "end": 6.3,
+      "word": " e",
+      "probability": 0.9491734504699707
+    },
+    {
+      "start": 6.3,
+      "end": 6.7,
+      "word": " deixe",
+      "probability": 0.9919608533382416
+    },
+    {
+      "start": 6.7,
+      "end": 7.14,
+      "word": " espaço",
+      "probability": 0.9745649695396423
+    },
+    {
+      "start": 7.14,
+      "end": 7.56,
+      "word": " para",
+      "probability": 0.9741681814193726
+    },
+    {
+      "start": 7.56,
+      "end": 8.18,
+      "word": " retirar",
+      "probability": 0.9958930611610413
+    },
+    {
+      "start": 8.18,
+      "end": 8.4,
+      "word": " cada",
+      "probability": 0.9979398846626282
+    },
+    {
+      "start": 8.4,
+      "end": 9.04,
+      "word": " peça",
+      "probability": 0.9959287047386169
+    },
+    {
+      "start": 9.04,
+      "end": 9.22,
+      "word": " com",
+      "probability": 0.9839994311332703
+    },
+    {
+      "start": 9.22,
+      "end": 10.22,
+      "word": " facilidade.",
+      "probability": 0.9953966438770294
+    }
+  ]
+}
