@@ -10,13 +10,9 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-27T18:24:52.857576Z",
+    "at": "2026-11-27T18:25:33.313830Z",
     "channel_verified": true,
-    "cloud_probe": {
-      "cloud_readback": true,
-      "publication_attempted": false,
-      "stale_writer_rejected": true
-    },
+    "cloud_probe": null,
     "generation_enabled": false,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
