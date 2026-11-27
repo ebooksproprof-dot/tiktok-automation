@@ -1,10 +1,10 @@
 {
   "version": 1,
   "episode_id": "mission16-copos-secos-photoreal-v1",
-  "status": "WAITING_HIGHER_DEFINITION_TRIAL",
+  "status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
   "requests": {
     "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f": {
-      "status": "GENERATED_AWAITING_STORAGE",
+      "status": "GENERATED_DURABLE_PENDING_VISUAL_REVIEW",
       "at": "2026-11-27T21:42:22.545475+00:00",
       "spec": {
         "editorial_id": "copos-secos",
@@ -33,10 +33,46 @@
         "audio_codecs": [],
         "bytes": 967825,
         "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa"
-      }
+      },
+      "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W48/ai30-0d159c0147eaa1eb127abc5b.mp4"
     }
   },
-  "clips": [],
+  "clips": [
+    {
+      "slot": 0,
+      "episode_id": "mission16-copos-secos-photoreal-v1",
+      "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
+      "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W48/ai30-0d159c0147eaa1eb127abc5b.mp4",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 576,
+        "height": 1024,
+        "video_codec": "h264",
+        "audio_codecs": [],
+        "bytes": 967825,
+        "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa"
+      },
+      "prompt": "Professional photorealistic home kitchen close-up, a single clean transparent drinking tumbler standing upright on a real wooden countertop, a few tiny water droplets on its inner wall and base, soft daylight, detailed glass refraction. Slow continuous lateral camera slide, stable glass shape and base in contact with the counter. No people, no hands, no appearing or disappearing objects. No text or logos. One uninterrupted five-second shot.",
+      "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+      "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+      "space": "Upsampler/wan-2-2-5b-video",
+      "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+      "reference_kind": "authored_text_only",
+      "visual_status": "GERAÇÃO CONCLUÍDA — AGUARDANDO REVISÃO",
+      "publication_approved": false,
+      "license_url": "https://huggingface.co/FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers/blob/3e187042a324f6f5fb68fd22110a78725253de8f/README.md",
+      "commercial_license_clearance": true,
+      "generation_evidence": {
+        "request_sha256": "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f",
+        "provider_job_id": "b2055e34d7414f49a4a4b2f017dfe92a",
+        "estimated_reserved_seconds": 110,
+        "observed_gpu_seconds": null,
+        "tier": "free",
+        "paid_endpoint_used": false
+      }
+    }
+  ],
   "legacy_inventory_preserved": "automation/experimental81/wan104_inventory.json",
   "publication_approved": false
 }
