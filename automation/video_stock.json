@@ -10,17 +10,19 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-27T02:15:59.692003Z",
-    "channel_verified": null,
-    "cloud_probe": null,
+    "at": "2026-11-27T04:05:55.389886Z",
+    "channel_verified": true,
+    "cloud_probe": {
+      "cloud_readback": true,
+      "publication_attempted": false,
+      "stale_writer_rejected": true
+    },
     "generation_enabled": true,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
     "refill": {
       "publication_ids": [],
-      "status": "DISPATCHED",
-      "target_workflow": "acquire-media.yml",
-      "trigger": "LOW_STOCK_MAINTENANCE"
+      "status": "CHECK_ONLY"
     },
     "stock": {
       "held_ids": [],
@@ -42,14 +44,14 @@
   },
   "production": {
     "enabled": true,
-    "fallback": "piper_on_proven_TTS_failure",
+    "fallback": null,
     "legacy_symphony_import_enabled": false,
     "paid_services_enabled": false,
     "provider": "licensed_stock_cpu_and_existing_cleared_Wan",
     "runner": "CasaSemEsforco Daily Video Creation",
     "target_max": 4,
-    "tts": "kokoro_cpu",
-    "voice": "pf_dora"
+    "tts": "chatterbox_multilingual_v3_pt_br_cpu",
+    "voice": "licensed_female_reference_pending"
   },
   "schema_version": 1
 }
