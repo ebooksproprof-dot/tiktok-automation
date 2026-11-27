@@ -36,6 +36,28 @@
       },
       "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa",
       "url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/ai30-drafts-2026-W48/ai30-0d159c0147eaa1eb127abc5b.mp4"
+    },
+    "af739389696fe18b50605a547d0b1e15c5f3a1326433a4757d67bf36a68335d6": {
+      "status": "INTENT_RECORDED_NO_RETRY",
+      "at": "2026-11-27T21:46:29.241079+00:00",
+      "spec": {
+        "editorial_id": "copos-secos",
+        "space": "Upsampler/wan-2-2-5b-video",
+        "space_revision": "1b51b45ea9dffb46932592cdc4d9572af9577189",
+        "model": "FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers",
+        "model_revision": "3e187042a324f6f5fb68fd22110a78725253de8f",
+        "prompt": "Professional photorealistic home kitchen close-up, three clean clear drinking tumblers inverted on the flat supported wire grid of a stainless steel dish drying rack, each glass separated by ample space, realistic glass and metal textures, stable geometry and natural daylight. Slow continuous lateral camera slide. No people, hands, wine glasses, stacking, floating objects, text or logos. One uninterrupted five-second shot.",
+        "reference_kind": "authored_text_only",
+        "height": 1024,
+        "width": 576,
+        "duration_seconds": 5,
+        "negative_prompt": "text, watermark, logos, people, hands, distorted objects, flicker, frozen frames, impossible motion",
+        "steps": 8,
+        "guidance_scale": 0,
+        "seed": 160002,
+        "randomize_seed": false,
+        "episode_id": "mission16-copos-secos-photoreal-v1"
+      }
     }
   },
   "clips": [
