@@ -143,6 +143,8 @@ def submit_one(store, client, item_id, channel_id, legacy_queue, now):
     current, _ = store.load()
     candidate = stock.item_by_id(current, item_id)
     check_item(candidate, client.state, legacy_queue, now)
+    from mission14_policy import require_schedule
+    require_schedule(candidate, legacy_queue, client.state)
     # Re-read and decode hosted bytes immediately before reservation.
     buffer.verify_hosted({'video_url': candidate['storage_url'], 'quality': candidate['quality']})
     client.check_budget(required=2)

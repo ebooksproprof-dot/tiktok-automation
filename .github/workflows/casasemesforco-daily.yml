@@ -81,11 +81,12 @@ jobs:
           import datetime as dt, json, os, sys
           sys.path.insert(0, 'automation')
           from autonomous_production import stock_status
+          voice_approved = json.load(open('automation/voice_identity.json'))['status'] == 'APPROVED'
           status = stock_status(json.load(open('automation/queue.json')), json.load(open('automation/state.json')), dt.datetime.now(dt.timezone.utc))
           print(json.dumps(status))
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               wan = json.load(open('automation/experimental81/wan104_inventory.json'))
-              out.write('needed='+str(bool(status['refill_needed']) or len(wan.get('clips', [])) == 6).lower()+'\n')
+              out.write('needed='+str(voice_approved and (bool(status['refill_needed']) or len(wan.get('clips', [])) == 6)).lower()+'\n')
           PYCODE
       - name: Install free video and speech tools
         id: install

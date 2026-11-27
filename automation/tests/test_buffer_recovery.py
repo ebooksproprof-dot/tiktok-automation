@@ -37,6 +37,8 @@ class BufferRecoveryTests(unittest.TestCase):
     def setUp(self):
         contract = patch("mission14_policy.require_output")
         contract.start(); self.addCleanup(contract.stop)
+        cadence = patch("mission14_policy.require_schedule")
+        cadence.start(); self.addCleanup(cadence.stop)
         self.clock = patch.object(b.common, 'utc_now', return_value=NOW)
         self.clock.start()
         self.addCleanup(self.clock.stop)

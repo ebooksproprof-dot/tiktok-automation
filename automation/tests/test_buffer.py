@@ -12,6 +12,8 @@ class BufferSafetyTests(unittest.TestCase):
     def setUp(self):
         contract = patch("mission14_policy.require_output")
         contract.start(); self.addCleanup(contract.stop)
+        cadence = patch("mission14_policy.require_schedule")
+        cadence.start(); self.addCleanup(cadence.stop)
         self.state = {"posts": {}}
         self.post = {"id": "casasem-test", "publication_provider": "buffer",
                      "approved": True, "consented_at": "2026-01-01T00:00:00Z",

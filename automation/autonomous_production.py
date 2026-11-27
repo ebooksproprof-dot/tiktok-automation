@@ -335,7 +335,21 @@ def run(stage=False, soon=False, limit=2):
     if not 1 <= limit <= 2:
         raise ValueError('PRODUCTION_LIMIT_ONE_OR_TWO')
     from chatterbox_v3 import identity
-    identity()  # Do not spend review/inference time with an unlicensed identity.
+    try:
+        identity()  # Rights gate precedes any review or inference spend.
+    except ValueError as exc:
+        result = {'status':str(exc), 'created':0, 'target':TARGET,
+                  'reason':'Licensed female identity and perceptual approval required',
+                  'paid_services_enabled':False, 'publication_confirmed':False}
+        if stage:
+            ledger=read_json(STATE_PATH, {})
+            if not isinstance(ledger.get('outputs'), dict):
+                raise ValueError('EXISTING_PRODUCTION_HISTORY_REQUIRED')
+            ledger['last_run']=result
+            save_json(STATE_PATH, ledger)
+        folder=Path('tmp/autonomous-proof');folder.mkdir(parents=True,exist_ok=True)
+        save_json(folder/'result.json',result)
+        return result
     queue = read_json(ROOT/'queue.json', {})
     state = read_json(ROOT/'state.json', {})
     if not isinstance(queue.get('posts'), list) or not isinstance(state.get('posts'), dict):
@@ -391,8 +405,10 @@ def run(stage=False, soon=False, limit=2):
             measured = download_and_measure(candidate, render.ASSETS, previous)
             if candidate.get('sha256') and candidate['sha256'] != measured['sha256']:
                 raise ValueError('PREVIOUS_SOURCE_BYTES_CHANGED')
+            from framing import full_frame_filter
+            full_frame_filter(measured['width'], measured['height'])
             measured.update(id='auto-'+measured['provider']+'-'+measured['provider_id']+'-'+measured['sha256'][:12],
-                            frame_mode='reviewed_portrait' if crop_capable(measured['width'], measured['height']) else 'preserve_full',
+                            frame_mode='reviewed_portrait',
                             context='Illustrative real household footage, accepted by local CPU frame review.')
             phase = 'license'
             license_proof = license_verify(measured)

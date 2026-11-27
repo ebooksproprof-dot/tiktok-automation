@@ -66,7 +66,7 @@ Fluxo: roteiro → Chatterbox → PCM16 WAV → cache durável → normalizaçã
 (-16 LUFS, -1.5 dBTP, tempo limitado a 0.90–1.10) → ASR PT → legendas medidas
 → revisão visual → MP4. Não há `apad`, silêncio de preenchimento nem corte da
 fala para ajustar 30 segundos. Roteiros incompatíveis são retidos para edição.
-ASR compara cobertura e precisão de palavras >=92%, sem alegar medir
+ASR exige concordância integral das palavras normalizadas; divergências retêm o áudio, sem alegar medir
 naturalidade. Identidade exige revisão perceptiva separada.
 
 Cada fala é cacheada por texto, modelo, referência e parâmetros estáveis.

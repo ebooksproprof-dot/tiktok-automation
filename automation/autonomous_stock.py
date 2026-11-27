@@ -125,13 +125,16 @@ def run(token, check_channel=False, probe=None):
     old = inventory.get('production', {})
     if old.get('provider') == 'tiktok_symphony':
         inventory.setdefault('legacy_production_settings', old)
-    inventory['production'] = {'enabled': True, 'provider': 'licensed_stock_cpu_and_existing_cleared_Wan',
+    from chatterbox_v3 import IDENTITY
+    voice_status = json.loads(IDENTITY.read_text())['status']
+    voice_enabled = voice_status == 'APPROVED'
+    inventory['production'] = {'enabled': voice_enabled, 'voice_status': voice_status, 'provider': 'licensed_stock_cpu_and_existing_cleared_Wan',
         'voice': 'licensed_female_reference_pending', 'tts': 'chatterbox_multilingual_v3_pt_br_cpu', 'fallback': None,
         'runner': 'CasaSemEsforco Daily Video Creation', 'target_max': 4,
         'legacy_symphony_import_enabled': False, 'paid_services_enabled': False}
     result = {'at': stock.stamp(now), 'mode': 'AUTOMATIC_LICENSED_STOCK', 'stock': status,
               'refill': refill, 'channel_verified': channel_ok, 'cloud_probe': probe,
-              'generation_enabled': True, 'this_monitor_generates_or_publishes': False,
+              'generation_enabled': voice_enabled, 'this_monitor_generates_or_publishes': False,
               'legacy_inventory_preserved': len(inventory['items']),
               'additional_paid_services_enabled': False}
     inventory['last_run'] = result

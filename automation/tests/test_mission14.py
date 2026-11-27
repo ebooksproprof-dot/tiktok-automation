@@ -97,3 +97,22 @@ class Continuity14(unittest.TestCase):
             self.assertLessEqual(sum(t-dt.timedelta(days=7)<x<=t for x in times),3)
             if i:self.assertGreaterEqual(t-times[i-1],dt.timedelta(hours=48))
         self.assertFalse(any(r.get('publicly_verified') for r in state['posts'].values()))
+
+
+class AudioContent14(unittest.TestCase):
+    def test_omission_repetition_and_pronunciation_uncertainty_are_held(self):
+        from audio_review import compare
+        self.assertTrue(compare('Confira a borda do copo.','Confira a borda do copo!')['audio_content_verified'])
+        for observed in ['Confira o copo.','Confira a borda a borda do copo.','Confira a porta do copo.']:
+            self.assertFalse(compare('Confira a borda do copo.',observed)['audio_content_verified'])
+
+    def test_wan_30_requires_six_distinct_retained_slots(self):
+        from experimental81.wan104 import next_scene
+        from experimental81.wan104 import PROFILE
+        profile=json.loads(PROFILE.read_text())
+        inv={'episode':6,'editorial_id':'copos-secos','clips':[{'slot':i} for i in range(5)],'rejected_clips':[]}
+        slot,spec=next_scene(inv,profile)
+        self.assertEqual(slot,5)
+        self.assertIn('Final wide view',spec['prompt'])
+        inv['clips'].append({'slot':5})
+        self.assertIsNone(next_scene(inv,profile))

@@ -1,0 +1,141 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "1d88ce25d7d108242b3c6493fd8173222862886a0bfb8f9da2a4203f3509c884",
+  "duration": 30.0,
+  "size": 12069108,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -16.1,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.002,
+  "lip_sync_verified": false,
+  "sample_aspect_ratio": "1:1",
+  "display_aspect_ratio": "9:16",
+  "fps": 30,
+  "rotation": 0,
+  "faststart": true,
+  "black_border_samples": [
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ]
+  ],
+  "embedded_border_check_pass": true,
+  "technical_demo_only": true,
+  "publication_approved": false,
+  "female_voice_approved": false,
+  "source": "FFmpeg native moving calibration pattern; no household footage or new Wan inference",
+  "voice": "chatterbox-multilingual-v3-pt-br@b3952f18bc2e",
+  "script": [
+    "Sua gaveta de cozinha prende toda vez que você tenta abrir?",
+    "Antes de organizar, retire os utensílios e observe o espaço disponível.",
+    "Separe as peças por uso e deixe as que você usa todos os dias na frente.",
+    "Acomode cada grupo sem empilhar acima da altura da gaveta.",
+    "Abra e feche devagar para conferir se nada ficou preso.",
+    "Uma divisão simples facilita encontrar cada utensílio. Salve para organizar depois.",
+    "Confira também se os cabos ficaram livres, sem impedir o movimento da gaveta ao abrir e fechar.",
+    "Reserve outro espaço para as peças que não cabem nesse compartimento."
+  ],
+  "timings": [
+    [
+      0.0,
+      3.1460674157303368,
+      "Sua gaveta de cozinha prende toda vez que você tenta abrir?"
+    ],
+    [
+      3.1460674157303368,
+      6.365971107544141,
+      "Antes de organizar, retire os utensílios e observe o espaço"
+    ],
+    [
+      6.365971107544141,
+      6.96629213483146,
+      "disponível."
+    ],
+    [
+      6.96629213483146,
+      10.215751437463732,
+      "Separe as peças por uso e deixe as que você usa todos os"
+    ],
+    [
+      10.215751437463732,
+      11.086142322097377,
+      "dias na frente."
+    ],
+    [
+      11.086142322097377,
+      13.845850581509954,
+      "Acomode cada grupo sem empilhar acima da altura da"
+    ],
+    [
+      13.845850581509954,
+      14.232209737827715,
+      "gaveta."
+    ],
+    [
+      14.232209737827715,
+      17.26591760299625,
+      "Abra e feche devagar para conferir se nada ficou preso."
+    ],
+    [
+      17.26591760299625,
+      20.82853749885813,
+      "Uma divisão simples facilita encontrar cada utensílio. Salve"
+    ],
+    [
+      20.82853749885813,
+      22.134831460674153,
+      "para organizar depois."
+    ],
+    [
+      22.134831460674153,
+      24.946210853454453,
+      "Confira também se os cabos ficaram livres, sem impedir o"
+    ],
+    [
+      24.946210853454453,
+      26.853932584269657,
+      "movimento da gaveta ao abrir e fechar."
+    ],
+    [
+      26.853932584269657,
+      29.350625826173165,
+      "Reserve outro espaço para as peças que não cabem nesse"
+    ],
+    [
+      29.350625826173165,
+      29.997916666666665,
+      "compartimento."
+    ]
+  ],
+  "wav_sha256": "3e55d217b399d2fdf2e8b97d3522d2790c1d19a69a992fae3c85338a80907440"
+}

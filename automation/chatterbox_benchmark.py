@@ -32,6 +32,8 @@ def main():
         'additional_cost_brl':0, 'device':'cpu', 'publication_attempted':False}
     prior_path=args.folder/'report.json'
     prior=json.loads(prior_path.read_text()) if prior_path.exists() else {}
+    report['reused_utterances']=0
+    report['current_run_inference_seconds']=0
     start = time.monotonic()
     try:
         import torch
@@ -47,6 +49,7 @@ def main():
         for i, text in enumerate(SCRIPT):
             old=prior.get('utterances',[])
             if i < len(old) and old[i]['text']==text and (args.folder/f'cpu-{i}.wav').exists():
+                report['reused_utterances']+=1
                 report.setdefault('utterances',[]).append(old[i])
                 total+=old[i]['audio_seconds']
                 report.update(real_inference=True,audio_seconds=total)
@@ -57,6 +60,7 @@ def main():
             sf.write(args.folder/f'cpu-{i}.wav',wav.squeeze().cpu().numpy(),model.sr,subtype='PCM_16')
             seconds = wav.numel()/model.sr; total += seconds
             report.setdefault('utterances',[]).append({'text':text,'audio_seconds':seconds,'inference_seconds':round(time.monotonic()-t,3)})
+            report['current_run_inference_seconds']+=report['utterances'][-1]['inference_seconds']
             report.update(real_inference=True, audio_seconds=total)
             (args.folder/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             print('CPU_UTTERANCE',i,report['utterances'][-1],flush=True)

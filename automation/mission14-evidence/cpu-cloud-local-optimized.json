@@ -1,0 +1,63 @@
+{
+  "model": "ResembleAI/Chatterbox-Multilingual-pt-br",
+  "revision": "b3952f18bc2eaa72b9bd7c17d2c4653bcad4770d",
+  "real_inference": true,
+  "brand_voice_approved": false,
+  "female_identity_verified": false,
+  "conditioning": "built-in conds.pt from MIT base checkpoint; no public demo audio downloaded",
+  "additional_cost_brl": 0,
+  "device": "cpu",
+  "publication_attempted": false,
+  "load_seconds": 14.708,
+  "sample_rate": 24000,
+  "utterances": [
+    {
+      "text": "Sua gaveta de cozinha prende toda vez que você tenta abrir?",
+      "audio_seconds": 3.36,
+      "inference_seconds": 39.052
+    },
+    {
+      "text": "Antes de organizar, retire os utensílios e observe o espaço disponível.",
+      "audio_seconds": 4.08,
+      "inference_seconds": 38.288
+    },
+    {
+      "text": "Separe as peças por uso e deixe as que você usa todos os dias na frente.",
+      "audio_seconds": 4.4,
+      "inference_seconds": 48.779
+    },
+    {
+      "text": "Acomode cada grupo sem empilhar acima da altura da gaveta.",
+      "audio_seconds": 3.36,
+      "inference_seconds": 46.088
+    },
+    {
+      "text": "Abra e feche devagar para conferir se nada ficou preso.",
+      "audio_seconds": 3.24,
+      "inference_seconds": 34.185
+    },
+    {
+      "text": "Uma divisão simples facilita encontrar cada utensílio. Salve para organizar depois.",
+      "audio_seconds": 5.2,
+      "inference_seconds": 49.816
+    },
+    {
+      "text": "Confira também se os cabos ficaram livres, sem impedir o movimento da gaveta ao abrir e fechar.",
+      "audio_seconds": 5.04,
+      "inference_seconds": 51.141
+    },
+    {
+      "text": "Reserve outro espaço para as peças que não cabem nesse compartimento.",
+      "audio_seconds": 3.36,
+      "inference_seconds": 35.211
+    }
+  ],
+  "audio_seconds": 32.04,
+  "status": "TECHNICAL_AUDIO_GENERATED_NOT_IDENTITY_APPROVAL",
+  "inference_seconds": 342.56,
+  "wall_seconds": 101.063,
+  "peak_rss_mib": 3817.0,
+  "reused_utterances": 6,
+  "current_run_inference_seconds": 86.352,
+  "execution_environment": "Codex Cloud; separate from GitHub Actions benchmark"
+}

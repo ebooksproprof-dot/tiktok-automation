@@ -1,0 +1,19 @@
+{
+  "config_http": 200,
+  "version": "5.29.0",
+  "enable_queue": true,
+  "dependencies": [
+    {
+      "api_name": "generate_tts_audio",
+      "queue": true
+    },
+    {
+      "api_name": "load_example",
+      "queue": false
+    }
+  ],
+  "inference_called": false,
+  "default_demo_reference_rights": "NOT_VERIFIED_DO_NOT_USE",
+  "production_route": "CPU",
+  "cost_brl": 0
+}

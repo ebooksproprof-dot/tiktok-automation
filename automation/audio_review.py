@@ -17,13 +17,19 @@ def compare(expected, observed):
     matched=sum(x.size for x in matcher.get_matching_blocks())
     coverage=matched/max(1,len(a)); precision=matched/max(1,len(b))
     return {'expected_words':len(a),'recognized_words':len(b),'word_coverage':coverage,
-        'word_precision':precision,'audio_content_verified':bool(a) and coverage>=.92 and precision>=.92}
+        'word_precision':precision,'mismatches':[{'operation':tag,'expected':a[i:j],'recognized':b[k:l]} for tag,i,j,k,l in matcher.get_opcodes() if tag!='equal'],'audio_content_verified':bool(a) and coverage==1.0 and precision==1.0}
 
 
 def review(audio, expected, model='small'):
     from faster_whisper import WhisperModel
     asr=WhisperModel(model,device='cpu',compute_type='int8',cpu_threads=2,num_workers=1)
-    segments,info=asr.transcribe(str(audio),language='pt',beam_size=5,word_timestamps=True,condition_on_previous_text=False)
+    # Decode with the same FFmpeg used by production; avoid PyAV version-specific
+    # container keyword changes. Whisper accepts mono float32 at 16kHz.
+    import subprocess
+    import numpy as np
+    pcm=subprocess.check_output(['ffmpeg','-v','error','-i',str(audio),'-f','f32le','-ar','16000','-ac','1','-'],timeout=60)
+    samples=np.frombuffer(pcm,dtype=np.float32).copy()
+    segments,info=asr.transcribe(samples,language='pt',beam_size=5,word_timestamps=True,condition_on_previous_text=False)
     segments=list(segments); transcript=' '.join(s.text.strip() for s in segments)
     result=compare(expected,transcript)
     result.update(transcript=transcript,language=info.language,asr_model='Systran/faster-whisper-'+model,

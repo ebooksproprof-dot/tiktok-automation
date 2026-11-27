@@ -276,6 +276,8 @@ def submit(client, post, state, channel_id):
     from mission14_policy import require_output
     payload = prepare(post, state, channel_id)
     require_output(post.get("quality", {}))
+    from mission14_policy import require_schedule
+    require_schedule(post, common.load_json(common.QUEUE_PATH, {"posts":[]}), state)
     verify_hosted(post)
     client.check_budget(required=2)  # Reserve create + read-back before durable intent.
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),

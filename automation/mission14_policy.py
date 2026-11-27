@@ -26,3 +26,17 @@ def require_output(quality):
             or quality.get('technical_pass') is not True
             or abs(quality.get('duration', 0)-30) > .15):
         raise ValueError('MISSION14_30S_VOICE_FRAMING_CAPTIONS_REVIEW_REQUIRED')
+
+
+def require_schedule(post, queue, state):
+    from daily_coverage import stamp
+    merged={p.get('id'):p for p in queue.get('posts',[])}
+    merged.update({key:dict(value,id=key) for key,value in state.get('posts',{}).items()})
+    reservations=[]
+    for key,p in merged.items():
+        if key==post.get('id') or not p.get('scheduled_at'):continue
+        if p.get('status')=='CANCELLED_EDITORIAL' and p.get('buffer_status')=='deleted':continue
+        reservations.append(stamp(p['scheduled_at']))
+    when=stamp(post['scheduled_at'])
+    if not allowed_slot(when,reservations):
+        raise ValueError('MISSION14_48H_SPACING_AND_WEEKLY_LIMIT_REQUIRED')
