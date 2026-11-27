@@ -116,3 +116,11 @@ class AudioContent14(unittest.TestCase):
         self.assertIn('Final wide view',spec['prompt'])
         inv['clips'].append({'slot':5})
         self.assertIsNone(next_scene(inv,profile))
+
+
+class FutureCadence14(unittest.TestCase):
+    def test_cannot_insert_fourth_post_before_three_future_reservations(self):
+        now=dt.datetime(2027,1,1,13,tzinfo=dt.timezone.utc)
+        future=[now+dt.timedelta(days=n) for n in (2,4,6)]
+        self.assertFalse(policy.allowed_slot(now,future))
+        self.assertTrue(policy.allowed_slot(now+dt.timedelta(days=9),future))

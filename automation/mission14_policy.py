@@ -9,8 +9,13 @@ MIN_SPACING = dt.timedelta(hours=48)
 
 
 def allowed_slot(when, reservations):
-    return (all(abs(when-other) >= MIN_SPACING for other in reservations)
-            and sum(when-dt.timedelta(days=7) < other <= when for other in reservations) < MAX_WEEKLY)
+    if not all(abs(when-other) >= MIN_SPACING for other in reservations):
+        return False
+    times=[when,*reservations]
+    # Inserting before existing future reservations must also respect their
+    # rolling windows, not only the seven days preceding the candidate.
+    return all(sum(end-dt.timedelta(days=7)<other<=end for other in times)<=MAX_WEEKLY
+               for end in times if when<=end<when+dt.timedelta(days=7))
 
 
 def require_output(quality):

@@ -1,0 +1,66 @@
+{
+  "model": "ResembleAI/Chatterbox-Multilingual-pt-br",
+  "revision": "b3952f18bc2eaa72b9bd7c17d2c4653bcad4770d",
+  "real_inference": true,
+  "brand_voice_approved": false,
+  "female_identity_verified": false,
+  "conditioning": "built-in conds.pt from MIT base checkpoint; no public demo audio downloaded",
+  "additional_cost_brl": 0,
+  "device": "cpu",
+  "publication_attempted": false,
+  "load_seconds": 35.935,
+  "sample_rate": 24000,
+  "utterances": [
+    {
+      "text": "Sua gaveta de cozinha prende toda vez que você tenta abrir?",
+      "audio_seconds": 3.36,
+      "inference_seconds": 35.676
+    },
+    {
+      "text": "Antes de organizar, retire os utensílios e observe o espaço disponível.",
+      "audio_seconds": 4.08,
+      "inference_seconds": 33.759
+    },
+    {
+      "text": "Separe as peças por uso e deixe as que você usa todos os dias na frente.",
+      "audio_seconds": 4.4,
+      "inference_seconds": 35.438
+    },
+    {
+      "text": "Acomode cada grupo sem empilhar acima da altura da gaveta.",
+      "audio_seconds": 3.36,
+      "inference_seconds": 29.255
+    },
+    {
+      "text": "Abra e feche devagar para conferir se nada ficou preso.",
+      "audio_seconds": 3.24,
+      "inference_seconds": 28.233
+    },
+    {
+      "text": "Uma divisão simples facilita encontrar cada utensílio. Salve para organizar depois.",
+      "audio_seconds": 5.2,
+      "inference_seconds": 40.728
+    },
+    {
+      "text": "Confira também se os cabos ficaram livres, sem impedir o movimento da gaveta ao abrir e fechar.",
+      "audio_seconds": 5.04,
+      "inference_seconds": 40.056
+    },
+    {
+      "text": "Reserve outro espaço para as peças que não cabem nesse compartimento.",
+      "audio_seconds": 3.36,
+      "inference_seconds": 29.118
+    }
+  ],
+  "audio_seconds": 32.04,
+  "status": "TECHNICAL_AUDIO_GENERATED_NOT_IDENTITY_APPROVAL",
+  "inference_seconds": 272.263,
+  "wall_seconds": 308.204,
+  "peak_rss_mib": 4584.7,
+  "evidence": {
+    "run_id": 45937825594,
+    "head_sha": "8697bb7409ee794a439c07ef65b14764ef107f07",
+    "source": "GitHub Actions completed real job log",
+    "artifact_id": 15171946164
+  }
+}

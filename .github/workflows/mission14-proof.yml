@@ -1,6 +1,11 @@
 name: CasaSemEsforco Mission14 CPU proof
 on:
   workflow_dispatch:
+    inputs:
+      checks_only:
+        description: Run current regression suite without another TTS synthesis
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -21,11 +26,16 @@ jobs:
       - name: Install standard CPU tools only
         run: |
           sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
+      - name: Install isolated TTS dependencies only for an actual inference probe
+        if: inputs.checks_only != true
+        run: |
           python -m pip install 'torch==2.8.0+cpu' 'torchaudio==2.8.0+cpu' --index-url https://download.pytorch.org/whl/cpu
           python -m pip install -r automation/requirements-chatterbox-v3.txt
       - name: Test policies and recovery (mock service calls)
         run: python -m unittest discover -s automation/tests -v
       - name: Benchmark actual Brazilian V3 on CPU with built-in conditioning only
+        if: inputs.checks_only != true
         timeout-minutes: 25
         run: python automation/chatterbox_benchmark.py
       - name: Retain actual proof independently of inference outcome
