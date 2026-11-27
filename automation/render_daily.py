@@ -178,7 +178,9 @@ def render(idea, voice, post_id):
     from output_review import review as review_output
     review_receipt = review_output(folder, lines, timings, duration)
     quality.update(visual_quality)
+    from voice_approval import profile_digest
     quality.update(caption_style=caption_style, mission='14.0',
+                   voice_profile_sha256=profile_digest(getattr(voice,'profile',{})),
                    voice_reference_sha256=getattr(voice, 'voice_id', None),
                    audio_content_verified=False, full_frame_reviewed=False, captions_reviewed=False)
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)

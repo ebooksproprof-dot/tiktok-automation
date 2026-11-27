@@ -58,13 +58,13 @@ def base(stage,p):
     text(d,(178,493),f'PASSO {stage+1} / 5',22,'white',True)
     q=ease(p)
     if stage==0:
-        glass(d,504,640+55*q,size=1.20,water=30-10*q)
-        d.line((620,865,738,865),fill=CORAL,width=4)
-        d.ellipse((607,850,637,880),outline=CORAL,width=4)
-        text(d,(665,886),'Observe',25,CORAL,True)
+        glass(d,504,550+55*q,size=1.75,water=30-10*q)
+        d.line((620,965,738,965),fill=CORAL,width=4)
+        d.ellipse((607,950,637,980),outline=CORAL,width=4)
+        text(d,(665,985),'Observe',25,CORAL,True)
     elif stage==1:
         rack(d)
-        glass(d,500,620+80*q,size=1.03,inverted=True)
+        glass(d,500,565+55*q,size=1.45,inverted=True)
         # A single draining action, never a repeated loop.
         for n in range(4):
             y=895+(q*.9+n*.2)*45
@@ -72,14 +72,14 @@ def base(stage,p):
         text(d,(228,560),'Use o suporte indicado para o copo.',24)
     elif stage==2:
         rack(d)
-        for n in range(3):glass(d,500+(n-1)*(128+65*q),720,size=.88,inverted=True)
+        for n in range(3):glass(d,500+(n-1)*(145+65*q),700,size=1.05,inverted=True)
         d.line((345,680,655,680),fill=CORAL,width=4)
         for x in (345,655):d.line((x,668,x,692),fill=CORAL,width=4)
         text(d,(288,570),'Sem empilhar ou equilibrar.',28)
     elif stage==3:
-        glass(d,470,670,size=1.05,water=max(0,16-16*q))
+        glass(d,470,630,size=1.5,water=max(0,16-16*q))
         # Inspection moves from rim to base, illustrating the narrated check.
-        lens_y=665+215*q;lens_x=584
+        lens_y=630+305*q;lens_x=584
         d.ellipse((lens_x-47,lens_y-47,lens_x+47,lens_y+47),outline=CORAL,width=7)
         d.line((lens_x+34,lens_y+34,lens_x+75,lens_y+75),fill=CORAL,width=10)
         text(d,(230,560),'Borda + fundo',32,TEAL,True)
@@ -88,7 +88,7 @@ def base(stage,p):
         d.rounded_rectangle((208,565,820,965),radius=18,fill='#DFCCAB',outline='#977C54',width=4)
         d.rectangle((230,590,798,914),fill='#F5E9D5')
         d.line((230,910,798,910),fill='#A48559',width=12)
-        for n in range(3):glass(d,335+n*165,660+(1-q)*(90-15*n),size=.82)
+        for n in range(3):glass(d,335+n*165,640+(1-q)*(90-15*n),size=1.1)
         text(d,(235,975),'Estáveis e fáceis de retirar.',27,TEAL,True)
     text(d,(132,431),'ILUSTRAÇÃO AUTORAL',19,TEAL)
     text(d,(132,1234),'Siga as instruções do fabricante.',22,INK)
@@ -98,12 +98,16 @@ def base(stage,p):
 def render(audio_folder,output):
     folder=Path(audio_folder);output=Path(output);output.mkdir(parents=True,exist_ok=True)
     manifest=json.loads((folder/'audio-manifest.json').read_text());duration=manifest['duration']
-    timings=manifest['timings'];captions=caption_timings(timings)
+    timings=manifest['timings']
+    from caption_alignment import align
+    recognition=json.loads((folder/'asr.json').read_text())
+    captions=align(manifest['lines'],recognition)
     target=output/'casasem-copos-secos-review.mp4'
+    temporary=target.with_name(target.stem+'.partial.mp4')
     args=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','-',
           '-i',str(folder/'voice.wav'),'-map','0:v','-map','1:a','-t',str(duration),'-c:v','libx264','-threads','2',
           '-preset','veryfast','-crf','21','-pix_fmt','yuv420p','-vf','setsar=1','-c:a','aac','-b:a','128k',
-          '-map_metadata','-1','-metadata:s:v:0','rotate=0','-movflags','+faststart',str(target)]
+          '-map_metadata','-1','-metadata:s:v:0','rotate=0','-movflags','+faststart',str(temporary)]
     proc=subprocess.Popen(args,stdin=subprocess.PIPE)
     sample_frames={30,210,450,690,840}
     try:
@@ -125,11 +129,12 @@ def render(audio_folder,output):
         if proc.wait(timeout=120):raise RuntimeError('EDITORIAL_ANIMATION_RENDER_FAILED')
     finally:
         if proc.poll() is None:proc.kill()
-    quality=validate(target,ai_only30=True)
+    quality=validate(temporary,ai_only30=True)
+    temporary.replace(target)
     quality.update(mission='15.0',publication_approved=False,editorial_review_status='PENDING_AUDIO_AND_IDENTITY_REVIEW',
         video_origin='authored_household_illustration',generated_wan_seconds=0,
         source_rights={'basis':'original procedural graphics authored for the owner in this mission','external_visual_assets':[]},
-        script=manifest['lines'],timings=captions,voice_reference_sha256=manifest['reference_sha256'])
+        script=manifest['lines'],timings=captions,caption_timing_method='observed ASR word timestamps after complete sequence agreement',voice_reference_sha256=manifest['reference_sha256'])
     (output/'video-review.json').write_text(json.dumps(quality,ensure_ascii=False,indent=2)+'\n')
     return quality
 

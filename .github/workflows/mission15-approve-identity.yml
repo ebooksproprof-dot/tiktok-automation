@@ -1,0 +1,41 @@
+name: CasaSemEsforco Mission15 owner voice approval
+on:
+  workflow_dispatch:
+    inputs:
+      approve_female_ptbr_natural_clear:
+        description: 'I listened to Lara and approve the female Brazilian identity, naturalness and clarity'
+        type: boolean
+        default: false
+      reviewed_reference_sha256:
+        description: 'Reference hash shown in the listening package'
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: casasemesforco-voice-identity
+  cancel-in-progress: false
+jobs:
+  approve:
+    if: github.actor == 'ebooksproprof-dot' && inputs.approve_female_ptbr_natural_clear == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bind owner's explicit listening approval to exact reference, sample and inference settings
+        env:
+          APPROVE_IDENTITY: ${{ inputs.approve_female_ptbr_natural_clear }}
+          REVIEWED_REFERENCE_SHA256: ${{ inputs.reviewed_reference_sha256 }}
+        run: python automation/voice_approval.py
+      - name: Preserve the approval receipt
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add automation/voice_identity.json
+          git diff --cached --quiet || git commit -m 'Record explicit owner listening approval for the fixed voice identity'
+          python automation/persist_main.py

@@ -44,6 +44,7 @@ class CheckedVoice:
     def __init__(self, engine):
         self.engine, self.name = engine, engine.name
         self.voice_id = getattr(engine, "voice_id", None)
+        self.profile = getattr(engine, 'profile', {})
 
     def speak(self, text, path):
         try:

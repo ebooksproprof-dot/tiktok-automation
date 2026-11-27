@@ -1,0 +1,19 @@
+{
+  "editorial_originality_pass": true,
+  "metadata": {
+    "topic_id": "copos-secos",
+    "problem_id": "copos-secos",
+    "solution_id": "cup-drying-check",
+    "narrative_id": "hook-problem-demonstration-solution-cta",
+    "hook_id": "copo guardado com agua no fundo confira antes de fechar o armario",
+    "environment": "kitchen",
+    "objects": [
+      "copo"
+    ],
+    "instruction_ids": [
+      "cup-drying-check"
+    ]
+  },
+  "scope": "script against current persisted queue and receipts; authored visuals independently distinct",
+  "repost": false
+}

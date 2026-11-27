@@ -99,7 +99,7 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
     manifest = {'experimental_only': True, 'script': lines, 'clips': clips, 'narration': narration}
     output = render.compose(manifest, folder/'render', 'AI_ONLY', target_seconds=30)
     quality = {**validate(output['video_path'], policy=Policy(target_seconds=30)), **motion(output['video_path'])}
-    quality.update(mission='14.0', voice_reference_sha256=narration['voice_reference_sha256'],
+    quality.update(mission='14.0', voice_profile_sha256=narration['voice_profile_sha256'], voice_reference_sha256=narration['voice_reference_sha256'],
         audio_content_verified=False, full_frame_reviewed=False, captions_reviewed=False, wan104_licensed_profile=True, model=profile['model'], model_revision=profile['model_revision'],
         ai_generated_seconds=30, real_video_seconds=0, voice=narration['engine'],
         machine_checks_only=True, human_perceptual_review=False, editorial_approved=True,

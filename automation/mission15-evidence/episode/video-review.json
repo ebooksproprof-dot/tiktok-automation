@@ -1,0 +1,191 @@
+{
+  "technical_pass": true,
+  "editorial_approved": false,
+  "sha256": "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+  "duration": 30.014,
+  "size": 1019685,
+  "width": 1080,
+  "height": 1920,
+  "audio_mean_db": -16.7,
+  "black_intervals_over_300ms": 0,
+  "silence_intervals_over_800ms": 0,
+  "av_start_delta_seconds": 0.0,
+  "av_end_delta_seconds": 0.014,
+  "lip_sync_verified": false,
+  "sample_aspect_ratio": "1:1",
+  "display_aspect_ratio": "9:16",
+  "fps": 30,
+  "rotation": 0,
+  "faststart": true,
+  "black_border_samples": [
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ]
+  ],
+  "embedded_border_check_pass": true,
+  "mission": "15.0",
+  "publication_approved": false,
+  "editorial_review_status": "PENDING_IDENTITY_LISTENING_APPROVAL",
+  "video_origin": "authored_household_illustration",
+  "generated_wan_seconds": 0,
+  "source_rights": {
+    "basis": "original procedural graphics authored for the owner in this mission",
+    "external_visual_assets": []
+  },
+  "script": [
+    "Copo guardado com água no fundo? Confira antes de fechar o armário.",
+    "Depois de lavar, apoie cada copo em um escorredor adequado ao material.",
+    "Deixe espaço entre as peças, sem equilibrar uma sobre a outra.",
+    "Observe a borda e o fundo. Se houver gotas, espere secar completamente.",
+    "Só então guarde os copos estáveis e fáceis de retirar. Salve para lembrar."
+  ],
+  "timings": [
+    [
+      0.0,
+      5.1,
+      "Copo guardado com água no fundo? Confira antes de fechar"
+    ],
+    [
+      5.1,
+      5.76,
+      "o armário."
+    ],
+    [
+      6.44,
+      10.52,
+      "Depois de lavar, apoie cada copo em um escorredor"
+    ],
+    [
+      10.52,
+      11.88,
+      "adequado ao material."
+    ],
+    [
+      12.96,
+      16.84,
+      "Deixe espaço entre as peças, sem equilibrar uma sobre a"
+    ],
+    [
+      16.84,
+      17.16,
+      "outra."
+    ],
+    [
+      17.88,
+      22.4,
+      "Observe a borda e o fundo. Se houver gotas, espere secar"
+    ],
+    [
+      22.4,
+      23.16,
+      "completamente."
+    ],
+    [
+      23.16,
+      27.86,
+      "Só então guarde os copos estáveis e fáceis de retirar."
+    ],
+    [
+      28.22,
+      29.4,
+      "Salve para lembrar."
+    ]
+  ],
+  "caption_timing_method": "observed ASR word timestamps after complete sequence agreement",
+  "voice_reference_sha256": "8fea595097a2281149a9bbc1287d2b387bab562442afb9a537cafdf11c902fbf",
+  "voice": "chatterbox-multilingual-v3-pt-br@b3952f18bc2e",
+  "audio_content_verified": true,
+  "captions_reviewed": true,
+  "full_frame_reviewed": true,
+  "visual_editorial_approved": true,
+  "visual_editorial_review": {
+    "reviewer": "assistant visual review",
+    "scope": "five rendered scene captures, simulated TikTok safe zone, content/script correspondence and stable illustrated objects",
+    "reviewed_at": "2026-11-27T18:31:24.165008+00:00",
+    "human_review": false
+  },
+  "visual_policy_version": 1,
+  "visual_distinct": true,
+  "visual_sources": [
+    {
+      "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos",
+      "sha256": "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+      "dhash": [
+        "00c0d010d4c40000",
+        "00d0d070c0c00000",
+        "00c0c068d0c00000",
+        "00d0c010c4c00000",
+        "00c0d060c8c80000"
+      ],
+      "crop_dhash": {
+        "full": [
+          "00c0d010d4c40000",
+          "00d0d070c0c00000",
+          "00c0c068d0c00000",
+          "00d0c010c4c00000",
+          "00c0d060c8c80000"
+        ],
+        "inner90": [
+          "8080903094880000",
+          "80909074c4c40000",
+          "80808048d4c40000",
+          "80908020c4c40000",
+          "8090c460c8880000"
+        ],
+        "inner80": [
+          "8080b03094880000",
+          "909090b094c40000",
+          "8090c0d8b8a40000",
+          "9080a020c0840000",
+          "809084a4a8880000"
+        ]
+      },
+      "sampling_fractions": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9
+      ],
+      "fingerprint_method": "grayscale-gradient-multicrop-v2"
+    }
+  ],
+  "decoder_pass": true,
+  "freeze_intervals_over_1s": 0,
+  "method": "decoded action-panel changes above compression noise; no subtitle or layout credit",
+  "frames_checked": 900,
+  "max_unchanged_action_frames": 12,
+  "changed_action_pairs": 741,
+  "authored_renderer_sha256": "ff91fdd092188af6755946804b5afab7a89b5e82d173f5b51277b22359771640",
+  "stock_wan_detector_unchanged": true,
+  "source_urls": [
+    "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos"
+  ]
+}

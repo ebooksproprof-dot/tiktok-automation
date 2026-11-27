@@ -23,7 +23,13 @@ def require_output(quality):
     identity = json.loads(IDENTITY.read_text())
     if identity.get('status') != 'APPROVED' or identity.get('perceptual_review_approved') is not True or identity.get('commercial_synthesis_authorized') is not True or not identity.get('rights_evidence') or not identity.get('holder'):
         raise ValueError('MISSION14_VOICE_IDENTITY_PENDING_NO_NEW_PUBLICATION')
-    if (quality.get('mission') != '14.0' or quality.get('voice') != NAME
+    if identity.get('reference_source',{}).get('kind')=='kyutai_donation':
+        from voice_approval import profile_digest
+        receipt=identity.get('review_receipt',{})
+        profile_hash=profile_digest(identity.get('inference',{}))
+        if receipt.get('engine_name')!=NAME or receipt.get('inference_sha256')!=profile_hash or quality.get('voice_profile_sha256')!=profile_hash:
+            raise ValueError('APPROVED_VOICE_MODEL_OR_PARAMETERS_CHANGED')
+    if (quality.get('mission') not in ('14.0','15.0') or quality.get('voice') != NAME
             or quality.get('voice_reference_sha256') != identity.get('reference_sha256')
             or quality.get('audio_content_verified') is not True
             or quality.get('full_frame_reviewed') is not True

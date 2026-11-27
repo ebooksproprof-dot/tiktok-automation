@@ -1,0 +1,10 @@
+{
+  "decoder_pass": true,
+  "freeze_intervals_over_1s": 0,
+  "method": "decoded action-panel changes above compression noise; no subtitle or layout credit",
+  "frames_checked": 900,
+  "max_unchanged_action_frames": 12,
+  "changed_action_pairs": 741,
+  "authored_renderer_sha256": "ff91fdd092188af6755946804b5afab7a89b5e82d173f5b51277b22359771640",
+  "stock_wan_detector_unchanged": true
+}

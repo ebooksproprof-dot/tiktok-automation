@@ -1,5 +1,6 @@
 """CPU ASR content gate. Does not claim a human naturalness assessment."""
 import argparse
+import hashlib
 import difflib
 import json
 from pathlib import Path
@@ -32,7 +33,8 @@ def review(audio, expected, model='small'):
     segments,info=asr.transcribe(samples,language='pt',beam_size=5,word_timestamps=True,condition_on_previous_text=False)
     segments=list(segments); transcript=' '.join(s.text.strip() for s in segments)
     result=compare(expected,transcript)
-    result.update(transcript=transcript,language=info.language,asr_model='Systran/faster-whisper-'+model,
+    result.update(audio_sha256=hashlib.sha256(Path(audio).read_bytes()).hexdigest(),
+        expected_script_sha256=hashlib.sha256(expected.encode()).hexdigest(),transcript=transcript,language=info.language,asr_model='Systran/faster-whisper-'+model,
         naturalness_verified=False,method='automatic ASR agreement; not a perceptual pronunciation rating',
         words=[{'start':w.start,'end':w.end,'word':w.word,'probability':w.probability} for s in segments for w in (s.words or [])])
     return result

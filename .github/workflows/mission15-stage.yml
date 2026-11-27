@@ -1,0 +1,41 @@
+name: CasaSemEsforco Mission15 stage reviewed episode
+on:
+  workflow_run:
+    workflows: [CasaSemEsforco Mission15 owner voice approval]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: casasemesforco-mission15-handoff
+  cancel-in-progress: false
+jobs:
+  stage:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0' 'numpy==1.26.4'
+      - name: Acquire existing shared state lease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/cloud_lease.py
+      - name: Verify exact reviewed assets and idempotently hand off to existing publisher
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/mission15_stage.py
+      - name: Release shared lease
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python automation/cloud_lease.py --release

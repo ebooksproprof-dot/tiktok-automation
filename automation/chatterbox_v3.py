@@ -29,6 +29,11 @@ def identity(path=None):
             or not data.get('rights_evidence') or not data.get('holder')
             or data.get('perceptual_review_approved') is not True):
         raise ValueError('CHATTERBOX_FEMALE_REFERENCE_AND_REVIEW_PENDING')
+    if data.get('reference_source',{}).get('kind')=='kyutai_donation':
+        from voice_approval import profile_digest
+        receipt=data.get('review_receipt',{})
+        if receipt.get('engine_name')!=NAME or receipt.get('inference_sha256')!=profile_digest(data.get('inference',{})):
+            raise ValueError('APPROVED_VOICE_MODEL_OR_PARAMETERS_CHANGED')
     reference = Path(os.environ.get('CHATTERBOX_REFERENCE_PATH', ''))
     if not reference.is_file() or digest(reference) != data.get('reference_sha256'):
         raise ValueError('CHATTERBOX_REFERENCE_MISSING_OR_HASH_MISMATCH')
@@ -125,6 +130,7 @@ class IsolatedChatterboxEngine:
     def __init__(self, cache):
         self.identity, _ = identity()
         self.voice_id = self.identity['reference_sha256']
+        self.profile = self.identity.get('inference', {'seed':14,'temperature':.8,'cfg_weight':.5,'exaggeration':.5})
         self.cache = Path(cache).resolve()
 
     def synthesize(self, lines, folder, target_seconds):

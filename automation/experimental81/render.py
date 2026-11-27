@@ -134,7 +134,8 @@ def synthesize(folder, lines=SCRIPT, target_seconds=30):
     engine = load_engine(Path(os.getenv('AI30_VOICE_CACHE', str(folder/'voice-cache'))), 'chatterbox-v3-pt-br')
     duration, timings = speak(engine, lines, folder, target_seconds=target_seconds)
     target = folder/'voice.wav'
-    return {'path':str(target.resolve()), 'sha256':sha(target), 'engine':engine.name,
+    from voice_approval import profile_digest
+    return {'voice_profile_sha256':profile_digest(engine.profile),'path':str(target.resolve()), 'sha256':sha(target), 'engine':engine.name,
             'language':'pt-BR', 'voice_reference_sha256':engine.voice_id,
             'audio_content_verified':False, 'timings':caption_timings(timings)}
 

@@ -1,0 +1,35 @@
+{
+  "utterances": [
+    {
+      "key": "e3d9ac7bd67868a809f9193ed8c79dd743d139a85e95a643962009a660d50b83",
+      "text": "Copo guardado com água no fundo? Confira antes de fechar o armário.",
+      "sha256": "0efb8497b2dad05a03affacb401ecbb6beb66bff0456d8bc3ba9cc6fc9eed0b4",
+      "inference_seconds": 77.34991778100084
+    },
+    {
+      "key": "d8ace31257cff96f8f1a25fb24d97398a4ded733e5220af1ea3ddbf43c3164a0",
+      "text": "Depois de lavar, apoie cada copo em um escorredor adequado ao material.",
+      "sha256": "41829686697a4ce4453096ad822e553736d1cba26c77e0f75fdbb4745eb9eb3b",
+      "inference_seconds": 75.04845032999947
+    },
+    {
+      "key": "68c8823c1a6d6d03c5516bf7c83e36c4911fc4cb0ffc59412de162a5aaa1df35",
+      "text": "Deixe espaço entre as peças, sem equilibrar uma sobre a outra.",
+      "sha256": "f05af6f7c0fecbd55bfd1a0ec8d8f5bc613078cae197fccecd39a48d76e35815",
+      "inference_seconds": 57.05687628600026
+    },
+    {
+      "key": "459a232a8421c4491debf805dc40eb48e8529c1c0a88b5f4b5cc28c4a8d11ef4",
+      "text": "Observe a borda e o fundo. Se houver gotas, espere secar completamente.",
+      "sha256": "3cf7fd31a2297eac1f23ff668f4fd175167eaec98055b7c01806d6f4c2ea2331",
+      "inference_seconds": 67.13559372599957
+    },
+    {
+      "key": "f96ae735057b3afbf78796e975fcaa79624a430a01845972332a32a6c94eca6d",
+      "text": "Só então guarde os copos estáveis e fáceis de retirar. Salve para lembrar.",
+      "sha256": "f422378af4ba419c63d40c3fca9c15e51b514b37f38a139f7abbbdd1cd59f55d",
+      "inference_seconds": 63.2793315910003
+    }
+  ],
+  "source_seconds": 31.279999999999998
+}

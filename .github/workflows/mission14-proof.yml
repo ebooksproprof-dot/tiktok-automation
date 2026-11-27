@@ -26,7 +26,7 @@ jobs:
       - name: Install standard CPU tools only
         run: |
           sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
-          python -m pip install 'Pillow==12.3.0'
+          python -m pip install 'Pillow==12.3.0' 'numpy==1.26.4'
       - name: Install isolated TTS dependencies only for an actual inference probe
         if: inputs.checks_only != true
         run: |
