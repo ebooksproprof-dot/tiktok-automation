@@ -8735,15 +8735,12 @@
     }
   },
   "last_run": {
-    "status": "NO_VALID_OUTPUT",
+    "status": "CHATTERBOX_FEMALE_REFERENCE_AND_REVIEW_PENDING",
     "created": 0,
-    "ready_before": 0,
-    "ready_after": 0,
     "target": 4,
-    "source": "licensed_stock_fallback",
-    "new_generative_ai_calls": 0,
+    "reason": "Licensed female identity and perceptual approval required",
     "paid_services_enabled": false,
-    "generative_ai_status": "Existing independent Wan collector retains commercial clearance gates"
+    "publication_confirmed": false
   },
   "refill_events": {
     "casasem-2026-11-07-1": {
