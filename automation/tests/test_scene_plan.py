@@ -30,4 +30,4 @@ class SourceCapacityTests(unittest.TestCase):
             require_minimum_capacity([4.36])
     def test_multiple_distinct_clips_can_cover_minimum(self):
         from scene_plan import require_minimum_capacity
-        self.assertAlmostEqual(require_minimum_capacity([8,8]),15.9)
+        self.assertAlmostEqual(require_minimum_capacity([16,16]),31.9)

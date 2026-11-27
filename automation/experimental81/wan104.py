@@ -154,7 +154,7 @@ def request_spec(profile, episode, slot, editorial_id=None):
     # The episode changes the actual seed and an explicitly described scene.
     # Source and final perceptual comparisons still reject similar results.
     surfaces = ['light oak', 'warm walnut', 'pale beech', 'white painted wood']
-    prompt = SCENES[slot]+' Setting detail: '+surfaces[(episode-1) % len(surfaces)]+'.'
+    prompt = SCENES[slot % 3]+' Setting detail: '+surfaces[(episode-1) % len(surfaces)]+'.'
     if editorial_id:
         from editorial_topics import BY_ID, prompt as scene_prompt
         prompt = scene_prompt(BY_ID[editorial_id], slot)
@@ -223,7 +223,7 @@ def inspect_clip(path):
 
 
 def next_scene(inventory, profile):
-    missing = next((n for n in range(3) if n not in {c['slot'] for c in inventory['clips']}), None)
+    missing = next((n for n in range(6) if n not in {c['slot'] for c in inventory['clips']}), None)
     if missing is None:
         return None
     attempts = sum(c.get('episode') == inventory['episode'] and c.get('slot') == missing
@@ -309,11 +309,11 @@ def plan_episode(inventory, queue, state):
             try: check_sources([c['visual_source']], [{'visual_sources':[x['visual_source'] for x in clips if x.get('visual_source')]}])
             except ValueError: continue
         clips.append(c)
-        if len(clips)==3: break
+        if len(clips)==6: break
     inventory['clips'] = [dict(c, original_slot=c.get('original_slot', c['slot']),
                                slot=n, editorial_id=tip['id']) for n,c in enumerate(clips)]
     inventory.update(editorial_id=tip['id'], script_lines=tip['script_lines'],
-                     status='READY_FOR_REVIEW' if len(clips)==3 else 'COLLECTING')
+                     status='READY_FOR_REVIEW' if len(clips)==6 else 'COLLECTING')
     return True
 
 
@@ -409,7 +409,7 @@ def collect(trial=False, client_factory=None, reconcile_app_failure=False):
                             'license_url': 'https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/WAN-10.4.md'}}}
                 inventory['clips'].append(clip)
                 entry.update(status='GENERATED_DURABLE_PENDING_VISUAL_REVIEW', sha256=media['sha256'], url=url)
-                inventory['status'] = 'READY_FOR_REVIEW' if len(inventory['clips']) == 3 else 'COLLECTING'
+                inventory['status'] = 'READY_FOR_REVIEW' if len(inventory['clips']) == 6 else 'COLLECTING'
                 revision = inventory_store.save(inventory, revision)
             except Exception as exc:
                 # A lost reply cannot grant permission to submit the same scene again.

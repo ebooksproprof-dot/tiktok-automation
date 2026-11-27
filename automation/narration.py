@@ -35,6 +35,9 @@ class PiperEngine:
 
 
 def load_engine(cache, engine='piper'):
+    if engine == 'chatterbox-v3-pt-br':
+        from chatterbox_v3 import ChatterboxBrazilEngine, IsolatedChatterboxEngine
+        return (IsolatedChatterboxEngine if os.getenv('CHATTERBOX_PYTHON') else ChatterboxBrazilEngine)(cache)
     if engine == 'piper':
         return PiperEngine(cache)
     if engine == 'kokoro-female':
@@ -54,8 +57,10 @@ def sentences(lines):
     return result
 
 
-def synthesize(engine, lines, folder):
+def synthesize(engine, lines, folder, target_seconds=None):
     """Full sentences for prosody; captions use measured utterance boundaries."""
+    if hasattr(engine, 'synthesize'):
+        return engine.synthesize(lines, folder, target_seconds)
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
     parts, timings, position, expected = [], [], 0.0, None
@@ -80,9 +85,34 @@ def synthesize(engine, lines, folder):
             timings.append((cursor, end, chunk)); cursor = end
         parts.append(pcm + bytes(int(rate*.08)*2))
         position += duration + .08
+    if target_seconds is not None:
+        return finish_30(folder, parts, rate, position, timings, engine, target_seconds)
     if not 15 <= position <= 27.7:
         raise ValueError(f'Narration length out of range: {position:.2f}')
     with wave.open(str(folder/'voice.wav'), 'wb') as out:
         out.setnchannels(1); out.setsampwidth(2); out.setframerate(rate)
         out.writeframes(b''.join(parts))
     return position, timings
+
+
+def finish_30(folder, parts, rate, position, timings, engine, target_seconds=30):
+    """Measured speech only, +/-10% tempo; no padding, loops or truncation."""
+    import json
+    source = folder/'narration-source.wav'
+    with wave.open(str(source), 'wb') as out:
+        out.setnchannels(1); out.setsampwidth(2); out.setframerate(rate)
+        out.writeframes(b''.join(parts))
+    tempo = position/target_seconds
+    if not .90 <= tempo <= 1.10:
+        raise ValueError(f'Narration length requires script edit: {position:.2f}s; tempo={tempo:.3f}')
+    subprocess.run(['ffmpeg','-v','error','-y','-i',str(source),'-af',
+        f'atempo={tempo:.9f},loudnorm=I=-16:TP=-1.5:LRA=9',
+        '-ar','48000','-ac','1','-c:a','pcm_s16le',str(folder/'voice.wav')], check=True, timeout=120)
+    with wave.open(str(folder/'voice.wav'), 'rb') as inp:
+        actual = inp.getnframes()/inp.getframerate()
+    if abs(actual-target_seconds) > .10:
+        raise ValueError('NORMALIZED_NARRATION_DURATION_MISMATCH')
+    (folder/'narration.json').write_text(json.dumps({'engine':engine.name,'source_seconds':position,
+        'normalized_seconds':actual,'tempo':tempo,'audio_content_verified':False,
+        'timing_method':'measured utterances; proportional caption chunks, not word alignment'},indent=2))
+    return actual, [(start/tempo,min(actual,end/tempo),text) for start,end,text in timings]

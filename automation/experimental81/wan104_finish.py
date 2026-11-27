@@ -85,20 +85,30 @@ def compose(inventory, folder, proof=None, source_folder=None, lines=None, on_re
             'source_url': clip['url'], 'license_url': profile['model_license_url'],
             'generation_evidence': clip['generation_evidence']['request_sha256'], 'visual_review_passed': True})
     check_sources(visuals, [])
+    from framing import full_frame_filter
+    for clip in inventory['clips']:
+        full_frame_filter(clip['media']['width'], clip['media']['height'])
     lines = lines or wan104.SCRIPT
-    narration = render.synthesize(folder/'speech', lines, target_seconds=15)
-    if narration['engine'] != 'kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br':
-        raise ValueError('REQUESTED_PF_DORA_REQUIRED')
+    reviewer = None
+    import gc
+    gc.collect()
+    narration = render.synthesize(folder/'speech', lines, target_seconds=30)
+    from chatterbox_v3 import NAME
+    if narration['engine'] != NAME:
+        raise ValueError('CHATTERBOX_V3_REQUIRED')
     manifest = {'experimental_only': True, 'script': lines, 'clips': clips, 'narration': narration}
-    output = render.compose(manifest, folder/'render', 'AI_ONLY', target_seconds=15)
-    quality = {**validate(output['video_path'], policy=Policy(target_seconds=15)), **motion(output['video_path'])}
-    quality.update(wan104_licensed_profile=True, model=profile['model'], model_revision=profile['model_revision'],
-        ai_generated_seconds=15, real_video_seconds=0, voice=narration['engine'],
+    output = render.compose(manifest, folder/'render', 'AI_ONLY', target_seconds=30)
+    quality = {**validate(output['video_path'], policy=Policy(target_seconds=30)), **motion(output['video_path'])}
+    quality.update(mission='14.0', voice_reference_sha256=narration['voice_reference_sha256'],
+        audio_content_verified=False, full_frame_reviewed=False, captions_reviewed=False, wan104_licensed_profile=True, model=profile['model'], model_revision=profile['model_revision'],
+        ai_generated_seconds=30, real_video_seconds=0, voice=narration['engine'],
         machine_checks_only=True, human_perceptual_review=False, editorial_approved=True,
         commercial_license_clearance=True, licensed_sources=inventory['clips'], semantic_reviews=reviews,
         visual_sources=visuals, visual_policy_version=1, visual_distinct=True,
         source_urls=[c['url'] for c in inventory['clips']], scene_reuse_policy='sequential_distinct_AI_clips_no_loop',
         required_public_credits=[], caption_style='measured-v51')
+    from output_review import review as review_output
+    quality.update(review_output(folder/'speech', lines, narration['timings'], 30))
     require_quality(quality)
     return output, quality
 
@@ -168,7 +178,7 @@ def stage(trial=False):
         return {'status': 'EDITORIAL_HOLD_PRESERVED_CLIPS', 'clips': len(inventory['clips']),
                 'reason': 'LEGACY_TOPIC_REPEATED_REPLAN_ON_NEXT_COLLECTION', 'publicly_verified': False}
     concept, _, lines = choices[0]
-    if len(inventory['clips']) != 3:
+    if len(inventory['clips']) != 6:
         return {'status': 'COLLECTING_NO_READY_AI_VIDEO', 'clips': len(inventory['clips']), 'publicly_verified': False}
     # The first public trial may have been staged by an earlier tested revision.
     # Import only its exact existing queue entry; never create a replacement.
@@ -229,6 +239,8 @@ def stage(trial=False):
     from editorial_policy import require as require_editorial
     post['editorial'] = require_editorial(post, queue, state)
     if trial: require_trial_available(post, queue, state)
+    from mission14_policy import require_output
+    require_output(quality)
     post['video_url'] = publish(output['video_path'], post_id, quality)
     queue['posts'].append(post)
     queue_store.save(queue, queue_revision)

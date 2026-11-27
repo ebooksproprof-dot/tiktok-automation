@@ -16,3 +16,21 @@ def product_frame_filter(width, height):
         'crop=270:480,gblur=sigma=18,eq=brightness=-0.16,scale=1080:1920[blur];'
         f"[foreground]scale={box['width']}:{box['height']},setsar=1[full];"
         f"[blur][full]overlay={box['x']}:{box['y']},setsar=1,fps=30")
+
+
+def full_frame_filter(width, height):
+    """Reject destructive crops and excessive enlargement before rendering.
+
+    A compatible aspect ratio alone is not proof the action survives cropping;
+    the existing semantic review of portrait samples is still required.
+    """
+    if any(type(x) is not int or x < 2 for x in (width, height)):
+        raise ValueError('INVALID_SOURCE_DIMENSIONS')
+    factor = max(1080/width, 1920/height)
+    retained = (1080*1920)/(width*height*factor*factor)
+    if retained < .80:
+        raise ValueError('FULL_SCREEN_CROP_REQUIRES_RECOMPOSITION_OR_NEW_SOURCE')
+    if factor > 1.5:
+        raise ValueError('SOURCE_RESOLUTION_INSUFFICIENT_FOR_FULL_SCREEN')
+    return ('scale=1080:1920:force_original_aspect_ratio=increase,'
+            'crop=1080:1920,setsar=1,fps=30')

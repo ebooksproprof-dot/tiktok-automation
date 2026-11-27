@@ -1,0 +1,472 @@
+{
+  "head_before": "441df70c9f3ed3f8c51f349bb2d7409b28e68588",
+  "queue_entries": 53,
+  "receipt_statuses": {
+    "PUBLISH_COMPLETE": 41,
+    "CANCELLED_EDITORIAL": 6
+  },
+  "receipts": [
+    {
+      "id": "sandbox-test-001",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://sf16-va.tiktokcdn.com/obj/eden-va2/uvpapzpbxjH-aulauvJ-WV%5B%5B/ljhwZthlaukjlkulzlp/3min.mp4"
+    },
+    {
+      "id": "casasem-2026-10-15-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7697016021223230726"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://raw.githubusercontent.com/ebooksproprof-dot/tiktok-automation/1ff2e01/public/rendered/daily/casasem-2026-10-15-2-v2.mp4"
+    },
+    {
+      "id": "casasem-2026-10-17-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7697752006160649493"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://ebooksproprof-dot.github.io/tiktok-automation/public/rendered/daily/casasem-2026-10-17-2-v2.mp4"
+    },
+    {
+      "id": "casasem-2026-10-15-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7697762174428597511"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-15-1-3457d840c9528b88.mp4"
+    },
+    {
+      "id": "casasem-2026-10-16-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7697991807614946566"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-1-d28a972cff0f4a1e.mp4"
+    },
+    {
+      "id": "casasem-2026-10-16-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698115577021336850"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-16-2-7f8ad195308930c5.mp4"
+    },
+    {
+      "id": "casasem-2026-10-19-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698363136474156289"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-1-ad3f1eedf78ef365.mp4"
+    },
+    {
+      "id": "casasem-2026-10-19-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698486612128206081"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-19-2-32fbc3da6f7f1aa9.mp4"
+    },
+    {
+      "id": "casasem-2026-10-20-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698734823640239378"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-1-8764601bee4d9101.mp4"
+    },
+    {
+      "id": "casasem-2026-10-20-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7698857915008077063"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-20-2-f38567677f991467.mp4"
+    },
+    {
+      "id": "casasem-2026-10-21-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7699106108543241479"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-21-1-623293505e144b55.mp4"
+    },
+    {
+      "id": "casasem-2026-10-21-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7699229087600086293"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-21-2-91fd52ff9a37cff3.mp4"
+    },
+    {
+      "id": "casasem-2026-10-22-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7699477167792753927"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-1-ab0e667b70e2cc7a.mp4"
+    },
+    {
+      "id": "casasem-2026-10-28-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7701826259063409921"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-28-1-6e71e9450041deb0.mp4"
+    },
+    {
+      "id": "casasem-2026-10-23-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7702074924390714625"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-23-1-ebdb069e3f6b2808.mp4"
+    },
+    {
+      "id": "casasem-2026-10-22-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7702198357716094229"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-22-2-0d0e40c27bd891aa.mp4"
+    },
+    {
+      "id": "casasem-2026-10-24-1",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-1-d0245f05ec607831.mp4"
+    },
+    {
+      "id": "casasem-2026-10-24-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7702569410866842887"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-24-2-1ae57a0d43945dc0.mp4"
+    },
+    {
+      "id": "casasem-2026-10-25-1",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-10/casasem-2026-10-25-1-e5ed7c26239ad88f.mp4"
+    },
+    {
+      "id": "casasem-2026-11-06-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7704915298847132980"
+      ],
+      "verified": true,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-06-1-38174601f1dcf86f.mp4"
+    },
+    {
+      "id": "casasem-2026-11-07-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705290911931960596"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-1-3027bb2dc7640b3c.mp4"
+    },
+    {
+      "id": "casasem-2026-11-07-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705413968000568594"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-2-cdfa9ac88f8866fe.mp4"
+    },
+    {
+      "id": "casasem-2026-11-08-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705785865359953173"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-1-448ec4a6ae33f368.mp4"
+    },
+    {
+      "id": "casasem-2026-11-07-3",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705536956851047686"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-3-6bec86bb91286daf.mp4"
+    },
+    {
+      "id": "casasem-2026-11-08-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705908649159396615"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-08-2-c44701af820b64ff.mp4"
+    },
+    {
+      "id": "casasem-2026-11-07-wan104",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7705426078436838676"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-07-wan104-fd9a43b7150e4743.mp4"
+    },
+    {
+      "id": "casasem-2026-11-09-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706156862869146898"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-09-1-1c5bca90c1319f0e.mp4"
+    },
+    {
+      "id": "casasem-2026-11-09-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706279830941125940"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-09-2-55c96e1ba2d39640.mp4"
+    },
+    {
+      "id": "casasem-2026-11-10-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706528322636877074"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-10-1-9fc65411388d8bee.mp4"
+    },
+    {
+      "id": "casasem-2026-11-10-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706650055855410433"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-10-2-0380f723894ba8b0.mp4"
+    },
+    {
+      "id": "casasem-2026-11-11-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7706899211819863303"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-1-f8a7b6075c3d9bdb.mp4"
+    },
+    {
+      "id": "casasem-2026-11-11-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707021922403503368"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-11-2-b743bfdce9c5cd93.mp4"
+    },
+    {
+      "id": "casasem-2026-11-12-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707270175451581702"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-1-6029633df00275e7.mp4"
+    },
+    {
+      "id": "casasem-2026-11-12-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707393144328899860"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-12-2-fa16092211d1d5db.mp4"
+    },
+    {
+      "id": "casasem-2026-11-13-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707640902847679751"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-13-1-71a7b3bf84781093.mp4"
+    },
+    {
+      "id": "casasem-2026-11-13-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7707764157134703879"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-13-2-386fa38cf54ac1bb.mp4"
+    },
+    {
+      "id": "casasem-2026-11-17-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709125498495847686"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-1-652b304252c66dc8.mp4"
+    },
+    {
+      "id": "casasem-2026-11-17-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709248589691768085"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-17-2-96cf5740307de3f3.mp4"
+    },
+    {
+      "id": "casasem-2026-11-18-1",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-1-3c600fb2e78bbc66.mp4"
+    },
+    {
+      "id": "casasem-2026-11-18-2",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-18-2-9aa36f436d8eff1b.mp4"
+    },
+    {
+      "id": "casasem-2026-11-19-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709867497545092373"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-1-5b21944484cadad4.mp4"
+    },
+    {
+      "id": "casasem-2026-11-19-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7709990757989469461"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-19-2-c2379f06bd0bbef7.mp4"
+    },
+    {
+      "id": "casasem-2026-11-20-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710238571839622408"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-1-b1ea0f908e41de8f.mp4"
+    },
+    {
+      "id": "casasem-2026-11-20-2",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710361869432753429"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-20-2-99572e3d5ea33fab.mp4"
+    },
+    {
+      "id": "casasem-2026-11-21-1",
+      "status": "PUBLISH_COMPLETE",
+      "urls": [
+        "https://www.tiktok.com/@.casasemesforo/video/7710609832583105812"
+      ],
+      "verified": true,
+      "playback": true,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-1-22b4d28d3169a085.mp4"
+    },
+    {
+      "id": "casasem-2026-11-21-2",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-21-2-4bf9c119cfb3a37d.mp4"
+    },
+    {
+      "id": "casasem-2026-11-22-1",
+      "status": "CANCELLED_EDITORIAL",
+      "urls": [],
+      "verified": false,
+      "playback": false,
+      "video_url": "https://github.com/ebooksproprof-dot/tiktok-automation/releases/download/media-2026-11/casasem-2026-11-22-1-3e7253c462ae826e.mp4"
+    }
+  ],
+  "wan_episode": 6,
+  "wan_clips": 2,
+  "scene_bank": 7,
+  "reference_status": "PENDING_LICENSED_FEMALE_REFERENCE",
+  "secrets_api": "HTTP 403 Resource not accessible by integration; values not read",
+  "checked_at": "2026-11-27T03:58:18.565317+00:00"
+}

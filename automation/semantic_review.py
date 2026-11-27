@@ -110,14 +110,14 @@ def assess_generated_organization(slot, captions, editorial_id=None):
     expected = ({'jar', 'jars', 'container', 'containers', 'pantry', 'shelf', 'shelves'},
                 {'towel', 'towels', 'linen', 'linens', 'cloth', 'cloths', 'fabric'},
                 {'utensil', 'utensils', 'spoon', 'spoons', 'ladle', 'ladles', 'spatula', 'spatulas', 'pan', 'pans', 'wok', 'woks', 'pot', 'pots'})
-    if type(slot) is not int or not 0 <= slot < 3 or len(captions) != 3:
+    if type(slot) is not int or not 0 <= slot < (6 if editorial_id else 3) or len(captions) != 3:
         return False
     if editorial_id:
         from editorial_topics import BY_ID
         if editorial_id not in BY_ID: return False
         from editorial_topics import matches_visual
         if not matches_visual(BY_ID[editorial_id], captions): return False
-        expected = (set(BY_ID[editorial_id]['visual_terms']),)*3
+        expected = (set(BY_ID[editorial_id]['visual_terms']),)*6
     tokens = [words(caption) for caption in captions]
     return (not any(t & (FORBIDDEN | {'person', 'people', 'child', 'children'}) for t in tokens)
             and sum(bool(t & expected[slot]) for t in tokens) >= 2)
@@ -128,7 +128,7 @@ def needs_generated_disambiguation(slot, captions, editorial_id=None):
     # A single neutral object-focused second look handles texture ambiguity
     # and background-only captions truncated before the foreground description. Unsafe context can never be erased by a replacement caption.
     unsafe = FORBIDDEN | {'person', 'people', 'child', 'children'}
-    return (type(slot) is int and 0 <= slot < 3 and len(captions) == 3
+    return (type(slot) is int and 0 <= slot < (6 if editorial_id else 3) and len(captions) == 3
             and not assess_generated_organization(slot, captions, editorial_id)
             and not any(words(c) & unsafe for c in captions))
 
@@ -206,7 +206,7 @@ class Reviewer:
                 'Describe the main objects on the shelf: their shape, material and arrangement. Focus on the objects, not the cabinet walls.',
                 'Describe the material, texture, folds, and edges of the stacked objects. Are there paper pages, fabric folds, or neither? Report only visible evidence.',
                 'Describe the objects hanging from any rail or hooks: their shapes, materials and arrangement. Focus on the objects, not background tiles.'
-            )[record['generated_slot']]
+            )[record['generated_slot'] % 3]
             if record.get('editorial_id'):
                 focus = 'Describe the main foreground household objects, their material, physical arrangement and visible condition. Only report visible evidence.'
             for index in range(3):

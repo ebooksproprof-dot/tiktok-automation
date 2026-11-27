@@ -43,7 +43,7 @@ def plan(timings, duration, source_durations):
     return shots
 
 
-def require_minimum_capacity(durations, minimum=15.0):
+def require_minimum_capacity(durations, minimum=29.9):
     if not durations or any(not math.isfinite(d) or d <= .05 for d in durations):
         raise ValueError('INVALID_SCENE_DURATION')
     capacity = sum(d-.05 for d in durations)

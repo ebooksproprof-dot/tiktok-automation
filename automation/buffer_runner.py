@@ -213,7 +213,7 @@ def verify_hosted(post):
             from experimental81.quality import validate as validate_ai, Policy
             actual = validate_ai(target, policy=Policy(target_seconds=post['quality']['ai_generated_seconds']))
         else:
-            actual = validate(target)
+            actual = validate(target, ai_only30=True) if post['quality'].get('mission') == '14.0' else validate(target)
         if actual["sha256"] != post["quality"]["sha256"]:
             raise ValueError("Hosted media differs from reviewed video")
 
@@ -273,7 +273,9 @@ def record_remote(entry, remote, channel_id):
 
 
 def submit(client, post, state, channel_id):
+    from mission14_policy import require_output
     payload = prepare(post, state, channel_id)
+    require_output(post.get("quality", {}))
     verify_hosted(post)
     client.check_budget(required=2)  # Reserve create + read-back before durable intent.
     entry = dict(provider="buffer", status="SUBMISSION_UNKNOWN", submitted_at=common.iso_now(),
@@ -377,6 +379,8 @@ def main(check_only=False):
         invalid = 0
         for post in queue['posts']:
             try:
+                from mission14_policy import require_output
+                require_output(post.get("quality", {}))
                 prepare(post, state, channel_id)
                 eligible += 1
             except (ValueError, KeyError) as exc:
@@ -442,6 +446,8 @@ def main(check_only=False):
             when = common.parse_time(post.get("scheduled_at"))
             if when and when <= common.utc_now() + timedelta(hours=LOOKAHEAD_HOURS):
                 try:
+                    from mission14_policy import require_output
+                    require_output(post.get("quality", {}))
                     prepare(post, state, channel_id)
                     candidates.append(post)
                 except ValueError as exc:

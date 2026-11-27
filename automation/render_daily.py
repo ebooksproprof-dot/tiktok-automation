@@ -21,7 +21,7 @@ OUT = ROOT / ('tmp/daily/release-output' if os.getenv('MEDIA_STORAGE') == 'relea
 QUEUE = ROOT / 'automation/queue.json'
 ASSETS = ROOT / 'tmp/daily'
 VERSION = 2
-COMPOSITION_REVISION = 6
+COMPOSITION_REVISION = 14
 DYNAMIC_STYLE = True
 VOICE = 'pt_BR-faber-medium'
 VOICE_SHA = '858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7'
@@ -103,12 +103,12 @@ def verify_source(key, path):
 
 def load_voice():
     from narration import load_engine
-    return load_engine(ASSETS, os.getenv('NARRATION_ENGINE', 'piper'))
+    return load_engine(ASSETS, 'chatterbox-v3-pt-br')
 
 
 def narration(voice, lines, folder):
     from narration import synthesize
-    return synthesize(voice, lines, folder)
+    return synthesize(voice, lines, folder, target_seconds=30)
 
 
 def render(idea, voice, post_id):
@@ -144,18 +144,8 @@ def render(idea, voice, post_id):
         segment = folder/f'shot-{i}.mp4'
         # Moving footage only; no still zoom, no fabricated before/after.
         mode = PROVENANCE.get(keys[source_index], {}).get('frame_mode', 'legacy')
-        if mode == 'preserve_full':
-            from framing import product_frame_filter
-            frame_filter, shift = product_frame_filter(*source_shapes[source_index]), 0
-            filter_arg = '-filter_complex'
-        elif mode == 'legacy':
-            frame_filter, shift = shot_filter(*source_shapes[source_index], i) if DYNAMIC_STYLE else (BASE_CROP, 0)
-            filter_arg = '-vf'
-        elif mode == 'reviewed_portrait':
-            from semantic_review import PORTRAIT
-            frame_filter, shift, filter_arg = PORTRAIT, 0, '-vf'
-        else:
-            raise ValueError('Unknown reviewed framing policy')
+        from framing import full_frame_filter
+        frame_filter, shift, filter_arg = full_frame_filter(*source_shapes[source_index]), 0, '-vf'
         frame_modes.append(mode)
         crop_shifts.append(shift)
         run(['ffmpeg','-v','error','-y','-ss',str(offset),
@@ -169,24 +159,28 @@ def render(idea, voice, post_id):
     for i,(start,end,line) in enumerate(timings):
         txt = folder/f'caption-{i}.txt'; txt.write_text(line, encoding='utf8')
         filters.append(f"drawtext=fontfile={font}:textfile={txt}:fontsize=58:fontcolor=white:box=1:boxcolor=black@0.70:boxborderw=18:x=(w-text_w)/2:y=1320:enable='between(t,{start:.3f},{end:.3f})'")
-    caption_style = os.getenv('CAPTION_STYLE', 'legacy')
+    caption_style = os.getenv('CAPTION_STYLE', 'measured-v51')
     if caption_style == 'measured-v51':
         from caption_layout import filters as measured_captions
         filters = measured_captions(folder, timings)
     elif caption_style != 'legacy':
         raise ValueError('Unsupported caption style')
     label=folder/'label.txt';label.write_text('CENAS ILUSTRATIVAS',encoding='utf8')
-    filters.append(f'drawtext=fontfile={font}:textfile={label}:fontsize=24:fontcolor=white:borderw=2:x=70:y=200')
+    filters.append(f'drawtext=fontfile={font}:textfile={label}:fontsize=24:fontcolor=white:borderw=2:x=132:y=260')
     if DYNAMIC_STYLE:
         filters.extend(overlay(folder, lines[0], duration))
     output = OUT / (post_id+'-v2.mp4')
     run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(folder/'concat.txt'),
          '-i',str(folder/'voice.wav'),'-vf',','.join(filters),'-af','loudnorm=I=-16:TP=-1.5:LRA=11',
          '-t',str(duration),'-c:v','libx264','-threads','2','-preset','veryfast','-crf','23','-pix_fmt','yuv420p',
-         '-c:a','aac','-b:a','128k','-movflags','+faststart',str(output)])
-    quality=validate(output)
+         '-c:a','aac','-b:a','128k','-map_metadata','-1','-metadata:s:v:0','rotate=0','-movflags','+faststart',str(output)])
+    quality=validate(output, ai_only30=True)
+    from output_review import review as review_output
+    review_receipt = review_output(folder, lines, timings, duration)
     quality.update(visual_quality)
-    quality.update(caption_style=caption_style)
+    quality.update(caption_style=caption_style, mission='14.0',
+                   voice_reference_sha256=getattr(voice, 'voice_id', None),
+                   audio_content_verified=False, full_frame_reviewed=False, captions_reviewed=False)
     quality.update(scene_reuse_policy='sequential_no_loop', source_durations=source_durations)
     quality.update(graphics_style='casasem-v4' if DYNAMIC_STYLE else 'classic-v6',
                    crop_shifts_pixels=crop_shifts, rendered_shots=len(shots), frame_modes=frame_modes)
@@ -194,6 +188,7 @@ def render(idea, voice, post_id):
         quality['graphics_style'] = 'casasem-v43-preserve-full'
     quality.update(concept=concept,source_urls=[SOURCE[k] for k in keys],
                    source_license='https://www.pexels.com/license/',voice=voice.name,render_version=VERSION,composition_revision=COMPOSITION_REVISION)
+    quality.update(review_receipt)
     reviewed_sources = [PROVENANCE[k] for k in keys if k in PROVENANCE]
     _, required_credits = caption_with_credits('', reviewed_sources)
     quality.update(required_public_credits=required_credits,
@@ -257,7 +252,7 @@ def ranked_render_candidates(ideas):
             isinstance(seconds, (int, float)) and seconds > 0
             for seconds in known)
         capacity = sum(seconds - .05 for seconds in known) if measured else None
-        if capacity is not None and capacity < 15:
+        if capacity is not None and capacity < 29.9:
             continue
         # Measured sufficient clips first; stable original ordering otherwise.
         candidates.append((0 if measured else 1, -(capacity or 0), position, idea))

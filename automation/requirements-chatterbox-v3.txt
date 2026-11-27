@@ -1,0 +1,14 @@
+# Install torch==2.8.0+cpu torchaudio==2.8.0+cpu from the official CPU wheel index first.
+numpy==1.26.4
+librosa==0.10.0
+resampy==0.4.3
+s3tokenizer==0.3.0
+transformers==4.46.3
+diffusers==0.29.0
+omegaconf==2.3.0
+resemble-perth==1.0.1
+silero-vad==5.1.2
+conformer==0.3.2
+safetensors==0.5.3
+huggingface-hub==0.36.0
+Pillow==12.3.0

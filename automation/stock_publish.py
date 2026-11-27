@@ -137,6 +137,9 @@ def reconcile_one(store, client, item_id, channel_id, now):
 
 
 def submit_one(store, client, item_id, channel_id, legacy_queue, now):
+    from mission14_policy import require_output
+    current, _ = store.load()
+    require_output(stock.item_by_id(current, item_id).get("quality", {}))
     current, _ = store.load()
     candidate = stock.item_by_id(current, item_id)
     check_item(candidate, client.state, legacy_queue, now)

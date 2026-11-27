@@ -59,7 +59,7 @@ class RegressionTests(unittest.TestCase):
         ]
         with patch.object(render, 'PROVENANCE', {
             'short-src': {'duration': 4.36},
-            'full-src': {'duration': 25.0},
+            'full-src': {'duration': 35.0},
         }):
             ranked = render.ranked_render_candidates(ideas)
         self.assertEqual([idea[0] for idea in ranked], ['valid', 'unknown'])

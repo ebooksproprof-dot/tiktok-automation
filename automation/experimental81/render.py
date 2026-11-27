@@ -128,42 +128,15 @@ def plan(clips, profile, target_seconds=30):
 
 
 def synthesize(folder, lines=SCRIPT, target_seconds=30):
-    """Existing licensed Kokoro voice, measured sentence boundaries, modest tempo."""
-    from narration import load_engine
-    folder = Path(folder)
-    folder.mkdir(parents=True, exist_ok=True)
-    engine = load_engine(Path(os.getenv('AI30_VOICE_CACHE', str(folder/'voice-cache'))), 'kokoro-female')
-    pcm_parts, segments, position, expected = [], [], 0.0, None
-    for index, sentence in enumerate(lines):
-        path = folder/f'utterance-{index}.wav'
-        engine.speak(sentence, path)
-        with wave.open(str(path), 'rb') as inp:
-            shape = (inp.getnchannels(), inp.getsampwidth(), inp.getframerate())
-            if shape[:2] != (1, 2) or (expected is not None and shape != expected):
-                raise ValueError('Narration PCM shape changed')
-            expected = shape
-            rate = shape[2]
-            data = inp.readframes(inp.getnframes())
-            duration = len(data)/2/rate
-        # Caption spans exactly the measured utterance; no word alignment claimed.
-        segments.append([position, position + duration, sentence])
-        gap = .08 if index < len(lines)-1 else 0
-        pcm_parts.append(data + bytes(int(rate*gap)*2))
-        position += duration+gap
-    tempo = position / target_seconds
-    if not .75 <= tempo <= 1.35:
-        raise ValueError(f'Narration requires excessive speed change ({tempo:.3f}); edit script')
-    source = folder/'narration-source.wav'
-    with wave.open(str(source), 'wb') as out:
-        out.setnchannels(1); out.setsampwidth(2); out.setframerate(rate)
-        out.writeframes(b''.join(pcm_parts))
-    target = folder/'narration.wav'
-    call(['ffmpeg','-v','error','-y','-i',str(source),'-af',f'atempo={tempo:.9f},loudnorm=I=-16:TP=-1.5:LRA=9,apad',
-          '-t',str(target_seconds),'-ar','48000','-ac','1',str(target)])
-    return {'path': str(target.resolve()), 'sha256': sha(target), 'engine': engine.name, 'language': 'pt-BR',
-            'tempo': tempo, 'timing_method': 'Measured utterance boundaries; sentence-level synchronization, not word-level forced alignment',
-            'timings': caption_timings([[start/tempo, min(target_seconds,end/tempo), text]
-                                       for start,end,text in segments])}
+    """Current CPU voice, lossless utterances; no silent fallback or padding."""
+    from narration import load_engine, synthesize as speak
+    folder = Path(folder); folder.mkdir(parents=True, exist_ok=True)
+    engine = load_engine(Path(os.getenv('AI30_VOICE_CACHE', str(folder/'voice-cache'))), 'chatterbox-v3-pt-br')
+    duration, timings = speak(engine, lines, folder, target_seconds=target_seconds)
+    target = folder/'voice.wav'
+    return {'path':str(target.resolve()), 'sha256':sha(target), 'engine':engine.name,
+            'language':'pt-BR', 'voice_reference_sha256':engine.voice_id,
+            'audio_content_verified':False, 'timings':caption_timings(timings)}
 
 
 def caption_timings(timings):
@@ -299,13 +272,9 @@ def _compose_locked(manifest, folder, requested='auto', target_seconds=30):
     for number, shot in enumerate(shots):
         clip = clips[shot['source_index']]
         inputs.extend(['-ss',str(shot['start']),'-t',str(shot['duration']),'-i',clip['path']])
-        if abs(clip['width']/clip['height'] - 9/16) < .04:
-            graph.append(f'[{number}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,setpts=PTS-STARTPTS[v{number}]')
-        else:
-            frame = product_frame_filter(clip['width'],clip['height']).replace('[0:v]',f'[{number}:v]')
-            for label_name in ('background','foreground','blur','full'):
-                frame = frame.replace('['+label_name+']',f'[{label_name}{number}]')
-            graph.append(frame+f',setpts=PTS-STARTPTS[v{number}]')
+        from framing import full_frame_filter
+        frame = full_frame_filter(clip['width'], clip['height'])
+        graph.append(f'[{number}:v]'+frame+f',setpts=PTS-STARTPTS[v{number}]')
     graph.append(''.join(f'[v{i}]' for i in range(len(shots))) + f'concat=n={len(shots)}:v=1:a=0[sequence]')
     caption_filters = filters(folder, timings)
     # Disclosure prevents reference footage being mistaken for generated IA.
@@ -313,14 +282,14 @@ def _compose_locked(manifest, folder, requested='auto', target_seconds=30):
     label.write_text('CONTEÚDO GERADO POR IA' if profile == 'AI_ONLY' else
                      'ESTUDO • SEM PUBLICAÇÃO' if profile != 'REFERENCE_ONLY' else
                      'ESTUDO • FILMAGENS REAIS • 0 IA')
-    caption_filters.append(f'drawtext=textfile={label}:expansion=none:fontsize=25:fontcolor=white:box=1:boxcolor=black@0.6:x=40:y=100')
+    caption_filters.append(f'drawtext=textfile={label}:expansion=none:fontsize=25:fontcolor=white:box=1:boxcolor=black@0.6:x=132:y=260')
     temporary = output.with_name(output.stem+'.partial.mp4')
     try:
         graph.append('[sequence]'+','.join(caption_filters)+'[final]')
         call(['ffmpeg','-v','error','-nostdin','-y','-filter_complex_threads','1',*inputs,'-i',str(audio),
               '-filter_complex',';'.join(graph),'-map','[final]','-map',f'{len(shots)}:a:0','-t',str(target_seconds),'-c:v','libx264',
               '-preset','veryfast','-crf','22','-maxrate','3M','-bufsize','6M','-threads','2','-pix_fmt','yuv420p',
-              '-c:a','aac','-b:a','128k','-ar','48000','-movflags','+faststart',str(temporary)],240)
+              '-c:a','aac','-b:a','128k','-ar','48000','-map_metadata','-1','-metadata:s:v:0','rotate=0','-movflags','+faststart',str(temporary)],240)
         from experimental81.quality import Policy
         quality = validate(temporary,policy=Policy(target_seconds=target_seconds))
         record = {'schema_version':1,'experimental_only':True,'publication_enabled':False,'approved':False,

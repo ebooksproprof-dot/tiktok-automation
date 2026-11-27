@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "PENDING_LICENSED_FEMALE_REFERENCE",
+  "locale": "pt-BR",
+  "gender": "female",
+  "model": "ResembleAI/Chatterbox-Multilingual-pt-br",
+  "reference_sha256": null,
+  "holder": null,
+  "rights_evidence": null,
+  "commercial_synthesis_authorized": false,
+  "perceptual_review_approved": false,
+  "storage": "Private persistent storage only; inject verified WAV via CHATTERBOX_REFERENCE_PATH. Never public Git or Actions artifacts.",
+  "note": "No license for cloning the demo samples has been established. No new identity activated."
+}

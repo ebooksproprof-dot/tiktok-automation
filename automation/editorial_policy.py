@@ -121,11 +121,14 @@ def reason(candidate, queue, state, exclude_id=None, now=None):
         prior = describe(p)
         if set(meta['instruction_ids']) & set(prior['instruction_ids']):
             return 'EDITORIAL_SOLUTION_ALREADY_COVERED'
-        if meta['problem_id'] == prior['problem_id'] and meta['solution_id'] == prior['solution_id']:
+        if meta['problem_id'] == prior['problem_id'] or meta['solution_id'] == prior['solution_id']:
             return 'EDITORIAL_TOPIC_COOLDOWN'
         if meta['topic_id'] and meta['topic_id'] == prior['topic_id']:
             return 'EDITORIAL_TOPIC_COOLDOWN'
-        if meta['hook_id'] and meta['hook_id'] == prior['hook_id']:
+        hook, old_hook = tokens([lines[0]]), tokens([previous[0]])
+        hook_similarity = len(hook & old_hook)/max(1,len(hook | old_hook))
+        if meta['hook_id'] and (meta['hook_id'] == prior['hook_id'] or
+                min(len(hook),len(old_hook)) >= 3 and hook_similarity >= .75):
             return 'EDITORIAL_HOOK_REPEATED'
         if len(bag) >= 8 and union >= cfg['semantic_jaccard']:
             return 'EDITORIAL_SEMANTIC_OVERLAP'

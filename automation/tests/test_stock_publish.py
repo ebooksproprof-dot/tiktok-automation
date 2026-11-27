@@ -37,6 +37,10 @@ def inventory():
 
 
 class PublishTests(unittest.TestCase):
+    def setUp(self):
+        contract = patch("mission14_policy.require_output")
+        contract.start(); self.addCleanup(contract.stop)
+
     def client(self, store):
         client = Mock()
         client.state = {'posts': {}}

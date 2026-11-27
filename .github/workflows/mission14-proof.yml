@@ -1,0 +1,40 @@
+name: CasaSemEsforco Mission14 CPU proof
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CUDA_VISIBLE_DEVICES: ''
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install standard CPU tools only
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'torch==2.8.0+cpu' 'torchaudio==2.8.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r automation/requirements-chatterbox-v3.txt
+      - name: Test policies and recovery (mock service calls)
+        run: python -m unittest discover -s automation/tests -v
+      - name: Benchmark actual Brazilian V3 on CPU with built-in conditioning only
+        timeout-minutes: 25
+        run: python automation/chatterbox_benchmark.py
+      - name: Retain actual proof independently of inference outcome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission14-cpu-proof
+          path: |
+            tmp/mission14/cpu/report.json
+            tmp/mission14/cpu/*.wav
+          retention-days: 7
+          if-no-files-found: warn

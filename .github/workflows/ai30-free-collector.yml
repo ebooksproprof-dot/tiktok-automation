@@ -184,7 +184,12 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng fonts-dejavu-core
-          python -m pip install 'Pillow==12.3.0' 'kokoro-onnx==0.6.1' 'onnxruntime==1.31.0'
+          python -m pip install 'Pillow==12.3.0'
+      - name: Prepare isolated Chatterbox V3 CPU runtime only for an approved identity
+        if: github.event_name != 'push'
+        env:
+          CHATTERBOX_REFERENCE_WAV_B64: ${{ secrets.CHATTERBOX_REFERENCE_WAV_B64 }}
+        run: bash automation/setup_chatterbox.sh
       - uses: actions/cache@v4
         with:
           path: tmp/semantic-model-cache

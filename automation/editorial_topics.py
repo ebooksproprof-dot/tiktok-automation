@@ -29,7 +29,10 @@ def prompt(tip, slot):
     # Each episode addresses one specific problem, with three contextual views.
     stages = ['Establish the household setting and objects.',
               'Close view clearly revealing the relevant arrangement and physical details.',
-              'Wider view of the safe practical arrangement, with clear access.']
+              'Wider view of the safe practical arrangement, with clear access.',
+              'Alternate side view of the same task, with a clearly different composition.',
+              'Detail of the completed arrangement and its practical clearance.',
+              'Final wide view showing the finished result in the household context.']
     return ('Photorealistic domestic '+tip['environment']+'. Main objects: '+', '.join(tip['visual_terms'])+'. '
             'Subject: '+tip.get('visual_subject', ', '.join(tip['visual_terms']))+'. Visual explanation of '+tip['solution_id'].replace('-', ' ')+'. '+stages[slot]+
             ' Realistic materials, stable geometry. Gentle continuous camera slide, visible parallax. '

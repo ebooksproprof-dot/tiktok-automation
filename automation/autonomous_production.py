@@ -43,6 +43,7 @@ class PrimaryVoiceFailure(RuntimeError):
 class CheckedVoice:
     def __init__(self, engine):
         self.engine, self.name = engine, engine.name
+        self.voice_id = getattr(engine, "voice_id", None)
 
     def speak(self, text, path):
         try:
@@ -54,11 +55,14 @@ class CheckedVoice:
 def render_with_voice_fallback(idea, post_id):
     from narration import load_engine
     try:
-        voice = CheckedVoice(load_engine(render.ASSETS, 'kokoro-female'))
+        voice = load_engine(render.ASSETS, 'chatterbox-v3-pt-br')
+        from chatterbox_v3 import IsolatedChatterboxEngine
+        if not isinstance(voice, IsolatedChatterboxEngine):
+            voice = CheckedVoice(voice)
         output, quality = render.render(idea, voice, post_id)
     except (PrimaryVoiceFailure, ImportError) as exc:
-        raise ValueError('REQUESTED_PF_DORA_UNAVAILABLE') from None
-    quality.update(requested_voice='pf_dora', voice_fallback_reason=None)
+        raise ValueError('CHATTERBOX_V3_UNAVAILABLE') from None
+    quality.update(requested_voice='chatterbox-v3-pt-br', voice_fallback_reason=None)
     return output, quality
 
 # Reviewed factual sentences. New combinations are checked against the complete
@@ -232,11 +236,14 @@ def choose_slot(queue, state, now, soon=False):
     reservations = {key: stamp(p['scheduled_at']).astimezone(BRT)
                     for key, p in entries.items() if p.get('scheduled_at') and key not in rejected}
     local = now.astimezone(BRT)
-    for day in range(8):
+    for day in range(31):
         for hour in (10, 18):
             when = (local+dt.timedelta(days=day)).replace(hour=hour, minute=0, second=0, microsecond=0)
             if soon and day == 0:
                 when = (local+dt.timedelta(minutes=20)).replace(microsecond=0)
+            from mission14_policy import allowed_slot
+            if not allowed_slot(when, list(reservations.values())):
+                continue
             completed_tests = confirmed_live_tests(queue, state, when.date())
             if (when < local+dt.timedelta(minutes=15) or when in reservations.values()
                     or sum(x.date() == when.date() for key, x in reservations.items() if key not in completed_tests) >= 2):
@@ -327,6 +334,8 @@ def run(stage=False, soon=False, limit=2):
         raise ValueError('TRUSTED_MAIN_CLOUD_CONTEXT_REQUIRED')
     if not 1 <= limit <= 2:
         raise ValueError('PRODUCTION_LIMIT_ONE_OR_TWO')
+    from chatterbox_v3 import identity
+    identity()  # Do not spend review/inference time with an unlicensed identity.
     queue = read_json(ROOT/'queue.json', {})
     state = read_json(ROOT/'state.json', {})
     if not isinstance(queue.get('posts'), list) or not isinstance(state.get('posts'), dict):
@@ -419,7 +428,7 @@ def run(stage=False, soon=False, limit=2):
             pool = pools.setdefault(review['family'], [])
             pool.append({'record': measured, 'visual_review': review, 'license': license_proof})
             capacity = sum(x['record']['duration']-.05 for x in pool)
-            if capacity < 15:
+            if capacity < 29.9:
                 continue
             if review['family'] == 'clothes':
                 pool.sort(key=lambda x: 'ironing' not in x['record']['selection_reason'].lower())
@@ -441,6 +450,9 @@ def run(stage=False, soon=False, limit=2):
                 continue
             failure = None
             phase = 'render'
+            reviewer = None  # Free 500M reviewer before the isolated 5GB TTS worker.
+            import gc
+            gc.collect()
             for idea in scripts(pool, queue, state, reserved_topics)[:3]:
                 post_id, when = choose_slot(queue, state, dt.datetime.now(dt.timezone.utc), soon and not outputs)
                 try:
@@ -472,6 +484,8 @@ def run(stage=False, soon=False, limit=2):
             post['editorial'] = require_editorial(post, queue, state)
             visuals.require_evidence(post, previous)
             if stage:
+                from mission14_policy import require_output
+                require_output(quality)
                 phase = 'release_and_queue'
                 from release_media import publish
                 post['video_url'] = publish(video, post_id, quality)

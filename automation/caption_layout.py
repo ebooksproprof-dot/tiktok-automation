@@ -4,7 +4,7 @@ from pathlib import Path
 
 REVISION = 'measured-v51'
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-MAX_WIDTH = 864
+MAX_WIDTH = 744
 
 
 def layout(text):
@@ -47,7 +47,7 @@ def filters(folder, timings):
             result.append(
                 f"drawtext=fontfile={FONT}:textfile={path}:expansion=none:text_shaping=0:fontsize={size}:"
                 "fontcolor=white:box=1:boxcolor=black@0.78:boxborderw=18:"
-                f"x=(w-text_w)/2:y={1320+line_index*(size+12)}:"
+                f"x=132+(744-text_w)/2:y={1080+line_index*(size+12)}:"
                 f"alpha='min(1,max(0,(t-{start:.6f})/0.08))':"
                 f"enable='gte(t,{start:.6f})*lt(t,{end:.6f})'")
         previous = end

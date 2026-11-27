@@ -86,6 +86,10 @@ def main():
     root = Path(__file__).resolve().parent
     result = inspect(json.loads((root/'queue.json').read_text()),
                      json.loads((root/'state.json').read_text()), dt.datetime.now(dt.timezone.utc))
+    # Mission14: audit actual reservations, not an obligation to fill two daily slots.
+    result['slots'] = [r for r in result['slots'] if r['status'] != 'NO_VIDEO']
+    result['blocked'] = any(r['blocking'] for r in result['slots'])
+    result['cadence'] = 'quality_first_max_3_per_rolling_week_min_48h_spacing'
     print(json.dumps(result, indent=2))
     summary = os.getenv('GITHUB_STEP_SUMMARY')
     if summary:

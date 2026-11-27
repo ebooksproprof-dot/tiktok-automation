@@ -40,7 +40,7 @@ on:
         description: "Maximum new ready videos this run (1 or 2)"
         type: choice
         options: ['1', '2']
-        default: '2'
+        default: '1'
   schedule:
     - cron: "20 6,11,19,23 * * *" # BRT 03:20/08:20/16:20/20:20; replenish before/after slots
 
@@ -85,14 +85,19 @@ jobs:
           print(json.dumps(status))
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               wan = json.load(open('automation/experimental81/wan104_inventory.json'))
-              out.write('needed='+str(bool(status['refill_needed']) or len(wan.get('clips', [])) == 3).lower()+'\n')
+              out.write('needed='+str(bool(status['refill_needed']) or len(wan.get('clips', [])) == 6).lower()+'\n')
           PYCODE
       - name: Install free video and speech tools
         id: install
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
-          python -m pip install 'piper-tts==1.3.0' 'onnxruntime==1.31.0' 'kokoro-onnx==0.6.1' 'Pillow==12.3.0'
+          python -m pip install 'onnxruntime==1.31.0' 'Pillow==12.3.0'
+      - name: Prepare isolated Chatterbox V3 CPU runtime only for an approved identity
+        if: github.event_name != 'push'
+        env:
+          CHATTERBOX_REFERENCE_WAV_B64: ${{ secrets.CHATTERBOX_REFERENCE_WAV_B64 }}
+        run: bash automation/setup_chatterbox.sh
       - name: Cache pinned CPU review weights (under 2GB, no inference service)
         if: github.event_name != 'push' && steps.demand.outputs.needed == 'true'
         uses: actions/cache@v4
@@ -138,11 +143,11 @@ jobs:
         if: github.event_name != 'push'
         env:
           EDITORIAL_RESERVE_DAYS: "3" # At most two renders/run; never approves future slots.
-          NARRATION_ENGINE: kokoro-female
+          NARRATION_ENGINE: chatterbox-v3-pt-br
           MEDIA_STORAGE: release
           GH_TOKEN: ${{ github.token }}
           FIRST_LIVE_TEST_SOON: ${{ inputs.first_live_test_soon }}
-          PRODUCTION_LIMIT: ${{ inputs.production_limit || '2' }}
+          PRODUCTION_LIMIT: ${{ inputs.production_limit || '1' }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           args=()

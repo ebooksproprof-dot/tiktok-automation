@@ -56,6 +56,8 @@ def validate(path, profile='hybrid30', policy=None):
         raise ValueError('RESOLUTION_MISMATCH')
     if audio.get('codec_name') != 'aac':
         raise ValueError('AAC_AUDIO_REQUIRED')
+    contract = media_quality.vertical_contract(path, video)
+    borders = media_quality.embedded_borders(path)
     timing = media_quality.av_timing(video, audio)
     decoded = subprocess.run(['ffmpeg', '-hide_banner', '-xerror', '-i', str(path),
         '-vf', 'blackdetect=d=0.3:pix_th=0.10:pic_th=0.98',
@@ -78,4 +80,4 @@ def validate(path, profile='hybrid30', policy=None):
         publication_enabled=False, sha256=digest, duration=duration,
         duration_tolerance_seconds=policy.tolerance_seconds, size=path.stat().st_size,
         width=policy.width, height=policy.height, video_codec='h264', audio_codec='aac',
-        audio_mean_db=volume, **timing, **findings)
+        audio_mean_db=volume, **timing, **findings, **contract, **borders)

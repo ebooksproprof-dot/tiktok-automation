@@ -75,8 +75,8 @@ class PolicyTests(unittest.TestCase):
                  'public_visibility_evidence': {'public_playback_verified': True}}
         state = {'posts': {proof['id']: entry}}
         post_id, when = production.choose_slot(queue, state, now)
-        self.assertEqual(post_id, 'casasem-2026-11-07-3')
-        self.assertEqual((when.day, when.hour), (7, 18))
+        self.assertEqual(post_id, 'casasem-2026-11-09-1')
+        self.assertEqual((when.day, when.hour), (9, 10))
         entry['status'] = 'SUBMISSION_UNKNOWN'
         self.assertNotEqual(production.choose_slot(queue, state, now)[1].day, 7)
 
@@ -228,7 +228,7 @@ class PolicyTests(unittest.TestCase):
         state = {'posts': {str(i): {'scheduled_at': '2026-11-07T10:00:00-03:00',
                                     'status': 'SUBMISSION_UNKNOWN'} for i in (1, 2)}}
         _, chosen = production.choose_slot({'posts': []}, state, now)
-        self.assertEqual(chosen.date(), dt.date(2026, 11, 8))
+        self.assertEqual(chosen.date(), dt.date(2026, 11, 9))
         self.assertEqual(chosen.hour, 10)
 
     def test_a_scheduled_video_counts_as_stock_until_actual_publication(self):
@@ -274,7 +274,7 @@ class PolicyTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError, 'FROZEN'):
                         semantic.motion(path)
 
-    def test_primary_voice_is_pf_dora_and_media_error_does_not_switch_voice(self):
+    def test_primary_voice_is_chatterbox_v3_and_media_error_does_not_switch_voice(self):
         engine = Mock(name='kokoro')
         engine.name = 'kokoro-pf_dora'
         with patch('narration.load_engine', return_value=engine) as load, \
@@ -282,7 +282,7 @@ class PolicyTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'media download'):
                 production.render_with_voice_fallback(('idea', [], []), 'post')
             self.assertEqual(load.call_count, 1)
-            self.assertEqual(load.call_args.args[1], 'kokoro-female')
+            self.assertEqual(load.call_args.args[1], 'chatterbox-v3-pt-br')
 
     def test_real_primary_synthesis_failure_holds_instead_of_changing_requested_voice(self):
         primary, fallback = Mock(), Mock()
@@ -293,7 +293,7 @@ class PolicyTests(unittest.TestCase):
             return 'video.mp4', {'voice': voice.name}
         with patch('narration.load_engine', side_effect=[primary, fallback]) as load, \
              patch.object(production.render, 'render', side_effect=render) as renderer:
-            with self.assertRaisesRegex(ValueError, 'REQUESTED_PF_DORA_UNAVAILABLE'):
+            with self.assertRaisesRegex(ValueError, 'CHATTERBOX_V3_UNAVAILABLE'):
                 production.render_with_voice_fallback(('idea', [], []), 'post')
             self.assertEqual(renderer.call_count, 1)
             self.assertEqual(load.call_count, 1)

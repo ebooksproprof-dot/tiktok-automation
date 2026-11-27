@@ -126,7 +126,7 @@ def run(token, check_channel=False, probe=None):
     if old.get('provider') == 'tiktok_symphony':
         inventory.setdefault('legacy_production_settings', old)
     inventory['production'] = {'enabled': True, 'provider': 'licensed_stock_cpu_and_existing_cleared_Wan',
-        'voice': 'pf_dora', 'tts': 'kokoro_cpu', 'fallback': 'piper_on_proven_TTS_failure',
+        'voice': 'licensed_female_reference_pending', 'tts': 'chatterbox_multilingual_v3_pt_br_cpu', 'fallback': None,
         'runner': 'CasaSemEsforco Daily Video Creation', 'target_max': 4,
         'legacy_symphony_import_enabled': False, 'paid_services_enabled': False}
     result = {'at': stock.stamp(now), 'mode': 'AUTOMATIC_LICENSED_STOCK', 'stock': status,

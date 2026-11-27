@@ -35,6 +35,8 @@ class BufferRecoveryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Daily maximum'):
                 b.prepare(self.post, self.state, 'channel')
     def setUp(self):
+        contract = patch("mission14_policy.require_output")
+        contract.start(); self.addCleanup(contract.stop)
         self.clock = patch.object(b.common, 'utc_now', return_value=NOW)
         self.clock.start()
         self.addCleanup(self.clock.stop)

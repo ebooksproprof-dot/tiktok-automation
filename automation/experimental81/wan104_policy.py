@@ -12,9 +12,9 @@ SCOPE = 'owner_authorized_ai30_first_live_test_and_ongoing_automation'
 def require_sources(clips):
     profile = json.loads(PROFILE.read_text())
     require_clearance(clips)
-    if len(clips) != 3 or {c.get('slot') for c in clips} != {0, 1, 2}:
+    if len(clips) not in (3, 6) or {c.get('slot') for c in clips} != set(range(len(clips))):
         raise ValueError('WAN104_THREE_DISTINCT_NATIVE_SOURCES_REQUIRED')
-    if len({c.get('sha256') for c in clips}) != 3:
+    if len({c.get('sha256') for c in clips}) != len(clips):
         raise ValueError('WAN104_SOURCE_DUPLICATION')
     for clip in clips:
         if (clip.get('model') != profile['model'] or clip.get('model_revision') != profile['model_revision']
@@ -33,10 +33,16 @@ def require_sources(clips):
 
 def require_quality(quality):
     profile = require_sources(quality.get('licensed_sources') or [])
+    modern = quality.get('mission') == '14.0'
+    seconds = 30 if modern else 15
+    from chatterbox_v3 import NAME
+    voice = NAME if modern else 'kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br'
+    if modern and len(quality['licensed_sources']) != 6:
+        raise ValueError('WAN14_SIX_DISTINCT_SOURCES_REQUIRED')
     if (quality.get('wan104_licensed_profile') is not True or quality.get('model') != profile['model']
             or quality.get('model_revision') != profile['model_revision']
-            or quality.get('ai_generated_seconds') != 15 or abs(quality.get('duration', 0)-15) > .15
-            or quality.get('voice') != 'kokoro-onnx-0.6.1-v1.0-int8-pf_dora-pt-br'
+            or quality.get('ai_generated_seconds') != seconds or abs(quality.get('duration', 0)-seconds) > .15
+            or quality.get('voice') != voice
             or quality.get('technical_pass') is not True or quality.get('editorial_approved') is not True
             or quality.get('commercial_license_clearance') is not True
             or quality.get('freeze_intervals_over_1s') != 0
@@ -45,7 +51,7 @@ def require_quality(quality):
     reviews = quality.get('semantic_reviews') or []
     from semantic_review import MODEL, REVISION, assess_generated_organization
     sources = {c['sha256']: c for c in quality['licensed_sources']}
-    if (len(reviews) != 3 or {r.get('source_sha256') for r in reviews} != {c['sha256'] for c in quality['licensed_sources']}
+    if (len(reviews) != len(sources) or {r.get('source_sha256') for r in reviews} != {c['sha256'] for c in quality['licensed_sources']}
             or any(r.get('accepted') is not True or r.get('policy') != 'wan104_objects_v1'
                    or r.get('revision') != REVISION or r.get('model') != MODEL
                    or r.get('generated_slot') != sources[r['source_sha256']]['slot']

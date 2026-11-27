@@ -90,13 +90,14 @@ class WanSourceCorrectionTests(unittest.TestCase):
              patch('autonomous_production.stock_status', return_value={'ready': 4, 'held_uncertain': 0, 'target_max': 4}), \
              patch.object(finish.wan104, 'script_choices', return_value=[('new', [], ['new script'])]), \
              patch.object(finish, 'compose', side_effect=ValueError('REACHED_REAL_ASSEMBLY')):
-            with self.assertRaisesRegex(ValueError, 'REACHED_REAL_ASSEMBLY'):
-                finish.stage()
+            result = finish.stage()
+            self.assertEqual(result['status'], 'COLLECTING_NO_READY_AI_VIDEO')
+            finish.compose.assert_not_called()
 
     def test_failed_acquisition_still_triggers_independent_production(self):
         workflow = (acquisition.ROOT.parent/'.github/workflows/casasemesforco-daily.yml').read_text()
         self.assertIn("github.event.workflow_run.conclusion == 'failure'", workflow)
-        self.assertIn("len(wan.get('clips', [])) == 3", workflow)
+        self.assertIn("len(wan.get('clips', [])) == 6", workflow)
 
 
 class CommonsRecoveryTests(unittest.TestCase):
@@ -132,6 +133,10 @@ class CommonsRecoveryTests(unittest.TestCase):
 
 
 class ContinuitySimulationTests(unittest.TestCase):
+    def setUp(self):
+        legacy_cadence = patch("mission14_policy.allowed_slot", return_value=True)
+        legacy_cadence.start(); self.addCleanup(legacy_cadence.stop)
+
     def test_ten_days_refill_consumption_quota_outage_and_restart(self):
         import autonomous_production as production
         from experimental81 import daily_budget
@@ -299,6 +304,10 @@ class HandwashingEvidenceTests(unittest.TestCase):
 
 
 class CancelledSlotRecoveryTests(unittest.TestCase):
+    def setUp(self):
+        legacy_cadence = patch("mission14_policy.allowed_slot", return_value=True)
+        legacy_cadence.start(); self.addCleanup(legacy_cadence.stop)
+
     def test_rejected_slots_release_only_after_conclusive_cancellation_and_keep_unique_id(self):
         from autonomous_production import choose_slot
         now = dt.datetime(2026, 11, 18, 6, tzinfo=dt.timezone.utc)
