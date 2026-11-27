@@ -10,9 +10,13 @@
   },
   "last_run": {
     "additional_paid_services_enabled": false,
-    "at": "2026-11-27T18:07:45.415144Z",
+    "at": "2026-11-27T18:24:52.857576Z",
     "channel_verified": true,
-    "cloud_probe": null,
+    "cloud_probe": {
+      "cloud_readback": true,
+      "publication_attempted": false,
+      "stale_writer_rejected": true
+    },
     "generation_enabled": false,
     "legacy_inventory_preserved": 0,
     "mode": "AUTOMATIC_LICENSED_STOCK",
@@ -48,7 +52,7 @@
     "target_max": 4,
     "tts": "chatterbox_multilingual_v3_pt_br_cpu",
     "voice": "licensed_female_reference_pending",
-    "voice_status": "PENDING_LICENSED_FEMALE_REFERENCE"
+    "voice_status": "PENDING_PERCEPTUAL_REVIEW"
   },
   "schema_version": 1
 }
