@@ -3509,31 +3509,32 @@
   ],
   "rejected_until": {},
   "last_run": {
-    "at": 1795808056,
-    "acquired": 2,
+    "at": 1795815962,
+    "acquired": 0,
     "rejected": 0,
-    "download_attempts": 2,
-    "skipped_known": 1,
+    "download_attempts": 0,
+    "skipped_known": 0,
     "skipped_cooldown": 0,
     "diagnostics": [
       {
         "provider": "pixabay",
-        "category": "limpeza",
+        "category": "ferro",
         "status": "search_ok",
-        "eligible_candidates": 14,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
-          "page": 3,
-          "raw_hits": 15,
-          "total_hits": 90,
-          "context_rejected": 1,
+          "page": 5,
+          "raw_hits": 2,
+          "total_hits": 62,
+          "context_rejected": 2,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 0,
+          "incompatible_style_rejected": 0
         }
       },
       {
         "provider": "wikimedia",
-        "category": "limpeza",
+        "category": "ferro",
         "status": "search_ok",
         "eligible_candidates": 0,
         "response_source": "live_api",
@@ -3541,26 +3542,83 @@
       },
       {
         "provider": "pixabay",
-        "category": "livros2",
+        "category": "janelas",
         "status": "search_ok",
-        "eligible_candidates": 11,
+        "eligible_candidates": 0,
         "response_source": "live_api",
         "filters": {
           "page": 4,
           "raw_hits": 15,
-          "total_hits": 303,
-          "context_rejected": 4,
+          "total_hits": 500,
+          "context_rejected": 15,
           "duration_rejected": 0,
-          "geometry_or_origin_rejected": 0
+          "geometry_or_origin_rejected": 0,
+          "incompatible_style_rejected": 0
         }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "janelas",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "panos3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 1,
+          "raw_hits": 0,
+          "total_hits": 0,
+          "context_rejected": 0,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0,
+          "incompatible_style_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "panos3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
+      },
+      {
+        "provider": "pixabay",
+        "category": "roupas3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {
+          "page": 4,
+          "raw_hits": 15,
+          "total_hits": 105,
+          "context_rejected": 15,
+          "duration_rejected": 0,
+          "geometry_or_origin_rejected": 0,
+          "incompatible_style_rejected": 0
+        }
+      },
+      {
+        "provider": "wikimedia",
+        "category": "roupas3",
+        "status": "search_ok",
+        "eligible_candidates": 0,
+        "response_source": "live_api",
+        "filters": {}
       }
     ],
     "editorial_approved": 0,
     "query_plan": [
-      "mirror",
-      "library books",
       "ironing",
-      "cleaning window"
+      "cleaning window",
+      "microfiber",
+      "clothes folding"
     ],
     "query_bank_size": 126,
     "query_budget_per_provider": 4,
