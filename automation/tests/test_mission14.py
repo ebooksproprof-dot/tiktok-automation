@@ -124,3 +124,11 @@ class FutureCadence14(unittest.TestCase):
         future=[now+dt.timedelta(days=n) for n in (2,4,6)]
         self.assertFalse(policy.allowed_slot(now,future))
         self.assertTrue(policy.allowed_slot(now+dt.timedelta(days=9),future))
+
+
+class LegacyDirectRoute14(unittest.TestCase):
+    def test_direct_tiktok_api_cannot_bypass_the_new_voice_gate(self):
+        import tiktok_runner as direct
+        with patch.object(direct,'validate_post'), patch.object(direct,'api_post') as send, self.assertRaisesRegex(ValueError,'VOICE_IDENTITY_PENDING'):
+            direct.submit_post('test-only',{'quality':{}},{})
+        send.assert_not_called()

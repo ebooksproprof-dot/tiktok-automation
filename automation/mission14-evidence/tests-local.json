@@ -1,9 +1,14 @@
 {
   "command": "python -m unittest discover -s automation/tests -v",
-  "tests": 461,
+  "tests": 462,
   "result": "passed",
   "real_media_tests": true,
   "service_calls": "mocked",
   "continuity": "eight-week simulation, not live publishing",
-  "seconds": null
+  "seconds": 11.908,
+  "github_preceding_suite": {
+    "run_id": 45938909599,
+    "tests": 461,
+    "status": "success"
+  }
 }

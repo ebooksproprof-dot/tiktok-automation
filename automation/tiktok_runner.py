@@ -239,6 +239,8 @@ def validate_post(post, creator_info):
 
 def submit_post(token, post, creator_info):
     validate_post(post, creator_info)
+    from mission14_policy import require_output
+    require_output(post.get("quality", {}))
 
     # Confirm hosted bytes match the reviewed artifact before sending them to TikTok.
     from media_quality import validate
@@ -251,7 +253,7 @@ def submit_post(token, post, creator_info):
                 if total > 20_000_000:
                     raise ValueError("Hosted media exceeds budget")
                 out.write(chunk)
-        quality = validate(path)
+        quality = validate(path, ai_only30=True)
         if quality["sha256"] != post["quality"]["sha256"]:
             raise ValueError("Hosted video differs from reviewed artifact")
 
@@ -332,6 +334,9 @@ def main():
         if candidates:
             creator = get_creator_info(token)
             for post in sorted(candidates, key=lambda p: p["scheduled_at"])[:MAX_NEW_POSTS_PER_RUN]:
+                from mission14_policy import require_output, require_schedule
+                require_output(post.get("quality", {}))
+                require_schedule(post, queue, state)
                 validate_post(post, creator)
                 from visual_library import require_evidence, history
                 require_evidence(post, history({}, state))

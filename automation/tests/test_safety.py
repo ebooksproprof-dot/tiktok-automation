@@ -65,7 +65,7 @@ class SafetyTests(unittest.TestCase):
             token.assert_not_called()
 
     def test_checkpoint_failure_prevents_api_submission(self):
-        with tempfile.TemporaryDirectory() as folder, patch.object(r,'STATE_PATH',Path(folder)/'state.json'), patch.object(r,'load_json',side_effect=[{'posts':[self.post]},{'posts':{}}]), patch.object(r,'fetch_token_from_broker',return_value='not-a-token'), patch.object(r,'get_creator_info',return_value=self.creator), patch.object(r,'checkpoint',side_effect=RuntimeError('persistence failed')), patch.object(r,'submit_post') as submit:
+        with tempfile.TemporaryDirectory() as folder, patch.object(r,'STATE_PATH',Path(folder)/'state.json'), patch.object(r,'load_json',side_effect=[{'posts':[self.post]},{'posts':{}}]), patch.object(r,'fetch_token_from_broker',return_value='not-a-token'), patch.object(r,'get_creator_info',return_value=self.creator), patch.object(r,'checkpoint',side_effect=RuntimeError('persistence failed')), patch('mission14_policy.require_output'), patch('mission14_policy.require_schedule'), patch.object(r,'submit_post') as submit:
             with self.assertRaises(RuntimeError):r.main()
             submit.assert_not_called()
 
