@@ -174,7 +174,14 @@ class ApprovedTransition15(unittest.TestCase):
         voice.update(status='APPROVED',gender='female',perceptual_review_approved=True)
         voice['review_receipt']={'engine_name':cb.NAME,'inference_sha256':profile_digest(voice['inference']),'source':'UNIT_TEST_FIXTURE_ONLY'}
         pack=root/'mission15-evidence/episode'
-        return voice,json.loads((pack/'video-review.json').read_text()),json.loads((pack/'asr.json').read_text()),json.loads((pack/'audio-manifest.json').read_text())
+        # Owner rejected the real illustration in Mission16. Keep testing the
+        # positive evidence transition using a separate synthetic fixture only.
+        q={'mission':'15.0','sha256':'f'*64,'duration':30.014,'voice':cb.NAME,
+           'voice_reference_sha256':voice['reference_sha256'],'technical_pass':True,
+           'visual_editorial_approved':True,'audio_content_verified':True,
+           'captions_reviewed':True,'full_frame_reviewed':True,'freeze_intervals_over_1s':0,
+           'video_origin':'licensed_real_footage','fixture_only':True}
+        return voice,q,json.loads((pack/'asr.json').read_text()),json.loads((pack/'audio-manifest.json').read_text())
 
     def test_approved_fixture_allows_transition_only_with_exact_bound_evidence(self):
         from mission15_stage import finalized_quality

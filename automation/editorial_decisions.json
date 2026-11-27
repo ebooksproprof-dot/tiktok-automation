@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "id": "mission16-owner-rejects-mission15-illustrated-cups",
+      "episode_id": "mission15-copos-secos",
+      "status": "REJECTED",
+      "visual_status": "QUALIDADE VISUAL REPROVADA",
+      "reason": "VISUAL_STYLE_NOT_PHOTOREALISTIC",
+      "authority": "explicit owner instruction, Mission16 section 3",
+      "scope": "All illustrated Mission15 versions, independent of voice approval or technical pass",
+      "media_sha256": [
+        "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
+        "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+        "c0f5e884e971add49a82704e4baedaa52bb19665090568f83b0759789dd8a499"
+      ],
+      "automatic_reactivation_forbidden": true,
+      "reuse_allowed": ["licensed narration subject to voice approval", "script", "technical evidence"],
+      "replacement_requires": "new photorealistic version id, media files and independent visual review"
+    }
+  ]
+}

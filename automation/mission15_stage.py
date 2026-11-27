@@ -17,6 +17,8 @@ DRAFT_ID='mission15-copos-secos'
 
 
 def finalized_quality(voice,quality,audio,manifest,video_sha,wav_sha):
+    from photoreal_policy import reject_incompatible
+    reject_incompatible(quality)
     if voice.get('status')!='APPROVED' or voice.get('perceptual_review_approved') is not True:
         raise ValueError('VOICE_LISTENING_APPROVAL_PENDING')
     if (not voice.get('commercial_synthesis_authorized') or not voice.get('rights_evidence')
@@ -51,6 +53,8 @@ def stage():
     from release_media import publish
     from content_catalog import fingerprint as script_sha
     voice=json.loads(IDENTITY.read_text());quality=json.loads((PACK/'video-review.json').read_text())
+    from photoreal_policy import reject_incompatible
+    reject_incompatible(quality)
     audio=json.loads((PACK/'asr.json').read_text());manifest=json.loads((PACK/'audio-manifest.json').read_text())
     if not compare(' '.join(manifest['lines']),audio['transcript'])['audio_content_verified']:
         raise ValueError('OBSERVED_TRANSCRIPT_DOES_NOT_MATCH_EPISODE')
@@ -82,6 +86,8 @@ def stage():
     return {'status':'QUEUED','post_id':post_id,'scheduled_at':when.isoformat(),'publication_confirmed':False}
 
 def register_output(post,token):
+    from photoreal_policy import reject_incompatible
+    reject_incompatible(post.get('quality',{}))
     from video_stock import GitHubStore
     store=GitHubStore(token,path='automation/production_state.json',validate=False)
     ledger,revision=store.load();outputs=ledger.get('outputs')

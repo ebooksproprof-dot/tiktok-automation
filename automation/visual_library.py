@@ -100,6 +100,8 @@ def preflight(source_ids, previous):
 
 def require_evidence(post, previous=None):
     quality = post.get('quality') or {}
+    from photoreal_policy import reject_incompatible
+    reject_incompatible(quality)
     for credit in quality.get('required_public_credits', []):
         if not credit or credit not in post.get('title', ''):
             raise ValueError('REQUIRED_PUBLIC_CREDIT_MISSING')

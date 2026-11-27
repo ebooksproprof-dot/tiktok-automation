@@ -52,7 +52,7 @@
   "embedded_border_check_pass": true,
   "mission": "15.0",
   "publication_approved": false,
-  "editorial_review_status": "PENDING_IDENTITY_LISTENING_APPROVAL",
+  "editorial_review_status": "QUALIDADE VISUAL REPROVADA",
   "video_origin": "authored_household_illustration",
   "generated_wan_seconds": 0,
   "source_rights": {
@@ -124,7 +124,7 @@
   "audio_content_verified": true,
   "captions_reviewed": true,
   "full_frame_reviewed": true,
-  "visual_editorial_approved": true,
+  "visual_editorial_approved": false,
   "visual_editorial_review": {
     "reviewer": "assistant visual review",
     "scope": "five rendered scene captures, simulated TikTok safe zone, content/script correspondence and stable illustrated objects",
@@ -187,5 +187,26 @@
   "stock_wan_detector_unchanged": true,
   "source_urls": [
     "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos"
-  ]
+  ],
+  "editorial_review_history": [
+    {
+      "event": "mission15_pre_rejection_review",
+      "visual_editorial_approved": true,
+      "visual_editorial_review": {
+        "reviewer": "assistant visual review",
+        "scope": "five rendered scene captures, simulated TikTok safe zone, content/script correspondence and stable illustrated objects",
+        "reviewed_at": "2026-11-27T18:47:49.043828+00:00",
+        "human_review": false
+      },
+      "editorial_review_status": "PENDING_IDENTITY_LISTENING_APPROVAL"
+    },
+    {
+      "event": "owner_visual_rejection",
+      "recorded_at": "2026-11-27T21:36:10.031239+00:00",
+      "authority": "explicit Mission16 user instruction",
+      "reason": "VISUAL_STYLE_NOT_PHOTOREALISTIC"
+    }
+  ],
+  "visual_rejection_reason": "VISUAL_STYLE_NOT_PHOTOREALISTIC",
+  "owner_rejection_id": "mission16-owner-rejects-mission15-illustrated-cups"
 }

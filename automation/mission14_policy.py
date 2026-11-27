@@ -19,6 +19,8 @@ def allowed_slot(when, reservations):
 
 
 def require_output(quality):
+    from photoreal_policy import reject_incompatible
+    reject_incompatible(quality)
     from chatterbox_v3 import NAME, IDENTITY
     identity = json.loads(IDENTITY.read_text())
     if identity.get('status') != 'APPROVED' or identity.get('perceptual_review_approved') is not True or identity.get('commercial_synthesis_authorized') is not True or not identity.get('rights_evidence') or not identity.get('holder'):
