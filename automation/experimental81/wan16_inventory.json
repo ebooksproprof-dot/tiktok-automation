@@ -4,7 +4,7 @@
   "status": "WAITING_HIGHER_DEFINITION_TRIAL",
   "requests": {
     "7e1767b232a0a0d621c0fa3aa739f8912301f11a85e18f5e319450995d9f607f": {
-      "status": "INTENT_RECORDED_NO_RETRY",
+      "status": "GENERATED_AWAITING_STORAGE",
       "at": "2026-11-27T21:42:22.545475+00:00",
       "spec": {
         "editorial_id": "copos-secos",
@@ -24,7 +24,16 @@
         "randomize_seed": false,
         "episode_id": "mission16-copos-secos-photoreal-v1"
       },
-      "provider_job_id": "b2055e34d7414f49a4a4b2f017dfe92a"
+      "provider_job_id": "b2055e34d7414f49a4a4b2f017dfe92a",
+      "media": {
+        "duration_seconds": 5.041667,
+        "width": 576,
+        "height": 1024,
+        "video_codec": "h264",
+        "audio_codecs": [],
+        "bytes": 967825,
+        "sha256": "0d159c0147eaa1eb127abc5becf25c6cad65ae12c64ad6195ddd98efebfd28fa"
+      }
     }
   },
   "clips": [],
