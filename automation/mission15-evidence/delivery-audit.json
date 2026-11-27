@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-11-27T18:43:10.824874+00:00",
+  "mission": "15.0",
+  "baseline_head": "ee11e9b",
+  "checkpoint_branch": "checkpoint/mission15-before-ee11e9b",
+  "implementation_head": "23c8d463a13ead25cee51530227722e65ce26f39",
+  "additional_paid_services_enabled": false,
+  "reference_original_publicly_committed": false,
+  "voice_perceptual_review_approved": false,
+  "stock_approved": 0,
+  "complete_editorial_drafts_waiting_identity": 1,
+  "mission15_buffer_scheduled": 0,
+  "mission15_tiktok_publications_confirmed": 0,
+  "new_wan_gpu_calls": 0,
+  "raw_speech_seconds": 31.279999999999998,
+  "normalized_speech_seconds": 30.014125,
+  "utterance_inference_seconds": 339.87016971400044,
+  "inference_timing_scope": "sum of five actual CPU utterance inference calls; excludes initial loading and normalization; memory not remeasured",
+  "new_episode_sha256": "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
+  "new_wav_sha256": "83a107391bcc687185ee63ad03bdfc663f31d3dbff4d7f14bc1f3cffb5bb7186",
+  "live_asset_readback": {
+    "page_http": 200,
+    "mp4_http": 200,
+    "wav_http": 200,
+    "mp4_and_wav_hashes_match": true
+  },
+  "real_workflows": {
+    "regression480": {
+      "run": 46050987263,
+      "conclusion": "success",
+      "tests": 480,
+      "seconds": 8.422,
+      "new_tts_benchmark": false
+    },
+    "reference_recovery": {
+      "run": 46049197088,
+      "conclusion": "success",
+      "recoveries": 2,
+      "file_mode": "600",
+      "reference_artifact_uploaded": false
+    },
+    "buffer_read_only": {
+      "run": 46049201786,
+      "conclusion": "success",
+      "channel_verified": true,
+      "observed_at": "2026-11-27T18:25:38Z",
+      "new_publication_ids": []
+    },
+    "official_stock_intake": {
+      "run": 46048465138,
+      "conclusion": "success",
+      "authenticated_queries": 4,
+      "downloaded_visual_sources": 0
+    }
+  },
+  "pending_external_approval": "User listening confirmation of feminine Brazilian natural clear identity. ASR does not supply this approval. Owner approval workflow not executed.",
+  "second_asr_confirmation": {
+    "model": "Systran/faster-whisper-medium",
+    "expected_words": 60,
+    "recognized_words": 60,
+    "mismatches": [],
+    "timestamp_correction": "Caption start bounded by the matching preserved utterance audio interval; raw ASR timestamps unchanged"
+  },
+  "local_tests_final": {
+    "passed": 482,
+    "simulated_services_separate": true
+  }
+}

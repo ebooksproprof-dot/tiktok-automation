@@ -4,13 +4,13 @@
   "visual_sources": [
     {
       "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos",
-      "sha256": "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+      "sha256": "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
       "dhash": [
         "00c0d010d4c40000",
         "00d0d070c0c00000",
         "00c0c068d0c00000",
         "00d0c010c4c00000",
-        "00c0d060c8c80000"
+        "00c0c060c8c80000"
       ],
       "crop_dhash": {
         "full": [
@@ -18,21 +18,21 @@
           "00d0d070c0c00000",
           "00c0c068d0c00000",
           "00d0c010c4c00000",
-          "00c0d060c8c80000"
+          "00c0c060c8c80000"
         ],
         "inner90": [
           "8080903094880000",
           "80909074c4c40000",
           "80808048d4c40000",
           "80908020c4c40000",
-          "8090c460c8880000"
+          "8090c464c8880000"
         ],
         "inner80": [
           "8080b03094880000",
           "909090b094c40000",
           "8090c0d8b8a40000",
           "9080a020c0840000",
-          "809084a4a8880000"
+          "8090ace8a8880000"
         ]
       },
       "sampling_fractions": [

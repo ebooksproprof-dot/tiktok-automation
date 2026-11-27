@@ -88,7 +88,8 @@ def base(stage,p):
         d.rounded_rectangle((208,565,820,965),radius=18,fill='#DFCCAB',outline='#977C54',width=4)
         d.rectangle((230,590,798,914),fill='#F5E9D5')
         d.line((230,910,798,910),fill='#A48559',width=12)
-        for n in range(3):glass(d,335+n*165,640+(1-q)*(90-15*n),size=1.1)
+        # Keep every base on the shelf throughout the storage action.
+        for n in range(3):glass(d,335+n*165+60*(1-q),910-205*1.1,size=1.1)
         text(d,(235,975),'Estáveis e fáceis de retirar.',27,TEAL,True)
     text(d,(132,431),'ILUSTRAÇÃO AUTORAL',19,TEAL)
     text(d,(132,1234),'Siga as instruções do fabricante.',22,INK)
@@ -101,7 +102,7 @@ def render(audio_folder,output):
     timings=manifest['timings']
     from caption_alignment import align
     recognition=json.loads((folder/'asr.json').read_text())
-    captions=align(manifest['lines'],recognition)
+    captions=align(manifest['lines'],recognition,utterance_windows=timings)
     target=output/'casasem-copos-secos-review.mp4'
     temporary=target.with_name(target.stem+'.partial.mp4')
     args=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','-',
@@ -134,7 +135,7 @@ def render(audio_folder,output):
     quality.update(mission='15.0',publication_approved=False,editorial_review_status='PENDING_AUDIO_AND_IDENTITY_REVIEW',
         video_origin='authored_household_illustration',generated_wan_seconds=0,
         source_rights={'basis':'original procedural graphics authored for the owner in this mission','external_visual_assets':[]},
-        script=manifest['lines'],timings=captions,caption_timing_method='observed ASR word timestamps after complete sequence agreement',voice_reference_sha256=manifest['reference_sha256'])
+        script=manifest['lines'],timings=captions,caption_timing_method='observed ASR word timestamps after complete sequence agreement, bounded by preserved utterance audio intervals',voice_reference_sha256=manifest['reference_sha256'])
     (output/'video-review.json').write_text(json.dumps(quality,ensure_ascii=False,indent=2)+'\n')
     return quality
 

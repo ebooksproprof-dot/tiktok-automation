@@ -1,0 +1,166 @@
+Kyutai Unmute Voice Donation Project Terms of Use
+Version Effective Date: 26 June 2025
+These Terms of Use (“Terms”) govern the relationship between you (“Contributor”,“You” or “Your”) and Kyutai
+(“Kyutai”, “We” or “Us”) in connection with your voluntary participation in the Unmute Voice Donation Project.
+The Unmute Voice Donation Project is an open-source initiative that enables AI models to listen and speak in real time
+through our speech-to-text and text-to-speech technologies. It is made possible by our new speech-to-text and
+text-to-speech models optimized for real-time usage.
+By providing a recording of your voice (“Voice Contribution”), you help Kyutai advance research and development in
+the field of speech-based artificial intelligence.
+
+🔔 Please read these Terms carefully, as well as our Privacy Policy, before submitting
+your Voice Contribution.
+1. Definitions
+“Contributor” means any individual who submits a Voice Contribution under these Terms.
+“Voice Contribution” means a short audio sample of your spoken voice, together with all associated data (e.g. voice
+embedding).
+“Project” or “Unmute Voice Donation Project” means the open-source initiative led by Kyutai, aimed at developing
+real-time speech-to-text and text-to-speech models.
+2. Acceptance of Terms
+By checking the consent boxes on the “Voice Donation” page and submitting your Voice Contribution, you confirm that
+you:
+●​
+●​
+
+have read, understood, and agree to be bound by these Terms; and
+have reviewed Kyutai’s Privacy Policy and accept its provisions regarding data processing.
+
+⚠️ If you are not comfortable with the Project and its consequences for your privacy as
+described in these Terms and in the Privacy Policy, you should not submit your Voice
+Contribution.
+3. Purpose of the Project
+In the context of the Unmute Voice Donation Project, Kyutai seeks to collect and use your Voice Contribution in order
+to:
+●​
+●​
+
+Build an open dataset and create publicly available vocal collections for use by the research community and
+developers, under an open-source license (e.g. Creative Commons CC0 license), and
+Develop and improve Kyutai’s open-science text-to-speech models (TTS) by integrating diverse voice
+samples, thereby enabling large language models (LLMs) to listen and speak effectively in real time.
+
+💡We publish a voice dataset in open-source because we believe that making it freely
+
+available is the best way to share knowledge and enable anyone to conduct research
+and build tools that benefit individuals and society. However, because we cannot control
+how others might use the data once it is released, there are potential challenges to
+consider. Please review our Privacy Policy and the “Voice Donation” page carefully to
+understand them fully. Compliance with these Terms will also help you mitigate any risk
+that could be associated with the public disclosure of your Voice Contribution, so we
+strongly urge you to comply with the Terms.
+4. Scope of your Voice Contribution
+As a Contributor, you agree to:
+●​
+
+Record
+your
+Voice
+following
+Kyutai’s
+instructions
+on
+the
+designated
+https://unmute.sh/voice-donation) to capture a short, high-quality audio sample.
+
+webpage
+
+(e.g.,
+
+●​
+●​
+●​
+●​
+
+Speak in your natural voice.
+Not include copyrighted text (e.g., song lyrics, poems) or any content that infringes third-party rights, including
+intellectual property rights.
+Not include content that could be considered offensive, inappropriate, harmful, obscene, unlawful, or otherwise
+legally protected.
+Not include any content that may directly or indirectly identify you, such as your name, address, contact
+details, financial information, sensitive personal information or life experience.
+
+🔔 The purpose of this recording is to capture the tonal qualities of your voice. Be as
+natural as possible.
+
+5. Licence and Data publication
+By submitting a Voice Contribution, you grant Kyutai a worldwide, royalty-free, perpetual, non-exclusive license to:
+●​
+●​
+
+●​
+
+Use your Voice Contribution (voice recording and voice embeddings) in any form, including processing,
+modifying, reproducing, or transforming it;
+Publish your Voice Contribution as part of a public dataset under an open-source license (e.g. Creative
+Commons CC0 license). This means anyone, individuals or organizations, may download, copy, modify,
+transform, and use your Voice Contribution for any purpose (commercial or non-commercial) without
+restriction, subject to our Acceptable Use Policy.
+Incorporate your Voice Contribution into Kyutai’s text-to-speech models, voice replica research, training, and
+development, and any derivative open-source projects.
+
+⚠️ If you do not want people to reuse your voice and reproduce it for any purpose that
+you may think harmful to you, you should not submit your Voice Contribution.
+
+6. Representation and warranties
+By submitting your Voice Contribution, you represent and warrant that:
+●​
+●​
+●​
+●​
+
+You are of legal age (18 years or older) in your country of residence to participate.
+The voice in the recording is your own, and you have full legal rights and authority to contribute to it.
+Your submission does not infringe the rights (including intellectual property, privacy, or publicity rights) of any
+third party.
+Your participation is entirely voluntary and you may withdraw at any time before submission.
+
+7. Kyutai’s rights and obligations
+Kyutai, may do the following with your Voice Contribution:
+●​
+●​
+●​
+●​
+
+Extract and store your voice recordings and voice embeddings.
+Use both the raw audio and embeddings to train, develop, and refine open-source TTS models, including
+Kyutai’s models.
+Combine your Voice Contribution with other samples to build open datasets.
+Publish these datasets on open data platforms (e.g., GitHub) under an open-source license (e.g. CC0 license).
+
+Please note that we impose on any user of the open-source voice dataset the obligation to process your Voice
+Contribution in accordance with all applicable laws, in particular any applicable data protection and privacy laws.
+
+⚠️ Kyutai cannot control all potential future uses of your Voice Contribution. Specifically,
+in the context of TTS models, including Kyutai’s models, it is possible that your voice
+could be used to generate speech or content that you did not personally create or
+authorize. By contributing, you acknowledge and accept this possibility. Please note that
+you may also withdraw your consent and request the deletion of your Voice Contribution
+at any time in accordance with our Privacy Policy.
+
+8. Privacy
+Your privacy is important to us. Please review Kyutai’s Privacy Policy for details on:
+●​
+●​
+●​
+
+The personal data we collect when you submit a Voice Contribution.
+How long we keep your personal data and where it is stored.
+How to request deletion of any personal data (where possible).
+
+If you wish to withdraw your consent, you may request deletion of your Voice Contribution by contacting
+unmute@kyutai.org. Kyutai will endeavor to remove your data from any pending release and from its internal databases.
+9. Governing law and Jurisdiction
+These Terms, your Voice Contribution, and all matters arising from or related to these Terms shall be governed by and
+interpreted in accordance with the laws of France, without regard to its conflict-of-law provisions.
+Any dispute relating to these Terms or your participation in the Project shall be subject to the exclusive jurisdiction of the
+courts of Paris, France.
+10. Contact information
+If you have questions or concerns regarding these Terms or your Voice Contribution, please contact us at:
+●​
+●​
+
+Email: unmute@kyutai.org
+Address: 16 Rue de la Ville-l'Évêque, 75008 Paris, France.
+
+

@@ -1,0 +1,1264 @@
+{
+  "primary": {
+    "expected_words": 97,
+    "recognized_words": 98,
+    "word_coverage": 0.9587628865979382,
+    "word_precision": 0.9489795918367347,
+    "mismatches": [
+      {
+        "operation": "replace",
+        "expected": [
+          "prende"
+        ],
+        "recognized": [
+          "pende"
+        ]
+      },
+      {
+        "operation": "replace",
+        "expected": [
+          "devagar"
+        ],
+        "recognized": [
+          "de",
+          "vagar"
+        ]
+      },
+      {
+        "operation": "replace",
+        "expected": [
+          "divisao"
+        ],
+        "recognized": [
+          "adivisao"
+        ]
+      },
+      {
+        "operation": "replace",
+        "expected": [
+          "compartimento"
+        ],
+        "recognized": [
+          "comportamento"
+        ]
+      }
+    ],
+    "audio_content_verified": false,
+    "transcript": "Sua gaveta de cozinha pende toda vez que você tenta abrir. Antes de organizar, retire os utensílios e observe o espaço disponível. Separe as peças por uso e deixe-as que você usa todos os dias na frente. Acomode cada grupo sem empilhar acima da altura da gaveta. Abra e feche de vagar para conferir se nada ficou preso. Uma adivisão simples facilita encontrar cada utensílio, salve para organizar depois. Confira também se os cabos ficaram livres sem impedir o movimento da gaveta ao abrir e fechar. Reserve outro espaço para as peças que não cabem nesse comportamento.",
+    "language": "pt",
+    "asr_model": "Systran/faster-whisper-small",
+    "naturalness_verified": false,
+    "method": "automatic ASR agreement; not a perceptual pronunciation rating",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.54,
+        "word": " Sua",
+        "probability": 0.9190485775470734
+      },
+      {
+        "start": 0.54,
+        "end": 0.78,
+        "word": " gaveta",
+        "probability": 0.928003191947937
+      },
+      {
+        "start": 0.78,
+        "end": 0.92,
+        "word": " de",
+        "probability": 0.9932489395141602
+      },
+      {
+        "start": 0.92,
+        "end": 1.26,
+        "word": " cozinha",
+        "probability": 0.9948526918888092
+      },
+      {
+        "start": 1.26,
+        "end": 1.48,
+        "word": " pende",
+        "probability": 0.8213474750518799
+      },
+      {
+        "start": 1.48,
+        "end": 1.74,
+        "word": " toda",
+        "probability": 0.9886381030082703
+      },
+      {
+        "start": 1.74,
+        "end": 1.98,
+        "word": " vez",
+        "probability": 0.9893194437026978
+      },
+      {
+        "start": 1.98,
+        "end": 2.12,
+        "word": " que",
+        "probability": 0.9887877106666565
+      },
+      {
+        "start": 2.12,
+        "end": 2.26,
+        "word": " você",
+        "probability": 0.9802282452583313
+      },
+      {
+        "start": 2.26,
+        "end": 2.48,
+        "word": " tenta",
+        "probability": 0.8383896052837372
+      },
+      {
+        "start": 2.48,
+        "end": 2.72,
+        "word": " abrir.",
+        "probability": 0.9947667121887207
+      },
+      {
+        "start": 3.18,
+        "end": 3.48,
+        "word": " Antes",
+        "probability": 0.9848740100860596
+      },
+      {
+        "start": 3.48,
+        "end": 3.6,
+        "word": " de",
+        "probability": 0.9989653825759888
+      },
+      {
+        "start": 3.6,
+        "end": 4.16,
+        "word": " organizar,",
+        "probability": 0.9906201660633087
+      },
+      {
+        "start": 4.4,
+        "end": 4.48,
+        "word": " retire",
+        "probability": 0.9763463735580444
+      },
+      {
+        "start": 4.48,
+        "end": 4.66,
+        "word": " os",
+        "probability": 0.9604482650756836
+      },
+      {
+        "start": 4.66,
+        "end": 5.2,
+        "word": " utensílios",
+        "probability": 0.9453416913747787
+      },
+      {
+        "start": 5.2,
+        "end": 5.3,
+        "word": " e",
+        "probability": 0.9924249649047852
+      },
+      {
+        "start": 5.3,
+        "end": 5.6,
+        "word": " observe",
+        "probability": 0.9880451560020447
+      },
+      {
+        "start": 5.6,
+        "end": 5.76,
+        "word": " o",
+        "probability": 0.9774470329284668
+      },
+      {
+        "start": 5.76,
+        "end": 5.98,
+        "word": " espaço",
+        "probability": 0.9980944991111755
+      },
+      {
+        "start": 5.98,
+        "end": 6.64,
+        "word": " disponível.",
+        "probability": 0.9986086189746857
+      },
+      {
+        "start": 7.22,
+        "end": 7.58,
+        "word": " Separe",
+        "probability": 0.8635020554065704
+      },
+      {
+        "start": 7.58,
+        "end": 7.74,
+        "word": " as",
+        "probability": 0.9880551695823669
+      },
+      {
+        "start": 7.74,
+        "end": 7.96,
+        "word": " peças",
+        "probability": 0.9740042984485626
+      },
+      {
+        "start": 7.96,
+        "end": 8.22,
+        "word": " por",
+        "probability": 0.9875730276107788
+      },
+      {
+        "start": 8.22,
+        "end": 8.44,
+        "word": " uso",
+        "probability": 0.996612012386322
+      },
+      {
+        "start": 8.44,
+        "end": 8.64,
+        "word": " e",
+        "probability": 0.8638843297958374
+      },
+      {
+        "start": 8.64,
+        "end": 8.88,
+        "word": " deixe",
+        "probability": 0.9614482522010803
+      },
+      {
+        "start": 8.88,
+        "end": 8.94,
+        "word": "-as",
+        "probability": 0.8772119581699371
+      },
+      {
+        "start": 8.94,
+        "end": 9.06,
+        "word": " que",
+        "probability": 0.9820988178253174
+      },
+      {
+        "start": 9.06,
+        "end": 9.26,
+        "word": " você",
+        "probability": 0.9985204339027405
+      },
+      {
+        "start": 9.26,
+        "end": 9.42,
+        "word": " usa",
+        "probability": 0.9811490178108215
+      },
+      {
+        "start": 9.42,
+        "end": 9.68,
+        "word": " todos",
+        "probability": 0.9675167202949524
+      },
+      {
+        "start": 9.68,
+        "end": 9.86,
+        "word": " os",
+        "probability": 0.9947715401649475
+      },
+      {
+        "start": 9.86,
+        "end": 10.0,
+        "word": " dias",
+        "probability": 0.9966341853141785
+      },
+      {
+        "start": 10.0,
+        "end": 10.14,
+        "word": " na",
+        "probability": 0.9953010082244873
+      },
+      {
+        "start": 10.14,
+        "end": 10.42,
+        "word": " frente.",
+        "probability": 0.9970773458480835
+      },
+      {
+        "start": 11.2,
+        "end": 11.62,
+        "word": " Acomode",
+        "probability": 0.743114173412323
+      },
+      {
+        "start": 11.62,
+        "end": 11.86,
+        "word": " cada",
+        "probability": 0.9905524253845215
+      },
+      {
+        "start": 11.86,
+        "end": 12.14,
+        "word": " grupo",
+        "probability": 0.9986976385116577
+      },
+      {
+        "start": 12.14,
+        "end": 12.34,
+        "word": " sem",
+        "probability": 0.9802929759025574
+      },
+      {
+        "start": 12.34,
+        "end": 12.62,
+        "word": " empilhar",
+        "probability": 0.8262639840443929
+      },
+      {
+        "start": 12.62,
+        "end": 12.92,
+        "word": " acima",
+        "probability": 0.992274671792984
+      },
+      {
+        "start": 12.92,
+        "end": 13.06,
+        "word": " da",
+        "probability": 0.981325626373291
+      },
+      {
+        "start": 13.06,
+        "end": 13.22,
+        "word": " altura",
+        "probability": 0.9990172386169434
+      },
+      {
+        "start": 13.22,
+        "end": 13.42,
+        "word": " da",
+        "probability": 0.9901887774467468
+      },
+      {
+        "start": 13.42,
+        "end": 13.74,
+        "word": " gaveta.",
+        "probability": 0.9934649467468262
+      },
+      {
+        "start": 14.28,
+        "end": 14.64,
+        "word": " Abra",
+        "probability": 0.9419966638088226
+      },
+      {
+        "start": 14.64,
+        "end": 14.78,
+        "word": " e",
+        "probability": 0.9872661828994751
+      },
+      {
+        "start": 14.78,
+        "end": 14.98,
+        "word": " feche",
+        "probability": 0.8200103342533112
+      },
+      {
+        "start": 14.98,
+        "end": 15.1,
+        "word": " de",
+        "probability": 0.290483683347702
+      },
+      {
+        "start": 15.1,
+        "end": 15.38,
+        "word": " vagar",
+        "probability": 0.9347659349441528
+      },
+      {
+        "start": 15.38,
+        "end": 15.52,
+        "word": " para",
+        "probability": 0.9627664089202881
+      },
+      {
+        "start": 15.52,
+        "end": 15.92,
+        "word": " conferir",
+        "probability": 0.9929611682891846
+      },
+      {
+        "start": 15.92,
+        "end": 16.04,
+        "word": " se",
+        "probability": 0.9924170970916748
+      },
+      {
+        "start": 16.04,
+        "end": 16.24,
+        "word": " nada",
+        "probability": 0.9985690116882324
+      },
+      {
+        "start": 16.24,
+        "end": 16.46,
+        "word": " ficou",
+        "probability": 0.9960330128669739
+      },
+      {
+        "start": 16.46,
+        "end": 16.92,
+        "word": " preso.",
+        "probability": 0.9939526617527008
+      },
+      {
+        "start": 17.5,
+        "end": 17.72,
+        "word": " Uma",
+        "probability": 0.9955472946166992
+      },
+      {
+        "start": 17.72,
+        "end": 18.08,
+        "word": " adivisão",
+        "probability": 0.6616724468767643
+      },
+      {
+        "start": 18.08,
+        "end": 18.5,
+        "word": " simples",
+        "probability": 0.9966124892234802
+      },
+      {
+        "start": 18.5,
+        "end": 18.92,
+        "word": " facilita",
+        "probability": 0.8623215854167938
+      },
+      {
+        "start": 18.92,
+        "end": 19.32,
+        "word": " encontrar",
+        "probability": 0.9899735450744629
+      },
+      {
+        "start": 19.32,
+        "end": 19.62,
+        "word": " cada",
+        "probability": 0.9968145489692688
+      },
+      {
+        "start": 19.62,
+        "end": 20.28,
+        "word": " utensílio,",
+        "probability": 0.9693991343180338
+      },
+      {
+        "start": 20.5,
+        "end": 20.76,
+        "word": " salve",
+        "probability": 0.9705969393253326
+      },
+      {
+        "start": 20.76,
+        "end": 20.88,
+        "word": " para",
+        "probability": 0.9934349060058594
+      },
+      {
+        "start": 20.88,
+        "end": 21.36,
+        "word": " organizar",
+        "probability": 0.9954297542572021
+      },
+      {
+        "start": 21.36,
+        "end": 21.68,
+        "word": " depois.",
+        "probability": 0.9963247179985046
+      },
+      {
+        "start": 22.2,
+        "end": 22.52,
+        "word": " Confira",
+        "probability": 0.9829611480236053
+      },
+      {
+        "start": 22.52,
+        "end": 22.82,
+        "word": " também",
+        "probability": 0.9737382531166077
+      },
+      {
+        "start": 22.82,
+        "end": 22.98,
+        "word": " se",
+        "probability": 0.9919845461845398
+      },
+      {
+        "start": 22.98,
+        "end": 23.1,
+        "word": " os",
+        "probability": 0.9526107311248779
+      },
+      {
+        "start": 23.1,
+        "end": 23.3,
+        "word": " cabos",
+        "probability": 0.943316787481308
+      },
+      {
+        "start": 23.3,
+        "end": 23.68,
+        "word": " ficaram",
+        "probability": 0.9941982626914978
+      },
+      {
+        "start": 23.68,
+        "end": 23.94,
+        "word": " livres",
+        "probability": 0.9687265157699585
+      },
+      {
+        "start": 23.94,
+        "end": 24.5,
+        "word": " sem",
+        "probability": 0.595778226852417
+      },
+      {
+        "start": 24.5,
+        "end": 24.82,
+        "word": " impedir",
+        "probability": 0.982331246137619
+      },
+      {
+        "start": 24.82,
+        "end": 24.9,
+        "word": " o",
+        "probability": 0.9898102283477783
+      },
+      {
+        "start": 24.9,
+        "end": 25.08,
+        "word": " movimento",
+        "probability": 0.9985153079032898
+      },
+      {
+        "start": 25.08,
+        "end": 25.36,
+        "word": " da",
+        "probability": 0.993081271648407
+      },
+      {
+        "start": 25.36,
+        "end": 25.68,
+        "word": " gaveta",
+        "probability": 0.9975440899531046
+      },
+      {
+        "start": 25.68,
+        "end": 25.82,
+        "word": " ao",
+        "probability": 0.5928968191146851
+      },
+      {
+        "start": 25.82,
+        "end": 26.02,
+        "word": " abrir",
+        "probability": 0.9991480112075806
+      },
+      {
+        "start": 26.02,
+        "end": 26.16,
+        "word": " e",
+        "probability": 0.9236089587211609
+      },
+      {
+        "start": 26.16,
+        "end": 26.48,
+        "word": " fechar.",
+        "probability": 0.9965097606182098
+      },
+      {
+        "start": 26.48,
+        "end": 27.32,
+        "word": " Reserve",
+        "probability": 0.7438464462757111
+      },
+      {
+        "start": 27.32,
+        "end": 27.5,
+        "word": " outro",
+        "probability": 0.9510700702667236
+      },
+      {
+        "start": 27.5,
+        "end": 27.78,
+        "word": " espaço",
+        "probability": 0.995087206363678
+      },
+      {
+        "start": 27.78,
+        "end": 28.02,
+        "word": " para",
+        "probability": 0.9857326149940491
+      },
+      {
+        "start": 28.02,
+        "end": 28.14,
+        "word": " as",
+        "probability": 0.6627137660980225
+      },
+      {
+        "start": 28.14,
+        "end": 28.34,
+        "word": " peças",
+        "probability": 0.996245801448822
+      },
+      {
+        "start": 28.34,
+        "end": 28.48,
+        "word": " que",
+        "probability": 0.9953923225402832
+      },
+      {
+        "start": 28.48,
+        "end": 28.58,
+        "word": " não",
+        "probability": 0.9963948130607605
+      },
+      {
+        "start": 28.58,
+        "end": 28.9,
+        "word": " cabem",
+        "probability": 0.9470986425876617
+      },
+      {
+        "start": 28.9,
+        "end": 29.02,
+        "word": " nesse",
+        "probability": 0.9332804083824158
+      },
+      {
+        "start": 29.02,
+        "end": 29.6,
+        "word": " comportamento.",
+        "probability": 0.7518922090530396
+      }
+    ]
+  },
+  "secondary": {
+    "expected_words": 97,
+    "recognized_words": 97,
+    "word_coverage": 0.979381443298969,
+    "word_precision": 0.979381443298969,
+    "mismatches": [
+      {
+        "operation": "replace",
+        "expected": [
+          "prende"
+        ],
+        "recognized": [
+          "aprende"
+        ]
+      },
+      {
+        "operation": "replace",
+        "expected": [
+          "compartimento"
+        ],
+        "recognized": [
+          "comportamento"
+        ]
+      }
+    ],
+    "audio_content_verified": false,
+    "transcript": "Sua gaveta de cozinha aprende toda vez que você tenta abrir. Antes de organizar, retire os utensílios e observe o espaço disponível. Separe as peças por uso e deixe as que você usa todos os dias na frente. Acomode cada grupo sem empilhar acima da altura da gaveta. Abra e feche devagar para conferir se nada ficou preso. Uma divisão simples facilita encontrar cada utensílio, salve para organizar depois. Confira também se os cabos ficaram livres, sem impedir o movimento da gaveta ao abrir e fechar. Reserve outro espaço para as peças que não cabem nesse comportamento.",
+    "language": "pt",
+    "asr_model": "Systran/faster-whisper-medium",
+    "naturalness_verified": false,
+    "method": "automatic ASR agreement; not a perceptual pronunciation rating",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.6,
+        "word": " Sua",
+        "probability": 0.9397711753845215
+      },
+      {
+        "start": 0.6,
+        "end": 0.88,
+        "word": " gaveta",
+        "probability": 0.9978634715080261
+      },
+      {
+        "start": 0.88,
+        "end": 1.04,
+        "word": " de",
+        "probability": 0.994753360748291
+      },
+      {
+        "start": 1.04,
+        "end": 1.34,
+        "word": " cozinha",
+        "probability": 0.9983632564544678
+      },
+      {
+        "start": 1.34,
+        "end": 1.64,
+        "word": " aprende",
+        "probability": 0.6431066393852234
+      },
+      {
+        "start": 1.64,
+        "end": 1.9,
+        "word": " toda",
+        "probability": 0.9889014959335327
+      },
+      {
+        "start": 1.9,
+        "end": 2.06,
+        "word": " vez",
+        "probability": 0.8732235431671143
+      },
+      {
+        "start": 2.06,
+        "end": 2.18,
+        "word": " que",
+        "probability": 0.9981733560562134
+      },
+      {
+        "start": 2.18,
+        "end": 2.36,
+        "word": " você",
+        "probability": 0.9585027694702148
+      },
+      {
+        "start": 2.36,
+        "end": 2.56,
+        "word": " tenta",
+        "probability": 0.9968292713165283
+      },
+      {
+        "start": 2.56,
+        "end": 2.92,
+        "word": " abrir.",
+        "probability": 0.9970207810401917
+      },
+      {
+        "start": 3.28,
+        "end": 3.52,
+        "word": " Antes",
+        "probability": 0.967770516872406
+      },
+      {
+        "start": 3.52,
+        "end": 3.72,
+        "word": " de",
+        "probability": 0.9996902942657471
+      },
+      {
+        "start": 3.72,
+        "end": 4.28,
+        "word": " organizar,",
+        "probability": 0.9974122941493988
+      },
+      {
+        "start": 4.46,
+        "end": 4.58,
+        "word": " retire",
+        "probability": 0.9771750569343567
+      },
+      {
+        "start": 4.58,
+        "end": 4.76,
+        "word": " os",
+        "probability": 0.993650496006012
+      },
+      {
+        "start": 4.76,
+        "end": 5.22,
+        "word": " utensílios",
+        "probability": 0.9906209111213684
+      },
+      {
+        "start": 5.22,
+        "end": 5.38,
+        "word": " e",
+        "probability": 0.9888837337493896
+      },
+      {
+        "start": 5.38,
+        "end": 5.72,
+        "word": " observe",
+        "probability": 0.9598414301872253
+      },
+      {
+        "start": 5.72,
+        "end": 5.9,
+        "word": " o",
+        "probability": 0.9956731200218201
+      },
+      {
+        "start": 5.9,
+        "end": 6.16,
+        "word": " espaço",
+        "probability": 0.9973725080490112
+      },
+      {
+        "start": 6.16,
+        "end": 6.78,
+        "word": " disponível.",
+        "probability": 0.9981912970542908
+      },
+      {
+        "start": 7.42,
+        "end": 7.66,
+        "word": " Separe",
+        "probability": 0.9810367524623871
+      },
+      {
+        "start": 7.66,
+        "end": 7.86,
+        "word": " as",
+        "probability": 0.9970458149909973
+      },
+      {
+        "start": 7.86,
+        "end": 8.04,
+        "word": " peças",
+        "probability": 0.9921897947788239
+      },
+      {
+        "start": 8.04,
+        "end": 8.28,
+        "word": " por",
+        "probability": 0.9921954870223999
+      },
+      {
+        "start": 8.28,
+        "end": 8.5,
+        "word": " uso",
+        "probability": 0.993700385093689
+      },
+      {
+        "start": 8.5,
+        "end": 8.68,
+        "word": " e",
+        "probability": 0.927597165107727
+      },
+      {
+        "start": 8.68,
+        "end": 8.9,
+        "word": " deixe",
+        "probability": 0.9836468696594238
+      },
+      {
+        "start": 8.9,
+        "end": 9.06,
+        "word": " as",
+        "probability": 0.9779928922653198
+      },
+      {
+        "start": 9.06,
+        "end": 9.16,
+        "word": " que",
+        "probability": 0.998119056224823
+      },
+      {
+        "start": 9.16,
+        "end": 9.38,
+        "word": " você",
+        "probability": 0.9980294108390808
+      },
+      {
+        "start": 9.38,
+        "end": 9.5,
+        "word": " usa",
+        "probability": 0.9767189025878906
+      },
+      {
+        "start": 9.5,
+        "end": 9.86,
+        "word": " todos",
+        "probability": 0.981855034828186
+      },
+      {
+        "start": 9.86,
+        "end": 9.98,
+        "word": " os",
+        "probability": 0.9961642026901245
+      },
+      {
+        "start": 9.98,
+        "end": 10.06,
+        "word": " dias",
+        "probability": 0.9985176920890808
+      },
+      {
+        "start": 10.06,
+        "end": 10.28,
+        "word": " na",
+        "probability": 0.9344238638877869
+      },
+      {
+        "start": 10.28,
+        "end": 10.6,
+        "word": " frente.",
+        "probability": 0.9990907907485962
+      },
+      {
+        "start": 11.4,
+        "end": 11.68,
+        "word": " Acomode",
+        "probability": 0.9124744137128195
+      },
+      {
+        "start": 11.68,
+        "end": 11.96,
+        "word": " cada",
+        "probability": 0.994743824005127
+      },
+      {
+        "start": 11.96,
+        "end": 12.22,
+        "word": " grupo",
+        "probability": 0.9995176792144775
+      },
+      {
+        "start": 12.22,
+        "end": 12.42,
+        "word": " sem",
+        "probability": 0.9695802927017212
+      },
+      {
+        "start": 12.42,
+        "end": 12.72,
+        "word": " empilhar",
+        "probability": 0.9902421037356058
+      },
+      {
+        "start": 12.72,
+        "end": 12.98,
+        "word": " acima",
+        "probability": 0.9884975254535675
+      },
+      {
+        "start": 12.98,
+        "end": 13.12,
+        "word": " da",
+        "probability": 0.9915696978569031
+      },
+      {
+        "start": 13.12,
+        "end": 13.32,
+        "word": " altura",
+        "probability": 0.9996121525764465
+      },
+      {
+        "start": 13.32,
+        "end": 13.52,
+        "word": " da",
+        "probability": 0.9947981834411621
+      },
+      {
+        "start": 13.52,
+        "end": 13.98,
+        "word": " gaveta.",
+        "probability": 0.9995278914769491
+      },
+      {
+        "start": 14.44,
+        "end": 14.7,
+        "word": " Abra",
+        "probability": 0.9352792799472809
+      },
+      {
+        "start": 14.7,
+        "end": 14.84,
+        "word": " e",
+        "probability": 0.9949429631233215
+      },
+      {
+        "start": 14.84,
+        "end": 15.04,
+        "word": " feche",
+        "probability": 0.9714818894863129
+      },
+      {
+        "start": 15.04,
+        "end": 15.44,
+        "word": " devagar",
+        "probability": 0.9994268119335175
+      },
+      {
+        "start": 15.44,
+        "end": 15.66,
+        "word": " para",
+        "probability": 0.9850926995277405
+      },
+      {
+        "start": 15.66,
+        "end": 16.0,
+        "word": " conferir",
+        "probability": 0.9969809949398041
+      },
+      {
+        "start": 16.0,
+        "end": 16.12,
+        "word": " se",
+        "probability": 0.9985346794128418
+      },
+      {
+        "start": 16.12,
+        "end": 16.34,
+        "word": " nada",
+        "probability": 0.9978129863739014
+      },
+      {
+        "start": 16.34,
+        "end": 16.54,
+        "word": " ficou",
+        "probability": 0.9985789060592651
+      },
+      {
+        "start": 16.54,
+        "end": 17.44,
+        "word": " preso.",
+        "probability": 0.9986419379711151
+      },
+      {
+        "start": 17.68,
+        "end": 17.82,
+        "word": " Uma",
+        "probability": 0.9868685007095337
+      },
+      {
+        "start": 17.82,
+        "end": 18.22,
+        "word": " divisão",
+        "probability": 0.740011066198349
+      },
+      {
+        "start": 18.22,
+        "end": 18.62,
+        "word": " simples",
+        "probability": 0.9970149993896484
+      },
+      {
+        "start": 18.62,
+        "end": 19.02,
+        "word": " facilita",
+        "probability": 0.992906928062439
+      },
+      {
+        "start": 19.02,
+        "end": 19.44,
+        "word": " encontrar",
+        "probability": 0.9958381652832031
+      },
+      {
+        "start": 19.44,
+        "end": 19.74,
+        "word": " cada",
+        "probability": 0.9983313679695129
+      },
+      {
+        "start": 19.74,
+        "end": 20.42,
+        "word": " utensílio,",
+        "probability": 0.9956955711046854
+      },
+      {
+        "start": 20.64,
+        "end": 20.8,
+        "word": " salve",
+        "probability": 0.9892466068267822
+      },
+      {
+        "start": 20.8,
+        "end": 21.0,
+        "word": " para",
+        "probability": 0.9919678568840027
+      },
+      {
+        "start": 21.0,
+        "end": 21.48,
+        "word": " organizar",
+        "probability": 0.9956651329994202
+      },
+      {
+        "start": 21.48,
+        "end": 21.9,
+        "word": " depois.",
+        "probability": 0.9967634677886963
+      },
+      {
+        "start": 22.32,
+        "end": 22.6,
+        "word": " Confira",
+        "probability": 0.9946489930152893
+      },
+      {
+        "start": 22.6,
+        "end": 22.9,
+        "word": " também",
+        "probability": 0.9819706678390503
+      },
+      {
+        "start": 22.9,
+        "end": 23.02,
+        "word": " se",
+        "probability": 0.9915052056312561
+      },
+      {
+        "start": 23.02,
+        "end": 23.22,
+        "word": " os",
+        "probability": 0.9930548071861267
+      },
+      {
+        "start": 23.22,
+        "end": 23.36,
+        "word": " cabos",
+        "probability": 0.9892475008964539
+      },
+      {
+        "start": 23.36,
+        "end": 23.78,
+        "word": " ficaram",
+        "probability": 0.9970128536224365
+      },
+      {
+        "start": 23.78,
+        "end": 24.1,
+        "word": " livres,",
+        "probability": 0.9954127669334412
+      },
+      {
+        "start": 24.42,
+        "end": 24.56,
+        "word": " sem",
+        "probability": 0.9974291920661926
+      },
+      {
+        "start": 24.56,
+        "end": 24.88,
+        "word": " impedir",
+        "probability": 0.997497022151947
+      },
+      {
+        "start": 24.88,
+        "end": 25.02,
+        "word": " o",
+        "probability": 0.9979839324951172
+      },
+      {
+        "start": 25.02,
+        "end": 25.28,
+        "word": " movimento",
+        "probability": 0.998382568359375
+      },
+      {
+        "start": 25.28,
+        "end": 25.46,
+        "word": " da",
+        "probability": 0.9969723224639893
+      },
+      {
+        "start": 25.46,
+        "end": 25.74,
+        "word": " gaveta",
+        "probability": 0.9994693795839945
+      },
+      {
+        "start": 25.74,
+        "end": 25.9,
+        "word": " ao",
+        "probability": 0.9896664619445801
+      },
+      {
+        "start": 25.9,
+        "end": 26.1,
+        "word": " abrir",
+        "probability": 0.9980570673942566
+      },
+      {
+        "start": 26.1,
+        "end": 26.24,
+        "word": " e",
+        "probability": 0.9933765530586243
+      },
+      {
+        "start": 26.24,
+        "end": 26.66,
+        "word": " fechar.",
+        "probability": 0.999003142118454
+      },
+      {
+        "start": 26.66,
+        "end": 27.34,
+        "word": " Reserve",
+        "probability": 0.8548322319984436
+      },
+      {
+        "start": 27.34,
+        "end": 27.58,
+        "word": " outro",
+        "probability": 0.9826251268386841
+      },
+      {
+        "start": 27.58,
+        "end": 27.9,
+        "word": " espaço",
+        "probability": 0.998036801815033
+      },
+      {
+        "start": 27.9,
+        "end": 28.08,
+        "word": " para",
+        "probability": 0.996910035610199
+      },
+      {
+        "start": 28.08,
+        "end": 28.24,
+        "word": " as",
+        "probability": 0.994077205657959
+      },
+      {
+        "start": 28.24,
+        "end": 28.42,
+        "word": " peças",
+        "probability": 0.9949259757995605
+      },
+      {
+        "start": 28.42,
+        "end": 28.56,
+        "word": " que",
+        "probability": 0.9980583786964417
+      },
+      {
+        "start": 28.56,
+        "end": 28.74,
+        "word": " não",
+        "probability": 0.9981282353401184
+      },
+      {
+        "start": 28.74,
+        "end": 28.94,
+        "word": " cabem",
+        "probability": 0.9787867963314056
+      },
+      {
+        "start": 28.94,
+        "end": 29.08,
+        "word": " nesse",
+        "probability": 0.9532544016838074
+      },
+      {
+        "start": 29.08,
+        "end": 29.68,
+        "word": " comportamento.",
+        "probability": 0.7448436617851257
+      }
+    ]
+  },
+  "decision": {
+    "status": "AUDITORY_REVIEW_REQUIRED",
+    "audio_content_verified": false,
+    "reason": "ASR conflict or content mismatch; neither transcript is ground truth"
+  }
+}

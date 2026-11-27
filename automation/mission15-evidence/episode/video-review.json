@@ -1,9 +1,9 @@
 {
   "technical_pass": true,
   "editorial_approved": false,
-  "sha256": "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+  "sha256": "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
   "duration": 30.014,
-  "size": 1019685,
+  "size": 969473,
   "width": 1080,
   "height": 1920,
   "audio_mean_db": -16.7,
@@ -88,7 +88,7 @@
       "adequado ao material."
     ],
     [
-      12.96,
+      12.966751918158568,
       16.84,
       "Deixe espaço entre as peças, sem equilibrar uma sobre a"
     ],
@@ -108,7 +108,7 @@
       "completamente."
     ],
     [
-      23.16,
+      24.092071611253196,
       27.86,
       "Só então guarde os copos estáveis e fáceis de retirar."
     ],
@@ -118,7 +118,7 @@
       "Salve para lembrar."
     ]
   ],
-  "caption_timing_method": "observed ASR word timestamps after complete sequence agreement",
+  "caption_timing_method": "observed ASR word timestamps after complete sequence agreement, bounded by preserved utterance audio intervals",
   "voice_reference_sha256": "8fea595097a2281149a9bbc1287d2b387bab562442afb9a537cafdf11c902fbf",
   "voice": "chatterbox-multilingual-v3-pt-br@b3952f18bc2e",
   "audio_content_verified": true,
@@ -128,7 +128,7 @@
   "visual_editorial_review": {
     "reviewer": "assistant visual review",
     "scope": "five rendered scene captures, simulated TikTok safe zone, content/script correspondence and stable illustrated objects",
-    "reviewed_at": "2026-11-27T18:31:24.165008+00:00",
+    "reviewed_at": "2026-11-27T18:47:49.043828+00:00",
     "human_review": false
   },
   "visual_policy_version": 1,
@@ -136,13 +136,13 @@
   "visual_sources": [
     {
       "source_id": "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos",
-      "sha256": "1cec1c2bfab3c1a0323c16a1a75a49257ad70510ae028e1b49be469173374df0",
+      "sha256": "11d208267a6a431da2c850c910536e8ff0f2e7ace51728f213413bc91908c407",
       "dhash": [
         "00c0d010d4c40000",
         "00d0d070c0c00000",
         "00c0c068d0c00000",
         "00d0c010c4c00000",
-        "00c0d060c8c80000"
+        "00c0c060c8c80000"
       ],
       "crop_dhash": {
         "full": [
@@ -150,21 +150,21 @@
           "00d0d070c0c00000",
           "00c0c068d0c00000",
           "00d0c010c4c00000",
-          "00c0d060c8c80000"
+          "00c0c060c8c80000"
         ],
         "inner90": [
           "8080903094880000",
           "80909074c4c40000",
           "80808048d4c40000",
           "80908020c4c40000",
-          "8090c460c8880000"
+          "8090c464c8880000"
         ],
         "inner80": [
           "8080b03094880000",
           "909090b094c40000",
           "8090c0d8b8a40000",
           "9080a020c0840000",
-          "809084a4a8880000"
+          "8090ace8a8880000"
         ]
       },
       "sampling_fractions": [
@@ -182,8 +182,8 @@
   "method": "decoded action-panel changes above compression noise; no subtitle or layout credit",
   "frames_checked": 900,
   "max_unchanged_action_frames": 12,
-  "changed_action_pairs": 741,
-  "authored_renderer_sha256": "ff91fdd092188af6755946804b5afab7a89b5e82d173f5b51277b22359771640",
+  "changed_action_pairs": 681,
+  "authored_renderer_sha256": "838e2d7bbcd8a611babbeea31e776b2f4e9c37c3d2c93c302891eabfa6743865",
   "stock_wan_detector_unchanged": true,
   "source_urls": [
     "https://github.com/ebooksproprof-dot/tiktok-automation/blob/main/automation/household_animation.py#mission15-copos"

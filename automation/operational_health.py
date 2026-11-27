@@ -9,6 +9,25 @@ from editorial_policy import reason, date
 ROOT = Path(__file__).resolve().parent
 
 
+def missing_reservations(queue,state,now):
+    """Audit actual reservations; the preferred hours are not a daily obligation."""
+    merged={p['id']:dict(p) for p in queue.get('posts',[])}
+    for key,receipt in state.get('posts',{}).items():
+        merged[key]={**merged.get(key,{}),**receipt}
+    missing=set()
+    for entry in merged.values():
+        when=date(entry)
+        if not when or not now-dt.timedelta(days=2)<=when<=now-dt.timedelta(hours=2):continue
+        status=entry.get('status')
+        if status=='CANCELLED_EDITORIAL' and entry.get('buffer_status')=='deleted':continue
+        reserved=(entry.get('approved') is True or bool(entry.get('buffer_post_id'))
+            or status in ('SCHEDULED','SENDING','PUBLISH_COMPLETE','PUBLICATION_OVERDUE',
+                          'AWAITING_PUBLIC_EVIDENCE','SUBMISSION_UNKNOWN'))
+        verified=status=='PUBLISH_COMPLETE' and entry.get('publicly_verified') is True
+        if reserved and not verified:missing.add(when.isoformat())
+    return sorted(missing)
+
+
 def inspect(queue, state, producer, wan, now):
     stock = stock_status(queue, state, now)
     issues = {}
@@ -36,17 +55,10 @@ def inspect(queue, state, producer, wan, now):
     if unknown: add('WAN_REQUEST_RESULT_UNKNOWN', {'count':len(unknown)})
     if any('LICENSE' in str(k) or 'RIGHTS' in str(k) for k in failures): add('SOURCE_LICENSE_HOLD', {'review_required':True})
     bad = [k for k,e in state.get('posts', {}).items() if e.get('status') in
-           ('FAILED','PUBLICATION_OVERDUE','SUBMISSION_UNKNOWN','AWAITING_PUBLIC_EVIDENCE','BLOCKED_SCHEDULE_MISMATCH')]
+           ('FAILED','PUBLICATION_OVERDUE','SUBMISSION_UNKNOWN','AWAITING_PUBLIC_EVIDENCE','BLOCKED_SCHEDULE_MISMATCH')
+           or (e.get('status')=='PUBLISH_COMPLETE' and e.get('publicly_verified') is not True)]
     if bad: add('PUBLICATION_RECONCILIATION_REQUIRED', {'ids':bad})
-    from zoneinfo import ZoneInfo
-    local = now.astimezone(ZoneInfo('America/Sao_Paulo'))
-    missing = []
-    for day in range(2):
-        for hour in (10,18):
-            slot=(local-dt.timedelta(days=day)).replace(hour=hour,minute=0,second=0,microsecond=0)
-            if slot > local-dt.timedelta(hours=2): continue
-            entries=[e for e in state.get('posts', {}).values() if date(e) and date(e)==slot]
-            if not any(e.get('status')=='PUBLISH_COMPLETE' and e.get('publicly_verified') is True for e in entries): missing.append(slot.isoformat())
+    missing=missing_reservations(queue,state,now)
     if missing: add('EXPECTED_PUBLICATION_NOT_VERIFIED', {'slots':missing})
     lifecycle = Counter()
     for c in wan.get('clips', []):

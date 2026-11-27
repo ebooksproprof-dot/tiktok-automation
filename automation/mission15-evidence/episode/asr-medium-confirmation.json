@@ -1,0 +1,377 @@
+{
+  "expected_words": 60,
+  "recognized_words": 60,
+  "word_coverage": 1.0,
+  "word_precision": 1.0,
+  "mismatches": [],
+  "audio_content_verified": true,
+  "audio_sha256": "83a107391bcc687185ee63ad03bdfc663f31d3dbff4d7f14bc1f3cffb5bb7186",
+  "expected_script_sha256": "807070c2a588c216a64a1c2b8f0b291a9b7cf2d555e444057a7264ce84d40a57",
+  "transcript": "Copo guardado com água no fundo, confira antes de fechar o armário. Depois de lavar, apoie cada copo em um escorredor adequado ao material. Deixe espaço entre as peças sem equilibrar uma sobre a outra. Observe a borda e o fundo. Se houver gotas, espere secar completamente. Só então, guarde os copos estáveis e fáceis de retirar, salve para lembrar.",
+  "language": "pt",
+  "asr_model": "Systran/faster-whisper-medium",
+  "naturalness_verified": false,
+  "method": "automatic ASR agreement; not a perceptual pronunciation rating",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.58,
+      "word": " Copo",
+      "probability": 0.7097303867340088
+    },
+    {
+      "start": 0.58,
+      "end": 1.34,
+      "word": " guardado",
+      "probability": 0.9769930839538574
+    },
+    {
+      "start": 1.34,
+      "end": 1.74,
+      "word": " com",
+      "probability": 0.9849175810813904
+    },
+    {
+      "start": 1.74,
+      "end": 2.12,
+      "word": " água",
+      "probability": 0.9817195534706116
+    },
+    {
+      "start": 2.12,
+      "end": 2.42,
+      "word": " no",
+      "probability": 0.9900946021080017
+    },
+    {
+      "start": 2.42,
+      "end": 2.92,
+      "word": " fundo,",
+      "probability": 0.9988018274307251
+    },
+    {
+      "start": 3.8,
+      "end": 4.08,
+      "word": " confira",
+      "probability": 0.978347510099411
+    },
+    {
+      "start": 4.08,
+      "end": 4.52,
+      "word": " antes",
+      "probability": 0.9979146122932434
+    },
+    {
+      "start": 4.52,
+      "end": 4.82,
+      "word": " de",
+      "probability": 0.9974307417869568
+    },
+    {
+      "start": 4.82,
+      "end": 5.18,
+      "word": " fechar",
+      "probability": 0.9976037442684174
+    },
+    {
+      "start": 5.18,
+      "end": 5.42,
+      "word": " o",
+      "probability": 0.9879543781280518
+    },
+    {
+      "start": 5.42,
+      "end": 6.34,
+      "word": " armário.",
+      "probability": 0.9976352453231812
+    },
+    {
+      "start": 6.64,
+      "end": 7.12,
+      "word": " Depois",
+      "probability": 0.9829301238059998
+    },
+    {
+      "start": 7.12,
+      "end": 7.36,
+      "word": " de",
+      "probability": 0.9973627924919128
+    },
+    {
+      "start": 7.36,
+      "end": 7.98,
+      "word": " lavar,",
+      "probability": 0.9952182173728943
+    },
+    {
+      "start": 8.3,
+      "end": 8.68,
+      "word": " apoie",
+      "probability": 0.9688453674316406
+    },
+    {
+      "start": 8.68,
+      "end": 9.2,
+      "word": " cada",
+      "probability": 0.9926043748855591
+    },
+    {
+      "start": 9.2,
+      "end": 9.64,
+      "word": " copo",
+      "probability": 0.9931127429008484
+    },
+    {
+      "start": 9.64,
+      "end": 9.8,
+      "word": " em",
+      "probability": 0.9690331816673279
+    },
+    {
+      "start": 9.8,
+      "end": 9.98,
+      "word": " um",
+      "probability": 0.9962016940116882
+    },
+    {
+      "start": 9.98,
+      "end": 10.68,
+      "word": " escorredor",
+      "probability": 0.9816357493400574
+    },
+    {
+      "start": 10.68,
+      "end": 11.28,
+      "word": " adequado",
+      "probability": 0.9867962598800659
+    },
+    {
+      "start": 11.28,
+      "end": 11.4,
+      "word": " ao",
+      "probability": 0.9963021278381348
+    },
+    {
+      "start": 11.4,
+      "end": 12.2,
+      "word": " material.",
+      "probability": 0.9973117113113403
+    },
+    {
+      "start": 13.24,
+      "end": 13.4,
+      "word": " Deixe",
+      "probability": 0.9813412427902222
+    },
+    {
+      "start": 13.4,
+      "end": 13.98,
+      "word": " espaço",
+      "probability": 0.980071485042572
+    },
+    {
+      "start": 13.98,
+      "end": 14.3,
+      "word": " entre",
+      "probability": 0.9957053065299988
+    },
+    {
+      "start": 14.3,
+      "end": 14.6,
+      "word": " as",
+      "probability": 0.9754002690315247
+    },
+    {
+      "start": 14.6,
+      "end": 14.94,
+      "word": " peças",
+      "probability": 0.9913032352924347
+    },
+    {
+      "start": 14.94,
+      "end": 15.3,
+      "word": " sem",
+      "probability": 0.922615647315979
+    },
+    {
+      "start": 15.3,
+      "end": 15.96,
+      "word": " equilibrar",
+      "probability": 0.9885993003845215
+    },
+    {
+      "start": 15.96,
+      "end": 16.3,
+      "word": " uma",
+      "probability": 0.9506615400314331
+    },
+    {
+      "start": 16.3,
+      "end": 16.72,
+      "word": " sobre",
+      "probability": 0.9807944297790527
+    },
+    {
+      "start": 16.72,
+      "end": 16.98,
+      "word": " a",
+      "probability": 0.9862750768661499
+    },
+    {
+      "start": 16.98,
+      "end": 17.42,
+      "word": " outra.",
+      "probability": 0.999319314956665
+    },
+    {
+      "start": 18.02,
+      "end": 18.58,
+      "word": " Observe",
+      "probability": 0.9940924048423767
+    },
+    {
+      "start": 18.58,
+      "end": 18.86,
+      "word": " a",
+      "probability": 0.9964869022369385
+    },
+    {
+      "start": 18.86,
+      "end": 19.16,
+      "word": " borda",
+      "probability": 0.9920905530452728
+    },
+    {
+      "start": 19.16,
+      "end": 19.28,
+      "word": " e",
+      "probability": 0.9980766773223877
+    },
+    {
+      "start": 19.28,
+      "end": 19.52,
+      "word": " o",
+      "probability": 0.9882543087005615
+    },
+    {
+      "start": 19.52,
+      "end": 19.82,
+      "word": " fundo.",
+      "probability": 0.9993402361869812
+    },
+    {
+      "start": 20.04,
+      "end": 20.26,
+      "word": " Se",
+      "probability": 0.9927151799201965
+    },
+    {
+      "start": 20.26,
+      "end": 20.64,
+      "word": " houver",
+      "probability": 0.9965084791183472
+    },
+    {
+      "start": 20.64,
+      "end": 21.52,
+      "word": " gotas,",
+      "probability": 0.995558500289917
+    },
+    {
+      "start": 21.74,
+      "end": 22.06,
+      "word": " espere",
+      "probability": 0.992549866437912
+    },
+    {
+      "start": 22.06,
+      "end": 22.58,
+      "word": " secar",
+      "probability": 0.9958665072917938
+    },
+    {
+      "start": 22.58,
+      "end": 23.48,
+      "word": " completamente.",
+      "probability": 0.9980594515800476
+    },
+    {
+      "start": 23.48,
+      "end": 24.46,
+      "word": " Só",
+      "probability": 0.6559689044952393
+    },
+    {
+      "start": 24.46,
+      "end": 24.92,
+      "word": " então,",
+      "probability": 0.8480030298233032
+    },
+    {
+      "start": 24.96,
+      "end": 25.32,
+      "word": " guarde",
+      "probability": 0.9787378311157227
+    },
+    {
+      "start": 25.32,
+      "end": 25.5,
+      "word": " os",
+      "probability": 0.9737703800201416
+    },
+    {
+      "start": 25.5,
+      "end": 25.92,
+      "word": " copos",
+      "probability": 0.9655161499977112
+    },
+    {
+      "start": 25.92,
+      "end": 26.48,
+      "word": " estáveis",
+      "probability": 0.8271523714065552
+    },
+    {
+      "start": 26.48,
+      "end": 26.76,
+      "word": " e",
+      "probability": 0.9915967583656311
+    },
+    {
+      "start": 26.76,
+      "end": 27.14,
+      "word": " fáceis",
+      "probability": 0.9902052283287048
+    },
+    {
+      "start": 27.14,
+      "end": 27.42,
+      "word": " de",
+      "probability": 0.9909088015556335
+    },
+    {
+      "start": 27.42,
+      "end": 28.3,
+      "word": " retirar,",
+      "probability": 0.9913793504238129
+    },
+    {
+      "start": 28.5,
+      "end": 28.74,
+      "word": " salve",
+      "probability": 0.780157595872879
+    },
+    {
+      "start": 28.74,
+      "end": 29.0,
+      "word": " para",
+      "probability": 0.9550759792327881
+    },
+    {
+      "start": 29.0,
+      "end": 29.46,
+      "word": " lembrar.",
+      "probability": 0.991836667060852
+    }
+  ]
+}

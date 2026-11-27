@@ -79,6 +79,21 @@ class ASRConfirmation15(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec('PIL') is not None,'Optional captions require Pillow; installed by mission proof workflow')
 class Captions15(unittest.TestCase):
+    def test_caption_does_not_begin_in_previous_utterances_pause(self):
+        from caption_alignment import align
+        rec={'audio_content_verified':True,'words':[{'word':'Confira.','start':0,'end':1},
+            {'word':'Guarde.','start':1,'end':3}]}
+        original=copy.deepcopy(rec)
+        self.assertEqual(align(['Confira.','Guarde.'],rec,[(0,2,'Confira.'),(2,4,'Guarde.')]),
+            [[0,1,'Confira.'],[2,3,'Guarde.']])
+        self.assertEqual(rec,original)
+
+    def test_wrong_utterance_provenance_does_not_retime_captions(self):
+        from caption_alignment import align
+        rec={'audio_content_verified':True,'words':[{'word':'Confira.','start':0,'end':1}]}
+        with self.assertRaisesRegex(ValueError,'WINDOWS_INVALID'):
+            align(['Confira.'],rec,[(0,2,'Guarde.')])
+
     def test_observed_words_define_caption_time_without_replacing_transcript(self):
         from caption_alignment import align
         rec={'audio_content_verified':True,'words':[{'word':'Confira','start':.2,'end':.5},{'word':'o','start':.5,'end':.6},{'word':'copo.','start':.6,'end':1.1}]}
@@ -89,6 +104,26 @@ class Captions15(unittest.TestCase):
 
 
 class Resumption15(unittest.TestCase):
+    def test_preferred_hours_do_not_create_phantom_publication_obligations(self):
+        import datetime as dt
+        from operational_health import missing_reservations
+        now=dt.datetime(2026,11,27,20,tzinfo=dt.timezone.utc)
+        self.assertEqual(missing_reservations({'posts':[]},{'posts':{}},now),[])
+        due=(now-dt.timedelta(hours=3)).isoformat()
+        queue={'posts':[{'id':'actual','approved':True,'scheduled_at':due}]}
+        self.assertEqual(missing_reservations(queue,{'posts':{}},now),[due])
+        state={'posts':{'actual':{'status':'CANCELLED_EDITORIAL','buffer_status':'deleted'}}}
+        self.assertEqual(missing_reservations(queue,state,now),[])
+
+    def test_old_complete_receipt_without_public_evidence_remains_an_incident(self):
+        import datetime as dt
+        import operational_health as health
+        now=dt.datetime(2026,11,27,20,tzinfo=dt.timezone.utc)
+        state={'posts':{'old':{'status':'PUBLISH_COMPLETE','publicly_verified':False}}}
+        with patch.object(health,'stock_status',return_value={'refill_needed':0}):
+            result=health.inspect({'posts':[]},state,{}, {},now)
+        self.assertIn('old',result['active_incidents']['PUBLICATION_RECONCILIATION_REQUIRED']['details']['ids'])
+
     def test_three_saved_wan_scenes_wait_for_quota_instead_of_falsely_reporting_ready(self):
         from unittest.mock import Mock
         from experimental81 import wan104

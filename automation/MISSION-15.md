@@ -42,7 +42,7 @@ completas, referência fixa, seed 15, temperature .65, CFG .5 e expressividade .
 Cinco falas somaram 31,28s; normalização sem truncamento resultou em 30,014s,
 com tempo 1,0427×, dentro da faixa previamente aprovada de 0,90–1,10.
 
-As **60 palavras** do episódio coincidiram no ASR. Pontuação/capitalização não
+As **60 palavras** do episódio coincidiram nos ASRs small e medium. Pontuação/capitalização não
 alteram o resultado. O normalizador textual rigoroso anterior foi preservado.
 Uma proposta de edição do normalizador foi bloqueada pelo filtro de conteúdo
 durante a sessão e não foi reenviada por outro caminho. A melhoria implementada
@@ -59,7 +59,9 @@ ASR não prova naturalidade ou pronúncia auditiva perfeita.
 
 Relatórios ASR ficam vinculados ao SHA do WAV e ao roteiro esperado, mantendo a
 transcrição observada. Legendas do episódio usam timestamps das palavras
-reconhecidas, permitidos somente após igualdade da sequência completa.
+reconhecidas, permitidos somente após igualdade da sequência completa. Os limites
+das falas preservadas impedem que o reconhecedor antecipe a legenda de uma frase
+para a pausa da anterior; os timestamps originais continuam no relatório ASR.
 
 ## Vídeo e origem das cenas
 
@@ -87,7 +89,7 @@ Não se apresenta essa alternativa como teste concluído de produção Wan em HD
 
 O detector global de congelamento acusou falsos positivos no fundo estático da
 ilustração. A verificação especializada examinou **900 quadros da área da ação**,
-excluindo cabeçalhos e legendas: 741 pares com movimento acima do ruído de
+excluindo cabeçalhos e legendas: 681 pares com movimento acima do ruído de
 compressão, no máximo 12 quadros sem mudança. A mesma verificação rejeita uma
 cena congelada em teste real. O detector convencional de estoque/Wan não foi
 alterado. Não se aprovou uma cena congelada nem se contou só movimento de texto.
@@ -128,3 +130,8 @@ Cadência: até três por sete dias móveis, mínimo 48h, 10h/18h BRT quando hou
 material apto. R$0 adicionais. Sem GPU paga, ElevenLabs, contratação de serviços
 ou dependência de computador pessoal. Produção fotorealista Wan sustentada ainda
 não foi demonstrada; o primeiro episódio ilustrado não prova cadência semanal.
+
+A auditoria operacional também deixava um alerta de publicação ausente para cada
+10h/18h mesmo sem reserva, contrariando o teto semanal. Agora considera apenas
+reservas reais. Recibo antigo PUBLISH_COMPLETE sem confirmação pública continua
+incidente de reconciliação, sem reenvio ou reclassificação de sucesso.
