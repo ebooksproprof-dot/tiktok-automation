@@ -1,0 +1,13 @@
+{
+  "simulation_only": true,
+  "days": 56,
+  "simulated_quota_wait_days": 14,
+  "simulated_failure_days": 7,
+  "simulated_supply": 26,
+  "simulated_consumed": 24,
+  "actual_publications": 0,
+  "cadence_max_per_rolling_week": 3,
+  "minimum_spacing_hours": 48,
+  "restart_each_day": true,
+  "service_calls": 0
+}

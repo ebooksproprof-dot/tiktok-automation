@@ -151,6 +151,7 @@
       "Depois de lavar, apoie cada copo num escorredor adequado ao material, sem equilibrar uma peça sobre a outra.",
       "Observe a borda e o fundo. Se ainda houver gotas, deixe a água escorrer e espere secar completamente.",
       "Na hora de guardar, mantenha as peças estáveis e fáceis de retirar.",
+      "Evite apoiar a borda em locais sujos enquanto espera a secagem terminar.",
       "Essa conferência evita guardar umidade junto com os copos. Salve para lembrar na próxima lavagem."
     ],
     "required_visual_pattern": "\\b(?:cups?|tumblers?|glasses)\\b",
@@ -422,6 +423,7 @@
       "Retire uma pequena categoria de peças e confira o espaço livre antes de devolver tudo.",
       "Ajuste a dobra ao tamanho da gaveta e mantenha a pilha abaixo da borda, sem comprimir os tecidos.",
       "Abra e feche devagar para conferir se nenhuma peça ficou presa no caminho.",
+      "Deixe as peças compridas deitadas e confira se as pontas não encostam no fundo do móvel.",
       "Se faltar espaço, reduza a quantidade nesse compartimento. Salve para testar na próxima organização."
     ],
     "target_seconds": 30
@@ -672,6 +674,7 @@
       "A mudança brusca de temperatura pode danificar alguns materiais e revestimentos.",
       "Depois de cozinhar, desligue a fonte de calor e deixe a panela esfriar em um apoio estável e adequado.",
       "Quando estiver na condição indicada para limpeza, use a esponja e o produto compatíveis com a peça.",
+      "Mantenha o cabo longe da borda do apoio e fora da passagem de outras pessoas.",
       "Evite improvisar esse cuidado: cada material tem suas instruções. Salve para consultar antes da próxima lavagem."
     ],
     "target_seconds": 30
@@ -763,6 +766,7 @@
       "Confira se o modelo permite remover a bandeja e siga as instruções do fabricante.",
       "Depois de retirar as peças com segurança, descarte a água acumulada e faça a limpeza indicada para o material.",
       "Deixe as partes secarem e monte novamente numa superfície firme, sem bloquear a saída prevista para a água.",
+      "Observe também os cantos da bandeja, onde pequenos resíduos podem ficar presos depois do uso.",
       "Essa pequena conferência entra junto com o cuidado da louça. Salve para a próxima lavagem."
     ],
     "required_visual_pattern": "\\b(?:plates?|dishes|dish\\s*racks?|drainers?)\\b",
@@ -1032,6 +1036,7 @@
       "Quando os volumes estão apertados, fica difícil segurar a peça com firmeza.",
       "Abra um pequeno espaço ao lado do livro e segure pelas laterais da lombada, apoiando o volume durante a retirada.",
       "Evite forçar a parte superior ou comprimir os outros livros para devolver um título.",
+      "Se o apoio estiver instável, organize uma parte menor da estante antes de mexer no restante.",
       "Deixe uma folga que permita retirar cada volume com cuidado. Salve para organizar sua estante."
     ],
     "target_seconds": 30
@@ -1054,6 +1059,7 @@
       "Antes de guardar, retire os resíduos presos e confira as orientações de limpeza do fabricante.",
       "Escolha um suporte firme, adequado ao cabo, que deixe as cerdas livres e fora da passagem.",
       "Se a peça foi lavada, espere secar completamente no local indicado antes de guardar num espaço fechado.",
+      "Confira se o suporte está bem preso antes de pendurar novamente o material nesse lugar.",
       "Manter o material bem apoiado ajuda a conservar o formato das cerdas. Salve para revisar seu cantinho de limpeza."
     ],
     "target_seconds": 30

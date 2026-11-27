@@ -1,0 +1,51 @@
+name: CasaSemEsforco Mission14 preserve technical proof
+on:
+  workflow_dispatch:
+    inputs:
+      cpu_run_id:
+        description: 'Completed real Mission14 CPU benchmark run; never synthesizes again'
+        type: string
+        required: true
+permissions:
+  contents: write
+  actions: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU media tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'Pillow==12.3.0'
+      - name: Recover actual benchmark utterances (not a female identity approval)
+        uses: actions/download-artifact@v4
+        with:
+          name: mission14-cpu-proof
+          run-id: ${{ inputs.cpu_run_id }}
+          github-token: ${{ github.token }}
+          path: tmp/mission14/cpu
+      - name: Validate 30-second calibration video; do not stage or publish
+        run: python automation/mission14_demo.py
+      - name: Persist technical proof outside short-lived runners
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view mission14-evidence >/dev/null 2>&1 || gh release create mission14-evidence --target main --title 'Mission14 technical proof — not publication stock' --notes 'Native moving calibration pattern with technical Chatterbox V3 PT-BR audio. Reference rights and female brand identity remain pending. Not approved for TikTok publication. No reference recordings included.' --prerelease
+          gh release upload mission14-evidence tmp/mission14/demo/mission14-vertical-30s.mp4 tmp/mission14/demo/voice.wav tmp/mission14/demo/ffprobe.json tmp/mission14/demo/demo-report.json tmp/mission14/cpu/report.json tmp/mission14/demo/ui-safe-*.jpg
+      - name: Retain evidence if durable upload fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mission14-vertical-proof
+          path: |
+            tmp/mission14/demo/*.mp4
+            tmp/mission14/demo/*.wav
+            tmp/mission14/demo/*.jpg
+            tmp/mission14/demo/*.json
+          retention-days: 7
+          if-no-files-found: warn

@@ -64,7 +64,7 @@ class Originality12(unittest.TestCase):
         self.assertEqual(len(tips.BY_ID),50)
         for tip in tips.TOPICS:
             self.assertTrue(tip['problem_id']);self.assertTrue(tip['solution_id'])
-            self.assertIn(len(tip['script_lines']),(3,5))
+            self.assertIn(len(tip['script_lines']),(3,5,6))
 
     def test_wan_replans_without_discarding_sources_or_new_gpu_call(self):
         q={'posts':[dict(self.real[0],concept='licensed-wan104-episode-2')]}
