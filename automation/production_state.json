@@ -9319,7 +9319,7 @@
       "target_workflow": "casasemesforco-daily.yml"
     },
     "2026-11-28T06:00:00+00:00|casasemesforco-daily.yml": {
-      "status": "INTENT_RECORDED_NO_BLIND_RETRY",
+      "status": "DISPATCHED",
       "at": "2026-11-28T08:21:57.821709Z",
       "trigger": "LOW_STOCK_MAINTENANCE",
       "target_workflow": "casasemesforco-daily.yml"
